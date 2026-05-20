@@ -688,12 +688,47 @@
     }
 
     .preview-canvas,
-    .preview-canvas * {
+    .preview-canvas *:not(button):not(button *) {
       color: var(--primary) !important;
       font-family: var(--display) !important;
     }
+    
     .preview-canvas button,
     .preview-canvas button * {
+      font-family: var(--sans) !important;
+    }
+
+    /* Outlined/transparent buttons get primary color text and border, no background */
+    .preview-canvas button.sds-btn-neon,
+    .preview-canvas button.sds-btn-underline,
+    .preview-canvas button.sds-btn-swipe,
+    .preview-canvas button.sds-btn-border-draw,
+    .preview-canvas button[style*="background:none"],
+    .preview-canvas button[style*="background: none"],
+    .preview-canvas button[style*="background:transparent"],
+    .preview-canvas button[style*="background: transparent"] {
+      background: transparent !important;
+      color: var(--primary) !important;
+      border-color: var(--primary) !important;
+    }
+    .preview-canvas button.sds-btn-neon *,
+    .preview-canvas button.sds-btn-underline *,
+    .preview-canvas button.sds-btn-swipe *,
+    .preview-canvas button.sds-btn-border-draw *,
+    .preview-canvas button[style*="background:none"] *,
+    .preview-canvas button[style*="background: none"] *,
+    .preview-canvas button[style*="background:transparent"] *,
+    .preview-canvas button[style*="background: transparent"] * {
+      color: var(--primary) !important;
+    }
+
+    /* Solid buttons get primary background and white text */
+    .preview-canvas button:not(.sds-btn-neon):not(.sds-btn-underline):not(.sds-btn-swipe):not(.sds-btn-border-draw):not([style*="background:none"]):not([style*="background: none"]):not([style*="background:transparent"]):not([style*="background: transparent"]) {
+      background: var(--primary) !important;
+      color: #ffffff !important;
+      border-color: var(--primary) !important;
+    }
+    .preview-canvas button:not(.sds-btn-neon):not(.sds-btn-underline):not(.sds-btn-swipe):not(.sds-btn-border-draw):not([style*="background:none"]):not([style*="background: none"]):not([style*="background:transparent"]):not([style*="background: transparent"]) * {
       color: #ffffff !important;
     }
     .preview-anim-target {
