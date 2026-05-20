@@ -355,6 +355,19 @@
     .footer-link:hover {
       color: var(--text);
     }
+    .left-credit {
+      padding: 14px 28px 18px;
+      border-top: 1px solid var(--border);
+      color: var(--text2);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+    .left-credit a {
+      font-family: var(--display);
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 700;
+    }
 
     /* RIGHT CONTENT PANEL (Scrollable Workspace) */
     .right-panel {
@@ -598,8 +611,14 @@
       pointer-events: none;
     }
     
-    .preview-canvas span {
-      color: var(--text);
+    .preview-canvas,
+    .preview-canvas * {
+      color: var(--primary) !important;
+      font-family: var(--display) !important;
+    }
+    .preview-canvas button,
+    .preview-canvas button * {
+      color: #ffffff !important;
     }
     .preview-anim-target {
       display: inline-flex;
@@ -1116,20 +1135,10 @@
         </div>
       </div>
 
-      <hr class="section-divider">
-
-      <!-- Badges -->
-      <div class="method-row">
-        <div class="method-tag"><span class="dot"></span> CDN</div>
-        <div class="method-tag"><span class="dot"></span> npm</div>
-        <div class="method-tag"><span class="dot"></span> npx</div>
-      </div>
-
     </div>
-    <div class="left-footer">
-      <div class="footer-dot"></div>
-      <span class="footer-text">Open source, MIT</span>
-      <a href="#" class="footer-link" onclick="copyToClipboard('https://github.com/salkomdesignstudio/sds-motion', 'GitHub Repo Link Copied!')">GitHub →</a>
+    <div class="left-credit">
+      Design and developed by
+      <a href="https://www.salkomdesignstudio.com/" target="_blank" rel="noopener noreferrer">Salkom Design Studio</a>
     </div>
   </aside>
 
@@ -1237,7 +1246,7 @@
   ];
 
   const buttonAnimations = [
-    { id: "btn-shimmer", name: "Shimmer Sweep", cls: "sds-btn-shimmer", desc: "Light sheen sweeps across button border on hover.", preview: '<button style="background:var(--surface2);color:#fff;border:1px solid rgba(255,255,255,0.08);padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer;position:relative;overflow:hidden;">Shimmer</button>', trigger: "hover" },
+    { id: "btn-shimmer", name: "Shimmer Sweep", cls: "sds-btn-shimmer", desc: "Light sheen sweeps across button border on hover.", preview: '<button style="background:var(--primary);color:#fff;border:1px solid rgba(63,109,246,0.25);padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer;position:relative;overflow:hidden;">Shimmer</button>', trigger: "hover" },
     { id: "btn-glow", name: "Glow Pulse", cls: "sds-btn-glow", desc: "Pulsating boundary glow breathing continuously.", preview: '<button style="background:var(--primary);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">Glow Pulse</button>', trigger: "infinite" },
     { id: "btn-pulse-ring", name: "Pulse Ring", cls: "sds-btn-pulse-ring", desc: "Concentric ripple ring radiates outward continuously.", preview: '<button style="background:var(--primary);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer;z-index:2">Pulse Ring</button>', trigger: "infinite" },
     { id: "btn-bounce", name: "Bounce Loop", cls: "sds-btn-bounce", desc: "Soft floating vertical bounce.", preview: '<button style="background:var(--primary);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">Floating</button>', trigger: "infinite" },
