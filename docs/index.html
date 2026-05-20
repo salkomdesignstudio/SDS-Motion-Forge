@@ -688,11 +688,37 @@
       pointer-events: none;
     }
 
-    .preview-canvas,
-    .preview-canvas *:not(button):not(button *) {
-      color: var(--primary) !important;
-      font-family: var(--display) !important;
-      font-size: 28px !important;
+    .preview-canvas {
+      color: var(--primary);
+      font-family: var(--display);
+      font-size: 24px;
+    }
+    
+    .preview-canvas [id^="target-"] {
+      color: var(--primary);
+      font-family: var(--display);
+      font-size: 26px;
+    }
+
+    /* Style inputs and placeholders to look clean and premium */
+    .preview-canvas input {
+      font-family: var(--sans) !important;
+      font-size: 13.5px !important;
+      color: var(--text) !important;
+    }
+    .preview-canvas input::placeholder {
+      color: var(--text3) !important;
+      opacity: 0.65;
+    }
+
+    /* Keep the sds-input-label premium, small and compact as designed */
+    .sds-input-label {
+      font-size: 9.5px !important;
+      font-weight: 800 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 1.2px !important;
+      color: var(--text3) !important;
+      font-family: var(--sans) !important;
     }
     
     .preview-canvas button,
