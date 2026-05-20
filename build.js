@@ -8,10 +8,14 @@ const path = require('path');
 const ROOT_DIR = __dirname;
 const SRC_DIR = path.join(ROOT_DIR, 'src');
 const DIST_DIR = path.join(ROOT_DIR, 'dist');
+const DOCS_DIST_DIR = path.join(ROOT_DIR, 'docs', 'dist');
 
 // Helper to create directory if not existing
 if (!fs.existsSync(DIST_DIR)) {
   fs.mkdirSync(DIST_DIR);
+}
+if (!fs.existsSync(DOCS_DIST_DIR)) {
+  fs.mkdirSync(DOCS_DIST_DIR);
 }
 
 // 1. COMPILING CSS BUNDLE
@@ -51,6 +55,7 @@ function compileCSS() {
     .trim();
 
   fs.writeFileSync(path.join(DIST_DIR, 'motion.min.css'), minifiedCSS, 'utf8');
+  fs.writeFileSync(path.join(DOCS_DIST_DIR, 'motion.min.css'), minifiedCSS, 'utf8');
   console.log(`✅ CSS Compiled successfully: dist/motion.min.css (${(minifiedCSS.length / 1024).toFixed(2)} KB)`);
 }
 
@@ -82,6 +87,7 @@ function compileJS() {
     .trim();
 
   fs.writeFileSync(path.join(DIST_DIR, 'motion.min.js'), minifiedJS, 'utf8');
+  fs.writeFileSync(path.join(DOCS_DIST_DIR, 'motion.min.js'), minifiedJS, 'utf8');
   console.log(`✅ JS Compiled successfully: dist/motion.min.js (${(minifiedJS.length / 1024).toFixed(2)} KB)`);
 }
 
