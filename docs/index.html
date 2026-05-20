@@ -91,6 +91,7 @@
 
   <!-- SDS Motion Forge -->
   <link rel="stylesheet" href="dist/motion.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
 
   <style>
     :root {
@@ -668,7 +669,7 @@
 
     /* Preview Box Canvas */
     .preview-canvas {
-      height: 130px;
+      height: 180px;
       background: var(--bg3);
       border-bottom: 1px solid var(--border);
       display: flex;
@@ -691,11 +692,17 @@
     .preview-canvas *:not(button):not(button *) {
       color: var(--primary) !important;
       font-family: var(--display) !important;
+      font-size: 28px !important;
     }
     
     .preview-canvas button,
     .preview-canvas button * {
       font-family: var(--sans) !important;
+    }
+    
+    .preview-canvas button {
+      font-size: 15px !important;
+      padding: 14px 32px !important;
     }
 
     /* Outlined/transparent buttons get primary color text and border, no background */
@@ -884,9 +891,6 @@
     }
     .card-meta {
       padding: 13px 16px;
-    }
-    .preview-canvas {
-      height: 112px;
     }
 
     .card-footer {
@@ -1106,7 +1110,7 @@
       font-weight: 500;
       color: var(--text2);
       box-shadow: 0 2px 8px rgba(0, 56, 255, 0.03);
-      transition: all 0.4s var(--ease-smooth);
+      transition: background-color 0.4s var(--ease-smooth), border-color 0.4s var(--ease-smooth), box-shadow 0.4s var(--ease-smooth);
     }
 
     /* Clipboard Toast Message */
@@ -1235,7 +1239,7 @@
             <div class="code-block" onclick="copyToClipboard('npm install sds-motion', 'NPM install command copied!')">
               <code>npm install sds-motion</code>
               <button class="copy-btn" title="Copy">
-                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="9" height="9" rx="1.5"/><path d="M3 11V3h8"/></svg>
+                <i class="ri-file-copy-2-fill"></i>
               </button>
             </div>
           </div>
@@ -1245,7 +1249,7 @@
             <div class="code-block" onclick="copyToClipboard('npx sds-motion init', 'NPX init command copied!')">
               <code>npx sds-motion init</code>
               <button class="copy-btn" title="Copy">
-                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="9" height="9" rx="1.5"/><path d="M3 11V3h8"/></svg>
+                <i class="ri-file-copy-2-fill"></i>
               </button>
             </div>
           </div>
@@ -1255,7 +1259,7 @@
             <div class="code-block" onclick="copyToClipboard(`@import 'sds-motion/dist/motion.min.css';`, 'Angular import directive copied!')">
               <code>@import 'sds-motion/dist/motion.min.css'</code>
               <button class="copy-btn" title="Copy">
-                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="9" height="9" rx="1.5"/><path d="M3 11V3h8"/></svg>
+                <i class="ri-file-copy-2-fill"></i>
               </button>
             </div>
           </div>
@@ -1269,7 +1273,7 @@
             <div class="code-block" onclick="copyToClipboard('https://cdn.jsdelivr.net/npm/sds-motion/dist/motion.min.css', 'CDN URL copied!')">
               <code>cdn.jsdelivr.net/npm/sds-motion</code>
               <button class="copy-btn" title="Copy">
-                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="9" height="9" rx="1.5"/><path d="M3 11V3h8"/></svg>
+                <i class="ri-file-copy-2-fill"></i>
               </button>
             </div>
           </div>
@@ -1296,25 +1300,25 @@
       </div>
       <div class="tabs-bar">
         <button class="tab-btn active" id="tab-text" onclick="switchSection('text', this)">
-          Text Systems <span class="tab-count" id="count-text">30</span>
+          <i class="ri-text-fill"></i> Text Systems <span class="tab-count" id="count-text">30</span>
         </button>
         <button class="tab-btn" id="tab-button" onclick="switchSection('button', this)">
-          Button States <span class="tab-count" id="count-button">19</span>
+          <i class="ri-mouse-fill"></i> Button States <span class="tab-count" id="count-button">19</span>
         </button>
         <button class="tab-btn" id="tab-input" onclick="switchSection('input', this)">
-          Inputs &amp; Focus <span class="tab-count" id="count-input">14</span>
+          <i class="ri-keyboard-box-fill"></i> Inputs &amp; Focus <span class="tab-count" id="count-input">14</span>
         </button>
         <button class="tab-btn" id="tab-card" onclick="switchSection('card', this)">
-          Cards &amp; Depth <span class="tab-count" id="count-card">25</span>
+          <i class="ri-layout-grid-fill"></i> Cards &amp; Depth <span class="tab-count" id="count-card">25</span>
         </button>
         <button class="tab-btn" id="tab-loader" onclick="switchSection('loader', this)">
-          Loaders &amp; Skeletons <span class="tab-count" id="count-loader">11</span>
+          <i class="ri-refresh-fill"></i> Loaders &amp; Skeletons <span class="tab-count" id="count-loader">11</span>
         </button>
         <button class="tab-btn" id="tab-scroll" onclick="switchSection('scroll', this)">
-          Scroll Viewports <span class="tab-count" id="count-scroll">15</span>
+          <i class="ri-compass-3-fill"></i> Scroll Viewports <span class="tab-count" id="count-scroll">15</span>
         </button>
         <button class="tab-btn" id="tab-webcomp" onclick="switchSection('webcomp', this)">
-          Web Components <span class="tab-count">3</span>
+          <i class="ri-code-box-fill"></i> Web Components <span class="tab-count">3</span>
         </button>
       </div>
     </div>
@@ -1382,29 +1386,29 @@
     { id: "bottom-up-letters", name: "Bottom-Up", cls: "sds-bottom-up-letters", desc: "Each character rises from below its own clip container, staggered 38ms sequentially.", preview: '<span class="sds-bottom-up-letters" style="font-family:var(--display);font-size:24px;font-weight:700"><span class="sds-char" data-char="U" style="--sds-char-index:0"><span style="display:block;animation:sdsBottomUpChar 0.6s cubic-bezier(0.16,1,0.3,1) calc(0ms) both">U</span></span><span class="sds-char" data-char="P" style="--sds-char-index:1"><span style="display:block;animation:sdsBottomUpChar 0.6s cubic-bezier(0.16,1,0.3,1) calc(38ms) both">P</span></span><span class="sds-char" data-char="W" style="--sds-char-index:2"><span style="display:block;animation:sdsBottomUpChar 0.6s cubic-bezier(0.16,1,0.3,1) calc(76ms) both">W</span></span><span class="sds-char" data-char="A" style="--sds-char-index:3"><span style="display:block;animation:sdsBottomUpChar 0.6s cubic-bezier(0.16,1,0.3,1) calc(114ms) both">A</span></span><span class="sds-char" data-char="R" style="--sds-char-index:4"><span style="display:block;animation:sdsBottomUpChar 0.6s cubic-bezier(0.16,1,0.3,1) calc(152ms) both">R</span></span><span class="sds-char" data-char="D" style="--sds-char-index:5"><span style="display:block;animation:sdsBottomUpChar 0.6s cubic-bezier(0.16,1,0.3,1) calc(190ms) both">D</span></span></span>' },
     { id: "top-down-letters", name: "Top-Down", cls: "sds-top-down-letters", desc: "Each character drops from above its own clip container, staggered 38ms sequentially.", preview: '<span class="sds-top-down-letters" style="font-family:var(--display);font-size:24px;font-weight:700"><span class="sds-char" data-char="D" style="--sds-char-index:0"><span style="display:block;animation:sdsTopDownChar 0.6s cubic-bezier(0.16,1,0.3,1) calc(0ms) both">D</span></span><span class="sds-char" data-char="O" style="--sds-char-index:1"><span style="display:block;animation:sdsTopDownChar 0.6s cubic-bezier(0.16,1,0.3,1) calc(38ms) both">O</span></span><span class="sds-char" data-char="W" style="--sds-char-index:2"><span style="display:block;animation:sdsTopDownChar 0.6s cubic-bezier(0.16,1,0.3,1) calc(76ms) both">W</span></span><span class="sds-char" data-char="N" style="--sds-char-index:3"><span style="display:block;animation:sdsTopDownChar 0.6s cubic-bezier(0.16,1,0.3,1) calc(114ms) both">N</span></span></span>' },
     { id: "kinetic-center-build", name: "Kinetic Build", cls: "sds-kinetic-center-build", desc: "Each character scales from 0.3x with 16deg skew, spring-settles staggered 45ms apart.", preview: '<span class="sds-kinetic-center-build" style="font-family:var(--display);font-size:24px;font-weight:700"><span class="sds-char" style="--sds-char-index:0">K</span><span class="sds-char" style="--sds-char-index:1">I</span><span class="sds-char" style="--sds-char-index:2">N</span><span class="sds-char" style="--sds-char-index:3">E</span><span class="sds-char" style="--sds-char-index:4">T</span><span class="sds-char" style="--sds-char-index:5">I</span><span class="sds-char" style="--sds-char-index:6">C</span></span>' },
-    { id: "short-slide-right", name: "Short Slide Right", cls: "sds-short-slide-right", previewClass: "mf-preview-short-slide-right", desc: "Compact horizontal motion with restrained distance, crisp easing, and clean landing.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Slide Right →</span>' },
-    { id: "short-slide-down",  name: "Short Slide Down",  cls: "sds-short-slide-down",  previewClass: "mf-preview-short-slide-down", desc: "Compact vertical motion with minimal displacement and smooth timing control.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">↓ Slide Down</span>' }
+    { id: "short-slide-right", name: "Short Slide Right", cls: "sds-short-slide-right", previewClass: "mf-preview-short-slide-right", desc: "Compact horizontal motion with restrained distance, crisp easing, and clean landing.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700;display:flex;align-items:center;gap:6px">Slide Right <i class="ri-arrow-right-fill"></i></span>' },
+    { id: "short-slide-down",  name: "Short Slide Down",  cls: "sds-short-slide-down",  previewClass: "mf-preview-short-slide-down", desc: "Compact vertical motion with minimal displacement and smooth timing control.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700;display:flex;align-items:center;gap:6px"><i class="ri-arrow-down-fill"></i> Slide Down</span>' }
   ];
 
   const buttonAnimations = [
-    { id: "btn-shimmer", name: "Shimmer Sweep", cls: "sds-btn-shimmer", desc: "Light sheen sweeps across button border on hover.", preview: '<button style="background:var(--primary);color:#fff;border:1px solid rgba(63,109,246,0.25);padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer;position:relative;overflow:hidden;">Shimmer</button>', trigger: "hover" },
+    { id: "btn-shimmer", name: "Shimmer Sweep", cls: "sds-btn-shimmer", desc: "Light sheen sweeps across button border on hover.", preview: '<button style="background:var(--primary);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer;position:relative;overflow:hidden;">Shimmer</button>', trigger: "hover" },
     { id: "btn-glow", name: "Glow Pulse", cls: "sds-btn-glow", desc: "Pulsating boundary glow breathing continuously.", preview: '<button style="background:var(--primary);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">Glow Pulse</button>', trigger: "infinite" },
     { id: "btn-pulse-ring", name: "Pulse Ring", cls: "sds-btn-pulse-ring", desc: "Concentric ripple ring radiates outward continuously.", preview: '<button style="background:var(--primary);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer;z-index:2">Pulse Ring</button>', trigger: "infinite" },
     { id: "btn-bounce", name: "Bounce Loop", cls: "sds-btn-bounce", desc: "Soft floating vertical bounce.", preview: '<button style="background:var(--primary);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">Floating</button>', trigger: "infinite" },
     { id: "btn-morph", name: "Pill Morph", cls: "sds-btn-morph", desc: "Hover to expand border-radius into a pill shape with spring settle.", preview: '<button style="background:var(--primary);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">Hover Me</button>', trigger: "hover" },
-    { id: "btn-neon", name: "Neon Outline", cls: "sds-btn-neon", desc: "Ambient border glow ring brightens on hover — elegant, not flashy.", preview: '<button style="padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">Ambient Glow</button>', trigger: "hover" },
-    { id: "btn-gradient", name: "Gradient Shift", cls: "sds-btn-gradient", desc: "Background brand gradient cycles in motion.", preview: '<button style="color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">Animated Gradient</button>', trigger: "infinite" },
-    { id: "btn-shake", name: "Error Shake", cls: "sds-btn-shake", desc: "Rapid horizontal offset alert feedback.", preview: '<button style="background:#fff2f2;color:#b91c1c;border:1px solid rgba(185,28,28,0.2);padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">Invalid Action</button>', trigger: "click" },
+    { id: "btn-neon", name: "Neon Outline", cls: "sds-btn-neon", desc: "Ambient border glow ring brightens on hover — elegant, not flashy.", preview: '<button style="background:transparent;color:var(--primary);border:1.5px solid var(--primary);padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">Ambient Glow</button>', trigger: "hover" },
+    { id: "btn-gradient", name: "Gradient Shift", cls: "sds-btn-gradient", desc: "Background brand gradient cycles in motion.", preview: '<button style="background:var(--primary);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">Animated Gradient</button>', trigger: "infinite" },
+    { id: "btn-shake", name: "Error Shake", cls: "sds-btn-shake", desc: "Rapid horizontal offset alert feedback.", preview: '<button style="background:var(--primary);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">Invalid Action</button>', trigger: "click" },
     { id: "btn-float", name: "Float Lift", cls: "sds-btn-float", desc: "Elevates upward on hover with soft shadow layer.", preview: '<button style="background:var(--primary);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">Lifts Up</button>', trigger: "hover" },
-    { id: "btn-glow-bg", name: "Breathing BG", cls: "sds-btn-glow-bg", desc: "Background surface breathes in glow strength.", preview: '<button style="color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">Breathing</button>', trigger: "infinite" },
+    { id: "btn-glow-bg", name: "Breathing BG", cls: "sds-btn-glow-bg", desc: "Background surface breathes in glow strength.", preview: '<button style="background:var(--primary);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">Breathing</button>', trigger: "infinite" },
     { id: "btn-stretch", name: "Stretch Active", cls: "sds-btn-stretch", desc: "Physical elastic compression on active click.", preview: '<button style="background:var(--primary);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">Compresses</button>', trigger: "click" },
-    { id: "btn-border-draw", name: "Border Shine", cls: "sds-btn-border-draw", desc: "Border highlights glow elastically on interaction.", preview: '<button style="background:none;color:var(--accent2);border:1px solid var(--border);padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">Border Shine</button>', trigger: "hover" },
+    { id: "btn-border-draw", name: "Border Shine", cls: "sds-btn-border-draw", desc: "Border highlights glow elastically on interaction.", preview: '<button style="background:transparent;color:var(--primary);border:1.5px solid var(--primary);padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">Border Shine</button>', trigger: "hover" },
     { id: "btn-rubber", name: "Rubber Band", cls: "sds-btn-rubber", desc: "Organic physical expansion bounce.", preview: '<button style="background:var(--primary);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">Elastic Band</button>', trigger: "hover" },
-    { id: "btn-icon-slide", name: "Arrow Slide", cls: "sds-btn-icon-slide", desc: "Inner icon arrow slides smoothly on hover.", preview: '<button style="background:var(--primary);color:#fff;border:none;padding:12px 24px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer;display:flex;align-items:center;gap:6px">Continue <span class="sds-icon">→</span></button>', trigger: "hover" },
-    { id: "btn-confetti", name: "Confetti Burst", cls: "sds-btn-confetti", desc: "Bouncy scale burst on click validation.", preview: '<button style="background:var(--green);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:700;font-size:13.5px;cursor:pointer">✓ Submit</button>', trigger: "click" },
-    { id: "btn-heartbeat", name: "Heartbeat CTA", cls: "sds-btn-heartbeat", desc: "Engaging heartbeat breathing loop for actions.", preview: '<button style="background:#fff0f5;color:#be185d;border:1px solid rgba(190,24,93,0.22);padding:12px 24px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">♥ Add Favorite</button>', trigger: "infinite" },
-    { id: "btn-underline", name: "Link Underline", cls: "sds-btn-underline", desc: "Underline grows from left edge on hover.", preview: '<button style="background:none;border:none;color:var(--text);padding:8px 2px;font-weight:600;font-size:14.5px;cursor:pointer">Learn More</button>', trigger: "hover" },
-    { id: "btn-swipe", name: "Swipe Sweep", cls: "sds-btn-swipe", desc: "Background floods across behind label on hover.", preview: '<button style="color:var(--accent2);border:1px solid var(--accent);background:transparent;padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer;position:relative;overflow:hidden;z-index:1;">Swipe Hover</button>', trigger: "hover" },
+    { id: "btn-icon-slide", name: "Arrow Slide", cls: "sds-btn-icon-slide", desc: "Inner icon arrow slides smoothly on hover.", preview: '<button style="background:var(--primary);color:#fff;border:none;padding:12px 24px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer;display:flex;align-items:center;gap:6px">Continue <i class="ri-arrow-right-fill sds-icon"></i></button>', trigger: "hover" },
+    { id: "btn-confetti", name: "Confetti Burst", cls: "sds-btn-confetti", desc: "Bouncy scale burst on click validation.", preview: '<button style="background:var(--primary);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:700;font-size:13.5px;cursor:pointer;display:flex;align-items:center;gap:6px"><i class="ri-checkbox-circle-fill"></i> Submit</button>', trigger: "click" },
+    { id: "btn-heartbeat", name: "Heartbeat CTA", cls: "sds-btn-heartbeat", desc: "Engaging heartbeat breathing loop for actions.", preview: '<button style="background:var(--primary);color:#fff;border:none;padding:12px 24px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer;display:flex;align-items:center;gap:6px"><i class="ri-heart-3-fill"></i> Add Favorite</button>', trigger: "infinite" },
+    { id: "btn-underline", name: "Link Underline", cls: "sds-btn-underline", desc: "Underline grows from left edge on hover.", preview: '<button style="background:transparent;border:none;color:var(--primary);padding:8px 2px;font-weight:600;font-size:14.5px;cursor:pointer">Learn More</button>', trigger: "hover" },
+    { id: "btn-swipe", name: "Swipe Sweep", cls: "sds-btn-swipe", desc: "Background floods across behind label on hover.", preview: '<button style="background:transparent;border:1.5px solid var(--primary);color:var(--primary);padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer;position:relative;overflow:hidden;z-index:1;">Swipe Hover</button>', trigger: "hover" },
     { id: "btn-depth", name: "Depth Press", cls: "sds-btn-depth", desc: "3D perspective presses down with shadow reduction.", preview: '<button style="background:var(--primary);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">3D Button</button>', trigger: "click" }
   ];
 
@@ -1532,7 +1536,7 @@
         <div style="margin-bottom: 30px; border: 1px solid var(--border); padding: 20px; border-radius: 12px; background: var(--bg2); box-shadow: 0 8px 30px rgba(0, 56, 255, 0.05);">
           <div class="global-bar-label" style="margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
             <span style="color: var(--accent2);">Scroll Viewport Simulator</span>
-            <button class="btn-action-trigger" style="padding: 4px 10px; font-size: 10px;" onclick="resetScrollSimulator()">⟳ Reset Elements</button>
+            <button class="btn-action-trigger" style="padding: 4px 10px; font-size: 10px; display: flex; align-items: center; gap: 4px;" onclick="resetScrollSimulator()"><i class="ri-refresh-fill"></i> Reset Elements</button>
           </div>
           <div class="scroll-sim-space" id="scrollSimulator">
             ${db.map(item => `
@@ -1550,7 +1554,8 @@
     db.forEach(item => {
       const trig = item.trigger || "load";
       const verb = trig === "click" ? "Click" : (trig === "hover" ? "Hover" : "Play");
-      const triggerLabel = `${verb} ${item.name}`;
+      const riIcon = trig === "hover" ? "ri-hand-pointer-fill" : (trig === "click" ? "ri-mouse-fill" : "ri-play-circle-fill");
+      const triggerLabel = `<i class="${riIcon}"></i> ${verb} ${item.name}`;
 
       html += `
         <div class="anim-card" id="card-${item.id}">
@@ -1602,9 +1607,9 @@
             <div class="card-footer">
               <button class="class-pill" id="pill-${item.id}" onclick="copyClass('${item.id}', '${item.cls}')" title="Click to copy combined class name">
                 <span class="class-name">${item.cls}</span>
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                <i class="ri-file-copy-2-fill" style="opacity: 0.6; font-size: 11px;"></i>
               </button>
-              <button class="btn-action-trigger" onclick="triggerAnimation('${item.id}', '${item.cls}')">
+              <button class="btn-action-trigger" onclick="triggerAnimation('${item.id}', '${item.cls}')" style="display: flex; align-items: center; gap: 6px;">
                 ${triggerLabel}
               </button>
             </div>
