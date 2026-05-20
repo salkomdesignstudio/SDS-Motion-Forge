@@ -9,41 +9,36 @@
   <meta name="description" content="Production-ready UI animation utility library. High-end easings, spring physics, and modular class names. Developed by Salkom Design Studio.">
   
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+  </style>
   
   <!-- SDS Motion Distribution Stylesheet -->
   <link rel="stylesheet" href="../dist/motion.min.css">
   
   <style>
     :root {
-      --primary: #0038ff;
-      --primary-dark: #0022cc;
-      --primary-light: #f0f3ff;
-      --primary-mid: #3366ff;
-      
-      --bg: #f8f9fc;
+      --primary: #3f6df6;
+      --primary-dark: #2f57cf;
+      --primary-light: #edf2ff;
+      --primary-mid: #5b82fa;
+      --bg: #f6f8fb;
       --bg2: #ffffff;
-      --bg3: #f1f3f9;
-      
+      --bg3: #f3f5f9;
       --surface: #ffffff;
-      --surface2: #f8f9fc;
-      
-      --border: rgba(0, 56, 255, 0.08);
-      --border2: rgba(0, 56, 255, 0.15);
-      
-      --text: #0f172a;
-      --text2: #475569;
-      --text3: #94a3b8;
-      
-      --accent: #0038ff;
-      --accent2: #3b82f6;
+      --surface2: #f7f9fc;
+      --border: #e4e8f0;
+      --border2: #d7dde8;
+      --text: #333333;
+      --text2: #666666;
+      --text3: #8b93a2;
+      --accent: #3f6df6;
+      --accent2: #3f6df6;
       --green: #10b981;
       
-      --mono: 'JetBrains Mono', monospace;
+      --mono: 'DM Sans', sans-serif;
       --sans: 'DM Sans', sans-serif;
-      --display: 'Syne', sans-serif;
+      --display: 'Playfair Display', serif;
     }
 
     ::-webkit-scrollbar {
@@ -65,6 +60,9 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+    * , *::before, *::after {
+      transition: background-color 220ms ease, border-color 220ms ease, color 220ms ease, box-shadow 240ms ease, transform 240ms ease;
     }
 
     html, body {
@@ -366,61 +364,113 @@
       background: var(--bg);
     }
 
-    /* STICKY HEADER TABS */
-    .tabs-bar {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(248, 249, 252, 0.92);
-      backdrop-filter: blur(16px);
+    .sandbox-topbar {
+      padding: 28px 32px 10px;
       border-bottom: 1px solid var(--border);
-      padding: 0 32px;
+      background: var(--bg);
+    }
+    .sandbox-topbar-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+    .sandbox-title {
+      font-family: var(--display);
+      font-size: 28px;
+      line-height: 1.02;
+      letter-spacing: -0.4px;
+      color: #333333;
+      margin-bottom: 5px;
+    }
+    .sandbox-subtitle {
+      font-size: 14px;
+      color: #666666;
+    }
+    .sandbox-live {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border2);
+      background: #eef3ff;
+      color: #2a57d6;
+      font-size: 12px;
+      font-weight: 700;
+      margin-top: 14px;
+    }
+    .sandbox-github {
+      border: 1px solid #101a2e;
+      background: #101a2e;
+      color: #fff;
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .sandbox-github:hover {
+      background: #19243c;
+      border-color: #19243c;
+    }
+
+    /* TABS NAVIGATION BAR */
+    .tabs-bar {
+      position: static;
+      background: transparent;
+      border-bottom: none;
+      padding: 6px 0 4px;
       display: flex;
       align-items: center;
-      gap: 2px;
-      overflow-x: auto;
-      scrollbar-width: none;
-    }
-    .tabs-bar::-webkit-scrollbar {
-      display: none;
+      gap: 10px;
+      overflow-x: visible;
+      flex-wrap: wrap;
     }
     .tab-btn {
-      background: none;
-      border: none;
+      background: #ffffff;
+      border: 1px solid #e4e9f2;
       cursor: pointer;
-      padding: 20px 18px;
+      padding: 9px 14px;
       font-family: var(--sans);
       font-size: 13px;
-      font-weight: 500;
-      color: var(--text3);
+      font-weight: 600;
+      color: #4f5b70;
       white-space: nowrap;
-      transition: color 0.2s;
-      border-bottom: 2px solid transparent;
-      margin-bottom: -1px;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+      border-radius: 999px;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
     }
     .tab-btn:hover {
-      color: var(--text2);
+      color: #1a2b45;
+      border-color: #cfd8ea;
     }
     .tab-btn.active {
-      color: var(--text);
-      border-bottom-color: var(--accent);
+      color: #fff;
+      background: #2d5bff;
+      border-color: #2d5bff;
     }
     .tab-count {
-      background: rgba(77, 95, 255, 0.15);
-      border: 1px solid rgba(77, 95, 255, 0.25);
-      color: var(--accent2);
-      font-size: 10px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid #d8dff0;
+      color: #4a5f90;
+      font-size: 11px;
       font-family: var(--mono);
-      padding: 1px 6px;
+      padding: 1px 7px;
       border-radius: 10px;
+    }
+    .tab-btn.active .tab-count {
+      color: #1e3b9e;
+      border-color: #b8ccff;
     }
 
     /* Main Workspace Sections */
     .workspace-section {
-      padding: 32px;
+      padding: 22px 32px 32px;
     }
     .section-header {
       margin-bottom: 28px;
@@ -538,6 +588,7 @@
       padding: 16px;
       position: relative;
       overflow: hidden;
+      perspective: 1200px;
     }
     .preview-canvas::before {
       content: '';
@@ -550,6 +601,100 @@
     .preview-canvas span {
       color: var(--text);
     }
+    .preview-anim-target {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transform-style: preserve-3d;
+      will-change: transform, opacity, filter;
+      backface-visibility: hidden;
+    }
+    .mf-preview-fade-up { animation: mfPreviewFadeUp 0.62s cubic-bezier(0.2, 0.9, 0.22, 1) 0s both; }
+    .mf-preview-fade-down { animation: mfPreviewFadeDown 0.64s cubic-bezier(0.22, 0.85, 0.25, 1) 0s both; }
+    .mf-preview-fade-left { animation: mfPreviewFadeLeft 0.58s cubic-bezier(0.2, 0.88, 0.24, 1) 0s both; }
+    .mf-preview-fade-right { animation: mfPreviewFadeRight 0.58s cubic-bezier(0.2, 0.88, 0.24, 1) 0s both; }
+    .mf-preview-stamp-in { animation: mfPreviewStampIn 0.76s cubic-bezier(0.18, 0.88, 0.22, 1) 0s both; }
+    .mf-preview-bounce-in { animation: mfPreviewBounceIn 0.8s cubic-bezier(0.21, 0.98, 0.23, 1) 0s both; }
+    .mf-preview-spring-scale-in { animation: mfPreviewSpringScaleIn 0.74s cubic-bezier(0.2, 1, 0.24, 1) 0s both; }
+    .mf-preview-flip-y { animation: mfPreviewFlipY 0.82s cubic-bezier(0.22, 0.88, 0.2, 1) 0s both; }
+    .mf-preview-shared-axis-y { animation: mfPreviewSharedAxisY 0.62s cubic-bezier(0.2, 0.9, 0.2, 1) 0s both; }
+    .mf-preview-shared-axis-z { animation: mfPreviewSharedAxisZ 0.68s cubic-bezier(0.18, 0.9, 0.2, 1) 0s both; }
+    .mf-preview-micro-scale-fade { animation: mfPreviewMicroScaleFade 0.5s cubic-bezier(0.25, 0.85, 0.3, 1) 0s both; }
+    .mf-preview-short-slide-right { animation: mfPreviewShortSlideRight 0.54s cubic-bezier(0.21, 0.9, 0.2, 1) 0s both; }
+    .mf-preview-short-slide-down { animation: mfPreviewShortSlideDown 0.54s cubic-bezier(0.21, 0.9, 0.2, 1) 0s both; }
+    .mf-preview-scale-down-fade { animation: mfPreviewScaleDownFade 0.64s cubic-bezier(0.2, 0.88, 0.22, 1) 0s both; }
+
+    @keyframes mfPreviewFadeUp {
+      0% { opacity: 0.04; transform: translateY(14px); }
+      60% { opacity: 0.78; transform: translateY(2px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes mfPreviewFadeDown {
+      0% { opacity: 0.04; transform: translateY(-14px); }
+      62% { opacity: 0.8; transform: translateY(-2px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes mfPreviewFadeLeft {
+      0% { opacity: 0.06; transform: translateX(14px); }
+      65% { opacity: 0.84; transform: translateX(2px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes mfPreviewFadeRight {
+      0% { opacity: 0.06; transform: translateX(-14px); }
+      65% { opacity: 0.84; transform: translateX(-2px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes mfPreviewStampIn {
+      0% { opacity: 0; filter: blur(5px); transform: scale(1.85, 1.8); }
+      42% { opacity: 1; filter: blur(0); transform: scale(0.9, 1.08); }
+      68% { transform: scale(1.05, 0.97); }
+      100% { transform: scale(1); }
+    }
+    @keyframes mfPreviewBounceIn {
+      0% { opacity: 0; transform: translateY(18px) scale(0.93); }
+      45% { opacity: 1; transform: translateY(-4px) scale(1.02); }
+      70% { transform: translateY(2px) scale(0.995); }
+      100% { transform: translateY(0) scale(1); }
+    }
+    @keyframes mfPreviewSpringScaleIn {
+      0% { opacity: 0; transform: scale(0.76); }
+      55% { opacity: 1; transform: scale(1.06); }
+      78% { transform: scale(0.985); }
+      100% { transform: scale(1); }
+    }
+    @keyframes mfPreviewFlipY {
+      0% { opacity: 0; transform: perspective(900px) rotateY(84deg) translateZ(-22px); }
+      58% { opacity: 1; transform: perspective(900px) rotateY(-8deg) translateZ(0); }
+      78% { transform: perspective(900px) rotateY(3deg); }
+      100% { transform: perspective(900px) rotateY(0); }
+    }
+    @keyframes mfPreviewSharedAxisY {
+      0% { opacity: 0; transform: translateY(12px) scale(0.96); }
+      62% { opacity: 0.92; transform: translateY(-1px) scale(1.005); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @keyframes mfPreviewSharedAxisZ {
+      0% { opacity: 0; filter: blur(7px); transform: scale(0.9) translateZ(-18px); }
+      58% { opacity: 0.94; filter: blur(1.2px); transform: scale(1.02) translateZ(0); }
+      100% { opacity: 1; filter: blur(0); transform: scale(1) translateZ(0); }
+    }
+    @keyframes mfPreviewMicroScaleFade {
+      0% { opacity: 0; transform: scale(0.986); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    @keyframes mfPreviewShortSlideRight {
+      0% { opacity: 0; transform: translateX(-12px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes mfPreviewShortSlideDown {
+      0% { opacity: 0; transform: translateY(-12px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes mfPreviewScaleDownFade {
+      0% { opacity: 0; transform: scale(1.08); }
+      58% { opacity: 0.95; transform: scale(1.01); }
+      100% { opacity: 1; transform: scale(1); }
+    }
 
     .card-meta {
       padding: 16px 20px;
@@ -560,17 +705,58 @@
 
     .anim-title {
       font-family: var(--display);
-      font-size: 15px;
-      font-weight: 600;
+      font-size: 22px;
+      font-weight: 700;
       margin-bottom: 4px;
-      color: var(--text);
+      color: #333333;
     }
     .anim-desc {
-      font-size: 11.5px;
-      color: var(--text2);
+      font-size: 15px;
+      color: #666666;
       line-height: 1.5;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
       flex: 1;
+    }
+    .card-controls {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .card-control {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .card-control label {
+      font-size: 9px;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+      color: #8a95a8;
+      font-weight: 700;
+    }
+    .card-control select {
+      border: 1px solid #d9e1ef;
+      border-radius: 7px;
+      background: #fff;
+      color: #344257;
+      font-size: 10px;
+      padding: 3px 7px;
+      outline: none;
+    }
+    .card-control-note {
+      margin-top: 6px;
+      font-size: 10px;
+      line-height: 1.35;
+      color: #666666;
+    }
+    .card-meta {
+      padding: 13px 16px;
+    }
+    .preview-canvas {
+      height: 112px;
     }
 
     .card-footer {
@@ -580,13 +766,13 @@
     }
 
     .class-pill {
-      background: rgba(77, 95, 255, 0.05);
-      border: 1px solid rgba(77, 95, 255, 0.15);
+      background: #f4f7ff;
+      border: 1px solid #dbe4ff;
       border-radius: 6px;
       padding: 6px 10px;
       font-family: var(--mono);
       font-size: 11px;
-      color: var(--accent2);
+      color: #4e6ec9;
       flex: 1;
       white-space: nowrap;
       overflow: hidden;
@@ -601,9 +787,9 @@
       outline: none;
     }
     .class-pill:hover {
-      background: rgba(77, 95, 255, 0.12);
-      border-color: rgba(77, 95, 255, 0.3);
-      color: var(--accent);
+      background: #edf2ff;
+      border-color: #cfdcff;
+      color: #3f6df6;
     }
     .class-pill svg {
       opacity: 0.6;
@@ -627,11 +813,13 @@
       font-family: var(--mono);
       font-weight: 500;
       cursor: pointer;
-      transition: all 0.2s, transform 0.1s;
+      transition: all 0.2s, transform 0.2s;
       white-space: nowrap;
     }
     .btn-action-trigger:hover {
       background: var(--primary-mid);
+      box-shadow: 0 8px 18px rgba(63, 109, 246, 0.24);
+      transform: translateY(-1px);
     }
     .btn-action-trigger:active {
       transform: scale(0.96);
@@ -832,423 +1020,15 @@
       font-family: var(--sans);
     }
 
-    /* ==========================================================================
-       SANDBOX PREVIEW LOOP OVERRIDES (THE "STARTS VISIBLE" PATTERN)
-       ========================================================================== */
-    .preview-canvas * {
-      --sds-duration: 3.2s !important;
-      animation-iteration-count: infinite !important;
-      animation-direction: normal !important;
-      animation-fill-mode: none !important;
-    }
 
-    /* Overriding keyframes inside the preview canvas for seamless starts-visible transitions */
-    .preview-canvas .sds-fade-up { animation: previewFadeUp 3.2s var(--ease-smooth) infinite !important; }
-    .preview-canvas .sds-fade-down { animation: previewFadeDown 3.2s var(--ease-smooth) infinite !important; }
-    .preview-canvas .sds-fade-left { animation: previewFadeLeft 3.2s var(--ease-smooth) infinite !important; }
-    .preview-canvas .sds-fade-right { animation: previewFadeRight 3.2s var(--ease-smooth) infinite !important; }
-    .preview-canvas .sds-blur-in { animation: previewBlurIn 3.2s var(--ease-smooth) infinite !important; }
-    .preview-canvas .sds-soft-blur-in { animation: previewSoftBlurIn 3.2s var(--ease-smooth) infinite !important; }
-    .preview-canvas .sds-focus-blur-resolve { animation: previewFocusBlurResolve 3.2s var(--ease-smooth) infinite !important; }
-    .preview-canvas .sds-stamp-in { animation: previewStampIn 3.2s var(--ease-smooth) infinite !important; }
-    .preview-canvas .sds-bounce-in { animation: previewBounceIn 3.2s var(--ease-smooth) infinite !important; }
-    .preview-canvas .sds-spring-scale-in { animation: previewSpringScaleIn 3.2s var(--ease-smooth) infinite !important; }
-    .preview-canvas .sds-skew-in { animation: previewSkewIn 3.2s var(--ease-spring) infinite !important; }
-    .preview-canvas .sds-rotate-3d { animation: previewRotate3d 3.2s var(--ease-smooth) infinite !important; }
-    .preview-canvas .sds-zoom-blur { animation: previewZoomBlur 3.2s var(--ease-smooth) infinite !important; }
-    .preview-canvas .sds-flip-y { animation: previewFlipY 3.2s var(--ease-spring) infinite !important; }
-    .preview-canvas .sds-scale-down-fade { animation: previewScaleDownFade 3.2s var(--ease-smooth) infinite !important; }
-    .preview-canvas .sds-shared-axis-y { animation: previewSharedAxisY 3.2s var(--ease-smooth) infinite !important; }
-    .preview-canvas .sds-shared-axis-z { animation: previewSharedAxisZ 3.2s var(--ease-smooth) infinite !important; }
-    .preview-canvas .sds-micro-scale-fade { animation: previewMicroScaleFade 3.2s var(--ease-smooth) infinite !important; }
-    .preview-canvas .sds-fade-through { animation: previewFadeThrough 3.2s var(--ease-smooth) infinite !important; }
-    .preview-canvas .sds-short-slide-right { animation: previewShortSlideRight 3.2s var(--ease-smooth) infinite !important; }
-    .preview-canvas .sds-short-slide-down { animation: previewShortSlideDown 3.2s var(--ease-smooth) infinite !important; }
-    .preview-canvas .sds-split-reveal { animation: previewSplitReveal 3.2s var(--ease-reveal) infinite !important; }
-    .preview-canvas .sds-mask-reveal-up { animation: previewMaskRevealUp 3.2s var(--ease-reveal) infinite !important; }
-    .preview-canvas .sds-slide-up-reveal > * { animation: previewSlideUpReveal 3.2s var(--ease-reveal) infinite !important; }
-    .preview-canvas .sds-blur-out-up { animation: previewBlurOutUp 3.2s var(--ease-smooth) infinite !important; }
-
-    /* Stagger reveals overrides inside preview canvas */
-    @keyframes sdsPerCharRise {
-      0%, 65% { transform: translateY(0); }
-      65.01%, 80% { transform: translateY(110%); }
-      100% { transform: translateY(0); }
-    }
-    @keyframes sdsBottomUpChar {
-      0%, 65% { transform: translateY(0); }
-      65.01%, 80% { transform: translateY(110%); }
-      100% { transform: translateY(0); }
-    }
-    @keyframes sdsTopDownChar {
-      0%, 65% { transform: translateY(0); }
-      65.01%, 80% { transform: translateY(-110%); }
-      100% { transform: translateY(0); }
-    }
-    @keyframes sdsPerWordFromRight {
-      0%, 65% { opacity: 1; transform: translateX(0); }
-      65.01%, 80% { opacity: 0; transform: translateX(12px); }
-      100% { opacity: 1; transform: translateX(0); }
-    }
-    @keyframes sdsPerWordFromLeft {
-      0%, 65% { opacity: 1; transform: translateX(0); }
-      65.01%, 80% { opacity: 0; transform: translateX(-12px); }
-      100% { opacity: 1; transform: translateX(0); }
-    }
-    @keyframes sdsKineticCenter {
-      0%, 65% { transform: scale(1) skewX(0); opacity: 1; }
-      65.01%, 80% { transform: scale(0.3) skewX(16deg); opacity: 0; }
-      100% { transform: scale(1) skewX(0); opacity: 1; }
-    }
-
-    /* Overrides for dynamic Card entries */
-    .preview-canvas .sds-card-slide-up { animation: previewCardSlideUp 3.2s var(--ease-smooth) infinite !important; }
-    .preview-canvas .sds-card-slide-down { animation: previewCardSlideDown 3.2s var(--ease-smooth) infinite !important; }
-    .preview-canvas .sds-card-flip { animation: previewCardFlip 3.2s var(--ease-spring) infinite !important; }
-    .preview-canvas .sds-card-reveal { animation: previewCardReveal 3.2s var(--ease-reveal) infinite !important; }
-    .preview-canvas .sds-card-pop { animation: previewCardPop 3.2s var(--ease-smooth) infinite !important; }
-    .preview-canvas .sds-card-shadow-pop { animation: previewCardShadowPop 3.2s var(--ease-smooth) infinite !important; }
-    .preview-canvas .sds-card-slide-left { animation: previewCardSlideLeft 3.2s var(--ease-smooth) infinite !important; }
-    .preview-canvas .sds-card-slide-right { animation: previewCardSlideRight 3.2s var(--ease-smooth) infinite !important; }
-    .preview-canvas .sds-card-rotate-in { animation: previewCardRotateIn 3.2s var(--ease-smooth) infinite !important; }
-    .preview-canvas .sds-card-blur-in { animation: previewCardBlurIn 3.2s var(--ease-smooth) infinite !important; }
-    .preview-canvas .sds-card-unfold { animation: previewCardUnfold 3.2s var(--ease-reveal) infinite !important; }
-    .preview-canvas .sds-card-glitch { animation: previewCardGlitch 3.2s var(--ease-smooth) infinite !important; }
-    .preview-canvas .sds-card-wipe { animation: previewCardWipe 3.2s var(--ease-reveal) infinite !important; }
-    .preview-canvas .sds-card-bounce-in { animation: previewCardBounceIn 3.2s var(--ease-spring) infinite !important; }
-    .preview-canvas .sds-card-depth-in { animation: previewCardDepthIn 3.2s var(--ease-smooth) infinite !important; }
-
-    /* Custom button simulated hover states */
-    @keyframes previewShimmerSim {
-      0% { left: -120%; }
-      100% { left: 140%; }
-    }
-    .preview-canvas .sds-btn-shimmer::after {
-      animation: previewShimmerSim 2.2s var(--ease-smooth) infinite !important;
-    }
-    @keyframes previewMorphBtn {
-      0%, 100% { border-radius: 8px; }
-      50% { border-radius: 9999px; }
-    }
-    .preview-canvas .sds-btn-morph {
-      animation: previewMorphBtn 3s var(--ease-spring) infinite !important;
-    }
-    .preview-canvas .sds-btn-shake {
-      animation: sdsShake 1.8s var(--ease-smooth) infinite !important;
-    }
-    .preview-canvas .sds-btn-stretch {
-      animation: sdsStretchPress 1.5s var(--ease-smooth) infinite !important;
-    }
-    .preview-canvas .sds-btn-confetti {
-      animation: sdsConfettiExplode 1.6s var(--ease-spring) infinite !important;
-    }
-    @keyframes previewDepthBtn {
-      0%, 100% { transform: translateY(-2px); box-shadow: 0 3px 0 var(--sds-primary-dark); }
-      50% { transform: translateY(1px); box-shadow: 0 0px 0 var(--sds-primary-dark); }
-    }
-    .preview-canvas .sds-btn-depth {
-      animation: previewDepthBtn 2s var(--ease-smooth) infinite !important;
-    }
-    @keyframes previewUnderlineBtn {
-      0%, 100% { width: 0%; }
-      50% { width: 100%; }
-    }
-    .preview-canvas .sds-btn-underline::after {
-      animation: previewUnderlineBtn 2.2s var(--ease-reveal) infinite !important;
-    }
-    @keyframes previewSwipeBtn {
-      0%, 100% { width: 0%; }
-      50% { width: 100%; }
-    }
-    .preview-canvas .sds-btn-swipe::before {
-      animation: previewSwipeBtn 2.4s var(--ease-reveal) infinite !important;
-    }
-
-    /* Custom input simulated active states */
-    @keyframes previewFocusGlowSim {
-      0%, 100% { border-color: var(--border); box-shadow: none; }
-      50% { border-color: var(--accent) !important; box-shadow: 0 0 0 3px rgba(77, 95, 255, 0.14) !important; }
-    }
-    @keyframes previewFocusBorderSim {
-      0%, 100% { border-color: var(--border); }
-      50% { border-color: var(--accent) !important; }
-    }
-    @keyframes previewFocusRoundedSim {
-      0%, 100% { border-radius: 8px; border-color: var(--border); box-shadow: none; }
-      50% { border-radius: 12px !important; border-color: var(--accent) !important; box-shadow: 0 0 0 3px rgba(77, 95, 255, 0.1) !important; }
-    }
-    @keyframes previewFocusNeoSim {
-      0%, 100% { box-shadow: 2px 2px 0 var(--primary); transform: translate(0, 0); }
-      50% { box-shadow: 4px 4px 0 var(--primary); transform: translate(-2px, -2px); }
-    }
-    @keyframes previewFocusBounceSim {
-      0%, 100% { border-color: var(--border); box-shadow: none; }
-      50% { border-color: var(--accent) !important; box-shadow: 0 0 0 4px rgba(77, 95, 255, 0.12) !important; }
-    }
-    @keyframes previewFocusAccentLeftSim {
-      0%, 100% { border-left-width: 1px; border-left-color: var(--border); }
-      50% { border-left-width: 3px !important; border-left-color: var(--primary) !important; }
-    }
-    @keyframes previewFocusFrostedSim {
-      0%, 100% { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.12); }
-      50% { background: rgba(255,255,255,0.1) !important; border-color: rgba(255,255,255,0.22) !important; }
-    }
-    @keyframes previewFocusUnderlineSim {
-      0%, 100% { border-bottom-color: rgba(0, 20, 209, 0.3); }
-      50% { border-bottom-color: var(--primary) !important; }
-    }
-    .preview-canvas .sds-input-focus-glow input { animation: previewFocusGlowSim 3s ease infinite !important; }
-    .preview-canvas .sds-input-border input { animation: previewFocusBorderSim 3s ease infinite !important; }
-    .preview-canvas .sds-input-rounded-expand input { animation: previewFocusRoundedSim 3s ease infinite !important; }
-    .preview-canvas .sds-input-neo input { animation: previewFocusNeoSim 3s ease infinite !important; }
-    .preview-canvas .sds-input-bounce input { animation: previewFocusBounceSim 3s ease infinite !important; }
-    .preview-canvas .sds-input-accent-left input { animation: previewFocusAccentLeftSim 3s ease infinite !important; }
-    .preview-canvas .sds-input-frosted input { animation: previewFocusFrostedSim 3s ease infinite !important; }
-    .preview-canvas .sds-input-flat-underline input { animation: previewFocusUnderlineSim 3s ease infinite !important; }
-
-    /* Physical input reveals overrides inside preview canvas */
-    .preview-canvas .sds-input-slide-in { animation: previewInputSlideIn 3.2s var(--ease-smooth) infinite !important; }
-    .preview-canvas .sds-input-shake { animation: previewInputShake 3.2s var(--ease-smooth) infinite !important; }
-    .preview-canvas .sds-input-reveal { animation: previewInputReveal 3.2s var(--ease-reveal) infinite !important; }
-
-    /* Custom preview keyframe definitions using the "starts visible" pattern */
-    @keyframes previewFadeUp {
-      0%, 65% { opacity: 1; transform: translateY(0); }
-      65.01%, 80% { opacity: 0; transform: translateY(16px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes previewFadeDown {
-      0%, 65% { opacity: 1; transform: translateY(0); }
-      65.01%, 80% { opacity: 0; transform: translateY(-16px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes previewFadeLeft {
-      0%, 65% { opacity: 1; transform: translateX(0); }
-      65.01%, 80% { opacity: 0; transform: translateX(18px); }
-      100% { opacity: 1; transform: translateX(0); }
-    }
-    @keyframes previewFadeRight {
-      0%, 65% { opacity: 1; transform: translateX(0); }
-      65.01%, 80% { opacity: 0; transform: translateX(-18px); }
-      100% { opacity: 1; transform: translateX(0); }
-    }
-    @keyframes previewBlurIn {
-      0%, 65% { opacity: 1; filter: blur(0); transform: scale(1); }
-      65.01%, 80% { opacity: 0; filter: blur(10px); transform: scale(0.97); }
-      100% { opacity: 1; filter: blur(0); transform: scale(1); }
-    }
-    @keyframes previewSoftBlurIn {
-      0%, 65% { opacity: 1; filter: blur(0); }
-      65.01%, 80% { opacity: 0; filter: blur(8px); }
-      100% { opacity: 1; filter: blur(0); }
-    }
-    @keyframes previewFocusBlurResolve {
-      0%, 65% { filter: blur(0); letter-spacing: normal; opacity: 1; }
-      65.01%, 80% { filter: blur(14px); letter-spacing: 8px; opacity: 0; }
-      100% { filter: blur(0); letter-spacing: normal; opacity: 1; }
-    }
-    @keyframes previewStampIn {
-      0%, 65% { transform: scale(1) rotate(0); opacity: 1; filter: blur(0); }
-      65.01%, 75% { transform: scale(2.5) rotate(-1deg); opacity: 0; filter: blur(8px); }
-      85% { transform: scale(0.94) rotate(0.3deg); opacity: 1; filter: blur(0); }
-      92% { transform: scale(1.04); }
-      96% { transform: scale(0.98); }
-      100% { transform: scale(1) rotate(0); opacity: 1; }
-    }
-    @keyframes previewBounceIn {
-      0%, 65% { transform: scale(1); opacity: 1; }
-      65.01% { transform: scale(0.3); opacity: 0; }
-      82.5% { transform: scale(1.05); opacity: 0.8; }
-      89.5% { transform: scale(0.9); opacity: 0.9; }
-      96.5% { transform: scale(1.01); opacity: 1; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-    @keyframes previewSpringScaleIn {
-      0%, 65% { transform: scale(1); opacity: 1; }
-      65.01% { transform: scale(0.65); opacity: 0; }
-      79% { transform: scale(1.08); opacity: 1; }
-      87.75% { transform: scale(0.97); }
-      93.7% { transform: scale(1.015); }
-      100% { transform: scale(1.0); opacity: 1; }
-    }
-    @keyframes previewSkewIn {
-      0%, 65% { transform: skewX(0) translateX(0); opacity: 1; }
-      65.01%, 80% { transform: skewX(-18deg) translateX(-24px); opacity: 0; }
-      100% { transform: skewX(0) translateX(0); opacity: 1; }
-    }
-    @keyframes previewRotate3d {
-      0%, 65% { transform: perspective(800px) rotateX(0); opacity: 1; }
-      65.01%, 80% { transform: perspective(800px) rotateX(55deg); opacity: 0; }
-      100% { transform: perspective(800px) rotateX(0); opacity: 1; }
-    }
-    @keyframes previewZoomBlur {
-      0%, 65% { transform: scale(1); filter: blur(0); opacity: 1; }
-      65.01%, 80% { transform: scale(1.25); filter: blur(12px); opacity: 0; }
-      100% { transform: scale(1); filter: blur(0); opacity: 1; }
-    }
-    @keyframes previewFlipY {
-      0%, 65% { transform: perspective(1000px) rotateY(0deg) scale(1.0); opacity: 1; }
-      65.01% { transform: perspective(1000px) rotateY(-90deg) scale(0.9); opacity: 0; }
-      86% { transform: perspective(1000px) rotateY(10deg) scale(1.02); opacity: 0.7; }
-      93% { transform: perspective(1000px) rotateY(-4deg) scale(0.99); opacity: 0.9; }
-      100% { transform: perspective(1000px) rotateY(0deg) scale(1.0); opacity: 1; }
-    }
-    @keyframes previewScaleDownFade {
-      0%, 65% { transform: scale(1); opacity: 1; }
-      65.01%, 80% { transform: scale(1.1); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-    @keyframes previewSharedAxisY {
-      0%, 65% { transform: translateY(0) scale(1); opacity: 1; }
-      65.01%, 80% { transform: translateY(20px) scale(0.97); opacity: 0; }
-      100% { transform: translateY(0) scale(1); opacity: 1; }
-    }
-    @keyframes previewSharedAxisZ {
-      0%, 65% { transform: scale(1); opacity: 1; filter: blur(0); }
-      65.01%, 80% { transform: scale(0.82); opacity: 0; filter: blur(5px); }
-      100% { transform: scale(1); opacity: 1; filter: blur(0); }
-    }
-    @keyframes previewMicroScaleFade {
-      0%, 65% { transform: scale(1); opacity: 1; }
-      65.01%, 80% { transform: scale(0.96); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-    @keyframes previewFadeThrough {
-      0%, 65% { opacity: 1; transform: scale(1) translateY(0); }
-      65.01%, 75% { opacity: 0; transform: scale(0.97) translateY(5px); }
-      85% { opacity: 0.08; }
-      100% { opacity: 1; transform: scale(1) translateY(0); }
-    }
-    @keyframes previewShortSlideRight {
-      0%, 65% { transform: translateX(0); opacity: 1; }
-      65.01%, 80% { transform: translateX(-12px); opacity: 0; }
-      100% { transform: translateX(0); opacity: 1; }
-    }
-    @keyframes previewShortSlideDown {
-      0%, 65% { transform: translateY(0); opacity: 1; }
-      65.01%, 80% { transform: translateY(-12px); opacity: 0; }
-      100% { transform: translateY(0); opacity: 1; }
-    }
-    @keyframes previewSplitReveal {
-      0%, 65% { clip-path: inset(0 0% 0 0); }
-      65.01%, 80% { clip-path: inset(0 100% 0 0); }
-      100% { clip-path: inset(0 0% 0 0); }
-    }
-    @keyframes previewMaskRevealUp {
-      0%, 65% { clip-path: inset(0 0 0% 0); }
-      65.01%, 80% { clip-path: inset(0 0 100% 0); }
-      100% { clip-path: inset(0 0 0% 0); }
-    }
-    @keyframes previewSlideUpReveal {
-      0%, 65% { transform: translateY(0); }
-      65.01%, 80% { transform: translateY(105%); }
-      100% { transform: translateY(0); }
-    }
-    @keyframes previewBlurOutUp {
-      0%, 65% { transform: translateY(-16px); filter: blur(6px); opacity: 0; }
-      65.01%, 80% { transform: translateY(0); filter: blur(0); opacity: 1; }
-      100% { transform: translateY(-16px); filter: blur(6px); opacity: 0; }
-    }
-
-    /* Overrides for dynamic Card entries */
-    @keyframes previewCardSlideUp {
-      0%, 65% { transform: translateY(0); opacity: 1; }
-      65.01%, 80% { transform: translateY(30px); opacity: 0; }
-      100% { transform: translateY(0); opacity: 1; }
-    }
-    @keyframes previewCardSlideDown {
-      0%, 65% { transform: translateY(0); opacity: 1; }
-      65.01%, 80% { transform: translateY(-30px); opacity: 0; }
-      100% { transform: translateY(0); opacity: 1; }
-    }
-    @keyframes previewCardFlip {
-      0%, 65% { transform: perspective(600px) rotateY(0); opacity: 1; }
-      65.01%, 80% { transform: perspective(600px) rotateY(90deg); opacity: 0; }
-      100% { transform: perspective(600px) rotateY(0); opacity: 1; }
-    }
-    @keyframes previewCardReveal {
-      0%, 65% { clip-path: inset(0 0 0% 0); }
-      65.01%, 80% { clip-path: inset(0 0 100% 0); }
-      100% { clip-path: inset(0 0 0% 0); }
-    }
-    @keyframes previewCardPop {
-      0%, 65% { transform: scale(1); opacity: 1; }
-      65.01%, 80% { transform: scale(0.8); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-    @keyframes previewCardShadowPop {
-      0%, 65% { box-shadow: 6px 6px 0 var(--primary); }
-      65.01%, 80% { box-shadow: 0 0 0 rgba(0,0,0,0); }
-      100% { box-shadow: 6px 6px 0 var(--primary); }
-    }
-    @keyframes previewCardSlideLeft {
-      0%, 65% { transform: translateX(0); opacity: 1; }
-      65.01%, 80% { transform: translateX(30px); opacity: 0; }
-      100% { transform: translateX(0); opacity: 1; }
-    }
-    @keyframes previewCardSlideRight {
-      0%, 65% { transform: translateX(0); opacity: 1; }
-      65.01%, 80% { transform: translateX(-30px); opacity: 0; }
-      100% { transform: translateX(0); opacity: 1; }
-    }
-    @keyframes previewCardRotateIn {
-      0%, 65% { transform: rotate(0) scale(1); opacity: 1; }
-      65.01%, 80% { transform: rotate(-5deg) scale(0.9); opacity: 0; }
-      100% { transform: rotate(0) scale(1); opacity: 1; }
-    }
-    @keyframes previewCardBlurIn {
-      0%, 65% { filter: blur(0); opacity: 1; }
-      65.01%, 80% { filter: blur(8px); opacity: 0; }
-      100% { filter: blur(0); opacity: 1; }
-    }
-    @keyframes previewCardUnfold {
-      0%, 65% { transform: scaleY(1); }
-      65.01%, 80% { transform: scaleY(0); }
-      100% { transform: scaleY(1); }
-    }
-    @keyframes previewCardGlitch {
-      0%, 65% { transform: scale(1); opacity: 1; filter: blur(0); }
-      65.01%, 80% { transform: scale(0.85); opacity: 0; filter: blur(5px); }
-      100% { transform: scale(1); opacity: 1; filter: blur(0); }
-    }
-    @keyframes previewCardWipe {
-      0%, 65% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-      65.01%, 80% { clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); }
-      100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-    }
-    @keyframes previewCardBounceIn {
-      0%, 65% { transform: scale(1); opacity: 1; }
-      65.01%, 75% { transform: scale(0.5); opacity: 0; }
-      85% { transform: scale(1.08); }
-      92% { transform: scale(0.97); }
-      100% { transform: scale(1); opacity: 1; }
-    }
-    @keyframes previewCardDepthIn {
-      0%, 65% { transform: perspective(500px) translateZ(0); opacity: 1; }
-      65.01%, 80% { transform: perspective(500px) translateZ(-80px); opacity: 0; }
-      100% { transform: perspective(500px) translateZ(0); opacity: 1; }
-    }
-
-    /* Physical input reveals */
-    @keyframes previewInputSlideIn {
-      0%, 65% { transform: translateX(0); opacity: 1; }
-      65.01%, 80% { transform: translateX(-12px); opacity: 0; }
-      100% { transform: translateX(0); opacity: 1; }
-    }
-    @keyframes previewInputShake {
-      0%, 65% { transform: translateX(0); }
-      65.01% { transform: translateX(0); }
-      68%   { transform: translateX(-5px); }
-      72%  { transform: translateX(4px); }
-      76%  { transform: translateX(-3px); }
-      80%  { transform: translateX(2px); }
-      84%  { transform: translateX(-1px); }
-      88%, 100% { transform: translateX(0); }
-    }
-    @keyframes previewInputReveal {
-      0%, 65% { clip-path: inset(0 0% 0 0); }
-      65.01%, 80% { clip-path: inset(0 100% 0 0); }
-      100% { clip-path: inset(0 0% 0 0); }
+    @media (max-width: 1100px) {
+      .left-panel { display: none; }
+      .sandbox-topbar, .workspace-section { padding-left: 16px; padding-right: 16px; }
+      .sandbox-title { font-size: 24px; }
+      .anim-grid { grid-template-columns: 1fr; gap: 16px; }
+      .card-controls { grid-template-columns: 1fr; }
+      .card-footer { flex-wrap: wrap; }
+      .class-pill, .btn-action-trigger { width: 100%; justify-content: center; }
     }
 
     @keyframes heartbeat {
@@ -1266,7 +1046,7 @@
 
       <!-- Logo -->
       <div class="logo-wrap">
-        <img src="/src/assets/images/logo.svg" alt="Studio Logo" class="sidebar-logo">
+        <img src="../src/assets/images/logo.svg" alt="Studio Logo" class="sidebar-logo">
       </div>
 
       <!-- Tagline -->
@@ -1355,78 +1135,43 @@
 
   <!-- RIGHT CONTENT PANEL -->
   <main class="right-panel">
-
-    <!-- TABS NAVIGATION BAR -->
-    <div class="tabs-bar">
-      <button class="tab-btn active" id="tab-text" onclick="switchSection('text', this)">
-        Text <span class="tab-count" id="count-text">30</span>
-      </button>
-      <button class="tab-btn" id="tab-button" onclick="switchSection('button', this)">
-        Buttons <span class="tab-count" id="count-button">19</span>
-      </button>
-      <button class="tab-btn" id="tab-input" onclick="switchSection('input', this)">
-        Inputs <span class="tab-count" id="count-input">14</span>
-      </button>
-      <button class="tab-btn" id="tab-card" onclick="switchSection('card', this)">
-        Cards <span class="tab-count" id="count-card">25</span>
-      </button>
-      <button class="tab-btn" id="tab-loader" onclick="switchSection('loader', this)">
-        Loaders <span class="tab-count" id="count-loader">11</span>
-      </button>
-      <button class="tab-btn" id="tab-scroll" onclick="switchSection('scroll', this)">
-        Scroll <span class="tab-count" id="count-scroll">15</span>
-      </button>
-      <button class="tab-btn" id="tab-webcomp" onclick="switchSection('webcomp', this)">
-        Components
-      </button>
+    <div class="sandbox-topbar">
+      <div class="sandbox-topbar-row">
+        <div>
+          <h2 class="sandbox-title">Developer Playground Sandbox</h2>
+          <p class="sandbox-subtitle">Test timing curves, custom modifiers, and copy compiled class names instantly.</p>
+          <span class="sandbox-live">Continuous Live Loop Active</span>
+        </div>
+        <a class="sandbox-github" href="https://github.com/salkomdesignstudio/sds-motion" target="_blank" rel="noopener noreferrer">GitHub Project</a>
+      </div>
+      <div class="tabs-bar">
+        <button class="tab-btn active" id="tab-text" onclick="switchSection('text', this)">
+          Text Systems <span class="tab-count" id="count-text">30</span>
+        </button>
+        <button class="tab-btn" id="tab-button" onclick="switchSection('button', this)">
+          Button States <span class="tab-count" id="count-button">19</span>
+        </button>
+        <button class="tab-btn" id="tab-input" onclick="switchSection('input', this)">
+          Inputs &amp; Focus <span class="tab-count" id="count-input">14</span>
+        </button>
+        <button class="tab-btn" id="tab-card" onclick="switchSection('card', this)">
+          Cards &amp; Depth <span class="tab-count" id="count-card">25</span>
+        </button>
+        <button class="tab-btn" id="tab-loader" onclick="switchSection('loader', this)">
+          Loaders &amp; Skeletons <span class="tab-count" id="count-loader">11</span>
+        </button>
+        <button class="tab-btn" id="tab-scroll" onclick="switchSection('scroll', this)">
+          Scroll Viewports <span class="tab-count" id="count-scroll">15</span>
+        </button>
+        <button class="tab-btn" id="tab-webcomp" onclick="switchSection('webcomp', this)">
+          Web Components <span class="tab-count">3</span>
+        </button>
+      </div>
     </div>
 
     <!-- WORKSPACE SECTION -->
     <section class="workspace-section">
       
-      <!-- Global Modifier variables panel -->
-      <div class="global-variables-bar" id="variablesBar">
-        <div class="global-bar-label">
-          <span class="indicator-pulse"></span>
-          Continuous Live Loop Active
-        </div>
-        <div class="vars-group">
-          
-          <div class="var-select-wrap">
-            <span class="var-label">Global Speed:</span>
-            <select class="var-select" id="global-speed" onchange="applyGlobalModifiers()">
-              <option value="">0.6s (Default)</option>
-              <option value="sds-slow">Slow (1.2s)</option>
-              <option value="sds-fast">Fast (0.3s)</option>
-              <option value="sds-instant">Instant</option>
-            </select>
-          </div>
-
-          <div class="var-select-wrap">
-            <span class="var-label">Global Delay:</span>
-            <select class="var-select" id="global-delay" onchange="applyGlobalModifiers()">
-              <option value="">0ms (None)</option>
-              <option value="sds-delay-1">100ms</option>
-              <option value="sds-delay-2">200ms</option>
-              <option value="sds-delay-3">300ms</option>
-              <option value="sds-delay-4">400ms</option>
-              <option value="sds-delay-5">500ms</option>
-            </select>
-          </div>
-
-          <div class="var-select-wrap">
-            <span class="var-label">Global Easing:</span>
-            <select class="var-select" id="global-easing" onchange="applyGlobalModifiers()">
-              <option value="">Smooth (Default)</option>
-              <option value="sds-spring">Spring</option>
-              <option value="sds-bounce">Bounce</option>
-              <option value="sds-reveal">Reveal</option>
-            </select>
-          </div>
-
-        </div>
-      </div>
-
       <!-- Target Dynamic Workspace grid -->
       <div id="section-content"></div>
 
@@ -1446,10 +1191,10 @@
      PLAYGROUND ANIMATION DATABASE
      ========================================================================== */
   const textAnimations = [
-    { id: "fade-up",      name: "Fade Up",        cls: "sds-fade-up",      desc: "Refined upward entrance with subtle opacity transition and short travel distance.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Hello World</span>' },
-    { id: "fade-down",    name: "Fade Down",      cls: "sds-fade-down",    desc: "Smooth top-down spatial entrance with premium easing and controlled vertical drift.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Drop Reveal</span>' },
-    { id: "fade-left",    name: "Fade Left",      cls: "sds-fade-left",    desc: "Horizontal right-to-left movement with clean opacity layering and restrained distance.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">From Right</span>' },
-    { id: "fade-right",   name: "Fade Right",     cls: "sds-fade-right",   desc: "Horizontal left-to-right movement with restrained movement distance and smooth settle.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">From Left</span>' },
+    { id: "fade-up",      name: "Fade Up",        cls: "sds-fade-up",      previewClass: "mf-preview-fade-up", desc: "Refined upward entrance with subtle opacity transition and short travel distance.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Hello World</span>' },
+    { id: "fade-down",    name: "Fade Down",      cls: "sds-fade-down",    previewClass: "mf-preview-fade-down", desc: "Smooth top-down spatial entrance with premium easing and controlled vertical drift.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Drop Reveal</span>' },
+    { id: "fade-left",    name: "Fade Left",      cls: "sds-fade-left",    previewClass: "mf-preview-fade-left", desc: "Horizontal right-to-left movement with clean opacity layering and restrained distance.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">From Right</span>' },
+    { id: "fade-right",   name: "Fade Right",     cls: "sds-fade-right",   previewClass: "mf-preview-fade-right", desc: "Horizontal left-to-right movement with restrained movement distance and smooth settle.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">From Left</span>' },
     { id: "blur-in",      name: "Blur In",        cls: "sds-blur-in",      desc: "10px Gaussian defocus clears to sharp with scale 0.97→1. Spatial depth on entrance.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Atmospheric</span>' },
     { id: "glitch",       name: "Chromatic Glitch", cls: "sds-glitch sds-infinite", desc: "Subtle 1.5px RGB offset aberration firing at tail of each cycle — ambient digital noise.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700;letter-spacing:1px;color:var(--accent2)">GLITCH</span>', trigger: "infinite" },
     { id: "typewriter",   name: "Typewriter",     cls: "sds-typewriter",   desc: "True sequential character reveal with realistic cursor timing and stepped cadence.", preview: '<span style="font-family:monospace;font-size:16px;font-weight:600">console.log(sds)</span>' },
@@ -1457,8 +1202,8 @@
     { id: "split-reveal", name: "Split Reveal",   cls: "sds-split-reveal", desc: "clip-path wipes from left edge to right — sharp, clean line reveal.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Sleek Mask</span>' },
     { id: "color-cycle",  name: "Color Cycle",    cls: "sds-color-cycle sds-infinite",  desc: "Ambient HSL palette shift cycling through brand accent colors continuously.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Spectrum</span>', trigger: "infinite" },
     { id: "neon-pulse",   name: "Neon Pulse",     cls: "sds-neon-pulse sds-infinite",   desc: "OLED-style ambient glow: text-shadow breathing between 4px–20px at low opacity.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700;color:var(--accent2)">Neon Halo</span>', trigger: "infinite" },
-    { id: "stamp-in",     name: "Stamp In",       cls: "sds-stamp-in",     desc: "Physical impact entrance: drops from 2.5x scale with blur, squishes on impact at 0.94x, overshoots, settles at 1x.", preview: '<span style="font-family:var(--display);font-size:26px;font-weight:800;letter-spacing:-1px">STAMP</span>' },
-    { id: "bounce-in",    name: "Bounce In",      cls: "sds-bounce-in",    desc: "Natural spring physics with damped settling behavior instead of exaggerated cartoon bounce.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Elastic!</span>' },
+    { id: "stamp-in",     name: "Stamp In",       cls: "sds-stamp-in",     previewClass: "mf-preview-stamp-in", desc: "Physical impact entrance: drops from 2.5x scale with blur, squishes on impact at 0.94x, overshoots, settles at 1x.", preview: '<span style="font-family:var(--display);font-size:26px;font-weight:800;letter-spacing:-1px">STAMP</span>' },
+    { id: "bounce-in",    name: "Bounce In",      cls: "sds-bounce-in",    previewClass: "mf-preview-bounce-in", desc: "Natural spring physics with damped settling behavior instead of exaggerated cartoon bounce.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Elastic!</span>' },
     { id: "flicker",      name: "Gas Flicker",    cls: "sds-flicker sds-infinite",     desc: "High-frequency opacity interruption pattern — mimics neon tube or cathode discharge.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700;color:var(--accent2)">Flickering</span>', trigger: "infinite" },
     { id: "skew-in",      name: "Skew In",        cls: "sds-skew-in",      desc: "Enters with -18deg skew distortion + 24px X offset, spring-recovers to upright.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Skewed Entry</span>' },
     { id: "shadow-trail", name: "Shadow Trail",   cls: "sds-shadow-trail sds-infinite", desc: "Slow ambient chroma shadow shift cycling between brand colors — alternate direction loop.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Trails</span>', trigger: "infinite" },
@@ -1469,26 +1214,26 @@
     { id: "rotate-3d",    name: "Rotate 3D",      cls: "sds-rotate-3d",    desc: "Text hinges down from 55deg X-axis rotation with 800px perspective — depth-realistic reveal.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Perspective</span>' },
     { id: "shadow-pop",   name: "Shadow Pop",     cls: "sds-shadow-pop",   desc: "Neo-brutalist 3px offset block shadow appears as element fades in.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700;color:var(--accent2)">Brutalist</span>' },
     { id: "zoom-blur",    name: "Zoom Blur",      cls: "sds-zoom-blur",    desc: "Enters 1.25x zoomed-in with 12px blur, resolves to natural 1x sharp size.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Zoom Clear</span>' },
-    { id: "flip-y",       name: "Flip Y Axis",    cls: "sds-flip-y",       desc: "Y-axis card flip from 90deg edge-on to face-forward — spring settle after flip.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Card Flip</span>' },
+    { id: "flip-y",       name: "Flip Y Axis",    cls: "sds-flip-y",       previewClass: "mf-preview-flip-y", desc: "Y-axis card flip from 90deg edge-on to face-forward — spring settle after flip.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Card Flip</span>' },
     { id: "soft-blur-in", name: "Soft Blur In",   cls: "sds-soft-blur-in", desc: "Pure 8px Gaussian dissolve with opacity — no scale distortion, just clean focus.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Soft Focus</span>' },
     { id: "per-character-rise", name: "Per-Character Rise", cls: "sds-per-character-rise", desc: "Staggered character masking and vertical rise sequencing with clean clip-boundary reveals.", preview: '<span class="sds-per-character-rise" style="font-family:var(--display);font-size:26px;font-weight:700"><span class="sds-char" data-char="R" style="--sds-char-index:0"><span style="display:block;animation:sdsPerCharRise 0.6s cubic-bezier(0.16,1,0.3,1) calc(0ms) both">R</span></span><span class="sds-char" data-char="I" style="--sds-char-index:1"><span style="display:block;animation:sdsPerCharRise 0.6s cubic-bezier(0.16,1,0.3,1) calc(38ms) both">I</span></span><span class="sds-char" data-char="S" style="--sds-char-index:2"><span style="display:block;animation:sdsPerCharRise 0.6s cubic-bezier(0.16,1,0.3,1) calc(76ms) both">S</span></span><span class="sds-char" data-char="E" style="--sds-char-index:3"><span style="display:block;animation:sdsPerCharRise 0.6s cubic-bezier(0.16,1,0.3,1) calc(114ms) both">E</span></span></span>' },
     { id: "per-word-crossfade", name: "Per-Word Crossfade", cls: "sds-per-word-crossfade", desc: "Staggered word transition with alternating directional offsets and smooth opacity interpolation.", preview: '<span class="sds-per-word-crossfade" style="font-family:var(--display);font-size:22px;font-weight:700"><span class="sds-word" style="--sds-word-index:0">Motion</span><span class="sds-word" style="--sds-word-index:1">Forge</span></span>' },
-    { id: "spring-scale-in", name: "Spring Scale In", cls: "sds-spring-scale-in", desc: "Physically believable spring scaling with realistic damping and restrained overshoot.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Spring!</span>' },
+    { id: "spring-scale-in", name: "Spring Scale In", cls: "sds-spring-scale-in", previewClass: "mf-preview-spring-scale-in", desc: "Physically believable spring scaling with realistic damping and restrained overshoot.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Spring!</span>' },
     { id: "mask-reveal-up", name: "Mask Reveal Up", cls: "sds-mask-reveal-up", desc: "clip-path wipes from bottom edge upward — text appears from behind lower mask boundary.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Mask Reveal</span>' },
     { id: "line-by-line-slide", name: "Line Slide", cls: "sds-line-by-line-slide", desc: "Each direct child line rises 22px staggered 110ms apart — paragraph reveal system.", preview: '<div style="font-family:var(--display);font-size:16px;font-weight:700;line-height:1.6;text-align:center"><p style="margin:0">Line Number One</p><p style="margin:0">Line Number Two</p></div>' },
-    { id: "micro-scale-fade", name: "Micro Scale",   cls: "sds-micro-scale-fade", desc: "Imperceptible 0.96→1.0 scale with opacity: minimal depth signal for dashboard cards.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Micro Entry</span>' },
+    { id: "micro-scale-fade", name: "Micro Scale",   cls: "sds-micro-scale-fade", previewClass: "mf-preview-micro-scale-fade", desc: "Imperceptible 0.96→1.0 scale with opacity: minimal depth signal for dashboard cards.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Micro Entry</span>' },
     { id: "shimmer-sweep", name: "Shimmer Sweep",  cls: "sds-shimmer-sweep sds-infinite", desc: "Light gradient sweeps continuously across text — ideal for loading or active states.", preview: '<span style="font-family:var(--display);font-size:26px;font-weight:800">Shimmering</span>', trigger: "infinite" },
     { id: "fade-through",  name: "Fade Through",   cls: "sds-fade-through",  desc: "M3 container transition: opacity dips to near-zero at 40% midpoint then resolves with Y drift.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Fade Across</span>' },
-    { id: "shared-axis-y", name: "Shared Axis Y",  cls: "sds-shared-axis-y", desc: "Modern Framer-style shared-axis vertical transition with synchronized scale and position cues.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Axis Y</span>' },
-    { id: "shared-axis-z", name: "Shared Axis Z",  cls: "sds-shared-axis-z", desc: "Depth-based shared-axis transition using spatial layering, scale compression, and focus resolve.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Depth Z</span>' },
+    { id: "shared-axis-y", name: "Shared Axis Y",  cls: "sds-shared-axis-y", previewClass: "mf-preview-shared-axis-y", desc: "Modern Framer-style shared-axis vertical transition with synchronized scale and position cues.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Axis Y</span>' },
+    { id: "shared-axis-z", name: "Shared Axis Z",  cls: "sds-shared-axis-z", previewClass: "mf-preview-shared-axis-z", desc: "Depth-based shared-axis transition using spatial layering, scale compression, and focus resolve.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Depth Z</span>' },
     { id: "blur-out-up",   name: "Blur Out Up",    cls: "sds-blur-out-up",   desc: "EXIT: element rises 16px while blurring to 6px and fading to transparent.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Float Exit</span>' },
-    { id: "scale-down-fade", name: "Scale Down Fade", cls: "sds-scale-down-fade", desc: "Subtle scale decay combined with smooth opacity interpolation for a calm depth transition.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Scale Settle</span>' },
+    { id: "scale-down-fade", name: "Scale Down Fade", cls: "sds-scale-down-fade", previewClass: "mf-preview-scale-down-fade", desc: "Subtle scale decay combined with smooth opacity interpolation for a calm depth transition.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Scale Settle</span>' },
     { id: "focus-blur-resolve", name: "Focus Resolve", cls: "sds-focus-blur-resolve", desc: "14px heavy defocus + 8px letter-spacing contracts as sharpness resolves — lens focus.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Lens Focus</span>' },
     { id: "bottom-up-letters", name: "Bottom-Up", cls: "sds-bottom-up-letters", desc: "Each character rises from below its own clip container, staggered 38ms sequentially.", preview: '<span class="sds-bottom-up-letters" style="font-family:var(--display);font-size:24px;font-weight:700"><span class="sds-char" data-char="U" style="--sds-char-index:0"><span style="display:block;animation:sdsBottomUpChar 0.6s cubic-bezier(0.16,1,0.3,1) calc(0ms) both">U</span></span><span class="sds-char" data-char="P" style="--sds-char-index:1"><span style="display:block;animation:sdsBottomUpChar 0.6s cubic-bezier(0.16,1,0.3,1) calc(38ms) both">P</span></span><span class="sds-char" data-char="W" style="--sds-char-index:2"><span style="display:block;animation:sdsBottomUpChar 0.6s cubic-bezier(0.16,1,0.3,1) calc(76ms) both">W</span></span><span class="sds-char" data-char="A" style="--sds-char-index:3"><span style="display:block;animation:sdsBottomUpChar 0.6s cubic-bezier(0.16,1,0.3,1) calc(114ms) both">A</span></span><span class="sds-char" data-char="R" style="--sds-char-index:4"><span style="display:block;animation:sdsBottomUpChar 0.6s cubic-bezier(0.16,1,0.3,1) calc(152ms) both">R</span></span><span class="sds-char" data-char="D" style="--sds-char-index:5"><span style="display:block;animation:sdsBottomUpChar 0.6s cubic-bezier(0.16,1,0.3,1) calc(190ms) both">D</span></span></span>' },
     { id: "top-down-letters", name: "Top-Down", cls: "sds-top-down-letters", desc: "Each character drops from above its own clip container, staggered 38ms sequentially.", preview: '<span class="sds-top-down-letters" style="font-family:var(--display);font-size:24px;font-weight:700"><span class="sds-char" data-char="D" style="--sds-char-index:0"><span style="display:block;animation:sdsTopDownChar 0.6s cubic-bezier(0.16,1,0.3,1) calc(0ms) both">D</span></span><span class="sds-char" data-char="O" style="--sds-char-index:1"><span style="display:block;animation:sdsTopDownChar 0.6s cubic-bezier(0.16,1,0.3,1) calc(38ms) both">O</span></span><span class="sds-char" data-char="W" style="--sds-char-index:2"><span style="display:block;animation:sdsTopDownChar 0.6s cubic-bezier(0.16,1,0.3,1) calc(76ms) both">W</span></span><span class="sds-char" data-char="N" style="--sds-char-index:3"><span style="display:block;animation:sdsTopDownChar 0.6s cubic-bezier(0.16,1,0.3,1) calc(114ms) both">N</span></span></span>' },
     { id: "kinetic-center-build", name: "Kinetic Build", cls: "sds-kinetic-center-build", desc: "Each character scales from 0.3x with 16deg skew, spring-settles staggered 45ms apart.", preview: '<span class="sds-kinetic-center-build" style="font-family:var(--display);font-size:24px;font-weight:700"><span class="sds-char" style="--sds-char-index:0">K</span><span class="sds-char" style="--sds-char-index:1">I</span><span class="sds-char" style="--sds-char-index:2">N</span><span class="sds-char" style="--sds-char-index:3">E</span><span class="sds-char" style="--sds-char-index:4">T</span><span class="sds-char" style="--sds-char-index:5">I</span><span class="sds-char" style="--sds-char-index:6">C</span></span>' },
-    { id: "short-slide-right", name: "Short Slide Right", cls: "sds-short-slide-right", desc: "Compact horizontal motion with restrained distance, crisp easing, and clean landing.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Slide Right →</span>' },
-    { id: "short-slide-down",  name: "Short Slide Down",  cls: "sds-short-slide-down",  desc: "Compact vertical motion with minimal displacement and smooth timing control.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">↓ Slide Down</span>' }
+    { id: "short-slide-right", name: "Short Slide Right", cls: "sds-short-slide-right", previewClass: "mf-preview-short-slide-right", desc: "Compact horizontal motion with restrained distance, crisp easing, and clean landing.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Slide Right →</span>' },
+    { id: "short-slide-down",  name: "Short Slide Down",  cls: "sds-short-slide-down",  previewClass: "mf-preview-short-slide-down", desc: "Compact vertical motion with minimal displacement and smooth timing control.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">↓ Slide Down</span>' }
   ];
 
   const buttonAnimations = [
@@ -1499,7 +1244,7 @@
     { id: "btn-morph", name: "Pill Morph", cls: "sds-btn-morph", desc: "Hover to expand border-radius into a pill shape with spring settle.", preview: '<button style="background:var(--primary);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">Hover Me</button>', trigger: "hover" },
     { id: "btn-neon", name: "Neon Outline", cls: "sds-btn-neon", desc: "Ambient border glow ring brightens on hover — elegant, not flashy.", preview: '<button style="padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">Ambient Glow</button>', trigger: "hover" },
     { id: "btn-gradient", name: "Gradient Shift", cls: "sds-btn-gradient", desc: "Background brand gradient cycles in motion.", preview: '<button style="color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">Animated Gradient</button>', trigger: "infinite" },
-    { id: "btn-shake", name: "Error Shake", cls: "sds-btn-shake", desc: "Rapid horizontal offset alert feedback.", preview: '<button style="background:#2d1414;color:#ef4444;border:1px solid rgba(239,68,68,0.2);padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">Invalid Action</button>', trigger: "click" },
+    { id: "btn-shake", name: "Error Shake", cls: "sds-btn-shake", desc: "Rapid horizontal offset alert feedback.", preview: '<button style="background:#fff2f2;color:#b91c1c;border:1px solid rgba(185,28,28,0.2);padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">Invalid Action</button>', trigger: "click" },
     { id: "btn-float", name: "Float Lift", cls: "sds-btn-float", desc: "Elevates upward on hover with soft shadow layer.", preview: '<button style="background:var(--primary);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">Lifts Up</button>', trigger: "hover" },
     { id: "btn-glow-bg", name: "Breathing BG", cls: "sds-btn-glow-bg", desc: "Background surface breathes in glow strength.", preview: '<button style="color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">Breathing</button>', trigger: "infinite" },
     { id: "btn-stretch", name: "Stretch Active", cls: "sds-btn-stretch", desc: "Physical elastic compression on active click.", preview: '<button style="background:var(--primary);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">Compresses</button>', trigger: "click" },
@@ -1507,7 +1252,7 @@
     { id: "btn-rubber", name: "Rubber Band", cls: "sds-btn-rubber", desc: "Organic physical expansion bounce.", preview: '<button style="background:var(--primary);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">Elastic Band</button>', trigger: "hover" },
     { id: "btn-icon-slide", name: "Arrow Slide", cls: "sds-btn-icon-slide", desc: "Inner icon arrow slides smoothly on hover.", preview: '<button style="background:var(--primary);color:#fff;border:none;padding:12px 24px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer;display:flex;align-items:center;gap:6px">Continue <span class="sds-icon">→</span></button>', trigger: "hover" },
     { id: "btn-confetti", name: "Confetti Burst", cls: "sds-btn-confetti", desc: "Bouncy scale burst on click validation.", preview: '<button style="background:var(--green);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:700;font-size:13.5px;cursor:pointer">✓ Submit</button>', trigger: "click" },
-    { id: "btn-heartbeat", name: "Heartbeat CTA", cls: "sds-btn-heartbeat", desc: "Engaging heartbeat breathing loop for actions.", preview: '<button style="background:#2a1622;color:#ff4b72;border:1px solid rgba(255,75,114,0.2);padding:12px 24px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">♥ Add Favorite</button>', trigger: "infinite" },
+    { id: "btn-heartbeat", name: "Heartbeat CTA", cls: "sds-btn-heartbeat", desc: "Engaging heartbeat breathing loop for actions.", preview: '<button style="background:#fff0f5;color:#be185d;border:1px solid rgba(190,24,93,0.22);padding:12px 24px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">♥ Add Favorite</button>', trigger: "infinite" },
     { id: "btn-underline", name: "Link Underline", cls: "sds-btn-underline", desc: "Underline grows from left edge on hover.", preview: '<button style="background:none;border:none;color:var(--text);padding:8px 2px;font-weight:600;font-size:14.5px;cursor:pointer">Learn More</button>', trigger: "hover" },
     { id: "btn-swipe", name: "Swipe Sweep", cls: "sds-btn-swipe", desc: "Background floods across behind label on hover.", preview: '<button style="color:var(--accent2);border:1px solid var(--accent);background:transparent;padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer;position:relative;overflow:hidden;z-index:1;">Swipe Hover</button>', trigger: "hover" },
     { id: "btn-depth", name: "Depth Press", cls: "sds-btn-depth", desc: "3D perspective presses down with shadow reduction.", preview: '<button style="background:var(--primary);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">3D Button</button>', trigger: "click" }
@@ -1526,7 +1271,7 @@
     { id: "input-reveal", name: "Mask Reveal", cls: "sds-input-reveal", desc: "Reveal clip transitions upon entry.", preview: '<div class="sds-input-wrapper"><label class="sds-input-label">Mask Reveal</label><input placeholder="Clip reveal..." style="background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:12px 16px;border-radius:8px;width:100%;outline:none"></div>' },
     { id: "input-bounce", name: "Focus Bounce", cls: "sds-input-bounce", desc: "Bounces upward elastically upon cursor active focus.", preview: '<div class="sds-input-wrapper"><label class="sds-input-label">Focus Bounce</label><input placeholder="Elevates..." style="background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:12px 16px;border-radius:8px;width:100%;outline:none"></div>' },
     { id: "input-accent-left", name: "Accent Bar", cls: "sds-input-accent-left", desc: "Sleek leading vertical bar expands on active focus.", preview: '<div class="sds-input-wrapper"><label class="sds-input-label">Accent Bar</label><input placeholder="Left border..." style="background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:12px 16px;border-radius:8px;width:100%;outline:none"></div>' },
-    { id: "input-frosted", name: "Frosted Glass", cls: "sds-input-frosted", desc: "Glassmorphic frosted glass panels with blur sheens.", preview: '<div class="sds-input-wrapper"><label class="sds-input-label">Frosted Glass</label><input placeholder="Glass component..." style="padding:12px 16px;border-radius:12px;width:100%;border:1px solid rgba(255,255,255,0.12);outline:none;background:rgba(255,255,255,0.06);backdrop-filter:blur(10px);"></div>' },
+    { id: "input-frosted", name: "Frosted Glass", cls: "sds-input-frosted", desc: "Glassmorphic frosted glass panels with blur sheens.", preview: '<div class="sds-input-wrapper"><label class="sds-input-label">Frosted Glass</label><input placeholder="Glass component..." style="padding:12px 16px;border-radius:12px;width:100%;border:1px solid rgba(77,95,255,0.2);outline:none;background:rgba(255,255,255,0.85);backdrop-filter:blur(10px);"></div>' },
     { id: "input-flat-underline", name: "Flat Underline", cls: "sds-input-flat-underline", desc: "Minimal borderless input with bottom glowing underline.", preview: '<div class="sds-input-wrapper"><label class="sds-input-label">Flat Underline</label><input placeholder="Underline only..." style="color:var(--text);border:none;border-bottom:1px solid var(--border);padding:10px 4px;width:100%;outline:none;background:transparent;"></div>' }
   ];
 
@@ -1601,14 +1346,11 @@
      ========================================================================== */
   function renderWorkspace() {
     const container = document.getElementById('section-content');
-    const variablesBar = document.getElementById('variablesBar');
     
     if (activeSection === 'webcomp') {
-      variablesBar.style.display = 'none';
       renderWebComponentsSection(container);
       return;
     }
-    variablesBar.style.display = 'flex';
 
     const sectionMeta = {
       text: { title: "Text Systems", desc: "Modular, high-performance entrance reveals and chromas. Fully staggered child elements." },
@@ -1674,7 +1416,39 @@
           <div class="card-meta">
             <h3 class="anim-title">${item.name}</h3>
             <p class="anim-desc">${item.desc}</p>
-            
+            <div class="card-controls">
+              <div class="card-control">
+                <label>Speed</label>
+                <select id="card-speed-${item.id}" onchange="triggerAnimation('${item.id}', '${item.cls}')">
+                  <option value="">0.6s</option>
+                  <option value="sds-slow">Slow (1.2s)</option>
+                  <option value="sds-fast">Fast (0.3s)</option>
+                  <option value="sds-instant">Instant</option>
+                </select>
+              </div>
+              <div class="card-control">
+                <label>Delay</label>
+                <select id="card-delay-${item.id}" onchange="triggerAnimation('${item.id}', '${item.cls}')">
+                  <option value="">0ms (None)</option>
+                  <option value="sds-delay-1">100ms</option>
+                  <option value="sds-delay-2">200ms</option>
+                  <option value="sds-delay-3">300ms</option>
+                  <option value="sds-delay-4">400ms</option>
+                  <option value="sds-delay-5">500ms</option>
+                </select>
+              </div>
+              <div class="card-control">
+                <label>Easing</label>
+                <select id="card-ease-${item.id}" onchange="triggerAnimation('${item.id}', '${item.cls}')">
+                  <option value="">Smooth</option>
+                  <option value="sds-spring">Spring</option>
+                  <option value="sds-bounce">Bounce</option>
+                  <option value="sds-reveal">Reveal</option>
+                </select>
+              </div>
+            </div>
+            <p class="card-control-note">Baseline: 0.6s speed, 0ms delay, Smooth easing.</p>
+             
             <div class="card-footer">
               <button class="class-pill" id="pill-${item.id}" onclick="copyClass('${item.id}', '${item.cls}')" title="Click to copy combined class name">
                 <span class="class-name">${item.cls}</span>
@@ -1812,46 +1586,21 @@
     activeSection = sec;
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    
-    // Reset global modifiers bar values
-    document.getElementById('global-speed').value = "";
-    document.getElementById('global-delay').value = "";
-    document.getElementById('global-easing').value = "";
 
     renderWorkspace();
 
     // Reset right panel scroll position to top
     const rightPanel = document.querySelector('.right-panel');
     if (rightPanel) {
-      rightPanel.scrollTo({ top: 0, behavior: 'smooth' });
+      rightPanel.scrollTo({ top: 0, behavior: 'auto' });
     }
   }
 
-  function getGlobalModifiers() {
-    const speed = document.getElementById('global-speed').value;
-    const delay = document.getElementById('global-delay').value;
-    const ease = document.getElementById('global-easing').value;
-
-    let modifiers = [];
-    if (speed) modifiers.push(speed);
-    if (delay) modifiers.push(delay);
-    if (ease) modifiers.push(ease);
-
-    return modifiers.join(' ');
-  }
-
-  function applyGlobalModifiers() {
-    let db = [];
-    if (activeSection === 'text') db = textAnimations;
-    else if (activeSection === 'button') db = buttonAnimations;
-    else if (activeSection === 'input') db = inputAnimations;
-    else if (activeSection === 'card') db = cardAnimations;
-    else if (activeSection === 'loader') db = loaderAnimations;
-    else if (activeSection === 'scroll') db = scrollAnimations;
-
-    db.forEach(item => {
-      triggerAnimation(item.id, item.cls);
-    });
+  function getCardModifiers(id) {
+    const speed = document.getElementById(`card-speed-${id}`)?.value || "";
+    const delay = document.getElementById(`card-delay-${id}`)?.value || "";
+    const ease = document.getElementById(`card-ease-${id}`)?.value || "";
+    return [speed, delay, ease].filter(Boolean).join(' ');
   }
 
   function getAnimationTrigger(id) {
@@ -1866,11 +1615,43 @@
     return item?.trigger || "load";
   }
 
+  function getPreviewItemById(id) {
+    const pools = [textAnimations, buttonAnimations, inputAnimations, cardAnimations, loaderAnimations, scrollAnimations];
+    for (const pool of pools) {
+      const hit = pool.find(entry => entry.id === id);
+      if (hit) return hit;
+    }
+    return null;
+  }
+
+  function getPreviewMotionConfig(id) {
+    const speed = document.getElementById(`card-speed-${id}`)?.value || "";
+    const delay = document.getElementById(`card-delay-${id}`)?.value || "";
+    const ease = document.getElementById(`card-ease-${id}`)?.value || "";
+
+    const speedMap = { "": "0.62s", "sds-slow": "1.2s", "sds-fast": "0.34s", "sds-instant": "0.16s" };
+    const delayMap = { "": "0s", "sds-delay-1": "0.1s", "sds-delay-2": "0.2s", "sds-delay-3": "0.3s", "sds-delay-4": "0.4s", "sds-delay-5": "0.5s" };
+    const easeMap = {
+      "": "cubic-bezier(0.2, 0.9, 0.22, 1)",
+      "sds-spring": "cubic-bezier(0.2, 1, 0.24, 1)",
+      "sds-bounce": "cubic-bezier(0.24, 1.06, 0.2, 1)",
+      "sds-reveal": "cubic-bezier(0.22, 0.88, 0.2, 1)"
+    };
+
+    return {
+      duration: speedMap[speed] || speedMap[""],
+      delay: delayMap[delay] || delayMap[""],
+      easing: easeMap[ease] || easeMap[""]
+    };
+  }
+
   function triggerAnimation(id, baseClass) {
     const wrapper = document.getElementById(`target-${id}`);
     if (!wrapper) return;
+    const item = getPreviewItemById(id);
+    const dedicatedPreviewClass = item?.previewClass || null;
     
-    const globalMods = getGlobalModifiers();
+    const globalMods = getCardModifiers(id);
     const pill = document.getElementById(`pill-${id}`);
     const nameSpan = pill ? pill.querySelector('.class-name') : null;
     
@@ -1882,8 +1663,20 @@
       pill.textContent = finalClass;
     }
 
-    const triggerType = getAnimationTrigger(id);
-    const loopClass = triggerType === "infinite" ? "sds-infinite" : "sds-once";
+    const loopClass = "sds-infinite";
+
+    if (dedicatedPreviewClass) {
+      const target = wrapper.firstElementChild || wrapper;
+      const replacement = target.cloneNode(true);
+      replacement.className = `preview-anim-target ${dedicatedPreviewClass}`;
+      const motion = getPreviewMotionConfig(id);
+      replacement.style.animationDuration = motion.duration;
+      replacement.style.animationDelay = motion.delay;
+      replacement.style.animationTimingFunction = motion.easing;
+      replacement.style.animationIterationCount = 'infinite';
+      target.replaceWith(replacement);
+      return;
+    }
 
     if (activeSection === 'input') {
       const outerWrapper = wrapper.querySelector('.sds-input-wrapper') || wrapper.firstElementChild;
@@ -1918,7 +1711,7 @@
   }
 
   function copyClass(id, baseClass) {
-    const globalMods = getGlobalModifiers();
+    const globalMods = getCardModifiers(id);
     const cleanBaseClass = baseClass.replace(/\bsds-infinite\b/g, '').trim();
     const finalClasses = `${cleanBaseClass} ${globalMods}`.replace(/\s+/g, ' ').trim();
     copyToClipboard(finalClasses, `Copied classes: ${finalClasses}`);
@@ -1977,6 +1770,7 @@
 <script src="../dist/motion.min.js" defer></script>
 </body>
 </html>
+
 
 
 

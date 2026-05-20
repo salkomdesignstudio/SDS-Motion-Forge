@@ -76,7 +76,7 @@
 
 /* Spring Scale In — dampened mechanical spring: enters at 0.65x, visibly bounces into 1x */
 .sds-spring-scale-in {
-  animation: sdsSpringScaleIn var(--sds-duration, 0.7s) var(--ease-spring) var(--sds-delay, 0s) both;
+  animation: sdsSpringScaleIn var(--sds-duration, 0.72s) var(--ease-spring) var(--sds-delay, 0s) both;
 }
 
 /* Jello — elastic squash-and-stretch wobble, requires display:inline-block */
@@ -107,13 +107,15 @@
 
 /* Flip Y Axis — Y-axis card flip: text flips from 90deg edge to face-forward */
 .sds-flip-y {
-  animation: sdsFlipY var(--sds-duration, 0.65s) var(--ease-spring) var(--sds-delay, 0s) both;
+  animation: sdsFlipY var(--sds-duration, 0.7s) var(--ease-smooth) var(--sds-delay, 0s) both;
   backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transform-origin: center center;
 }
 
 /* Scale Down Fade — enters at 1.1x, gently settles to 1x with opacity resolve */
 .sds-scale-down-fade {
-  animation: sdsScaleDownFade var(--sds-duration, 0.6s) var(--ease-smooth) var(--sds-delay, 0s) both;
+  animation: sdsScaleDownFade var(--sds-duration, 0.62s) var(--ease-smooth) var(--sds-delay, 0s) both;
 }
 
 /* ==========================================================================
@@ -122,17 +124,17 @@
 
 /* Shared Axis Y — Framer Motion-style: element enters from below with scale+opacity */
 .sds-shared-axis-y {
-  animation: sdsSharedAxisY var(--sds-duration, 0.6s) var(--ease-smooth) var(--sds-delay, 0s) both;
+  animation: sdsSharedAxisY var(--sds-duration, 0.62s) var(--ease-smooth) var(--sds-delay, 0s) both;
 }
 
 /* Shared Axis Z — spatial depth: element materializes from Z-depth with blur dissolve */
 .sds-shared-axis-z {
-  animation: sdsSharedAxisZ var(--sds-duration, 0.65s) var(--ease-smooth) var(--sds-delay, 0s) both;
+  animation: sdsSharedAxisZ var(--sds-duration, 0.66s) var(--ease-smooth) var(--sds-delay, 0s) both;
 }
 
 /* Micro Scale Fade — whisper-quiet 0.96→1.0 scale with opacity, almost imperceptible depth */
 .sds-micro-scale-fade {
-  animation: sdsMicroScaleFade var(--sds-duration, 0.55s) var(--ease-smooth) var(--sds-delay, 0s) both;
+  animation: sdsMicroScaleFade var(--sds-duration, 0.52s) var(--ease-smooth) var(--sds-delay, 0s) both;
 }
 
 /* Fade Through — opacity dips to near-zero mid-flight then resolves (M3 transition pattern) */
@@ -413,7 +415,10 @@
 @keyframes sdsFadeUp {
   from {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(14px);
+  }
+  65% {
+    opacity: 0.92;
   }
   to {
     opacity: 1;
@@ -425,7 +430,10 @@
 @keyframes sdsFadeDown {
   from {
     opacity: 0;
-    transform: translateY(-16px);
+    transform: translateY(-14px);
+  }
+  65% {
+    opacity: 0.92;
   }
   to {
     opacity: 1;
@@ -437,7 +445,10 @@
 @keyframes sdsFadeLeft {
   from {
     opacity: 0;
-    transform: translateX(18px);
+    transform: translateX(14px);
+  }
+  65% {
+    opacity: 0.92;
   }
   to {
     opacity: 1;
@@ -449,7 +460,10 @@
 @keyframes sdsFadeRight {
   from {
     opacity: 0;
-    transform: translateX(-18px);
+    transform: translateX(-14px);
+  }
+  65% {
+    opacity: 0.92;
   }
   to {
     opacity: 1;
@@ -562,21 +576,21 @@
 /* ── Spring Scale In: mechanical spring — 0.65x, clear overshoot, crisp settle ─ */
 @keyframes sdsSpringScaleIn {
   0% {
-    transform: scale(0.65);
+    transform: scale(0.7);
     opacity: 0;
   }
-  40% {
-    transform: scale(1.08);
-    opacity: 1;
+  38% {
+    transform: scale(1.06);
+    opacity: 0.96;
   }
-  65% {
-    transform: scale(0.97);
+  62% {
+    transform: scale(0.985);
   }
-  82% {
-    transform: scale(1.015);
+  80% {
+    transform: scale(1.01);
   }
   100% {
-    transform: scale(1.0);
+    transform: scale(1);
     opacity: 1;
   }
 }
@@ -632,19 +646,19 @@
 /* ── Flip Y: Y-axis card flip from 90deg edge — spring settle to face-forward ── */
 @keyframes sdsFlipY {
   0% {
-    transform: perspective(1000px) rotateY(-90deg) scale(0.9);
+    transform: perspective(1100px) rotateY(-78deg) translateZ(20px) scale(0.94);
     opacity: 0;
   }
-  60% {
-    transform: perspective(1000px) rotateY(10deg) scale(1.02);
-    opacity: 0.7;
+  58% {
+    transform: perspective(1100px) rotateY(9deg) translateZ(0) scale(1.01);
+    opacity: 0.82;
   }
-  80% {
-    transform: perspective(1000px) rotateY(-4deg) scale(0.99);
-    opacity: 0.9;
+  78% {
+    transform: perspective(1100px) rotateY(-3deg) scale(0.998);
+    opacity: 0.94;
   }
   100% {
-    transform: perspective(1000px) rotateY(0deg) scale(1.0);
+    transform: perspective(1100px) rotateY(0deg) translateZ(0) scale(1);
     opacity: 1;
   }
 }
@@ -652,8 +666,11 @@
 /* ── Scale Down Fade: enters 1.1x oversized, settles to natural size ─────────── */
 @keyframes sdsScaleDownFade {
   from {
-    transform: scale(1.1);
+    transform: scale(1.065);
     opacity: 0;
+  }
+  70% {
+    opacity: 0.94;
   }
   to {
     transform: scale(1);
@@ -664,8 +681,11 @@
 /* ── Shared Axis Y: Framer-style — rises 20px, scale 0.97→1, opacity 0→1 ────── */
 @keyframes sdsSharedAxisY {
   from {
-    transform: translateY(20px) scale(0.97);
+    transform: translateY(18px) scale(0.96);
     opacity: 0;
+  }
+  60% {
+    opacity: 0.88;
   }
   to {
     transform: translateY(0) scale(1);
@@ -676,9 +696,12 @@
 /* ── Shared Axis Z: spatial depth — emerges from 0.82x with 5px blur clearing ─ */
 @keyframes sdsSharedAxisZ {
   from {
-    transform: scale(0.82);
+    transform: scale(0.9);
     opacity: 0;
-    filter: blur(5px);
+    filter: blur(4px);
+  }
+  62% {
+    opacity: 0.9;
   }
   to {
     transform: scale(1);
@@ -691,7 +714,7 @@
 @keyframes sdsMicroScaleFade {
   from {
     transform: scale(0.96);
-    opacity: 0;
+    opacity: 0.2;
   }
   to {
     transform: scale(1);
@@ -720,6 +743,9 @@
     transform: translateX(-12px);
     opacity: 0;
   }
+  72% {
+    opacity: 0.92;
+  }
   to {
     transform: translateX(0);
     opacity: 1;
@@ -731,6 +757,9 @@
   from {
     transform: translateY(-12px);
     opacity: 0;
+  }
+  72% {
+    opacity: 0.92;
   }
   to {
     transform: translateY(0);
