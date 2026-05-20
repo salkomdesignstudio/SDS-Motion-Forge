@@ -1,0 +1,1984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SDS Motion — Space-Aesthetic Animation Library for Developers</title>
+  
+  <!-- SEO & Meta -->
+  <meta name="description" content="Production-ready UI animation utility library. High-end easings, spring physics, and modular class names. Developed by Salkom Design Studio.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  
+  <!-- SDS Motion Distribution Stylesheet -->
+  <link rel="stylesheet" href="../dist/motion.min.css">
+  
+  <style>
+    :root {
+      --primary: #0038ff;
+      --primary-dark: #0022cc;
+      --primary-light: #f0f3ff;
+      --primary-mid: #3366ff;
+      
+      --bg: #f8f9fc;
+      --bg2: #ffffff;
+      --bg3: #f1f3f9;
+      
+      --surface: #ffffff;
+      --surface2: #f8f9fc;
+      
+      --border: rgba(0, 56, 255, 0.08);
+      --border2: rgba(0, 56, 255, 0.15);
+      
+      --text: #0f172a;
+      --text2: #475569;
+      --text3: #94a3b8;
+      
+      --accent: #0038ff;
+      --accent2: #3b82f6;
+      --green: #10b981;
+      
+      --mono: 'JetBrains Mono', monospace;
+      --sans: 'DM Sans', sans-serif;
+      --display: 'Syne', sans-serif;
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--surface);
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--accent);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+    }
+
+    /* Layout Grid */
+    .app {
+      display: flex;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+    }
+
+    /* LEFT BRAND PANEL (Fixed & strictly non-scrollable) */
+    .left-panel {
+      width: 380px;
+      min-width: 380px;
+      height: 100vh;
+      background: var(--bg2);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+      z-index: 10;
+    }
+
+    .left-panel::before {
+      content: '';
+      position: absolute;
+      top: -80px; left: -80px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(0, 56, 255, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .left-inner {
+      padding: 32px 28px;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    /* Logo structure */
+    .logo-wrap {
+      display: block;
+      margin-bottom: 24px;
+    }
+    .sidebar-logo {
+      width: 100%;
+      height: auto;
+      max-width: 320px;
+      display: block;
+      filter: drop-shadow(0 0 8px rgba(0, 20, 209, 0.3));
+    }
+.tagline {
+      font-family: var(--display);
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+    }
+    .tagline span {
+      color: var(--accent2);
+    }
+    .sub-text {
+      font-size: 13.5px;
+      color: var(--text2);
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    /* Install block elements & Unified installation card with tabs */
+    .install-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+      margin-top: 20px;
+      margin-bottom: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .install-tabs-bar {
+      display: flex;
+      border-bottom: 1px solid var(--border);
+      gap: 4px;
+      padding-bottom: 8px;
+    }
+    .install-tab-trigger {
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      padding: 6px 10px;
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text3);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border-radius: 4px;
+      outline: none;
+    }
+    .install-tab-trigger:hover {
+      color: var(--text2);
+      background: var(--bg3);
+    }
+    .install-tab-trigger.active {
+      color: var(--accent2);
+      border-bottom-color: var(--accent);
+      background: rgba(77, 95, 255, 0.06);
+    }
+    .install-tab-panel {
+      display: none;
+      flex-direction: column;
+    }
+    .install-tab-panel.active {
+      display: flex;
+    }
+    .install-lbl {
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: var(--text3);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .code-block {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 11px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      gap: 8px;
+    }
+    .code-block:hover {
+      border-color: var(--border2);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    .code-block code {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--accent2);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      flex: 1;
+    }
+    .copy-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 2px;
+      color: var(--text3);
+      transition: color 0.2s;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+    }
+    .code-block:hover .copy-btn {
+      color: var(--text2);
+    }
+    .copy-btn:hover {
+      color: var(--accent2) !important;
+    }
+    .copy-btn svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    /* CDN Block */
+    .cdn-block {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 8px;
+    }
+    .cdn-block code {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      color: var(--text2);
+      line-height: 1.7;
+      display: block;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+    .cdn-block code .tag { color: var(--text3); }
+    .cdn-block code .attr { color: #9bb4ff; }
+    .cdn-block code .val { color: var(--green); }
+
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 24px 0;
+    }
+
+    /* Stats display */
+    .stats-row {
+      display: flex;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 12px;
+      background: rgba(255, 255, 255, 0.01);
+    }
+    .stat {
+      flex: 1;
+      padding: 12px 10px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+    .stat:last-child {
+      border-right: none;
+    }
+    .stat-num {
+      font-family: var(--display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .stat-lbl {
+      font-size: 10px;
+      color: var(--text3);
+      margin-top: 2px;
+    }
+
+    /* Framework Grid */
+.method-row {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+    .method-tag {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 5px 10px;
+      font-size: 11px;
+      color: var(--text2);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .method-tag .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      flex-shrink: 0;
+      box-shadow: 0 0 6px var(--green);
+    }
+
+    /* Left Footer */
+    .left-footer {
+      padding: 16px 28px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg);
+    }
+    .footer-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 6px var(--green);
+    }
+    .footer-text {
+      font-size: 11px;
+      color: var(--text3);
+    }
+    .footer-link {
+      font-size: 11px;
+      color: var(--accent2);
+      text-decoration: none;
+      margin-left: auto;
+      transition: color 0.2s;
+    }
+    .footer-link:hover {
+      color: var(--text);
+    }
+
+    /* RIGHT CONTENT PANEL (Scrollable Workspace) */
+    .right-panel {
+      flex: 1;
+      height: 100vh;
+      overflow-y: auto;
+      background: var(--bg);
+    }
+
+    /* STICKY HEADER TABS */
+    .tabs-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(248, 249, 252, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .tabs-bar::-webkit-scrollbar {
+      display: none;
+    }
+    .tab-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 20px 18px;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text3);
+      white-space: nowrap;
+      transition: color 0.2s;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .tab-btn:hover {
+      color: var(--text2);
+    }
+    .tab-btn.active {
+      color: var(--text);
+      border-bottom-color: var(--accent);
+    }
+    .tab-count {
+      background: rgba(77, 95, 255, 0.15);
+      border: 1px solid rgba(77, 95, 255, 0.25);
+      color: var(--accent2);
+      font-size: 10px;
+      font-family: var(--mono);
+      padding: 1px 6px;
+      border-radius: 10px;
+    }
+
+    /* Main Workspace Sections */
+    .workspace-section {
+      padding: 32px;
+    }
+    .section-header {
+      margin-bottom: 28px;
+    }
+    .section-title {
+      font-family: var(--display);
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .section-title span {
+      color: var(--accent2);
+    }
+    .section-desc {
+      font-size: 13.5px;
+      color: var(--text2);
+      max-width: 650px;
+      line-height: 1.5;
+    }
+
+    /* Sandbox Variable Control Panel at Section Top */
+    .global-variables-bar {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 20px;
+      margin-bottom: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+    }
+    .global-bar-label {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent2);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .indicator-pulse {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--accent2);
+      box-shadow: 0 0 8px var(--accent2);
+      animation: heartbeat 2s infinite;
+    }
+    .vars-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-left: auto;
+    }
+    .var-select-wrap {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .var-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text3);
+    }
+    .var-select {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 5px 10px;
+      color: var(--text);
+      font-size: 11.5px;
+      font-family: var(--sans);
+      outline: none;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+    .var-select:focus {
+      border-color: var(--accent);
+    }
+
+    /* Playground Card Grid */
+    .anim-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+    }
+
+    /* Elevated Dark Theme Card */
+    .anim-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.25s, transform 0.2s, box-shadow 0.25s;
+    }
+    .anim-card:hover {
+      border-color: var(--border2);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 56, 255, 0.05);
+    }
+
+    /* Preview Box Canvas */
+    .preview-canvas {
+      height: 130px;
+      background: var(--bg3);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    .preview-canvas::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(0, 20, 209, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    
+    .preview-canvas span {
+      color: var(--text);
+    }
+
+    .card-meta {
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .anim-title {
+      font-family: var(--display);
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+    .anim-desc {
+      font-size: 11.5px;
+      color: var(--text2);
+      line-height: 1.5;
+      margin-bottom: 16px;
+      flex: 1;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .class-pill {
+      background: rgba(77, 95, 255, 0.05);
+      border: 1px solid rgba(77, 95, 255, 0.15);
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--accent2);
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: left;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      transition: all 0.2s ease;
+      outline: none;
+    }
+    .class-pill:hover {
+      background: rgba(77, 95, 255, 0.12);
+      border-color: rgba(77, 95, 255, 0.3);
+      color: var(--accent);
+    }
+    .class-pill svg {
+      opacity: 0.6;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      flex-shrink: 0;
+      color: var(--accent2);
+    }
+    .class-pill:hover svg {
+      opacity: 1;
+      transform: scale(1.05);
+      color: var(--accent);
+    }
+
+    .btn-action-trigger {
+      background: var(--primary);
+      color: #ffffff;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 14px;
+      font-size: 11px;
+      font-family: var(--mono);
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s, transform 0.1s;
+      white-space: nowrap;
+    }
+    .btn-action-trigger:hover {
+      background: var(--primary-mid);
+    }
+    .btn-action-trigger:active {
+      transform: scale(0.96);
+    }
+    
+
+    .drawer-copy-btn {
+      position: absolute;
+      top: 10px; right: 10px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text2);
+      border-radius: 4px;
+      padding: 3px 6px;
+      font-size: 9.5px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .drawer-copy-btn:hover {
+      color: var(--text);
+      border-color: var(--border2);
+    }
+
+    /* Web Component Showcase items styling */
+    .components-showcase {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .showcase-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .showcase-title {
+      font-family: var(--display);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--accent2);
+    }
+    .showcase-canvas {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      min-height: 160px;
+      position: relative;
+    }
+    .component-code {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text2);
+      line-height: 1.5;
+      position: relative;
+    }
+
+    .magnetic-wrap {
+      border: 1px dashed rgba(255, 255, 255, 0.12);
+      border-radius: 50%;
+      width: 120px; height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .magnetic-tag {
+      position: absolute;
+      top: -10px;
+      font-size: 8px;
+      text-transform: uppercase;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      padding: 2px 5px;
+      border-radius: 4px;
+      color: var(--text3);
+    }
+
+    .showcase-tilt-card {
+      width: 260px;
+      height: 140px;
+      background: linear-gradient(135deg, var(--bg2) 0%, var(--bg3) 100%);
+      border: 1px solid var(--border2);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 12px 30px rgba(0, 56, 255, 0.05);
+      color: var(--text);
+    }
+    .tilt-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .tilt-card-chip {
+      width: 32px; height: 22px;
+      background: rgba(0, 56, 255, 0.1);
+      border-radius: 4px;
+    }
+    .tilt-card-logo {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--accent2);
+    }
+    .tilt-card-num {
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: 2px;
+      color: var(--text2);
+    }
+    .tilt-card-footer {
+      display: flex;
+      justify-content: space-between;
+      font-size: 9px;
+      text-transform: uppercase;
+      color: var(--text3);
+      letter-spacing: 1px;
+    }
+
+    .scroll-sim-space {
+      border: 1px dashed var(--border2);
+      border-radius: 10px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-height: 360px;
+      overflow-y: auto;
+      background: var(--bg3);
+    }
+    .scroll-sim-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--text2);
+      box-shadow: 0 2px 8px rgba(0, 56, 255, 0.03);
+      transition: all 0.4s var(--ease-smooth);
+    }
+
+    /* Clipboard Toast Message */
+    .toast-copy {
+      position: fixed;
+      bottom: 24px; right: 24px;
+      background: var(--primary);
+      color: #ffffff;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-size: 13px;
+      font-weight: 500;
+      box-shadow: 0 8px 24px rgba(0, 20, 209, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 9999;
+    }
+    .toast-copy.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .sds-input-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      width: 220px;
+      text-align: left;
+    }
+    .sds-input-label {
+      font-size: 9px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--text3);
+      pointer-events: none;
+      font-family: var(--sans);
+    }
+
+    /* ==========================================================================
+       SANDBOX PREVIEW LOOP OVERRIDES (THE "STARTS VISIBLE" PATTERN)
+       ========================================================================== */
+    .preview-canvas * {
+      --sds-duration: 3.2s !important;
+      animation-iteration-count: infinite !important;
+      animation-direction: normal !important;
+      animation-fill-mode: none !important;
+    }
+
+    /* Overriding keyframes inside the preview canvas for seamless starts-visible transitions */
+    .preview-canvas .sds-fade-up { animation: previewFadeUp 3.2s var(--ease-smooth) infinite !important; }
+    .preview-canvas .sds-fade-down { animation: previewFadeDown 3.2s var(--ease-smooth) infinite !important; }
+    .preview-canvas .sds-fade-left { animation: previewFadeLeft 3.2s var(--ease-smooth) infinite !important; }
+    .preview-canvas .sds-fade-right { animation: previewFadeRight 3.2s var(--ease-smooth) infinite !important; }
+    .preview-canvas .sds-blur-in { animation: previewBlurIn 3.2s var(--ease-smooth) infinite !important; }
+    .preview-canvas .sds-soft-blur-in { animation: previewSoftBlurIn 3.2s var(--ease-smooth) infinite !important; }
+    .preview-canvas .sds-focus-blur-resolve { animation: previewFocusBlurResolve 3.2s var(--ease-smooth) infinite !important; }
+    .preview-canvas .sds-stamp-in { animation: previewStampIn 3.2s var(--ease-smooth) infinite !important; }
+    .preview-canvas .sds-bounce-in { animation: previewBounceIn 3.2s var(--ease-smooth) infinite !important; }
+    .preview-canvas .sds-spring-scale-in { animation: previewSpringScaleIn 3.2s var(--ease-smooth) infinite !important; }
+    .preview-canvas .sds-skew-in { animation: previewSkewIn 3.2s var(--ease-spring) infinite !important; }
+    .preview-canvas .sds-rotate-3d { animation: previewRotate3d 3.2s var(--ease-smooth) infinite !important; }
+    .preview-canvas .sds-zoom-blur { animation: previewZoomBlur 3.2s var(--ease-smooth) infinite !important; }
+    .preview-canvas .sds-flip-y { animation: previewFlipY 3.2s var(--ease-spring) infinite !important; }
+    .preview-canvas .sds-scale-down-fade { animation: previewScaleDownFade 3.2s var(--ease-smooth) infinite !important; }
+    .preview-canvas .sds-shared-axis-y { animation: previewSharedAxisY 3.2s var(--ease-smooth) infinite !important; }
+    .preview-canvas .sds-shared-axis-z { animation: previewSharedAxisZ 3.2s var(--ease-smooth) infinite !important; }
+    .preview-canvas .sds-micro-scale-fade { animation: previewMicroScaleFade 3.2s var(--ease-smooth) infinite !important; }
+    .preview-canvas .sds-fade-through { animation: previewFadeThrough 3.2s var(--ease-smooth) infinite !important; }
+    .preview-canvas .sds-short-slide-right { animation: previewShortSlideRight 3.2s var(--ease-smooth) infinite !important; }
+    .preview-canvas .sds-short-slide-down { animation: previewShortSlideDown 3.2s var(--ease-smooth) infinite !important; }
+    .preview-canvas .sds-split-reveal { animation: previewSplitReveal 3.2s var(--ease-reveal) infinite !important; }
+    .preview-canvas .sds-mask-reveal-up { animation: previewMaskRevealUp 3.2s var(--ease-reveal) infinite !important; }
+    .preview-canvas .sds-slide-up-reveal > * { animation: previewSlideUpReveal 3.2s var(--ease-reveal) infinite !important; }
+    .preview-canvas .sds-blur-out-up { animation: previewBlurOutUp 3.2s var(--ease-smooth) infinite !important; }
+
+    /* Stagger reveals overrides inside preview canvas */
+    @keyframes sdsPerCharRise {
+      0%, 65% { transform: translateY(0); }
+      65.01%, 80% { transform: translateY(110%); }
+      100% { transform: translateY(0); }
+    }
+    @keyframes sdsBottomUpChar {
+      0%, 65% { transform: translateY(0); }
+      65.01%, 80% { transform: translateY(110%); }
+      100% { transform: translateY(0); }
+    }
+    @keyframes sdsTopDownChar {
+      0%, 65% { transform: translateY(0); }
+      65.01%, 80% { transform: translateY(-110%); }
+      100% { transform: translateY(0); }
+    }
+    @keyframes sdsPerWordFromRight {
+      0%, 65% { opacity: 1; transform: translateX(0); }
+      65.01%, 80% { opacity: 0; transform: translateX(12px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes sdsPerWordFromLeft {
+      0%, 65% { opacity: 1; transform: translateX(0); }
+      65.01%, 80% { opacity: 0; transform: translateX(-12px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes sdsKineticCenter {
+      0%, 65% { transform: scale(1) skewX(0); opacity: 1; }
+      65.01%, 80% { transform: scale(0.3) skewX(16deg); opacity: 0; }
+      100% { transform: scale(1) skewX(0); opacity: 1; }
+    }
+
+    /* Overrides for dynamic Card entries */
+    .preview-canvas .sds-card-slide-up { animation: previewCardSlideUp 3.2s var(--ease-smooth) infinite !important; }
+    .preview-canvas .sds-card-slide-down { animation: previewCardSlideDown 3.2s var(--ease-smooth) infinite !important; }
+    .preview-canvas .sds-card-flip { animation: previewCardFlip 3.2s var(--ease-spring) infinite !important; }
+    .preview-canvas .sds-card-reveal { animation: previewCardReveal 3.2s var(--ease-reveal) infinite !important; }
+    .preview-canvas .sds-card-pop { animation: previewCardPop 3.2s var(--ease-smooth) infinite !important; }
+    .preview-canvas .sds-card-shadow-pop { animation: previewCardShadowPop 3.2s var(--ease-smooth) infinite !important; }
+    .preview-canvas .sds-card-slide-left { animation: previewCardSlideLeft 3.2s var(--ease-smooth) infinite !important; }
+    .preview-canvas .sds-card-slide-right { animation: previewCardSlideRight 3.2s var(--ease-smooth) infinite !important; }
+    .preview-canvas .sds-card-rotate-in { animation: previewCardRotateIn 3.2s var(--ease-smooth) infinite !important; }
+    .preview-canvas .sds-card-blur-in { animation: previewCardBlurIn 3.2s var(--ease-smooth) infinite !important; }
+    .preview-canvas .sds-card-unfold { animation: previewCardUnfold 3.2s var(--ease-reveal) infinite !important; }
+    .preview-canvas .sds-card-glitch { animation: previewCardGlitch 3.2s var(--ease-smooth) infinite !important; }
+    .preview-canvas .sds-card-wipe { animation: previewCardWipe 3.2s var(--ease-reveal) infinite !important; }
+    .preview-canvas .sds-card-bounce-in { animation: previewCardBounceIn 3.2s var(--ease-spring) infinite !important; }
+    .preview-canvas .sds-card-depth-in { animation: previewCardDepthIn 3.2s var(--ease-smooth) infinite !important; }
+
+    /* Custom button simulated hover states */
+    @keyframes previewShimmerSim {
+      0% { left: -120%; }
+      100% { left: 140%; }
+    }
+    .preview-canvas .sds-btn-shimmer::after {
+      animation: previewShimmerSim 2.2s var(--ease-smooth) infinite !important;
+    }
+    @keyframes previewMorphBtn {
+      0%, 100% { border-radius: 8px; }
+      50% { border-radius: 9999px; }
+    }
+    .preview-canvas .sds-btn-morph {
+      animation: previewMorphBtn 3s var(--ease-spring) infinite !important;
+    }
+    .preview-canvas .sds-btn-shake {
+      animation: sdsShake 1.8s var(--ease-smooth) infinite !important;
+    }
+    .preview-canvas .sds-btn-stretch {
+      animation: sdsStretchPress 1.5s var(--ease-smooth) infinite !important;
+    }
+    .preview-canvas .sds-btn-confetti {
+      animation: sdsConfettiExplode 1.6s var(--ease-spring) infinite !important;
+    }
+    @keyframes previewDepthBtn {
+      0%, 100% { transform: translateY(-2px); box-shadow: 0 3px 0 var(--sds-primary-dark); }
+      50% { transform: translateY(1px); box-shadow: 0 0px 0 var(--sds-primary-dark); }
+    }
+    .preview-canvas .sds-btn-depth {
+      animation: previewDepthBtn 2s var(--ease-smooth) infinite !important;
+    }
+    @keyframes previewUnderlineBtn {
+      0%, 100% { width: 0%; }
+      50% { width: 100%; }
+    }
+    .preview-canvas .sds-btn-underline::after {
+      animation: previewUnderlineBtn 2.2s var(--ease-reveal) infinite !important;
+    }
+    @keyframes previewSwipeBtn {
+      0%, 100% { width: 0%; }
+      50% { width: 100%; }
+    }
+    .preview-canvas .sds-btn-swipe::before {
+      animation: previewSwipeBtn 2.4s var(--ease-reveal) infinite !important;
+    }
+
+    /* Custom input simulated active states */
+    @keyframes previewFocusGlowSim {
+      0%, 100% { border-color: var(--border); box-shadow: none; }
+      50% { border-color: var(--accent) !important; box-shadow: 0 0 0 3px rgba(77, 95, 255, 0.14) !important; }
+    }
+    @keyframes previewFocusBorderSim {
+      0%, 100% { border-color: var(--border); }
+      50% { border-color: var(--accent) !important; }
+    }
+    @keyframes previewFocusRoundedSim {
+      0%, 100% { border-radius: 8px; border-color: var(--border); box-shadow: none; }
+      50% { border-radius: 12px !important; border-color: var(--accent) !important; box-shadow: 0 0 0 3px rgba(77, 95, 255, 0.1) !important; }
+    }
+    @keyframes previewFocusNeoSim {
+      0%, 100% { box-shadow: 2px 2px 0 var(--primary); transform: translate(0, 0); }
+      50% { box-shadow: 4px 4px 0 var(--primary); transform: translate(-2px, -2px); }
+    }
+    @keyframes previewFocusBounceSim {
+      0%, 100% { border-color: var(--border); box-shadow: none; }
+      50% { border-color: var(--accent) !important; box-shadow: 0 0 0 4px rgba(77, 95, 255, 0.12) !important; }
+    }
+    @keyframes previewFocusAccentLeftSim {
+      0%, 100% { border-left-width: 1px; border-left-color: var(--border); }
+      50% { border-left-width: 3px !important; border-left-color: var(--primary) !important; }
+    }
+    @keyframes previewFocusFrostedSim {
+      0%, 100% { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.12); }
+      50% { background: rgba(255,255,255,0.1) !important; border-color: rgba(255,255,255,0.22) !important; }
+    }
+    @keyframes previewFocusUnderlineSim {
+      0%, 100% { border-bottom-color: rgba(0, 20, 209, 0.3); }
+      50% { border-bottom-color: var(--primary) !important; }
+    }
+    .preview-canvas .sds-input-focus-glow input { animation: previewFocusGlowSim 3s ease infinite !important; }
+    .preview-canvas .sds-input-border input { animation: previewFocusBorderSim 3s ease infinite !important; }
+    .preview-canvas .sds-input-rounded-expand input { animation: previewFocusRoundedSim 3s ease infinite !important; }
+    .preview-canvas .sds-input-neo input { animation: previewFocusNeoSim 3s ease infinite !important; }
+    .preview-canvas .sds-input-bounce input { animation: previewFocusBounceSim 3s ease infinite !important; }
+    .preview-canvas .sds-input-accent-left input { animation: previewFocusAccentLeftSim 3s ease infinite !important; }
+    .preview-canvas .sds-input-frosted input { animation: previewFocusFrostedSim 3s ease infinite !important; }
+    .preview-canvas .sds-input-flat-underline input { animation: previewFocusUnderlineSim 3s ease infinite !important; }
+
+    /* Physical input reveals overrides inside preview canvas */
+    .preview-canvas .sds-input-slide-in { animation: previewInputSlideIn 3.2s var(--ease-smooth) infinite !important; }
+    .preview-canvas .sds-input-shake { animation: previewInputShake 3.2s var(--ease-smooth) infinite !important; }
+    .preview-canvas .sds-input-reveal { animation: previewInputReveal 3.2s var(--ease-reveal) infinite !important; }
+
+    /* Custom preview keyframe definitions using the "starts visible" pattern */
+    @keyframes previewFadeUp {
+      0%, 65% { opacity: 1; transform: translateY(0); }
+      65.01%, 80% { opacity: 0; transform: translateY(16px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes previewFadeDown {
+      0%, 65% { opacity: 1; transform: translateY(0); }
+      65.01%, 80% { opacity: 0; transform: translateY(-16px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes previewFadeLeft {
+      0%, 65% { opacity: 1; transform: translateX(0); }
+      65.01%, 80% { opacity: 0; transform: translateX(18px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes previewFadeRight {
+      0%, 65% { opacity: 1; transform: translateX(0); }
+      65.01%, 80% { opacity: 0; transform: translateX(-18px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes previewBlurIn {
+      0%, 65% { opacity: 1; filter: blur(0); transform: scale(1); }
+      65.01%, 80% { opacity: 0; filter: blur(10px); transform: scale(0.97); }
+      100% { opacity: 1; filter: blur(0); transform: scale(1); }
+    }
+    @keyframes previewSoftBlurIn {
+      0%, 65% { opacity: 1; filter: blur(0); }
+      65.01%, 80% { opacity: 0; filter: blur(8px); }
+      100% { opacity: 1; filter: blur(0); }
+    }
+    @keyframes previewFocusBlurResolve {
+      0%, 65% { filter: blur(0); letter-spacing: normal; opacity: 1; }
+      65.01%, 80% { filter: blur(14px); letter-spacing: 8px; opacity: 0; }
+      100% { filter: blur(0); letter-spacing: normal; opacity: 1; }
+    }
+    @keyframes previewStampIn {
+      0%, 65% { transform: scale(1) rotate(0); opacity: 1; filter: blur(0); }
+      65.01%, 75% { transform: scale(2.5) rotate(-1deg); opacity: 0; filter: blur(8px); }
+      85% { transform: scale(0.94) rotate(0.3deg); opacity: 1; filter: blur(0); }
+      92% { transform: scale(1.04); }
+      96% { transform: scale(0.98); }
+      100% { transform: scale(1) rotate(0); opacity: 1; }
+    }
+    @keyframes previewBounceIn {
+      0%, 65% { transform: scale(1); opacity: 1; }
+      65.01% { transform: scale(0.3); opacity: 0; }
+      82.5% { transform: scale(1.05); opacity: 0.8; }
+      89.5% { transform: scale(0.9); opacity: 0.9; }
+      96.5% { transform: scale(1.01); opacity: 1; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    @keyframes previewSpringScaleIn {
+      0%, 65% { transform: scale(1); opacity: 1; }
+      65.01% { transform: scale(0.65); opacity: 0; }
+      79% { transform: scale(1.08); opacity: 1; }
+      87.75% { transform: scale(0.97); }
+      93.7% { transform: scale(1.015); }
+      100% { transform: scale(1.0); opacity: 1; }
+    }
+    @keyframes previewSkewIn {
+      0%, 65% { transform: skewX(0) translateX(0); opacity: 1; }
+      65.01%, 80% { transform: skewX(-18deg) translateX(-24px); opacity: 0; }
+      100% { transform: skewX(0) translateX(0); opacity: 1; }
+    }
+    @keyframes previewRotate3d {
+      0%, 65% { transform: perspective(800px) rotateX(0); opacity: 1; }
+      65.01%, 80% { transform: perspective(800px) rotateX(55deg); opacity: 0; }
+      100% { transform: perspective(800px) rotateX(0); opacity: 1; }
+    }
+    @keyframes previewZoomBlur {
+      0%, 65% { transform: scale(1); filter: blur(0); opacity: 1; }
+      65.01%, 80% { transform: scale(1.25); filter: blur(12px); opacity: 0; }
+      100% { transform: scale(1); filter: blur(0); opacity: 1; }
+    }
+    @keyframes previewFlipY {
+      0%, 65% { transform: perspective(1000px) rotateY(0deg) scale(1.0); opacity: 1; }
+      65.01% { transform: perspective(1000px) rotateY(-90deg) scale(0.9); opacity: 0; }
+      86% { transform: perspective(1000px) rotateY(10deg) scale(1.02); opacity: 0.7; }
+      93% { transform: perspective(1000px) rotateY(-4deg) scale(0.99); opacity: 0.9; }
+      100% { transform: perspective(1000px) rotateY(0deg) scale(1.0); opacity: 1; }
+    }
+    @keyframes previewScaleDownFade {
+      0%, 65% { transform: scale(1); opacity: 1; }
+      65.01%, 80% { transform: scale(1.1); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    @keyframes previewSharedAxisY {
+      0%, 65% { transform: translateY(0) scale(1); opacity: 1; }
+      65.01%, 80% { transform: translateY(20px) scale(0.97); opacity: 0; }
+      100% { transform: translateY(0) scale(1); opacity: 1; }
+    }
+    @keyframes previewSharedAxisZ {
+      0%, 65% { transform: scale(1); opacity: 1; filter: blur(0); }
+      65.01%, 80% { transform: scale(0.82); opacity: 0; filter: blur(5px); }
+      100% { transform: scale(1); opacity: 1; filter: blur(0); }
+    }
+    @keyframes previewMicroScaleFade {
+      0%, 65% { transform: scale(1); opacity: 1; }
+      65.01%, 80% { transform: scale(0.96); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    @keyframes previewFadeThrough {
+      0%, 65% { opacity: 1; transform: scale(1) translateY(0); }
+      65.01%, 75% { opacity: 0; transform: scale(0.97) translateY(5px); }
+      85% { opacity: 0.08; }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    @keyframes previewShortSlideRight {
+      0%, 65% { transform: translateX(0); opacity: 1; }
+      65.01%, 80% { transform: translateX(-12px); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes previewShortSlideDown {
+      0%, 65% { transform: translateY(0); opacity: 1; }
+      65.01%, 80% { transform: translateY(-12px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes previewSplitReveal {
+      0%, 65% { clip-path: inset(0 0% 0 0); }
+      65.01%, 80% { clip-path: inset(0 100% 0 0); }
+      100% { clip-path: inset(0 0% 0 0); }
+    }
+    @keyframes previewMaskRevealUp {
+      0%, 65% { clip-path: inset(0 0 0% 0); }
+      65.01%, 80% { clip-path: inset(0 0 100% 0); }
+      100% { clip-path: inset(0 0 0% 0); }
+    }
+    @keyframes previewSlideUpReveal {
+      0%, 65% { transform: translateY(0); }
+      65.01%, 80% { transform: translateY(105%); }
+      100% { transform: translateY(0); }
+    }
+    @keyframes previewBlurOutUp {
+      0%, 65% { transform: translateY(-16px); filter: blur(6px); opacity: 0; }
+      65.01%, 80% { transform: translateY(0); filter: blur(0); opacity: 1; }
+      100% { transform: translateY(-16px); filter: blur(6px); opacity: 0; }
+    }
+
+    /* Overrides for dynamic Card entries */
+    @keyframes previewCardSlideUp {
+      0%, 65% { transform: translateY(0); opacity: 1; }
+      65.01%, 80% { transform: translateY(30px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes previewCardSlideDown {
+      0%, 65% { transform: translateY(0); opacity: 1; }
+      65.01%, 80% { transform: translateY(-30px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes previewCardFlip {
+      0%, 65% { transform: perspective(600px) rotateY(0); opacity: 1; }
+      65.01%, 80% { transform: perspective(600px) rotateY(90deg); opacity: 0; }
+      100% { transform: perspective(600px) rotateY(0); opacity: 1; }
+    }
+    @keyframes previewCardReveal {
+      0%, 65% { clip-path: inset(0 0 0% 0); }
+      65.01%, 80% { clip-path: inset(0 0 100% 0); }
+      100% { clip-path: inset(0 0 0% 0); }
+    }
+    @keyframes previewCardPop {
+      0%, 65% { transform: scale(1); opacity: 1; }
+      65.01%, 80% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    @keyframes previewCardShadowPop {
+      0%, 65% { box-shadow: 6px 6px 0 var(--primary); }
+      65.01%, 80% { box-shadow: 0 0 0 rgba(0,0,0,0); }
+      100% { box-shadow: 6px 6px 0 var(--primary); }
+    }
+    @keyframes previewCardSlideLeft {
+      0%, 65% { transform: translateX(0); opacity: 1; }
+      65.01%, 80% { transform: translateX(30px); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes previewCardSlideRight {
+      0%, 65% { transform: translateX(0); opacity: 1; }
+      65.01%, 80% { transform: translateX(-30px); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes previewCardRotateIn {
+      0%, 65% { transform: rotate(0) scale(1); opacity: 1; }
+      65.01%, 80% { transform: rotate(-5deg) scale(0.9); opacity: 0; }
+      100% { transform: rotate(0) scale(1); opacity: 1; }
+    }
+    @keyframes previewCardBlurIn {
+      0%, 65% { filter: blur(0); opacity: 1; }
+      65.01%, 80% { filter: blur(8px); opacity: 0; }
+      100% { filter: blur(0); opacity: 1; }
+    }
+    @keyframes previewCardUnfold {
+      0%, 65% { transform: scaleY(1); }
+      65.01%, 80% { transform: scaleY(0); }
+      100% { transform: scaleY(1); }
+    }
+    @keyframes previewCardGlitch {
+      0%, 65% { transform: scale(1); opacity: 1; filter: blur(0); }
+      65.01%, 80% { transform: scale(0.85); opacity: 0; filter: blur(5px); }
+      100% { transform: scale(1); opacity: 1; filter: blur(0); }
+    }
+    @keyframes previewCardWipe {
+      0%, 65% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+      65.01%, 80% { clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); }
+      100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+    }
+    @keyframes previewCardBounceIn {
+      0%, 65% { transform: scale(1); opacity: 1; }
+      65.01%, 75% { transform: scale(0.5); opacity: 0; }
+      85% { transform: scale(1.08); }
+      92% { transform: scale(0.97); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    @keyframes previewCardDepthIn {
+      0%, 65% { transform: perspective(500px) translateZ(0); opacity: 1; }
+      65.01%, 80% { transform: perspective(500px) translateZ(-80px); opacity: 0; }
+      100% { transform: perspective(500px) translateZ(0); opacity: 1; }
+    }
+
+    /* Physical input reveals */
+    @keyframes previewInputSlideIn {
+      0%, 65% { transform: translateX(0); opacity: 1; }
+      65.01%, 80% { transform: translateX(-12px); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes previewInputShake {
+      0%, 65% { transform: translateX(0); }
+      65.01% { transform: translateX(0); }
+      68%   { transform: translateX(-5px); }
+      72%  { transform: translateX(4px); }
+      76%  { transform: translateX(-3px); }
+      80%  { transform: translateX(2px); }
+      84%  { transform: translateX(-1px); }
+      88%, 100% { transform: translateX(0); }
+    }
+    @keyframes previewInputReveal {
+      0%, 65% { clip-path: inset(0 0% 0 0); }
+      65.01%, 80% { clip-path: inset(0 100% 0 0); }
+      100% { clip-path: inset(0 0% 0 0); }
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+    }
+  </style>
+</head>
+<body>
+<div class="app">
+
+  <!-- LEFT BRAND PANEL -->
+  <aside class="left-panel">
+    <div class="left-inner">
+
+      <!-- Logo -->
+      <div class="logo-wrap">
+        <img src="/src/assets/images/logo.svg" alt="Studio Logo" class="sidebar-logo">
+      </div>
+
+      <!-- Tagline -->
+      <h1 class="tagline">Animation by<br><span>class name.</span></h1>
+      <p class="sub-text">Production-ready UI animations. Install once, apply anywhere — HTML, Angular, React, or any framework. No logic. Just class names.</p>
+
+      <!-- Stats -->
+      <div class="stats-row">
+        <div class="stat"><div class="stat-num" id="stat-count">110+</div><div class="stat-lbl">Animations</div></div>
+        <div class="stat"><div class="stat-num">6</div><div class="stat-lbl">Categories</div></div>
+        <div class="stat"><div class="stat-num">3</div><div class="stat-lbl">Methods</div></div>
+      </div>
+
+      <!-- Unified Install & Setup Tabs Card -->
+      <div class="install-card">
+        <div class="install-tabs-bar">
+          <button class="install-tab-trigger active" onclick="switchInstallTab('npm', this)">npm</button>
+          <button class="install-tab-trigger" onclick="switchInstallTab('npx', this)">npx</button>
+          <button class="install-tab-trigger" onclick="switchInstallTab('angular', this)">Angular</button>
+          <button class="install-tab-trigger" onclick="switchInstallTab('cdn', this)">CDN</button>
+        </div>
+        <div class="install-tabs-content">
+          <!-- npm Content -->
+          <div id="install-content-npm" class="install-tab-panel active">
+            <div class="install-lbl">Install via npm</div>
+            <div class="code-block" onclick="copyToClipboard('npm install sds-motion', 'NPM install command copied!')">
+              <code>npm install sds-motion</code>
+              <button class="copy-btn" title="Copy">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="9" height="9" rx="1.5"/><path d="M3 11V3h8"/></svg>
+              </button>
+            </div>
+          </div>
+          <!-- npx Content -->
+          <div id="install-content-npx" class="install-tab-panel">
+            <div class="install-lbl">Setup via npx</div>
+            <div class="code-block" onclick="copyToClipboard('npx sds-motion init', 'NPX init command copied!')">
+              <code>npx sds-motion init</code>
+              <button class="copy-btn" title="Copy">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="9" height="9" rx="1.5"/><path d="M3 11V3h8"/></svg>
+              </button>
+            </div>
+          </div>
+          <!-- angular Content -->
+          <div id="install-content-angular" class="install-tab-panel">
+            <div class="install-lbl">Angular — styles.scss</div>
+            <div class="code-block" onclick="copyToClipboard(`@import 'sds-motion/dist/motion.min.css';`, 'Angular import directive copied!')">
+              <code>@import 'sds-motion/dist/motion.min.css'</code>
+              <button class="copy-btn" title="Copy">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="9" height="9" rx="1.5"/><path d="M3 11V3h8"/></svg>
+              </button>
+            </div>
+          </div>
+          <!-- cdn Content -->
+          <div id="install-content-cdn" class="install-tab-panel">
+            <div class="install-lbl">CDN — drop in &lt;head&gt;</div>
+            <div class="cdn-block" style="margin-bottom: 8px;">
+              <code><span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="val">"stylesheet"</span>
+  <span class="attr">href</span>=<span class="val">"https://cdn.jsdelivr.net/npm/sds-motion/dist/motion.min.css"</span><span class="tag">/&gt;</span></code>
+            </div>
+            <div class="code-block" onclick="copyToClipboard('https://cdn.jsdelivr.net/npm/sds-motion/dist/motion.min.css', 'CDN URL copied!')">
+              <code>cdn.jsdelivr.net/npm/sds-motion</code>
+              <button class="copy-btn" title="Copy">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="9" height="9" rx="1.5"/><path d="M3 11V3h8"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="section-divider">
+
+      <!-- Badges -->
+      <div class="method-row">
+        <div class="method-tag"><span class="dot"></span> CDN</div>
+        <div class="method-tag"><span class="dot"></span> npm</div>
+        <div class="method-tag"><span class="dot"></span> npx</div>
+      </div>
+
+    </div>
+    <div class="left-footer">
+      <div class="footer-dot"></div>
+      <span class="footer-text">Open source, MIT</span>
+      <a href="#" class="footer-link" onclick="copyToClipboard('https://github.com/salkomdesignstudio/sds-motion', 'GitHub Repo Link Copied!')">GitHub →</a>
+    </div>
+  </aside>
+
+  <!-- RIGHT CONTENT PANEL -->
+  <main class="right-panel">
+
+    <!-- TABS NAVIGATION BAR -->
+    <div class="tabs-bar">
+      <button class="tab-btn active" id="tab-text" onclick="switchSection('text', this)">
+        Text <span class="tab-count" id="count-text">30</span>
+      </button>
+      <button class="tab-btn" id="tab-button" onclick="switchSection('button', this)">
+        Buttons <span class="tab-count" id="count-button">19</span>
+      </button>
+      <button class="tab-btn" id="tab-input" onclick="switchSection('input', this)">
+        Inputs <span class="tab-count" id="count-input">14</span>
+      </button>
+      <button class="tab-btn" id="tab-card" onclick="switchSection('card', this)">
+        Cards <span class="tab-count" id="count-card">25</span>
+      </button>
+      <button class="tab-btn" id="tab-loader" onclick="switchSection('loader', this)">
+        Loaders <span class="tab-count" id="count-loader">11</span>
+      </button>
+      <button class="tab-btn" id="tab-scroll" onclick="switchSection('scroll', this)">
+        Scroll <span class="tab-count" id="count-scroll">15</span>
+      </button>
+      <button class="tab-btn" id="tab-webcomp" onclick="switchSection('webcomp', this)">
+        Components
+      </button>
+    </div>
+
+    <!-- WORKSPACE SECTION -->
+    <section class="workspace-section">
+      
+      <!-- Global Modifier variables panel -->
+      <div class="global-variables-bar" id="variablesBar">
+        <div class="global-bar-label">
+          <span class="indicator-pulse"></span>
+          Continuous Live Loop Active
+        </div>
+        <div class="vars-group">
+          
+          <div class="var-select-wrap">
+            <span class="var-label">Global Speed:</span>
+            <select class="var-select" id="global-speed" onchange="applyGlobalModifiers()">
+              <option value="">0.6s (Default)</option>
+              <option value="sds-slow">Slow (1.2s)</option>
+              <option value="sds-fast">Fast (0.3s)</option>
+              <option value="sds-instant">Instant</option>
+            </select>
+          </div>
+
+          <div class="var-select-wrap">
+            <span class="var-label">Global Delay:</span>
+            <select class="var-select" id="global-delay" onchange="applyGlobalModifiers()">
+              <option value="">0ms (None)</option>
+              <option value="sds-delay-1">100ms</option>
+              <option value="sds-delay-2">200ms</option>
+              <option value="sds-delay-3">300ms</option>
+              <option value="sds-delay-4">400ms</option>
+              <option value="sds-delay-5">500ms</option>
+            </select>
+          </div>
+
+          <div class="var-select-wrap">
+            <span class="var-label">Global Easing:</span>
+            <select class="var-select" id="global-easing" onchange="applyGlobalModifiers()">
+              <option value="">Smooth (Default)</option>
+              <option value="sds-spring">Spring</option>
+              <option value="sds-bounce">Bounce</option>
+              <option value="sds-reveal">Reveal</option>
+            </select>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Target Dynamic Workspace grid -->
+      <div id="section-content"></div>
+
+    </section>
+
+  </main>
+</div>
+
+<!-- TOAST MESSAGE NOTIFIER -->
+<div class="toast-copy" id="toast">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+  <span id="toast-message">Copied to clipboard!</span>
+</div>
+
+<script>
+  /* ==========================================================================
+     PLAYGROUND ANIMATION DATABASE
+     ========================================================================== */
+  const textAnimations = [
+    { id: "fade-up",      name: "Fade Up",        cls: "sds-fade-up",      desc: "Refined upward entrance with subtle opacity transition and short travel distance.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Hello World</span>' },
+    { id: "fade-down",    name: "Fade Down",      cls: "sds-fade-down",    desc: "Smooth top-down spatial entrance with premium easing and controlled vertical drift.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Drop Reveal</span>' },
+    { id: "fade-left",    name: "Fade Left",      cls: "sds-fade-left",    desc: "Horizontal right-to-left movement with clean opacity layering and restrained distance.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">From Right</span>' },
+    { id: "fade-right",   name: "Fade Right",     cls: "sds-fade-right",   desc: "Horizontal left-to-right movement with restrained movement distance and smooth settle.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">From Left</span>' },
+    { id: "blur-in",      name: "Blur In",        cls: "sds-blur-in",      desc: "10px Gaussian defocus clears to sharp with scale 0.97→1. Spatial depth on entrance.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Atmospheric</span>' },
+    { id: "glitch",       name: "Chromatic Glitch", cls: "sds-glitch sds-infinite", desc: "Subtle 1.5px RGB offset aberration firing at tail of each cycle — ambient digital noise.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700;letter-spacing:1px;color:var(--accent2)">GLITCH</span>', trigger: "infinite" },
+    { id: "typewriter",   name: "Typewriter",     cls: "sds-typewriter",   desc: "True sequential character reveal with realistic cursor timing and stepped cadence.", preview: '<span style="font-family:monospace;font-size:16px;font-weight:600">console.log(sds)</span>' },
+    { id: "scramble",     name: "Scramble Reveal", cls: "sds-scramble",    desc: "Letter-spacing + blur decode: looks encrypted then resolves to sharp clarity.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">DECRYPT</span>' },
+    { id: "split-reveal", name: "Split Reveal",   cls: "sds-split-reveal", desc: "clip-path wipes from left edge to right — sharp, clean line reveal.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Sleek Mask</span>' },
+    { id: "color-cycle",  name: "Color Cycle",    cls: "sds-color-cycle sds-infinite",  desc: "Ambient HSL palette shift cycling through brand accent colors continuously.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Spectrum</span>', trigger: "infinite" },
+    { id: "neon-pulse",   name: "Neon Pulse",     cls: "sds-neon-pulse sds-infinite",   desc: "OLED-style ambient glow: text-shadow breathing between 4px–20px at low opacity.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700;color:var(--accent2)">Neon Halo</span>', trigger: "infinite" },
+    { id: "stamp-in",     name: "Stamp In",       cls: "sds-stamp-in",     desc: "Physical impact entrance: drops from 2.5x scale with blur, squishes on impact at 0.94x, overshoots, settles at 1x.", preview: '<span style="font-family:var(--display);font-size:26px;font-weight:800;letter-spacing:-1px">STAMP</span>' },
+    { id: "bounce-in",    name: "Bounce In",      cls: "sds-bounce-in",    desc: "Natural spring physics with damped settling behavior instead of exaggerated cartoon bounce.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Elastic!</span>' },
+    { id: "flicker",      name: "Gas Flicker",    cls: "sds-flicker sds-infinite",     desc: "High-frequency opacity interruption pattern — mimics neon tube or cathode discharge.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700;color:var(--accent2)">Flickering</span>', trigger: "infinite" },
+    { id: "skew-in",      name: "Skew In",        cls: "sds-skew-in",      desc: "Enters with -18deg skew distortion + 24px X offset, spring-recovers to upright.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Skewed Entry</span>' },
+    { id: "shadow-trail", name: "Shadow Trail",   cls: "sds-shadow-trail sds-infinite", desc: "Slow ambient chroma shadow shift cycling between brand colors — alternate direction loop.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Trails</span>', trigger: "infinite" },
+    { id: "jello",        name: "Jello Wobble",   cls: "sds-jello",        desc: "Squash-and-stretch elastic X/Y scale wobble — hover trigger on interactive elements.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Wobble</span>', trigger: "hover" },
+    { id: "gradient-text", name: "Flowing Gradient", cls: "sds-gradient-text", desc: "Brand gradient background-position sweeps continuously through text fill.", preview: '<span style="font-family:var(--display);font-size:26px;font-weight:800">Prismatic</span>' },
+    { id: "letter-spacing", name: "Space Expand",  cls: "sds-letter-spacing", desc: "Contracts from 8px wide-spacing to normal as element fades in.", preview: '<span style="font-family:var(--display);font-size:18px;font-weight:700">SPACING</span>' },
+    { id: "highlight",    name: "Highlight Sweep", cls: "sds-highlight",    desc: "background-size wipes from 0% to 100% revealing a brand-colored underline band.", preview: '<span style="font-family:var(--display);font-size:22px;font-weight:700">Underline Marker</span>' },
+    { id: "rotate-3d",    name: "Rotate 3D",      cls: "sds-rotate-3d",    desc: "Text hinges down from 55deg X-axis rotation with 800px perspective — depth-realistic reveal.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Perspective</span>' },
+    { id: "shadow-pop",   name: "Shadow Pop",     cls: "sds-shadow-pop",   desc: "Neo-brutalist 3px offset block shadow appears as element fades in.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700;color:var(--accent2)">Brutalist</span>' },
+    { id: "zoom-blur",    name: "Zoom Blur",      cls: "sds-zoom-blur",    desc: "Enters 1.25x zoomed-in with 12px blur, resolves to natural 1x sharp size.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Zoom Clear</span>' },
+    { id: "flip-y",       name: "Flip Y Axis",    cls: "sds-flip-y",       desc: "Y-axis card flip from 90deg edge-on to face-forward — spring settle after flip.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Card Flip</span>' },
+    { id: "soft-blur-in", name: "Soft Blur In",   cls: "sds-soft-blur-in", desc: "Pure 8px Gaussian dissolve with opacity — no scale distortion, just clean focus.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Soft Focus</span>' },
+    { id: "per-character-rise", name: "Per-Character Rise", cls: "sds-per-character-rise", desc: "Staggered character masking and vertical rise sequencing with clean clip-boundary reveals.", preview: '<span class="sds-per-character-rise" style="font-family:var(--display);font-size:26px;font-weight:700"><span class="sds-char" data-char="R" style="--sds-char-index:0"><span style="display:block;animation:sdsPerCharRise 0.6s cubic-bezier(0.16,1,0.3,1) calc(0ms) both">R</span></span><span class="sds-char" data-char="I" style="--sds-char-index:1"><span style="display:block;animation:sdsPerCharRise 0.6s cubic-bezier(0.16,1,0.3,1) calc(38ms) both">I</span></span><span class="sds-char" data-char="S" style="--sds-char-index:2"><span style="display:block;animation:sdsPerCharRise 0.6s cubic-bezier(0.16,1,0.3,1) calc(76ms) both">S</span></span><span class="sds-char" data-char="E" style="--sds-char-index:3"><span style="display:block;animation:sdsPerCharRise 0.6s cubic-bezier(0.16,1,0.3,1) calc(114ms) both">E</span></span></span>' },
+    { id: "per-word-crossfade", name: "Per-Word Crossfade", cls: "sds-per-word-crossfade", desc: "Staggered word transition with alternating directional offsets and smooth opacity interpolation.", preview: '<span class="sds-per-word-crossfade" style="font-family:var(--display);font-size:22px;font-weight:700"><span class="sds-word" style="--sds-word-index:0">Motion</span><span class="sds-word" style="--sds-word-index:1">Forge</span></span>' },
+    { id: "spring-scale-in", name: "Spring Scale In", cls: "sds-spring-scale-in", desc: "Physically believable spring scaling with realistic damping and restrained overshoot.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Spring!</span>' },
+    { id: "mask-reveal-up", name: "Mask Reveal Up", cls: "sds-mask-reveal-up", desc: "clip-path wipes from bottom edge upward — text appears from behind lower mask boundary.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Mask Reveal</span>' },
+    { id: "line-by-line-slide", name: "Line Slide", cls: "sds-line-by-line-slide", desc: "Each direct child line rises 22px staggered 110ms apart — paragraph reveal system.", preview: '<div style="font-family:var(--display);font-size:16px;font-weight:700;line-height:1.6;text-align:center"><p style="margin:0">Line Number One</p><p style="margin:0">Line Number Two</p></div>' },
+    { id: "micro-scale-fade", name: "Micro Scale",   cls: "sds-micro-scale-fade", desc: "Imperceptible 0.96→1.0 scale with opacity: minimal depth signal for dashboard cards.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Micro Entry</span>' },
+    { id: "shimmer-sweep", name: "Shimmer Sweep",  cls: "sds-shimmer-sweep sds-infinite", desc: "Light gradient sweeps continuously across text — ideal for loading or active states.", preview: '<span style="font-family:var(--display);font-size:26px;font-weight:800">Shimmering</span>', trigger: "infinite" },
+    { id: "fade-through",  name: "Fade Through",   cls: "sds-fade-through",  desc: "M3 container transition: opacity dips to near-zero at 40% midpoint then resolves with Y drift.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Fade Across</span>' },
+    { id: "shared-axis-y", name: "Shared Axis Y",  cls: "sds-shared-axis-y", desc: "Modern Framer-style shared-axis vertical transition with synchronized scale and position cues.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Axis Y</span>' },
+    { id: "shared-axis-z", name: "Shared Axis Z",  cls: "sds-shared-axis-z", desc: "Depth-based shared-axis transition using spatial layering, scale compression, and focus resolve.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Depth Z</span>' },
+    { id: "blur-out-up",   name: "Blur Out Up",    cls: "sds-blur-out-up",   desc: "EXIT: element rises 16px while blurring to 6px and fading to transparent.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Float Exit</span>' },
+    { id: "scale-down-fade", name: "Scale Down Fade", cls: "sds-scale-down-fade", desc: "Subtle scale decay combined with smooth opacity interpolation for a calm depth transition.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Scale Settle</span>' },
+    { id: "focus-blur-resolve", name: "Focus Resolve", cls: "sds-focus-blur-resolve", desc: "14px heavy defocus + 8px letter-spacing contracts as sharpness resolves — lens focus.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Lens Focus</span>' },
+    { id: "bottom-up-letters", name: "Bottom-Up", cls: "sds-bottom-up-letters", desc: "Each character rises from below its own clip container, staggered 38ms sequentially.", preview: '<span class="sds-bottom-up-letters" style="font-family:var(--display);font-size:24px;font-weight:700"><span class="sds-char" data-char="U" style="--sds-char-index:0"><span style="display:block;animation:sdsBottomUpChar 0.6s cubic-bezier(0.16,1,0.3,1) calc(0ms) both">U</span></span><span class="sds-char" data-char="P" style="--sds-char-index:1"><span style="display:block;animation:sdsBottomUpChar 0.6s cubic-bezier(0.16,1,0.3,1) calc(38ms) both">P</span></span><span class="sds-char" data-char="W" style="--sds-char-index:2"><span style="display:block;animation:sdsBottomUpChar 0.6s cubic-bezier(0.16,1,0.3,1) calc(76ms) both">W</span></span><span class="sds-char" data-char="A" style="--sds-char-index:3"><span style="display:block;animation:sdsBottomUpChar 0.6s cubic-bezier(0.16,1,0.3,1) calc(114ms) both">A</span></span><span class="sds-char" data-char="R" style="--sds-char-index:4"><span style="display:block;animation:sdsBottomUpChar 0.6s cubic-bezier(0.16,1,0.3,1) calc(152ms) both">R</span></span><span class="sds-char" data-char="D" style="--sds-char-index:5"><span style="display:block;animation:sdsBottomUpChar 0.6s cubic-bezier(0.16,1,0.3,1) calc(190ms) both">D</span></span></span>' },
+    { id: "top-down-letters", name: "Top-Down", cls: "sds-top-down-letters", desc: "Each character drops from above its own clip container, staggered 38ms sequentially.", preview: '<span class="sds-top-down-letters" style="font-family:var(--display);font-size:24px;font-weight:700"><span class="sds-char" data-char="D" style="--sds-char-index:0"><span style="display:block;animation:sdsTopDownChar 0.6s cubic-bezier(0.16,1,0.3,1) calc(0ms) both">D</span></span><span class="sds-char" data-char="O" style="--sds-char-index:1"><span style="display:block;animation:sdsTopDownChar 0.6s cubic-bezier(0.16,1,0.3,1) calc(38ms) both">O</span></span><span class="sds-char" data-char="W" style="--sds-char-index:2"><span style="display:block;animation:sdsTopDownChar 0.6s cubic-bezier(0.16,1,0.3,1) calc(76ms) both">W</span></span><span class="sds-char" data-char="N" style="--sds-char-index:3"><span style="display:block;animation:sdsTopDownChar 0.6s cubic-bezier(0.16,1,0.3,1) calc(114ms) both">N</span></span></span>' },
+    { id: "kinetic-center-build", name: "Kinetic Build", cls: "sds-kinetic-center-build", desc: "Each character scales from 0.3x with 16deg skew, spring-settles staggered 45ms apart.", preview: '<span class="sds-kinetic-center-build" style="font-family:var(--display);font-size:24px;font-weight:700"><span class="sds-char" style="--sds-char-index:0">K</span><span class="sds-char" style="--sds-char-index:1">I</span><span class="sds-char" style="--sds-char-index:2">N</span><span class="sds-char" style="--sds-char-index:3">E</span><span class="sds-char" style="--sds-char-index:4">T</span><span class="sds-char" style="--sds-char-index:5">I</span><span class="sds-char" style="--sds-char-index:6">C</span></span>' },
+    { id: "short-slide-right", name: "Short Slide Right", cls: "sds-short-slide-right", desc: "Compact horizontal motion with restrained distance, crisp easing, and clean landing.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">Slide Right →</span>' },
+    { id: "short-slide-down",  name: "Short Slide Down",  cls: "sds-short-slide-down",  desc: "Compact vertical motion with minimal displacement and smooth timing control.", preview: '<span style="font-family:var(--display);font-size:24px;font-weight:700">↓ Slide Down</span>' }
+  ];
+
+  const buttonAnimations = [
+    { id: "btn-shimmer", name: "Shimmer Sweep", cls: "sds-btn-shimmer", desc: "Light sheen sweeps across button border on hover.", preview: '<button style="background:var(--surface2);color:#fff;border:1px solid rgba(255,255,255,0.08);padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer;position:relative;overflow:hidden;">Shimmer</button>', trigger: "hover" },
+    { id: "btn-glow", name: "Glow Pulse", cls: "sds-btn-glow", desc: "Pulsating boundary glow breathing continuously.", preview: '<button style="background:var(--primary);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">Glow Pulse</button>', trigger: "infinite" },
+    { id: "btn-pulse-ring", name: "Pulse Ring", cls: "sds-btn-pulse-ring", desc: "Concentric ripple ring radiates outward continuously.", preview: '<button style="background:var(--primary);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer;z-index:2">Pulse Ring</button>', trigger: "infinite" },
+    { id: "btn-bounce", name: "Bounce Loop", cls: "sds-btn-bounce", desc: "Soft floating vertical bounce.", preview: '<button style="background:var(--primary);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">Floating</button>', trigger: "infinite" },
+    { id: "btn-morph", name: "Pill Morph", cls: "sds-btn-morph", desc: "Hover to expand border-radius into a pill shape with spring settle.", preview: '<button style="background:var(--primary);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">Hover Me</button>', trigger: "hover" },
+    { id: "btn-neon", name: "Neon Outline", cls: "sds-btn-neon", desc: "Ambient border glow ring brightens on hover — elegant, not flashy.", preview: '<button style="padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">Ambient Glow</button>', trigger: "hover" },
+    { id: "btn-gradient", name: "Gradient Shift", cls: "sds-btn-gradient", desc: "Background brand gradient cycles in motion.", preview: '<button style="color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">Animated Gradient</button>', trigger: "infinite" },
+    { id: "btn-shake", name: "Error Shake", cls: "sds-btn-shake", desc: "Rapid horizontal offset alert feedback.", preview: '<button style="background:#2d1414;color:#ef4444;border:1px solid rgba(239,68,68,0.2);padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">Invalid Action</button>', trigger: "click" },
+    { id: "btn-float", name: "Float Lift", cls: "sds-btn-float", desc: "Elevates upward on hover with soft shadow layer.", preview: '<button style="background:var(--primary);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">Lifts Up</button>', trigger: "hover" },
+    { id: "btn-glow-bg", name: "Breathing BG", cls: "sds-btn-glow-bg", desc: "Background surface breathes in glow strength.", preview: '<button style="color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">Breathing</button>', trigger: "infinite" },
+    { id: "btn-stretch", name: "Stretch Active", cls: "sds-btn-stretch", desc: "Physical elastic compression on active click.", preview: '<button style="background:var(--primary);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">Compresses</button>', trigger: "click" },
+    { id: "btn-border-draw", name: "Border Shine", cls: "sds-btn-border-draw", desc: "Border highlights glow elastically on interaction.", preview: '<button style="background:none;color:var(--accent2);border:1px solid var(--border);padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">Border Shine</button>', trigger: "hover" },
+    { id: "btn-rubber", name: "Rubber Band", cls: "sds-btn-rubber", desc: "Organic physical expansion bounce.", preview: '<button style="background:var(--primary);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">Elastic Band</button>', trigger: "hover" },
+    { id: "btn-icon-slide", name: "Arrow Slide", cls: "sds-btn-icon-slide", desc: "Inner icon arrow slides smoothly on hover.", preview: '<button style="background:var(--primary);color:#fff;border:none;padding:12px 24px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer;display:flex;align-items:center;gap:6px">Continue <span class="sds-icon">→</span></button>', trigger: "hover" },
+    { id: "btn-confetti", name: "Confetti Burst", cls: "sds-btn-confetti", desc: "Bouncy scale burst on click validation.", preview: '<button style="background:var(--green);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:700;font-size:13.5px;cursor:pointer">✓ Submit</button>', trigger: "click" },
+    { id: "btn-heartbeat", name: "Heartbeat CTA", cls: "sds-btn-heartbeat", desc: "Engaging heartbeat breathing loop for actions.", preview: '<button style="background:#2a1622;color:#ff4b72;border:1px solid rgba(255,75,114,0.2);padding:12px 24px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">♥ Add Favorite</button>', trigger: "infinite" },
+    { id: "btn-underline", name: "Link Underline", cls: "sds-btn-underline", desc: "Underline grows from left edge on hover.", preview: '<button style="background:none;border:none;color:var(--text);padding:8px 2px;font-weight:600;font-size:14.5px;cursor:pointer">Learn More</button>', trigger: "hover" },
+    { id: "btn-swipe", name: "Swipe Sweep", cls: "sds-btn-swipe", desc: "Background floods across behind label on hover.", preview: '<button style="color:var(--accent2);border:1px solid var(--accent);background:transparent;padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer;position:relative;overflow:hidden;z-index:1;">Swipe Hover</button>', trigger: "hover" },
+    { id: "btn-depth", name: "Depth Press", cls: "sds-btn-depth", desc: "3D perspective presses down with shadow reduction.", preview: '<button style="background:var(--primary);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:13.5px;cursor:pointer">3D Button</button>', trigger: "click" }
+  ];
+
+  const inputAnimations = [
+    { id: "input-focus-glow", name: "Focus Halo", cls: "sds-input-focus-glow", desc: "Glowing ambient halo ring expands on focus.", preview: '<div class="sds-input-wrapper"><label class="sds-input-label">Focus Halo</label><input placeholder="Enter text..." style="background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:12px 16px;border-radius:8px;width:100%;outline:none"></div>' },
+    { id: "input-border", name: "Focus Transition", cls: "sds-input-border", desc: "Border shifts to brand primary on active focus.", preview: '<div class="sds-input-wrapper"><label class="sds-input-label">Focus Transition</label><input placeholder="Search..." style="background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:12px 16px;border-radius:8px;width:100%;outline:none"></div>' },
+    { id: "input-slide-in", name: "Slide Entrance", cls: "sds-input-slide-in", desc: "Fades and slides in laterally upon entrance.", preview: '<div class="sds-input-wrapper"><label class="sds-input-label">Slide Entrance</label><input placeholder="Username..." style="background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:12px 16px;border-radius:8px;width:100%;outline:none"></div>' },
+    { id: "input-glow-blue", name: "Continuous Ring", cls: "sds-input-glow-blue", desc: "Continuous pulsing glow borders active components.", preview: '<div class="sds-input-wrapper"><label class="sds-input-label">Continuous Ring</label><input placeholder="Active input..." style="background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:12px 16px;border-radius:8px;width:100%;outline:none"></div>' },
+    { id: "input-shake", name: "Error Shake", cls: "sds-input-shake", desc: "Lateral physical offsets representing input errors.", preview: '<div class="sds-input-wrapper"><label class="sds-input-label">Error Shake</label><input placeholder="Invalid value" style="background:var(--bg3);border:1px solid #ef4444;color:var(--text);padding:12px 16px;border-radius:8px;width:100%;outline:none"></div>', trigger: "click" },
+    { id: "input-success", name: "Success Validation", cls: "sds-input-success", desc: "Green success halo highlights valid input fields.", preview: '<div class="sds-input-wrapper"><label class="sds-input-label">Success Validation</label><input required value="Correct Input" style="background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:12px 16px;border-radius:8px;width:100%;outline:none"></div>' },
+    { id: "input-placeholder-pulse", name: "Pulsing Prompt", cls: "sds-input-placeholder-pulse", desc: "Placeholder prompts pulse softly prior to input.", preview: '<div class="sds-input-wrapper"><label class="sds-input-label">Pulsing Prompt</label><input placeholder="Type here..." style="background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:12px 16px;border-radius:8px;width:100%;outline:none"></div>' },
+    { id: "input-rounded-expand", name: "Morph Radius", cls: "sds-input-rounded-expand", desc: "Border corners morph to search pill on focus.", preview: '<div class="sds-input-wrapper"><label class="sds-input-label">Morph Radius</label><input placeholder="Pill Morph..." style="background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:12px 16px;border-radius:8px;width:100%;outline:none"></div>' },
+    { id: "input-neo", name: "Brutalist Offset", cls: "sds-input-neo", desc: "Hard, high-contrast offset block shadows on focus.", preview: '<div class="sds-input-wrapper"><label class="sds-input-label">Brutalist Offset</label><input placeholder="Brutalist..." style="background:var(--bg3);border:1.5px solid var(--primary);color:var(--text);padding:12px 16px;border-radius:4px;width:100%;outline:none"></div>' },
+    { id: "input-reveal", name: "Mask Reveal", cls: "sds-input-reveal", desc: "Reveal clip transitions upon entry.", preview: '<div class="sds-input-wrapper"><label class="sds-input-label">Mask Reveal</label><input placeholder="Clip reveal..." style="background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:12px 16px;border-radius:8px;width:100%;outline:none"></div>' },
+    { id: "input-bounce", name: "Focus Bounce", cls: "sds-input-bounce", desc: "Bounces upward elastically upon cursor active focus.", preview: '<div class="sds-input-wrapper"><label class="sds-input-label">Focus Bounce</label><input placeholder="Elevates..." style="background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:12px 16px;border-radius:8px;width:100%;outline:none"></div>' },
+    { id: "input-accent-left", name: "Accent Bar", cls: "sds-input-accent-left", desc: "Sleek leading vertical bar expands on active focus.", preview: '<div class="sds-input-wrapper"><label class="sds-input-label">Accent Bar</label><input placeholder="Left border..." style="background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:12px 16px;border-radius:8px;width:100%;outline:none"></div>' },
+    { id: "input-frosted", name: "Frosted Glass", cls: "sds-input-frosted", desc: "Glassmorphic frosted glass panels with blur sheens.", preview: '<div class="sds-input-wrapper"><label class="sds-input-label">Frosted Glass</label><input placeholder="Glass component..." style="padding:12px 16px;border-radius:12px;width:100%;border:1px solid rgba(255,255,255,0.12);outline:none;background:rgba(255,255,255,0.06);backdrop-filter:blur(10px);"></div>' },
+    { id: "input-flat-underline", name: "Flat Underline", cls: "sds-input-flat-underline", desc: "Minimal borderless input with bottom glowing underline.", preview: '<div class="sds-input-wrapper"><label class="sds-input-label">Flat Underline</label><input placeholder="Underline only..." style="color:var(--text);border:none;border-bottom:1px solid var(--border);padding:10px 4px;width:100%;outline:none;background:transparent;"></div>' }
+  ];
+
+  const cardAnimations = [
+    { id: "card-slide-up", name: "Slide Up", cls: "sds-card-slide-up", desc: "Container slides up while fading in on load.", preview: '<div style="width:160px;height:90px;background:var(--surface);border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:12px;color:var(--text2);box-shadow:0 8px 30px rgba(0,56,255,0.04)">Card Component</div>' },
+    { id: "card-slide-down", name: "Slide Down", cls: "sds-card-slide-down", desc: "Container slides down while fading in on load.", preview: '<div style="width:160px;height:90px;background:var(--surface);border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:12px;color:var(--text2);box-shadow:0 8px 30px rgba(0,56,255,0.04)">Slides Down</div>' },
+    { id: "card-flip", name: "3D Y-Flip", cls: "sds-card-flip", desc: "Flips in horizontally on vertical center axis.", preview: '<div style="width:160px;height:90px;background:var(--surface);border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:12px;color:var(--text2);box-shadow:0 8px 30px rgba(0,56,255,0.04)">Flip Entry</div>' },
+    { id: "card-tilt", name: "Perspective Tilt", cls: "sds-card-tilt", desc: "Continuous slight 3D perspective loop.", preview: '<div style="width:160px;height:90px;background:var(--surface);border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:12px;color:var(--text2);box-shadow:0 8px 30px rgba(0,56,255,0.04)">3D Wobble</div>', trigger: "infinite" },
+    { id: "card-glow-border", name: "Glow Boundary", cls: "sds-card-glow-border", desc: "Boundary glows breathing HSL brand shifts.", preview: '<div style="width:160px;height:90px;background:var(--surface);border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:12px;color:var(--text2);box-shadow:0 8px 30px rgba(0,56,255,0.04)">Boundary Glow</div>', trigger: "infinite" },
+    { id: "card-reveal", name: "Unfold Clip", cls: "sds-card-reveal", desc: "Masked unfold sweeps downward from top edge.", preview: '<div style="width:160px;height:90px;background:var(--surface);border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:12px;color:var(--text2);box-shadow:0 8px 30px rgba(0,56,255,0.04)">Unfolds</div>' },
+    { id: "card-pop", name: "Pop Entrance", cls: "sds-card-pop", desc: "Vibrant elastic bounce pops onto layout.", preview: '<div style="width:160px;height:90px;background:var(--surface);border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:12px;color:var(--text2);box-shadow:0 8px 30px rgba(0,56,255,0.04)">Pop Scale</div>' },
+    { id: "card-border-light", name: "Border Pulse", cls: "sds-card-border-light", desc: "Borders breathe from transparent to primary hues.", preview: '<div style="width:160px;height:90px;background:var(--surface);border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:12px;color:var(--text2);box-shadow:0 8px 30px rgba(0,56,255,0.04)">Border Pulse</div>', trigger: "infinite" },
+    { id: "card-shadow-pop", name: "Shadow Pop", cls: "sds-card-shadow-pop", desc: "Retro block shadow pops on entrance load.", preview: '<div style="width:160px;height:90px;background:var(--surface);border:1.5px solid var(--primary);border-radius:4px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;color:var(--primary)">Shadow Pop</div>' },
+    { id: "card-slide-left", name: "Slide Left", cls: "sds-card-slide-left", desc: "Enters from right side limits.", preview: '<div style="width:160px;height:90px;background:var(--surface);border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:12px;color:var(--text2);box-shadow:0 8px 30px rgba(0,56,255,0.04)">Slides Left</div>' },
+    { id: "card-slide-right", name: "Slide Right", cls: "sds-card-slide-right", desc: "Enters from left side limits.", preview: '<div style="width:160px;height:90px;background:var(--surface);border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:12px;color:var(--text2);box-shadow:0 8px 30px rgba(0,56,255,0.04)">Slides Right</div>' },
+    { id: "card-rotate-in", name: "Angle Rotate", cls: "sds-card-rotate-in", desc: "Angle twist entrance resolving flat.", preview: '<div style="width:160px;height:90px;background:var(--surface);border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:12px;color:var(--text2);box-shadow:0 8px 30px rgba(0,56,255,0.04)">Rotates In</div>' },
+    { id: "card-blur-in", name: "Clear Blur", cls: "sds-card-blur-in", desc: "Gains focus and opacity simultaneously.", preview: '<div style="width:160px;height:90px;background:var(--surface);border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:12px;color:var(--text2);box-shadow:0 8px 30px rgba(0,56,255,0.04)">Clears Focus</div>' },
+    { id: "card-shimmer", name: "Shimmer BG", cls: "sds-card-shimmer", desc: "Full container gradient shimmer loop.", preview: '<div style="width:160px;height:90px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:12px;color:#fff;background:linear-gradient(90deg, var(--surface) 0%, var(--surface2) 50%, var(--surface) 100%);">Shimmer Card</div>', trigger: "infinite" },
+    { id: "card-float", name: "Gravity Float", cls: "sds-card-float", desc: "Subtle perpetual floating hover loop.", preview: '<div style="width:160px;height:90px;background:var(--surface);border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:12px;color:var(--text2);box-shadow:0 8px 30px rgba(0,56,255,0.04)">Floating Card</div>', trigger: "infinite" },
+    { id: "card-morph", name: "Hover Morph", cls: "sds-card-morph", desc: "Hover to spring-expand border-radius from 12px to 20px with elevation.", preview: '<div style="width:160px;height:90px;background:var(--surface);border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:12px;color:var(--text2);box-shadow:0 8px 30px rgba(0,56,255,0.04)">Hover Me</div>', trigger: "hover" },
+    { id: "card-neon", name: "Ambient Elevation", cls: "sds-card-neon", desc: "Shadow elevation breathes slowly — communicates depth without neon.", preview: '<div style="width:160px;height:90px;background:var(--surface);border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:12px;color:var(--text2)">Elevation</div>', trigger: "infinite" },
+    { id: "card-press", name: "Press Snaps", cls: "sds-card-press", desc: "Elastic click compression tracking depth.", preview: '<div style="width:160px;height:90px;background:var(--surface);border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:12px;color:var(--text2);box-shadow:0 8px 30px rgba(0,56,255,0.04)">Interactive</div>', trigger: "infinite" },
+    { id: "card-unfold", name: "Door Unfolds", cls: "sds-card-unfold", desc: "Unfolds vertically from top ceiling margins.", preview: '<div style="width:160px;height:90px;background:var(--surface);border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:12px;color:var(--text2);box-shadow:0 8px 30px rgba(0,56,255,0.04)">Ceiling Drop</div>' },
+    { id: "card-glitch", name: "Depth Reveal", cls: "sds-card-glitch", desc: "Entrance from depth with blur clearing — elegant spatial reveal.", preview: '<div style="width:160px;height:90px;background:var(--surface);border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:12px;color:var(--text2);box-shadow:0 8px 30px rgba(0,56,255,0.04)">Depth Entry</div>' },
+    { id: "card-wipe", name: "Polygon Wipe", cls: "sds-card-wipe", desc: "Wipes in from left edge via polygon clipping.", preview: '<div style="width:160px;height:90px;background:var(--surface);border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:12px;color:var(--text2);box-shadow:0 8px 30px rgba(0,56,255,0.04)">Swipe Wipe</div>' },
+    { id: "card-bounce-in", name: "Elastic Bounce", cls: "sds-card-bounce-in", desc: "Vibrant pop with kinetic spring overshoot.", preview: '<div style="width:160px;height:90px;background:var(--surface);border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:12px;color:var(--text2);box-shadow:0 8px 30px rgba(0,56,255,0.04)">Bounce In</div>' },
+    { id: "card-depth-in", name: "Z-Axis Depth", cls: "sds-card-depth-in", desc: "Slides forward from perspective depth coordinates.", preview: '<div style="width:160px;height:90px;background:var(--surface);border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:12px;color:var(--text2);box-shadow:0 8px 30px rgba(0,56,255,0.04)">Z-Axis Zoom</div>' },
+    { id: "card-gradient", name: "Liquid Grad", cls: "sds-card-gradient", desc: "Fluid linear gradients scrolling inside container.", preview: '<div style="width:160px;height:90px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:12px;color:#fff;background:linear-gradient(90deg, var(--primary) 0%, var(--accent) 50%, var(--primary) 100%);">Liquid Color</div>', trigger: "infinite" },
+    { id: "card-scale", name: "Scale Breathe", cls: "sds-card-scale", desc: "Perpetual soft breathing scale changes.", preview: '<div style="width:160px;height:90px;background:var(--surface);border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:12px;color:var(--text2);box-shadow:0 8px 30px rgba(0,56,255,0.04)">Scaling</div>', trigger: "infinite" }
+  ];
+
+  const loaderAnimations = [
+    { id: "loader-spin", name: "Spin Circle", cls: "sds-loader-spin", desc: "Classic circular spinner.", preview: '<div class="sds-loader-spin" style="width:32px;height:32px;border:3px solid rgba(255,255,255,0.06);border-top-color:var(--accent);border-radius:50%"></div>' },
+    { id: "loader-dots", name: "Three Dots", cls: "sds-loader-dots", desc: "Three bouncing physical dots.", preview: '<div class="sds-loader-dots"><div></div><div></div><div></div></div>' },
+    { id: "loader-pulse-dots", name: "Pulse Dots", cls: "sds-loader-pulse-dots", desc: "Three sequential pulsing scale dots.", preview: '<div class="sds-loader-pulse-dots"><div></div><div></div><div></div></div>' },
+    { id: "loader-bars", name: "Equalizer Bars", cls: "sds-loader-bars", desc: "Continuous simulated equalizer bars.", preview: '<div class="sds-loader-bars"><div></div><div></div><div></div><div></div><div></div></div>' },
+    { id: "loader-skeleton", name: "Skeleton Line", cls: "sds-loader-skeleton", desc: "Simulated modular loading skeleton.", preview: '<div style="width:200px;display:flex;flex-direction:column;gap:8px"><div class="sds-loader-skeleton"></div><div class="sds-loader-skeleton" style="width:60%"></div></div>' },
+    { id: "loader-progress", name: "Progress Bar", cls: "sds-loader-progress", desc: "Standard progress meter loader.", preview: '<div class="sds-loader-progress" style="width:200px"><div></div></div>' },
+    { id: "loader-indeterminate", name: "Indeterminate Bar", cls: "sds-loader-indeterminate", desc: "Infinite horizontal loading slider.", preview: '<div class="sds-loader-indeterminate" style="width:200px"><div></div></div>' },
+    { id: "loader-ping", name: "Ping Ring", cls: "sds-loader-ping", desc: "Glowing ambient ripple ping coordinates.", preview: '<div class="sds-loader-ping"></div>' },
+    { id: "loader-orbit", name: "Orbit Spin", cls: "sds-loader-orbit", desc: "Concentric orbit satellite spinner.", preview: '<div class="sds-loader-orbit"><div></div></div>' },
+    { id: "loader-square-flip", name: "Square Flip", cls: "sds-loader-square-flip", desc: "3D perspective rotating flip block.", preview: '<div class="sds-loader-square-flip"></div>' },
+    { id: "loader-morph", name: "Morph Spin", cls: "sds-loader-morph", desc: "Continuous morphing shape loader.", preview: '<div class="sds-loader-morph"></div>' }
+  ];
+
+  const scrollAnimations = [
+    { id: "scroll-fade-up", name: "Scroll Fade Up", cls: "sds-scroll-fade-up", desc: "Slides up and fades when entering viewport.", preview: '<div class="sds-scroll-fade-up scroll-sim-item">Scroll Fade Up</div>' },
+    { id: "scroll-fade-left", name: "Scroll Fade Left", cls: "sds-scroll-fade-left", desc: "Enters from right side constraints.", preview: '<div class="sds-scroll-fade-left scroll-sim-item">Scroll Fade Left</div>' },
+    { id: "scroll-fade-right", name: "Scroll Fade Right", cls: "sds-scroll-fade-right", desc: "Enters from left side constraints.", preview: '<div class="sds-scroll-fade-right scroll-sim-item">Scroll Fade Right</div>' },
+    { id: "scroll-zoom-in", name: "Scroll Zoom In", cls: "sds-scroll-zoom-in", desc: "Scales upward from slightly smaller bounds.", preview: '<div class="sds-scroll-zoom-in scroll-sim-item">Scroll Zoom In</div>' },
+    { id: "scroll-rotate-in", name: "Scroll Rotate In", cls: "sds-scroll-rotate-in", desc: "Rotates clockwise on entrance load.", preview: '<div class="sds-scroll-rotate-in scroll-sim-item">Scroll Rotate In</div>' },
+    { id: "scroll-flip-up", name: "Scroll Flip X", cls: "sds-scroll-flip-up", desc: "Flips around perspective horizontal axis.", preview: '<div class="sds-scroll-flip-up scroll-sim-item">Scroll Flip X</div>' },
+    { id: "scroll-flip-left", name: "Scroll Flip Y", cls: "sds-scroll-flip-left", desc: "Flips around perspective vertical axis.", preview: '<div class="sds-scroll-flip-left scroll-sim-item">Scroll Flip Y</div>' },
+    { id: "scroll-spring", name: "Scroll Spring Pop", cls: "sds-scroll-spring", desc: "Overshoot spring popup scale.", preview: '<div class="sds-scroll-spring scroll-sim-item" style="color:var(--accent2);border-color:rgba(77,95,255,0.25)">Scroll Spring</div>' },
+    { id: "scroll-drop", name: "Scroll Drop", cls: "sds-scroll-drop", desc: "Slides down from top bounds.", preview: '<div class="sds-scroll-drop scroll-sim-item">Scroll Drop</div>' },
+    { id: "scroll-reveal-left", name: "Scroll Reveal X", cls: "sds-scroll-reveal-left", desc: "Clip reveals left to right laterally.", preview: '<div class="sds-scroll-reveal-left scroll-sim-item">Scroll Reveal X</div>' },
+    { id: "scroll-reveal-bottom", name: "Scroll Reveal Y", cls: "sds-scroll-reveal-bottom", desc: "Clip reveals top to bottom vertically.", preview: '<div class="sds-scroll-reveal-bottom scroll-sim-item">Scroll Reveal Y</div>' },
+    { id: "scroll-blur-reveal", name: "Scroll Defocus", cls: "sds-scroll-blur-reveal", desc: "Fades in and clears initial blurs.", preview: '<div class="sds-scroll-blur-reveal scroll-sim-item">Scroll Defocus</div>' },
+    { id: "scroll-mask-circle", name: "Circle Mask Reveal", cls: "sds-scroll-mask-circle", desc: "Radial circular sweep reveals element.", preview: '<div class="sds-scroll-mask-circle scroll-sim-item">Circle Mask</div>' },
+    { id: "scroll-fade-scale", name: "Scroll Fade Scale", cls: "sds-scroll-fade-scale", desc: "Fades and scales down from 110%.", preview: '<div class="sds-scroll-fade-scale scroll-sim-item">Scroll Scale Down</div>' },
+    { id: "scroll-underline", name: "Scroll Underline", cls: "sds-scroll-underline", desc: "Bottom highlighter expands across bounds.", preview: '<div class="sds-scroll-underline scroll-sim-item">Scroll Underline</div>' }
+  ];
+
+  // Set initial total count in sidebar
+  const totalAnims = textAnimations.length + buttonAnimations.length + inputAnimations.length + cardAnimations.length + loaderAnimations.length + scrollAnimations.length;
+  document.getElementById('stat-count').textContent = totalAnims + "+";
+
+  let activeSection = 'text';
+
+  /* ==========================================================================
+     RENDER WORKSPACE LOGIC
+     ========================================================================== */
+  function renderWorkspace() {
+    const container = document.getElementById('section-content');
+    const variablesBar = document.getElementById('variablesBar');
+    
+    if (activeSection === 'webcomp') {
+      variablesBar.style.display = 'none';
+      renderWebComponentsSection(container);
+      return;
+    }
+    variablesBar.style.display = 'flex';
+
+    const sectionMeta = {
+      text: { title: "Text Systems", desc: "Modular, high-performance entrance reveals and chromas. Fully staggered child elements." },
+      button: { title: "Button States", desc: "Vibrant custom interactions, depth compression press elements, and neon bounding outlines." },
+      input: { title: "Inputs & Focus", desc: "Interactive validation styling. Focus glowing halos, flat underline sweeps, and validation indicators." },
+      card: { title: "Cards & Depth", desc: "Perspective 3D rotations, spotlights coordinate gradients, and morphological containers." },
+      loader: { title: "Loaders & Skeletons", desc: "Equalizers, orbit loaders, progress bars, and indeterminate skeletal layouts." },
+      scroll: { title: "Scroll Viewports", desc: "On-scroll viewport observer triggers. Elements animate on entrance dynamically." }
+    };
+
+    const meta = sectionMeta[activeSection];
+    let db = [];
+    if (activeSection === 'text') db = textAnimations;
+    else if (activeSection === 'button') db = buttonAnimations;
+    else if (activeSection === 'input') db = inputAnimations;
+    else if (activeSection === 'card') db = cardAnimations;
+    else if (activeSection === 'loader') db = loaderAnimations;
+    else if (activeSection === 'scroll') db = scrollAnimations;
+
+    let html = `
+      <div style="margin-bottom: 24px; border-bottom: 1px solid var(--border); padding-bottom: 12px;">
+        <h3 style="font-family: var(--display); font-size: 20px; font-weight: 800; color: var(--accent2);">${meta.title}</h3>
+        <p style="color: var(--text2); font-size: 13.5px; margin-top: 2px;">${meta.desc}</p>
+      </div>
+    `;
+
+    if (activeSection === 'scroll') {
+      html += `
+        <div style="margin-bottom: 30px; border: 1px solid var(--border); padding: 20px; border-radius: 12px; background: var(--bg2); box-shadow: 0 8px 30px rgba(0, 56, 255, 0.05);">
+          <div class="global-bar-label" style="margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
+            <span style="color: var(--accent2);">Scroll Viewport Simulator</span>
+            <button class="btn-action-trigger" style="padding: 4px 10px; font-size: 10px;" onclick="resetScrollSimulator()">⟳ Reset Elements</button>
+          </div>
+          <div class="scroll-sim-space" id="scrollSimulator">
+            ${db.map(item => `
+              <div class="${item.cls} scroll-sim-item" data-sds-once="false">
+                <span>${item.name} — Inside Viewport</span>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    html += `<div class="anim-grid">`;
+
+    db.forEach(item => {
+      const trig = item.trigger || "load";
+      const verb = trig === "click" ? "Click" : (trig === "hover" ? "Hover" : "Play");
+      const triggerLabel = `${verb} ${item.name}`;
+
+      html += `
+        <div class="anim-card" id="card-${item.id}">
+          
+          <!-- Canvas Preview -->
+          <div class="preview-canvas" id="canvas-${item.id}">
+            <div id="target-${item.id}">
+              ${item.preview}
+            </div>
+          </div>
+
+          <!-- Card Metadata -->
+          <div class="card-meta">
+            <h3 class="anim-title">${item.name}</h3>
+            <p class="anim-desc">${item.desc}</p>
+            
+            <div class="card-footer">
+              <button class="class-pill" id="pill-${item.id}" onclick="copyClass('${item.id}', '${item.cls}')" title="Click to copy combined class name">
+                <span class="class-name">${item.cls}</span>
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+              <button class="btn-action-trigger" onclick="triggerAnimation('${item.id}', '${item.cls}')">
+                ${triggerLabel}
+              </button>
+            </div>
+          </div>
+
+        </div>
+      `;
+    });
+
+    html += `</div>`;
+    container.innerHTML = html;
+
+    // Trigger preview animations
+    db.forEach(item => {
+      triggerAnimation(item.id, item.cls);
+    });
+
+    // Reinitialize viewport observers
+    if (activeSection === 'scroll' && window.SDSObservations) {
+      window.SDSObservations.init();
+    }
+  }
+
+  /* ==========================================================================
+     RENDER WEB COMPONENTS SHOWCASE
+     ========================================================================== */
+  function renderWebComponentsSection(container) {
+    container.innerHTML = `
+      <div style="margin-bottom: 24px; border-bottom: 1px solid var(--border); padding-bottom: 12px;">
+        <h3 style="font-family: var(--display); font-size: 20px; font-weight: 800; color: var(--accent2);">Custom Web Components</h3>
+        <p style="color: var(--text2); font-size: 13.5px; margin-top: 2px;">Framework-agnostic native custom elements compiled inside <code>sds-motion</code>.</p>
+      </div>
+
+      <div class="components-showcase">
+        
+        <!-- 1. TEXT REVEAL COMPONENT -->
+        <div class="showcase-block">
+          <h3 class="showcase-title">&lt;mf-text-reveal&gt; Stagger System</h3>
+          <p style="font-size:13px; color:var(--text2);">Splits text characters automatically, applying physics-based staggered cubic reveals.</p>
+          <div class="showcase-canvas">
+            <mf-text-reveal effect="blur-in" speed="slow" delay="100" stagger="60" style="font-family:var(--display); font-size:36px; font-weight:800; text-align:center; color:var(--accent2);">
+              SDS MOTION
+            </mf-text-reveal>
+          </div>
+          <div class="component-code">
+            <button class="drawer-copy-btn" onclick="copyToClipboard(this.nextElementSibling.textContent, 'Web Component code copied!')">Copy</button>
+            <code>&lt;mf-text-reveal effect="blur-in" speed="slow" delay="100" stagger="60"&gt;
+  SDS MOTION
+&lt;/mf-text-reveal&gt;</code>
+          </div>
+        </div>
+
+        <!-- 2. MAGNETIC SPRING COMPONENT -->
+        <div class="showcase-block">
+          <h3 class="showcase-title">&lt;mf-magnetic&gt; Elastic Attraction</h3>
+          <p style="font-size:13px; color:var(--text2);">Attracts components to cursors smoothly inside spring boundary equations.</p>
+          <div class="showcase-canvas" style="gap: 50px;">
+            
+            <div class="magnetic-wrap">
+              <span class="magnetic-tag">Spring 0.10</span>
+              <mf-magnetic data-sds-range="70" data-sds-spring="0.10" data-sds-damping="0.75">
+                <button class="btn-action-trigger" style="padding: 14px 24px; border-radius: 50%; font-weight:700;">Snaps</button>
+              </mf-magnetic>
+            </div>
+
+            <div class="magnetic-wrap">
+              <span class="magnetic-tag">Spring 0.22</span>
+              <mf-magnetic data-sds-range="70" data-sds-spring="0.22" data-sds-damping="0.80">
+                <button class="btn-action-trigger" style="padding: 14px 24px; border-radius: 50%; font-weight:700; background:var(--accent);">Bounce</button>
+              </mf-magnetic>
+            </div>
+
+          </div>
+          <div class="component-code">
+            <button class="drawer-copy-btn" onclick="copyToClipboard(this.nextElementSibling.textContent, 'Web Component code copied!')">Copy</button>
+            <code>&lt;mf-magnetic data-sds-range="70" data-sds-spring="0.15" data-sds-damping="0.78"&gt;
+  &lt;button class="btn-magnetic"&gt;Elastic Snap&lt;/button&gt;
+&lt;/mf-magnetic&gt;</code>
+          </div>
+        </div>
+
+        <!-- 3. TILT SPOTLIGHT CARD COMPONENT -->
+        <div class="showcase-block">
+          <h3 class="showcase-title">&lt;mf-tilt-card&gt; 3D perspective spotlight</h3>
+          <p style="font-size:13px; color:var(--text2);">Applies real-time mouse coordinate spotlight sheens and custom 3D translations.</p>
+          <div class="showcase-canvas">
+            
+            <mf-tilt-card max-tilt="20" class="showcase-tilt-card">
+              <div class="tilt-card-header sds-tilt-3d-child">
+                <div class="tilt-card-chip"></div>
+                <span class="tilt-card-logo">SDS MOTION</span>
+              </div>
+              <div class="tilt-card-num sds-tilt-3d-child" style="transform: translateZ(35px);">
+                ••••  ••••  ••••  1128
+              </div>
+              <div class="tilt-card-footer sds-tilt-3d-child">
+                <div>
+                  <div style="font-size: 8px; color:rgba(255,255,255,0.4)">Card Holder</div>
+                  <div style="color:rgba(255,255,255,0.85); font-weight:500;">SDS Developer</div>
+                </div>
+                <div>
+                  <div style="font-size: 8px; color:rgba(255,255,255,0.4)">Expires</div>
+                  <div style="color:rgba(255,255,255,0.85); font-weight:500;">08/29</div>
+                </div>
+              </div>
+            </mf-tilt-card>
+
+          </div>
+          <div class="component-code">
+            <button class="drawer-copy-btn" onclick="copyToClipboard(this.nextElementSibling.textContent, 'Web Component code copied!')">Copy</button>
+            <code>&lt;mf-tilt-card max-tilt="20" class="showcase-tilt-card"&gt;
+  &lt;div class="tilt-card-logo sds-tilt-3d-child"&gt;SDS MOTION&lt;/div&gt;
+  &lt;div class="tilt-card-number sds-tilt-3d-child" style="transform: translateZ(35px);"&gt;•••• 1128&lt;/div&gt;
+&lt;/mf-tilt-card&gt;</code>
+          </div>
+        </div>
+
+      </div>
+    `;
+
+    if (window.SDSHoverEngine) window.SDSHoverEngine.init();
+    if (window.SDSMagneticEngine) window.SDSMagneticEngine.init();
+  }
+
+  /* ==========================================================================
+     PLAYGROUND CONTROLS & INTERACTION ENGINE
+     ========================================================================== */
+  function switchSection(sec, btn) {
+    activeSection = sec;
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    
+    // Reset global modifiers bar values
+    document.getElementById('global-speed').value = "";
+    document.getElementById('global-delay').value = "";
+    document.getElementById('global-easing').value = "";
+
+    renderWorkspace();
+
+    // Reset right panel scroll position to top
+    const rightPanel = document.querySelector('.right-panel');
+    if (rightPanel) {
+      rightPanel.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
+  function getGlobalModifiers() {
+    const speed = document.getElementById('global-speed').value;
+    const delay = document.getElementById('global-delay').value;
+    const ease = document.getElementById('global-easing').value;
+
+    let modifiers = [];
+    if (speed) modifiers.push(speed);
+    if (delay) modifiers.push(delay);
+    if (ease) modifiers.push(ease);
+
+    return modifiers.join(' ');
+  }
+
+  function applyGlobalModifiers() {
+    let db = [];
+    if (activeSection === 'text') db = textAnimations;
+    else if (activeSection === 'button') db = buttonAnimations;
+    else if (activeSection === 'input') db = inputAnimations;
+    else if (activeSection === 'card') db = cardAnimations;
+    else if (activeSection === 'loader') db = loaderAnimations;
+    else if (activeSection === 'scroll') db = scrollAnimations;
+
+    db.forEach(item => {
+      triggerAnimation(item.id, item.cls);
+    });
+  }
+
+  function getAnimationTrigger(id) {
+    let db = [];
+    if (activeSection === 'text') db = textAnimations;
+    else if (activeSection === 'button') db = buttonAnimations;
+    else if (activeSection === 'input') db = inputAnimations;
+    else if (activeSection === 'card') db = cardAnimations;
+    else if (activeSection === 'loader') db = loaderAnimations;
+    else if (activeSection === 'scroll') db = scrollAnimations;
+    const item = db.find(entry => entry.id === id);
+    return item?.trigger || "load";
+  }
+
+  function triggerAnimation(id, baseClass) {
+    const wrapper = document.getElementById(`target-${id}`);
+    if (!wrapper) return;
+    
+    const globalMods = getGlobalModifiers();
+    const pill = document.getElementById(`pill-${id}`);
+    const nameSpan = pill ? pill.querySelector('.class-name') : null;
+    
+    const cleanBaseClass = baseClass.replace(/\bsds-infinite\b/g, '').trim();
+    let finalClass = `${cleanBaseClass} ${globalMods}`.replace(/\s+/g, ' ').trim();
+    if (nameSpan) {
+      nameSpan.textContent = finalClass;
+    } else if (pill) {
+      pill.textContent = finalClass;
+    }
+
+    const triggerType = getAnimationTrigger(id);
+    const loopClass = triggerType === "infinite" ? "sds-infinite" : "sds-once";
+
+    if (activeSection === 'input') {
+      const outerWrapper = wrapper.querySelector('.sds-input-wrapper') || wrapper.firstElementChild;
+      const innerInput = wrapper.querySelector('input');
+      const isPhysical = baseClass.includes('slide-in') || baseClass.includes('shake') || baseClass.includes('reveal');
+      
+      if (isPhysical) {
+        if (innerInput) {
+          innerInput.className = '';
+        }
+        if (outerWrapper) {
+          outerWrapper.className = 'sds-input-wrapper';
+          void outerWrapper.offsetWidth; // Force layout reflow
+          outerWrapper.className = `sds-input-wrapper ${finalClass} ${loopClass}`.trim();
+        }
+      } else {
+        if (outerWrapper) {
+          outerWrapper.className = 'sds-input-wrapper';
+        }
+        if (innerInput) {
+          innerInput.className = '';
+          void innerInput.offsetWidth; // Force layout reflow
+          innerInput.className = `${finalClass} ${loopClass}`.trim();
+        }
+      }
+    } else {
+      const target = wrapper.firstElementChild || wrapper;
+      target.className = '';
+      void target.offsetWidth; // Force layout reflow
+      target.className = `${finalClass} ${loopClass}`.trim();
+    }
+  }
+
+  function copyClass(id, baseClass) {
+    const globalMods = getGlobalModifiers();
+    const cleanBaseClass = baseClass.replace(/\bsds-infinite\b/g, '').trim();
+    const finalClasses = `${cleanBaseClass} ${globalMods}`.replace(/\s+/g, ' ').trim();
+    copyToClipboard(finalClasses, `Copied classes: ${finalClasses}`);
+  }
+
+  function resetScrollSimulator() {
+    const sim = document.getElementById('scrollSimulator');
+    const items = sim.querySelectorAll('.scroll-sim-item');
+    items.forEach(el => el.classList.remove('sds-in-view'));
+    if (window.SDSObservations) window.SDSObservations.init();
+  }
+
+  /* ==========================================================================
+     SIDEBAR INSTALLATION TABS SWITCHER
+     ========================================================================== */
+  function switchInstallTab(tabId, btn) {
+    const parent = btn.closest('.install-card');
+    if (!parent) return;
+
+    // Toggle panels visibility
+    parent.querySelectorAll('.install-tab-panel').forEach(panel => {
+      panel.classList.remove('active');
+    });
+    const panel = document.getElementById(`install-content-${tabId}`);
+    if (panel) panel.classList.add('active');
+
+    // Toggle tabs triggers active states
+    parent.querySelectorAll('.install-tab-trigger').forEach(trigger => {
+      trigger.classList.remove('active');
+    });
+    btn.classList.add('active');
+  }
+
+  /* ==========================================================================
+     CLIPBOARD TOAST FEEDBACK NOTIFIERS
+     ========================================================================== */
+  function copyToClipboard(text, message) {
+    navigator.clipboard.writeText(text).then(() => {
+      const toast = document.getElementById('toast');
+      const msg = document.getElementById('toast-message');
+      
+      msg.textContent = message || 'Copied to clipboard!';
+      toast.classList.add('show');
+
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2000);
+    });
+  }
+
+  // Initial trigger and workspace render on load
+  renderWorkspace();
+</script>
+
+<!-- Load Web Component bundles dynamically -->
+<script src="../dist/motion.min.js" defer></script>
+</body>
+</html>
+
+
+
+
+

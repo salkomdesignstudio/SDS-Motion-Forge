@@ -1,0 +1,187 @@
+/* ==========================================================================
+   SDS MOTION — INPUT ANIMATIONS
+   High-fidelity focus states, entrance reveals, and validation feedback.
+   No layout-shifting transitions — all motion stays within element bounds.
+   ========================================================================== */
+
+/* ─── Focus Glow Ring — clean focus ring on active state ─────────────────── */
+.sds-input-focus-glow {
+  transition: border-color 0.25s var(--ease-smooth), box-shadow 0.25s var(--ease-smooth);
+}
+.sds-input-focus-glow:focus {
+  border-color: var(--sds-accent) !important;
+  box-shadow: 0 0 0 3px rgba(var(--sds-accent-rgb), 0.14) !important;
+  outline: none;
+}
+
+/* ─── Border Transition — solid color shift on focus ─────────────────────── */
+.sds-input-border {
+  border: 1px solid transparent;
+  transition: border-color 0.25s var(--ease-smooth);
+}
+.sds-input-border:focus {
+  border-color: var(--sds-primary) !important;
+  outline: none;
+}
+
+/* ─── Slide In — entrance from left side ─────────────────────────────────── */
+.sds-input-slide-in {
+  animation: sdsInputSlideIn var(--sds-duration) var(--ease-smooth) var(--sds-delay) both;
+}
+
+/* ─── Ambient Glow Blue — subtle continuous border ring ─────────────────── */
+.sds-input-glow-blue {
+  animation: sdsInputGlowBlue 2.8s var(--ease-smooth) infinite;
+}
+
+/* ─── Shake Error — decaying physics wobble for error feedback ───────────── */
+.sds-input-shake {
+  animation: sdsInputShake 0.45s var(--ease-smooth) both;
+}
+
+/* ─── Success Valid — green ring on valid input ───────────────────────────── */
+.sds-input-success:focus:valid {
+  border-color: var(--sds-green) !important;
+  box-shadow: 0 0 0 3px rgba(var(--sds-green-rgb), 0.14) !important;
+  transition: border-color 0.25s var(--ease-smooth), box-shadow 0.25s var(--ease-smooth);
+}
+
+/* ─── Placeholder Pulse — placeholder opacity breathes ───────────────────── */
+.sds-input-placeholder-pulse::placeholder {
+  animation: sdsPlaceholderPulse 2s var(--ease-smooth) infinite alternate;
+}
+
+/* ─── Rounded Expand — border-radius softens on focus (layout-safe) ──────── */
+.sds-input-rounded-expand {
+  transition: border-radius 0.3s var(--ease-spring), border-color 0.25s var(--ease-smooth), box-shadow 0.25s var(--ease-smooth);
+}
+.sds-input-rounded-expand:focus {
+  border-radius: 12px !important;
+  border-color: var(--sds-accent) !important;
+  box-shadow: 0 0 0 3px rgba(var(--sds-accent-rgb), 0.1) !important;
+  outline: none;
+}
+
+/* ─── Neo Brutalist — offset box shadow grows on focus ───────────────────── */
+.sds-input-neo {
+  box-shadow: 2px 2px 0 var(--sds-primary);
+  transition: box-shadow 0.15s var(--ease-smooth), transform 0.15s var(--ease-smooth);
+}
+.sds-input-neo:focus {
+  box-shadow: 4px 4px 0 var(--sds-primary);
+  transform: translate(-2px, -2px);
+  outline: none;
+}
+
+/* ─── Reveal — clip-path wipes input into view from left ─────────────────── */
+.sds-input-reveal {
+  animation: sdsInputReveal var(--sds-duration) var(--ease-reveal) var(--sds-delay) both;
+}
+
+/* ─── Persistent Green Glow — valid/confirmed state ──────────────────────── */
+.sds-input-glow-green {
+  border-color: var(--sds-green) !important;
+  box-shadow: 0 0 0 3px rgba(var(--sds-green-rgb), 0.12) !important;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+/* ─── Focus Accent Lift — accent ring scales in on focus (no layout shift) ── */
+.sds-input-bounce {
+  transition: box-shadow 0.3s var(--ease-spring), border-color 0.25s var(--ease-smooth);
+}
+.sds-input-bounce:focus {
+  border-color: var(--sds-accent) !important;
+  box-shadow: 0 0 0 4px rgba(var(--sds-accent-rgb), 0.12) !important;
+  outline: none;
+}
+
+/* ─── Accent Left Bar — bold left border grows on focus ──────────────────── */
+.sds-input-accent-left {
+  transition: border-left-width 0.2s var(--ease-spring), border-left-color 0.2s var(--ease-smooth);
+}
+.sds-input-accent-left:focus {
+  border-left-width: 3px !important;
+  border-left-color: var(--sds-primary) !important;
+  outline: none;
+}
+
+/* ─── Frosted Glass — backdrop blur surface (transparent mode) ───────────── */
+.sds-input-frosted {
+  backdrop-filter: blur(8px);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  transition: background 0.25s var(--ease-smooth), border-color 0.25s var(--ease-smooth);
+}
+.sds-input-frosted:focus {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.22);
+  outline: none;
+}
+
+/* ─── Flat Underline — material design bottom border only ────────────────── */
+.sds-input-flat-underline {
+  border: none !important;
+  border-bottom: 2px solid rgba(var(--sds-primary-rgb), 0.3) !important;
+  background: transparent !important;
+  transition: border-bottom-color 0.25s var(--ease-smooth);
+}
+.sds-input-flat-underline:focus {
+  border-bottom-color: var(--sds-primary) !important;
+  outline: none;
+}
+
+/* ─── Amber Warning — state indicator for caution fields ─────────────────── */
+.sds-input-warning {
+  border-color: #f5a623 !important;
+  background: rgba(245,166,35,0.04) !important;
+  box-shadow: 0 0 0 3px rgba(245,166,35,0.1) !important;
+}
+
+/* ─── Textarea Glow — soft focus ring for multiline ─────────────────────── */
+.sds-input-textarea-glow {
+  transition: box-shadow 0.3s var(--ease-smooth), border-color 0.3s var(--ease-smooth);
+}
+.sds-input-textarea-glow:focus {
+  box-shadow: 0 0 0 3px rgba(var(--sds-primary-rgb), 0.12) !important;
+  border-color: var(--sds-accent) !important;
+  outline: none;
+}
+
+/* ==========================================================================
+   KEYFRAMES
+   ========================================================================== */
+
+/* Slide in — glides from 12px left offset */
+@keyframes sdsInputSlideIn {
+  from { transform: translateX(-12px); opacity: 0; }
+  to   { transform: translateX(0);     opacity: 1; }
+}
+
+/* Glow blue — subtle ring breathes in and out */
+@keyframes sdsInputGlowBlue {
+  0%, 100% { box-shadow: 0 0 0 1px rgba(var(--sds-primary-rgb), 0.25); }
+  50%      { box-shadow: 0 0 0 3px rgba(var(--sds-primary-rgb), 0.1); }
+}
+
+/* Shake — decaying lateral wobble for error feedback */
+@keyframes sdsInputShake {
+  0%   { transform: translateX(0); }
+  15%  { transform: translateX(-5px); }
+  30%  { transform: translateX(4px); }
+  45%  { transform: translateX(-3px); }
+  60%  { transform: translateX(2px); }
+  80%  { transform: translateX(-1px); }
+  100% { transform: translateX(0); }
+}
+
+/* Placeholder pulse — opacity drifts gently */
+@keyframes sdsPlaceholderPulse {
+  from { opacity: 0.75; }
+  to   { opacity: 0.35; }
+}
+
+/* Reveal — clip-path wipes in from left */
+@keyframes sdsInputReveal {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0% 0 0); }
+}

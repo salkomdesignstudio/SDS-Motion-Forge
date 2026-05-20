@@ -1,0 +1,251 @@
+/* ==========================================================================
+   SDS MOTION — CARD & CONTAINER ANIMATIONS
+   Premium entrance reveals, hover states, and depth transitions.
+   Optimized for modern SaaS card layouts — subtle, intentional, spatial.
+   ========================================================================== */
+
+/* ─── Entrance Animations ─────────────────────────────────────────────────── */
+.sds-card-slide-up    { animation: sdsCardSlideUp     var(--sds-duration) var(--sds-easing) var(--sds-delay) both; }
+.sds-card-flip        { animation: sdsCardFlip         var(--sds-duration) var(--sds-easing) var(--sds-delay) both; }
+.sds-card-reveal      { animation: sdsCardReveal       var(--sds-duration) var(--ease-reveal) var(--sds-delay) both; }
+.sds-card-pop         { animation: sdsCardPop          var(--sds-duration) var(--ease-spring) var(--sds-delay) both; }
+.sds-card-shadow-pop  { animation: sdsCardShadowPop    var(--sds-duration) var(--sds-easing) var(--sds-delay) both; }
+.sds-card-slide-left  { animation: sdsCardSlideLeft    var(--sds-duration) var(--sds-easing) var(--sds-delay) both; }
+.sds-card-slide-right { animation: sdsCardSlideRight   var(--sds-duration) var(--sds-easing) var(--sds-delay) both; }
+.sds-card-rotate-in   { animation: sdsCardRotateIn     var(--sds-duration) var(--ease-smooth) var(--sds-delay) both; }
+.sds-card-blur-in     { animation: sdsCardBlurIn       var(--sds-duration) var(--ease-smooth) var(--sds-delay) both; }
+.sds-card-unfold      { animation: sdsCardUnfold       var(--sds-duration) var(--ease-reveal) var(--sds-delay) both; }
+.sds-card-wipe        { animation: sdsCardWipe         var(--sds-duration) var(--ease-reveal) var(--sds-delay) both; }
+.sds-card-bounce-in   { animation: sdsCardBounceIn     var(--sds-duration) var(--ease-spring) var(--sds-delay) both; }
+.sds-card-depth-in    { animation: sdsCardDepthIn      var(--sds-duration) var(--ease-smooth) var(--sds-delay) both; }
+.sds-card-slide-down { animation: sdsCardSlideDown var(--sds-duration) var(--sds-easing) var(--sds-delay) both; }
+
+/* ─── Continuous / Ambient States ────────────────────────────────────────── */
+/* Subtle 3deg ambient tilt — not an aggressive rocking motion */
+.sds-card-tilt { animation: sdsCardTilt 5s var(--ease-smooth) var(--sds-delay) infinite alternate; }
+
+/* Ambient border glow — shadow blooms and contracts softly */
+.sds-card-glow-border { animation: sdsCardGlow 3s var(--ease-smooth) var(--sds-delay) infinite; }
+
+/* Light border pulse — border color shifts between transparent and accent */
+.sds-card-border-light { animation: sdsCardBorderLight 3.5s var(--ease-smooth) var(--sds-delay) infinite; }
+
+/* Skeleton loading shimmer */
+.sds-card-shimmer {
+  background: linear-gradient(90deg, rgba(0,0,0,0.04) 0%, rgba(0,0,0,0.08) 50%, rgba(0,0,0,0.04) 100%);
+  background-size: 200% 100%;
+  animation: sdsCardShimmer 1.8s linear infinite;
+}
+
+/* Gentle float — 5px vertical drift, soft and unhurried */
+.sds-card-float { animation: sdsCardFloat 4.5s ease-in-out var(--sds-delay) infinite; }
+
+/* Hover-triggered rounding morph — spring settle to rounded corners */
+.sds-card-morph {
+  border-radius: 12px;
+  transition: border-radius 0.5s var(--ease-spring), box-shadow 0.4s var(--ease-smooth);
+}
+.sds-card-morph:hover {
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+}
+
+/* Ambient elevation shadow — replaces garish neon glow */
+.sds-card-neon { animation: sdsCardElevate 3.5s var(--ease-smooth) var(--sds-delay) infinite; }
+
+/* Press breathing — subtle scale breathe, indicates interactivity */
+.sds-card-press { animation: sdsCardPress 3s var(--ease-smooth) var(--sds-delay) infinite; }
+
+/* Glitch — replaced with elegant depth reveal transition */
+.sds-card-glitch { animation: sdsCardGlitch 0.5s var(--ease-spring) var(--sds-delay) both; }
+
+/* Gradient background shift */
+.sds-card-gradient {
+  background: linear-gradient(135deg, var(--sds-primary), var(--sds-accent), var(--sds-primary));
+  background-size: 300% 300%;
+  animation: sdsCardGradShift 5s ease infinite;
+}
+
+/* Subtle scale hover breathing */
+.sds-card-scale { animation: sdsCardScale 4s var(--ease-smooth) var(--sds-delay) infinite alternate; }
+
+/* ─── 3D Dynamic Cursor Tilt (Set by hover.js) ───────────────────────────── */
+.sds-tilt-3d {
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transform: perspective(1000px) rotateX(calc(var(--rx, 0) * 1deg)) rotateY(calc(var(--ry, 0) * 1deg));
+  transition: transform 0.12s var(--ease-smooth);
+}
+.sds-tilt-3d-child {
+  transform: translateZ(20px);
+}
+
+/* ─── Cursor-following Spotlight ─────────────────────────────────────────── */
+.sds-spotlight {
+  position: relative;
+  overflow: hidden;
+}
+.sds-spotlight::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(350px circle at var(--spot-x, 50%) var(--spot-y, 50%), rgba(255,255,255,0.07), transparent 80%);
+  pointer-events: none;
+  z-index: 3;
+  opacity: 0;
+  transition: opacity 0.3s var(--ease-smooth);
+}
+.sds-spotlight:hover::before {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   KEYFRAMES
+   ========================================================================== */
+
+/* Slide up — 16px offset, subtle entry */
+@keyframes sdsCardSlideUp {
+  from { transform: translateY(16px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+/* Flip — Y-axis perspective flip from 75deg */
+@keyframes sdsCardFlip {
+  from { transform: perspective(600px) rotateY(75deg); opacity: 0; }
+  to   { transform: perspective(600px) rotateY(0);     opacity: 1; }
+}
+
+/* Ambient tilt — slow 3deg rotation cycle */
+@keyframes sdsCardTilt {
+  0%, 100% { transform: perspective(500px) rotateX(0) rotateY(0); }
+  25%      { transform: perspective(500px) rotateX(2deg) rotateY(2deg); }
+  75%      { transform: perspective(500px) rotateX(-2deg) rotateY(-2deg); }
+}
+
+/* Glow border — shadow breathes softly */
+@keyframes sdsCardGlow {
+  0%, 100% { box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  50%      { box-shadow: 0 6px 24px rgba(var(--sds-primary-rgb), 0.14); }
+}
+
+/* Clip reveal — bottom-to-top clip wipe */
+@keyframes sdsCardReveal {
+  from { clip-path: inset(0 0 100% 0); }
+  to   { clip-path: inset(0 0 0% 0); }
+}
+
+/* Pop — scale from 0.92, spring handles settle */
+@keyframes sdsCardPop {
+  from { transform: scale(0.92); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+
+/* Border light pulse — thin accent border cycles */
+@keyframes sdsCardBorderLight {
+  0%, 100% { border-color: rgba(var(--sds-accent-rgb), 0.08); }
+  50%      { border-color: rgba(var(--sds-accent-rgb), 0.3); }
+}
+
+/* Shadow pop — offset block shadow grows in */
+@keyframes sdsCardShadowPop {
+  from { box-shadow: 0 0 0 rgba(0,0,0,0); }
+  to   { box-shadow: 5px 5px 0 var(--sds-primary); }
+}
+
+/* Slide left — 16px to the left (starts at 16px on the right and slides leftward to 0) */
+@keyframes sdsCardSlideLeft {
+  from { transform: translateX(16px); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+
+/* Slide right — 16px to the right (starts at -16px on the left and slides rightward to 0) */
+@keyframes sdsCardSlideRight {
+  from { transform: translateX(-16px); opacity: 0; }
+  to   { transform: translateX(0);     opacity: 1; }
+}
+
+/* Rotate in — subtle 4deg rotation with scale */
+@keyframes sdsCardRotateIn {
+  from { transform: rotate(-4deg) scale(0.96); opacity: 0; }
+  to   { transform: rotate(0) scale(1);        opacity: 1; }
+}
+
+/* Blur in — 8px resolving with opacity */
+@keyframes sdsCardBlurIn {
+  from { filter: blur(8px); opacity: 0; }
+  to   { filter: blur(0);   opacity: 1; }
+}
+
+/* Loading skeleton shimmer */
+@keyframes sdsCardShimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Float — gentle 5px vertical drift */
+@keyframes sdsCardFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-5px); }
+}
+
+/* Ambient elevation — shadow lifts slightly */
+@keyframes sdsCardElevate {
+  0%, 100% { box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+  50%      { box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+}
+
+/* Press breathe — very subtle scale oscillation */
+@keyframes sdsCardPress {
+  0%, 100% { transform: scale(1);    box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+  50%      { transform: scale(0.98); box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+}
+
+/* Unfold — scaleY from top origin */
+@keyframes sdsCardUnfold {
+  from { transform: scaleY(0); transform-origin: top; }
+  to   { transform: scaleY(1); }
+}
+
+/* Glitch — replaced with rapid depth-reveal zoom */
+@keyframes sdsCardGlitch {
+  0%   { transform: scale(0.97) translateY(4px); opacity: 0; filter: blur(2px); }
+  100% { transform: scale(1) translateY(0);      opacity: 1; filter: blur(0); }
+}
+
+/* Wipe — polygon clip from left to right */
+@keyframes sdsCardWipe {
+  0%   { clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); }
+  100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+}
+
+/* Bounce in — scale from 0.88, spring handles the settle */
+@keyframes sdsCardBounceIn {
+  from { transform: scale(0.88); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+
+/* Depth in — translateZ zoom from close range */
+@keyframes sdsCardDepthIn {
+  from { transform: perspective(600px) translateZ(-40px); opacity: 0; }
+  to   { transform: perspective(600px) translateZ(0);     opacity: 1; }
+}
+
+/* Gradient shift — background position cycles */
+@keyframes sdsCardGradShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Scale — very subtle breathing 1.0→1.02 */
+@keyframes sdsCardScale {
+  0%   { transform: scale(1); }
+  100% { transform: scale(1.02); }
+}
+
+/* Slide down — 16px downward to rest (starts at -16px above and slides downward to 0) */
+@keyframes sdsCardSlideDown {
+  from { transform: translateY(-16px); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+}

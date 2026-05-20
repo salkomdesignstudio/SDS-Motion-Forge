@@ -1,0 +1,27 @@
+{
+  "name": "sds-motion",
+  "version": "1.1.0",
+  "description": "Production-ready UI animation utility library. High-end easings, spring physics, staggers, and spatial Web Components.",
+  "main": "dist/motion.min.js",
+  "style": "dist/motion.min.css",
+  "scripts": {
+    "build": "node build.js",
+    "start": "node build.js && node server.js"
+  },
+  "keywords": [
+    "css",
+    "animation",
+    "motion",
+    "spring-physics",
+    "web-components",
+    "transitions",
+    "ui",
+    "ux"
+  ],
+  "author": "Salkom Design Studio",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/salkomdesignstudio/SDS-Motion-Forge"
+  }
+}

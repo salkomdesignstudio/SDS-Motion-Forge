@@ -1,0 +1,224 @@
+/* ==========================================================================
+   SDS MOTION — SCROLL-TRIGGERED VIEWPORT TRANSITIONS
+   Elements glide subtly into view — not a dramatic fly-across-screen effect.
+   Controlled by IntersectionObserver in observer.js adding .sds-in-view class.
+   All offsets kept to ≤20px for refined, modern entrance behavior.
+   ========================================================================== */
+
+/* ─── Scroll Fade Up ─────────────────────────────────────────────────────── */
+.sds-scroll-fade-up {
+  opacity: 0;
+  transform: translateY(16px);
+  filter: blur(1px);
+  transition: opacity var(--sds-duration) var(--sds-easing),
+              transform var(--sds-duration) var(--sds-easing),
+              filter var(--sds-duration) var(--sds-easing);
+  transition-delay: var(--sds-delay);
+  will-change: opacity, transform;
+}
+.sds-scroll-fade-up.sds-in-view {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* ─── Scroll Fade Left ───────────────────────────────────────────────────── */
+/* Comes from right, moves left to rest position */
+.sds-scroll-fade-left {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity var(--sds-duration) var(--sds-easing),
+              transform var(--sds-duration) var(--sds-easing);
+  transition-delay: var(--sds-delay);
+  will-change: opacity, transform;
+}
+.sds-scroll-fade-left.sds-in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ─── Scroll Fade Right ──────────────────────────────────────────────────── */
+/* Comes from left, moves right to rest position */
+.sds-scroll-fade-right {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity var(--sds-duration) var(--sds-easing),
+              transform var(--sds-duration) var(--sds-easing);
+  transition-delay: var(--sds-delay);
+  will-change: opacity, transform;
+}
+.sds-scroll-fade-right.sds-in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ─── Scroll Zoom In ─────────────────────────────────────────────────────── */
+/* Scales in from 0.92 — subtle depth entry */
+.sds-scroll-zoom-in {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity var(--sds-duration) var(--sds-easing),
+              transform var(--sds-duration) var(--sds-easing);
+  transition-delay: var(--sds-delay);
+  will-change: opacity, transform;
+}
+.sds-scroll-zoom-in.sds-in-view {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ─── Scroll Rotate In ───────────────────────────────────────────────────── */
+/* -4deg rotation — organic, not dramatic */
+.sds-scroll-rotate-in {
+  opacity: 0;
+  transform: rotate(-4deg) scale(0.96);
+  transition: opacity var(--sds-duration) var(--sds-easing),
+              transform var(--sds-duration) var(--sds-easing);
+  transition-delay: var(--sds-delay);
+  will-change: opacity, transform;
+}
+.sds-scroll-rotate-in.sds-in-view {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+
+/* ─── Scroll Flip Up (X Axis) ────────────────────────────────────────────── */
+/* 25deg — meaningful without being aggressive */
+.sds-scroll-flip-up {
+  opacity: 0;
+  transform: perspective(700px) rotateX(25deg);
+  transform-origin: center bottom;
+  transition: opacity var(--sds-duration) var(--sds-easing),
+              transform var(--sds-duration) var(--sds-easing);
+  transition-delay: var(--sds-delay);
+  will-change: opacity, transform;
+}
+.sds-scroll-flip-up.sds-in-view {
+  opacity: 1;
+  transform: perspective(700px) rotateX(0);
+}
+
+/* ─── Scroll Flip Left (Y Axis) ──────────────────────────────────────────── */
+.sds-scroll-flip-left {
+  opacity: 0;
+  transform: perspective(700px) rotateY(25deg);
+  transition: opacity var(--sds-duration) var(--sds-easing),
+              transform var(--sds-duration) var(--sds-easing);
+  transition-delay: var(--sds-delay);
+  will-change: opacity, transform;
+}
+.sds-scroll-flip-left.sds-in-view {
+  opacity: 1;
+  transform: perspective(700px) rotateY(0);
+}
+
+/* ─── Scroll Spring Pop ──────────────────────────────────────────────────── */
+/* Starts at 0.88 — spring token computes the overshoot naturally */
+.sds-scroll-spring {
+  opacity: 0;
+  transform: scale(0.88);
+  transition: opacity var(--sds-duration) var(--ease-spring),
+              transform var(--sds-duration) var(--ease-spring);
+  transition-delay: var(--sds-delay);
+  will-change: opacity, transform;
+}
+.sds-scroll-spring.sds-in-view {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ─── Scroll Drop Down ───────────────────────────────────────────────────── */
+/* Drops from 20px above */
+.sds-scroll-drop {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity var(--sds-duration) var(--sds-easing),
+              transform var(--sds-duration) var(--sds-easing);
+  transition-delay: var(--sds-delay);
+  will-change: opacity, transform;
+}
+.sds-scroll-drop.sds-in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Scroll Reveal Left to Right ────────────────────────────────────────── */
+.sds-scroll-reveal-left {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path var(--sds-duration) var(--ease-reveal);
+  transition-delay: var(--sds-delay);
+  will-change: clip-path;
+}
+.sds-scroll-reveal-left.sds-in-view {
+  clip-path: inset(0 0% 0 0);
+}
+
+/* ─── Scroll Reveal Top to Bottom ────────────────────────────────────────── */
+.sds-scroll-reveal-bottom {
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path var(--sds-duration) var(--ease-reveal);
+  transition-delay: var(--sds-delay);
+  will-change: clip-path;
+}
+.sds-scroll-reveal-bottom.sds-in-view {
+  clip-path: inset(0 0 0% 0);
+}
+
+/* ─── Scroll Blur Clear ──────────────────────────────────────────────────── */
+/* 8px blur — resolves smoothly, not a harsh sudden snap */
+.sds-scroll-blur-reveal {
+  opacity: 0;
+  filter: blur(8px);
+  transition: opacity var(--sds-duration) var(--sds-easing),
+              filter var(--sds-duration) var(--sds-easing);
+  transition-delay: var(--sds-delay);
+  will-change: opacity, filter;
+}
+.sds-scroll-blur-reveal.sds-in-view {
+  opacity: 1;
+  filter: blur(0);
+}
+
+/* ─── Scroll Circular Mask Reveal ────────────────────────────────────────── */
+.sds-scroll-mask-circle {
+  clip-path: circle(0% at 50% 50%);
+  transition: clip-path var(--sds-duration) var(--ease-reveal);
+  transition-delay: var(--sds-delay);
+  will-change: clip-path;
+}
+.sds-scroll-mask-circle.sds-in-view {
+  clip-path: circle(150% at 50% 50%);
+}
+
+/* ─── Scroll Fade Scale Down ─────────────────────────────────────────────── */
+/* Enters from 1.06 → 1.0, settling inward */
+.sds-scroll-fade-scale {
+  opacity: 0;
+  transform: scale(1.06);
+  transition: opacity var(--sds-duration) var(--sds-easing),
+              transform var(--sds-duration) var(--sds-easing);
+  transition-delay: var(--sds-delay);
+  will-change: opacity, transform;
+}
+.sds-scroll-fade-scale.sds-in-view {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ─── Scroll Underline Grow ──────────────────────────────────────────────── */
+.sds-scroll-underline {
+  position: relative;
+}
+.sds-scroll-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0%;
+  height: 1.5px;
+  background: var(--sds-accent2);
+  transition: width var(--sds-duration) var(--ease-reveal);
+  transition-delay: var(--sds-delay);
+}
+.sds-scroll-underline.sds-in-view::after {
+  width: 100%;
+}

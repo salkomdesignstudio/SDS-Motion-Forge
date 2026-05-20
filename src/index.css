@@ -1,0 +1,82 @@
+/* ==========================================================================
+   SDS MOTION — CORE SYSTEMS & DESIGN TOKENS
+   ========================================================================== */
+
+:root {
+  /* Brand Palette (HSL tailored for light modes and vibrant interaction) */
+  --sds-primary: #0014D1;
+  --sds-primary-rgb: 0, 20, 209;
+  --sds-primary-dark: #000EA0;
+  --sds-accent: #4d5fff;
+  --sds-accent-rgb: 77, 95, 255;
+  --sds-accent2: #7c87ff;
+  --sds-green: #00d97e;
+  --sds-green-rgb: 0, 217, 126;
+  
+  /* Easing Curves — Production-grade spring physics (Framer, Linear, Apple) */
+  --ease-spring: cubic-bezier(0.25, 1.15, 0.45, 1);          /* Silky Framer-style spring — dampens organically */
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);              /* Exponential decay — Apple / Linear standard */
+  --ease-reveal: cubic-bezier(0.85, 0, 0.15, 1);             /* Sleek mask reveal — asymmetric deceleration */
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);          /* Refined elastic settle — soft mechanical rebound */
+  --ease-out: cubic-bezier(0.0, 0.0, 0.2, 1);                /* Standard ease-out for exits and fades */
+
+  /* Opacity Systems */
+  --sds-op-0: 0;
+  --sds-op-low: 0.15;
+  --sds-op-mid: 0.5;
+  --sds-op-high: 0.85;
+  --sds-op-100: 1;
+
+  /* Default Timing Configurations */
+  --sds-duration: 0.6s;
+  --sds-delay: 0s;
+  --sds-easing: var(--ease-smooth);
+}
+
+/* ==========================================================================
+   IMPORTS — MODULAR COMPONENTS (For Native Dev Load)
+   ========================================================================== */
+@import "./css/text.css";
+@import "./css/button.css";
+@import "./css/input.css";
+@import "./css/card.css";
+@import "./css/loader.css";
+@import "./css/scroll.css";
+
+/* ==========================================================================
+   SYSTEM MODIFIER CLASSES (Speed, Delay, Easing, Loop Options)
+   ========================================================================== */
+
+/* Speed (Duration) Controls */
+.sds-slow { --sds-duration: 1.2s !important; }
+.sds-normal { --sds-duration: 0.6s !important; }
+.sds-fast { --sds-duration: 0.3s !important; }
+.sds-instant { --sds-duration: 0.05s !important; }
+
+/* Delay Controls */
+.sds-delay-1 { --sds-delay: 0.1s !important; }
+.sds-delay-2 { --sds-delay: 0.2s !important; }
+.sds-delay-3 { --sds-delay: 0.3s !important; }
+.sds-delay-4 { --sds-delay: 0.4s !important; }
+.sds-delay-5 { --sds-delay: 0.5s !important; }
+
+/* Easing Controls */
+.sds-spring { --sds-easing: var(--ease-spring) !important; }
+.sds-smooth { --sds-easing: var(--ease-smooth) !important; }
+.sds-reveal { --sds-easing: var(--ease-reveal) !important; }
+.sds-bounce { --sds-easing: var(--ease-bounce) !important; }
+
+/* Direction & Repeat Helpers */
+.sds-infinite { animation-iteration-count: infinite !important; }
+.sds-alternate { animation-direction: alternate !important; }
+.sds-once { animation-iteration-count: 1 !important; animation-fill-mode: both !important; }
+
+/* Stagger parent triggers (Used by observer.js) */
+.sds-stagger {
+  --sds-stagger-gap: 80ms;
+}
+
+/* Web Component Default Resets */
+mf-text-reveal, mf-magnetic, mf-tilt-card {
+  display: inline-block;
+}

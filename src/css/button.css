@@ -1,0 +1,274 @@
+/* ==========================================================================
+   SDS MOTION — BUTTON ANIMATIONS
+   Premium hover, click, and state transitions for modern SaaS interfaces.
+   Interactions feel intentional, responsive, and delightful — not gimmicky.
+   ========================================================================== */
+
+/* ─── Shimmer Hover — light gradient sweeps on hover ─────────────────────── */
+.sds-btn-shimmer {
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow var(--sds-duration) var(--sds-easing);
+}
+.sds-btn-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -120%;
+  width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.7s var(--ease-smooth);
+}
+.sds-btn-shimmer:hover::after {
+  left: 140%;
+}
+
+/* ─── Glow Pulse — ambient shadow breathing ──────────────────────────────── */
+.sds-btn-glow {
+  animation: sdsGlowPulse 2.8s var(--ease-smooth) var(--sds-delay) infinite;
+}
+
+/* ─── Pulse Ring — concentric ripple radiates outward from border ────────── */
+.sds-btn-pulse-ring {
+  position: relative;
+}
+.sds-btn-pulse-ring::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 0 0 rgba(var(--sds-primary-rgb), 0.35);
+  animation: sdsPulseRing 2.2s var(--ease-smooth) infinite;
+}
+
+/* ─── Float Bounce — gentle vertical drift for CTA engagement ────────────── */
+.sds-btn-bounce {
+  animation: sdsBounceBtn 2.4s var(--ease-smooth) var(--sds-delay) infinite alternate;
+}
+
+/* ─── Morph — hover-triggered pill expansion (not an infinite loop) ──────── */
+.sds-btn-morph {
+  border-radius: 8px;
+  transition: border-radius 0.5s var(--ease-spring), box-shadow 0.4s var(--ease-smooth);
+}
+.sds-btn-morph:hover {
+  border-radius: 9999px;
+  box-shadow: 0 4px 20px rgba(var(--sds-primary-rgb), 0.2);
+}
+
+/* ─── Neon — ambient border glow, breathes on hover/focus ───────────────── */
+.sds-btn-neon {
+  border: 1px solid rgba(var(--sds-accent-rgb), 0.35);
+  background: transparent;
+  color: var(--sds-accent2);
+  transition: border-color 0.4s var(--ease-smooth), box-shadow 0.4s var(--ease-smooth), background 0.4s var(--ease-smooth), color 0.4s var(--ease-smooth);
+}
+.sds-btn-neon:hover, .sds-btn-neon:focus-visible {
+  border-color: var(--sds-accent);
+  box-shadow: 0 0 0 3px rgba(var(--sds-accent-rgb), 0.12), 0 0 12px rgba(var(--sds-accent-rgb), 0.12);
+  background: rgba(var(--sds-accent-rgb), 0.06);
+  color: var(--sds-accent);
+  outline: none;
+}
+
+/* ─── Gradient Shift — background gradient animate position ─────────────── */
+.sds-btn-gradient {
+  background: linear-gradient(90deg, var(--sds-primary), var(--sds-accent), var(--sds-primary));
+  background-size: 250% auto;
+  animation: sdsShimmer 3.5s linear infinite;
+}
+
+/* ─── Shake — physics-based decaying wobble for error states ─────────────── */
+.sds-btn-shake {
+  animation: sdsShake var(--sds-duration) var(--ease-smooth) var(--sds-delay) both;
+}
+
+/* ─── Float Lift — elevates with gentle shadow on hover ──────────────────── */
+.sds-btn-float {
+  transition: transform 0.35s var(--ease-spring), box-shadow 0.35s var(--ease-smooth);
+}
+.sds-btn-float:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.06);
+}
+
+/* ─── Breathing BG — slow ambient background glow cycle ─────────────────── */
+.sds-btn-glow-bg {
+  animation: sdsButtonGlow 3s var(--ease-smooth) var(--sds-delay) infinite alternate;
+}
+
+/* ─── Stretch Press — elastic deformation on active click ───────────────── */
+.sds-btn-stretch:active {
+  animation: sdsStretchPress 0.35s var(--ease-smooth) both;
+}
+
+/* ─── Border Shine — elegant focus ring on hover ─────────────────────────── */
+.sds-btn-border-draw {
+  border: 1px solid transparent;
+  background-image: linear-gradient(white, white), linear-gradient(135deg, var(--sds-accent), var(--sds-primary));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  transition: box-shadow 0.35s var(--ease-smooth);
+}
+.sds-btn-border-draw:hover {
+  box-shadow: 0 0 0 3px rgba(var(--sds-accent-rgb), 0.12);
+}
+
+/* ─── Rubber Band — organic elastic hover expansion ─────────────────────── */
+.sds-btn-rubber:hover {
+  animation: sdsRubber 0.6s var(--ease-spring) both;
+}
+
+/* ─── 3D Tilt — cursor-aware perspective wrapper ─────────────────────────── */
+.sds-btn-tilt {
+  transform-style: preserve-3d;
+  perspective: 400px;
+  transition: transform 0.12s var(--ease-smooth);
+}
+
+/* ─── Arrow Slide — icon nudges 4px on hover ─────────────────────────────── */
+.sds-btn-icon-slide .sds-icon {
+  display: inline-block;
+  transition: transform 0.3s var(--ease-spring);
+}
+.sds-btn-icon-slide:hover .sds-icon {
+  transform: translateX(4px);
+}
+
+/* ─── Confetti Pop — success scale pop on click ──────────────────────────── */
+.sds-btn-confetti:active {
+  animation: sdsConfettiExplode 0.4s var(--ease-spring) both;
+}
+
+/* ─── Heartbeat — subtle breathing pulse for CTA engagement ─────────────── */
+.sds-btn-heartbeat {
+  animation: sdsHeartbeat 2s var(--ease-smooth) infinite;
+}
+
+/* ─── Link Underline — line grows from left edge on hover ───────────────── */
+.sds-btn-underline {
+  position: relative;
+}
+.sds-btn-underline::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0%;
+  height: 1.5px;
+  background: currentColor;
+  opacity: 0.6;
+  transition: width 0.35s var(--ease-reveal);
+}
+.sds-btn-underline:hover::after {
+  width: 100%;
+}
+
+/* ─── Swipe Sweep — background floods behind label on hover ─────────────── */
+.sds-btn-swipe {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.sds-btn-swipe::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 0%; height: 100%;
+  background: var(--sds-primary);
+  transition: width 0.4s var(--ease-reveal);
+  z-index: -1;
+}
+.sds-btn-swipe:hover::before {
+  width: 100%;
+}
+
+/* ─── Depth Press — 3D y-axis push on active ─────────────────────────────── */
+.sds-btn-depth {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 0 var(--sds-primary-dark);
+  transition: transform 0.12s var(--ease-smooth), box-shadow 0.12s var(--ease-smooth);
+}
+.sds-btn-depth:active {
+  transform: translateY(1px);
+  box-shadow: 0 0px 0 var(--sds-primary-dark);
+}
+
+/* ==========================================================================
+   KEYFRAMES
+   ========================================================================== */
+
+/* Shimmer — gradient position sweeps horizontally */
+@keyframes sdsShimmer {
+  0%   { background-position: 0% center; }
+  100% { background-position: 250% center; }
+}
+
+/* Glow pulse — shadow blooms and contracts, subtle ambient rhythm */
+@keyframes sdsGlowPulse {
+  0%, 100% { box-shadow: 0 0 0 1px rgba(var(--sds-primary-rgb), 0.15), 0 4px 12px rgba(var(--sds-primary-rgb), 0.1); }
+  50%      { box-shadow: 0 0 0 3px rgba(var(--sds-primary-rgb), 0.12), 0 8px 24px rgba(var(--sds-primary-rgb), 0.18); }
+}
+
+/* Pulse ring — expands and fades out from element boundary */
+@keyframes sdsPulseRing {
+  0%   { box-shadow: 0 0 0 0 rgba(var(--sds-primary-rgb), 0.35); }
+  70%  { box-shadow: 0 0 0 10px rgba(var(--sds-primary-rgb), 0); }
+  100% { box-shadow: 0 0 0 0 rgba(var(--sds-primary-rgb), 0); }
+}
+
+/* Bounce btn — gentle 3px float, not a bouncing basketball */
+@keyframes sdsBounceBtn {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-3px); }
+}
+
+/* Shake — decaying physics-based wobble for error feedback */
+@keyframes sdsShake {
+  0%   { transform: translateX(0); }
+  15%  { transform: translateX(-5px); }
+  30%  { transform: translateX(4px); }
+  45%  { transform: translateX(-3px); }
+  60%  { transform: translateX(2px); }
+  75%  { transform: translateX(-1px); }
+  100% { transform: translateX(0); }
+}
+
+/* Button glow bg — slow ambient background shift */
+@keyframes sdsButtonGlow {
+  0%   { background: var(--sds-primary); box-shadow: 0 2px 10px rgba(var(--sds-primary-rgb), 0.2); }
+  100% { background: var(--sds-accent);  box-shadow: 0 4px 20px rgba(var(--sds-accent-rgb), 0.25); }
+}
+
+/* Stretch press — elastic x/y deform on click */
+@keyframes sdsStretchPress {
+  0%   { transform: scaleX(1)    scaleY(1); }
+  30%  { transform: scaleX(0.94) scaleY(1.06); }
+  65%  { transform: scaleX(1.04) scaleY(0.96); }
+  100% { transform: scaleX(1)    scaleY(1); }
+}
+
+/* Rubber band — elastic hover expansion, spring-settled */
+@keyframes sdsRubber {
+  0%   { transform: scale3d(1, 1, 1); }
+  25%  { transform: scale3d(1.12, 0.88, 1); }
+  45%  { transform: scale3d(0.92, 1.08, 1); }
+  65%  { transform: scale3d(1.05, 0.95, 1); }
+  80%  { transform: scale3d(0.98, 1.02, 1); }
+  100% { transform: scale3d(1, 1, 1); }
+}
+
+/* Confetti pop — quick spring scale on success click */
+@keyframes sdsConfettiExplode {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+/* Heartbeat — subtle twin-beat pulse, max 1.02 scale */
+@keyframes sdsHeartbeat {
+  0%, 100%    { transform: scale(1); }
+  12%         { transform: scale(1.02); }
+  24%         { transform: scale(1); }
+  36%         { transform: scale(1.015); }
+  60%         { transform: scale(1); }
+}
