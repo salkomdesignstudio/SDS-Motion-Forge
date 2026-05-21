@@ -1,39 +1,15 @@
 {
-  "name": "@salkomdesignstudio/sds-motion-forge",
-  "version": "1.1.0",
-  "description": "Modern UI animation utility library with advanced easings, spring physics, staggers, and spatial Web Components.",
-  "main": "dist/motion.min.js",
-  "module": "dist/motion.min.js",
-  "style": "dist/motion.min.css",
-  "files": [
-    "dist",
-    "README.md",
-    "LICENSE"
-  ],
+  "name": "sds-motion",
+  "version": "1.0.0",
+  "description": "Animation by class name. Production-ready UI animations.",
+  "main": "dist/sds-motion.js",
+  "style": "dist/sds-motion.css",
   "scripts": {
-    "build": "node build.js",
-    "start": "node build.js && node server.js"
+    "generate": "node scripts/generate-animations.js && node scripts/generate-docs.js",
+    "build": "npm run generate"
   },
-  "keywords": [
-    "css",
-    "animation",
-    "motion",
-    "spring",
-    "physics",
-    "web-components",
-    "transitions",
-    "ui",
-    "ux",
-    "frontend"
-  ],
   "author": "Salkom Design Studio",
   "license": "MIT",
-  "homepage": "https://github.com/salkomdesignstudio/SDS-Motion-Forge#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/salkomdesignstudio/SDS-Motion-Forge.git"
-  },
-  "bugs": {
-    "url": "https://github.com/salkomdesignstudio/SDS-Motion-Forge/issues"
+  "devDependencies": {
   }
 }
