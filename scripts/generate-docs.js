@@ -386,7 +386,7 @@ ${allCSS}
 html{font-size:16px; scroll-behavior: smooth;}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text-main);overflow:hidden;height:100vh; display:flex; padding: 20px; gap: 20px;}
 
-/* Left Sidebar - Floating Island */
+.app{display:flex;height:100vh;overflow:hidden;width:100%;}
 .left-panel{width:320px;min-width:320px;height:calc(100vh - 40px);background:var(--surface);border-radius:var(--radius-xl);display:flex;flex-direction:column;position:relative; z-index:10; box-shadow: var(--shadow-lg); border: 1px solid var(--border); overflow:hidden;}
 .left-inner{padding:36px 28px;flex:1;overflow-y:auto;scrollbar-width:none; display:flex; flex-direction:column;}
 .left-inner::-webkit-scrollbar{display:none}
