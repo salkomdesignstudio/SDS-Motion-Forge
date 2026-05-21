@@ -544,7 +544,7 @@ const categories = ${JSON.stringify(categories)};
 function renderGrid(containerId, items) {
   const c = document.getElementById(containerId);
   if(!c) return;
-  c.innerHTML = items.map(item => \\\`
+  c.innerHTML = items.map(item => \`
     <div class="anim-card">
       <div class="preview-box">\${item.preview}</div>
       <div class="card-meta">
@@ -558,7 +558,7 @@ function renderGrid(containerId, items) {
         </div>
       </div>
     </div>
-  \\\`).join('');
+  \`).join('');
 }
 
 categories.forEach(c => { const d = animationData[c]; if(d) renderGrid('grid-'+c, d); });
