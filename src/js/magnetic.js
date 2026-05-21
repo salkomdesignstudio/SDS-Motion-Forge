@@ -9,6 +9,9 @@
     const magneticItems = document.querySelectorAll('.sds-magnetic, mf-magnetic');
 
     magneticItems.forEach(el => {
+      if (el.dataset.sdsMagneticBound) return;
+      el.dataset.sdsMagneticBound = "true";
+
       // Configurable properties
       const range = parseFloat(el.getAttribute('data-sds-range') || '50');
       const spring = parseFloat(el.getAttribute('data-sds-spring') || '0.12'); // Stiffness

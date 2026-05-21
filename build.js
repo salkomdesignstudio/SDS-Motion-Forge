@@ -28,7 +28,11 @@ function compileCSS() {
     path.join(SRC_DIR, 'css', 'input.css'),
     path.join(SRC_DIR, 'css', 'card.css'),
     path.join(SRC_DIR, 'css', 'loader.css'),
-    path.join(SRC_DIR, 'css', 'scroll.css')
+    path.join(SRC_DIR, 'css', 'scroll.css'),
+    path.join(SRC_DIR, 'css', 'typography.css'),
+    path.join(SRC_DIR, 'css', 'cursor.css'),
+    path.join(SRC_DIR, 'css', 'micro.css'),
+    path.join(SRC_DIR, 'css', 'webcomp.css')
   ];
 
   let rawCSS = '';
@@ -66,7 +70,9 @@ function compileJS() {
     path.join(SRC_DIR, 'js', 'observer.js'),
     path.join(SRC_DIR, 'js', 'hover.js'),
     path.join(SRC_DIR, 'js', 'magnetic.js'),
-    path.join(SRC_DIR, 'js', 'web-components.js')
+    path.join(SRC_DIR, 'js', 'web-components.js'),
+    path.join(SRC_DIR, 'js', 'cursor.js'),
+    path.join(SRC_DIR, 'js', 'micro.js')
   ];
 
   let rawJS = '';

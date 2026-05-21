@@ -1,0 +1,105 @@
+/* GENERATED V2 QUALITY SLOTS */
+.sds-mic-mic-v2-0 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-0:active { background: var(--accent); }
+.sds-mic-mic-v2-0:active .sds-mic-thumb { transform: translateX(20px) scale(0.9); }
+.sds-mic-mic-v2-1 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-1:active { background: var(--accent); border-color: var(--accent); border-radius: 12px; transform: scale(0.8) rotate(90deg); }
+.sds-mic-mic-v2-2 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-2:active { transform: translate(-16px, -14px) rotate(40deg) scale(1.1027209981231714); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(14, 80%, 90%); color: hsl(14, 80%, 40%); }
+.sds-mic-mic-v2-3 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+@keyframes sdsHeart3 { 0% { transform: scale(1); color: var(--text2); } 50% { transform: scale(1.6) rotate(-10deg); color: #ef4444; filter: drop-shadow(0 0 10px rgba(239,68,68,0.5)); } 100% { transform: scale(1.1); color: #ef4444; } }
+.sds-mic-mic-v2-3:active { animation: sdsHeart3 0.6s forwards; }
+.sds-mic-mic-v2-4 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+@keyframes sdsBell4 { 0%, 100% { transform: rotate(0deg) scale(1); } 20% { transform: rotate(25deg) scale(1.1); } 40% { transform: rotate(-25deg) scale(1.1); } 60% { transform: rotate(15deg) scale(1.1); } 80% { transform: rotate(-15deg) scale(1.1); } }
+.sds-mic-mic-v2-4:active { animation: sdsBell4 0.6s forwards; color: var(--accent); }
+.sds-mic-mic-v2-5 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-5:active { background: var(--accent); border-color: var(--accent); border-radius: 12px; transform: scale(0.8) rotate(90deg); }
+.sds-mic-mic-v2-6 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-6:active { transform: translate(-11px, 16px) rotate(-13deg) scale(1.014629167200174); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(42, 80%, 90%); color: hsl(42, 80%, 40%); }
+.sds-mic-mic-v2-7 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-7:active { transform: translate(19px, 2px) rotate(29deg) scale(1.1962429422779481); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(49, 80%, 90%); color: hsl(49, 80%, 40%); }
+.sds-mic-mic-v2-8 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-8:active { transform: translate(-6px, -20px) rotate(44deg) scale(0.9151613266660261); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(56, 80%, 90%); color: hsl(56, 80%, 40%); }
+.sds-mic-mic-v2-9 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-9:active { transform: translate(-16px, 13px) rotate(18deg) scale(1.1003948987086705); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(63, 80%, 90%); color: hsl(63, 80%, 40%); }
+.sds-mic-mic-v2-10 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-10:active { transform: translate(18px, 8px) rotate(-25deg) scale(1.165178100291051); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(70, 80%, 90%); color: hsl(70, 80%, 40%); }
+.sds-mic-mic-v2-11 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-11:active { transform: translate(-1px, -20px) rotate(-45deg) scale(0.8035405237161616); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(77, 80%, 90%); color: hsl(77, 80%, 40%); }
+.sds-mic-mic-v2-12 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-12:active { transform: translate(-19px, 8px) rotate(-25deg) scale(1.1622313448026496); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(84, 80%, 90%); color: hsl(84, 80%, 40%); }
+.sds-mic-mic-v2-13 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-13:active { transform: translate(15px, 12px) rotate(18deg) scale(1.1050233801918412); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(91, 80%, 90%); color: hsl(91, 80%, 40%); }
+.sds-mic-mic-v2-14 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-14:active { transform: translate(5px, -20px) rotate(44deg) scale(0.9083623153231477); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(98, 80%, 90%); color: hsl(98, 80%, 40%); }
+.sds-mic-mic-v2-15 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-15:active { transform: translate(-20px, 3px) rotate(29deg) scale(1.1952126496371447); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(105, 80%, 90%); color: hsl(105, 80%, 40%); }
+.sds-mic-mic-v2-16 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-16:active { transform: translate(11px, 16px) rotate(-13deg) scale(1.0205706724966763); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(112, 80%, 90%); color: hsl(112, 80%, 40%); }
+.sds-mic-mic-v2-17 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-17:active { background: var(--accent); border-color: var(--accent); border-radius: 12px; transform: scale(0.8) rotate(90deg); }
+.sds-mic-mic-v2-18 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-18:active { transform: translate(-20px, -3px) rotate(-34deg) scale(1.1967115413772464); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(126, 80%, 90%); color: hsl(126, 80%, 40%); }
+.sds-mic-mic-v2-19 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-19:active { transform: translate(5px, 19px) rotate(6deg) scale(0.9185474314837542); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(133, 80%, 90%); color: hsl(133, 80%, 40%); }
+.sds-mic-mic-v2-20 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+@keyframes sdsHeart20 { 0% { transform: scale(1); color: var(--text2); } 50% { transform: scale(1.6) rotate(-10deg); color: #ef4444; filter: drop-shadow(0 0 10px rgba(239,68,68,0.5)); } 100% { transform: scale(1.1); color: #ef4444; } }
+.sds-mic-mic-v2-20:active { animation: sdsHeart20 0.6s forwards; }
+.sds-mic-mic-v2-21 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-21:active { background: var(--accent); border-color: var(--accent); border-radius: 12px; transform: scale(0.8) rotate(90deg); }
+.sds-mic-mic-v2-22 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-22:active { transform: translate(0px, 19px) rotate(-1deg) scale(0.8070807700421655); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(154, 80%, 90%); color: hsl(154, 80%, 40%); }
+.sds-mic-mic-v2-23 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-23:active { transform: translate(18px, -9px) rotate(-39deg) scale(1.1607153390595237); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(161, 80%, 90%); color: hsl(161, 80%, 40%); }
+.sds-mic-mic-v2-24 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-24:active { transform: translate(-16px, -13px) rotate(-41deg) scale(1.1073018645294668); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(168, 80%, 90%); color: hsl(168, 80%, 40%); }
+.sds-mic-mic-v2-25 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-25:active { transform: translate(-6px, 19px) rotate(-6deg) scale(0.9049499414815716); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(175, 80%, 90%); color: hsl(175, 80%, 40%); }
+.sds-mic-mic-v2-26 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-26:active { transform: translate(19px, -4px) rotate(34deg) scale(1.1946510368161942); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(182, 80%, 90%); color: hsl(182, 80%, 40%); }
+.sds-mic-mic-v2-27 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-27:active { transform: translate(-12px, -17px) rotate(43deg) scale(1.0235156195406465); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(189, 80%, 90%); color: hsl(189, 80%, 40%); }
+.sds-mic-mic-v2-28 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-28:active { transform: translate(-11px, 17px) rotate(12deg) scale(1.0086204008347648); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(196, 80%, 90%); color: hsl(196, 80%, 40%); }
+.sds-mic-mic-v2-29 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-29:active { transform: translate(19px, 2px) rotate(-30deg) scale(1.197149059233815); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(203, 80%, 90%); color: hsl(203, 80%, 40%); }
+.sds-mic-mic-v2-30 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-30:active { transform: translate(-7px, -20px) rotate(-45deg) scale(0.9219242484408867); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(210, 80%, 90%); color: hsl(210, 80%, 40%); }
+.sds-mic-mic-v2-31 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-31:active { transform: translate(-15px, 13px) rotate(-19deg) scale(1.0956722786596893); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(217, 80%, 90%); color: hsl(217, 80%, 40%); }
+.sds-mic-mic-v2-32 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-32:active { transform: translate(18px, 7px) rotate(24deg) scale(1.1680104152787163); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(224, 80%, 90%); color: hsl(224, 80%, 40%); }
+.sds-mic-mic-v2-33 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-33:active { transform: translate(-1px, -20px) rotate(44deg) scale(0.8106204616095868); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(231, 80%, 90%); color: hsl(231, 80%, 40%); }
+.sds-mic-mic-v2-34 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-34:active { transform: translate(-18px, 8px) rotate(23deg) scale(1.1591710722757167); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(238, 80%, 90%); color: hsl(238, 80%, 40%); }
+.sds-mic-mic-v2-35 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-35:active { transform: translate(15px, 12px) rotate(-20deg) scale(1.1095562726231556); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(245, 80%, 90%); color: hsl(245, 80%, 40%); }
+.sds-mic-mic-v2-36 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-36:active { transform: translate(5px, -20px) rotate(-45deg) scale(0.9015293451048145); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(252, 80%, 90%); color: hsl(252, 80%, 40%); }
+.sds-mic-mic-v2-37 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-37:active { transform: translate(-20px, 3px) rotate(-29deg) scale(1.194058504187299); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(259, 80%, 90%); color: hsl(259, 80%, 40%); }
+.sds-mic-mic-v2-38 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-38:active { transform: translate(11px, 16px) rotate(13deg) scale(1.0264430547592722); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(266, 80%, 90%); color: hsl(266, 80%, 40%); }
+.sds-mic-mic-v2-39 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-39:active { transform: translate(10px, -18px) rotate(43deg) scale(1.0055913823950142); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(273, 80%, 90%); color: hsl(273, 80%, 40%); }
+.sds-mic-mic-v2-40 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-40:active { transform: translate(-20px, -3px) rotate(33deg) scale(1.1975554615693502); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(280, 80%, 90%); color: hsl(280, 80%, 40%); }
+.sds-mic-mic-v2-41 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-41:active { transform: translate(6px, 18px) rotate(-8deg) scale(0.9252915129732341); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(287, 80%, 90%); color: hsl(287, 80%, 40%); }
+.sds-mic-mic-v2-42 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-42:active { transform: translate(14px, -14px) rotate(-42deg) scale(1.0932761280293168); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(294, 80%, 90%); color: hsl(294, 80%, 40%); }
+.sds-mic-mic-v2-43 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-43:active { transform: translate(-19px, -8px) rotate(-38deg) scale(1.169383378801624); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(301, 80%, 90%); color: hsl(301, 80%, 40%); }
+.sds-mic-mic-v2-44 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-44:active { transform: translate(0px, 19px) rotate(0deg) scale(0.8141593210934643); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(308, 80%, 90%); color: hsl(308, 80%, 40%); }
+.sds-mic-mic-v2-45 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-45:active { transform: translate(17px, -9px) rotate(38deg) scale(1.1575986654402233); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(315, 80%, 90%); color: hsl(315, 80%, 40%); }
+.sds-mic-mic-v2-46 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-46:active { transform: translate(-16px, -13px) rotate(40deg) scale(1.1117864278463219); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(322, 80%, 90%); color: hsl(322, 80%, 40%); }
+.sds-mic-mic-v2-47 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-47:active { transform: translate(-5px, 19px) rotate(5deg) scale(0.8981007941870618); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(329, 80%, 90%); color: hsl(329, 80%, 40%); }
+.sds-mic-mic-v2-48 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-48:active { transform: translate(19px, -4px) rotate(-35deg) scale(1.193435098173738); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(336, 80%, 90%); color: hsl(336, 80%, 40%); }
+.sds-mic-mic-v2-49 { transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+.sds-mic-mic-v2-49:active { transform: translate(-12px, -17px) rotate(-43deg) scale(1.0293527487961693); filter: brightness(0.9); box-shadow: 0 0 0 4px var(--border); border-radius: 16px; background: hsl(343, 80%, 90%); color: hsl(343, 80%, 40%); }

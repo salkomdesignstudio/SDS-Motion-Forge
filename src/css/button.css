@@ -1,274 +1,101 @@
-/* ==========================================================================
-   SDS MOTION — BUTTON ANIMATIONS
-   Premium hover, click, and state transitions for modern SaaS interfaces.
-   Interactions feel intentional, responsive, and delightful — not gimmicky.
-   ========================================================================== */
-
-/* ─── Shimmer Hover — light gradient sweeps on hover ─────────────────────── */
-.sds-btn-shimmer {
-  position: relative;
-  overflow: hidden;
-  transition: box-shadow var(--sds-duration) var(--sds-easing);
-}
-.sds-btn-shimmer::after {
-  content: '';
-  position: absolute;
-  top: 0; left: -120%;
-  width: 60%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
-  transform: skewX(-20deg);
-  transition: left 0.7s var(--ease-smooth);
-}
-.sds-btn-shimmer:hover::after {
-  left: 140%;
-}
-
-/* ─── Glow Pulse — ambient shadow breathing ──────────────────────────────── */
-.sds-btn-glow {
-  animation: sdsGlowPulse 2.8s var(--ease-smooth) var(--sds-delay) infinite;
-}
-
-/* ─── Pulse Ring — concentric ripple radiates outward from border ────────── */
-.sds-btn-pulse-ring {
-  position: relative;
-}
-.sds-btn-pulse-ring::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  box-shadow: 0 0 0 0 rgba(var(--sds-primary-rgb), 0.35);
-  animation: sdsPulseRing 2.2s var(--ease-smooth) infinite;
-}
-
-/* ─── Float Bounce — gentle vertical drift for CTA engagement ────────────── */
-.sds-btn-bounce {
-  animation: sdsBounceBtn 2.4s var(--ease-smooth) var(--sds-delay) infinite alternate;
-}
-
-/* ─── Morph — hover-triggered pill expansion (not an infinite loop) ──────── */
-.sds-btn-morph {
-  border-radius: 8px;
-  transition: border-radius 0.5s var(--ease-spring), box-shadow 0.4s var(--ease-smooth);
-}
-.sds-btn-morph:hover {
-  border-radius: 9999px;
-  box-shadow: 0 4px 20px rgba(var(--sds-primary-rgb), 0.2);
-}
-
-/* ─── Neon — ambient border glow, breathes on hover/focus ───────────────── */
-.sds-btn-neon {
-  border: 1px solid rgba(var(--sds-accent-rgb), 0.35);
-  background: transparent;
-  color: var(--sds-accent2);
-  transition: border-color 0.4s var(--ease-smooth), box-shadow 0.4s var(--ease-smooth), background 0.4s var(--ease-smooth), color 0.4s var(--ease-smooth);
-}
-.sds-btn-neon:hover, .sds-btn-neon:focus-visible {
-  border-color: var(--sds-accent);
-  box-shadow: 0 0 0 3px rgba(var(--sds-accent-rgb), 0.12), 0 0 12px rgba(var(--sds-accent-rgb), 0.12);
-  background: rgba(var(--sds-accent-rgb), 0.06);
-  color: var(--sds-accent);
-  outline: none;
-}
-
-/* ─── Gradient Shift — background gradient animate position ─────────────── */
-.sds-btn-gradient {
-  background: linear-gradient(90deg, var(--sds-primary), var(--sds-accent), var(--sds-primary));
-  background-size: 250% auto;
-  animation: sdsShimmer 3.5s linear infinite;
-}
-
-/* ─── Shake — physics-based decaying wobble for error states ─────────────── */
-.sds-btn-shake {
-  animation: sdsShake var(--sds-duration) var(--ease-smooth) var(--sds-delay) both;
-}
-
-/* ─── Float Lift — elevates with gentle shadow on hover ──────────────────── */
-.sds-btn-float {
-  transition: transform 0.35s var(--ease-spring), box-shadow 0.35s var(--ease-smooth);
-}
-.sds-btn-float:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.06);
-}
-
-/* ─── Breathing BG — slow ambient background glow cycle ─────────────────── */
-.sds-btn-glow-bg {
-  animation: sdsButtonGlow 3s var(--ease-smooth) var(--sds-delay) infinite alternate;
-}
-
-/* ─── Stretch Press — elastic deformation on active click ───────────────── */
-.sds-btn-stretch:active {
-  animation: sdsStretchPress 0.35s var(--ease-smooth) both;
-}
-
-/* ─── Border Shine — elegant focus ring on hover ─────────────────────────── */
-.sds-btn-border-draw {
-  border: 1px solid transparent;
-  background-image: linear-gradient(white, white), linear-gradient(135deg, var(--sds-accent), var(--sds-primary));
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
-  transition: box-shadow 0.35s var(--ease-smooth);
-}
-.sds-btn-border-draw:hover {
-  box-shadow: 0 0 0 3px rgba(var(--sds-accent-rgb), 0.12);
-}
-
-/* ─── Rubber Band — organic elastic hover expansion ─────────────────────── */
-.sds-btn-rubber:hover {
-  animation: sdsRubber 0.6s var(--ease-spring) both;
-}
-
-/* ─── 3D Tilt — cursor-aware perspective wrapper ─────────────────────────── */
-.sds-btn-tilt {
-  transform-style: preserve-3d;
-  perspective: 400px;
-  transition: transform 0.12s var(--ease-smooth);
-}
-
-/* ─── Arrow Slide — icon nudges 4px on hover ─────────────────────────────── */
-.sds-btn-icon-slide .sds-icon {
-  display: inline-block;
-  transition: transform 0.3s var(--ease-spring);
-}
-.sds-btn-icon-slide:hover .sds-icon {
-  transform: translateX(4px);
-}
-
-/* ─── Confetti Pop — success scale pop on click ──────────────────────────── */
-.sds-btn-confetti:active {
-  animation: sdsConfettiExplode 0.4s var(--ease-spring) both;
-}
-
-/* ─── Heartbeat — subtle breathing pulse for CTA engagement ─────────────── */
-.sds-btn-heartbeat {
-  animation: sdsHeartbeat 2s var(--ease-smooth) infinite;
-}
-
-/* ─── Link Underline — line grows from left edge on hover ───────────────── */
-.sds-btn-underline {
-  position: relative;
-}
-.sds-btn-underline::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0;
-  width: 0%;
-  height: 1.5px;
-  background: currentColor;
-  opacity: 0.6;
-  transition: width 0.35s var(--ease-reveal);
-}
-.sds-btn-underline:hover::after {
-  width: 100%;
-}
-
-/* ─── Swipe Sweep — background floods behind label on hover ─────────────── */
-.sds-btn-swipe {
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-.sds-btn-swipe::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 0%; height: 100%;
-  background: var(--sds-primary);
-  transition: width 0.4s var(--ease-reveal);
-  z-index: -1;
-}
-.sds-btn-swipe:hover::before {
-  width: 100%;
-}
-
-/* ─── Depth Press — 3D y-axis push on active ─────────────────────────────── */
-.sds-btn-depth {
-  transform: translateY(-2px);
-  box-shadow: 0 3px 0 var(--sds-primary-dark);
-  transition: transform 0.12s var(--ease-smooth), box-shadow 0.12s var(--ease-smooth);
-}
-.sds-btn-depth:active {
-  transform: translateY(1px);
-  box-shadow: 0 0px 0 var(--sds-primary-dark);
-}
-
-/* ==========================================================================
-   KEYFRAMES
-   ========================================================================== */
-
-/* Shimmer — gradient position sweeps horizontally */
-@keyframes sdsShimmer {
-  0%   { background-position: 0% center; }
-  100% { background-position: 250% center; }
-}
-
-/* Glow pulse — shadow blooms and contracts, subtle ambient rhythm */
-@keyframes sdsGlowPulse {
-  0%, 100% { box-shadow: 0 0 0 1px rgba(var(--sds-primary-rgb), 0.15), 0 4px 12px rgba(var(--sds-primary-rgb), 0.1); }
-  50%      { box-shadow: 0 0 0 3px rgba(var(--sds-primary-rgb), 0.12), 0 8px 24px rgba(var(--sds-primary-rgb), 0.18); }
-}
-
-/* Pulse ring — expands and fades out from element boundary */
-@keyframes sdsPulseRing {
-  0%   { box-shadow: 0 0 0 0 rgba(var(--sds-primary-rgb), 0.35); }
-  70%  { box-shadow: 0 0 0 10px rgba(var(--sds-primary-rgb), 0); }
-  100% { box-shadow: 0 0 0 0 rgba(var(--sds-primary-rgb), 0); }
-}
-
-/* Bounce btn — gentle 3px float, not a bouncing basketball */
-@keyframes sdsBounceBtn {
-  from { transform: translateY(0); }
-  to   { transform: translateY(-3px); }
-}
-
-/* Shake — decaying physics-based wobble for error feedback */
-@keyframes sdsShake {
-  0%   { transform: translateX(0); }
-  15%  { transform: translateX(-5px); }
-  30%  { transform: translateX(4px); }
-  45%  { transform: translateX(-3px); }
-  60%  { transform: translateX(2px); }
-  75%  { transform: translateX(-1px); }
-  100% { transform: translateX(0); }
-}
-
-/* Button glow bg — slow ambient background shift */
-@keyframes sdsButtonGlow {
-  0%   { background: var(--sds-primary); box-shadow: 0 2px 10px rgba(var(--sds-primary-rgb), 0.2); }
-  100% { background: var(--sds-accent);  box-shadow: 0 4px 20px rgba(var(--sds-accent-rgb), 0.25); }
-}
-
-/* Stretch press — elastic x/y deform on click */
-@keyframes sdsStretchPress {
-  0%   { transform: scaleX(1)    scaleY(1); }
-  30%  { transform: scaleX(0.94) scaleY(1.06); }
-  65%  { transform: scaleX(1.04) scaleY(0.96); }
-  100% { transform: scaleX(1)    scaleY(1); }
-}
-
-/* Rubber band — elastic hover expansion, spring-settled */
-@keyframes sdsRubber {
-  0%   { transform: scale3d(1, 1, 1); }
-  25%  { transform: scale3d(1.12, 0.88, 1); }
-  45%  { transform: scale3d(0.92, 1.08, 1); }
-  65%  { transform: scale3d(1.05, 0.95, 1); }
-  80%  { transform: scale3d(0.98, 1.02, 1); }
-  100% { transform: scale3d(1, 1, 1); }
-}
-
-/* Confetti pop — quick spring scale on success click */
-@keyframes sdsConfettiExplode {
-  0%   { transform: scale(1); }
-  50%  { transform: scale(1.06); }
-  100% { transform: scale(1); }
-}
-
-/* Heartbeat — subtle twin-beat pulse, max 1.02 scale */
-@keyframes sdsHeartbeat {
-  0%, 100%    { transform: scale(1); }
-  12%         { transform: scale(1.02); }
-  24%         { transform: scale(1); }
-  36%         { transform: scale(1.015); }
-  60%         { transform: scale(1); }
-}
+/* GENERATED V2 QUALITY SLOTS */
+.sds-btn-btn-v2-0 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-0:hover { transform: translate(5px, 0px) rotate(0deg) scale(0.8); border-radius: 30px; box-shadow: 5px 5px 10px rgba(0,56,255,0.4); background: hsl(0, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-1 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-1:active { transform: translate(-3px, 9px) rotate(8deg) scale(0.856448003223947); border-radius: 16px; box-shadow: -3px 14px 28px rgba(0,56,255,0.4); background: hsl(7, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-2 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-2:hover { transform: translate(-4px, -8px) rotate(9deg) scale(0.9117661992795704); border-radius: 12px; box-shadow: -4px 13px 26px rgba(0,56,255,0.4); background: hsl(14, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-3 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-3:active { transform: translate(4px, -3px) rotate(1deg) scale(0.9648473940967027); border-radius: 29px; box-shadow: 4px 8px 16px rgba(0,56,255,0.4); background: hsl(21, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-4 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-4:hover { transform: translate(-1px, 9px) rotate(-8deg) scale(1.014629167200174); border-radius: 19px; box-shadow: -1px 14px 28px rgba(0,56,255,0.4); background: hsl(28, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-5 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-5:active { transform: translate(-5px, -6px) rotate(-10deg) scale(1.060115136062847); border-radius: 8px; box-shadow: -5px 11px 22px rgba(0,56,255,0.4); background: hsl(35, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-6 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-6:hover { transform: translate(4px, -6px) rotate(-3deg) scale(1.1003948987086705); border-radius: 28px; box-shadow: 4px 11px 22px rgba(0,56,255,0.4); background: hsl(42, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-7 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-7:active { transform: translate(0px, 9px) rotate(6deg) scale(1.1346622554144226); border-radius: 22px; box-shadow: 0px 14px 28px rgba(0,56,255,0.4); background: hsl(49, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-8 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-8:hover { transform: translate(-5px, -3px) rotate(9deg) scale(1.1622313448026496); border-radius: 4px; box-shadow: -5px 8px 16px rgba(0,56,255,0.4); background: hsl(56, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-9 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-9:active { transform: translate(3px, -8px) rotate(4deg) scale(1.1825503713618013); border-radius: 27px; box-shadow: 3px 13px 26px rgba(0,56,255,0.4); background: hsl(63, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-10 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-10:hover { transform: translate(2px, 9px) rotate(-6deg) scale(1.1952126496371447); border-radius: 25px; box-shadow: 2px 14px 28px rgba(0,56,255,0.4); background: hsl(70, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-11 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-11:active { transform: translate(-5px, -1px) rotate(-10deg) scale(1.1999647440429069); border-radius: 0px; box-shadow: -5px 6px 12px rgba(0,56,255,0.4); background: hsl(77, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-12 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-12:hover { transform: translate(2px, -10px) rotate(-6deg) scale(1.1967115413772464); border-radius: 25px; box-shadow: 2px 15px 30px rgba(0,56,255,0.4); background: hsl(84, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-13 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-13:active { transform: translate(3px, 7px) rotate(4deg) scale(1.1855181545136353); border-radius: 27px; box-shadow: 3px 12px 24px rgba(0,56,255,0.4); background: hsl(91, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-14 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-14:hover { transform: translate(-5px, 2px) rotate(9deg) scale(1.1666086191662535); border-radius: 4px; box-shadow: -5px 7px 14px rgba(0,56,255,0.4); background: hsl(98, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-15 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-15:active { transform: translate(0px, -10px) rotate(6deg) scale(1.1403614098136474); border-radius: 22px; box-shadow: 0px 15px 30px rgba(0,56,255,0.4); background: hsl(105, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-16 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-16:hover { transform: translate(4px, 5px) rotate(-3deg) scale(1.1073018645294668); border-radius: 28px; box-shadow: 4px 10px 20px rgba(0,56,255,0.4); background: hsl(112, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-17 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-17:active { transform: translate(-5px, 5px) rotate(-10deg) scale(1.06809167033735); border-radius: 8px; box-shadow: -5px 10px 20px rgba(0,56,255,0.4); background: hsl(119, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-18 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-18:hover { transform: translate(-1px, -10px) rotate(-8deg) scale(1.0235156195406465); border-radius: 19px; box-shadow: -1px 15px 30px rgba(0,56,255,0.4); background: hsl(126, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-19 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-19:active { transform: translate(4px, 2px) rotate(1deg) scale(0.97446590209913); border-radius: 29px; box-shadow: 4px 7px 14px rgba(0,56,255,0.4); background: hsl(133, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-20 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-20:hover { transform: translate(-4px, 7px) rotate(9deg) scale(0.9219242484408867); border-radius: 12px; box-shadow: -4px 12px 24px rgba(0,56,255,0.4); background: hsl(140, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-21 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-21:active { transform: translate(-2px, -10px) rotate(8deg) scale(0.8669422801211228); border-radius: 16px; box-shadow: -2px 15px 30px rgba(0,56,255,0.4); background: hsl(147, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-22 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-22:hover { transform: translate(4px, 0px) rotate(-1deg) scale(0.8106204616095868); border-radius: 29px; box-shadow: 4px 5px 10px rgba(0,56,255,0.4); background: hsl(154, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-23 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-23:active { transform: translate(-3px, 9px) rotate(-9deg) scale(0.8459139255132749); border-radius: 15px; box-shadow: -3px 14px 28px rgba(0,56,255,0.4); background: hsl(161, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-24 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-24:hover { transform: translate(-4px, -8px) rotate(-10deg) scale(0.9015293451048145); border-radius: 12px; box-shadow: -4px 13px 26px rgba(0,56,255,0.4); background: hsl(168, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-25 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-25:active { transform: translate(4px, -3px) rotate(-2deg) scale(0.9551126541637722); border-radius: 29px; box-shadow: 4px 8px 16px rgba(0,56,255,0.4); background: hsl(175, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-26 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-26:hover { transform: translate(-1px, 9px) rotate(7deg) scale(1.0055913823950142); border-radius: 19px; box-shadow: -1px 14px 28px rgba(0,56,255,0.4); background: hsl(182, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-27 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-27:active { transform: translate(-5px, -6px) rotate(9deg) scale(1.0519551977097816); border-radius: 8px; box-shadow: -5px 11px 22px rgba(0,56,255,0.4); background: hsl(189, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-28 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-28:hover { transform: translate(4px, -6px) rotate(2deg) scale(1.0932761280293168); border-radius: 28px; box-shadow: 4px 11px 22px rgba(0,56,255,0.4); background: hsl(196, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-29 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-29:active { transform: translate(0px, 9px) rotate(-7deg) scale(1.128727134652329); border-radius: 22px; box-shadow: 0px 14px 28px rgba(0,56,255,0.4); background: hsl(203, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-30 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-30:hover { transform: translate(-5px, -4px) rotate(-10deg) scale(1.1575986654402233); border-radius: 4px; box-shadow: -5px 9px 18px rgba(0,56,255,0.4); background: hsl(210, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-31 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-31:active { transform: translate(3px, -8px) rotate(-5deg) scale(1.179312856507979); border-radius: 27px; box-shadow: 3px 13px 26px rgba(0,56,255,0.4); background: hsl(217, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-32 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-32:hover { transform: translate(1px, 9px) rotate(5deg) scale(1.193435098173738); border-radius: 25px; box-shadow: 1px 14px 28px rgba(0,56,255,0.4); background: hsl(224, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-33 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-33:active { transform: translate(-5px, -1px) rotate(9deg) scale(1.1996827336745415); border-radius: 0px; box-shadow: -5px 6px 12px rgba(0,56,255,0.4); background: hsl(231, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-34 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-34:hover { transform: translate(2px, -9px) rotate(5deg) scale(1.1979307165433626); border-radius: 25px; box-shadow: 2px 14px 28px rgba(0,56,255,0.4); background: hsl(238, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-35 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-35:active { transform: translate(3px, 7px) rotate(-5deg) scale(1.188214113414994); border-radius: 27px; box-shadow: 3px 12px 24px rgba(0,56,255,0.4); background: hsl(245, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-36 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-36:hover { transform: translate(-5px, 2px) rotate(-10deg) scale(1.1707274021671141); border-radius: 3px; box-shadow: -5px 7px 14px rgba(0,56,255,0.4); background: hsl(252, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-37 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-37:active { transform: translate(0px, -10px) rotate(-7deg) scale(1.1458205794442433); border-radius: 22px; box-shadow: 0px 15px 30px rgba(0,56,255,0.4); background: hsl(259, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-38 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-38:hover { transform: translate(4px, 5px) rotate(2deg) scale(1.1139921554725243); border-radius: 28px; box-shadow: 4px 10px 20px rgba(0,56,255,0.4); background: hsl(266, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-39 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-39:active { transform: translate(-5px, 5px) rotate(9deg) scale(1.0758791763741558); border-radius: 7px; box-shadow: -5px 10px 20px rgba(0,56,255,0.4); background: hsl(273, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-40 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-40:hover { transform: translate(-1px, -10px) rotate(7deg) scale(1.032244473684926); border-radius: 20px; box-shadow: -1px 15px 30px rgba(0,56,255,0.4); background: hsl(280, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-41 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-41:active { transform: translate(4px, 3px) rotate(-2deg) scale(0.9839613962758366); border-radius: 29px; box-shadow: 4px 8px 16px rgba(0,56,255,0.4); background: hsl(287, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-42 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-42:hover { transform: translate(-4px, 7px) rotate(-10deg) scale(0.9319963302695129); border-radius: 11px; box-shadow: -4px 12px 24px rgba(0,56,255,0.4); background: hsl(294, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-43 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-43:active { transform: translate(-2px, -10px) rotate(-9deg) scale(0.8773893568153874); border-radius: 16px; box-shadow: -2px 15px 30px rgba(0,56,255,0.4); background: hsl(301, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-44 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-44:hover { transform: translate(4px, 0px) rotate(0deg) scale(0.8212334348584234); border-radius: 29px; box-shadow: 4px 5px 10px rgba(0,56,255,0.4); background: hsl(308, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-45 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-45:active { transform: translate(-3px, 8px) rotate(8deg) scale(0.8353474744416006); border-radius: 15px; box-shadow: -3px 13px 26px rgba(0,56,255,0.4); background: hsl(315, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-46 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-46:hover { transform: translate(-4px, -8px) rotate(9deg) scale(0.8912209038003445); border-radius: 12px; box-shadow: -4px 13px 26px rgba(0,56,255,0.4); background: hsl(322, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-47 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-47:active { transform: translate(4px, -3px) rotate(1deg) scale(0.9452685461493037); border-radius: 29px; box-shadow: 4px 8px 16px rgba(0,56,255,0.4); background: hsl(329, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-48 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-48:hover { transform: translate(-1px, 9px) rotate(-8deg) scale(0.9964086375593878); border-radius: 19px; box-shadow: -1px 14px 28px rgba(0,56,255,0.4); background: hsl(336, 80%, 60%); color: #fff; border-color: transparent; }
+.sds-btn-btn-v2-49 { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; z-index: 1; }
+.sds-btn-btn-v2-49:active { transform: translate(-5px, -6px) rotate(-10deg) scale(1.043617608753317); border-radius: 9px; box-shadow: -5px 11px 22px rgba(0,56,255,0.4); background: hsl(343, 80%, 60%); color: #fff; border-color: transparent; }
