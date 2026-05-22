@@ -22,10 +22,7 @@
   --sds-primary-dim:   rgba(0, 21, 209, 0.08);
   --sds-primary-glow:  rgba(0, 21, 209, 0.30);
   --sds-accent:        #d10028;
-  --sds-accent-dim:    rgba(209, 0, 40, 0.10);
   --sds-success:       #00c48c;
-  --sds-success-dim:   rgba(0, 196, 140, 0.15);
-  --sds-text:          inherit;
   --sds-duration:      0.8s;
   --sds-easing:        cubic-bezier(0.22, 1, 0.36, 1);
 }

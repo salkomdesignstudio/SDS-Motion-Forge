@@ -4,16 +4,16 @@
 
 No JavaScript. No dependencies. Drop it into HTML, Angular, React, Vue, Bootstrap, or Tailwind and start animating in seconds.
 
-[![npm version](https://img.shields.io/npm/v/sds-motion.svg?style=flat-square)](https://www.npmjs.com/package/sds-motion)
+[![npm version](https://img.shields.io/npm/v/@salkomdesignstudio/sds-motion-forge.svg?style=flat-square)](https://www.npmjs.com/package/@salkomdesignstudio/sds-motion-forge)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
-[![Bundle size](https://img.shields.io/bundlephobia/minzip/sds-motion?style=flat-square)](https://bundlephobia.com/package/sds-motion)
+[![Bundle size](https://img.shields.io/bundlephobia/minzip/@salkomdesignstudio/sds-motion-forge?style=flat-square)](https://bundlephobia.com/package/@salkomdesignstudio/sds-motion-forge)
 
 ---
 
 ## Install
 
 ```bash
-npm install sds-motion
+npm install @salkomdesignstudio/sds-motion-forge
 ```
 
 ---
@@ -23,7 +23,7 @@ npm install sds-motion
 ### HTML / Bootstrap / Tailwind
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sds-motion/dist/motion.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css">
 
 <h1 class="sds-velvet-drop">Hello World</h1>
 <button class="sds-btn-magnetic">Click Me</button>
@@ -33,7 +33,7 @@ npm install sds-motion
 ### Angular (`styles.scss` or `angular.json`)
 
 ```scss
-@import 'sds-motion/dist/motion.min.css';
+@import '@salkomdesignstudio/sds-motion-forge/dist/motion.min.css';
 ```
 
 ```html
@@ -43,7 +43,7 @@ npm install sds-motion
 ### React
 
 ```jsx
-import 'sds-motion/dist/motion.min.css';
+import '@salkomdesignstudio/sds-motion-forge/dist/motion.min.css';
 
 export default function Hero() {
   return <h1 className="sds-phantom-blur">React Ready</h1>;
@@ -54,7 +54,7 @@ export default function Hero() {
 
 ```js
 // main.js
-import 'sds-motion/dist/motion.min.css';
+import '@salkomdesignstudio/sds-motion-forge/dist/motion.min.css';
 ```
 
 ```html
@@ -171,13 +171,13 @@ Override these to match your brand:
 
 ```html
 <!-- jsDelivr (recommended) -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sds-motion/dist/motion.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css">
 
 <!-- Pinned version -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sds-motion@1.0.0/dist/motion.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge@3.0.0/dist/motion.min.css">
 
 <!-- unpkg -->
-<link rel="stylesheet" href="https://unpkg.com/sds-motion/dist/motion.min.css">
+<link rel="stylesheet" href="https://unpkg.com/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css">
 ```
 
 ---
@@ -185,8 +185,8 @@ Override these to match your brand:
 ## Build from Source
 
 ```bash
-git clone https://github.com/salkom/sds-motion.git
-cd sds-motion
+git clone https://github.com/salkomdesignstudio/SDS-Motion-Forge.git
+cd SDS-Motion-Forge
 npm install
 npm run build
 ```
