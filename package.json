@@ -49,9 +49,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/salkom/sds-motion.git"
+    "url": "git+https://github.com/salkomdesignstudio/SDS-Motion-Forge.git"
   },
-  "homepage": "https://salkomdesignstudio.com/sds-motion",
+  "homepage": "https://github.com/salkomdesignstudio/SDS-Motion-Forge",
   "bugs": {
     "url": "https://github.com/salkom/sds-motion/issues"
   },
