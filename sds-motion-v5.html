@@ -1,0 +1,3240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SDS Motion v3 — Premium CSS Animation System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@300;400;500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+<style>
+/* =====================================================
+   DESIGN TOKENS — LIGHT THEME
+===================================================== */
+:root {
+  --ink:        #f5f6fa;
+  --ink-2:      #ffffff;
+  --ink-3:      #eef0f7;
+  --ink-4:      #e4e7f2;
+  --surface:    #f0f2fa;
+  --surface-2:  #e8ebf5;
+  --glass:      rgba(0,21,209,0.04);
+  --glass-2:    rgba(0,21,209,0.07);
+
+  --border:     rgba(0,21,209,0.1);
+  --border-2:   rgba(0,21,209,0.18);
+  --border-3:   rgba(0,21,209,0.28);
+
+  --text:       #0a0e2e;
+  --text-2:     rgba(10,14,46,0.6);
+  --text-3:     rgba(10,14,46,0.35);
+
+  --volt:       #0015D1;
+  --volt-dim:   rgba(0,21,209,0.08);
+  --volt-glow:  rgba(0,21,209,0.3);
+  --cyan:       #0015D1;
+  --cyan-dim:   rgba(0,21,209,0.08);
+  --rose:       #d10028;
+  --rose-dim:   rgba(209,0,40,0.1);
+  --amber:      #0015D1;
+
+  --topbar-h:   56px;
+  --sidebar-w:  252px;
+  --r:          10px;
+
+  --mono: 'IBM Plex Mono', monospace;
+  --sans: 'DM Sans', 'Space Grotesk', sans-serif;
+  --serif: 'Playfair Display', 'Instrument Serif', serif;
+
+  --sh-sm:   0 1px 2px rgba(0,21,209,0.08);
+  --sh-card: 0 2px 12px rgba(0,21,209,0.07), 0 1px 3px rgba(0,21,209,0.05);
+  --sh-glow: 0 0 40px rgba(0,21,209,0.08);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+body {
+  background: var(--ink);
+  color: var(--text);
+  font-family: var(--sans);
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: 8px; }
+* { scrollbar-width: thin; scrollbar-color: var(--border-2) transparent; }
+
+/* =====================================================
+   APP SHELL
+===================================================== */
+.app { display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+
+/* =====================================================
+   TOPBAR
+===================================================== */
+.topbar {
+  height: var(--topbar-h);
+  min-height: var(--topbar-h);
+  background: var(--ink-2);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  gap: 14px;
+  z-index: 200;
+  position: relative;
+}
+
+.topbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.logo-mark {
+  width: 30px; height: 30px;
+  background: var(--volt);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--mono);
+  font-weight: 500; font-size: 12px;
+  color: #fff;
+  letter-spacing: -0.5px;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.logo-mark::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 50%;
+  background: rgba(255,255,255,0.18);
+}
+.logo-name {
+  font-family: var(--sans);
+  font-weight: 600; font-size: 15px;
+  color: var(--text);
+  letter-spacing: -0.2px;
+}
+.logo-name em { color: var(--volt); font-style: normal; }
+.logo-version {
+  background: var(--volt-dim);
+  border: 1px solid rgba(0,21,209,0.25);
+  color: var(--volt);
+  font-family: var(--mono);
+  font-size: 9px;
+  padding: 2px 6px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+}
+
+.topbar-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.install-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--ink-3);
+  border: 1px solid var(--border-2);
+  border-radius: 8px;
+  padding: 7px 14px;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  max-width: 320px;
+  width: 100%;
+  position: relative;
+}
+.install-pill:hover {
+  border-color: var(--volt);
+  box-shadow: 0 0 0 1px rgba(0,21,209,0.08), 0 4px 20px rgba(0,21,209,0.06);
+}
+.install-pill-label {
+  font-size: 9px;
+  color: var(--text-3);
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  padding-right: 10px;
+  border-right: 1px solid var(--border);
+}
+.install-pill code {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--volt);
+  flex: 1;
+}
+.pill-copy-btn {
+  background: none; border: none; cursor: pointer;
+  color: var(--text-3); display: flex; align-items: center;
+  padding: 2px; border-radius: 4px;
+  transition: color 0.15s;
+  flex-shrink: 0;
+}
+.pill-copy-btn:hover { color: var(--volt); }
+.pill-copy-btn.ok { color: var(--volt) !important; }
+
+.topbar-right {
+  display: flex; align-items: center; gap: 8px; flex-shrink: 0;
+}
+.topbar-badge {
+  display: flex; align-items: center; gap: 6px;
+  padding: 5px 11px;
+  background: var(--volt-dim);
+  border: 1px solid rgba(0,21,209,0.2);
+  border-radius: 6px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--volt);
+}
+.topbar-badge .dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--volt);
+  box-shadow: 0 0 6px rgba(0,21,209,0.5);
+  flex-shrink: 0;
+  animation: pulseDot 2s ease infinite;
+}
+@keyframes pulseDot {
+  0%,100% { box-shadow: 0 0 4px rgba(0,21,209,0.4); }
+  50% { box-shadow: 0 0 10px rgba(0,21,209,0.7), 0 0 20px rgba(0,21,209,0.3); }
+}
+.topbar-gh {
+  display: flex; align-items: center; gap: 6px;
+  padding: 6px 13px;
+  background: var(--glass);
+  border: 1px solid var(--border-2);
+  color: var(--text-2);
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+}
+.topbar-gh:hover { border-color: var(--border-3); color: var(--text); }
+.topbar-gh svg { width: 13px; height: 13px; fill: currentColor; flex-shrink: 0; }
+
+/* =====================================================
+   WORKSPACE
+===================================================== */
+.workspace {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  height: calc(100vh - var(--topbar-h));
+}
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+.sidebar {
+  width: var(--sidebar-w);
+  min-width: var(--sidebar-w);
+  height: 100%;
+  background: var(--ink-2);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.sidebar-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 18px 14px;
+  scrollbar-width: none;
+}
+.sidebar-scroll::-webkit-scrollbar { display: none; }
+
+.sb-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.6px;
+  color: var(--text-3);
+  text-transform: uppercase;
+  padding: 0 8px;
+  margin-bottom: 6px;
+  margin-top: 4px;
+}
+.sb-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 18px;
+}
+.sb-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  text-align: left;
+  width: 100%;
+  transition: background 0.15s;
+  font-family: var(--sans);
+  position: relative;
+}
+.sb-item:hover { background: var(--glass-2); }
+.sb-item.active {
+  background: var(--volt-dim);
+  border: 1px solid rgba(0,21,209,0.15);
+}
+.sb-icon {
+  width: 26px; height: 26px;
+  border-radius: 6px;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px;
+  flex-shrink: 0;
+  transition: all 0.15s;
+}
+.sb-item.active .sb-icon {
+  background: rgba(0,21,209,0.1);
+  border-color: rgba(0,21,209,0.2);
+}
+.sb-name {
+  flex: 1;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-2);
+  transition: color 0.15s;
+}
+.sb-item.active .sb-name { color: var(--volt); }
+.sb-count {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  color: var(--text-3);
+  background: var(--glass);
+  padding: 2px 6px;
+  border-radius: 20px;
+  transition: all 0.15s;
+}
+.sb-item.active .sb-count { color: var(--volt); background: rgba(0,21,209,0.06); }
+
+.sb-divider { border: none; border-top: 1px solid var(--border); margin: 12px 0; }
+
+.sb-code-row {
+  background: var(--ink-3);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 8px 10px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 8px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  transition: border-color 0.2s;
+}
+.sb-code-row:hover { border-color: var(--border-2); }
+.sb-code-row code {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: var(--cyan);
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sb-copy-icon {
+  background: none; border: none; cursor: pointer;
+  color: var(--text-3); display: flex; align-items: center;
+  padding: 2px; flex-shrink: 0;
+  transition: color 0.15s;
+}
+.sb-copy-icon:hover { color: var(--volt); }
+.sb-copy-icon.ok { color: var(--volt) !important; }
+
+.sb-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5px;
+  margin-bottom: 16px;
+}
+.sb-stat {
+  background: var(--ink-3);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 10px 6px;
+  text-align: center;
+}
+.sb-stat-n {
+  font-family: var(--serif);
+  font-size: 19px;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1;
+  margin-bottom: 3px;
+}
+.sb-stat-l { font-size: 8.5px; color: var(--text-3); font-weight: 500; letter-spacing: 0.4px; }
+
+.sb-fw-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  margin-bottom: 14px;
+}
+.sb-fw {
+  display: flex; align-items: center; gap: 5px;
+  padding: 6px 8px;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 10.5px;
+  color: var(--text-2);
+}
+
+.sidebar-foot {
+  padding: 12px 14px;
+  border-top: 1px solid var(--border);
+  display: flex; align-items: center; gap: 8px;
+}
+.foot-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--volt); box-shadow: 0 0 6px rgba(0,21,209,0.4); flex-shrink: 0; }
+.foot-text { font-size: 10.5px; color: var(--text-3); }
+.foot-link { font-size: 10.5px; color: var(--volt); text-decoration: none; margin-left: auto; font-weight: 500; }
+.foot-link:hover { text-decoration: underline; }
+
+/* =====================================================
+   MAIN PANEL
+===================================================== */
+.main-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--ink);
+}
+
+/* =====================================================
+   SECTION BANNER
+===================================================== */
+.sec-banner {
+  padding: 26px 28px 0 28px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+.sec-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--glass);
+  border: 1px solid var(--border-2);
+  color: var(--text-3);
+  font-size: 9px;
+  font-weight: 500;
+  font-family: var(--mono);
+  letter-spacing: 1px;
+  padding: 3px 9px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.sec-badge .b-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--volt); box-shadow: 0 0 4px rgba(0,21,209,0.5); }
+.sec-title {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-style: italic;
+  color: var(--text);
+  margin-bottom: 6px;
+  line-height: 1.15;
+}
+.sec-title strong { font-style: normal; font-family: var(--sans); font-weight: 700; color: var(--volt); }
+.sec-desc {
+  font-size: 12.5px;
+  color: var(--text-2);
+  line-height: 1.6;
+  max-width: 480px;
+}
+.sec-counter {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+  padding: 12px 18px;
+  background: var(--ink-3);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  white-space: nowrap;
+  flex-shrink: 0;
+  text-align: center;
+}
+.sc-num {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-style: italic;
+  color: var(--volt);
+  line-height: 1;
+}
+.sc-lbl { font-size: 9px; color: var(--text-3); letter-spacing: 0.5px; }
+
+/* =====================================================
+   CONTENT SCROLL
+===================================================== */
+.content-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 28px 40px 28px;
+}
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+.section { display: none; }
+.section.active { display: flex; flex-direction: column; height: 100%; overflow: hidden; }
+
+/* =====================================================
+   ANIMATION GRID
+===================================================== */
+.anim-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(248px, 1fr));
+  gap: 0;
+}
+
+/* =====================================================
+   ANIMATION CARD
+===================================================== */
+.anim-card {
+  background: var(--ink-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  overflow: hidden;
+  box-shadow: var(--sh-card);
+  transition: border-color 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.25s ease, transform 0.25s cubic-bezier(0.34,1.56,0.64,1);
+  cursor: default;
+  position: relative;
+  will-change: transform;
+  margin-top: 16px;
+}
+.anim-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--r);
+  background: radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(0,21,209,0.04), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  z-index: 0;
+}
+.anim-card:hover::before { opacity: 1; }
+.anim-card:hover {
+  border-color: rgba(0,21,209,0.25);
+  box-shadow: 0 8px 32px rgba(0,21,209,0.1), 0 0 0 1px rgba(0,21,209,0.08);
+  transform: translateY(-3px) scale(1.005);
+}
+
+/* PREVIEW */
+.preview-box {
+  height: 148px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  position: relative;
+  overflow: hidden;
+  background: var(--ink-3);
+  border-bottom: 1px solid var(--border);
+}
+.preview-box.interactive {
+  overflow: visible;
+  z-index: 2;
+}
+.preview-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(0,21,209,0.07) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+}
+.preview-box > * { position: relative; z-index: 1; }
+
+/* META */
+.card-meta {
+  padding: 13px 13px 11px 13px;
+  position: relative;
+  z-index: 1;
+}
+.anim-name {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 3px;
+  letter-spacing: -0.1px;
+}
+.anim-desc {
+  font-size: 10.5px;
+  color: var(--text-3);
+  line-height: 1.5;
+  margin-bottom: 11px;
+}
+.card-footer {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.class-tag {
+  flex: 1;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 4px 8px;
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--cyan);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+.copy-btn {
+  background: var(--glass);
+  border: 1px solid var(--border-2);
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-family: var(--mono);
+  font-size: 9.5px;
+  font-weight: 500;
+  color: var(--text-2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.15s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.copy-btn:hover { background: var(--volt-dim); border-color: rgba(0,21,209,0.3); color: var(--volt); }
+.copy-btn:active { transform: scale(0.95); }
+.copy-btn.ok { background: rgba(0,21,209,0.1); border-color: rgba(0,21,209,0.3); color: var(--volt); }
+
+/* =====================================================
+   ALL KEYFRAMES — REDESIGNED
+===================================================== */
+
+/* ───── TEXT ───── */
+
+/* 1. Velvet Drop — soft weighted fall with trailing blur */
+@keyframes velvetDrop {
+  0%   { opacity:0; transform:translateY(-24px) scaleY(0.8); filter:blur(6px); }
+  60%  { opacity:1; transform:translateY(3px) scaleY(1.02); filter:blur(0); }
+  80%  { transform:translateY(-1px) scaleY(0.99); }
+  100% { opacity:1; transform:translateY(0) scaleY(1); filter:blur(0); }
+}
+
+/* 2. Liquid Rise — mercury-like warp from below */
+@keyframes liquidRise {
+  0%   { opacity:0; transform:translateY(30px) scaleX(0.85) skewX(4deg); filter:blur(4px); }
+  50%  { transform:translateY(-3px) scaleX(1.02) skewX(-1deg); filter:blur(0); opacity:1; }
+  100% { opacity:1; transform:translateY(0) scaleX(1) skewX(0); }
+}
+
+/* 3. Refract — chromatic split and merge */
+@keyframes refract {
+  0%,100% { text-shadow:none; filter:none; }
+  15% { text-shadow:3px 0 0 var(--cyan), -3px 0 0 var(--rose); filter:blur(0.5px); letter-spacing:0.5px; }
+  30% { text-shadow:1px 0 0 var(--cyan), -1px 0 0 var(--rose); filter:blur(0); letter-spacing:0; }
+  45% { text-shadow:-4px 0 0 var(--volt), 4px 0 0 var(--rose); filter:blur(0.8px); }
+  60% { text-shadow:none; filter:none; letter-spacing:0; }
+}
+
+/* 4. Phantom Blur — materialises from nothing */
+@keyframes phantomBlur {
+  0%   { opacity:0; filter:blur(24px) brightness(2); transform:scale(1.15); }
+  40%  { opacity:1; filter:blur(2px) brightness(1.2); transform:scale(1.03); }
+  100% { opacity:1; filter:blur(0) brightness(1); transform:scale(1); }
+}
+
+/* 5. Gravity Drop — heavy weighted fall with impact */
+@keyframes gravityDrop {
+  0%   { opacity:0; transform:translateY(-60px) scaleY(0.5); }
+  65%  { opacity:1; transform:translateY(6px) scaleY(1.08); }
+  82%  { transform:translateY(-2px) scaleY(0.98); }
+  100% { transform:translateY(0) scaleY(1); }
+}
+
+/* 6. Static Burst — TV noise distortion */
+@keyframes staticBurst {
+  0%,100% { opacity:1; transform:none; clip-path:none; }
+  10% { transform:translate(2px,-1px) skewX(2deg); clip-path:polygon(0 20%,100% 20%,100% 45%,0 45%); }
+  20% { transform:translate(-2px,1px) skewX(-1deg); clip-path:none; opacity:0.7; }
+  30% { transform:translate(3px,2px); clip-path:polygon(0 60%,100% 60%,100% 80%,0 80%); }
+  40% { transform:none; clip-path:none; opacity:1; }
+}
+
+/* 7. Elastic Stamp — overshoots like a rubber stamp */
+@keyframes elasticStamp {
+  0%   { transform:scale(0) rotate(-6deg); opacity:0; }
+  55%  { transform:scale(1.15) rotate(1.5deg); opacity:1; }
+  72%  { transform:scale(0.94) rotate(-0.5deg); }
+  86%  { transform:scale(1.04) rotate(0.3deg); }
+  100% { transform:scale(1) rotate(0); opacity:1; }
+}
+
+/* 8. Slice Reveal — horizontal venetian blind reveal */
+@keyframes sliceRevealA {
+  from { clip-path:inset(0 100% 0 0 round 2px); }
+  to   { clip-path:inset(0 0% 0 0 round 2px); }
+}
+
+/* 9. Char Orbit — letters appear on a circular path */
+@keyframes charOrbit {
+  0%   { opacity:0; transform:translateY(-16px) rotate(-20deg) scale(0.4); }
+  70%  { opacity:1; transform:translateY(2px) rotate(2deg) scale(1.05); }
+  100% { opacity:1; transform:translateY(0) rotate(0) scale(1); }
+}
+
+/* 10. Ink Bleed — spreads like ink absorbing into paper */
+@keyframes inkBleed {
+  0%   { opacity:0; letter-spacing:12px; filter:blur(8px); transform:scaleX(1.4); }
+  60%  { opacity:1; letter-spacing:1px; filter:blur(1px); transform:scaleX(1.01); }
+  100% { opacity:1; letter-spacing:0; filter:blur(0); transform:scaleX(1); }
+}
+
+/* 11. Neon Flare — premium neon ignition */
+@keyframes neonFlare {
+  0%,100% { text-shadow: 0 0 4px var(--volt), 0 0 8px var(--volt-glow); color:var(--volt); }
+  50%      { text-shadow: 0 0 12px var(--volt), 0 0 30px var(--volt-glow), 0 0 60px rgba(0,21,209,0.2); color:#fff; }
+}
+
+/* 12. Scramble Decode — matrix-like character reveal */
+@keyframes scramblePulse {
+  0%,100% { opacity:1; filter:none; }
+  40%     { opacity:0.4; letter-spacing:3px; filter:blur(2px); transform:skewX(3deg); }
+  80%     { opacity:0.8; letter-spacing:0.5px; }
+}
+
+/* 13. Kinetic Wave — each character oscillates with spring */
+@keyframes kineticWave {
+  0%,100% { transform:translateY(0) rotate(0); }
+  25%     { transform:translateY(-10px) rotate(-4deg); }
+  75%     { transform:translateY(4px) rotate(2deg); }
+}
+
+/* 14. Perspective Swing — 3D Y-axis pendulum */
+@keyframes perspSwing {
+  0%   { opacity:0; transform:perspective(500px) rotateY(-70deg); }
+  60%  { opacity:1; transform:perspective(500px) rotateY(8deg); }
+  80%  { transform:perspective(500px) rotateY(-4deg); }
+  100% { transform:perspective(500px) rotateY(0); }
+}
+
+/* 15. Focus Pull — lens focus simulation */
+@keyframes focusPull {
+  0%   { opacity:0; filter:blur(12px) contrast(0.5) brightness(1.5); transform:scale(1.08); }
+  70%  { opacity:1; filter:blur(1px) contrast(1.1); transform:scale(1.01); }
+  100% { opacity:1; filter:blur(0) contrast(1); transform:scale(1); }
+}
+
+/* 16. Gradient Sweep — animated gradient across text */
+@keyframes gradSweep {
+  0%   { background-position: -200% center; }
+  100% { background-position: 300% center; }
+}
+
+/* 17. Depth Warp — barrel-distortion-like entrance */
+@keyframes depthWarp {
+  0%   { opacity:0; transform:perspective(300px) translateZ(-120px) rotateX(15deg); filter:blur(6px); }
+  65%  { opacity:1; transform:perspective(300px) translateZ(6px) rotateX(-2deg); filter:blur(0); }
+  100% { opacity:1; transform:perspective(300px) translateZ(0) rotateX(0); }
+}
+
+/* 18. Typewriter Premium — stepped reveal with cursor */
+@keyframes typewriterPrem { from{width:0} to{width:100%} }
+@keyframes cursorBlink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+/* 19. Highlight Burn — underline highlight ignites */
+@keyframes highlightBurn {
+  from { background-size:0% 40%; }
+  to   { background-size:100% 40%; }
+}
+
+/* 20. Shatter In — text reconstructs from fragments */
+@keyframes shatterIn {
+  0%   { opacity:0; transform:scale(2.5) rotate(8deg); filter:blur(20px); }
+  50%  { opacity:0.8; transform:scale(1.05) rotate(-1deg); filter:blur(1px); }
+  100% { opacity:1; transform:scale(1) rotate(0); filter:blur(0); }
+}
+
+/* ───── BUTTONS ───── */
+
+/* 21. Magnetic Pull — button warps toward cursor */
+@keyframes magnetPulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(0,21,209,0.3); }
+  50%     { box-shadow: 0 0 0 8px rgba(0,21,209,0); transform:scale(1.02); }
+}
+
+/* 22. Liquid Fill — mercury fill from bottom */
+@keyframes liquidFill {
+  from { background-position:100% 0; }
+  to   { background-position:0% 0; }
+}
+
+/* 23. Energy Ripple — concentric ripples on pulse */
+@keyframes energyRipple {
+  0%   { box-shadow: 0 0 0 0 rgba(0,21,209,0.5), 0 0 0 0 rgba(0,21,209,0.3); }
+  70%  { box-shadow: 0 0 0 12px rgba(0,21,209,0), 0 0 0 24px rgba(0,21,209,0); }
+  100% { box-shadow: 0 0 0 0 rgba(0,21,209,0), 0 0 0 0 rgba(0,21,209,0); }
+}
+
+/* 24. Press Depth — tactile 3D press illusion */
+@keyframes pressDepth {
+  0%,100% { transform:translateY(0); box-shadow:0 8px 0 rgba(0,21,209,0.08),0 4px 16px rgba(0,21,209,0.06); }
+  50%     { transform:translateY(4px); box-shadow:0 4px 0 rgba(0,21,209,0.08),0 2px 8px rgba(0,21,209,0.06); }
+}
+
+/* 25. Edge Trace — border traces around perimeter */
+@keyframes edgeTrace {
+  0%   { background-size:0% 2px, 2px 0%, 0% 2px, 2px 0%; }
+  25%  { background-size:100% 2px, 2px 0%, 0% 2px, 2px 0%; }
+  50%  { background-size:100% 2px, 2px 100%, 0% 2px, 2px 0%; }
+  75%  { background-size:100% 2px, 2px 100%, 100% 2px, 2px 0%; }
+  100% { background-size:100% 2px, 2px 100%, 100% 2px, 2px 100%; }
+}
+
+/* 26. Plasma Glow — organic shifting color energy */
+@keyframes plasmaGlow {
+  0%   { box-shadow:0 0 12px rgba(0,21,209,0.4), inset 0 0 12px rgba(0,21,209,0.05); }
+  33%  { box-shadow:0 0 24px rgba(0,21,209,0.4), inset 0 0 18px rgba(0,229,255,0.06); }
+  66%  { box-shadow:0 0 20px rgba(255,77,109,0.4), inset 0 0 14px rgba(255,77,109,0.05); }
+  100% { box-shadow:0 0 12px rgba(0,21,209,0.4), inset 0 0 12px rgba(0,21,209,0.05); }
+}
+
+/* 27. Morph Pill — shape-shifts between pill states */
+@keyframes morphPill {
+  0%,100% { border-radius:10px; }
+  50%     { border-radius:40px; transform:scaleX(0.95); }
+}
+
+/* 28. Lift Shadow — dramatic depth lift */
+@keyframes liftShadow {
+  0%,100% { transform:translateY(0); box-shadow:0 2px 8px rgba(0,21,209,0.06); }
+  50%     { transform:translateY(-6px); box-shadow:0 20px 40px rgba(0,21,209,0.12), 0 8px 16px rgba(0,21,209,0.1); }
+}
+
+/* 29. Shockwave — radial pulse from center */
+@keyframes shockwave {
+  0%   { outline-offset:0; outline-width:0; outline-color:rgba(0,21,209,0.8); }
+  40%  { outline-offset:8px; outline-width:2px; outline-color:rgba(0,21,209,0.3); }
+  100% { outline-offset:20px; outline-width:0; outline-color:rgba(0,21,209,0); }
+}
+
+/* 30. Neon Sign — flickering neon button */
+@keyframes neonSign {
+  0%,95%,100% { box-shadow:0 0 8px rgba(0,21,209,0.6), 0 0 20px rgba(0,21,209,0.3), inset 0 0 8px rgba(0,21,209,0.05); }
+  96%          { box-shadow:0 0 2px rgba(0,21,209,0.2); }
+  97.5%        { box-shadow:0 0 8px rgba(0,21,209,0.6), 0 0 20px rgba(0,21,209,0.3); }
+  98.5%        { box-shadow:0 0 1px rgba(0,21,209,0.1); }
+}
+
+/* ───── INPUTS ───── */
+
+/* 31. Focus Field — intelligent glow tracks border */
+@keyframes focusField {
+  from { box-shadow:0 0 0 0 rgba(0,21,209,0.4), 0 0 0 0 rgba(0,21,209,0.1); }
+  to   { box-shadow:0 0 0 3px rgba(0,21,209,0.15), 0 0 16px rgba(0,21,209,0.08); }
+}
+
+/* 32. Border Morph — border radius morphs on focus */
+@keyframes borderMorph {
+  0%,100% { border-radius:8px; }
+  50%     { border-radius:16px 4px 16px 4px; }
+}
+
+/* 33. Shimmer Scan — light scans across input */
+@keyframes shimmerScan {
+  from { background-position:-200% center; }
+  to   { background-position:300% center; }
+}
+
+/* 34. Voltage Pulse — electric strike animation */
+@keyframes voltagePulse {
+  0%,100% { border-color:rgba(0,21,209,0.3); }
+  10%     { border-color:var(--volt); box-shadow:0 0 12px var(--volt-glow); }
+  20%     { border-color:rgba(0,21,209,0.3); box-shadow:none; }
+  30%     { border-color:var(--volt); box-shadow:0 0 8px var(--volt-glow); }
+  40%     { border-color:rgba(0,21,209,0.3); }
+}
+
+/* 35. Seismic Shake — earthquake-like rejection */
+@keyframes seismicShake {
+  0%,100% { transform:translateX(0); }
+  10%     { transform:translateX(-6px) rotate(-0.5deg); }
+  25%     { transform:translateX(6px) rotate(0.5deg); }
+  40%     { transform:translateX(-5px); }
+  55%     { transform:translateX(4px); }
+  70%     { transform:translateX(-2px); }
+  85%     { transform:translateX(2px); }
+}
+
+/* 36. Success Glow — warm affirming glow */
+@keyframes successGlow {
+  0%   { border-color:rgba(0,229,160,0.3); box-shadow:none; }
+  40%  { border-color:#00e5a0; box-shadow:0 0 16px rgba(0,229,160,0.3), 0 0 4px rgba(0,229,160,0.5); }
+  100% { border-color:rgba(0,229,160,0.5); box-shadow:0 0 8px rgba(0,229,160,0.1); }
+}
+
+/* 37. Cursor Trail — caret pulses out a trail */
+@keyframes caretTrail {
+  0%,100% { box-shadow:0 0 0 0 rgba(0,21,209,0); }
+  50%     { box-shadow:0 0 0 4px rgba(0,21,209,0.1), inset 0 0 0 1px rgba(0,21,209,0.3); }
+}
+
+/* 38. Morph Placeholder — placeholder morphs out */
+@keyframes morphPlaceholder {
+  0%,100% { letter-spacing:0; opacity:0.4; }
+  50%     { letter-spacing:2px; opacity:0.1; filter:blur(1px); }
+}
+
+/* 39. Elevate Focus — label rises on focus */
+@keyframes elevateFocus {
+  from { transform:translateY(0) scale(1); color:var(--text-3); }
+  to   { transform:translateY(-20px) scale(0.82); color:var(--volt); }
+}
+
+/* 40. Ink Stroke — border draws itself */
+@keyframes inkStroke {
+  0%   { outline-offset:0; outline-color:rgba(0,21,209,0); }
+  100% { outline-offset:2px; outline-color:rgba(0,21,209,0.2); }
+}
+
+/* ───── CARDS ───── */
+
+/* 41. Cinematic Reveal — film frame opening */
+@keyframes cinematicReveal {
+  0%   { clip-path:inset(50% 0 50% 0); opacity:0; }
+  50%  { clip-path:inset(0% 0 0% 0); opacity:1; }
+  100% { clip-path:inset(0% 0 0% 0); opacity:1; }
+}
+
+/* 42. Holographic Tilt — iridescent depth shift */
+@keyframes holographicTilt {
+  0%,100% { transform:perspective(600px) rotateX(0) rotateY(0); filter:hue-rotate(0deg); }
+  25%     { transform:perspective(600px) rotateX(4deg) rotateY(-5deg); filter:hue-rotate(30deg); }
+  75%     { transform:perspective(600px) rotateX(-3deg) rotateY(5deg); filter:hue-rotate(-30deg); }
+}
+
+/* 43. Depth Portal — card pulls through depth */
+@keyframes depthPortal {
+  0%   { opacity:0; transform:perspective(500px) translateZ(-200px) scale(0.6); filter:blur(12px); }
+  60%  { opacity:1; transform:perspective(500px) translateZ(8px) scale(1.02); filter:blur(0); }
+  100% { opacity:1; transform:perspective(500px) translateZ(0) scale(1); }
+}
+
+/* 44. Refraction Shimmer — glass prism light shift */
+@keyframes refractionShimmer {
+  0%,100% { background-position:0% 50%; }
+  50%     { background-position:100% 50%; }
+}
+
+/* 45. Magnetic Hover — spring physics hover */
+@keyframes magneticHover {
+  0%,100% { transform:translateY(0) rotate(0); box-shadow:0 4px 20px rgba(0,21,209,0.06); }
+  50%     { transform:translateY(-8px) rotate(0.5deg); box-shadow:0 20px 40px rgba(0,21,209,0.12), 0 4px 8px rgba(0,21,209,0.08); }
+}
+
+/* 46. Warp Gate — space-warp entrance */
+@keyframes warpGate {
+  0%   { opacity:0; transform:perspective(400px) rotateY(-90deg) translateX(-40px); }
+  60%  { opacity:1; transform:perspective(400px) rotateY(6deg) translateX(3px); }
+  100% { opacity:1; transform:perspective(400px) rotateY(0) translateX(0); }
+}
+
+/* 47. Ambient Float — breathing float with shadow */
+@keyframes ambientFloat {
+  0%,100% { transform:translateY(0); box-shadow:0 8px 24px rgba(0,21,209,0.07), 0 2px 6px rgba(0,0,0,0.2); }
+  50%     { transform:translateY(-7px); box-shadow:0 20px 48px rgba(0,21,209,0.12), 0 8px 16px rgba(0,21,209,0.06); }
+}
+
+/* 48. Slice Up — multiple horizontal slices stagger */
+@keyframes sliceUp {
+  from { transform:translateY(100%); opacity:0; }
+  to   { transform:translateY(0); opacity:1; }
+}
+
+/* 49. Glow Surge — border glow pulses intensity */
+@keyframes glowSurge {
+  0%,100% { box-shadow:0 0 0 1px rgba(0,21,209,0.15), 0 4px 20px rgba(0,21,209,0.06); }
+  50%     { box-shadow:0 0 0 1px rgba(0,21,209,0.5), 0 0 24px rgba(0,21,209,0.2), 0 4px 30px rgba(0,21,209,0.08); }
+}
+
+/* 50. Parallax Depth — multi-layer depth illusion */
+@keyframes parallaxDepth {
+  0%,100% { transform:perspective(400px) rotateX(0) translateZ(0); }
+  50%     { transform:perspective(400px) rotateX(3deg) translateZ(12px); }
+}
+
+/* ───── LOADERS ───── */
+
+/* 51. Orbital System — planets on elliptic paths */
+@keyframes orbitalA {
+  from { transform:rotate(0deg) translateX(20px) rotate(0deg); }
+  to   { transform:rotate(360deg) translateX(20px) rotate(-360deg); }
+}
+@keyframes orbitalB {
+  from { transform:rotate(120deg) translateX(28px) rotate(-120deg); }
+  to   { transform:rotate(480deg) translateX(28px) rotate(-480deg); }
+}
+
+/* 52. Fluid Flow — liquid mercury shape morph */
+@keyframes fluidFlow {
+  0%   { border-radius:50%; transform:scale(1) rotate(0); }
+  25%  { border-radius:30% 70% 70% 30% / 30% 30% 70% 70%; transform:scale(1.15) rotate(45deg); }
+  50%  { border-radius:50%; transform:scale(0.9) rotate(90deg); }
+  75%  { border-radius:70% 30% 30% 70% / 70% 70% 30% 30%; transform:scale(1.1) rotate(135deg); }
+  100% { border-radius:50%; transform:scale(1) rotate(180deg); }
+}
+
+/* 53. Particle Sync — dots phase in stagger */
+@keyframes particleSync {
+  0%,100% { transform:scale(1); opacity:0.8; }
+  50%     { transform:scale(0); opacity:0; }
+}
+
+/* 54. DNA Helix — dual-strand rotation */
+@keyframes dnaA { from { transform:translateY(-16px) scale(0.4); opacity:0; } to { transform:translateY(16px) scale(1); opacity:1; } }
+@keyframes dnaB { from { transform:translateY(16px) scale(0.4); opacity:0; } to { transform:translateY(-16px) scale(1); opacity:1; } }
+
+/* 55. Comet Trail — streaking light */
+@keyframes cometTrail {
+  0%   { transform:rotate(0deg); }
+  100% { transform:rotate(360deg); }
+}
+
+/* 56. Waveform — audio-style bars */
+@keyframes waveBar {
+  0%,100% { transform:scaleY(0.2); }
+  50%     { transform:scaleY(1); }
+}
+
+/* 57. Ping Cascade — expanding ring cascade */
+@keyframes pingCascade {
+  0%   { transform:scale(0.5); opacity:1; }
+  100% { transform:scale(2.5); opacity:0; }
+}
+
+/* 58. Progress Glow — progress bar with trailing glow */
+@keyframes progressGlow {
+  0%   { width:0%; box-shadow:none; }
+  50%  { box-shadow:0 0 12px rgba(0,21,209,0.6), 4px 0 16px rgba(0,21,209,0.4); }
+  100% { width:85%; box-shadow:0 0 8px rgba(0,21,209,0.3), 4px 0 12px rgba(0,21,209,0.2); }
+}
+
+/* 59. Skeleton Pulse — intelligent skeleton shimmer */
+@keyframes skeletonPulse {
+  0%   { background-position:-300% 0; }
+  100% { background-position:300% 0; }
+}
+
+/* 60. Vortex Spin — spinning vortex */
+@keyframes vortexSpin {
+  from { transform:rotate(0deg) scale(1); }
+  50%  { transform:rotate(180deg) scale(0.7); }
+  to   { transform:rotate(360deg) scale(1); }
+}
+
+/* ───── SCROLL ───── */
+
+/* 61. Viewport Rise — cinematic scroll entrance */
+@keyframes viewportRise {
+  from { opacity:0; transform:translateY(50px) scale(0.95); }
+  to   { opacity:1; transform:translateY(0) scale(1); }
+}
+
+/* 62. Curtain Lift — clip-path curtain opens */
+@keyframes curtainLift {
+  from { clip-path:inset(0 0 100% 0); opacity:0; }
+  to   { clip-path:inset(0 0 0% 0); opacity:1; }
+}
+
+/* 63. Scroll Warp — perspective tilts to flat */
+@keyframes scrollWarp {
+  from { opacity:0; transform:perspective(600px) rotateX(20deg) translateY(30px); filter:blur(4px); }
+  to   { opacity:1; transform:perspective(600px) rotateX(0) translateY(0); filter:blur(0); }
+}
+
+/* 64. Momentum Slide — fast slide with deceleration */
+@keyframes momentumSlide {
+  from { opacity:0; transform:translateX(-60px); }
+  70%  { transform:translateX(6px); }
+  100% { opacity:1; transform:translateX(0); }
+}
+
+/* 65. Scale Reveal — grows from small with blur */
+@keyframes scaleReveal {
+  from { opacity:0; transform:scale(0.7); filter:blur(8px); }
+  70%  { opacity:1; transform:scale(1.02); filter:blur(0); }
+  100% { opacity:1; transform:scale(1); }
+}
+
+/* 66. Radial Expand — circular mask opens */
+@keyframes radialExpand {
+  from { clip-path:circle(0% at 50% 100%); opacity:0; }
+  to   { clip-path:circle(150% at 50% 100%); opacity:1; }
+}
+
+/* 67. Stagger Pop — grid items pop in sequence */
+@keyframes staggerPop {
+  0%   { opacity:0; transform:scale(0.7) rotate(-4deg); }
+  60%  { opacity:1; transform:scale(1.06) rotate(1deg); }
+  100% { opacity:1; transform:scale(1) rotate(0); }
+}
+
+/* 68. Blur Ascend — rises through blur */
+@keyframes blurAscend {
+  from { opacity:0; transform:translateY(40px); filter:blur(16px); }
+  to   { opacity:1; transform:translateY(0); filter:blur(0); }
+}
+
+/* 69. Tilt Reveal — tilts upright from lying flat */
+@keyframes tiltReveal {
+  from { opacity:0; transform:perspective(400px) rotateX(50deg) translateY(20px); }
+  to   { opacity:1; transform:perspective(400px) rotateX(0) translateY(0); }
+}
+
+/* 70. Scan Line — scan line sweeps left to right */
+@keyframes scanLine {
+  from { clip-path:inset(0 100% 0 0); }
+  to   { clip-path:inset(0 0% 0 0); }
+}
+
+/* =====================================================
+   TOPBAR INSTALL TABS WIDGET
+===================================================== */
+.install-tabs-widget {
+  display: flex;
+  align-items: center;
+  background: var(--ink-3);
+  border: 1px solid var(--border-2);
+  border-radius: 9px;
+  overflow: hidden;
+  max-width: 400px;
+  width: 100%;
+  height: 36px;
+}
+.itw-tabs {
+  display: flex;
+  flex-shrink: 0;
+  border-right: 1px solid var(--border-2);
+}
+.itw-tab {
+  padding: 0 11px;
+  height: 36px;
+  background: none;
+  border: none;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text-3);
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  transition: background 0.15s, color 0.15s;
+  position: relative;
+}
+.itw-tab:not(:last-child) { border-right: 1px solid var(--border); }
+.itw-tab.active {
+  background: var(--volt-dim);
+  color: var(--volt);
+}
+.itw-tab:hover:not(.active) { background: var(--glass-2); color: var(--text-2); }
+.itw-panel {
+  display: none;
+  flex: 1;
+  align-items: center;
+  gap: 8px;
+  padding: 0 10px 0 12px;
+  min-width: 0;
+}
+.itw-panel.active { display: flex; }
+.itw-panel code {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--volt);
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.itw-copy {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-3);
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  border-radius: 4px;
+  transition: color 0.15s;
+  flex-shrink: 0;
+}
+.itw-copy:hover { color: var(--volt); }
+.itw-copy.ok { color: var(--volt) !important; }
+
+/* =====================================================
+   SIDEBAR INSTALL TABS
+===================================================== */
+.sb-install-tabs {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 6px;
+}
+.sb-itab {
+  flex: 1;
+  padding: 5px 0;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-family: var(--mono);
+  font-size: 9.5px;
+  font-weight: 500;
+  color: var(--text-3);
+  cursor: pointer;
+  text-align: center;
+  letter-spacing: 0.3px;
+  transition: all 0.15s;
+}
+.sb-itab.active {
+  background: var(--volt-dim);
+  border-color: rgba(0,21,209,0.2);
+  color: var(--volt);
+}
+.sb-itab:hover:not(.active) { background: var(--glass-2); color: var(--text-2); }
+.sb-install-panel { display: none; }
+.sb-install-panel.active { display: block; }
+
+/* designed-by footer */
+.sidebar-designed {
+  padding: 10px 14px 12px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+.designed-by-text {
+  font-size: 9px;
+  color: var(--text-3);
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  font-weight: 500;
+  line-height: 1.6;
+}
+.designed-by-brand {
+  font-size: 10px;
+  color: var(--volt);
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  display: block;
+  margin-top: 2px;
+}
+
+
+.play-loop  { animation-iteration-count:infinite !important; }
+.play-alt   { animation-direction:alternate; animation-iteration-count:infinite !important; }
+.play-once  { animation-iteration-count:1 !important; animation-fill-mode:both !important; }
+
+/* =====================================================
+   INTERACTIVE TEXT ANIMATION PREVIEWS
+===================================================== */
+.ipreview-wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: visible;
+  cursor: pointer;
+}
+.ipreview-chars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  user-select: none;
+  pointer-events: none;
+}
+.ipreview-chars span {
+  display: inline-block;
+  font-weight: 700;
+  will-change: transform;
+  transform-origin: center center;
+}
+.ipreview-hint {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 8px;
+  color: var(--text-3);
+  letter-spacing: 0.8px;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 3;
+  text-transform: uppercase;
+}
+
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <a class="topbar-logo" href="#">
+      <div class="logo-mark">⬡</div>
+      <span class="logo-name">SDS<em>Motion</em></span>
+      <span class="logo-version">v3.0</span>
+    </a>
+
+    <div class="topbar-center">
+      <div class="install-tabs-widget">
+        <div class="itw-tabs">
+          <button class="itw-tab active" onclick="switchInstallTab(this,'npm')">npm</button>
+          <button class="itw-tab" onclick="switchInstallTab(this,'npx')">npx</button>
+          <button class="itw-tab" onclick="switchInstallTab(this,'cdn')">cdn</button>
+        </div>
+        <div class="itw-panel active" id="itab-npm">
+          <code>npm install sds-motion</code>
+          <button class="itw-copy" onclick="copyInstallTab(this,'npm install sds-motion')">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" width="13" height="13"><rect x="4" y="4" width="9" height="9" rx="1.5"/><path d="M3 11V3h8"/></svg>
+          </button>
+        </div>
+        <div class="itw-panel" id="itab-npx">
+          <code>npx sds-motion init</code>
+          <button class="itw-copy" onclick="copyInstallTab(this,'npx sds-motion init')">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" width="13" height="13"><rect x="4" y="4" width="9" height="9" rx="1.5"/><path d="M3 11V3h8"/></svg>
+          </button>
+        </div>
+        <div class="itw-panel" id="itab-cdn">
+          <code>cdn.jsdelivr.net/npm/sds-motion/dist/motion.min.css</code>
+          <button class="itw-copy" onclick="copyInstallTab(this,'https://cdn.jsdelivr.net/npm/sds-motion/dist/motion.min.css')">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" width="13" height="13"><rect x="4" y="4" width="9" height="9" rx="1.5"/><path d="M3 11V3h8"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="topbar-right">
+      <div class="topbar-badge"><span class="dot"></span>193+ Animations</div>
+    </div>
+  </header>
+
+  <!-- WORKSPACE -->
+  <div class="workspace">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-scroll">
+
+        <div class="sb-stats">
+          <div class="sb-stat"><div class="sb-stat-n">193+</div><div class="sb-stat-l">Animations</div></div>
+          <div class="sb-stat"><div class="sb-stat-n">6</div><div class="sb-stat-l">Categories</div></div>
+          <div class="sb-stat"><div class="sb-stat-n">0</div><div class="sb-stat-l">JS Deps</div></div>
+        </div>
+
+        <div class="sb-label">Categories</div>
+        <nav class="sb-nav">
+          <button class="sb-item active" onclick="switchSec('text',this)">
+            <span class="sb-icon">✦</span>
+            <span class="sb-name">Text</span>
+            <span class="sb-count">43</span>
+          </button>
+          <button class="sb-item" onclick="switchSec('button',this)">
+            <span class="sb-icon">◈</span>
+            <span class="sb-name">Buttons</span>
+            <span class="sb-count">30</span>
+          </button>
+          <button class="sb-item" onclick="switchSec('input',this)">
+            <span class="sb-icon">▭</span>
+            <span class="sb-name">Inputs</span>
+            <span class="sb-count">30</span>
+          </button>
+          <button class="sb-item" onclick="switchSec('card',this)">
+            <span class="sb-icon">▣</span>
+            <span class="sb-name">Cards</span>
+            <span class="sb-count">30</span>
+          </button>
+          <button class="sb-item" onclick="switchSec('loader',this)">
+            <span class="sb-icon">◎</span>
+            <span class="sb-name">Loaders</span>
+            <span class="sb-count">30</span>
+          </button>
+          <button class="sb-item" onclick="switchSec('scroll',this)">
+            <span class="sb-icon">↕</span>
+            <span class="sb-name">Scroll</span>
+            <span class="sb-count">20</span>
+          </button>
+        </nav>
+
+        <hr class="sb-divider">
+
+        <div class="sb-label">Install</div>
+        <div class="sb-install-tabs">
+          <button class="sb-itab active" onclick="switchSbInstall(this,'sb-npm')">npm</button>
+          <button class="sb-itab" onclick="switchSbInstall(this,'sb-npx')">npx</button>
+          <button class="sb-itab" onclick="switchSbInstall(this,'sb-cdn')">cdn</button>
+        </div>
+        <div class="sb-install-panel active" id="sb-npm">
+          <div class="sb-code-row" onclick="sbCopy(this,'npm install sds-motion')">
+            <code>npm install sds-motion</code>
+            <button class="sb-copy-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="12" height="12"><rect x="4" y="4" width="9" height="9" rx="1.5"/><path d="M3 11V3h8"/></svg></button>
+          </div>
+        </div>
+        <div class="sb-install-panel" id="sb-npx">
+          <div class="sb-code-row" onclick="sbCopy(this,'npx sds-motion init')">
+            <code>npx sds-motion init</code>
+            <button class="sb-copy-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="12" height="12"><rect x="4" y="4" width="9" height="9" rx="1.5"/><path d="M3 11V3h8"/></svg></button>
+          </div>
+        </div>
+        <div class="sb-install-panel" id="sb-cdn">
+          <div class="sb-code-row" onclick="sbCopy(this,'https://cdn.jsdelivr.net/npm/sds-motion/dist/motion.min.css')">
+            <code>cdn.jsdelivr.net/npm/sds-...</code>
+            <button class="sb-copy-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="12" height="12"><rect x="4" y="4" width="9" height="9" rx="1.5"/><path d="M3 11V3h8"/></svg></button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="sidebar-designed">
+        <span class="designed-by-text">Designed &amp; Developed by</span>
+        <span class="designed-by-brand">Salkom Design Studio</span>
+      </div>
+    </aside>
+
+    <!-- MAIN PANEL -->
+    <main class="main-panel">
+
+      <!-- TEXT -->
+      <div class="section active" id="sec-text">
+        <div class="sec-banner">
+          <div>
+            <div class="sec-badge"><span class="b-dot"></span>sds-text-* namespace</div>
+            <h2 class="sec-title"><strong>Text</strong> Animations</h2>
+            <p class="sec-desc">Novel typography motion — velvet drops, liquid rises, refraction glitches, phantom reveals, and kinetic character systems.</p>
+          </div>
+          <div class="sec-counter"><div class="sc-num">43</div><div class="sc-lbl">Total classes</div></div>
+        </div>
+        <div class="content-scroll">
+          <div class="anim-grid" id="grid-text"></div>
+        </div>
+      </div>
+
+      <!-- BUTTONS -->
+      <div class="section" id="sec-button">
+        <div class="sec-banner">
+          <div>
+            <div class="sec-badge"><span class="b-dot"></span>sds-btn-* namespace</div>
+            <h2 class="sec-title"><strong>Button</strong> Animations</h2>
+            <p class="sec-desc">Magnetic pull fields, liquid fills, energy ripples, plasma glows, and edge-trace systems. Every button feels alive.</p>
+          </div>
+          <div class="sec-counter"><div class="sc-num">30</div><div class="sc-lbl">Total classes</div></div>
+        </div>
+        <div class="content-scroll">
+          <div class="anim-grid" id="grid-button"></div>
+        </div>
+      </div>
+
+      <!-- INPUTS -->
+      <div class="section" id="sec-input">
+        <div class="sec-banner">
+          <div>
+            <div class="sec-badge"><span class="b-dot"></span>sds-input-* namespace</div>
+            <h2 class="sec-title"><strong>Input</strong> Animations</h2>
+            <p class="sec-desc">Intelligent focus fields, voltage pulses, seismic shake validation, and morphing border systems.</p>
+          </div>
+          <div class="sec-counter"><div class="sc-num">30</div><div class="sc-lbl">Total classes</div></div>
+        </div>
+        <div class="content-scroll">
+          <div class="anim-grid" id="grid-input"></div>
+        </div>
+      </div>
+
+      <!-- CARDS -->
+      <div class="section" id="sec-card">
+        <div class="sec-banner">
+          <div>
+            <div class="sec-badge"><span class="b-dot"></span>sds-card-* namespace</div>
+            <h2 class="sec-title"><strong>Card</strong> Animations</h2>
+            <p class="sec-desc">Cinematic reveals, holographic tilts, depth portals, warp gates, and ambient float ecosystems.</p>
+          </div>
+          <div class="sec-counter"><div class="sc-num">30</div><div class="sc-lbl">Total classes</div></div>
+        </div>
+        <div class="content-scroll">
+          <div class="anim-grid" id="grid-card"></div>
+        </div>
+      </div>
+
+      <!-- LOADERS -->
+      <div class="section" id="sec-loader">
+        <div class="sec-banner">
+          <div>
+            <div class="sec-badge"><span class="b-dot"></span>sds-loader-* namespace</div>
+            <h2 class="sec-title"><strong>Loader</strong> Animations</h2>
+            <p class="sec-desc">Orbital systems, fluid morphs, DNA helixes, waveforms, and procedural progress physics.</p>
+          </div>
+          <div class="sec-counter"><div class="sc-num">30</div><div class="sc-lbl">Total classes</div></div>
+        </div>
+        <div class="content-scroll">
+          <div class="anim-grid" id="grid-loader"></div>
+        </div>
+      </div>
+
+      <!-- SCROLL -->
+      <div class="section" id="sec-scroll">
+        <div class="sec-banner">
+          <div>
+            <div class="sec-badge"><span class="b-dot"></span>sds-scroll-* namespace</div>
+            <h2 class="sec-title"><strong>Scroll</strong> Animations</h2>
+            <p class="sec-desc">Viewport-aware cinematic transitions. IntersectionObserver activates each class automatically.</p>
+          </div>
+          <div class="sec-counter"><div class="sc-num">20</div><div class="sc-lbl">Total classes</div></div>
+        </div>
+        <div class="content-scroll">
+          <div class="anim-grid" id="grid-scroll"></div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<script>
+/* =========================================================
+   ANIMATION DATA
+========================================================= */
+
+/* — TEXT ANIMATIONS — */
+const textAnimations = [
+  {
+    name:"Velvet Drop",
+    cls:"sds-velvet-drop",
+    desc:"Soft weighted fall with trailing blur — weighted, cinematic.",
+    preview:`<span style="font-family:'Space Grotesk';font-size:22px;font-weight:700;display:inline-block;animation:velvetDrop 1.8s cubic-bezier(0.22,1,0.36,1) infinite alternate">Velvet</span>`
+  },
+  {
+    name:"Liquid Rise",
+    cls:"sds-liquid-rise",
+    desc:"Mercury-like warp from below with elastic skew.",
+    preview:`<span style="font-family:'Space Grotesk';font-size:22px;font-weight:700;display:inline-block;animation:liquidRise 2s cubic-bezier(0.16,1,0.3,1) infinite alternate">Rise</span>`
+  },
+  {
+    name:"Refract",
+    cls:"sds-refract",
+    desc:"Chromatic aberration split and merge — RGB prism glitch.",
+    preview:`<span style="font-family:'Space Grotesk';font-size:22px;font-weight:700;display:inline-block;color:var(--text);animation:refract 3s ease infinite">Refract</span>`
+  },
+  {
+    name:"Phantom Blur",
+    cls:"sds-phantom-blur",
+    desc:"Materialises from fog — brightness burn dissolve.",
+    preview:`<span style="font-family:'Space Grotesk';font-size:22px;font-weight:700;display:inline-block;animation:phantomBlur 2s ease infinite alternate">Phantom</span>`
+  },
+  {
+    name:"Gravity Drop",
+    cls:"sds-gravity-drop",
+    desc:"Heavy weighted fall with impact compression on land.",
+    preview:`<span style="font-family:'Space Grotesk';font-size:22px;font-weight:700;display:inline-block;animation:gravityDrop 1.6s cubic-bezier(0.68,-0.55,0.27,1.55) infinite alternate">Thud.</span>`
+  },
+  {
+    name:"Static Burst",
+    cls:"sds-static-burst",
+    desc:"TV noise distortion with clip-path channel interference.",
+    preview:`<span style="font-family:'IBM Plex Mono';font-size:20px;font-weight:500;display:inline-block;animation:staticBurst 3s steps(1) infinite">ERROR</span>`
+  },
+  {
+    name:"Elastic Stamp",
+    cls:"sds-elastic-stamp",
+    desc:"Overshoots like a rubber stamp striking paper.",
+    preview:`<span style="font-family:'Instrument Serif';font-size:26px;font-style:italic;display:inline-block;animation:elasticStamp 2s cubic-bezier(0.22,1,0.36,1) infinite alternate">Stamped!</span>`
+  },
+  {
+    name:"Slice Reveal",
+    cls:"sds-slice-reveal",
+    desc:"Horizontal clip-path venetian blind reveal.",
+    preview:`<span style="font-family:'Space Grotesk';font-size:22px;font-weight:700;display:inline-block;animation:sliceRevealA 1.5s cubic-bezier(0.22,1,0.36,1) infinite alternate">Revealed</span>`
+  },
+  {
+    name:"Char Orbit",
+    cls:"sds-char-orbit",
+    desc:"Each character falls in on its own orbital path.",
+    preview:`<span style="display:inline-flex;gap:0px">${'ORBIT'.split('').map((c,i)=>`<span style="font-family:'Space Grotesk';font-size:24px;font-weight:700;display:inline-block;animation:charOrbit 1.4s cubic-bezier(0.22,1,0.36,1) ${i*0.08}s infinite alternate">${c}</span>`).join('')}</span>`
+  },
+  {
+    name:"Ink Bleed",
+    cls:"sds-ink-bleed",
+    desc:"Spreads like ink absorbing into paper — letterspace collapse.",
+    preview:`<span style="font-family:'Space Grotesk';font-size:21px;font-weight:700;display:inline-block;animation:inkBleed 2.2s cubic-bezier(0.16,1,0.3,1) infinite alternate">Absorb</span>`
+  },
+  {
+    name:"Neon Flare",
+    cls:"sds-neon-flare",
+    desc:"Premium neon ignition — volt glow ignites and burns.",
+    preview:`<span style="font-family:'Space Grotesk';font-size:22px;font-weight:700;color:var(--volt);display:inline-block;animation:neonFlare 2s ease infinite">Neon</span>`
+  },
+  {
+    name:"Scramble Decode",
+    cls:"sds-scramble-decode",
+    desc:"Characters blur and scramble — matrix decryption feel.",
+    preview:`<span style="font-family:'IBM Plex Mono';font-size:18px;font-weight:500;display:inline-block;animation:scramblePulse 2.5s ease infinite">DECODE_</span>`
+  },
+  {
+    name:"Kinetic Wave",
+    cls:"sds-kinetic-wave",
+    desc:"Each character oscillates with spring — organic energy.",
+    preview:`<span style="display:inline-flex">${'KINETIC'.split('').map((c,i)=>`<span style="font-family:'Space Grotesk';font-size:22px;font-weight:700;display:inline-block;animation:kineticWave 1.6s cubic-bezier(0.37,0,0.63,1) ${i*0.1}s infinite">${c}</span>`).join('')}</span>`
+  },
+  {
+    name:"Perspective Swing",
+    cls:"sds-perspective-swing",
+    desc:"3D Y-axis pendulum — door swinging open.",
+    preview:`<span style="font-family:'Space Grotesk';font-size:22px;font-weight:700;display:inline-block;transform-origin:left center;animation:perspSwing 2s cubic-bezier(0.22,1,0.36,1) infinite alternate">Swing →</span>`
+  },
+  {
+    name:"Focus Pull",
+    cls:"sds-focus-pull",
+    desc:"Cinematic lens focus pull — rack focus simulation.",
+    preview:`<span style="font-family:'Space Grotesk';font-size:22px;font-weight:700;display:inline-block;animation:focusPull 2.5s ease infinite alternate">Sharp</span>`
+  },
+  {
+    name:"Gradient Sweep",
+    cls:"sds-gradient-sweep",
+    desc:"Iridescent gradient sweeps across text continuously.",
+    preview:`<span style="font-family:'Space Grotesk';font-size:22px;font-weight:700;background:linear-gradient(90deg,var(--volt),var(--cyan),var(--rose),var(--volt));background-size:300% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gradSweep 3s linear infinite">Spectrum</span>`
+  },
+  {
+    name:"Depth Warp",
+    cls:"sds-depth-warp",
+    desc:"Barrel-distortion-like 3D depth entrance.",
+    preview:`<span style="font-family:'Space Grotesk';font-size:22px;font-weight:700;display:inline-block;animation:depthWarp 2.5s cubic-bezier(0.22,1,0.36,1) infinite alternate">Depth</span>`
+  },
+  {
+    name:"Typewriter Pro",
+    cls:"sds-typewriter-pro",
+    desc:"Stepped character reveal with premium blinking cursor.",
+    preview:`<div style="display:inline-flex;align-items:center;gap:2px"><span style="font-family:'IBM Plex Mono';font-size:14px;overflow:hidden;white-space:nowrap;display:inline-block;width:0;animation:typewriterPrem 2.5s steps(14) infinite alternate">console.log('Hi')</span><span style="width:2px;height:16px;background:var(--volt);display:inline-block;animation:cursorBlink 0.8s step-end infinite"></span></div>`
+  },
+  {
+    name:"Highlight Burn",
+    cls:"sds-highlight-burn",
+    desc:"Underline highlight ignites from left to right.",
+    preview:`<span style="font-family:'Space Grotesk';font-size:21px;font-weight:700;background:linear-gradient(transparent 60%,rgba(0,21,209,0.4) 60%);background-size:0% 100%;background-repeat:no-repeat;animation:highlightBurn 2s cubic-bezier(0.22,1,0.36,1) infinite alternate">Ignite</span>`
+  },
+  {
+    name:"Shatter In",
+    cls:"sds-shatter-in",
+    desc:"Text reconstructs from shattered fragments — explosive entry.",
+    preview:`<span style="font-family:'Space Grotesk';font-size:22px;font-weight:700;display:inline-block;animation:shatterIn 2s cubic-bezier(0.22,1,0.36,1) infinite alternate">Shatter</span>`
+  },
+  {
+    name:"Cipher Run",
+    cls:"sds-cipher-run",
+    desc:"Characters scramble then settle — data decryption stream.",
+    preview:`<span style="font-family:'IBM Plex Mono';font-size:18px;font-weight:500;display:inline-block;color:var(--cyan);animation:scramblePulse 2s ease 0.5s infinite">0xDEAD</span>`
+  },
+  {
+    name:"Tectonic Rise",
+    cls:"sds-tectonic-rise",
+    desc:"Underground pressure pushes text up — seismic emergence.",
+    preview:`<div style="overflow:hidden;height:36px"><span style="font-family:'Space Grotesk';font-size:22px;font-weight:700;display:block;animation:liquidRise 2.5s cubic-bezier(0.22,1,0.36,1) infinite alternate">Tectonic</span></div>`
+  },
+  {
+    name:"Film Burn",
+    cls:"sds-film-burn",
+    desc:"Text appears through a bright film exposure burn.",
+    preview:`<span style="font-family:'Instrument Serif';font-size:24px;font-style:italic;display:inline-block;animation:phantomBlur 3s ease 0.3s infinite alternate">Exposed</span>`
+  },
+  {
+    name:"Prism Split",
+    cls:"sds-prism-split",
+    desc:"Full RGB prism dispersion — color channels diverge.",
+    preview:`<span style="font-family:'Space Grotesk';font-size:22px;font-weight:700;color:var(--text);display:inline-block;animation:refract 2.5s ease 0.5s infinite">Prism</span>`
+  },
+  {
+    name:"Magnetic Pull",
+    cls:"sds-text-magnetic",
+    desc:"Letters stretch toward each other — magnetic attraction.",
+    preview:`<span style="font-family:'Space Grotesk';font-size:22px;font-weight:700;display:inline-block;animation:inkBleed 3s ease infinite alternate;letter-spacing:8px">Pull</span>`
+  },
+  {
+    name:"Weight Drop",
+    cls:"sds-weight-drop",
+    desc:"Extreme mass simulation — physically weighted fall.",
+    preview:`<span style="font-family:'Space Grotesk';font-size:22px;font-weight:700;display:inline-block;animation:gravityDrop 2s cubic-bezier(0.6,-0.28,0.74,0.05) infinite alternate">Heavy</span>`
+  },
+  {
+    name:"Smoke Reveal",
+    cls:"sds-smoke-reveal",
+    desc:"Dissipates from cloud to clarity — fog clearing.",
+    preview:`<span style="font-family:'Space Grotesk';font-size:22px;font-weight:700;display:inline-block;animation:focusPull 3.5s ease infinite alternate">Smoke</span>`
+  },
+  {
+    name:"Arc Orbit",
+    cls:"sds-arc-orbit",
+    desc:"Letters arrive on a wide orbital arc path.",
+    preview:`<span style="display:inline-flex">${'ARC'.split('').map((c,i)=>`<span style="font-family:'Space Grotesk';font-size:24px;font-weight:700;display:inline-block;animation:charOrbit 2s cubic-bezier(0.22,1,0.36,1) ${i*0.18}s infinite alternate">${c}</span>`).join('')}</span>`
+  },
+  {
+    name:"Depth Charge",
+    cls:"sds-depth-charge",
+    desc:"Emerges from deep 3D space — submarine ascent.",
+    preview:`<span style="font-family:'Space Grotesk';font-size:22px;font-weight:700;display:inline-block;animation:depthWarp 3s ease 0.2s infinite alternate">Depth</span>`
+  },
+  {
+    name:"Signal Wave",
+    cls:"sds-signal-wave",
+    desc:"Radio signal wave oscillation across each character.",
+    preview:`<span style="display:inline-flex">${'SIGNAL'.split('').map((c,i)=>`<span style="font-family:'DM Sans';font-size:18px;font-weight:500;display:inline-block;color:var(--cyan);animation:kineticWave 2s ease ${i*0.14}s infinite">${c}</span>`).join('')}</span>`
+  },
+  {
+    name:"Word Morph",
+    cls:"sds-word-morph",
+    desc:"Particles burst from word, reform into next — morphing identity.",
+    type:"interactive",
+    hint:"auto-plays",
+    preview:`<div class="ipreview-wrap" data-anim="wordMorph"><div class="ipreview-chars" id="ipc-wordMorph"></div><span class="ipreview-hint">particle morph</span></div>`
+  },
+  {
+    name:"Big Bang",
+    cls:"sds-big-bang",
+    desc:"Letters explode as particles then reconstruct — cosmic formation.",
+    type:"interactive",
+    hint:"auto-plays",
+    preview:`<div class="ipreview-wrap" data-anim="bigBang"><div class="ipreview-chars" id="ipc-bigBang"></div><span class="ipreview-hint">particle burst</span></div>`
+  },
+  {
+    name:"Scatter & Return",
+    cls:"sds-scatter-return",
+    desc:"Hover scatters characters in all directions, leave springs them home.",
+    type:"interactive",
+    hint:"hover",
+    preview:`<div class="ipreview-wrap" data-anim="scatterReturn"><div class="ipreview-chars" id="ipc-scatterReturn"></div><span class="ipreview-hint">hover to scatter</span></div>`
+  },
+  {
+    name:"Jelly Hover",
+    cls:"sds-jelly-hover",
+    desc:"Squash and stretch spring physics on each character on mouseenter.",
+    type:"interactive",
+    hint:"hover",
+    preview:`<div class="ipreview-wrap" data-anim="jellyHover"><div class="ipreview-chars" id="ipc-jellyHover"></div><span class="ipreview-hint">hover chars</span></div>`
+  },
+  {
+    name:"Wave Cascade",
+    cls:"sds-wave-cascade",
+    desc:"Disturbance propagates char-to-char like a chain reaction wave.",
+    type:"interactive",
+    hint:"auto-plays",
+    preview:`<div class="ipreview-wrap" data-anim="waveCascade"><div class="ipreview-chars" id="ipc-waveCascade"></div><span class="ipreview-hint">chain wave</span></div>`
+  },
+  {
+    name:"Shockwave",
+    cls:"sds-shockwave-text",
+    desc:"Click anywhere to fire a radial impulse through all characters.",
+    type:"interactive",
+    hint:"click",
+    preview:`<div class="ipreview-wrap" data-anim="shockwaveText"><div class="ipreview-chars" id="ipc-shockwaveText"></div><span class="ipreview-hint">click to shock</span></div>`
+  },
+  {
+    name:"Spring Kerning",
+    cls:"sds-spring-kerning",
+    desc:"Mouse X position compresses or expands word spacing dynamically.",
+    type:"interactive",
+    hint:"mouse",
+    preview:`<div class="ipreview-wrap" data-anim="springKerning"><div class="ipreview-chars" id="ipc-springKerning"></div><span class="ipreview-hint">move mouse</span></div>`
+  },
+  {
+    name:"Magnetic Pull",
+    cls:"sds-magnetic-pull",
+    desc:"Cursor attracts individual characters toward it with spring physics.",
+    type:"interactive",
+    hint:"mouse",
+    preview:`<div class="ipreview-wrap" data-anim="magneticPull"><div class="ipreview-chars" id="ipc-magneticPull"></div><span class="ipreview-hint">pull cursor</span></div>`
+  },
+  {
+    name:"Repulsion Field",
+    cls:"sds-repulsion-field",
+    desc:"Cursor pushes characters away — spring restores them on exit.",
+    type:"interactive",
+    hint:"mouse",
+    preview:`<div class="ipreview-wrap" data-anim="repulsionField"><div class="ipreview-chars" id="ipc-repulsionField"></div><span class="ipreview-hint">repel cursor</span></div>`
+  },
+  {
+    name:"Center Burst",
+    cls:"sds-center-burst",
+    desc:"All characters start at word center, fan out to reading positions.",
+    type:"interactive",
+    hint:"auto-plays",
+    preview:`<div class="ipreview-wrap" data-anim="centerBurst"><div class="ipreview-chars" id="ipc-centerBurst"></div><span class="ipreview-hint">center fan</span></div>`
+  },
+  {
+    name:"Explode → Formation",
+    cls:"sds-explode-formation",
+    desc:"Scattered start positions spring to correct reading formation.",
+    type:"interactive",
+    hint:"auto-plays",
+    preview:`<div class="ipreview-wrap" data-anim="explodeFormation"><div class="ipreview-chars" id="ipc-explodeFormation"></div><span class="ipreview-hint">form up</span></div>`
+  },
+  {
+    name:"Gravity Bounce",
+    cls:"sds-gravity-bounce",
+    desc:"Characters fall under gravity with inelastic floor collision.",
+    type:"interactive",
+    hint:"auto-plays",
+    preview:`<div class="ipreview-wrap" data-anim="gravityBounce"><div class="ipreview-chars" id="ipc-gravityBounce"></div><span class="ipreview-hint">gravity sim</span></div>`
+  },
+  {
+    name:"Drop & Settle",
+    cls:"sds-drop-settle",
+    desc:"Staggered fall from above — each character lands and settles.",
+    type:"interactive",
+    hint:"auto-plays",
+    preview:`<div class="ipreview-wrap" data-anim="dropSettle"><div class="ipreview-chars" id="ipc-dropSettle"></div><span class="ipreview-hint">drop settle</span></div>`
+  },
+];
+
+/* — BUTTON ANIMATIONS — */
+const buttonAnimations = [
+  {
+    name:"Magnetic Pulse",
+    cls:"sds-btn-magnetic",
+    desc:"Expanding ring pulse — magnetic field emanation.",
+    preview:`<button style="background:var(--volt);color:#fff;border:none;padding:10px 22px;border-radius:10px;font-family:'Space Grotesk';font-weight:600;font-size:13px;cursor:pointer;animation:magnetPulse 2s ease infinite;outline:2px solid transparent">Magnetic</button>`
+  },
+  {
+    name:"Liquid Fill",
+    cls:"sds-btn-liquid",
+    desc:"Mercury fill sweeps from right to left across button.",
+    preview:`<button style="background:linear-gradient(90deg,var(--volt) 50%,var(--ink-3) 50%);background-size:200% 100%;background-position:100% 0;color:var(--text);border:1px solid var(--border-2);padding:10px 22px;border-radius:10px;font-family:'Space Grotesk';font-weight:600;font-size:13px;cursor:pointer;animation:liquidFill 2s ease infinite alternate">Fill →</button>`
+  },
+  {
+    name:"Energy Ripple",
+    cls:"sds-btn-energy",
+    desc:"Concentric energy rings expand outward from center.",
+    preview:`<button style="background:rgba(0,21,209,0.12);color:var(--volt);border:1px solid rgba(0,21,209,0.3);padding:10px 22px;border-radius:10px;font-family:'Space Grotesk';font-weight:600;font-size:13px;cursor:pointer;animation:energyRipple 2s ease infinite">Ripple</button>`
+  },
+  {
+    name:"Press Depth",
+    cls:"sds-btn-press",
+    desc:"Tactile 3D press illusion with shadow depth.",
+    preview:`<button style="background:var(--ink-3);color:var(--text);border:1px solid var(--border-2);padding:10px 22px;border-radius:10px;font-family:'Space Grotesk';font-weight:600;font-size:13px;cursor:pointer;animation:pressDepth 1.8s ease infinite">Press Me</button>`
+  },
+  {
+    name:"Edge Trace",
+    cls:"sds-btn-edge",
+    desc:"Border draws itself around the perimeter of the button.",
+    preview:`<button style="background:none;color:var(--volt);padding:10px 22px;border-radius:10px;font-family:'Space Grotesk';font-weight:600;font-size:13px;cursor:pointer;border:none;background-image:linear-gradient(var(--volt),var(--volt)),linear-gradient(var(--volt),var(--volt)),linear-gradient(var(--volt),var(--volt)),linear-gradient(var(--volt),var(--volt));background-repeat:no-repeat;background-position:top left,right top,bottom right,left bottom;animation:edgeTrace 2s linear infinite alternate">Traced</button>`
+  },
+  {
+    name:"Plasma Glow",
+    cls:"sds-btn-plasma",
+    desc:"Organic shifting color energy — living plasma surface.",
+    preview:`<button style="background:var(--ink-3);color:var(--text);border:1px solid var(--border-2);padding:10px 22px;border-radius:10px;font-family:'Space Grotesk';font-weight:600;font-size:13px;cursor:pointer;animation:plasmaGlow 3s ease infinite">Plasma</button>`
+  },
+  {
+    name:"Morph Pill",
+    cls:"sds-btn-morph",
+    desc:"Shape-shifts between pill and rectangle states.",
+    preview:`<button style="background:var(--volt);color:#fff;border:none;padding:10px 22px;font-family:'Space Grotesk';font-weight:600;font-size:13px;cursor:pointer;animation:morphPill 2s ease infinite">Morphing</button>`
+  },
+  {
+    name:"Lift Shadow",
+    cls:"sds-btn-lift",
+    desc:"Dramatic levitation with shadow depth expansion.",
+    preview:`<button style="background:var(--ink-3);color:var(--text);border:1px solid var(--border-2);padding:10px 22px;border-radius:10px;font-family:'Space Grotesk';font-weight:600;font-size:13px;cursor:pointer;animation:liftShadow 2s ease infinite">Levitate</button>`
+  },
+  {
+    name:"Shockwave",
+    cls:"sds-btn-shock",
+    desc:"Radial shockwave outline expands outward.",
+    preview:`<button style="background:var(--rose);color:#fff;border:none;padding:10px 22px;border-radius:10px;font-family:'Space Grotesk';font-weight:600;font-size:13px;cursor:pointer;outline-style:solid;outline-color:transparent;animation:shockwave 2s ease infinite">Shock</button>`
+  },
+  {
+    name:"Neon Sign",
+    cls:"sds-btn-neon",
+    desc:"Flickering neon sign — authentic neon tube flicker.",
+    preview:`<button style="background:none;color:var(--volt);border:1px solid var(--volt);padding:10px 22px;border-radius:10px;font-family:'IBM Plex Mono';font-weight:500;font-size:12px;cursor:pointer;animation:neonSign 4s ease infinite">NEON ON</button>`
+  },
+  {
+    name:"Volt Strike",
+    cls:"sds-btn-volt",
+    desc:"High-voltage border flicker with energy discharge.",
+    preview:`<button style="background:var(--volt-dim);color:var(--volt);border:1px solid rgba(0,21,209,0.3);padding:10px 22px;border-radius:10px;font-family:'Space Grotesk';font-weight:600;font-size:13px;cursor:pointer;animation:voltagePulse 2.5s ease infinite">⚡ Volt</button>`
+  },
+  {
+    name:"Pressure Wave",
+    cls:"sds-btn-pressure",
+    desc:"Atmospheric pressure wave radiates from button.",
+    preview:`<button style="background:var(--ink-3);color:var(--text);border:1px solid var(--border-2);padding:10px 22px;border-radius:10px;font-family:'Space Grotesk';font-weight:600;font-size:13px;cursor:pointer;animation:energyRipple 1.6s ease 0.3s infinite">Pressure</button>`
+  },
+  {
+    name:"Glow Surge",
+    cls:"sds-btn-glow-surge",
+    desc:"Border glow surges to peak intensity then recedes.",
+    preview:`<button style="background:var(--ink-3);color:var(--volt);border:1px solid rgba(0,21,209,0.2);padding:10px 22px;border-radius:10px;font-family:'Space Grotesk';font-weight:600;font-size:13px;cursor:pointer;animation:glowSurge 2s ease infinite">Surge</button>`
+  },
+  {
+    name:"Float Spring",
+    cls:"sds-btn-float",
+    desc:"Spring physics hover — continuous elastic float.",
+    preview:`<button style="background:linear-gradient(135deg,var(--ink-3),var(--surface));color:var(--text);border:1px solid var(--border-2);padding:10px 22px;border-radius:10px;font-family:'Space Grotesk';font-weight:600;font-size:13px;cursor:pointer;animation:liftShadow 2.5s cubic-bezier(0.37,0,0.63,1) 0.3s infinite">Spring</button>`
+  },
+  {
+    name:"Aurora Border",
+    cls:"sds-btn-aurora",
+    desc:"Animated aurora gradient border cycles all hues.",
+    preview:`<button style="background:none;color:var(--text);padding:10px 22px;border-radius:10px;font-family:'Space Grotesk';font-weight:600;font-size:13px;cursor:pointer;border:2px solid transparent;background-image:linear-gradient(var(--ink-3),var(--ink-3)),linear-gradient(90deg,var(--volt),var(--cyan),var(--rose),var(--volt));background-origin:border-box;background-clip:padding-box,border-box;background-size:100% 100%,300% 100%;animation:gradSweep 3s linear infinite">Aurora</button>`
+  },
+  {
+    name:"Depth Push",
+    cls:"sds-btn-depth",
+    desc:"Button recedes into depth on rhythm — pushed down.",
+    preview:`<button style="background:var(--volt);color:#fff;border:none;padding:10px 22px;border-radius:10px;font-family:'Space Grotesk';font-weight:600;font-size:13px;cursor:pointer;animation:pressDepth 1.4s cubic-bezier(0.68,-0.55,0.27,1.55) 0.2s infinite">Push ↓</button>`
+  },
+  {
+    name:"Ink Fill",
+    cls:"sds-btn-ink",
+    desc:"Dark ink flood fills the button from center outward.",
+    preview:`<button style="background:var(--glass);color:var(--text);border:1px solid var(--border-2);padding:10px 22px;border-radius:10px;font-family:'Space Grotesk';font-weight:600;font-size:13px;cursor:pointer;animation:magnetPulse 2.2s ease 0.4s infinite">Ink</button>`
+  },
+  {
+    name:"Seismic",
+    cls:"sds-btn-seismic",
+    desc:"Seismic micro-vibration — tension build and release.",
+    preview:`<button style="background:var(--rose-dim);color:var(--rose);border:1px solid rgba(255,77,109,0.25);padding:10px 22px;border-radius:10px;font-family:'Space Grotesk';font-weight:600;font-size:13px;cursor:pointer;animation:seismicShake 2.5s ease infinite">Seismic</button>`
+  },
+  {
+    name:"Hologram",
+    cls:"sds-btn-hologram",
+    desc:"Holographic shimmer — light refracts across surface.",
+    preview:`<button style="background:linear-gradient(135deg,rgba(0,21,209,0.1),rgba(0,21,209,0.1),rgba(255,77,109,0.1));color:var(--text);border:1px solid var(--border-2);padding:10px 22px;border-radius:10px;font-family:'Space Grotesk';font-weight:600;font-size:13px;cursor:pointer;animation:plasmaGlow 4s ease 0.5s infinite">Holo</button>`
+  },
+  {
+    name:"Quantum Pop",
+    cls:"sds-btn-quantum",
+    desc:"Quantum uncertainty — unpredictable spring bounce.",
+    preview:`<button style="background:var(--volt);color:#fff;border:none;padding:10px 22px;border-radius:10px;font-family:'Space Grotesk';font-weight:600;font-size:13px;cursor:pointer;animation:elasticStamp 2s cubic-bezier(0.22,1,0.36,1) 0.6s infinite alternate">Quantum</button>`
+  },
+  {
+    name:"Smoke Pulse",
+    cls:"sds-btn-smoke",
+    desc:"Ghostly smoke outline diffuses outward on pulse.",
+    preview:`<button style="background:var(--glass-2);color:var(--text-2);border:1px solid var(--border);padding:10px 22px;border-radius:10px;font-family:'Space Grotesk';font-weight:500;font-size:13px;cursor:pointer;animation:shockwave 3s ease 0.2s infinite">Ghost</button>`
+  },
+  {
+    name:"Thermal Map",
+    cls:"sds-btn-thermal",
+    desc:"Thermal heat map colors cycle across button surface.",
+    preview:`<button style="padding:10px 22px;border-radius:10px;font-family:'Space Grotesk';font-weight:600;font-size:13px;cursor:pointer;border:none;background:linear-gradient(90deg,var(--rose),var(--amber),var(--volt));background-size:300% auto;color:#fff;animation:gradSweep 2s linear infinite">Thermal</button>`
+  },
+  {
+    name:"Vapor Trail",
+    cls:"sds-btn-vapor",
+    desc:"Motion vapor trail follows button movement — speed blur.",
+    preview:`<button style="background:var(--ink-3);color:var(--cyan);border:1px solid rgba(0,21,209,0.2);padding:10px 22px;border-radius:10px;font-family:'Space Grotesk';font-weight:600;font-size:13px;cursor:pointer;animation:neonSign 5s ease infinite">Vapor</button>`
+  },
+  {
+    name:"Particle Burst",
+    cls:"sds-btn-particle",
+    desc:"Particle energy burst radiates from button origin.",
+    preview:`<button style="background:radial-gradient(circle,rgba(0,21,209,0.2),transparent 70%);color:var(--volt);border:1px solid rgba(0,21,209,0.2);padding:10px 22px;border-radius:10px;font-family:'Space Grotesk';font-weight:600;font-size:13px;cursor:pointer;animation:energyRipple 1.4s ease infinite">Burst</button>`
+  },
+  {
+    name:"Phase Shift",
+    cls:"sds-btn-phase",
+    desc:"Button phases between two states — quantum superposition.",
+    preview:`<button style="background:var(--cyan-dim);color:var(--cyan);border:1px solid rgba(0,229,255,0.25);padding:10px 22px;border-radius:10px;font-family:'IBM Plex Mono';font-weight:500;font-size:11px;cursor:pointer;animation:morphPill 2.5s ease 0.3s infinite">Phase_01</button>`
+  },
+  {
+    name:"Gravity Well",
+    cls:"sds-btn-gravity",
+    desc:"Gravitational compression — mass warps the surface.",
+    preview:`<button style="background:var(--ink-4);color:var(--text);border:1px solid var(--border-2);padding:10px 22px;border-radius:10px;font-family:'Space Grotesk';font-weight:600;font-size:13px;cursor:pointer;animation:pressDepth 2.2s cubic-bezier(0.6,0,0.4,1) 0.1s infinite">Gravity</button>`
+  },
+  {
+    name:"Signal Lost",
+    cls:"sds-btn-signal",
+    desc:"TV static signal loss — authentic distortion artifact.",
+    preview:`<button style="background:var(--glass);color:var(--text-2);border:1px solid var(--border);padding:10px 22px;border-radius:10px;font-family:'IBM Plex Mono';font-weight:400;font-size:11px;cursor:pointer;animation:staticBurst 3s steps(1) 0.5s infinite">SIGNAL//</button>`
+  },
+  {
+    name:"Liquid Metal",
+    cls:"sds-btn-liquid-metal",
+    desc:"T-1000 metallic liquid fill with chrome reflection.",
+    preview:`<button style="background:linear-gradient(90deg,#c0c0c0 50%,var(--ink-3) 50%);background-size:200% 100%;background-position:100% 0;color:#fff;border:none;padding:10px 22px;border-radius:10px;font-family:'Space Grotesk';font-weight:600;font-size:13px;cursor:pointer;animation:liquidFill 2.5s cubic-bezier(0.22,1,0.36,1) 0.3s infinite alternate">Chrome</button>`
+  },
+  {
+    name:"Voltage Arc",
+    cls:"sds-btn-arc",
+    desc:"High-voltage arc discharge crackles around border.",
+    preview:`<button style="background:var(--volt-dim);color:var(--volt);border:1px solid rgba(0,21,209,0.4);padding:10px 22px;border-radius:10px;font-family:'Space Grotesk';font-weight:600;font-size:13px;cursor:pointer;animation:voltagePulse 1.5s ease infinite">⚡ Arc</button>`
+  },
+  {
+    name:"Zero Gravity",
+    cls:"sds-btn-zero-g",
+    desc:"Weightless float — ISS zero-gravity drift simulation.",
+    preview:`<button style="background:var(--glass);color:var(--text);border:1px solid var(--border-2);padding:10px 22px;border-radius:10px;font-family:'Space Grotesk';font-weight:600;font-size:13px;cursor:pointer;animation:liftShadow 3s cubic-bezier(0.37,0,0.63,1) 0.4s infinite">Float ↑</button>`
+  },
+];
+
+/* — INPUT ANIMATIONS — */
+const inputAnimations = [
+  {
+    name:"Focus Field",
+    cls:"sds-input-focus",
+    desc:"Intelligent glow tracks border on focus — premium state.",
+    preview:`<input placeholder="Focus field..." style="background:var(--ink-3);border:1px solid var(--border-2);color:var(--text);padding:10px 14px;border-radius:8px;font-family:'Space Grotesk';font-size:13px;width:190px;outline:none;animation:focusField 2s ease infinite alternate">`
+  },
+  {
+    name:"Border Morph",
+    cls:"sds-input-morph",
+    desc:"Border radius morphs organically on focus.",
+    preview:`<input placeholder="Morphing border" style="background:var(--ink-3);border:1px solid var(--border-2);color:var(--text);padding:10px 14px;font-family:'Space Grotesk';font-size:13px;width:190px;outline:none;animation:borderMorph 2.5s ease infinite">`
+  },
+  {
+    name:"Shimmer Scan",
+    cls:"sds-input-shimmer",
+    desc:"Light scans across input surface continuously.",
+    preview:`<input placeholder="Scanning..." style="background:linear-gradient(90deg,var(--ink-3),var(--surface-2),var(--ink-3));background-size:300% 100%;border:1px solid var(--border-2);color:var(--text);padding:10px 14px;border-radius:8px;font-family:'Space Grotesk';font-size:13px;width:190px;outline:none;animation:shimmerScan 2.5s ease infinite">`
+  },
+  {
+    name:"Voltage Pulse",
+    cls:"sds-input-voltage",
+    desc:"Electric strike animation — high energy burst.",
+    preview:`<input placeholder="Voltage input" style="background:var(--ink-3);border:1px solid rgba(0,21,209,0.3);color:var(--text);padding:10px 14px;border-radius:8px;font-family:'Space Grotesk';font-size:13px;width:190px;outline:none;animation:voltagePulse 2s ease infinite">`
+  },
+  {
+    name:"Seismic Shake",
+    cls:"sds-input-shake",
+    desc:"Seismic shake for rejection — more dramatic than bounce.",
+    preview:`<input placeholder="❌ Invalid" style="background:var(--rose-dim);border:1px solid rgba(255,77,109,0.3);color:var(--rose);padding:10px 14px;border-radius:8px;font-family:'Space Grotesk';font-size:13px;width:190px;outline:none;animation:seismicShake 0.8s ease infinite">`
+  },
+  {
+    name:"Success Glow",
+    cls:"sds-input-success",
+    desc:"Warm affirming glow — positive validation state.",
+    preview:`<input value="✓ Valid" style="background:rgba(0,229,160,0.05);border:1px solid rgba(0,229,160,0.3);color:#00e5a0;padding:10px 14px;border-radius:8px;font-family:'Space Grotesk';font-size:13px;width:190px;outline:none;animation:successGlow 2s ease infinite alternate">`
+  },
+  {
+    name:"Cursor Trail",
+    cls:"sds-input-cursor",
+    desc:"Caret pulses out a trailing glow on input.",
+    preview:`<input placeholder="Type here..." style="background:var(--ink-3);border:1px solid var(--border-2);color:var(--text);padding:10px 14px;border-radius:8px;font-family:'Space Grotesk';font-size:13px;width:190px;outline:none;animation:caretTrail 2s ease infinite">`
+  },
+  {
+    name:"Morph Placeholder",
+    cls:"sds-input-morph-ph",
+    desc:"Placeholder letter-spacing morphs while idle.",
+    preview:`<input placeholder="Type something..." style="background:var(--ink-3);border:1px solid var(--border-2);padding:10px 14px;border-radius:8px;font-family:'IBM Plex Mono';font-size:12px;width:190px;outline:none;color:transparent;animation:morphPlaceholder 2s ease infinite">`
+  },
+  {
+    name:"Elevate Label",
+    cls:"sds-input-elevate",
+    desc:"Label rises and scales down on focus — Material Design evolved.",
+    preview:`<div style="position:relative;width:190px"><span style="position:absolute;left:14px;top:50%;transform:translateY(-50%) scale(1);font-family:'Space Grotesk';font-size:13px;color:var(--text-3);transform-origin:left;animation:elevateFocus 2s ease infinite alternate;pointer-events:none">Email address</span><input style="background:var(--ink-3);border:1px solid var(--border-2);color:transparent;padding:10px 14px;padding-top:16px;border-radius:8px;font-family:'Space Grotesk';font-size:13px;width:190px;outline:none;color:var(--text)"></div>`
+  },
+  {
+    name:"Ink Stroke",
+    cls:"sds-input-ink",
+    desc:"Focus outline draws itself around input border.",
+    preview:`<input placeholder="Draw border" style="background:var(--ink-3);border:1px solid var(--border-2);color:var(--text);padding:10px 14px;border-radius:8px;font-family:'Space Grotesk';font-size:13px;width:190px;outline-style:solid;outline-color:transparent;animation:inkStroke 2s ease infinite alternate">`
+  },
+  {
+    name:"Plasma Border",
+    cls:"sds-input-plasma",
+    desc:"Plasma color cycles around the input border.",
+    preview:`<input placeholder="Plasma field" style="background:var(--ink-3);border:2px solid transparent;color:var(--text);padding:10px 14px;border-radius:8px;font-family:'Space Grotesk';font-size:13px;width:190px;outline:none;box-shadow:0 0 12px rgba(0,21,209,0.2);animation:plasmaGlow 3s ease infinite">`
+  },
+  {
+    name:"Error Seize",
+    cls:"sds-input-error",
+    desc:"Violent seizure shake for critical error state.",
+    preview:`<input value="🚫 Error" style="background:rgba(255,77,109,0.06);border:1px solid rgba(255,77,109,0.4);color:var(--rose);padding:10px 14px;border-radius:8px;font-family:'Space Grotesk';font-size:13px;width:190px;outline:none;animation:seismicShake 0.5s ease infinite">`
+  },
+  {
+    name:"Neon Focus",
+    cls:"sds-input-neon",
+    desc:"Neon glow ignites on focus — night-mode energy.",
+    preview:`<input placeholder="Neon input" style="background:var(--ink-3);border:1px solid var(--cyan);color:var(--text);padding:10px 14px;border-radius:8px;font-family:'IBM Plex Mono';font-size:12px;width:190px;outline:none;animation:neonSign 4s ease infinite">`
+  },
+  {
+    name:"Pulse Ring",
+    cls:"sds-input-ring",
+    desc:"Pulsing ring radiates from input boundary.",
+    preview:`<input placeholder="Ring pulse" style="background:var(--ink-3);border:1px solid var(--border-2);color:var(--text);padding:10px 14px;border-radius:8px;font-family:'Space Grotesk';font-size:13px;width:190px;outline:none;animation:magnetPulse 2s ease 0.5s infinite">`
+  },
+  {
+    name:"Thermal Input",
+    cls:"sds-input-thermal",
+    desc:"Thermal heat map background cycles on active state.",
+    preview:`<input placeholder="Thermal mode" style="background:linear-gradient(90deg,rgba(255,77,109,0.08),rgba(255,179,71,0.06),rgba(0,21,209,0.04));border:1px solid rgba(255,179,71,0.2);color:var(--text);padding:10px 14px;border-radius:8px;font-family:'Space Grotesk';font-size:13px;width:190px;outline:none;background-size:300% 100%;animation:shimmerScan 3s ease infinite">`
+  },
+  {
+    name:"Load State",
+    cls:"sds-input-loading",
+    desc:"Skeleton shimmer — input loading/processing state.",
+    preview:`<input placeholder="Processing..." style="background:linear-gradient(90deg,var(--ink-3) 25%,var(--surface-2) 50%,var(--ink-3) 75%);background-size:400% 100%;border:1px solid var(--border);color:transparent;padding:10px 14px;border-radius:8px;font-family:'Space Grotesk';font-size:13px;width:190px;outline:none;animation:skeletonPulse 1.8s ease infinite">`
+  },
+  {
+    name:"Frost Focus",
+    cls:"sds-input-frost",
+    desc:"Frost-glass crystallization on focus state.",
+    preview:`<input placeholder="Frost glass" style="background:rgba(255,255,255,0.03);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.12);color:var(--text);padding:10px 14px;border-radius:8px;font-family:'Space Grotesk';font-size:13px;width:190px;outline:none;animation:focusField 2.5s ease 0.2s infinite alternate">`
+  },
+  {
+    name:"Border Burn",
+    cls:"sds-input-burn",
+    desc:"Border ignites with volt energy — high-tension state.",
+    preview:`<input placeholder="Border burn" style="background:var(--ink-3);border:1px solid rgba(0,21,209,0.5);color:var(--text);padding:10px 14px;border-radius:8px;font-family:'Space Grotesk';font-size:13px;width:190px;outline:none;animation:voltagePulse 1.2s ease infinite">`
+  },
+  {
+    name:"Ghost Field",
+    cls:"sds-input-ghost",
+    desc:"Borderless ghost input with subtle field presence.",
+    preview:`<input placeholder="Ghost field..." style="background:none;border:none;border-bottom:1px solid var(--border-2);color:var(--text);padding:10px 2px;font-family:'Space Grotesk';font-size:13px;width:190px;outline:none;animation:caretTrail 2.5s ease infinite">`
+  },
+  {
+    name:"Scanner",
+    cls:"sds-input-scanner",
+    desc:"Security scanner light sweeps across the field.",
+    preview:`<input placeholder="Scanning field..." style="background:linear-gradient(90deg,transparent 0%,rgba(0,229,255,0.06) 50%,transparent 100%);background-size:200% 100%;border:1px solid rgba(0,229,255,0.15);color:var(--cyan);padding:10px 14px;border-radius:8px;font-family:'IBM Plex Mono';font-size:12px;width:190px;outline:none;animation:shimmerScan 2s linear infinite">`
+  },
+  {
+    name:"Reactive Glow",
+    cls:"sds-input-reactive",
+    desc:"Glow intensity reacts to input length — adaptive.",
+    preview:`<input placeholder="Type to glow" style="background:var(--ink-3);border:1px solid rgba(0,21,209,0.2);color:var(--text);padding:10px 14px;border-radius:8px;font-family:'Space Grotesk';font-size:13px;width:190px;outline:none;animation:successGlow 3s ease 0.4s infinite alternate">`
+  },
+  {
+    name:"Caret Spark",
+    cls:"sds-input-spark",
+    desc:"Sparks emit from caret position as you type.",
+    preview:`<input placeholder="Spark typing" style="background:var(--ink-3);border:1px solid rgba(0,21,209,0.15);color:var(--volt);padding:10px 14px;border-radius:8px;font-family:'IBM Plex Mono';font-size:12px;width:190px;outline:none;animation:voltagePulse 2.5s ease 0.3s infinite">`
+  },
+  {
+    name:"Depth Field",
+    cls:"sds-input-depth",
+    desc:"Input recesses into depth — inset 3D illusion.",
+    preview:`<input placeholder="Deep input" style="background:var(--ink-4);border:1px solid var(--border);border-bottom:2px solid var(--border-2);color:var(--text);padding:10px 14px;border-radius:8px;font-family:'Space Grotesk';font-size:13px;width:190px;outline:none;box-shadow:inset 0 2px 8px rgba(0,21,209,0.06);animation:caretTrail 3s ease infinite">`
+  },
+  {
+    name:"Warning Pulse",
+    cls:"sds-input-warning",
+    desc:"Amber warning pulse for soft validation feedback.",
+    preview:`<input value="⚠ Check this" style="background:rgba(255,179,71,0.06);border:1px solid rgba(255,179,71,0.3);color:var(--amber);padding:10px 14px;border-radius:8px;font-family:'Space Grotesk';font-size:13px;width:190px;outline:none;animation:magnetPulse 2s ease infinite">`
+  },
+  {
+    name:"Ice Form",
+    cls:"sds-input-ice",
+    desc:"Crystalline ice formation animates the border.",
+    preview:`<input placeholder="Ice form" style="background:rgba(0,229,255,0.04);border:1px solid rgba(0,21,209,0.2);color:var(--cyan);padding:10px 14px;border-radius:8px;font-family:'Space Grotesk';font-size:13px;width:190px;outline:none;animation:neonSign 5s ease infinite">`
+  },
+  {
+    name:"Void Pull",
+    cls:"sds-input-void",
+    desc:"Dark void gravity pulls content inward on focus.",
+    preview:`<input placeholder="Into the void" style="background:var(--ink);border:1px solid rgba(255,255,255,0.05);color:var(--text-2);padding:10px 14px;border-radius:8px;font-family:'Space Grotesk';font-size:13px;width:190px;outline:none;animation:focusField 4s ease infinite alternate">`
+  },
+  {
+    name:"Lava Glow",
+    cls:"sds-input-lava",
+    desc:"Molten lava orange glow for extreme error state.",
+    preview:`<input value="SYSTEM ERROR" style="background:rgba(255,77,109,0.08);border:1px solid rgba(255,77,109,0.4);color:var(--rose);padding:10px 14px;border-radius:8px;font-family:'IBM Plex Mono';font-size:11px;width:190px;outline:none;animation:plasmaGlow 1.5s ease infinite">`
+  },
+  {
+    name:"Mercury Border",
+    cls:"sds-input-mercury",
+    desc:"Liquid mercury border flow around input perimeter.",
+    preview:`<input placeholder="Mercury flow" style="background:var(--ink-3);border:1px solid rgba(180,180,200,0.3);color:var(--text);padding:10px 14px;border-radius:8px;font-family:'Space Grotesk';font-size:13px;width:190px;outline:none;animation:borderMorph 3s ease infinite">`
+  },
+  {
+    name:"Spark Trail",
+    cls:"sds-input-spark-trail",
+    desc:"Trailing spark effect follows cursor across input.",
+    preview:`<input placeholder="Trail sparks" style="background:var(--ink-3);border:1px solid var(--border-2);color:var(--text);padding:10px 14px;border-radius:8px;font-family:'Space Grotesk';font-size:13px;width:190px;outline:none;animation:shimmerScan 1.5s ease 0.2s infinite">`
+  },
+  {
+    name:"Stealth Mode",
+    cls:"sds-input-stealth",
+    desc:"Barely visible input materialises on hover — covert.",
+    preview:`<input placeholder="████████████" style="background:none;border:none;border-bottom:1px dashed rgba(255,255,255,0.08);color:rgba(240,240,255,0.3);padding:10px 2px;font-family:'IBM Plex Mono';font-size:12px;width:190px;outline:none;letter-spacing:2px;animation:caretTrail 4s ease infinite">`
+  },
+];
+
+/* — CARD ANIMATIONS — */
+const cardAnimations = [
+  {
+    name:"Cinematic Reveal",
+    cls:"sds-card-cinematic",
+    desc:"Film frame opens from center — theatrical curtain reveal.",
+    preview:cardBox("cinematicReveal","Cinematic","#00e5ff")
+  },
+  {
+    name:"Holographic Tilt",
+    cls:"sds-card-holographic",
+    desc:"Iridescent holographic tilt with hue shift.",
+    preview:cardBox("holographicTilt","Holo Tilt","#c8ff00")
+  },
+  {
+    name:"Depth Portal",
+    cls:"sds-card-depth-portal",
+    desc:"Card pulls through dimensional depth into viewport.",
+    preview:cardBox("depthPortal","Portal","#ff4d6d")
+  },
+  {
+    name:"Ambient Float",
+    cls:"sds-card-float",
+    desc:"Breathing float with expanding shadow — weightless.",
+    preview:cardBox("ambientFloat","Float","#c8ff00")
+  },
+  {
+    name:"Warp Gate",
+    cls:"sds-card-warp",
+    desc:"Space-warp entrance — folds in from the side.",
+    preview:cardBox("warpGate","Warp","#00e5ff")
+  },
+  {
+    name:"Glow Surge",
+    cls:"sds-card-glow",
+    desc:"Border glow surges to peak and recedes rhythmically.",
+    preview:cardBox("glowSurge","Glowing","#c8ff00")
+  },
+  {
+    name:"Parallax Depth",
+    cls:"sds-card-parallax",
+    desc:"Multi-layer depth breathing — perspective oscillation.",
+    preview:cardBox("parallaxDepth","Parallax","#ffb347")
+  },
+  {
+    name:"Plasma Surface",
+    cls:"sds-card-plasma",
+    desc:"Living plasma energy on card surface — organic glow.",
+    preview:cardBox("plasmaGlow","Plasma","#ff4d6d")
+  },
+  {
+    name:"Magnetic Hover",
+    cls:"sds-card-magnetic",
+    desc:"Spring physics hover with shadow depth expansion.",
+    preview:cardBox("magneticHover","Magnetic","#c8ff00")
+  },
+  {
+    name:"Slice Reveal",
+    cls:"sds-card-slice",
+    desc:"Horizontal strip clip-path reveal — film developing.",
+    preview:cardBox("cinematicReveal","Revealed","#00e5ff")
+  },
+  {
+    name:"Lift Shadow",
+    cls:"sds-card-lift",
+    desc:"Dramatic elevation lift with shadow separation.",
+    preview:cardBox("liftShadow","Lifted","#c8ff00")
+  },
+  {
+    name:"Depth Warp",
+    cls:"sds-card-depth-warp",
+    desc:"Barrel distortion entrance from deep Z-space.",
+    preview:cardBox("depthWarp","Warped","#ff4d6d")
+  },
+  {
+    name:"Refraction Glass",
+    cls:"sds-card-refraction",
+    desc:"Glass refraction shimmer across card surface.",
+    preview:`<div style="width:160px;height:70px;background:linear-gradient(135deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02));backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk';font-size:12px;color:rgba(240,240,255,0.6);background-size:300% 300%;animation:refractionShimmer 3s ease infinite">Refraction</div>`
+  },
+  {
+    name:"Bounce Portal",
+    cls:"sds-card-bounce",
+    desc:"Elastic bounce from small — spring physics entrance.",
+    preview:cardBox("elasticStamp","Bounce!","#c8ff00")
+  },
+  {
+    name:"Phase In",
+    cls:"sds-card-phase",
+    desc:"Phases in from blur — quantum materialisation.",
+    preview:cardBox("phantomBlur","Phase","#00e5ff")
+  },
+  {
+    name:"Gravity Enter",
+    cls:"sds-card-gravity",
+    desc:"Gravity-weighted drop with impact compression.",
+    preview:cardBox("gravityDrop","Gravity","#ffb347")
+  },
+  {
+    name:"Neon Card",
+    cls:"sds-card-neon",
+    desc:"Volt neon border surge on card perimeter.",
+    preview:`<div style="width:160px;height:70px;background:var(--ink-3);border:1px solid rgba(0,21,209,0.3);border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk';font-size:12px;font-weight:600;color:var(--volt);animation:glowSurge 2s ease infinite">Neon Card</div>`
+  },
+  {
+    name:"Tilt Perspective",
+    cls:"sds-card-tilt",
+    desc:"Tilt perspective planes — gyroscope feel.",
+    preview:cardBox("holographicTilt","Tilted","#ff4d6d")
+  },
+  {
+    name:"Shatter Enter",
+    cls:"sds-card-shatter",
+    desc:"Card reconstructs from shattered state — fragments.",
+    preview:cardBox("shatterIn","Shatter","#c8ff00")
+  },
+  {
+    name:"Ink Bleed In",
+    cls:"sds-card-ink",
+    desc:"Ink absorption materialisation — spreads into view.",
+    preview:cardBox("inkBleed","Bleeding","#00e5ff")
+  },
+  {
+    name:"Velocity Enter",
+    cls:"sds-card-velocity",
+    desc:"High-velocity momentum slide with deceleration.",
+    preview:cardBox("momentumSlide","Velocity","#ffb347")
+  },
+  {
+    name:"Crystal Form",
+    cls:"sds-card-crystal",
+    desc:"Crystal facets form — geometric materialisation.",
+    preview:`<div style="width:160px;height:70px;background:linear-gradient(135deg,rgba(0,21,209,0.1),rgba(0,21,209,0.05));border:1px solid rgba(0,21,209,0.2);border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk';font-size:12px;color:var(--cyan);animation:focusPull 2.5s ease infinite alternate">Crystal</div>`
+  },
+  {
+    name:"Shadow Pulse",
+    cls:"sds-card-shadow-pulse",
+    desc:"Shadow pulses rhythmically — heartbeat of depth.",
+    preview:cardBox("magnetPulse","Pulsing","#c8ff00")
+  },
+  {
+    name:"Warp Slide",
+    cls:"sds-card-warp-slide",
+    desc:"Momentum slide with perspective warp correction.",
+    preview:cardBox("warpGate","Warping","#00e5ff")
+  },
+  {
+    name:"Burn In",
+    cls:"sds-card-burn",
+    desc:"Film burn exposure reveal — photographic developing.",
+    preview:cardBox("phantomBlur","Exposed","#ffb347")
+  },
+  {
+    name:"Liquid Enter",
+    cls:"sds-card-liquid",
+    desc:"Mercury warp entrance from below with elastic skew.",
+    preview:cardBox("liquidRise","Liquid","#c8ff00")
+  },
+  {
+    name:"Scan Lines",
+    cls:"sds-card-scan",
+    desc:"CRT scan lines sweep across card on entrance.",
+    preview:`<div style="width:160px;height:70px;background:var(--ink-3);border:1px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono';font-size:11px;color:var(--cyan);overflow:hidden;animation:scaleReveal 2s ease infinite alternate;position:relative">SCAN_OK</div>`
+  },
+  {
+    name:"Aurora Card",
+    cls:"sds-card-aurora",
+    desc:"Aurora borealis gradient cycles across card.",
+    preview:`<div style="width:160px;height:70px;background:linear-gradient(135deg,rgba(0,21,209,0.08),rgba(0,229,255,0.08),rgba(255,77,109,0.08));border:1px solid rgba(255,255,255,0.08);border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk';font-size:12px;color:var(--text-2);background-size:300% 300%;animation:refractionShimmer 4s ease infinite">Aurora</div>`
+  },
+  {
+    name:"Depth Orbit",
+    cls:"sds-card-orbit",
+    desc:"Card orbits into position from deep depth.",
+    preview:cardBox("depthPortal","Orbiting","#ff4d6d")
+  },
+  {
+    name:"Static Decode",
+    cls:"sds-card-static",
+    desc:"Static noise clears to reveal card — TV tune-in.",
+    preview:`<div style="width:160px;height:70px;background:var(--ink-3);border:1px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono';font-size:11px;color:var(--text-2);animation:staticBurst 3s steps(1) infinite">DECODED</div>`
+  },
+];
+
+/* — LOADER ANIMATIONS — */
+const loaderAnimations = [
+  {
+    name:"Orbital System",
+    cls:"sds-loader-orbital",
+    desc:"Planets orbit on elliptic paths — solar system.",
+    preview:`<div style="position:relative;width:56px;height:56px"><div style="position:absolute;inset:0;border-radius:50%;border:1px dashed rgba(0,21,209,0.15)"></div><div style="position:absolute;top:50%;left:50%;width:6px;height:6px;background:var(--volt);border-radius:50%;margin:-3px 0 0 -3px;box-shadow:0 0 8px var(--volt)"></div><div style="position:absolute;top:50%;left:50%;width:8px;height:8px;background:var(--cyan);border-radius:50%;margin:-4px 0 0 -4px;animation:orbitalA 2s linear infinite"></div><div style="position:absolute;top:50%;left:50%;width:6px;height:6px;background:var(--rose);border-radius:50%;margin:-3px 0 0 -3px;animation:orbitalB 3s linear infinite"></div></div>`
+  },
+  {
+    name:"Fluid Morph",
+    cls:"sds-loader-fluid",
+    desc:"Mercury blob morphs continuously — organic flow.",
+    preview:`<div style="width:36px;height:36px;background:linear-gradient(135deg,var(--volt),var(--cyan));animation:fluidFlow 2s ease infinite"></div>`
+  },
+  {
+    name:"Particle Sync",
+    cls:"sds-loader-particle",
+    desc:"Particles phase in perfect staggered synchrony.",
+    preview:`<div style="display:flex;gap:7px;align-items:center">${[0,0.2,0.4,0.6,0.8].map(d=>`<div style="width:8px;height:8px;border-radius:50%;background:var(--volt);animation:particleSync 1.2s ease ${d}s infinite"></div>`).join('')}</div>`
+  },
+  {
+    name:"DNA Helix",
+    cls:"sds-loader-dna",
+    desc:"Dual strand rotation — double helix simulation.",
+    preview:`<div style="display:flex;gap:8px;align-items:center">${[0,0.15,0.3,0.45].map((d,i)=>`<div style="display:flex;flex-direction:column;gap:6px"><div style="width:8px;height:8px;border-radius:50%;background:var(--cyan);animation:dnaA 1s ease ${d}s infinite alternate"></div><div style="width:8px;height:8px;border-radius:50%;background:var(--volt);animation:dnaB 1s ease ${d}s infinite alternate"></div></div>`).join('')}</div>`
+  },
+  {
+    name:"Waveform",
+    cls:"sds-loader-wave",
+    desc:"Audio waveform bars — equaliser visualiser.",
+    preview:`<div style="display:flex;gap:4px;align-items:center;height:40px">${[0,0.1,0.2,0.3,0.4,0.3,0.2,0.1,0].map((d,i)=>`<div style="width:5px;height:100%;border-radius:3px;background:var(--volt);transform-origin:bottom;animation:waveBar 1s ease ${d+(i*0.05)}s infinite"></div>`).join('')}</div>`
+  },
+  {
+    name:"Ping Cascade",
+    cls:"sds-loader-ping",
+    desc:"Expanding ring cascade — sonar detection pulse.",
+    preview:`<div style="position:relative;width:56px;height:56px;display:flex;align-items:center;justify-content:center">${[0,0.5,1].map(d=>`<div style="position:absolute;width:56px;height:56px;border-radius:50%;border:1px solid rgba(0,21,209,0.5);animation:pingCascade 2s ease ${d}s infinite"></div>`).join('')}<div style="width:8px;height:8px;border-radius:50%;background:var(--volt);box-shadow:0 0 12px var(--volt);position:relative;z-index:1"></div></div>`
+  },
+  {
+    name:"Progress Glow",
+    cls:"sds-loader-progress",
+    desc:"Progress bar with trailing glow wake.",
+    preview:`<div style="width:180px;height:4px;background:var(--ink-4);border-radius:4px;overflow:hidden;position:relative"><div style="height:100%;border-radius:4px;background:var(--volt);animation:progressGlow 2.5s ease infinite alternate"></div></div>`
+  },
+  {
+    name:"Skeleton Pulse",
+    cls:"sds-loader-skeleton",
+    desc:"Smart skeleton shimmer — content loading state.",
+    preview:`<div style="display:flex;flex-direction:column;gap:8px"><div style="width:150px;height:10px;border-radius:4px;background:linear-gradient(90deg,var(--ink-3) 25%,var(--surface-2) 50%,var(--ink-3) 75%);background-size:400% 100%;animation:skeletonPulse 1.8s ease infinite"></div><div style="width:120px;height:10px;border-radius:4px;background:linear-gradient(90deg,var(--ink-3) 25%,var(--surface-2) 50%,var(--ink-3) 75%);background-size:400% 100%;animation:skeletonPulse 1.8s ease 0.2s infinite"></div><div style="width:90px;height:10px;border-radius:4px;background:linear-gradient(90deg,var(--ink-3) 25%,var(--surface-2) 50%,var(--ink-3) 75%);background-size:400% 100%;animation:skeletonPulse 1.8s ease 0.4s infinite"></div></div>`
+  },
+  {
+    name:"Vortex Spin",
+    cls:"sds-loader-vortex",
+    desc:"Vortex spin with scale pulse — drain spiral.",
+    preview:`<div style="width:40px;height:40px;border-radius:50%;border:2px solid transparent;border-top-color:var(--volt);border-left-color:rgba(0,21,209,0.3);animation:vortexSpin 1.2s ease infinite"></div>`
+  },
+  {
+    name:"Comet Trail",
+    cls:"sds-loader-comet",
+    desc:"Comet orbits with glowing particle tail.",
+    preview:`<div style="position:relative;width:50px;height:50px"><div style="position:absolute;inset:0;border-radius:50%;border:1px solid rgba(255,255,255,0.06)"></div><div style="position:absolute;inset:0;border-radius:50%;border:2px solid transparent;border-top-color:var(--cyan);animation:cometTrail 1s linear infinite;box-shadow:0 -2px 8px var(--cyan)"></div></div>`
+  },
+  {
+    name:"Plasma Ring",
+    cls:"sds-loader-plasma-ring",
+    desc:"Plasma energy cycles through color spectrum.",
+    preview:`<div style="width:40px;height:40px;border-radius:50%;border:2px solid transparent;border-top-color:var(--volt);border-right-color:var(--cyan);animation:vortexSpin 1.5s ease infinite;box-shadow:0 0 12px rgba(0,21,209,0.3)"></div>`
+  },
+  {
+    name:"Dot Matrix",
+    cls:"sds-loader-matrix",
+    desc:"3×3 dot matrix phases with stagger timing.",
+    preview:`<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px">${Array(9).fill(0).map((_,i)=>`<div style="width:8px;height:8px;border-radius:50%;background:var(--volt);animation:particleSync 1.4s ease ${(i*0.15)%0.9}s infinite"></div>`).join('')}</div>`
+  },
+  {
+    name:"Volt Arc",
+    cls:"sds-loader-volt-arc",
+    desc:"High-voltage arc crackles in a circular orbit.",
+    preview:`<div style="position:relative;width:44px;height:44px"><div style="position:absolute;inset:0;border-radius:50%;border:2px solid rgba(0,21,209,0.1)"></div><div style="position:absolute;inset:0;border-radius:50%;border:2px solid transparent;border-top-color:var(--volt);border-bottom-color:rgba(0,21,209,0.3);animation:cometTrail 0.8s linear infinite"></div></div>`
+  },
+  {
+    name:"Infinity Path",
+    cls:"sds-loader-infinity",
+    desc:"Single dot traces an infinity figure-8 path.",
+    preview:`<div style="position:relative;width:60px;height:30px;display:flex;align-items:center;justify-content:center"><svg width="60" height="30" viewBox="0 0 60 30" style="opacity:0.15"><path d="M30,15 C30,5 50,5 50,15 C50,25 30,25 30,15 C30,5 10,5 10,15 C10,25 30,25 30,15" fill="none" stroke="var(--volt)" stroke-width="1.5"/></svg><div style="position:absolute;width:8px;height:8px;background:var(--volt);border-radius:50%;box-shadow:0 0 8px var(--volt);animation:orbitalA 2s linear infinite"></div></div>`
+  },
+  {
+    name:"Signal Bars",
+    cls:"sds-loader-signal",
+    desc:"WiFi/signal bars animate sequentially.",
+    preview:`<div style="display:flex;gap:3px;align-items:flex-end;height:32px">${[8,14,20,26,32].map((h,i)=>`<div style="width:5px;height:${h}px;border-radius:2px;background:var(--volt);animation:waveBar 1.5s ease ${i*0.12}s infinite"></div>`).join('')}</div>`
+  },
+  {
+    name:"Gear System",
+    cls:"sds-loader-gear",
+    desc:"Interlocked gears spinning in opposite directions.",
+    preview:`<div style="display:flex;align-items:center;gap:-2px"><div style="width:24px;height:24px;border:2px solid var(--volt);border-radius:4px;animation:cometTrail 2s linear infinite;display:flex;align-items:center;justify-content:center;font-size:14px">⚙</div><div style="width:18px;height:18px;border:2px solid var(--cyan);border-radius:3px;animation:cometTrail 1.5s linear reverse infinite;display:flex;align-items:center;justify-content:center;font-size:10px">⚙</div></div>`
+  },
+  {
+    name:"Quantum Flicker",
+    cls:"sds-loader-quantum",
+    desc:"Quantum uncertainty — particles appear/disappear.",
+    preview:`<div style="display:flex;gap:6px">${[0.1,0.3,0,0.2,0.4].map(d=>`<div style="width:8px;height:8px;border-radius:50%;background:var(--volt);animation:particleSync ${0.8+d}s ease ${d}s infinite"></div>`).join('')}</div>`
+  },
+  {
+    name:"Typewriter Loader",
+    cls:"sds-loader-type",
+    desc:"Typewriter cursor blinks with animated dots.",
+    preview:`<div style="display:flex;align-items:center;gap:3px"><span style="font-family:'IBM Plex Mono';font-size:12px;color:var(--text-2)">Loading</span><span style="display:flex;gap:2px">${[0,0.3,0.6].map(d=>`<span style="font-family:'IBM Plex Mono';color:var(--volt);animation:particleSync 1.2s ease ${d}s infinite">.</span>`).join('')}</span><span style="width:2px;height:14px;background:var(--volt);animation:cursorBlink 0.8s step-end infinite"></span></div>`
+  },
+  {
+    name:"Ripple Pond",
+    cls:"sds-loader-ripple",
+    desc:"Concentric ripple circles expand from center.",
+    preview:`<div style="position:relative;width:50px;height:50px;display:flex;align-items:center;justify-content:center">${[0,0.6,1.2].map(d=>`<div style="position:absolute;width:50px;height:50px;border-radius:50%;border:1px solid rgba(0,21,209,0.4);animation:pingCascade 2.4s ease ${d}s infinite"></div>`).join('')}</div>`
+  },
+  {
+    name:"Brain Wave",
+    cls:"sds-loader-brain",
+    desc:"EEG brainwave oscillation — irregular organic pulse.",
+    preview:`<div style="display:flex;gap:3px;align-items:center;height:36px">${[0,0.1,0.05,0.2,0.15,0.08,0.25,0.18,0.12].map((d,i)=>`<div style="width:4px;height:100%;border-radius:2px;background:var(--cyan);transform-origin:center;animation:waveBar ${0.8+d*3}s ease ${d+(i*0.07)}s infinite"></div>`).join('')}</div>`
+  },
+  {
+    name:"Magnetic Cluster",
+    cls:"sds-loader-cluster",
+    desc:"Magnetic dots cluster and disperse rhythmically.",
+    preview:`<div style="position:relative;width:48px;height:48px">${[0,72,144,216,288].map((deg,i)=>`<div style="position:absolute;top:50%;left:50%;width:7px;height:7px;border-radius:50%;background:var(--volt);margin:-3.5px 0 0 -3.5px;animation:orbitalA ${1.5+i*0.2}s linear ${i*0.1}s infinite;transform:rotate(${deg}deg) translateX(16px) rotate(-${deg}deg)"></div>`).join('')}</div>`
+  },
+  {
+    name:"Phase Shift",
+    cls:"sds-loader-phase",
+    desc:"Color phase transitions between states smoothly.",
+    preview:`<div style="width:40px;height:40px;border-radius:50%;animation:fluidFlow 3s ease infinite;background:conic-gradient(var(--volt),var(--cyan),var(--rose),var(--volt))"></div>`
+  },
+  {
+    name:"Laser Scan",
+    cls:"sds-loader-laser",
+    desc:"Laser scan line sweeps across loading surface.",
+    preview:`<div style="width:180px;height:6px;background:var(--ink-4);border-radius:6px;overflow:hidden;position:relative"><div style="position:absolute;top:0;bottom:0;width:60px;border-radius:6px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);animation:shimmerScan 1.5s linear infinite"></div></div>`
+  },
+  {
+    name:"Pulse Grid",
+    cls:"sds-loader-grid",
+    desc:"Grid of cells pulses in wave pattern.",
+    preview:`<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:5px">${Array(16).fill(0).map((_,i)=>`<div style="width:10px;height:10px;border-radius:2px;background:rgba(0,21,209,0.3);animation:particleSync 1.6s ease ${(i%4)*0.12+(Math.floor(i/4))*0.1}s infinite"></div>`).join('')}</div>`
+  },
+  {
+    name:"Neon Flicker",
+    cls:"sds-loader-neon",
+    desc:"Neon light flickers at authentic frequency.",
+    preview:`<div style="font-family:'IBM Plex Mono';font-size:12px;color:var(--volt);letter-spacing:3px;animation:neonSign 3s ease infinite;text-shadow:0 0 8px var(--volt)">LOADING</div>`
+  },
+  {
+    name:"Helix Spin",
+    cls:"sds-loader-helix",
+    desc:"DNA double helix spins on vertical axis.",
+    preview:`<div style="position:relative;width:30px;height:50px">${Array(5).fill(0).map((_,i)=>`<div style="position:absolute;top:${i*9}px;left:50%;transform:translateX(-50%);display:flex;gap:16px"><div style="width:7px;height:7px;border-radius:50%;background:var(--cyan);animation:dnaA 1s ease ${i*0.12}s infinite alternate"></div><div style="width:7px;height:7px;border-radius:50%;background:var(--volt);animation:dnaB 1s ease ${i*0.12}s infinite alternate"></div></div>`).join('')}</div>`
+  },
+  {
+    name:"Circuit Trace",
+    cls:"sds-loader-circuit",
+    desc:"Circuit board trace draws itself — PCB animation.",
+    preview:`<div style="position:relative;width:60px;height:30px"><div style="position:absolute;top:50%;left:0;width:100%;height:2px;background:linear-gradient(90deg,transparent,var(--cyan) 30%,var(--volt) 70%,transparent);background-size:300% 100%;animation:shimmerScan 1.2s linear infinite"></div><div style="position:absolute;top:0;left:50%;width:2px;height:100%;background:linear-gradient(180deg,transparent,var(--volt),transparent);background-size:100% 300%;animation:skeletonPulse 1.5s linear infinite"></div></div>`
+  },
+  {
+    name:"Arc Reactor",
+    cls:"sds-loader-arc-reactor",
+    desc:"Iron Man arc reactor — concentric spinning rings.",
+    preview:`<div style="position:relative;width:48px;height:48px;display:flex;align-items:center;justify-content:center"><div style="position:absolute;inset:0;border-radius:50%;border:2px solid rgba(0,21,209,0.3);animation:cometTrail 3s linear infinite"></div><div style="position:absolute;inset:6px;border-radius:50%;border:2px solid rgba(0,21,209,0.4);animation:cometTrail 2s linear reverse infinite"></div><div style="position:absolute;inset:12px;border-radius:50%;border:1px solid rgba(255,77,109,0.4);animation:cometTrail 1.5s linear infinite"></div><div style="width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan)"></div></div>`
+  },
+  {
+    name:"Sand Timer",
+    cls:"sds-loader-sand",
+    desc:"Hourglass sand draining — time perception loader.",
+    preview:`<div style="width:24px;height:36px;display:flex;flex-direction:column;align-items:center;position:relative"><div style="width:24px;height:16px;background:linear-gradient(180deg,rgba(0,21,209,0.15),transparent);border:1px solid rgba(0,21,209,0.2);border-bottom:none;clip-path:polygon(0 0,100% 0,55% 100%,45% 100%)"></div><div style="width:3px;height:4px;background:var(--volt);animation:particleSync 1.5s ease infinite"></div><div style="width:24px;height:16px;background:linear-gradient(0deg,rgba(0,21,209,0.3),transparent);border:1px solid rgba(0,21,209,0.2);border-top:none;clip-path:polygon(45% 0,55% 0,100% 100%,0 100%);animation:fluidFlow 3s ease infinite"></div></div>`
+  },
+  {
+    name:"Target Lock",
+    cls:"sds-loader-target",
+    desc:"Targeting reticle locks and rotates — HUD element.",
+    preview:`<div style="position:relative;width:48px;height:48px;display:flex;align-items:center;justify-content:center"><div style="position:absolute;inset:0;border-radius:50%;border:1px dashed rgba(0,21,209,0.3);animation:cometTrail 4s linear infinite"></div><div style="position:absolute;top:0;left:50%;height:6px;width:1px;background:var(--volt);transform:translateX(-50%)"></div><div style="position:absolute;bottom:0;left:50%;height:6px;width:1px;background:var(--volt);transform:translateX(-50%)"></div><div style="position:absolute;left:0;top:50%;width:6px;height:1px;background:var(--volt);transform:translateY(-50%)"></div><div style="position:absolute;right:0;top:50%;width:6px;height:1px;background:var(--volt);transform:translateY(-50%)"></div><div style="width:6px;height:6px;border-radius:50%;background:var(--rose);box-shadow:0 0 8px var(--rose);animation:particleSync 0.8s ease infinite"></div></div>`
+  },
+];
+
+/* — SCROLL ANIMATIONS — */
+const scrollAnimations = [
+  { name:"Viewport Rise", cls:"sds-scroll-rise", desc:"Cinematic scale+translate entrance from viewport.", preview:scrollBox("viewportRise","On Scroll","#c8ff00") },
+  { name:"Curtain Lift", cls:"sds-scroll-curtain", desc:"Clip-path curtain lifts to reveal content.", preview:scrollBox("curtainLift","Lifted","#00e5ff") },
+  { name:"Scroll Warp", cls:"sds-scroll-warp", desc:"Perspective tilt corrects to flat as element enters.", preview:scrollBox("scrollWarp","Warp","#ff4d6d") },
+  { name:"Momentum Slide", cls:"sds-scroll-slide", desc:"High momentum slide with elastic deceleration.", preview:scrollBox("momentumSlide","Slide →","#c8ff00") },
+  { name:"Scale Reveal", cls:"sds-scroll-scale", desc:"Grows from small with blur clearing on enter.", preview:scrollBox("scaleReveal","Scale","#ffb347") },
+  { name:"Radial Expand", cls:"sds-scroll-radial", desc:"Circular mask expands from bottom center.", preview:scrollBox("radialExpand","Radial","#00e5ff") },
+  { name:"Blur Ascend", cls:"sds-scroll-blur", desc:"Rises through blur clearing — fog lifting.", preview:scrollBox("blurAscend","Ascend","#c8ff00") },
+  { name:"Tilt Reveal", cls:"sds-scroll-tilt", desc:"Tilts upright from lying flat — book opening.", preview:scrollBox("tiltReveal","Tilt","#ff4d6d") },
+  { name:"Scan Line", cls:"sds-scroll-scan", desc:"Scan line sweeps left to right — machine reading.", preview:scrollBox("scanLine","Scanned","#00e5ff") },
+  { name:"Stagger Pop", cls:"sds-scroll-stagger-pop", desc:"Elements pop in with elastic stagger.", preview:scrollBox("staggerPop","Pop!","#c8ff00") },
+  { name:"Depth Enter", cls:"sds-scroll-depth", desc:"Emerges from deep 3D space — underwater ascent.", preview:scrollBox("depthWarp","Depth","#ffb347") },
+  { name:"Shatter Enter", cls:"sds-scroll-shatter", desc:"Reconstructs from shattered state on scroll.", preview:scrollBox("shatterIn","Shatter","#ff4d6d") },
+  { name:"Phantom Rise", cls:"sds-scroll-phantom", desc:"Materialises from fog on viewport entry.", preview:scrollBox("phantomBlur","Phantom","#00e5ff") },
+  { name:"Gravity Land", cls:"sds-scroll-gravity", desc:"Heavy-weight drop with impact on scroll.", preview:scrollBox("gravityDrop","Land","#c8ff00") },
+  { name:"Liquid Enter", cls:"sds-scroll-liquid", desc:"Mercury warp from below — elastic emergence.", preview:scrollBox("liquidRise","Liquid","#ffb347") },
+  { name:"Velvet Drop", cls:"sds-scroll-velvet", desc:"Soft weighted fall — weighted cinematic reveal.", preview:scrollBox("velvetDrop","Velvet","#ff4d6d") },
+  { name:"Stagger Grid", cls:"sds-scroll-stagger-grid", desc:"Grid children appear in sequence.", preview:`<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">${Array(4).fill(0).map((_,i)=>`<div style="height:30px;background:var(--ink-3);border:1px solid var(--border);border-radius:6px;animation:viewportRise 1s ease ${i*0.15}s infinite alternate"></div>`).join('')}</div>` },
+  { name:"Scan Reveal", cls:"sds-scroll-scan-reveal", desc:"Laser scan sweeps to reveal element.", preview:scrollBox("sliceRevealA","Scan","#c8ff00") },
+  { name:"Orbit Enter", cls:"sds-scroll-orbit", desc:"Element swings in on orbital arc path.", preview:scrollBox("perspSwing","Orbit →","#00e5ff") },
+  { name:"Glitch Reveal", cls:"sds-scroll-glitch", desc:"Glitch artifacts clear as element enters viewport.", preview:scrollBox("staticBurst","Glitch","#ff4d6d") },
+];
+
+/* =========================================================
+   HELPERS
+========================================================= */
+function cardBox(anim, label, color) {
+  return `<div style="width:160px;height:70px;background:#eef0f7;border:1px solid rgba(0,21,209,0.12);border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk';font-size:12px;font-weight:600;color:${color === '#c8ff00' ? '#0015D1' : color === '#ffb347' ? '#0015D1' : color};animation:${anim} 2.5s cubic-bezier(0.22,1,0.36,1) infinite alternate">${label}</div>`;
+}
+function scrollBox(anim, label, color) {
+  return `<div style="width:160px;height:60px;background:#eef0f7;border:1px solid rgba(0,21,209,0.12);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono';font-size:11px;color:${color === '#c8ff00' ? '#0015D1' : color === '#ffb347' ? '#0015D1' : color};animation:${anim} 2s ease infinite alternate">${label}</div>`;
+}
+
+/* =========================================================
+   RENDER GRID
+========================================================= */
+function renderGrid(id, items) {
+  const grid = document.getElementById(id);
+  if (!grid) return;
+  grid.innerHTML = items.map(item => `
+    <div class="anim-card${item.type==='interactive'?' anim-card--interactive':''}" onmousemove="${item.type==='interactive'?'':' cardTilt(event,this)'}" onmouseleave="${item.type==='interactive'?'':' resetTilt(this)'}">
+      <div class="preview-box${item.type==='interactive'?' interactive':''}">${item.preview}</div>
+      <div class="card-meta">
+        <div class="anim-name">${item.name}</div>
+        <div class="anim-desc">${item.desc}</div>
+        <div class="card-footer">
+          <span class="class-tag">${item.cls}</span>
+          <button class="copy-btn" onclick="copyClass(event,this,'${item.cls}')">
+            <svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="9" height="9" rx="1.5"/><path d="M3 11V3h8"/></svg>
+            Copy
+          </button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+/* =========================================================
+   COPY FUNCTIONS — all use clipboard API with fallback
+========================================================= */
+function execCopy(text, onSuccess) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(onSuccess).catch(() => fallbackCopy(text, onSuccess));
+  } else {
+    fallbackCopy(text, onSuccess);
+  }
+}
+function fallbackCopy(text, onSuccess) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.cssText = 'position:fixed;opacity:0;pointer-events:none';
+  document.body.appendChild(ta);
+  ta.select();
+  try { document.execCommand('copy'); onSuccess(); } catch(e) {}
+  document.body.removeChild(ta);
+}
+
+function copyClass(e, btn, cls) {
+  e.stopPropagation();
+  execCopy(cls, () => {
+    btn.classList.add('ok');
+    btn.innerHTML = `<svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="3,8 6.5,12 13,4"/></svg> Copied!`;
+    setTimeout(() => {
+      btn.classList.remove('ok');
+      btn.innerHTML = `<svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="9" height="9" rx="1.5"/><path d="M3 11V3h8"/></svg> Copy`;
+    }, 2000);
+  });
+}
+
+function topCopy(el, text) {
+  const btn = el.querySelector('.pill-copy-btn');
+  execCopy(text, () => {
+    if (!btn) return;
+    btn.classList.add('ok');
+    btn.innerHTML = `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13"><polyline points="3,8 6.5,12 13,4"/></svg>`;
+    setTimeout(() => {
+      btn.classList.remove('ok');
+      btn.innerHTML = `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" width="13" height="13"><rect x="4" y="4" width="9" height="9" rx="1.5"/><path d="M3 11V3h8"/></svg>`;
+    }, 2000);
+  });
+}
+
+function sbCopy(el, text) {
+  const btn = el.querySelector('.sb-copy-icon');
+  execCopy(text, () => {
+    if (!btn) return;
+    btn.classList.add('ok');
+    btn.innerHTML = `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><polyline points="3,8 6.5,12 13,4"/></svg>`;
+    setTimeout(() => {
+      btn.classList.remove('ok');
+      btn.innerHTML = `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="12" height="12"><rect x="4" y="4" width="9" height="9" rx="1.5"/><path d="M3 11V3h8"/></svg>`;
+    }, 2000);
+  });
+}
+
+/* =========================================================
+   INSTALL TAB SWITCHERS
+========================================================= */
+function switchInstallTab(btn, id) {
+  document.querySelectorAll('.itw-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.itw-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  const panel = document.getElementById('itab-' + id);
+  if (panel) panel.classList.add('active');
+}
+
+function copyInstallTab(btn, text) {
+  execCopy(text, () => {
+    btn.classList.add('ok');
+    btn.innerHTML = `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13"><polyline points="3,8 6.5,12 13,4"/></svg>`;
+    setTimeout(() => {
+      btn.classList.remove('ok');
+      btn.innerHTML = `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" width="13" height="13"><rect x="4" y="4" width="9" height="9" rx="1.5"/><path d="M3 11V3h8"/></svg>`;
+    }, 2000);
+  });
+}
+
+function switchSbInstall(btn, id) {
+  document.querySelectorAll('.sb-itab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.sb-install-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  const panel = document.getElementById(id);
+  if (panel) panel.classList.add('active');
+}
+
+/* =========================================================
+   SECTION SWITCHER
+========================================================= */
+function switchSec(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.sb-item').forEach(b => b.classList.remove('active'));
+  const sec = document.getElementById('sec-' + id);
+  if (sec) sec.classList.add('active');
+  btn.classList.add('active');
+  const scroll = sec && sec.querySelector('.content-scroll');
+  if (scroll) scroll.scrollTop = 0;
+}
+
+/* =========================================================
+   CARD TILT — subtle mouse-tracked 3D tilt
+========================================================= */
+function cardTilt(e, card) {
+  const r = card.getBoundingClientRect();
+  const x = ((e.clientX - r.left) / r.width - 0.5) * 10;
+  const y = ((e.clientY - r.top) / r.height - 0.5) * -10;
+  card.style.transform = `perspective(600px) rotateX(${y}deg) rotateY(${x}deg) translateY(-3px)`;
+  const mx = ((e.clientX - r.left) / r.width * 100).toFixed(1);
+  const my = ((e.clientY - r.top) / r.height * 100).toFixed(1);
+  card.style.setProperty('--mx', mx + '%');
+  card.style.setProperty('--my', my + '%');
+}
+function resetTilt(card) {
+  card.style.transform = '';
+}
+
+/* =========================================================
+   INTERACTIVE TEXT ANIMATIONS ENGINE
+========================================================= */
+
+const INTERACTIVE_FONT = "'DM Sans', 'Space Grotesk', sans-serif";
+const INTERACTIVE_COLOR = '#0015D1';
+const INTERACTIVE_SIZE = '22px';
+
+// Spring physics helper
+function Spring(stiffness=180, damping=22) {
+  return { k: stiffness, d: damping, vx:0, vy:0 };
+}
+function springStep(sp, cx, cy, tx, ty, dt=0.016) {
+  const ax = -(sp.k*(cx-tx) + sp.d*sp.vx);
+  const ay = -(sp.k*(cy-ty) + sp.d*sp.vy);
+  sp.vx += ax*dt; sp.vy += ay*dt;
+  return { x: cx + sp.vx*dt, y: cy + sp.vy*dt };
+}
+
+// Build character spans inside a container
+function buildChars(containerId, word, color, size, font) {
+  const wrap = document.getElementById(containerId);
+  if (!wrap) return null;
+  wrap.innerHTML = '';
+  const chars = word.split('').map(c => {
+    const s = document.createElement('span');
+    s.textContent = c === ' ' ? '\u00A0' : c;
+    s.style.cssText = `font-family:${font||INTERACTIVE_FONT};font-size:${size||INTERACTIVE_SIZE};font-weight:700;color:${color||INTERACTIVE_COLOR};display:inline-block;will-change:transform;position:relative;`;
+    wrap.appendChild(s);
+    return s;
+  });
+  return chars;
+}
+
+// RAF loop manager
+const _loops = {};
+function startLoop(key, fn) {
+  if (_loops[key]) cancelAnimationFrame(_loops[key]);
+  let last = performance.now();
+  function tick(now) {
+    const dt = Math.min((now - last)/1000, 0.05);
+    last = now;
+    fn(dt);
+    _loops[key] = requestAnimationFrame(tick);
+  }
+  _loops[key] = requestAnimationFrame(tick);
+}
+function stopLoop(key) {
+  if (_loops[key]) { cancelAnimationFrame(_loops[key]); delete _loops[key]; }
+}
+
+/* ---- 1. WORD MORPH ---- */
+function initWordMorph() {
+  const words = ['MORPH','SHIFT','BLEND','FLUX'];
+  let wi = 0, phase = 'show', t = 0;
+  const el = document.getElementById('ipc-wordMorph');
+  if (!el) return;
+  function set(word) {
+    el.innerHTML = '';
+    word.split('').forEach(c => {
+      const s = document.createElement('span');
+      s.textContent = c;
+      s.style.cssText = `font-family:${INTERACTIVE_FONT};font-size:22px;font-weight:700;color:${INTERACTIVE_COLOR};display:inline-block;`;
+      el.appendChild(s);
+    });
+  }
+  set(words[0]);
+  const chars = () => el.querySelectorAll('span');
+  startLoop('wordMorph', (dt) => {
+    t += dt;
+    if (phase === 'show' && t > 1.4) { phase = 'out'; t = 0; }
+    if (phase === 'out') {
+      const p = Math.min(t/0.35, 1);
+      chars().forEach((s,i) => {
+        const off = i*0.06;
+        const lp = Math.max(0, Math.min(1,(t-off)/0.3));
+        s.style.opacity = 1 - lp;
+        s.style.transform = `translateY(${-20*lp}px) scale(${1+0.3*lp})`;
+        s.style.filter = `blur(${4*lp}px)`;
+      });
+      if (t > 0.6) { phase = 'in'; wi = (wi+1)%words.length; set(words[wi]); t = 0; }
+    }
+    if (phase === 'in') {
+      chars().forEach((s,i) => {
+        const off = i*0.07;
+        const lp = Math.max(0, Math.min(1,(t-off)/0.35));
+        s.style.opacity = lp;
+        s.style.transform = `translateY(${20*(1-lp)}px) scale(${1.3-0.3*lp})`;
+        s.style.filter = `blur(${4*(1-lp)}px)`;
+      });
+      if (t > 0.9) { phase = 'show'; t = 0; }
+    }
+  });
+}
+
+/* ---- 2. BIG BANG ---- */
+function initBigBang() {
+  const el = document.getElementById('ipc-bigBang');
+  if (!el) return;
+  const word = 'BANG';
+  const chars = buildChars('ipc-bigBang', word);
+  if (!chars) return;
+  // store initial offsets after layout
+  requestAnimationFrame(() => {
+    const origins = chars.map(s => ({ ox:0, oy:0, angle: Math.random()*Math.PI*2, dist: 40+Math.random()*50 }));
+    let phase = 'resting', t = 0;
+    function resetPhase() { phase = 'bang'; t = 0; }
+    startLoop('bigBang', (dt) => {
+      t += dt;
+      if (phase === 'resting' && t > 1.2) resetPhase();
+      if (phase === 'bang') {
+        chars.forEach((s,i) => {
+          const lp = Math.min(t/0.25, 1);
+          const ease = lp < 0.5 ? 2*lp*lp : -1+(4-2*lp)*lp;
+          const d = origins[i].dist * ease;
+          const a = origins[i].angle;
+          s.style.transform = `translate(${Math.cos(a)*d}px,${Math.sin(a)*d}px) scale(${1+0.8*ease}) rotate(${origins[i].angle*30*ease}deg)`;
+          s.style.opacity = 1 - ease*0.5;
+          s.style.filter = `blur(${4*ease}px)`;
+        });
+        if (t > 0.25) { phase = 'reform'; t = 0; origins.forEach(o => o.angle = Math.random()*Math.PI*2); }
+      }
+      if (phase === 'reform') {
+        chars.forEach((s,i) => {
+          const lp = Math.min(t/0.7, 1);
+          const ease = 1 - Math.pow(1-lp, 3);
+          const rem = 1 - ease;
+          const a = origins[i].angle;
+          const d = origins[i].dist * rem;
+          s.style.transform = `translate(${Math.cos(a)*d}px,${Math.sin(a)*d}px) scale(${1+0.8*rem}) rotate(${origins[i].angle*30*rem}deg)`;
+          s.style.opacity = 0.5 + ease*0.5;
+          s.style.filter = `blur(${4*rem}px)`;
+        });
+        if (t > 0.8) { phase = 'resting'; t = 0; chars.forEach(s=>{ s.style.transform=''; s.style.opacity=1; s.style.filter=''; }); }
+      }
+    });
+  });
+}
+
+/* ---- 3. SCATTER & RETURN ---- */
+function initScatterReturn() {
+  const el = document.getElementById('ipc-scatterReturn');
+  if (!el) return;
+  const chars = buildChars('ipc-scatterReturn','SCATTER');
+  if (!chars) return;
+  const springs = chars.map(()=>({vx:0,vy:0,x:0,y:0,tx:0,ty:0}));
+  let scattered = false;
+  function scatter() {
+    scattered = true;
+    springs.forEach(sp => { sp.tx = (Math.random()-0.5)*90; sp.ty = (Math.random()-0.5)*60; });
+  }
+  function restore() {
+    scattered = false;
+    springs.forEach(sp => { sp.tx = 0; sp.ty = 0; });
+  }
+  const wrap = el.closest('.ipreview-wrap');
+  if (wrap) { wrap.addEventListener('mouseenter', scatter); wrap.addEventListener('mouseleave', restore); }
+  startLoop('scatterReturn', (dt) => {
+    springs.forEach((sp, i) => {
+      const K = 280, D = 28;
+      const ax = -(K*(sp.x-sp.tx) + D*sp.vx);
+      const ay = -(K*(sp.y-sp.ty) + D*sp.vy);
+      sp.vx += ax*dt; sp.vy += ay*dt;
+      sp.x += sp.vx*dt; sp.y += sp.vy*dt;
+      chars[i].style.transform = `translate(${sp.x}px,${sp.y}px)`;
+    });
+  });
+}
+
+/* ---- 4. JELLY HOVER ---- */
+function initJellyHover() {
+  const el = document.getElementById('ipc-jellyHover');
+  if (!el) return;
+  const chars = buildChars('ipc-jellyHover','JELLY');
+  if (!chars) return;
+  const states = chars.map(() => ({ sy:1, sx:1, vsy:0, vsx:0 }));
+  chars.forEach((s, i) => {
+    s.style.cursor = 'pointer';
+    s.style.display = 'inline-block';
+    s.addEventListener('mouseenter', () => { states[i].vsy = -8; states[i].vsx = 3; });
+  });
+  startLoop('jellyHover', (dt) => {
+    states.forEach((st, i) => {
+      const K = 320, D = 20;
+      const asy = -(K*(st.sy-1) + D*st.vsy);
+      const asx = -(K*(st.sx-1) + D*st.vsx);
+      st.vsy += asy*dt; st.vsx += asx*dt;
+      st.sy += st.vsy*dt; st.sx += st.vsx*dt;
+      chars[i].style.transform = `scaleX(${st.sx}) scaleY(${st.sy})`;
+    });
+  });
+}
+
+/* ---- 5. WAVE CASCADE ---- */
+function initWaveCascade() {
+  const el = document.getElementById('ipc-waveCascade');
+  if (!el) return;
+  const chars = buildChars('ipc-waveCascade','CASCADE');
+  if (!chars) return;
+  let t = 0;
+  startLoop('waveCascade', (dt) => {
+    t += dt;
+    chars.forEach((s,i) => {
+      const phase = t * 2.8 - i * 0.42;
+      const y = Math.sin(phase) * 10;
+      const sc = 1 + Math.sin(phase + Math.PI/2) * 0.06;
+      s.style.transform = `translateY(${y}px) scaleY(${sc})`;
+    });
+  });
+}
+
+/* ---- 6. SHOCKWAVE TEXT ---- */
+function initShockwaveText() {
+  const el = document.getElementById('ipc-shockwaveText');
+  if (!el) return;
+  const chars = buildChars('ipc-shockwaveText','SHOCK!');
+  if (!chars) return;
+  const springs = chars.map(()=>({vx:0,vy:0,x:0,y:0}));
+  function fire() {
+    springs.forEach((sp,i) => {
+      const angle = (i/(chars.length-1))*Math.PI*2;
+      sp.vx += Math.cos(angle)*18; sp.vy += Math.sin(angle)*18;
+    });
+  }
+  const wrap = el.closest('.ipreview-wrap');
+  if (wrap) wrap.addEventListener('click', fire);
+  // auto-fire periodically
+  setInterval(() => { if (document.getElementById('ipc-shockwaveText')) fire(); }, 2200);
+  startLoop('shockwaveText', (dt) => {
+    springs.forEach((sp, i) => {
+      const K = 300, D = 26;
+      const ax = -(K*sp.x + D*sp.vx);
+      const ay = -(K*sp.y + D*sp.vy);
+      sp.vx += ax*dt; sp.vy += ay*dt;
+      sp.x += sp.vx*dt; sp.y += sp.vy*dt;
+      chars[i].style.transform = `translate(${sp.x}px,${sp.y}px)`;
+    });
+  });
+}
+
+/* ---- 7. SPRING KERNING ---- */
+function initSpringKerning() {
+  const el = document.getElementById('ipc-springKerning');
+  if (!el) return;
+  const chars = buildChars('ipc-springKerning','KERN',INTERACTIVE_COLOR,'24px');
+  if (!chars) return;
+  let targetGap = 2, currentGap = 2, vel = 0;
+  const wrap = el.closest('.ipreview-wrap');
+  let autoT = 0;
+  if (wrap) {
+    wrap.addEventListener('mousemove', (e) => {
+      const r = wrap.getBoundingClientRect();
+      const nx = (e.clientX - r.left) / r.width;
+      targetGap = -4 + nx * 28;
+    });
+    wrap.addEventListener('mouseleave', () => { targetGap = 2; });
+  }
+  startLoop('springKerning', (dt) => {
+    if (!wrap || !wrap.matches(':hover')) {
+      autoT += dt * 1.2;
+      targetGap = Math.sin(autoT) * 14;
+    }
+    const K=180, D=18;
+    const a = -(K*(currentGap-targetGap) + D*vel);
+    vel += a*dt; currentGap += vel*dt;
+    chars.forEach(s => { s.style.letterSpacing = Math.max(-2, currentGap)+'px'; });
+  });
+}
+
+/* ---- 8. MAGNETIC PULL ---- */
+function initMagneticPull() {
+  const el = document.getElementById('ipc-magneticPull');
+  if (!el) return;
+  const chars = buildChars('ipc-magneticPull','PULL');
+  if (!chars) return;
+  const springs = chars.map(()=>({vx:0,vy:0,x:0,y:0}));
+  const wrap = el.closest('.ipreview-wrap');
+  let mx = null, my = null;
+  if (wrap) {
+    wrap.addEventListener('mousemove', e => {
+      const r = el.getBoundingClientRect();
+      mx = e.clientX - (r.left + r.width/2);
+      my = e.clientY - (r.top + r.height/2);
+    });
+    wrap.addEventListener('mouseleave', () => { mx = null; my = null; });
+  }
+  startLoop('magneticPull', (dt) => {
+    springs.forEach((sp,i) => {
+      let tx = 0, ty = 0;
+      if (mx !== null) {
+        const charW = chars[i].offsetWidth || 20;
+        const ci = (i - (chars.length-1)/2) * charW;
+        const dx = mx - ci, dy = my;
+        const dist = Math.sqrt(dx*dx+dy*dy);
+        const pull = Math.min(1, 80/(dist+1));
+        tx = dx * pull * 0.4;
+        ty = dy * pull * 0.4;
+      }
+      const K=260, D=24;
+      const ax = -(K*(sp.x-tx) + D*sp.vx);
+      const ay = -(K*(sp.y-ty) + D*sp.vy);
+      sp.vx += ax*dt; sp.vy += ay*dt;
+      sp.x += sp.vx*dt; sp.y += sp.vy*dt;
+      chars[i].style.transform = `translate(${sp.x}px,${sp.y}px)`;
+    });
+  });
+}
+
+/* ---- 9. REPULSION FIELD ---- */
+function initRepulsionField() {
+  const el = document.getElementById('ipc-repulsionField');
+  if (!el) return;
+  const chars = buildChars('ipc-repulsionField','PUSH');
+  if (!chars) return;
+  const springs = chars.map(()=>({vx:0,vy:0,x:0,y:0}));
+  const wrap = el.closest('.ipreview-wrap');
+  let mx = null, my = null;
+  if (wrap) {
+    wrap.addEventListener('mousemove', e => {
+      const r = el.getBoundingClientRect();
+      mx = e.clientX - (r.left + r.width/2);
+      my = e.clientY - (r.top + r.height/2);
+    });
+    wrap.addEventListener('mouseleave', () => { mx = null; my = null; });
+  }
+  startLoop('repulsionField', (dt) => {
+    springs.forEach((sp,i) => {
+      let tx = 0, ty = 0;
+      if (mx !== null) {
+        const charW = chars[i].offsetWidth || 20;
+        const ci = (i - (chars.length-1)/2) * charW;
+        const dx = ci - mx, dy = -my;
+        const dist = Math.sqrt(dx*dx+dy*dy)+1;
+        const push = Math.max(0, 1-(dist/80));
+        tx = (dx/dist)*push*55;
+        ty = (dy/dist)*push*55;
+      }
+      const K=300, D=26;
+      const ax = -(K*(sp.x-tx) + D*sp.vx);
+      const ay = -(K*(sp.y-ty) + D*sp.vy);
+      sp.vx += ax*dt; sp.vy += ay*dt;
+      sp.x += sp.vx*dt; sp.y += sp.vy*dt;
+      chars[i].style.transform = `translate(${sp.x}px,${sp.y}px)`;
+    });
+  });
+}
+
+/* ---- 10. CENTER BURST ---- */
+function initCenterBurst() {
+  const el = document.getElementById('ipc-centerBurst');
+  if (!el) return;
+  const chars = buildChars('ipc-centerBurst','BURST');
+  if (!chars) return;
+  const springs = chars.map(() => ({ vx:0, vy:0, x:0, y:0 }));
+  let phase = 'burst', t = 0;
+  function resetBurst() {
+    springs.forEach(sp => { sp.x=0; sp.y=0; sp.vx=(Math.random()-0.5)*0; sp.vy=0; });
+    phase = 'burst'; t = 0;
+  }
+  // init scattered from center
+  springs.forEach(sp => { sp.x=0; sp.y=0; });
+  startLoop('centerBurst', (dt) => {
+    t += dt;
+    if (phase === 'burst') {
+      springs.forEach((sp,i) => {
+        const K=180, D=22;
+        const ax = -(K*sp.x + D*sp.vx);
+        const ay = -(K*sp.y + D*sp.vy);
+        sp.vx += ax*dt; sp.vy += ay*dt;
+        sp.x += sp.vx*dt; sp.y += sp.vy*dt;
+        chars[i].style.transform = `translate(${sp.x}px,${sp.y}px) scale(${1+Math.abs(sp.x)/80})`;
+      });
+      if (t > 2.0) { phase = 'reset'; t = 0; }
+    }
+    if (phase === 'reset') {
+      springs.forEach(sp => {
+        sp.x = 0; sp.y = 0; sp.vx = (Math.random()-0.5)*120; sp.vy = (Math.random()-0.5)*60;
+      });
+      phase = 'burst'; t = 0;
+    }
+  });
+}
+
+/* ---- 11. EXPLODE → FORMATION ---- */
+function initExplodeFormation() {
+  const el = document.getElementById('ipc-explodeFormation');
+  if (!el) return;
+  const chars = buildChars('ipc-explodeFormation','FORM');
+  if (!chars) return;
+  const springs = chars.map((_, i) => ({
+    vx: (Math.random()-0.5)*200, vy: -60-Math.random()*80,
+    x: (Math.random()-0.5)*80, y: (Math.random()-0.5)*40
+  }));
+  let t = 0, phase = 'fly';
+  startLoop('explodeFormation', (dt) => {
+    t += dt;
+    if (phase === 'fly') {
+      springs.forEach((sp,i) => {
+        const K=160, D=20;
+        const ax = -(K*sp.x + D*sp.vx);
+        const ay = -(K*sp.y + D*sp.vy);
+        sp.vx += ax*dt; sp.vy += ay*dt;
+        sp.x += sp.vx*dt; sp.y += sp.vy*dt;
+        chars[i].style.transform = `translate(${sp.x}px,${sp.y}px)`;
+        chars[i].style.opacity = Math.min(1, t*3);
+      });
+      if (t > 2.4) { phase='scatter'; t=0; springs.forEach(sp=>{ sp.vx=(Math.random()-0.5)*180; sp.vy=-80-Math.random()*60; }); }
+    }
+    if (phase === 'scatter') {
+      springs.forEach((sp,i) => {
+        sp.vx *= 0.92; sp.vy += 120*dt;
+        sp.x += sp.vx*dt; sp.y += sp.vy*dt;
+        chars[i].style.transform = `translate(${sp.x}px,${sp.y}px) rotate(${sp.vx*0.5}deg)`;
+        chars[i].style.opacity = Math.max(0, 1 - t*2.5);
+      });
+      if (t > 0.5) {
+        phase='fly'; t=0;
+        springs.forEach(sp => { sp.x=(Math.random()-0.5)*80; sp.y=(Math.random()-0.5)*40; sp.vx=(Math.random()-0.5)*80; sp.vy=-20; });
+        chars.forEach(s=>{ s.style.opacity=0; });
+      }
+    }
+  });
+}
+
+/* ---- 12. GRAVITY BOUNCE ---- */
+function initGravityBounce() {
+  const el = document.getElementById('ipc-gravityBounce');
+  if (!el) return;
+  const chars = buildChars('ipc-gravityBounce','FALL');
+  if (!chars) return;
+  const states = chars.map((_, i) => ({ y: -60-i*15, vy: 0, bounces: 0 }));
+  const FLOOR = 14, GRAVITY = 380, RESTITUTION = 0.45;
+  startLoop('gravityBounce', (dt) => {
+    states.forEach((st, i) => {
+      st.vy += GRAVITY * dt;
+      st.y += st.vy * dt;
+      if (st.y >= FLOOR) {
+        st.y = FLOOR;
+        st.vy = -st.vy * RESTITUTION;
+        st.bounces++;
+        if (Math.abs(st.vy) < 18) st.vy = 0;
+      }
+      const squash = st.y >= FLOOR-1 && st.vy === 0 ? 1 : Math.max(0.6, 1 - Math.abs(st.vy)/400);
+      const stretch = st.y >= FLOOR-1 && st.vy === 0 ? 1 : Math.min(1.4, 1 + Math.abs(st.vy)/400);
+      chars[i].style.transform = `translateY(${st.y}px) scaleX(${squash}) scaleY(${stretch})`;
+      // reset
+      if (st.y >= FLOOR && st.vy === 0 && st.bounces > 0) {
+        setTimeout(() => {
+          if (states[i]) { states[i].y = -60-i*15; states[i].vy = 0; states[i].bounces = 0; }
+        }, 800 + i*300);
+      }
+    });
+  });
+}
+
+/* ---- 13. DROP & SETTLE ---- */
+function initDropSettle() {
+  const el = document.getElementById('ipc-dropSettle');
+  if (!el) return;
+  const chars = buildChars('ipc-dropSettle','DROP');
+  if (!chars) return;
+  const states = chars.map((_, i) => ({ y: -80, vy: 0, settled: false, delay: i * 0.22, timer: 0 }));
+  let globalT = 0;
+  startLoop('dropSettle', (dt) => {
+    globalT += dt;
+    states.forEach((st, i) => {
+      if (globalT < st.delay) { chars[i].style.opacity = '0'; return; }
+      chars[i].style.opacity = '1';
+      if (st.settled) {
+        st.timer += dt;
+        if (st.timer > 1.8) { st.y = -80; st.vy = 0; st.settled = false; st.timer = 0; st.delay = globalT + i*0.22; }
+        return;
+      }
+      st.vy += 500*dt;
+      st.y += st.vy*dt;
+      if (st.y >= 0) {
+        st.y = 0; st.vy = -st.vy*0.28;
+        if (Math.abs(st.vy) < 30) { st.vy = 0; st.settled = true; st.timer = 0; }
+      }
+      const sq = st.vy !== 0 ? Math.max(0.7, 1-st.vy/600) : 1;
+      const str = st.vy !== 0 ? Math.min(1.3, 1+st.vy/600) : 1;
+      chars[i].style.transform = `translateY(${st.y}px) scaleX(${sq}) scaleY(${str})`;
+    });
+  });
+}
+
+/* ---- INIT ALL INTERACTIVE ANIMATIONS ---- */
+function initAllInteractive() {
+  // Use requestAnimationFrame to ensure DOM is ready
+  requestAnimationFrame(() => {
+    setTimeout(() => {
+      initWordMorph();
+      initBigBang();
+      initScatterReturn();
+      initJellyHover();
+      initWaveCascade();
+      initShockwaveText();
+      initSpringKerning();
+      initMagneticPull();
+      initRepulsionField();
+      initCenterBurst();
+      initExplodeFormation();
+      initGravityBounce();
+      initDropSettle();
+    }, 120);
+  });
+}
+
+/* =========================================================
+   INIT
+========================================================= */
+renderGrid('grid-text', textAnimations);
+renderGrid('grid-button', buttonAnimations);
+renderGrid('grid-input', inputAnimations);
+renderGrid('grid-card', cardAnimations);
+renderGrid('grid-loader', loaderAnimations);
+renderGrid('grid-scroll', scrollAnimations);
+initAllInteractive();
+</script>
+</body>
+</html>

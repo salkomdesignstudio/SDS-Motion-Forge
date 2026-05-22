@@ -1,15 +1,71 @@
 {
   "name": "sds-motion",
   "version": "1.0.0",
-  "description": "Animation by class name. Production-ready UI animations.",
-  "main": "dist/sds-motion.js",
-  "style": "dist/sds-motion.css",
-  "scripts": {
-    "generate": "node scripts/generate-animations.js && node scripts/generate-docs.js",
-    "build": "npm run generate"
+  "description": "Production-ready CSS animation library — 180+ class-based animations for text, buttons, inputs, cards, loaders, and scroll. No JavaScript required.",
+  "main": "dist/motion.css",
+  "style": "dist/motion.css",
+  "module": "dist/motion.css",
+  "exports": {
+    ".": "./dist/motion.css",
+    "./dist/motion.css": "./dist/motion.css",
+    "./dist/motion.min.css": "./dist/motion.min.css"
   },
-  "author": "Salkom Design Studio",
+  "files": [
+    "dist/",
+    "src/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "postcss src/motion.css -o dist/motion.css && cleancss -o dist/motion.min.css dist/motion.css",
+    "build:watch": "postcss src/motion.css -o dist/motion.css --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "css",
+    "animations",
+    "motion",
+    "ui",
+    "ux",
+    "class-based",
+    "tailwind",
+    "angular",
+    "react",
+    "vue",
+    "bootstrap",
+    "scroll-animations",
+    "loaders",
+    "text-animations",
+    "button-animations",
+    "frontend",
+    "design-system",
+    "salkom",
+    "sds-motion"
+  ],
+  "author": {
+    "name": "Salkom Design Studio",
+    "email": "hello@salkomdesignstudio.com",
+    "url": "https://salkomdesignstudio.com"
+  },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/salkom/sds-motion.git"
+  },
+  "homepage": "https://salkomdesignstudio.com/sds-motion",
+  "bugs": {
+    "url": "https://github.com/salkom/sds-motion/issues"
+  },
   "devDependencies": {
-  }
+    "postcss": "^8.4.35",
+    "postcss-cli": "^11.0.0",
+    "autoprefixer": "^10.4.18",
+    "clean-css-cli": "^5.6.3"
+  },
+  "peerDependencies": {},
+  "engines": {
+    "node": ">=14"
+  },
+  "unpkg": "dist/motion.min.css",
+  "jsdelivr": "dist/motion.min.css"
 }

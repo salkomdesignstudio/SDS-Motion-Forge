@@ -1,0 +1,24 @@
+# Dev / source
+node_modules/
+*.log
+.DS_Store
+.env
+
+# Source (ship only dist)
+# src/ is intentionally kept for transparency
+
+# Config
+.postcssrc*
+postcss.config.*
+.eslintrc*
+.prettierrc*
+
+# Dev tools
+.vscode/
+.idea/
+
+# Docs / demo
+docs/
+demo/
+*.html
+screenshots/
