@@ -1,6 +1,6 @@
 # SDS Motion
 
-**180+ production-ready CSS animations — applied with a single class name.**
+**90+ production-ready CSS animations — applied with a single class name.**
 
 No JavaScript. No dependencies. Drop it into HTML, Angular, React, Vue, Bootstrap, or Tailwind and start animating in seconds.
 
@@ -16,10 +16,6 @@ No JavaScript. No dependencies. Drop it into HTML, Angular, React, Vue, Bootstra
 npm install sds-motion
 ```
 
-```bash
-npx sds-motion init
-```
-
 ---
 
 ## Usage
@@ -29,8 +25,8 @@ npx sds-motion init
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sds-motion/dist/motion.min.css">
 
-<h1 class="sds-fade-up">Hello World</h1>
-<button class="sds-btn-shimmer">Click Me</button>
+<h1 class="sds-velvet-drop">Hello World</h1>
+<button class="sds-btn-magnetic">Click Me</button>
 <div class="sds-card-float">Card</div>
 ```
 
@@ -41,7 +37,7 @@ npx sds-motion init
 ```
 
 ```html
-<h1 class="sds-fade-up">Hello Angular</h1>
+<h1 class="sds-liquid-rise">Hello Angular</h1>
 ```
 
 ### React
@@ -50,7 +46,7 @@ npx sds-motion init
 import 'sds-motion/dist/motion.min.css';
 
 export default function Hero() {
-  return <h1 className="sds-zoom-blur">React Ready</h1>;
+  return <h1 className="sds-phantom-blur">React Ready</h1>;
 }
 ```
 
@@ -63,7 +59,7 @@ import 'sds-motion/dist/motion.min.css';
 
 ```html
 <template>
-  <h1 class="sds-bounce-in">Vue Animated</h1>
+  <h1 class="sds-gravity-drop">Vue Animated</h1>
 </template>
 ```
 
@@ -71,14 +67,14 @@ import 'sds-motion/dist/motion.min.css';
 
 ## Animation Categories
 
-| Category | Prefix | Count | Example Classes |
-|---|---|---|---|
-| **Text** | `sds-` | 30 | `sds-fade-up`, `sds-typewriter`, `sds-glitch`, `sds-wave` |
-| **Buttons** | `sds-btn-` | 30 | `sds-btn-shimmer`, `sds-btn-glow`, `sds-btn-neon`, `sds-btn-bounce` |
-| **Inputs** | `sds-input-` | 30 | `sds-input-focus-glow`, `sds-input-shake`, `sds-input-success` |
-| **Cards** | `sds-card-` | 30 | `sds-card-float`, `sds-card-flip`, `sds-card-neon`, `sds-card-pop` |
-| **Loaders** | `sds-loader-` | 30 | `sds-loader-spin`, `sds-loader-dots`, `sds-loader-progress-glow` |
-| **Scroll** | `sds-scroll-` | 20 | `sds-scroll-fade-up`, `sds-scroll-flip-up`, `sds-scroll-zoom-in` |
+| Category | Prefix | Example Classes |
+|---|---|---|
+| **Text** | `sds-` | `sds-velvet-drop`, `sds-liquid-rise`, `sds-refract`, `sds-phantom-blur` |
+| **Buttons** | `sds-btn-` | `sds-btn-magnetic`, `sds-btn-glow-surge`, `sds-btn-neon`, `sds-btn-plasma` |
+| **Inputs** | `sds-input-` | `sds-input-focus-glow`, `sds-input-shake`, `sds-input-success` |
+| **Cards** | `sds-card-` | `sds-card-float`, `sds-card-flip`, `sds-card-neon`, `sds-card-depth` |
+| **Loaders** | `sds-loader-` | `sds-loader-spin`, `sds-loader-dots`, `sds-loader-progress-glow` |
+| **Scroll** | `sds-scroll-` | `sds-scroll-fade-up`, `sds-scroll-velvet`, `sds-scroll-glitch` |
 
 ---
 
@@ -86,32 +82,31 @@ import 'sds-motion/dist/motion.min.css';
 
 ### Text Animations
 ```html
-<span class="sds-fade-up">Fade Up</span>
-<span class="sds-blur-in">Blur In</span>
-<span class="sds-typewriter">Typewriter</span>
-<span class="sds-glitch">Glitch</span>
-<span class="sds-wave">Wave</span>
-<span class="sds-bounce-in">Bounce In</span>
-<span class="sds-gradient-text">Gradient</span>
-<span class="sds-neon-pulse">Neon</span>
+<span class="sds-velvet-drop">Velvet Drop</span>
+<span class="sds-liquid-rise">Liquid Rise</span>
+<span class="sds-refract">Refract</span>
+<span class="sds-phantom-blur">Phantom Blur</span>
+<span class="sds-gravity-drop">Gravity Drop</span>
+<span class="sds-static-burst">Static Burst</span>
+<span class="sds-elastic-stamp">Elastic Stamp</span>
+<span class="sds-slice-reveal">Slice Reveal</span>
 ```
 
 ### Button Animations
 ```html
-<button class="sds-btn-shimmer">Shimmer</button>
-<button class="sds-btn-glow">Glow Pulse</button>
-<button class="sds-btn-neon">Neon Border</button>
-<button class="sds-btn-bounce">Bounce</button>
-<button class="sds-btn-morph">Morph Shape</button>
-<button class="sds-btn-float">Float Shadow</button>
+<button class="sds-btn-magnetic">Magnetic</button>
+<button class="sds-btn-liquid">Liquid</button>
+<button class="sds-btn-energy">Energy</button>
+<button class="sds-btn-plasma">Plasma</button>
+<button class="sds-btn-neon">Neon</button>
+<button class="sds-btn-lift">Lift Shadow</button>
 ```
 
 ### Card Animations
 ```html
-<div class="sds-card-fade-up">Fade Up</div>
 <div class="sds-card-float">Float</div>
 <div class="sds-card-flip">Flip</div>
-<div class="sds-card-glow-border">Glow Border</div>
+<div class="sds-card-depth">Depth</div>
 <div class="sds-card-neon">Neon</div>
 ```
 
@@ -120,48 +115,69 @@ import 'sds-motion/dist/motion.min.css';
 <div class="sds-loader-spin"></div>
 <div class="sds-loader-dots"></div>
 <div class="sds-loader-progress-glow"></div>
-<div class="sds-loader-skeleton"></div>
 ```
 
-### Scroll Animations (IntersectionObserver auto-activates)
+### Scroll Animations
 ```html
-<section class="sds-scroll-fade-up">Section 1</section>
-<section class="sds-scroll-zoom-in">Section 2</section>
-<section class="sds-scroll-flip-up">Section 3</section>
+<section class="sds-scroll-fade-up">Fades up on scroll</section>
+<section class="sds-scroll-velvet">Velvet drop on scroll</section>
+<section class="sds-scroll-glitch">Glitch reveal on scroll</section>
 ```
 
 ---
 
-## CDN (jsDelivr)
+## Utility Modifiers
 
 ```html
-<!-- Latest -->
+<!-- Delays -->
+<span class="sds-velvet-drop sds-delay-3">Delayed 0.3s</span>
+
+<!-- Speed -->
+<span class="sds-liquid-rise sds-fast">Fast</span>
+<span class="sds-liquid-rise sds-slow">Slow</span>
+<span class="sds-liquid-rise sds-xslow">Very Slow</span>
+
+<!-- Loop -->
+<span class="sds-refract sds-loop">Loops forever</span>
+<span class="sds-refract sds-alt">Alternates</span>
+
+<!-- Pause on hover -->
+<div class="sds-pause-hover">
+  <span class="sds-refract sds-loop">Pauses when you hover the parent</span>
+</div>
+```
+
+---
+
+## CSS Custom Properties (Theming)
+
+Override these to match your brand:
+
+```css
+:root {
+  --sds-primary:       #0015D1;
+  --sds-primary-dim:   rgba(0, 21, 209, 0.08);
+  --sds-primary-glow:  rgba(0, 21, 209, 0.30);
+  --sds-accent:        #d10028;
+  --sds-success:       #00c48c;
+  --sds-duration:      0.8s;
+  --sds-easing:        cubic-bezier(0.22, 1, 0.36, 1);
+}
+```
+
+---
+
+## CDN
+
+```html
+<!-- jsDelivr (recommended) -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sds-motion/dist/motion.min.css">
 
 <!-- Pinned version -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sds-motion@1.0.0/dist/motion.min.css">
-```
 
-## CDN (unpkg)
-
-```html
+<!-- unpkg -->
 <link rel="stylesheet" href="https://unpkg.com/sds-motion/dist/motion.min.css">
-```
-
----
-
-## File Structure
-
-```
-sds-motion/
-├── src/
-│   └── motion.css          # Source (unminified, with comments)
-├── dist/
-│   ├── motion.css          # Built CSS
-│   └── motion.min.css      # Minified (production)
-├── package.json
-├── README.md
-└── LICENSE
 ```
 
 ---

@@ -1,10 +1,9 @@
 {
   "name": "sds-motion",
   "version": "1.0.0",
-  "description": "Production-ready CSS animation library — 180+ class-based animations for text, buttons, inputs, cards, loaders, and scroll. No JavaScript required.",
+  "description": "Production-ready CSS animation library — 90+ class-based animations for text, buttons, inputs, cards, loaders, and scroll. No JavaScript required.",
   "main": "dist/motion.css",
   "style": "dist/motion.css",
-  "module": "dist/motion.css",
   "exports": {
     ".": "./dist/motion.css",
     "./dist/motion.css": "./dist/motion.css",
@@ -22,25 +21,10 @@
     "prepublishOnly": "npm run build"
   },
   "keywords": [
-    "css",
-    "animations",
-    "motion",
-    "ui",
-    "ux",
-    "class-based",
-    "tailwind",
-    "angular",
-    "react",
-    "vue",
-    "bootstrap",
-    "scroll-animations",
-    "loaders",
-    "text-animations",
-    "button-animations",
-    "frontend",
-    "design-system",
-    "salkom",
-    "sds-motion"
+    "css", "animations", "motion", "ui", "ux", "class-based",
+    "tailwind", "angular", "react", "vue", "bootstrap",
+    "scroll-animations", "loaders", "text-animations", "button-animations",
+    "frontend", "design-system", "salkom", "sds-motion"
   ],
   "author": {
     "name": "Salkom Design Studio",
@@ -62,7 +46,6 @@
     "autoprefixer": "^10.4.18",
     "clean-css-cli": "^5.6.3"
   },
-  "peerDependencies": {},
   "engines": {
     "node": ">=14"
   },
