@@ -26,6 +26,7 @@ const REQUIRED_CLASSES = [
   ".sds-slice-reveal",
   ".sds-refract",
   ".sds-static-burst",
+  ".sds-glitch-flicker",
   ".sds-ink-bleed",
   ".sds-btn-magnetic",
   ".sds-btn-liquid",
@@ -69,6 +70,7 @@ const REQUIRED_KEYFRAMES = [
   "sds-inkBleed",
   "sds-refract",
   "sds-staticBurst",
+  "sds-glitchFlicker",
   "sds-kineticWave",
   "sds-magnetPulse",
   "sds-energyRipple",
@@ -140,7 +142,7 @@ console.log("\n===========================================");
 console.log("  SDS Motion Forge - Pre-publish Verification");
 console.log("===========================================\n");
 
-console.log("[ 1/6 ] Checking required files...");
+console.log("[ 1/7 ] Checking required files...");
 for (const filePath of REQUIRED_FILES) {
   if (!fs.existsSync(filePath)) {
     fail(`Missing: ${path.relative(ROOT_DIR, filePath)}`);
@@ -163,8 +165,11 @@ if (!fs.existsSync(srcCssPath) || !fs.existsSync(distCssPath)) {
 
 const srcCSS = fs.readFileSync(srcCssPath, "utf8");
 const distCSS = fs.readFileSync(distCssPath, "utf8");
+const pkg = JSON.parse(fs.readFileSync(path.join(ROOT_DIR, "package.json"), "utf8"));
+const docsPath = path.join(ROOT_DIR, "docs", "index.html");
+const docsHTML = fs.existsSync(docsPath) ? fs.readFileSync(docsPath, "utf8") : "";
 
-console.log("\n[ 2/6 ] Verifying class names in dist/motion.css...");
+console.log("\n[ 2/7 ] Verifying class names in dist/motion.css...");
 for (const cls of REQUIRED_CLASSES) {
   if (hasSelector(distCSS, cls)) {
     pass(cls);
@@ -173,7 +178,7 @@ for (const cls of REQUIRED_CLASSES) {
   }
 }
 
-console.log("\n[ 3/6 ] Verifying @keyframes...");
+console.log("\n[ 3/7 ] Verifying @keyframes...");
 for (const keyframe of REQUIRED_KEYFRAMES) {
   const pattern = `@keyframes ${keyframe}`;
   if (distCSS.includes(pattern)) {
@@ -183,7 +188,7 @@ for (const keyframe of REQUIRED_KEYFRAMES) {
   }
 }
 
-console.log("\n[ 4/6 ] Verifying design tokens and accessibility guardrails...");
+console.log("\n[ 4/7 ] Verifying design tokens and accessibility guardrails...");
 for (const token of REQUIRED_TOKENS) {
   if (distCSS.includes(token)) {
     pass(token);
@@ -197,7 +202,7 @@ if (distCSS.includes("@media (prefers-reduced-motion: reduce)")) {
   fail("Missing reduced motion media query");
 }
 
-console.log("\n[ 5/6 ] Verifying source->dist class parity...");
+console.log("\n[ 5/7 ] Verifying source->dist class parity...");
 const srcSelectors = extractSelectors(srcCSS);
 const distSelectors = extractSelectors(distCSS);
 let missingFromDist = 0;
@@ -211,7 +216,34 @@ if (missingFromDist === 0) {
   pass(`All ${srcSelectors.size} src selectors are present in dist`);
 }
 
-console.log("\n[ 6/6 ] Verifying minified output existence...");
+console.log("\n[ 6/7 ] Verifying package export paths...");
+const requiredExports = [
+  ".",
+  "./dist/motion.css",
+  "./dist/motion.min.css",
+  "./motion.css",
+  "./motion.min.css",
+  "./package.json",
+];
+for (const exportPath of requiredExports) {
+  if (pkg.exports && Object.prototype.hasOwnProperty.call(pkg.exports, exportPath)) {
+    pass(`exports ${exportPath}`);
+  } else {
+    fail(`Missing package export: ${exportPath}`);
+  }
+}
+if (Array.isArray(pkg.sideEffects) && pkg.sideEffects.includes("./dist/motion.css") && pkg.sideEffects.includes("./dist/motion.min.css")) {
+  pass("CSS sideEffects are preserved");
+} else {
+  fail("Package sideEffects must preserve dist CSS imports");
+}
+if (docsHTML && docsHTML.includes('href="../dist/motion.min.css"')) {
+  pass("docs preview uses local dist CSS");
+} else if (docsHTML) {
+  fail("docs preview must load ../dist/motion.min.css, not a stale CDN version");
+}
+
+console.log("\n[ 7/7 ] Verifying minified output existence...");
 const minCssPath = path.join(DIST_DIR, "motion.min.css");
 if (fs.existsSync(minCssPath) && fs.statSync(minCssPath).size > 100) {
   pass("dist/motion.min.css generated");

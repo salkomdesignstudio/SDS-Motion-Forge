@@ -12,7 +12,7 @@
     <!-- SDS Motion Forge CSS -->
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge@3.1.0/dist/motion.min.css"
+      href="../dist/motion.min.css"
     />
 
     <!-- Fonts -->
@@ -4286,162 +4286,6 @@
             desc: "Flickering analog noise with slicing displacement",
             elem: "text",
           },
-
-          /* ── JS-powered typography engines ── */
-          {
-            name: "Word Morph",
-            cls: "sds-js-word-morph",
-            tag: "loop",
-            desc: "Fluid morphing between words with particle reconstruction",
-            elem: "js-word-morph",
-          },
-          {
-            name: "Particle Text",
-            cls: "sds-js-particle-text",
-            tag: "once",
-            desc: "Text dissolves into particles and reforms",
-            elem: "js-particle-text",
-          },
-          {
-            name: "Big Bang Explosion",
-            cls: "sds-js-big-bang",
-            tag: "once",
-            desc: "Explosive particle burst from text center",
-            elem: "js-big-bang",
-          },
-          {
-            name: "Scatter & Return",
-            cls: "sds-js-scatter",
-            tag: "trigger",
-            desc: "Characters scatter on hover and spring back",
-            elem: "js-scatter",
-          },
-          {
-            name: "Jelly Hover",
-            cls: "sds-js-jelly",
-            tag: "trigger",
-            desc: "Squash-and-stretch elastic hover deformation",
-            elem: "js-jelly",
-          },
-          {
-            name: "Wave Cascade",
-            cls: "sds-js-wave-cascade",
-            tag: "loop",
-            desc: "Ripple disturbance propagates character-by-character",
-            elem: "js-wave-cascade",
-          },
-          {
-            name: "Shockwave",
-            cls: "sds-js-shockwave",
-            tag: "trigger",
-            desc: "Click creates radial force impulse affecting nearby letters",
-            elem: "js-shockwave",
-          },
-          {
-            name: "Spring Kerning",
-            cls: "sds-js-spring-kerning",
-            tag: "trigger",
-            desc: "Dynamic spacing expansion based on cursor position",
-            elem: "js-spring-kerning",
-          },
-          {
-            name: "Magnetic Pull",
-            cls: "sds-js-magnetic",
-            tag: "trigger",
-            desc: "Characters subtly attract toward the cursor",
-            elem: "js-magnetic",
-          },
-          {
-            name: "Repulsion Field",
-            cls: "sds-js-repulsion",
-            tag: "trigger",
-            desc: "Cursor pushes letters away with spring restoration",
-            elem: "js-repulsion",
-          },
-          {
-            name: "Center Burst",
-            cls: "sds-js-center-burst",
-            tag: "once",
-            desc: "All characters originate from center and animate outward",
-            elem: "js-center-burst",
-          },
-          {
-            name: "Explode to Formation",
-            cls: "sds-js-explode-form",
-            tag: "once",
-            desc: "Randomised scattered particles smoothly assemble into text",
-            elem: "js-explode-form",
-          },
-          {
-            name: "Gravity Bounce",
-            cls: "sds-js-gravity-bounce",
-            tag: "once",
-            desc: "Characters fall using gravity physics with realistic bounce",
-            elem: "js-gravity-bounce",
-          },
-          {
-            name: "Drop & Settle",
-            cls: "sds-js-drop-settle",
-            tag: "once",
-            desc: "Staggered falling characters with overshoot settling",
-            elem: "js-drop-settle",
-          },
-          {
-            name: "Cursor Trail Distortion",
-            cls: "sds-js-cursor-distort",
-            tag: "trigger",
-            desc: "Cursor movement temporarily distorts nearby text",
-            elem: "js-cursor-distort",
-          },
-          {
-            name: "Liquid Typography",
-            cls: "sds-js-liquid-typo",
-            tag: "loop",
-            desc: "Letters behave like connected fluid masses",
-            elem: "js-liquid-typo",
-          },
-          {
-            name: "Neon Pulse Typography",
-            cls: "sds-js-neon-pulse",
-            tag: "loop",
-            desc: "Glow pulse synchronised with interaction state",
-            elem: "js-neon-pulse",
-          },
-          {
-            name: "Elastic Rotation",
-            cls: "sds-js-elastic-rot",
-            tag: "trigger",
-            desc: "Individual characters rotate with spring recovery",
-            elem: "js-elastic-rot",
-          },
-          {
-            name: "Orbit Hover",
-            cls: "sds-js-orbit-hover",
-            tag: "trigger",
-            desc: "Hovered character causes neighbours to orbit subtly",
-            elem: "js-orbit-hover",
-          },
-          {
-            name: "Noise Glitch",
-            cls: "sds-js-noise-glitch",
-            tag: "loop",
-            desc: "Procedural digital glitch with RGB split and displacement",
-            elem: "js-noise-glitch",
-          },
-          {
-            name: "Velocity Blur Motion",
-            cls: "sds-js-velocity-blur",
-            tag: "once",
-            desc: "Fast-moving text gains directional motion blur",
-            elem: "js-velocity-blur",
-          },
-          {
-            name: "Text Implode",
-            cls: "sds-js-implode",
-            tag: "once",
-            desc: "Shattered text elements implode inward to lock into place",
-            elem: "js-implode",
-          },
         ],
         buttons: [
           {
@@ -5439,6 +5283,7 @@
         setTimeout(() => preview.classList.remove("replaying"), 400);
 
         const inner = preview.querySelector(".anim-preview-inner");
+        cleanupJSAnimations(inner);
         inner.innerHTML = "";
         void preview.offsetWidth;
         inner.innerHTML = buildPreviewHTML(anim);
@@ -5463,6 +5308,7 @@
           `.${anim.cls}`;
 
         const previewContent = document.getElementById("modal-preview-content");
+        cleanupJSAnimations(previewContent);
         previewContent.innerHTML = "";
         void previewContent.offsetWidth;
         previewContent.innerHTML = buildPreviewHTML(anim);
@@ -5484,6 +5330,7 @@
       }
 
       function closeModal() {
+        cleanupJSAnimations(document.getElementById("modal-preview-content"));
         document.getElementById("modal").classList.remove("open");
         document.body.style.overflow = "";
         activeModalAnim = null;
@@ -5492,6 +5339,7 @@
       function replayModal() {
         if (!activeModalAnim) return;
         const previewContent = document.getElementById("modal-preview-content");
+        cleanupJSAnimations(previewContent);
         previewContent.innerHTML = "";
         void previewContent.offsetWidth;
         previewContent.innerHTML = buildPreviewHTML(activeModalAnim);
@@ -5706,6 +5554,89 @@
       /* ═══════════════════════════════════════════════════════
       JS-POWERED INTERACTIVE ENGINES
      ═══════════════════════════════════════════════════════ */
+      const jsAnimationInstances = new WeakMap();
+
+      function createJSAnimationScope(el) {
+        const existing = jsAnimationInstances.get(el);
+        if (existing) existing.cleanup();
+
+        const timers = new Set();
+        const intervals = new Set();
+        const frames = new Set();
+        const listeners = [];
+        let active = true;
+
+        const scope = {
+          get active() {
+            return active && el.isConnected;
+          },
+          setTimeout(fn, delay) {
+            const id = window.setTimeout(() => {
+              timers.delete(id);
+              if (scope.active) fn();
+            }, delay);
+            timers.add(id);
+            return id;
+          },
+          setInterval(fn, delay) {
+            const id = window.setInterval(() => {
+              if (scope.active) {
+                fn();
+              } else {
+                window.clearInterval(id);
+                intervals.delete(id);
+              }
+            }, delay);
+            intervals.add(id);
+            return id;
+          },
+          requestAnimationFrame(fn) {
+            const id = window.requestAnimationFrame((time) => {
+              frames.delete(id);
+              if (scope.active) fn(time);
+            });
+            frames.add(id);
+            return id;
+          },
+          listen(target, type, handler, options) {
+            target.addEventListener(type, handler, options);
+            listeners.push([target, type, handler, options]);
+          },
+          cleanup() {
+            active = false;
+            timers.forEach((id) => window.clearTimeout(id));
+            intervals.forEach((id) => window.clearInterval(id));
+            frames.forEach((id) => window.cancelAnimationFrame(id));
+            listeners.forEach(([target, type, handler, options]) => {
+              target.removeEventListener(type, handler, options);
+            });
+            timers.clear();
+            intervals.clear();
+            frames.clear();
+            listeners.length = 0;
+          },
+        };
+
+        jsAnimationInstances.set(el, scope);
+        return scope;
+      }
+
+      function cleanupJSAnimations(root) {
+        if (!root) return;
+        const nodes = root.matches && root.matches("[data-js-anim], canvas[data-js-anim]")
+          ? [root]
+          : [];
+        root
+          .querySelectorAll("[data-js-anim], canvas[data-js-anim]")
+          .forEach((el) => nodes.push(el));
+        nodes.forEach((el) => {
+          const scope = jsAnimationInstances.get(el);
+          if (scope) {
+            scope.cleanup();
+            jsAnimationInstances.delete(el);
+          }
+        });
+      }
 
       function bootJSAnimations(root) {
         const reducedMotion = window.matchMedia(
@@ -5714,6 +5645,7 @@
 
         /* Canvas Primitives */
         root.querySelectorAll("canvas[data-js-anim]").forEach((canvas) => {
+          if (jsAnimationInstances.has(canvas)) return;
           const type = canvas.getAttribute("data-js-anim");
           const text = canvas.getAttribute("data-text") || "Motion";
           if (type === "particle-text")
@@ -5724,6 +5656,7 @@
         /* Node Hierarchy Containers */
         root.querySelectorAll("[data-js-anim]").forEach((el) => {
           if (el.tagName === "CANVAS") return;
+          if (jsAnimationInstances.has(el)) return;
           const type = el.getAttribute("data-js-anim");
           switch (type) {
             case "word-morph":
@@ -5774,6 +5707,7 @@
       1. WORD MORPH
      ────────────────────────────────────────────────────── */
       function initWordMorph(container, words, reduced) {
+        const scope = createJSAnimationScope(container);
         container.innerHTML = "";
         const span = document.createElement("span");
         span.className = "sds-word-morph-text";
@@ -5791,7 +5725,7 @@
           span.style.filter = "blur(0px)";
 
           if (reduced) {
-            setTimeout(morph, 1600);
+            scope.setTimeout(morph, 1600);
             return;
           }
 
@@ -5799,7 +5733,7 @@
           const dur = 600;
           let step = 0;
 
-          const out = setInterval(() => {
+          const out = scope.setInterval(() => {
             step++;
             const t = step / steps;
             span.style.opacity = String(1 - t);
@@ -5809,14 +5743,14 @@
               span.textContent = next;
               span.style.opacity = "0";
               step = 0;
-              const ins = setInterval(() => {
+              const ins = scope.setInterval(() => {
                 step++;
                 const t2 = step / steps;
                 span.style.opacity = String(t2);
                 span.style.filter = `blur(${(1 - t2) * 8}px)`;
                 if (step >= steps) {
                   clearInterval(ins);
-                  setTimeout(morph, 1400);
+                  scope.setTimeout(morph, 1400);
                 }
               }, dur / steps);
             }
@@ -5829,6 +5763,7 @@
       2. PARTICLE TEXT
      ────────────────────────────────────────────────────── */
       function initParticleText(canvas, text, reduced) {
+        const scope = createJSAnimationScope(canvas);
         const ctx = canvas.getContext("2d");
         const W = canvas.width;
         const H = canvas.height;
@@ -5897,13 +5832,13 @@
 
           if (phase === "assemble" && allDone) {
             phase = "hold";
-            holdTimer = setTimeout(() => {
+            holdTimer = scope.setTimeout(() => {
               phase = "dissolve";
               particles.forEach((p) => {
                 p.vx = (Math.random() - 0.5) * 3;
                 p.vy = (Math.random() - 0.5) * 3;
               });
-              setTimeout(() => {
+              scope.setTimeout(() => {
                 phase = "assemble";
                 particles.forEach((p) => {
                   p.x = Math.random() * W;
@@ -5916,9 +5851,9 @@
             }, 1600);
           }
 
-          requestAnimationFrame(tick);
+          scope.requestAnimationFrame(tick);
         }
-        requestAnimationFrame(tick);
+        scope.requestAnimationFrame(tick);
       }
 
       /* ──────────────────────────────────────────────────────
@@ -5927,6 +5862,7 @@
       const bigBangMap = new WeakMap();
 
       function initBigBang(canvas, text, reduced) {
+        const scope = createJSAnimationScope(canvas);
         const ctx = canvas.getContext("2d");
         const W = canvas.width;
         const H = canvas.height;
@@ -6003,19 +5939,27 @@
               ctx.fill();
             });
             ctx.globalAlpha = 1;
-            if (frame < 180) requestAnimationFrame(tick);
+            if (frame < 180) scope.requestAnimationFrame(tick);
           }
-          requestAnimationFrame(tick);
+          scope.requestAnimationFrame(tick);
         }
 
         bigBangMap.set(canvas, bang);
         bang();
       }
 
+      function triggerBigBang(btn) {
+        const wrap = btn && btn.closest(".sds-bigbang-wrap");
+        const canvas = wrap && wrap.querySelector("canvas[data-js-anim='big-bang']");
+        const bang = canvas && bigBangMap.get(canvas);
+        if (bang) bang();
+      }
+
       /* ──────────────────────────────────────────────────────
       4. SCATTER & RETURN (Touch-Responsive)
      ────────────────────────────────────────────────────── */
       function initScatterReturn(container, reduced) {
+        const scope = createJSAnimationScope(container);
         const chars = container.querySelectorAll(".sds-scatter-char");
         if (reduced) return;
 
@@ -6041,10 +5985,11 @@
           });
         }
 
-        container.addEventListener("mouseenter", scatter);
-        container.addEventListener("mouseleave", returnToForm);
+        scope.listen(container, "mouseenter", scatter);
+        scope.listen(container, "mouseleave", returnToForm);
 
-        container.addEventListener(
+        scope.listen(
+          container,
           "touchstart",
           (e) => {
             e.preventDefault();
@@ -6052,13 +5997,14 @@
           },
           { passive: false },
         );
-        container.addEventListener("touchend", returnToForm);
+        scope.listen(container, "touchend", returnToForm);
       }
 
       /* ──────────────────────────────────────────────────────
       5. JELLY HOVER
      ────────────────────────────────────────────────────── */
       function initJellyHover(container, reduced) {
+        const scope = createJSAnimationScope(container);
         const chars = container.querySelectorAll(".sds-jelly-char");
         if (reduced) return;
 
@@ -6107,6 +6053,7 @@
       6. SHOCKWAVE CLICK
      ────────────────────────────────────────────────────── */
       function initShockwave(container, reduced) {
+        const scope = createJSAnimationScope(container);
         const chars = container.querySelectorAll(".sds-shockwave-char");
         if (reduced) return;
 
@@ -6151,6 +6098,7 @@
       7. SPRING KERNING (Touch-Unified)
      ────────────────────────────────────────────────────── */
       function initSpringKerning(container, reduced) {
+        const scope = createJSAnimationScope(container);
         const chars = container.querySelectorAll(".sds-spring-kerning-char");
         if (reduced) return;
 
@@ -6192,6 +6140,7 @@
       8. MAGNETIC PULL (Touch-Unified)
      ────────────────────────────────────────────────────── */
       function initMagneticPull(container, reduced) {
+        const scope = createJSAnimationScope(container);
         const chars = container.querySelectorAll(".sds-magnetic-char");
         if (reduced) return;
 
@@ -6244,6 +6193,7 @@
       9. REPULSION FIELD (Touch-Unified)
      ────────────────────────────────────────────────────── */
       function initRepulsionField(container, reduced) {
+        const scope = createJSAnimationScope(container);
         const chars = container.querySelectorAll(".sds-repulsion-char");
         if (reduced) return;
 
@@ -6298,6 +6248,7 @@
       10. GRAVITY BOUNCE
      ────────────────────────────────────────────────────── */
       function initGravityBounce(container, reduced) {
+        const scope = createJSAnimationScope(container);
         const chars = Array.from(
           container.querySelectorAll(".sds-gravity-char"),
         );
@@ -6344,15 +6295,16 @@
             chars[i].style.transform = `translateY(${s.y}px)`;
             allSettled = false;
           });
-          if (!allSettled) requestAnimationFrame(tick);
+          if (!allSettled) scope.requestAnimationFrame(tick);
         }
-        requestAnimationFrame(tick);
+        scope.requestAnimationFrame(tick);
       }
 
       /* ──────────────────────────────────────────────────────
       11. CURSOR TRAIL DISTORTION (Touch-Unified)
      ────────────────────────────────────────────────────── */
       function initCursorDistort(container, reduced) {
+        const scope = createJSAnimationScope(container);
         const chars = container.querySelectorAll(".sds-cursor-distort-char");
         if (reduced) return;
 
@@ -6411,6 +6363,7 @@
       12. ELASTIC ROTATION
      ────────────────────────────────────────────────────── */
       function initElasticRotation(container, reduced) {
+        const scope = createJSAnimationScope(container);
         const chars = container.querySelectorAll(".sds-elastic-rot-char");
         if (reduced) return;
 
@@ -6446,6 +6399,7 @@
       13. ORBIT HOVER
      ────────────────────────────────────────────────────── */
       function initOrbitHover(container, reduced) {
+        const scope = createJSAnimationScope(container);
         const chars = container.querySelectorAll(".sds-orbit-char");
         if (reduced) return;
 
@@ -6490,6 +6444,7 @@
       14. TEXT IMPLODE
      ────────────────────────────────────────────────────── */
       function initTextImplode(container, reduced) {
+        const scope = createJSAnimationScope(container);
         const chars = container.querySelectorAll(".sds-implode-char");
         if (reduced) return;
 

@@ -11,6 +11,8 @@
       "types": "./index.d.ts",
       "default": "./dist/motion.css"
     },
+    "./dist/motion.css": "./dist/motion.css",
+    "./dist/motion.min.css": "./dist/motion.min.css",
     "./motion.css": "./dist/motion.css",
     "./motion.min.css": "./dist/motion.min.css",
     "./package.json": "./package.json"
@@ -85,5 +87,8 @@
   "sideEffects": [
     "./dist/motion.css",
     "./dist/motion.min.css"
-  ]
+  ],
+  "dependencies": {
+    "@salkomdesignstudio/sds-motion-forge": "file:salkomdesignstudio-sds-motion-forge-3.2.0.tgz"
+  }
 }

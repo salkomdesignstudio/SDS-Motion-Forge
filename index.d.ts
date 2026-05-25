@@ -24,6 +24,16 @@ declare module '@salkomdesignstudio/sds-motion-forge/dist/motion.min.css' {
   export default styles;
 }
 
+declare module '@salkomdesignstudio/sds-motion-forge/motion.css' {
+  const styles: Record<string, string>;
+  export default styles;
+}
+
+declare module '@salkomdesignstudio/sds-motion-forge/motion.min.css' {
+  const styles: Record<string, string>;
+  export default styles;
+}
+
 declare module '@salkomdesignstudio/sds-motion-forge' {
   const styles: Record<string, string>;
   export default styles;
@@ -40,6 +50,7 @@ export type SdsTextAnimation =
   | 'sds-phantom-blur'
   | 'sds-gravity-drop'
   | 'sds-static-burst'
+  | 'sds-glitch-flicker'
   | 'sds-elastic-stamp'
   | 'sds-slice-reveal'
   | 'sds-char-orbit'
