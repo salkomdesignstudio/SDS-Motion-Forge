@@ -2,30 +2,16 @@
   "name": "@salkomdesignstudio/sds-motion-forge",
   "version": "3.1.0",
   "description": "Production-ready CSS animation library — 90+ class-based animations for text, buttons, inputs, cards, loaders, and scroll. No JavaScript required.",
-  "main": "dist/motion.css",
-  "style": "dist/motion.css",
+  "type": "commonjs",
+  "main": "./dist/motion.css",
+  "style": "./dist/motion.css",
   "exports": {
-    ".": {
-      "style": "./dist/motion.css",
-      "default": "./dist/motion.css"
-    },
-    "./dist/motion.css": {
-      "style": "./dist/motion.css",
-      "default": "./dist/motion.css"
-    },
-    "./dist/motion.min.css": {
-      "style": "./dist/motion.min.css",
-      "default": "./dist/motion.min.css"
-    },
-    "./src/motion.css": {
-      "style": "./src/motion.css",
-      "default": "./src/motion.css"
-    }
+    ".": "./dist/motion.css",
+    "./motion.css": "./dist/motion.css",
+    "./motion.min.css": "./dist/motion.min.css"
   },
   "files": [
     "dist/",
-    "src/",
-    "types/",
     "README.md",
     "LICENSE",
     "CHANGELOG.md"
@@ -34,8 +20,9 @@
     "build": "postcss src/motion.css -o dist/motion.css && clean-css-cli -o dist/motion.min.css dist/motion.css",
     "build:dev": "postcss src/motion.css -o dist/motion.css --map",
     "build:watch": "postcss src/motion.css -o dist/motion.css --watch",
-    "build:verify": "node scripts/verify-build.js",
-    "prepublishOnly": "npm run build && npm run build:verify"
+    "build:verify": "node verify-build.js",
+    "validate": "publint",
+    "prepublishOnly": "npm run build && npm run build:verify && npm run validate"
   },
   "keywords": [
     "css",
@@ -76,19 +63,19 @@
     "url": "https://github.com/salkomdesignstudio/SDS-Motion-Forge/issues"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.18",
+    "clean-css-cli": "^5.6.3",
     "postcss": "^8.4.35",
     "postcss-cli": "^11.0.0",
-    "autoprefixer": "^10.4.18",
-    "clean-css-cli": "^5.6.3"
+    "publint": "^0.3.21"
   },
   "engines": {
     "node": ">=14"
   },
-  "unpkg": "dist/motion.min.css",
-  "jsdelivr": "dist/motion.min.css",
+  "unpkg": "./dist/motion.min.css",
+  "jsdelivr": "./dist/motion.min.css",
   "sideEffects": [
-    "dist/motion.css",
-    "dist/motion.min.css",
-    "src/motion.css"
+    "./dist/motion.css",
+    "./dist/motion.min.css"
   ]
 }
