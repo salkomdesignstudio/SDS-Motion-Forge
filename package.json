@@ -1,17 +1,23 @@
 {
   "name": "@salkomdesignstudio/sds-motion-forge",
   "version": "3.2.0",
-  "description": "Production-ready CSS animation library — 90+ class-based animations for text, buttons, inputs, cards, loaders, and scroll. No JavaScript required.",
+  "description": "Production-ready CSS animation library - 90+ class-based animations for text, buttons, inputs, cards, loaders, and scroll. No JavaScript required.",
   "type": "commonjs",
   "main": "./dist/motion.css",
   "style": "./dist/motion.css",
+  "types": "./index.d.ts",
   "exports": {
-    ".": "./dist/motion.css",
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./dist/motion.css"
+    },
     "./motion.css": "./dist/motion.css",
-    "./motion.min.css": "./dist/motion.min.css"
+    "./motion.min.css": "./dist/motion.min.css",
+    "./package.json": "./package.json"
   },
   "files": [
     "dist/",
+    "index.d.ts",
     "README.md",
     "LICENSE",
     "CHANGELOG.md"
@@ -22,7 +28,9 @@
     "build:watch": "postcss src/motion.css -o dist/motion.css --watch",
     "build:verify": "node verify-build.js",
     "validate": "publint",
-    "prepublishOnly": "npm run build && npm run build:verify && npm run validate"
+    "pack:check": "npm pack --dry-run",
+    "release:check": "npm run build && npm run build:verify && npm run validate && npm run pack:check",
+    "prepublishOnly": "npm run release:check"
   },
   "keywords": [
     "css",

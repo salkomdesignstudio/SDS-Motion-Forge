@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * SDS Motion Forge — Build Verification Script
+ * SDS Motion Forge - Build Verification Script
  * Runs during prepublishOnly to catch regressions before npm publish.
  */
 
@@ -8,7 +8,6 @@ const fs = require("fs");
 const path = require("path");
 
 const ROOT_DIR = __dirname;
-
 const DIST_DIR = path.join(ROOT_DIR, "dist");
 const SRC_DIR = path.join(ROOT_DIR, "src");
 
@@ -18,9 +17,7 @@ const REQUIRED_FILES = [
   path.join(SRC_DIR, "motion.css"),
 ];
 
-// Critical class names that must exist after build
 const REQUIRED_CLASSES = [
-  // Text
   ".sds-velvet-drop",
   ".sds-liquid-rise",
   ".sds-phantom-blur",
@@ -30,8 +27,6 @@ const REQUIRED_CLASSES = [
   ".sds-refract",
   ".sds-static-burst",
   ".sds-ink-bleed",
-
-  // Buttons
   ".sds-btn-magnetic",
   ".sds-btn-liquid",
   ".sds-btn-energy",
@@ -39,34 +34,22 @@ const REQUIRED_CLASSES = [
   ".sds-btn-neon",
   ".sds-btn-lift",
   ".sds-btn-glow-surge",
-
-  // Inputs
   ".sds-input-focus",
   ".sds-input-shake",
   ".sds-input-success",
-
-  // Cards
   ".sds-card-float",
   ".sds-card-holo",
   ".sds-card-portal",
-
-  // Loaders
   ".sds-loader-orbital",
   ".sds-loader-dots",
   ".sds-loader-wave",
-
-  // Scroll
   ".sds-scroll-rise",
   ".sds-scroll-curtain",
   ".sds-scroll-velvet",
-
-  // Utilities
   ".sds-delay-1",
   ".sds-fast",
   ".sds-loop",
   ".sds-pause-hover",
-
-  // Legacy aliases
   ".sds-scroll-fade-up",
   ".sds-input-focus-glow",
   ".sds-card-neon",
@@ -75,7 +58,6 @@ const REQUIRED_CLASSES = [
   ".sds-loader-progress-glow",
 ];
 
-// Critical @keyframes
 const REQUIRED_KEYFRAMES = [
   "sds-velvetDrop",
   "sds-liquidRise",
@@ -124,89 +106,6 @@ const REQUIRED_KEYFRAMES = [
   "sds-cursorBlink",
 ];
 
-let errors = 0;
-
-function fail(message) {
-  console.error(`  ✗ ${message}`);
-  errors++;
-}
-
-function pass(message) {
-  console.log(`  ✓ ${message}`);
-}
-
-console.log("\n═══════════════════════════════════════════");
-console.log("  SDS Motion Forge — Pre-publish Verification");
-console.log("═══════════════════════════════════════════\n");
-
-/**
- * STEP 1 — Verify required files
- */
-console.log("[ 1/4 ] Checking required files...");
-
-REQUIRED_FILES.forEach((filePath) => {
-  if (fs.existsSync(filePath)) {
-    const size = fs.statSync(filePath).size;
-
-    if (size < 100) {
-      fail(
-        `${path.basename(filePath)} exists but is suspiciously small (${size} bytes)`,
-      );
-    } else {
-      pass(
-        `${path.relative(ROOT_DIR, filePath)} (${(size / 1024).toFixed(1)} KB)`,
-      );
-    }
-  } else {
-    fail(`Missing: ${path.relative(ROOT_DIR, filePath)}`);
-  }
-});
-
-/**
- * STEP 2 — Load dist CSS safely
- */
-const DIST_CSS_PATH = path.join(DIST_DIR, "motion.css");
-
-if (!fs.existsSync(DIST_CSS_PATH)) {
-  console.error("\n❌ dist/motion.css does not exist.\n");
-  process.exit(1);
-}
-
-const distCSS = fs.readFileSync(DIST_CSS_PATH, "utf8");
-
-/**
- * STEP 3 — Verify classes
- */
-console.log("\n[ 2/4 ] Verifying class names in dist/motion.css...");
-
-REQUIRED_CLASSES.forEach((cls) => {
-  if (distCSS.includes(cls)) {
-    pass(cls);
-  } else {
-    fail(`Missing class: ${cls}`);
-  }
-});
-
-/**
- * STEP 4 — Verify keyframes
- */
-console.log("\n[ 3/4 ] Verifying @keyframes in dist/motion.css...");
-
-REQUIRED_KEYFRAMES.forEach((kf) => {
-  const pattern = `@keyframes ${kf}`;
-
-  if (distCSS.includes(pattern)) {
-    pass(`@keyframes ${kf}`);
-  } else {
-    fail(`Missing @keyframes: ${kf}`);
-  }
-});
-
-/**
- * STEP 5 — Verify design tokens
- */
-console.log("\n[ 4/4 ] Verifying design tokens...");
-
 const REQUIRED_TOKENS = [
   "--sds-primary",
   "--sds-accent",
@@ -215,23 +114,115 @@ const REQUIRED_TOKENS = [
   "--sds-easing",
 ];
 
-REQUIRED_TOKENS.forEach((token) => {
+let errors = 0;
+
+function fail(message) {
+  console.error(`  x ${message}`);
+  errors += 1;
+}
+
+function pass(message) {
+  console.log(`  ok ${message}`);
+}
+
+function hasSelector(css, selector) {
+  const escaped = selector.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const pattern = new RegExp(`(^|[\\s,>+~])${escaped}(?=[\\s:{[.#>+~]|$)`, "m");
+  return pattern.test(css);
+}
+
+function extractSelectors(css) {
+  const matches = css.match(/\.sds-[a-z0-9-]+/g) || [];
+  return new Set(matches);
+}
+
+console.log("\n===========================================");
+console.log("  SDS Motion Forge - Pre-publish Verification");
+console.log("===========================================\n");
+
+console.log("[ 1/6 ] Checking required files...");
+for (const filePath of REQUIRED_FILES) {
+  if (!fs.existsSync(filePath)) {
+    fail(`Missing: ${path.relative(ROOT_DIR, filePath)}`);
+    continue;
+  }
+  const size = fs.statSync(filePath).size;
+  if (size < 100) {
+    fail(`${path.basename(filePath)} is suspiciously small (${size} bytes)`);
+  } else {
+    pass(`${path.relative(ROOT_DIR, filePath)} (${(size / 1024).toFixed(1)} KB)`);
+  }
+}
+
+const srcCssPath = path.join(SRC_DIR, "motion.css");
+const distCssPath = path.join(DIST_DIR, "motion.css");
+if (!fs.existsSync(srcCssPath) || !fs.existsSync(distCssPath)) {
+  console.error("\nBuild artifacts missing; aborting.");
+  process.exit(1);
+}
+
+const srcCSS = fs.readFileSync(srcCssPath, "utf8");
+const distCSS = fs.readFileSync(distCssPath, "utf8");
+
+console.log("\n[ 2/6 ] Verifying class names in dist/motion.css...");
+for (const cls of REQUIRED_CLASSES) {
+  if (hasSelector(distCSS, cls)) {
+    pass(cls);
+  } else {
+    fail(`Missing class selector: ${cls}`);
+  }
+}
+
+console.log("\n[ 3/6 ] Verifying @keyframes...");
+for (const keyframe of REQUIRED_KEYFRAMES) {
+  const pattern = `@keyframes ${keyframe}`;
+  if (distCSS.includes(pattern)) {
+    pass(pattern);
+  } else {
+    fail(`Missing ${pattern}`);
+  }
+}
+
+console.log("\n[ 4/6 ] Verifying design tokens and accessibility guardrails...");
+for (const token of REQUIRED_TOKENS) {
   if (distCSS.includes(token)) {
     pass(token);
   } else {
     fail(`Missing token: ${token}`);
   }
-});
-
-/**
- * FINAL SUMMARY
- */
-console.log("\n═══════════════════════════════════════════");
-
-if (errors === 0) {
-  console.log("  ✅ All checks passed — safe to publish.\n");
-  process.exit(0);
-} else {
-  console.error(`  ❌ ${errors} check(s) failed — aborting publish.\n`);
-  process.exit(1);
 }
+if (distCSS.includes("@media (prefers-reduced-motion: reduce)")) {
+  pass("prefers-reduced-motion block");
+} else {
+  fail("Missing reduced motion media query");
+}
+
+console.log("\n[ 5/6 ] Verifying source->dist class parity...");
+const srcSelectors = extractSelectors(srcCSS);
+const distSelectors = extractSelectors(distCSS);
+let missingFromDist = 0;
+for (const selector of srcSelectors) {
+  if (!distSelectors.has(selector)) {
+    fail(`Selector exists in src but not dist: ${selector}`);
+    missingFromDist += 1;
+  }
+}
+if (missingFromDist === 0) {
+  pass(`All ${srcSelectors.size} src selectors are present in dist`);
+}
+
+console.log("\n[ 6/6 ] Verifying minified output existence...");
+const minCssPath = path.join(DIST_DIR, "motion.min.css");
+if (fs.existsSync(minCssPath) && fs.statSync(minCssPath).size > 100) {
+  pass("dist/motion.min.css generated");
+} else {
+  fail("dist/motion.min.css missing or empty");
+}
+
+console.log("\n===========================================");
+if (errors === 0) {
+  console.log("  All checks passed - safe to publish.\n");
+  process.exit(0);
+}
+console.error(`  ${errors} check(s) failed - aborting publish.\n`);
+process.exit(1);

@@ -65,6 +65,21 @@ That's it. No initialization, no data attributes, no configuration files.
 
 ---
 
+## Backward Compatibility
+
+The following legacy aliases are intentionally preserved for existing projects:
+
+- `sds-scroll-fade-up` -> `sds-scroll-rise`
+- `sds-input-focus-glow` -> `sds-input-focus`
+- `sds-card-neon` -> `sds-card-glow`
+- `sds-card-depth` -> `sds-card-parallax`
+- `sds-card-flip` -> `sds-card-slice`
+- `sds-loader-progress-glow` -> `sds-loader-progress`
+
+They are validated in CI and in pre-publish checks to prevent accidental breakage.
+
+---
+
 ## Framework Integration
 
 ### Plain HTML
@@ -328,7 +343,7 @@ SDS-Motion-Forge/
 └── package.json
 ```
 
-The source is organized into category modules (text, buttons, inputs, cards, loaders, scroll) and compiled via PostCSS into a single `dist/motion.min.css`. Importing or linking to that one file is all that's needed to access the full library.
+The source is maintained in `src/motion.css` (category sections in a single source file) and compiled via PostCSS into `dist/motion.css` and `dist/motion.min.css`. Importing or linking one dist file is all that's needed.
 
 ---
 

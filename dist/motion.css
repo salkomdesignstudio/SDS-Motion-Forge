@@ -1073,6 +1073,47 @@
   animation: sds-staticBurst 0.6s steps(1) both, sds-viewportRise 0.8s var(--sds-easing) both;
 }
 
+/* ============================================================
+   LEGACY ALIASES (BACKWARD COMPATIBILITY)
+   Keep these stable for existing consumers across releases.
+   ============================================================ */
+
+.sds-scroll-fade-up { animation: sds-viewportRise 0.8s var(--sds-easing) both; }
+.sds-input-focus-glow:focus { animation: sds-focusField 0.45s ease both; }
+.sds-card-neon { animation: sds-glowSurge 2.5s ease infinite; }
+.sds-card-depth { animation: sds-parallaxDepth 4s ease infinite; }
+.sds-card-flip { animation: sds-sliceUp 0.6s var(--sds-easing) both; }
+.sds-loader-progress-glow { animation: sds-progressGlow 2.4s ease infinite; }
+
+/* Reduce paint jitter for continuous motion classes. */
+.sds-refract,
+.sds-static-burst,
+.sds-neon-flare,
+.sds-scramble-decode,
+.sds-btn-neon,
+.sds-btn-plasma,
+.sds-card-float,
+.sds-card-holo,
+.sds-card-magnetic,
+.sds-loader-vortex,
+.sds-loader-fluid,
+.sds-loader-orbital::before,
+.sds-loader-orbital::after {
+  will-change: transform, opacity;
+}
+
+/* Respect OS-level reduced motion settings. */
+@media (prefers-reduced-motion: reduce) {
+  [class*="sds-"],
+  [class*="sds-"]::before,
+  [class*="sds-"]::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 
 /* ============================================================
    UTILITY MODIFIERS
