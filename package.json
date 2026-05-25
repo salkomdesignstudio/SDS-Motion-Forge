@@ -1,24 +1,41 @@
 {
   "name": "@salkomdesignstudio/sds-motion-forge",
-  "version": "3.0.2",
+  "version": "3.1.0",
   "description": "Production-ready CSS animation library — 90+ class-based animations for text, buttons, inputs, cards, loaders, and scroll. No JavaScript required.",
   "main": "dist/motion.css",
   "style": "dist/motion.css",
   "exports": {
-    ".": "./dist/motion.css",
-    "./dist/motion.css": "./dist/motion.css",
-    "./dist/motion.min.css": "./dist/motion.min.css"
+    ".": {
+      "style": "./dist/motion.css",
+      "default": "./dist/motion.css"
+    },
+    "./dist/motion.css": {
+      "style": "./dist/motion.css",
+      "default": "./dist/motion.css"
+    },
+    "./dist/motion.min.css": {
+      "style": "./dist/motion.min.css",
+      "default": "./dist/motion.min.css"
+    },
+    "./src/motion.css": {
+      "style": "./src/motion.css",
+      "default": "./src/motion.css"
+    }
   },
   "files": [
     "dist/",
     "src/",
+    "types/",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "CHANGELOG.md"
   ],
   "scripts": {
-    "build": "postcss src/motion.css -o dist/motion.css && cleancss -o dist/motion.min.css dist/motion.css",
+    "build": "postcss src/motion.css -o dist/motion.css && clean-css-cli -o dist/motion.min.css dist/motion.css",
+    "build:dev": "postcss src/motion.css -o dist/motion.css --map",
     "build:watch": "postcss src/motion.css -o dist/motion.css --watch",
-    "prepublishOnly": "npm run build"
+    "build:verify": "node scripts/verify-build.js",
+    "prepublishOnly": "npm run build && npm run build:verify"
   },
   "keywords": [
     "css",
@@ -39,7 +56,10 @@
     "frontend",
     "design-system",
     "salkom",
-    "sds-motion"
+    "sds-motion",
+    "keyframes",
+    "no-javascript",
+    "pure-css"
   ],
   "author": {
     "name": "Salkom Design Studio",
@@ -65,5 +85,10 @@
     "node": ">=14"
   },
   "unpkg": "dist/motion.min.css",
-  "jsdelivr": "dist/motion.min.css"
+  "jsdelivr": "dist/motion.min.css",
+  "sideEffects": [
+    "dist/motion.css",
+    "dist/motion.min.css",
+    "src/motion.css"
+  ]
 }

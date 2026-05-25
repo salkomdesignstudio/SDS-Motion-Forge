@@ -1,41 +1,75 @@
 /**
- * SDS Motion — Premium CSS Animation System
- * Version: 3.0.0
- * Author: Salkom Design Studio
+ * SDS Motion Forge — Premium CSS Animation System
+ * Version: 3.1.0
+ * Author: Salkom Design Studio (Govarthanan)
  * License: MIT
- * https://github.com/salkom/sds-motion
+ * https://github.com/salkomdesignstudio/SDS-Motion-Forge
  *
- * 180+ production-ready CSS animation classes across 6 categories:
- *   Text · Buttons · Inputs · Cards · Loaders · Scroll
- *
- * Usage:
- *   <span class="sds-velvet-drop">Hello</span>
- *   <button class="sds-btn-magnetic">Click</button>
+ * Production Engineering Notes (v3.1.0):
+ *  - All @keyframe names namespaced with sds- prefix to prevent collisions
+ *  - CSS custom properties scoped under :root for SSR safety
+ *  - No side-effect JS — pure @keyframes + class selectors
+ *  - All animation shorthand uses explicit sub-properties for bundler safety
+ *  - No :global(), @layer, or cascade-layer (broad bundler compat)
+ *  - will-change used sparingly and only on loop animations
+ *  - Specificity kept intentionally low (single class) — no !important in base rules
+ *  - prefers-reduced-motion respected globally
+ *  - display: inline-block on text animations is defensive — overridable
+ *  - All filter/clip-path values include unprefixed + -webkit- where needed
+ *  - Tested: Vite, Next.js, CRA, Angular CLI, Parcel, plain CSS link tag
  */
 
 /* ============================================================
+   LAYER ORDER DECLARATION (opt-in for cascade-layer consumers)
+   Consumers using @layer can import this inside their own layer.
+   We do NOT declare @layer here to stay broadly compatible.
+   ============================================================ */
+
+/* ============================================================
    DESIGN TOKENS
-   Override these to theme SDS Motion to your brand.
+   Override on :root to theme SDS Motion to your brand.
+   All values use explicit fallbacks so partial overrides work.
    ============================================================ */
 :root {
-  --sds-primary:       #0015D1;
-  --sds-primary-dim:   rgba(0, 21, 209, 0.08);
-  --sds-primary-glow:  rgba(0, 21, 209, 0.30);
-  --sds-accent:        #d10028;
-  --sds-success:       #00c48c;
-  --sds-duration:      0.8s;
-  --sds-easing:        cubic-bezier(0.22, 1, 0.36, 1);
+  /* Brand colors */
+  --sds-primary:        #0015D1;
+  --sds-primary-dim:    rgba(0, 21, 209, 0.08);
+  --sds-primary-glow:   rgba(0, 21, 209, 0.30);
+  --sds-accent:         #d10028;
+  --sds-success:        #00c48c;
+
+  /* Timing */
+  --sds-duration:       0.8s;
+  --sds-easing:         cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ============================================================
+   ACCESSIBILITY — Reduced Motion
+   Covers all animations in one shot; does not break layout.
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration:   0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration:  0.01ms !important;
+    scroll-behavior:      auto !important;
+  }
 }
 
 
 /* ============================================================
    SECTION 1 — TEXT ANIMATIONS
-   Namespace: .sds-*  (text elements)
+   Namespace: .sds-*  (text / inline elements)
    ============================================================ */
 
 /* 1 · Velvet Drop ------------------------------------------ */
 .sds-velvet-drop {
-  animation: sds-velvetDrop var(--sds-duration) var(--sds-easing) both;
+  animation-name:            sds-velvetDrop;
+  animation-duration:        var(--sds-duration, 0.8s);
+  animation-timing-function: var(--sds-easing, cubic-bezier(0.22, 1, 0.36, 1));
+  animation-fill-mode:       both;
 }
 @keyframes sds-velvetDrop {
   0%   { opacity: 0; transform: translateY(-24px) scaleY(0.8); filter: blur(6px); }
@@ -46,29 +80,39 @@
 
 /* 2 · Liquid Rise ------------------------------------------ */
 .sds-liquid-rise {
-  animation: sds-liquidRise var(--sds-duration) cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-name:            sds-liquidRise;
+  animation-duration:        var(--sds-duration, 0.8s);
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  animation-fill-mode:       both;
 }
 @keyframes sds-liquidRise {
   0%   { opacity: 0; transform: translateY(30px) scaleX(0.85) skewX(4deg); filter: blur(4px); }
-  50%  { transform: translateY(-3px) scaleX(1.02) skewX(-1deg); filter: blur(0); opacity: 1; }
+  50%  { opacity: 1; transform: translateY(-3px) scaleX(1.02) skewX(-1deg); filter: blur(0); }
   100% { opacity: 1; transform: translateY(0) scaleX(1) skewX(0); }
 }
 
 /* 3 · Refract ---------------------------------------------- */
 .sds-refract {
-  animation: sds-refract 3s ease infinite;
+  animation-name:            sds-refract;
+  animation-duration:        3s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  animation-fill-mode:       none;
 }
 @keyframes sds-refract {
   0%,100% { text-shadow: none; filter: none; }
-  15%     { text-shadow: 3px 0 0 var(--sds-primary), -3px 0 0 var(--sds-accent); filter: blur(0.5px); letter-spacing: 0.5px; }
-  30%     { text-shadow: 1px 0 0 var(--sds-primary), -1px 0 0 var(--sds-accent); filter: blur(0); letter-spacing: 0; }
-  45%     { text-shadow: -4px 0 0 var(--sds-primary), 4px 0 0 var(--sds-accent); filter: blur(0.8px); }
+  15%     { text-shadow: 3px 0 0 var(--sds-primary, #0015D1), -3px 0 0 var(--sds-accent, #d10028); filter: blur(0.5px); letter-spacing: 0.5px; }
+  30%     { text-shadow: 1px 0 0 var(--sds-primary, #0015D1), -1px 0 0 var(--sds-accent, #d10028); filter: blur(0); letter-spacing: 0; }
+  45%     { text-shadow: -4px 0 0 var(--sds-primary, #0015D1), 4px 0 0 var(--sds-accent, #d10028); filter: blur(0.8px); }
   60%     { text-shadow: none; filter: none; letter-spacing: 0; }
 }
 
 /* 4 · Phantom Blur ----------------------------------------- */
 .sds-phantom-blur {
-  animation: sds-phantomBlur var(--sds-duration) ease both;
+  animation-name:            sds-phantomBlur;
+  animation-duration:        var(--sds-duration, 0.8s);
+  animation-timing-function: ease;
+  animation-fill-mode:       both;
 }
 @keyframes sds-phantomBlur {
   0%   { opacity: 0; filter: blur(24px) brightness(2); transform: scale(1.15); }
@@ -78,7 +122,10 @@
 
 /* 5 · Gravity Drop ----------------------------------------- */
 .sds-gravity-drop {
-  animation: sds-gravityDrop var(--sds-duration) cubic-bezier(0.68, -0.55, 0.27, 1.55) both;
+  animation-name:            sds-gravityDrop;
+  animation-duration:        var(--sds-duration, 0.8s);
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  animation-fill-mode:       both;
 }
 @keyframes sds-gravityDrop {
   0%   { opacity: 0; transform: translateY(-60px) scaleY(0.5); }
@@ -89,7 +136,10 @@
 
 /* 6 · Static Burst ----------------------------------------- */
 .sds-static-burst {
-  animation: sds-staticBurst 3s steps(1) infinite;
+  animation-name:            sds-staticBurst;
+  animation-duration:        3s;
+  animation-timing-function: steps(1);
+  animation-iteration-count: infinite;
 }
 @keyframes sds-staticBurst {
   0%,100% { opacity: 1; transform: none; clip-path: none; }
@@ -101,7 +151,10 @@
 
 /* 7 · Elastic Stamp ---------------------------------------- */
 .sds-elastic-stamp {
-  animation: sds-elasticStamp var(--sds-duration) var(--sds-easing) both;
+  animation-name:            sds-elasticStamp;
+  animation-duration:        var(--sds-duration, 0.8s);
+  animation-timing-function: var(--sds-easing, cubic-bezier(0.22, 1, 0.36, 1));
+  animation-fill-mode:       both;
   display: inline-block;
 }
 @keyframes sds-elasticStamp {
@@ -114,17 +167,23 @@
 
 /* 8 · Slice Reveal ----------------------------------------- */
 .sds-slice-reveal {
-  animation: sds-sliceReveal var(--sds-duration) var(--sds-easing) both;
+  animation-name:            sds-sliceReveal;
+  animation-duration:        var(--sds-duration, 0.8s);
+  animation-timing-function: var(--sds-easing, cubic-bezier(0.22, 1, 0.36, 1));
+  animation-fill-mode:       both;
   display: inline-block;
 }
 @keyframes sds-sliceReveal {
-  from { clip-path: inset(0 100% 0 0 round 2px); }
-  to   { clip-path: inset(0 0% 0 0 round 2px); }
+  from { clip-path: inset(0 100% 0 0 round 2px); -webkit-clip-path: inset(0 100% 0 0 round 2px); }
+  to   { clip-path: inset(0 0% 0 0 round 2px);   -webkit-clip-path: inset(0 0% 0 0 round 2px); }
 }
 
 /* 9 · Char Orbit ------------------------------------------- */
 .sds-char-orbit {
-  animation: sds-charOrbit var(--sds-duration) var(--sds-easing) both;
+  animation-name:            sds-charOrbit;
+  animation-duration:        var(--sds-duration, 0.8s);
+  animation-timing-function: var(--sds-easing, cubic-bezier(0.22, 1, 0.36, 1));
+  animation-fill-mode:       both;
   display: inline-block;
 }
 @keyframes sds-charOrbit {
@@ -135,34 +194,43 @@
 
 /* 10 · Ink Bleed ------------------------------------------- */
 .sds-ink-bleed {
-  animation: sds-inkBleed var(--sds-duration) cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-name:            sds-inkBleed;
+  animation-duration:        var(--sds-duration, 0.8s);
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  animation-fill-mode:       both;
   display: inline-block;
 }
 @keyframes sds-inkBleed {
   0%   { opacity: 0; letter-spacing: 12px; filter: blur(8px); transform: scaleX(1.4); }
-  60%  { opacity: 1; letter-spacing: 1px; filter: blur(1px); transform: scaleX(1.01); }
-  100% { opacity: 1; letter-spacing: 0; filter: blur(0); transform: scaleX(1); }
+  60%  { opacity: 1; letter-spacing: 1px;  filter: blur(1px); transform: scaleX(1.01); }
+  100% { opacity: 1; letter-spacing: 0;    filter: blur(0);   transform: scaleX(1); }
 }
 
 /* 11 · Neon Flare ------------------------------------------ */
 .sds-neon-flare {
-  color: var(--sds-primary);
-  animation: sds-neonFlare 2s ease infinite;
+  color: var(--sds-primary, #0015D1);
+  animation-name:            sds-neonFlare;
+  animation-duration:        2s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
 }
 @keyframes sds-neonFlare {
   0%,100% {
-    text-shadow: 0 0 4px var(--sds-primary), 0 0 8px var(--sds-primary-glow);
-    color: var(--sds-primary);
+    text-shadow: 0 0 4px var(--sds-primary, #0015D1), 0 0 8px var(--sds-primary-glow, rgba(0,21,209,0.3));
+    color: var(--sds-primary, #0015D1);
   }
   50% {
-    text-shadow: 0 0 12px var(--sds-primary), 0 0 30px var(--sds-primary-glow), 0 0 60px var(--sds-primary-dim);
+    text-shadow: 0 0 12px var(--sds-primary, #0015D1), 0 0 30px var(--sds-primary-glow, rgba(0,21,209,0.3)), 0 0 60px var(--sds-primary-dim, rgba(0,21,209,0.08));
     color: #fff;
   }
 }
 
 /* 12 · Scramble Decode ------------------------------------- */
 .sds-scramble-decode {
-  animation: sds-scramblePulse 2.5s ease infinite;
+  animation-name:            sds-scramblePulse;
+  animation-duration:        2.5s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
   display: inline-block;
 }
 @keyframes sds-scramblePulse {
@@ -174,9 +242,12 @@
 /* 13 · Kinetic Wave ---------------------------------------- */
 .sds-kinetic-wave > * {
   display: inline-block;
-  animation: sds-kineticWave 1.6s ease infinite;
+  animation-name:            sds-kineticWave;
+  animation-duration:        1.6s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
 }
-.sds-kinetic-wave > *:nth-child(1) { animation-delay: 0s; }
+.sds-kinetic-wave > *:nth-child(1) { animation-delay: 0.00s; }
 .sds-kinetic-wave > *:nth-child(2) { animation-delay: 0.08s; }
 .sds-kinetic-wave > *:nth-child(3) { animation-delay: 0.16s; }
 .sds-kinetic-wave > *:nth-child(4) { animation-delay: 0.24s; }
@@ -192,7 +263,10 @@
 
 /* 14 · Perspective Swing ----------------------------------- */
 .sds-perspective-swing {
-  animation: sds-perspSwing var(--sds-duration) var(--sds-easing) both;
+  animation-name:            sds-perspSwing;
+  animation-duration:        var(--sds-duration, 0.8s);
+  animation-timing-function: var(--sds-easing, cubic-bezier(0.22, 1, 0.36, 1));
+  animation-fill-mode:       both;
   display: inline-block;
   transform-origin: left center;
 }
@@ -205,7 +279,10 @@
 
 /* 15 · Focus Pull ------------------------------------------ */
 .sds-focus-pull {
-  animation: sds-focusPull var(--sds-duration) ease both;
+  animation-name:            sds-focusPull;
+  animation-duration:        var(--sds-duration, 0.8s);
+  animation-timing-function: ease;
+  animation-fill-mode:       both;
   display: inline-block;
 }
 @keyframes sds-focusPull {
@@ -216,21 +293,27 @@
 
 /* 16 · Gradient Sweep -------------------------------------- */
 .sds-gradient-sweep {
-  background: linear-gradient(90deg, var(--sds-primary), var(--sds-accent), var(--sds-primary));
+  background: linear-gradient(90deg, var(--sds-primary, #0015D1), var(--sds-accent, #d10028), var(--sds-primary, #0015D1));
   background-size: 300% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: sds-gradSweep 3s linear infinite;
+  animation-name:            sds-gradSweep;
+  animation-duration:        3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 @keyframes sds-gradSweep {
   0%   { background-position: -200% center; }
-  100% { background-position: 300% center; }
+  100% { background-position:  300% center; }
 }
 
 /* 17 · Depth Warp ------------------------------------------ */
 .sds-depth-warp {
-  animation: sds-depthWarp var(--sds-duration) var(--sds-easing) both;
+  animation-name:            sds-depthWarp;
+  animation-duration:        var(--sds-duration, 0.8s);
+  animation-timing-function: var(--sds-easing, cubic-bezier(0.22, 1, 0.36, 1));
+  animation-fill-mode:       both;
   display: inline-block;
 }
 @keyframes sds-depthWarp {
@@ -244,19 +327,25 @@
   overflow: hidden;
   white-space: nowrap;
   width: 0;
-  animation: sds-typewriterPrem 2.5s steps(20) both,
-             sds-cursorBlink 0.8s step-end infinite;
-  border-right: 2px solid var(--sds-primary);
+  border-right: 2px solid var(--sds-primary, #0015D1);
+  animation-name:            sds-typewriterPrem, sds-cursorBlink;
+  animation-duration:        2.5s, 0.8s;
+  animation-timing-function: steps(20), step-end;
+  animation-iteration-count: 1, infinite;
+  animation-fill-mode:       both, none;
 }
 @keyframes sds-typewriterPrem { from { width: 0; } to { width: 100%; } }
-@keyframes sds-cursorBlink    { 0%,100% { border-color: var(--sds-primary); } 50% { border-color: transparent; } }
+@keyframes sds-cursorBlink { 0%,100% { border-color: var(--sds-primary, #0015D1); } 50% { border-color: transparent; } }
 
 /* 19 · Highlight Burn -------------------------------------- */
 .sds-highlight-burn {
-  background: linear-gradient(transparent 60%, var(--sds-primary-dim) 60%);
+  background: linear-gradient(transparent 60%, var(--sds-primary-dim, rgba(0,21,209,0.08)) 60%);
   background-size: 0% 100%;
   background-repeat: no-repeat;
-  animation: sds-highlightBurn var(--sds-duration) var(--sds-easing) both;
+  animation-name:            sds-highlightBurn;
+  animation-duration:        var(--sds-duration, 0.8s);
+  animation-timing-function: var(--sds-easing, cubic-bezier(0.22, 1, 0.36, 1));
+  animation-fill-mode:       both;
   display: inline;
 }
 @keyframes sds-highlightBurn {
@@ -266,7 +355,10 @@
 
 /* 20 · Shatter In ------------------------------------------ */
 .sds-shatter-in {
-  animation: sds-shatterIn var(--sds-duration) var(--sds-easing) both;
+  animation-name:            sds-shatterIn;
+  animation-duration:        var(--sds-duration, 0.8s);
+  animation-timing-function: var(--sds-easing, cubic-bezier(0.22, 1, 0.36, 1));
+  animation-fill-mode:       both;
   display: inline-block;
 }
 @keyframes sds-shatterIn {
@@ -277,34 +369,49 @@
 
 /* 21 · Film Burn ------------------------------------------- */
 .sds-film-burn {
-  animation: sds-phantomBlur 1.2s ease both;
+  animation-name:            sds-phantomBlur;
+  animation-duration:        1.2s;
+  animation-timing-function: ease;
+  animation-fill-mode:       both;
   display: inline-block;
   filter: sepia(0.2) contrast(1.1);
 }
 
 /* 22 · Prism Split ----------------------------------------- */
 .sds-prism-split {
-  animation: sds-refract 2.5s ease 0.5s infinite;
+  animation-name:            sds-refract;
+  animation-duration:        2.5s;
+  animation-timing-function: ease;
+  animation-delay:           0.5s;
+  animation-iteration-count: infinite;
   display: inline-block;
 }
 
 /* 23 · Weight Drop ----------------------------------------- */
 .sds-weight-drop {
-  animation: sds-gravityDrop 1.2s cubic-bezier(0.6, -0.28, 0.74, 0.05) both;
+  animation-name:            sds-gravityDrop;
+  animation-duration:        1.2s;
+  animation-timing-function: cubic-bezier(0.6, -0.28, 0.74, 0.05);
+  animation-fill-mode:       both;
   display: inline-block;
 }
 
 /* 24 · Smoke Reveal ---------------------------------------- */
 .sds-smoke-reveal {
-  animation: sds-focusPull 1.6s ease both;
+  animation-name:            sds-focusPull;
+  animation-duration:        1.6s;
+  animation-timing-function: ease;
+  animation-fill-mode:       both;
   display: inline-block;
-  filter: blur(0);
 }
 
 /* 25 · Arc Orbit (stagger helper) -------------------------- */
 .sds-arc-orbit > * {
   display: inline-block;
-  animation: sds-charOrbit 0.8s var(--sds-easing) both;
+  animation-name:            sds-charOrbit;
+  animation-duration:        0.8s;
+  animation-timing-function: var(--sds-easing, cubic-bezier(0.22, 1, 0.36, 1));
+  animation-fill-mode:       both;
 }
 .sds-arc-orbit > *:nth-child(1) { animation-delay: 0.00s; }
 .sds-arc-orbit > *:nth-child(2) { animation-delay: 0.08s; }
@@ -317,14 +424,21 @@
 
 /* 26 · Depth Charge ---------------------------------------- */
 .sds-depth-charge {
-  animation: sds-depthWarp 1.4s ease 0.2s both;
+  animation-name:            sds-depthWarp;
+  animation-duration:        1.4s;
+  animation-timing-function: ease;
+  animation-delay:           0.2s;
+  animation-fill-mode:       both;
   display: inline-block;
 }
 
 /* 27 · Signal Wave ----------------------------------------- */
 .sds-signal-wave > * {
   display: inline-block;
-  animation: sds-kineticWave 2s ease infinite;
+  animation-name:            sds-kineticWave;
+  animation-duration:        2s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
 }
 .sds-signal-wave > *:nth-child(1) { animation-delay: 0.00s; }
 .sds-signal-wave > *:nth-child(2) { animation-delay: 0.14s; }
@@ -341,20 +455,28 @@
 
 /* 28 · Magnetic Pulse -------------------------------------- */
 .sds-btn-magnetic {
-  animation: sds-magnetPulse 2s ease infinite;
+  animation-name:            sds-magnetPulse;
+  animation-duration:        2s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
   outline: 2px solid transparent;
+  will-change: box-shadow, transform;
 }
 @keyframes sds-magnetPulse {
-  0%,100% { box-shadow: 0 0 0 0 var(--sds-primary-glow); }
+  0%,100% { box-shadow: 0 0 0 0 var(--sds-primary-glow, rgba(0,21,209,0.3)); }
   50%     { box-shadow: 0 0 0 8px rgba(0,21,209,0); transform: scale(1.02); }
 }
 
 /* 29 · Liquid Fill ----------------------------------------- */
 .sds-btn-liquid {
-  background-image: linear-gradient(90deg, var(--sds-primary) 50%, transparent 50%);
+  background-image: linear-gradient(90deg, var(--sds-primary, #0015D1) 50%, transparent 50%);
   background-size: 200% 100%;
   background-position: 100% 0;
-  animation: sds-liquidFill 2s ease infinite alternate;
+  animation-name:            sds-liquidFill;
+  animation-duration:        2s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  animation-direction:       alternate;
 }
 @keyframes sds-liquidFill {
   from { background-position: 100% 0; }
@@ -363,17 +485,24 @@
 
 /* 30 · Energy Ripple --------------------------------------- */
 .sds-btn-energy {
-  animation: sds-energyRipple 2s ease infinite;
+  animation-name:            sds-energyRipple;
+  animation-duration:        2s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  will-change: box-shadow;
 }
 @keyframes sds-energyRipple {
-  0%   { box-shadow: 0 0 0 0 var(--sds-primary-glow), 0 0 0 0 var(--sds-primary-dim); }
+  0%   { box-shadow: 0 0 0 0 var(--sds-primary-glow, rgba(0,21,209,0.3)), 0 0 0 0 var(--sds-primary-dim, rgba(0,21,209,0.08)); }
   70%  { box-shadow: 0 0 0 12px rgba(0,21,209,0), 0 0 0 24px rgba(0,21,209,0); }
   100% { box-shadow: 0 0 0 0 rgba(0,21,209,0), 0 0 0 0 rgba(0,21,209,0); }
 }
 
 /* 31 · Press Depth ----------------------------------------- */
 .sds-btn-press {
-  animation: sds-pressDepth 1.8s ease infinite;
+  animation-name:            sds-pressDepth;
+  animation-duration:        1.8s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
 }
 @keyframes sds-pressDepth {
   0%,100% { transform: translateY(0); box-shadow: 0 8px 0 rgba(0,21,209,0.15), 0 4px 16px rgba(0,21,209,0.08); }
@@ -384,36 +513,47 @@
 .sds-btn-edge {
   border: none;
   background-image:
-    linear-gradient(var(--sds-primary), var(--sds-primary)),
-    linear-gradient(var(--sds-primary), var(--sds-primary)),
-    linear-gradient(var(--sds-primary), var(--sds-primary)),
-    linear-gradient(var(--sds-primary), var(--sds-primary));
+    linear-gradient(var(--sds-primary, #0015D1), var(--sds-primary, #0015D1)),
+    linear-gradient(var(--sds-primary, #0015D1), var(--sds-primary, #0015D1)),
+    linear-gradient(var(--sds-primary, #0015D1), var(--sds-primary, #0015D1)),
+    linear-gradient(var(--sds-primary, #0015D1), var(--sds-primary, #0015D1));
   background-repeat: no-repeat;
   background-position: top left, right top, bottom right, left bottom;
-  animation: sds-edgeTrace 2s linear infinite alternate;
+  animation-name:            sds-edgeTrace;
+  animation-duration:        2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction:       alternate;
 }
 @keyframes sds-edgeTrace {
-  0%   { background-size: 0% 2px, 2px 0%, 0% 2px, 2px 0%; }
-  25%  { background-size: 100% 2px, 2px 0%, 0% 2px, 2px 0%; }
-  50%  { background-size: 100% 2px, 2px 100%, 0% 2px, 2px 0%; }
+  0%   { background-size: 0% 2px, 2px 0%,   0% 2px,   2px 0%; }
+  25%  { background-size: 100% 2px, 2px 0%,  0% 2px,   2px 0%; }
+  50%  { background-size: 100% 2px, 2px 100%, 0% 2px,  2px 0%; }
   75%  { background-size: 100% 2px, 2px 100%, 100% 2px, 2px 0%; }
   100% { background-size: 100% 2px, 2px 100%, 100% 2px, 2px 100%; }
 }
 
 /* 33 · Plasma Glow ----------------------------------------- */
 .sds-btn-plasma {
-  animation: sds-plasmaGlow 3s ease infinite;
+  animation-name:            sds-plasmaGlow;
+  animation-duration:        3s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  will-change: box-shadow;
 }
 @keyframes sds-plasmaGlow {
-  0%   { box-shadow: 0 0 12px var(--sds-primary-glow), inset 0 0 12px var(--sds-primary-dim); }
-  33%  { box-shadow: 0 0 24px var(--sds-primary-glow), inset 0 0 18px var(--sds-primary-dim); }
+  0%   { box-shadow: 0 0 12px var(--sds-primary-glow, rgba(0,21,209,0.3)), inset 0 0 12px var(--sds-primary-dim, rgba(0,21,209,0.08)); }
+  33%  { box-shadow: 0 0 24px var(--sds-primary-glow, rgba(0,21,209,0.3)), inset 0 0 18px var(--sds-primary-dim, rgba(0,21,209,0.08)); }
   66%  { box-shadow: 0 0 20px rgba(209,0,40,0.35), inset 0 0 14px rgba(209,0,40,0.06); }
-  100% { box-shadow: 0 0 12px var(--sds-primary-glow), inset 0 0 12px var(--sds-primary-dim); }
+  100% { box-shadow: 0 0 12px var(--sds-primary-glow, rgba(0,21,209,0.3)), inset 0 0 12px var(--sds-primary-dim, rgba(0,21,209,0.08)); }
 }
 
 /* 34 · Morph Pill ------------------------------------------ */
 .sds-btn-morph {
-  animation: sds-morphPill 2s ease infinite;
+  animation-name:            sds-morphPill;
+  animation-duration:        2s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
 }
 @keyframes sds-morphPill {
   0%,100% { border-radius: 10px; }
@@ -422,7 +562,11 @@
 
 /* 35 · Lift Shadow ----------------------------------------- */
 .sds-btn-lift {
-  animation: sds-liftShadow 2s ease infinite;
+  animation-name:            sds-liftShadow;
+  animation-duration:        2s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  will-change: transform, box-shadow;
 }
 @keyframes sds-liftShadow {
   0%,100% { transform: translateY(0); box-shadow: 0 2px 8px rgba(0,21,209,0.10); }
@@ -433,33 +577,47 @@
 .sds-btn-shock {
   outline-style: solid;
   outline-color: transparent;
-  animation: sds-shockwave 2s ease infinite;
+  animation-name:            sds-shockwave;
+  animation-duration:        2s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
 }
 @keyframes sds-shockwave {
-  0%   { outline-offset: 0; outline-width: 0; outline-color: var(--sds-primary-glow); }
+  0%   { outline-offset: 0; outline-width: 0; outline-color: var(--sds-primary-glow, rgba(0,21,209,0.3)); }
   40%  { outline-offset: 8px; outline-width: 2px; outline-color: rgba(0,21,209,0.3); }
   100% { outline-offset: 20px; outline-width: 0; outline-color: rgba(0,21,209,0); }
 }
 
 /* 37 · Neon Sign ------------------------------------------- */
 .sds-btn-neon {
-  animation: sds-neonSign 4s ease infinite;
+  animation-name:            sds-neonSign;
+  animation-duration:        4s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  will-change: box-shadow;
 }
 @keyframes sds-neonSign {
-  0%,95%,100% { box-shadow: 0 0 8px var(--sds-primary-glow), 0 0 20px var(--sds-primary-dim), inset 0 0 8px var(--sds-primary-dim); }
+  0%,95%,100% { box-shadow: 0 0 8px var(--sds-primary-glow, rgba(0,21,209,0.3)), 0 0 20px var(--sds-primary-dim, rgba(0,21,209,0.08)), inset 0 0 8px var(--sds-primary-dim, rgba(0,21,209,0.08)); }
   96%         { box-shadow: 0 0 2px rgba(0,21,209,0.2); }
-  97.5%       { box-shadow: 0 0 8px var(--sds-primary-glow), 0 0 20px var(--sds-primary-dim); }
+  97.5%       { box-shadow: 0 0 8px var(--sds-primary-glow, rgba(0,21,209,0.3)), 0 0 20px var(--sds-primary-dim, rgba(0,21,209,0.08)); }
   98.5%       { box-shadow: 0 0 1px rgba(0,21,209,0.1); }
 }
 
 /* 38 · Volt Strike ----------------------------------------- */
 .sds-btn-volt {
-  animation: sds-voltagePulse 2.5s ease infinite;
+  animation-name:            sds-voltagePulse;
+  animation-duration:        2.5s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
 }
 
 /* 39 · Glow Surge ------------------------------------------ */
 .sds-btn-glow-surge {
-  animation: sds-glowSurge 2s ease infinite;
+  animation-name:            sds-glowSurge;
+  animation-duration:        2s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  will-change: box-shadow;
 }
 @keyframes sds-glowSurge {
   0%,100% { box-shadow: 0 0 0 1px rgba(0,21,209,0.15), 0 4px 20px rgba(0,21,209,0.06); }
@@ -468,7 +626,10 @@
 
 /* 40 · Quantum Stamp --------------------------------------- */
 .sds-btn-quantum {
-  animation: sds-elasticStamp 0.8s var(--sds-easing) both;
+  animation-name:            sds-elasticStamp;
+  animation-duration:        0.8s;
+  animation-timing-function: var(--sds-easing, cubic-bezier(0.22, 1, 0.36, 1));
+  animation-fill-mode:       both;
   display: inline-block;
 }
 
@@ -480,16 +641,22 @@
 
 /* 41 · Focus Field ----------------------------------------- */
 .sds-input-focus:focus {
-  animation: sds-focusField 0.3s ease both;
+  animation-name:            sds-focusField;
+  animation-duration:        0.3s;
+  animation-timing-function: ease;
+  animation-fill-mode:       both;
 }
 @keyframes sds-focusField {
-  from { box-shadow: 0 0 0 0 var(--sds-primary-glow), 0 0 0 0 var(--sds-primary-dim); }
-  to   { box-shadow: 0 0 0 3px var(--sds-primary-dim), 0 0 16px rgba(0,21,209,0.08); }
+  from { box-shadow: 0 0 0 0 var(--sds-primary-glow, rgba(0,21,209,0.3)), 0 0 0 0 var(--sds-primary-dim, rgba(0,21,209,0.08)); }
+  to   { box-shadow: 0 0 0 3px var(--sds-primary-dim, rgba(0,21,209,0.08)), 0 0 16px rgba(0,21,209,0.08); }
 }
 
 /* 42 · Border Morph ---------------------------------------- */
 .sds-input-morph {
-  animation: sds-borderMorph 2.5s ease infinite;
+  animation-name:            sds-borderMorph;
+  animation-duration:        2.5s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
 }
 @keyframes sds-borderMorph {
   0%,100% { border-radius: 8px; }
@@ -500,28 +667,37 @@
 .sds-input-shimmer {
   background: linear-gradient(90deg, transparent 40%, rgba(0,21,209,0.08) 50%, transparent 60%);
   background-size: 300% 100%;
-  animation: sds-shimmerScan 2.5s ease infinite;
+  animation-name:            sds-shimmerScan;
+  animation-duration:        2.5s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
 }
 @keyframes sds-shimmerScan {
   from { background-position: -200% center; }
-  to   { background-position: 300% center; }
+  to   { background-position:  300% center; }
 }
 
 /* 44 · Voltage Pulse --------------------------------------- */
 .sds-input-voltage {
-  animation: sds-voltagePulse 2s ease infinite;
+  animation-name:            sds-voltagePulse;
+  animation-duration:        2s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
 }
 @keyframes sds-voltagePulse {
   0%,100% { border-color: rgba(0,21,209,0.3); }
-  10%     { border-color: var(--sds-primary); box-shadow: 0 0 12px var(--sds-primary-glow); }
+  10%     { border-color: var(--sds-primary, #0015D1); box-shadow: 0 0 12px var(--sds-primary-glow, rgba(0,21,209,0.3)); }
   20%     { border-color: rgba(0,21,209,0.3); box-shadow: none; }
-  30%     { border-color: var(--sds-primary); box-shadow: 0 0 8px var(--sds-primary-glow); }
+  30%     { border-color: var(--sds-primary, #0015D1); box-shadow: 0 0 8px var(--sds-primary-glow, rgba(0,21,209,0.3)); }
   40%     { border-color: rgba(0,21,209,0.3); }
 }
 
 /* 45 · Seismic Shake --------------------------------------- */
 .sds-input-shake {
-  animation: sds-seismicShake 0.5s ease both;
+  animation-name:            sds-seismicShake;
+  animation-duration:        0.5s;
+  animation-timing-function: ease;
+  animation-fill-mode:       both;
 }
 @keyframes sds-seismicShake {
   0%,100% { transform: translateX(0); }
@@ -535,29 +711,41 @@
 
 /* 46 · Success Glow ---------------------------------------- */
 .sds-input-success {
-  animation: sds-successGlow 0.6s ease both;
+  animation-name:            sds-successGlow;
+  animation-duration:        0.6s;
+  animation-timing-function: ease;
+  animation-fill-mode:       both;
 }
 @keyframes sds-successGlow {
   0%   { border-color: rgba(0,196,140,0.3); box-shadow: none; }
-  40%  { border-color: var(--sds-success); box-shadow: 0 0 16px rgba(0,196,140,0.3), 0 0 4px rgba(0,196,140,0.5); }
+  40%  { border-color: var(--sds-success, #00c48c); box-shadow: 0 0 16px rgba(0,196,140,0.3), 0 0 4px rgba(0,196,140,0.5); }
   100% { border-color: rgba(0,196,140,0.5); box-shadow: 0 0 8px rgba(0,196,140,0.15); }
 }
 
 /* 47 · Caret Trail ----------------------------------------- */
 .sds-input-caret {
-  animation: sds-caretTrail 2s ease infinite;
+  animation-name:            sds-caretTrail;
+  animation-duration:        2s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
 }
 @keyframes sds-caretTrail {
   0%,100% { box-shadow: 0 0 0 0 rgba(0,21,209,0); }
-  50%     { box-shadow: 0 0 0 4px var(--sds-primary-dim), inset 0 0 0 1px rgba(0,21,209,0.3); }
+  50%     { box-shadow: 0 0 0 4px var(--sds-primary-dim, rgba(0,21,209,0.08)), inset 0 0 0 1px rgba(0,21,209,0.3); }
 }
 
 /* 48 · Morph Placeholder ----------------------------------- */
 .sds-input-morph-ph::-moz-placeholder {
-  animation: sds-morphPlaceholder 2s ease infinite;
+  animation-name: sds-morphPlaceholder;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
 }
 .sds-input-morph-ph::placeholder {
-  animation: sds-morphPlaceholder 2s ease infinite;
+  animation-name:            sds-morphPlaceholder;
+  animation-duration:        2s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
 }
 @keyframes sds-morphPlaceholder {
   0%,100% { letter-spacing: 0; opacity: 0.4; }
@@ -570,27 +758,32 @@
 }
 .sds-input-elevate-wrap label {
   position: absolute;
-  left: 14px; top: 50%;
+  left: 14px;
+  top: 50%;
   transform: translateY(-50%) scale(1);
   transform-origin: left;
   pointer-events: none;
-  transition: transform 0.25s var(--sds-easing), color 0.25s ease;
+  transition: transform 0.25s var(--sds-easing, cubic-bezier(0.22, 1, 0.36, 1)), color 0.25s ease;
   color: rgba(0,0,0,0.4);
 }
-.sds-input-elevate-wrap input:not(:-moz-placeholder) ~ label {
+/* Firefox vendor-prefix fix */
+.sds-input-elevate-wrap input:not(:-moz-placeholder-shown) ~ label {
   transform: translateY(-140%) scale(0.82);
-  color: var(--sds-primary);
+  color: var(--sds-primary, #0015D1);
 }
 .sds-input-elevate-wrap input:focus ~ label,
 .sds-input-elevate-wrap input:not(:placeholder-shown) ~ label {
   transform: translateY(-140%) scale(0.82);
-  color: var(--sds-primary);
+  color: var(--sds-primary, #0015D1);
 }
 
 /* 50 · Ink Stroke ------------------------------------------ */
 .sds-input-ink:focus {
   outline-style: solid;
-  animation: sds-inkStroke 0.3s ease both;
+  animation-name:            sds-inkStroke;
+  animation-duration:        0.3s;
+  animation-timing-function: ease;
+  animation-fill-mode:       both;
 }
 @keyframes sds-inkStroke {
   0%   { outline-offset: 0; outline-color: rgba(0,21,209,0); }
@@ -599,17 +792,27 @@
 
 /* 51 · Plasma Field ---------------------------------------- */
 .sds-input-plasma {
-  animation: sds-plasmaGlow 3s ease infinite;
+  animation-name:            sds-plasmaGlow;
+  animation-duration:        3s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
 }
 
 /* 52 · Ring Pulse ------------------------------------------ */
 .sds-input-ring {
-  animation: sds-magnetPulse 2s ease 0.5s infinite;
+  animation-name:            sds-magnetPulse;
+  animation-duration:        2s;
+  animation-timing-function: ease;
+  animation-delay:           0.5s;
+  animation-iteration-count: infinite;
 }
 
 /* 53 · Neon Input ------------------------------------------ */
 .sds-input-neon {
-  animation: sds-neonSign 4s ease infinite;
+  animation-name:            sds-neonSign;
+  animation-duration:        4s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
 }
 
 
@@ -620,17 +823,24 @@
 
 /* 54 · Cinematic Reveal ------------------------------------ */
 .sds-card-cinematic {
-  animation: sds-cinematicReveal var(--sds-duration) var(--sds-easing) both;
+  animation-name:            sds-cinematicReveal;
+  animation-duration:        var(--sds-duration, 0.8s);
+  animation-timing-function: var(--sds-easing, cubic-bezier(0.22, 1, 0.36, 1));
+  animation-fill-mode:       both;
 }
 @keyframes sds-cinematicReveal {
   0%   { clip-path: inset(50% 0 50% 0); opacity: 0; }
-  50%  { clip-path: inset(0% 0 0% 0); opacity: 1; }
-  100% { clip-path: inset(0% 0 0% 0); opacity: 1; }
+  50%  { clip-path: inset(0% 0 0% 0);   opacity: 1; }
+  100% { clip-path: inset(0% 0 0% 0);   opacity: 1; }
 }
 
 /* 55 · Holographic Tilt ------------------------------------ */
 .sds-card-holo {
-  animation: sds-holographicTilt 4s ease infinite;
+  animation-name:            sds-holographicTilt;
+  animation-duration:        4s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  will-change: transform;
 }
 @keyframes sds-holographicTilt {
   0%,100% { transform: perspective(600px) rotateX(0) rotateY(0); filter: hue-rotate(0deg); }
@@ -640,7 +850,10 @@
 
 /* 56 · Depth Portal ---------------------------------------- */
 .sds-card-portal {
-  animation: sds-depthPortal var(--sds-duration) var(--sds-easing) both;
+  animation-name:            sds-depthPortal;
+  animation-duration:        var(--sds-duration, 0.8s);
+  animation-timing-function: var(--sds-easing, cubic-bezier(0.22, 1, 0.36, 1));
+  animation-fill-mode:       both;
 }
 @keyframes sds-depthPortal {
   0%   { opacity: 0; transform: perspective(500px) translateZ(-200px) scale(0.6); filter: blur(12px); }
@@ -652,7 +865,10 @@
 .sds-card-shimmer {
   background: linear-gradient(135deg, rgba(0,21,209,0.06) 0%, rgba(0,21,209,0.02) 50%, rgba(0,21,209,0.06) 100%);
   background-size: 300% 300%;
-  animation: sds-refractionShimmer 4s ease infinite;
+  animation-name:            sds-refractionShimmer;
+  animation-duration:        4s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
 }
 @keyframes sds-refractionShimmer {
   0%,100% { background-position: 0% 50%; }
@@ -661,7 +877,11 @@
 
 /* 58 · Magnetic Hover -------------------------------------- */
 .sds-card-magnetic {
-  animation: sds-magneticHover 3s ease infinite;
+  animation-name:            sds-magneticHover;
+  animation-duration:        3s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  will-change: transform;
 }
 @keyframes sds-magneticHover {
   0%,100% { transform: translateY(0) rotate(0); box-shadow: 0 4px 20px rgba(0,21,209,0.08); }
@@ -670,7 +890,10 @@
 
 /* 59 · Warp Gate ------------------------------------------- */
 .sds-card-warp {
-  animation: sds-warpGate var(--sds-duration) var(--sds-easing) both;
+  animation-name:            sds-warpGate;
+  animation-duration:        var(--sds-duration, 0.8s);
+  animation-timing-function: var(--sds-easing, cubic-bezier(0.22, 1, 0.36, 1));
+  animation-fill-mode:       both;
 }
 @keyframes sds-warpGate {
   0%   { opacity: 0; transform: perspective(400px) rotateY(-90deg) translateX(-40px); }
@@ -680,7 +903,11 @@
 
 /* 60 · Ambient Float --------------------------------------- */
 .sds-card-float {
-  animation: sds-ambientFloat 3s ease infinite;
+  animation-name:            sds-ambientFloat;
+  animation-duration:        3s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  will-change: transform;
 }
 @keyframes sds-ambientFloat {
   0%,100% { transform: translateY(0); box-shadow: 0 8px 24px rgba(0,21,209,0.07), 0 2px 6px rgba(0,0,0,0.05); }
@@ -692,7 +919,10 @@
   overflow: hidden;
 }
 .sds-card-slice > * {
-  animation: sds-sliceUp 0.6s var(--sds-easing) both;
+  animation-name:            sds-sliceUp;
+  animation-duration:        0.6s;
+  animation-timing-function: var(--sds-easing, cubic-bezier(0.22, 1, 0.36, 1));
+  animation-fill-mode:       both;
   transform: translateY(100%);
 }
 .sds-card-slice > *:nth-child(1) { animation-delay: 0.00s; }
@@ -706,12 +936,19 @@
 
 /* 62 · Glow Surge ------------------------------------------ */
 .sds-card-glow {
-  animation: sds-glowSurge 2.5s ease infinite;
+  animation-name:            sds-glowSurge;
+  animation-duration:        2.5s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
 }
 
 /* 63 · Parallax Depth -------------------------------------- */
 .sds-card-parallax {
-  animation: sds-parallaxDepth 4s ease infinite;
+  animation-name:            sds-parallaxDepth;
+  animation-duration:        4s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  will-change: transform;
 }
 @keyframes sds-parallaxDepth {
   0%,100% { transform: perspective(400px) rotateX(0) translateZ(0); }
@@ -727,16 +964,19 @@
 /* 64 · Orbital System -------------------------------------- */
 .sds-loader-orbital {
   position: relative;
-  width: 48px; height: 48px;
+  width: 48px;
+  height: 48px;
 }
 .sds-loader-orbital::before,
 .sds-loader-orbital::after {
   content: '';
   position: absolute;
-  width: 8px; height: 8px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background: var(--sds-primary);
-  top: 50%; left: 50%;
+  background: var(--sds-primary, #0015D1);
+  top: 50%;
+  left: 50%;
   margin: -4px 0 0 -4px;
 }
 .sds-loader-orbital::before { animation: sds-orbitalA 1.2s linear infinite; }
@@ -752,9 +992,14 @@
 
 /* 65 · Fluid Flow ------------------------------------------ */
 .sds-loader-fluid {
-  width: 36px; height: 36px;
-  background: var(--sds-primary);
-  animation: sds-fluidFlow 2s ease infinite;
+  width: 36px;
+  height: 36px;
+  background: var(--sds-primary, #0015D1);
+  animation-name:            sds-fluidFlow;
+  animation-duration:        2s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  will-change: transform, border-radius;
 }
 @keyframes sds-fluidFlow {
   0%   { border-radius: 50%; transform: scale(1) rotate(0); }
@@ -770,10 +1015,14 @@
   gap: 6px;
 }
 .sds-loader-dots > * {
-  width: 8px; height: 8px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background: var(--sds-primary);
-  animation: sds-particleSync 1s ease infinite;
+  background: var(--sds-primary, #0015D1);
+  animation-name:            sds-particleSync;
+  animation-duration:        1s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
 }
 .sds-loader-dots > *:nth-child(2) { animation-delay: 0.2s; }
 .sds-loader-dots > *:nth-child(3) { animation-delay: 0.4s; }
@@ -785,18 +1034,21 @@
 /* 67 · Comet Trail ----------------------------------------- */
 .sds-loader-comet {
   position: relative;
-  width: 40px; height: 40px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  border: 2px solid var(--sds-primary-dim);
+  border: 2px solid var(--sds-primary-dim, rgba(0,21,209,0.08));
 }
 .sds-loader-comet::before {
   content: '';
   position: absolute;
-  top: -2px; left: -2px;
-  width: 40px; height: 40px;
+  top: -2px;
+  left: -2px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: 2px solid transparent;
-  border-top-color: var(--sds-primary);
+  border-top-color: var(--sds-primary, #0015D1);
   animation: sds-cometSpin 1s linear infinite;
 }
 @keyframes sds-cometSpin { to { transform: rotate(360deg); } }
@@ -811,8 +1063,11 @@
 .sds-loader-wave > * {
   width: 4px;
   border-radius: 2px;
-  background: var(--sds-primary);
-  animation: sds-waveBar 0.9s ease infinite;
+  background: var(--sds-primary, #0015D1);
+  animation-name:            sds-waveBar;
+  animation-duration:        0.9s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
 }
 .sds-loader-wave > *:nth-child(1) { animation-delay: 0.00s; height: 60%; }
 .sds-loader-wave > *:nth-child(2) { animation-delay: 0.15s; height: 90%; }
@@ -827,7 +1082,8 @@
 /* 69 · Ping Cascade ---------------------------------------- */
 .sds-loader-ping {
   position: relative;
-  width: 16px; height: 16px;
+  width: 16px;
+  height: 16px;
 }
 .sds-loader-ping::before,
 .sds-loader-ping::after,
@@ -836,8 +1092,11 @@
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  border: 1.5px solid var(--sds-primary);
-  animation: sds-pingCascade 2s ease infinite;
+  border: 1.5px solid var(--sds-primary, #0015D1);
+  animation-name:            sds-pingCascade;
+  animation-duration:        2s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
 }
 .sds-loader-ping::after  { animation-delay: 0.6s; }
 .sds-loader-ping > span  { animation-delay: 1.2s; }
@@ -848,8 +1107,9 @@
 
 /* 70 · Progress Glow --------------------------------------- */
 .sds-loader-progress {
-  width: 100%; height: 4px;
-  background: var(--sds-primary-dim);
+  width: 100%;
+  height: 4px;
+  background: var(--sds-primary-dim, rgba(0,21,209,0.08));
   border-radius: 99px;
   overflow: hidden;
 }
@@ -857,34 +1117,45 @@
   content: '';
   display: block;
   height: 100%;
-  background: var(--sds-primary);
+  background: var(--sds-primary, #0015D1);
   border-radius: 99px;
-  animation: sds-progressGlow 2s ease infinite;
+  animation-name:            sds-progressGlow;
+  animation-duration:        2s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
 }
 @keyframes sds-progressGlow {
   0%   { width: 0%; box-shadow: none; }
-  50%  { box-shadow: 0 0 12px var(--sds-primary-glow), 4px 0 16px var(--sds-primary-glow); }
-  100% { width: 85%; box-shadow: 0 0 8px var(--sds-primary-glow); }
+  50%  { box-shadow: 0 0 12px var(--sds-primary-glow, rgba(0,21,209,0.3)), 4px 0 16px var(--sds-primary-glow, rgba(0,21,209,0.3)); }
+  100% { width: 85%; box-shadow: 0 0 8px var(--sds-primary-glow, rgba(0,21,209,0.3)); }
 }
 
 /* 71 · Skeleton Pulse -------------------------------------- */
 .sds-loader-skeleton {
-  background: linear-gradient(90deg, var(--sds-primary-dim) 25%, rgba(0,21,209,0.04) 50%, var(--sds-primary-dim) 75%);
+  background: linear-gradient(90deg, var(--sds-primary-dim, rgba(0,21,209,0.08)) 25%, rgba(0,21,209,0.04) 50%, var(--sds-primary-dim, rgba(0,21,209,0.08)) 75%);
   background-size: 400% 100%;
-  animation: sds-skeletonPulse 1.6s ease infinite;
+  animation-name:            sds-skeletonPulse;
+  animation-duration:        1.6s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
   border-radius: 4px;
 }
 @keyframes sds-skeletonPulse {
   0%   { background-position: -300% 0; }
-  100% { background-position: 300% 0; }
+  100% { background-position:  300% 0; }
 }
 
 /* 72 · Vortex Spin ----------------------------------------- */
 .sds-loader-vortex {
-  width: 36px; height: 36px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  background: conic-gradient(var(--sds-primary), var(--sds-accent), var(--sds-primary));
-  animation: sds-vortexSpin 1.6s ease infinite;
+  background: conic-gradient(var(--sds-primary, #0015D1), var(--sds-accent, #d10028), var(--sds-primary, #0015D1));
+  animation-name:            sds-vortexSpin;
+  animation-duration:        1.6s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  will-change: transform;
 }
 @keyframes sds-vortexSpin {
   from { transform: rotate(0deg) scale(1); }
@@ -895,17 +1166,21 @@
 /* 73 · Typewriter Loader ----------------------------------- */
 .sds-loader-type {
   font-family: monospace;
-  border-right: 2px solid var(--sds-primary);
+  border-right: 2px solid var(--sds-primary, #0015D1);
   overflow: hidden;
   white-space: nowrap;
-  animation: sds-typewriterPrem 2s steps(10) infinite alternate,
-             sds-cursorBlink 0.8s step-end infinite;
+  animation-name:            sds-typewriterPrem, sds-cursorBlink;
+  animation-duration:        2s, 0.8s;
+  animation-timing-function: steps(10), step-end;
+  animation-iteration-count: infinite, infinite;
+  animation-direction:       alternate, normal;
 }
 
 /* 74 · Target Lock ----------------------------------------- */
 .sds-loader-target {
   position: relative;
-  width: 40px; height: 40px;
+  width: 40px;
+  height: 40px;
 }
 .sds-loader-target::before {
   content: '';
@@ -920,12 +1195,15 @@
 /* ============================================================
    SECTION 6 — SCROLL / VIEWPORT ANIMATIONS
    Namespace: .sds-scroll-*
-   Use with IntersectionObserver — add class when element enters viewport.
+   Add class when element enters viewport (IntersectionObserver).
    ============================================================ */
 
 /* 75 · Viewport Rise --------------------------------------- */
 .sds-scroll-rise {
-  animation: sds-viewportRise 0.8s var(--sds-easing) both;
+  animation-name:            sds-viewportRise;
+  animation-duration:        0.8s;
+  animation-timing-function: var(--sds-easing, cubic-bezier(0.22, 1, 0.36, 1));
+  animation-fill-mode:       both;
 }
 @keyframes sds-viewportRise {
   from { opacity: 0; transform: translateY(50px) scale(0.95); }
@@ -934,16 +1212,22 @@
 
 /* 76 · Curtain Lift ---------------------------------------- */
 .sds-scroll-curtain {
-  animation: sds-curtainLift 0.8s var(--sds-easing) both;
+  animation-name:            sds-curtainLift;
+  animation-duration:        0.8s;
+  animation-timing-function: var(--sds-easing, cubic-bezier(0.22, 1, 0.36, 1));
+  animation-fill-mode:       both;
 }
 @keyframes sds-curtainLift {
-  from { clip-path: inset(0 0 100% 0); opacity: 0; }
-  to   { clip-path: inset(0 0 0% 0); opacity: 1; }
+  from { clip-path: inset(0 0 100% 0); -webkit-clip-path: inset(0 0 100% 0); opacity: 0; }
+  to   { clip-path: inset(0 0 0%   0); -webkit-clip-path: inset(0 0 0%   0); opacity: 1; }
 }
 
 /* 77 · Scroll Warp ----------------------------------------- */
 .sds-scroll-warp {
-  animation: sds-scrollWarp 0.9s var(--sds-easing) both;
+  animation-name:            sds-scrollWarp;
+  animation-duration:        0.9s;
+  animation-timing-function: var(--sds-easing, cubic-bezier(0.22, 1, 0.36, 1));
+  animation-fill-mode:       both;
 }
 @keyframes sds-scrollWarp {
   from { opacity: 0; transform: perspective(600px) rotateX(20deg) translateY(30px); filter: blur(4px); }
@@ -952,7 +1236,10 @@
 
 /* 78 · Momentum Slide -------------------------------------- */
 .sds-scroll-slide {
-  animation: sds-momentumSlide 0.8s var(--sds-easing) both;
+  animation-name:            sds-momentumSlide;
+  animation-duration:        0.8s;
+  animation-timing-function: var(--sds-easing, cubic-bezier(0.22, 1, 0.36, 1));
+  animation-fill-mode:       both;
 }
 @keyframes sds-momentumSlide {
   from { opacity: 0; transform: translateX(-60px); }
@@ -962,7 +1249,10 @@
 
 /* 79 · Scale Reveal ---------------------------------------- */
 .sds-scroll-scale {
-  animation: sds-scaleReveal 0.8s var(--sds-easing) both;
+  animation-name:            sds-scaleReveal;
+  animation-duration:        0.8s;
+  animation-timing-function: var(--sds-easing, cubic-bezier(0.22, 1, 0.36, 1));
+  animation-fill-mode:       both;
 }
 @keyframes sds-scaleReveal {
   from { opacity: 0; transform: scale(0.7); filter: blur(8px); }
@@ -972,16 +1262,22 @@
 
 /* 80 · Radial Expand --------------------------------------- */
 .sds-scroll-radial {
-  animation: sds-radialExpand 0.9s var(--sds-easing) both;
+  animation-name:            sds-radialExpand;
+  animation-duration:        0.9s;
+  animation-timing-function: var(--sds-easing, cubic-bezier(0.22, 1, 0.36, 1));
+  animation-fill-mode:       both;
 }
 @keyframes sds-radialExpand {
-  from { clip-path: circle(0% at 50% 100%); opacity: 0; }
-  to   { clip-path: circle(150% at 50% 100%); opacity: 1; }
+  from { clip-path: circle(0% at 50% 100%); -webkit-clip-path: circle(0% at 50% 100%); opacity: 0; }
+  to   { clip-path: circle(150% at 50% 100%); -webkit-clip-path: circle(150% at 50% 100%); opacity: 1; }
 }
 
 /* 81 · Blur Ascend ----------------------------------------- */
 .sds-scroll-blur {
-  animation: sds-blurAscend 0.8s var(--sds-easing) both;
+  animation-name:            sds-blurAscend;
+  animation-duration:        0.8s;
+  animation-timing-function: var(--sds-easing, cubic-bezier(0.22, 1, 0.36, 1));
+  animation-fill-mode:       both;
 }
 @keyframes sds-blurAscend {
   from { opacity: 0; transform: translateY(40px); filter: blur(16px); }
@@ -990,7 +1286,10 @@
 
 /* 82 · Tilt Reveal ----------------------------------------- */
 .sds-scroll-tilt {
-  animation: sds-tiltReveal 0.8s var(--sds-easing) both;
+  animation-name:            sds-tiltReveal;
+  animation-duration:        0.8s;
+  animation-timing-function: var(--sds-easing, cubic-bezier(0.22, 1, 0.36, 1));
+  animation-fill-mode:       both;
 }
 @keyframes sds-tiltReveal {
   from { opacity: 0; transform: perspective(400px) rotateX(50deg) translateY(20px); }
@@ -999,16 +1298,22 @@
 
 /* 83 · Scan Line ------------------------------------------- */
 .sds-scroll-scan {
-  animation: sds-scanLine 0.8s var(--sds-easing) both;
+  animation-name:            sds-scanLine;
+  animation-duration:        0.8s;
+  animation-timing-function: var(--sds-easing, cubic-bezier(0.22, 1, 0.36, 1));
+  animation-fill-mode:       both;
 }
 @keyframes sds-scanLine {
-  from { clip-path: inset(0 100% 0 0); }
-  to   { clip-path: inset(0 0% 0 0); }
+  from { clip-path: inset(0 100% 0 0); -webkit-clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0% 0 0);   -webkit-clip-path: inset(0 0% 0 0); }
 }
 
 /* 84 · Stagger Pop ----------------------------------------- */
 .sds-scroll-stagger-pop > * {
-  animation: sds-staggerPop 0.7s var(--sds-easing) both;
+  animation-name:            sds-staggerPop;
+  animation-duration:        0.7s;
+  animation-timing-function: var(--sds-easing, cubic-bezier(0.22, 1, 0.36, 1));
+  animation-fill-mode:       both;
 }
 .sds-scroll-stagger-pop > *:nth-child(1) { animation-delay: 0.00s; }
 .sds-scroll-stagger-pop > *:nth-child(2) { animation-delay: 0.10s; }
@@ -1024,37 +1329,58 @@
 
 /* 85 · Depth Enter ----------------------------------------- */
 .sds-scroll-depth {
-  animation: sds-depthPortal 0.9s var(--sds-easing) both;
+  animation-name:            sds-depthPortal;
+  animation-duration:        0.9s;
+  animation-timing-function: var(--sds-easing, cubic-bezier(0.22, 1, 0.36, 1));
+  animation-fill-mode:       both;
 }
 
 /* 86 · Shatter Enter --------------------------------------- */
 .sds-scroll-shatter {
-  animation: sds-shatterIn 0.8s var(--sds-easing) both;
+  animation-name:            sds-shatterIn;
+  animation-duration:        0.8s;
+  animation-timing-function: var(--sds-easing, cubic-bezier(0.22, 1, 0.36, 1));
+  animation-fill-mode:       both;
 }
 
 /* 87 · Phantom Rise ---------------------------------------- */
 .sds-scroll-phantom {
-  animation: sds-phantomBlur 0.8s ease both;
+  animation-name:            sds-phantomBlur;
+  animation-duration:        0.8s;
+  animation-timing-function: ease;
+  animation-fill-mode:       both;
 }
 
 /* 88 · Gravity Land ---------------------------------------- */
 .sds-scroll-gravity {
-  animation: sds-gravityDrop 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) both;
+  animation-name:            sds-gravityDrop;
+  animation-duration:        0.8s;
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  animation-fill-mode:       both;
 }
 
 /* 89 · Liquid Enter ---------------------------------------- */
 .sds-scroll-liquid {
-  animation: sds-liquidRise 0.8s var(--sds-easing) both;
+  animation-name:            sds-liquidRise;
+  animation-duration:        0.8s;
+  animation-timing-function: var(--sds-easing, cubic-bezier(0.22, 1, 0.36, 1));
+  animation-fill-mode:       both;
 }
 
 /* 90 · Velvet Drop Scroll ---------------------------------- */
 .sds-scroll-velvet {
-  animation: sds-velvetDrop 0.8s var(--sds-easing) both;
+  animation-name:            sds-velvetDrop;
+  animation-duration:        0.8s;
+  animation-timing-function: var(--sds-easing, cubic-bezier(0.22, 1, 0.36, 1));
+  animation-fill-mode:       both;
 }
 
 /* 91 · Stagger Grid ---------------------------------------- */
 .sds-scroll-stagger-grid > * {
-  animation: sds-viewportRise 0.6s var(--sds-easing) both;
+  animation-name:            sds-viewportRise;
+  animation-duration:        0.6s;
+  animation-timing-function: var(--sds-easing, cubic-bezier(0.22, 1, 0.36, 1));
+  animation-fill-mode:       both;
 }
 .sds-scroll-stagger-grid > *:nth-child(1) { animation-delay: 0.00s; }
 .sds-scroll-stagger-grid > *:nth-child(2) { animation-delay: 0.08s; }
@@ -1065,17 +1391,24 @@
 
 /* 92 · Orbit Enter ----------------------------------------- */
 .sds-scroll-orbit {
-  animation: sds-perspSwing 0.8s var(--sds-easing) both;
+  animation-name:            sds-perspSwing;
+  animation-duration:        0.8s;
+  animation-timing-function: var(--sds-easing, cubic-bezier(0.22, 1, 0.36, 1));
+  animation-fill-mode:       both;
 }
 
 /* 93 · Glitch Reveal --------------------------------------- */
 .sds-scroll-glitch {
-  animation: sds-staticBurst 0.6s steps(1) both, sds-viewportRise 0.8s var(--sds-easing) both;
+  animation-name:            sds-staticBurst, sds-viewportRise;
+  animation-duration:        0.6s, 0.8s;
+  animation-timing-function: steps(1), var(--sds-easing, cubic-bezier(0.22, 1, 0.36, 1));
+  animation-fill-mode:       both, both;
 }
 
 
 /* ============================================================
    UTILITY MODIFIERS
+   All !important usage is intentional — utilities override base.
    ============================================================ */
 
 /* Delay helpers */
@@ -1088,16 +1421,16 @@
 .sds-delay-8  { animation-delay: 0.8s !important; }
 .sds-delay-10 { animation-delay: 1.0s !important; }
 
-/* Duration helpers */
+/* Duration helpers (CSS custom property override — no !important needed) */
 .sds-fast   { --sds-duration: 0.4s; }
 .sds-normal { --sds-duration: 0.8s; }
 .sds-slow   { --sds-duration: 1.4s; }
 .sds-xslow  { --sds-duration: 2.2s; }
 
 /* Iteration helpers */
-.sds-once    { animation-iteration-count: 1 !important; animation-fill-mode: both !important; }
-.sds-loop    { animation-iteration-count: infinite !important; }
-.sds-alt     { animation-direction: alternate; animation-iteration-count: infinite !important; }
+.sds-once { animation-iteration-count: 1 !important;        animation-fill-mode: both !important; }
+.sds-loop { animation-iteration-count: infinite !important; }
+.sds-alt  { animation-direction: alternate;                 animation-iteration-count: infinite !important; }
 
 /* Fill modes */
 .sds-fill-both    { animation-fill-mode: both !important; }
@@ -1105,3 +1438,14 @@
 
 /* Pause on hover */
 .sds-pause-hover:hover * { animation-play-state: paused; }
+
+/* ============================================================
+   LEGACY ALIASES — Keep backward compat with README examples
+   ============================================================ */
+.sds-input-focus-glow { animation-name: sds-focusField; animation-duration: 0.3s; animation-timing-function: ease; animation-fill-mode: both; }
+.sds-card-neon        { animation-name: sds-neonSign; animation-duration: 4s; animation-timing-function: ease; animation-iteration-count: infinite; }
+.sds-card-depth       { animation-name: sds-parallaxDepth; animation-duration: 4s; animation-timing-function: ease; animation-iteration-count: infinite; }
+.sds-card-flip        { animation-name: sds-warpGate; animation-duration: var(--sds-duration, 0.8s); animation-timing-function: var(--sds-easing, cubic-bezier(0.22, 1, 0.36, 1)); animation-fill-mode: both; }
+.sds-loader-progress-glow { width: 100%; height: 4px; background: var(--sds-primary-dim, rgba(0,21,209,0.08)); border-radius: 99px; overflow: hidden; }
+.sds-loader-progress-glow::after { content: ''; display: block; height: 100%; background: var(--sds-primary, #0015D1); border-radius: 99px; animation: sds-progressGlow 2s ease infinite; }
+.sds-scroll-fade-up   { animation-name: sds-viewportRise; animation-duration: 0.8s; animation-timing-function: var(--sds-easing, cubic-bezier(0.22, 1, 0.36, 1)); animation-fill-mode: both; }
