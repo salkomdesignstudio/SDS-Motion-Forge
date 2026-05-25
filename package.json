@@ -17,7 +17,7 @@
     "CHANGELOG.md"
   ],
   "scripts": {
-    "build": "postcss src/motion.css -o dist/motion.css && clean-css-cli -o dist/motion.min.css dist/motion.css",
+    "build": "postcss src/motion.css -o dist/motion.css && cleancss -o dist/motion.min.css dist/motion.css",
     "build:dev": "postcss src/motion.css -o dist/motion.css --map",
     "build:watch": "postcss src/motion.css -o dist/motion.css --watch",
     "build:verify": "node verify-build.js",
