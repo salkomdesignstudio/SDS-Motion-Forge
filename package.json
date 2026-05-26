@@ -87,8 +87,5 @@
   "sideEffects": [
     "./dist/motion.css",
     "./dist/motion.min.css"
-  ],
-  "dependencies": {
-    "@salkomdesignstudio/sds-motion-forge": "file:salkomdesignstudio-sds-motion-forge-3.2.0.tgz"
-  }
+  ]
 }

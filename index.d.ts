@@ -15,27 +15,10 @@
 
 /** CSS module declaration — the import has side effects (injects styles). */
 declare module '@salkomdesignstudio/sds-motion-forge/dist/motion.css' {}
-
 declare module '@salkomdesignstudio/sds-motion-forge/dist/motion.min.css' {}
-
-<<<<<<< HEAD
+declare module '@salkomdesignstudio/sds-motion-forge/motion.css' {}
+declare module '@salkomdesignstudio/sds-motion-forge/motion.min.css' {}
 declare module '@salkomdesignstudio/sds-motion-forge' {}
-=======
-declare module '@salkomdesignstudio/sds-motion-forge/motion.css' {
-  const styles: Record<string, string>;
-  export default styles;
-}
-
-declare module '@salkomdesignstudio/sds-motion-forge/motion.min.css' {
-  const styles: Record<string, string>;
-  export default styles;
-}
-
-declare module '@salkomdesignstudio/sds-motion-forge' {
-  const styles: Record<string, string>;
-  export default styles;
-}
->>>>>>> 505faa7999a9d60b38f3e13e5b3558f2ae379a0b
 
 /**
  * All animation class names exported as a typed union.
@@ -48,7 +31,6 @@ export type SdsTextAnimation =
   | 'sds-phantom-blur'
   | 'sds-gravity-drop'
   | 'sds-static-burst'
-  | 'sds-glitch-flicker'
   | 'sds-elastic-stamp'
   | 'sds-slice-reveal'
   | 'sds-char-orbit'
