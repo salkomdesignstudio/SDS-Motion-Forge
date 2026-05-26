@@ -1332,8 +1332,12 @@
 
 /* Iteration helpers */
 .sds-once { animation-iteration-count: 1 !important; animation-fill-mode: both !important; }
-.sds-loop { animation-iteration-count: infinite !important; }
-.sds-alt  { animation-direction: alternate; animation-iteration-count: infinite !important; }
+/* Cascade to > * so stagger/wave containers (arc-orbit, kinetic-wave, signal-wave,
+   stagger-pop, stagger-grid) loop correctly — their animations live on children. */
+.sds-loop,
+.sds-loop > * { animation-iteration-count: infinite !important; }
+.sds-alt,
+.sds-alt > * { animation-direction: alternate; animation-iteration-count: infinite !important; }
 
 /* Fill modes */
 .sds-fill-both    { animation-fill-mode: both !important; }
