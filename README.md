@@ -39,7 +39,7 @@ Or via CDN (no build step required):
 <!-- Pin to a specific version -->
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge@3.0.0/dist/motion.min.css"
+  href="https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge@3.2.0/dist/motion.min.css"
 />
 
 <!-- unpkg -->

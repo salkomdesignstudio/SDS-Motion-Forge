@@ -128,6 +128,22 @@
 }
 
 /* 7 · Elastic Stamp ---------------------------------------- */
+.sds-glitch-flicker {
+  animation: sds-glitchFlicker 2.5s linear infinite;
+  display: inline-block;
+}
+@keyframes sds-glitchFlicker {
+  0%,100% { transform: none; opacity: 1; filter: none; text-shadow: none; }
+  8%      { transform: translate(2px,-1px) skewX(3deg); text-shadow: 2px 0 var(--sds-accent), -2px 0 var(--sds-primary); }
+  10%     { transform: translate(-2px,1px) skewX(-2deg); opacity: 0.8; }
+  12%     { transform: none; opacity: 1; text-shadow: none; }
+  46%     { filter: brightness(1.5); }
+  48%     { transform: translate(3px,0); text-shadow: -3px 0 var(--sds-accent), 3px 0 var(--sds-primary); }
+  50%     { transform: none; filter: none; text-shadow: none; }
+  82%     { opacity: 0.65; transform: skewX(-4deg); }
+  84%     { opacity: 1; transform: none; }
+}
+
 .sds-elastic-stamp {
   animation: sds-elasticStamp var(--sds-duration) var(--sds-easing) both;
   display: inline-block;
@@ -1332,4 +1348,9 @@
 .sds-fill-forward { animation-fill-mode: forwards !important; }
 
 /* Pause on hover */
-.sds-pause-hover:hover * { animation-play-state: paused; }
+.sds-pause-hover:hover,
+.sds-pause-hover:hover *,
+.sds-pause-hover:hover::before,
+.sds-pause-hover:hover::after {
+  animation-play-state: paused !important;
+}
