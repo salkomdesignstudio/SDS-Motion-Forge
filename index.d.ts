@@ -14,20 +14,11 @@
  */
 
 /** CSS module declaration — the import has side effects (injects styles). */
-declare module '@salkomdesignstudio/sds-motion-forge/dist/motion.css' {
-  const styles: Record<string, string>;
-  export default styles;
-}
+declare module '@salkomdesignstudio/sds-motion-forge/dist/motion.css' {}
 
-declare module '@salkomdesignstudio/sds-motion-forge/dist/motion.min.css' {
-  const styles: Record<string, string>;
-  export default styles;
-}
+declare module '@salkomdesignstudio/sds-motion-forge/dist/motion.min.css' {}
 
-declare module '@salkomdesignstudio/sds-motion-forge' {
-  const styles: Record<string, string>;
-  export default styles;
-}
+declare module '@salkomdesignstudio/sds-motion-forge' {}
 
 /**
  * All animation class names exported as a typed union.
@@ -60,7 +51,10 @@ export type SdsTextAnimation =
   | 'sds-smoke-reveal'
   | 'sds-arc-orbit'
   | 'sds-depth-charge'
-  | 'sds-signal-wave';
+  | 'sds-signal-wave'
+  | 'sds-glitch-flicker'
+  | 'sds-velocity-blur-text'
+  | 'sds-neon-pulse-text';
 
 export type SdsButtonAnimation =
   | 'sds-btn-magnetic'

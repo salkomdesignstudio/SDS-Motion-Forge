@@ -56,6 +56,9 @@ const REQUIRED_CLASSES = [
   ".sds-card-depth",
   ".sds-card-flip",
   ".sds-loader-progress-glow",
+  ".sds-glitch-flicker",
+  ".sds-velocity-blur-text",
+  ".sds-neon-pulse-text",
 ];
 
 const REQUIRED_KEYFRAMES = [
@@ -104,6 +107,9 @@ const REQUIRED_KEYFRAMES = [
   "sds-staggerPop",
   "sds-typewriterPrem",
   "sds-cursorBlink",
+  "sds-glitchFlicker",
+  "sds-velocityBlur",
+  "sds-neonPulseText",
 ];
 
 const REQUIRED_TOKENS = [

@@ -12,7 +12,7 @@
     <!-- SDS Motion Forge CSS -->
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge@3.1.0/dist/motion.min.css"
+      href="https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge@3.2.0/dist/motion.min.css"
     />
 
     <!-- Fonts -->
@@ -1691,7 +1691,9 @@
         gap: 1px;
       }
       .sds-scroll-stagger-pop {
-        display: contents;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
       }
 
       .elevate-demo {
@@ -2362,47 +2364,6 @@
       /* ═══════════════════════════════════════════════════════
        ROUND-OFF UPGRADES (TEXT 50 ADDITIONS & CONTAINER BOX FIX)
        ═══════════════════════════════════════════════════════ */
-      /* Glitch Flicker Core Animation */
-      @keyframes sdsGlitchFlicker {
-        0%,
-        100% {
-          transform: none;
-          opacity: 1;
-          text-shadow: none;
-        }
-        7% {
-          transform: skewX(12deg);
-          opacity: 0.8;
-          text-shadow:
-            -2px 0 var(--accent),
-            2px 0 var(--brand);
-        }
-        10% {
-          transform: none;
-          opacity: 0.9;
-        }
-        15% {
-          transform: translateY(-2px);
-          opacity: 0.6;
-        }
-        20% {
-          transform: none;
-          opacity: 1;
-          text-shadow: 2px -1px var(--success);
-        }
-        45% {
-          transform: skewY(1.5deg);
-          opacity: 0.8;
-        }
-        50% {
-          transform: none;
-          opacity: 1;
-        }
-      }
-      .sds-glitch-flicker {
-        animation: sdsGlitchFlicker 2.5s linear infinite;
-        display: inline-block;
-      }
 
       /* JS Core: Text Implode Style */
       @keyframes sdsImplodeAnim {
@@ -2438,89 +2399,6 @@
         will-change: transform, opacity;
       }
 
-      /* Typewriter Pro full-width containment fix */
-      .sds-typewriter-pro {
-        display: inline-block !important;
-        max-width: max-content !important;
-        white-space: nowrap;
-        overflow: hidden;
-        margin: 0 auto;
-      }
-
-      /* ═══════════════════════════════════════════════════════
-       CHROMATIC REFRACT & PRISM SPLIT OVERRIDES
-       ═══════════════════════════════════════════════════════ */
-      /* Refract: Sharp, digitized stepped cyan/magenta skew shift */
-      @keyframes sdsRefract {
-        0%,
-        100% {
-          text-shadow:
-            -1.5px -1.5px 0 rgba(255, 0, 80, 0.9),
-            1.5px 1.5px 0 rgba(0, 240, 255, 0.9);
-          transform: skewX(0deg);
-        }
-        20% {
-          text-shadow:
-            -3px 1.5px 0 rgba(255, 0, 80, 0.9),
-            3px -1.5px 0 rgba(0, 240, 255, 0.9);
-          transform: skewX(-6deg);
-        }
-        40% {
-          text-shadow:
-            1.5px -3px 0 rgba(255, 0, 80, 0.9),
-            -1.5px 3px 0 rgba(0, 240, 255, 0.9);
-          transform: skewX(6deg);
-        }
-        60% {
-          text-shadow:
-            -1.5px 1.5px 0 rgba(255, 0, 80, 0.9),
-            1.5px -1.5px 0 rgba(0, 240, 255, 0.9);
-          transform: skewY(-2deg);
-        }
-        80% {
-          text-shadow:
-            3px 3px 0 rgba(255, 0, 80, 0.9),
-            -3px -3px 0 rgba(0, 240, 255, 0.9);
-          transform: skewY(2deg);
-        }
-      }
-      .sds-refract {
-        animation: sdsRefract 1.4s steps(3) infinite !important;
-        display: inline-block;
-      }
-
-      /* Prism Split: Continuous layered dispersion sliding outward into full rainbow layers */
-      @keyframes sdsPrismSplit {
-        0%,
-        100% {
-          text-shadow:
-            0px 0 rgba(255, 0, 0, 0),
-            0px 0 rgba(255, 127, 0, 0),
-            0px 0 rgba(255, 255, 0, 0),
-            0px 0 rgba(0, 255, 0, 0),
-            0px 0 rgba(0, 0, 255, 0),
-            0px 0 rgba(75, 0, 130, 0),
-            0px 0 rgba(148, 0, 211, 0);
-          letter-spacing: -0.03em;
-          transform: scale(1);
-        }
-        50% {
-          text-shadow:
-            -5.5px 0 1px rgba(255, 0, 0, 0.85),
-            -3.5px 0 1px rgba(255, 127, 0, 0.85),
-            -1.5px 0 1px rgba(255, 255, 0, 0.85),
-            0px 0 1px rgba(0, 255, 0, 0.85),
-            1.5px 0 1px rgba(0, 0, 255, 0.85),
-            3.5px 0 1px rgba(75, 0, 130, 0.85),
-            5.5px 0 1px rgba(148, 0, 211, 0.85);
-          letter-spacing: 0.06em;
-          transform: scale(1.025);
-        }
-      }
-      .sds-prism-split {
-        animation: sdsPrismSplit 2s cubic-bezier(0.25, 1, 0.5, 1) infinite !important;
-        display: inline-block;
-      }
     </style>
   </head>
 
@@ -2629,7 +2507,7 @@
       <div class="container">
         <div class="hero-badge sds-liquid-rise">
           <div class="hero-badge-dot" aria-hidden="true"></div>
-          v3.1.0 — Production Engineering Release
+          v3.2.0 — Production Engineering Release
         </div>
 
         <h1 class="hero-title">
