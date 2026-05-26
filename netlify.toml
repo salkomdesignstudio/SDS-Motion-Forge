@@ -1,15 +1,9 @@
 [build]
-  # Serve the entire repo root so /dist/ and /docs/ are both accessible.
-  # docs/index.html loads ../dist/motion.min.css which resolves to /dist/motion.min.css.
-  command = "npm run build"
-  publish = "."
+  # 1. Build the library CSS.
+  # 2. Copy dist into docs/ so docs/index.html can load dist/motion.min.css
+  #    without needing ../dist/ (which breaks when Netlify serves docs/ as root).
+  command = "npm run build && cp -r dist docs/dist"
+  publish = "docs"
 
-[[redirects]]
-  from = "/"
-  to   = "/docs/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/docs"
-  to   = "/docs/index.html"
-  status = 200
+[build.environment]
+  NODE_VERSION = "18"

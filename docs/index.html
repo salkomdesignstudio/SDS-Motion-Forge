@@ -9,10 +9,13 @@
       content="90+ production-ready CSS animations. Applied with a single class name. No JavaScript required."
     />
 
-    <!-- SDS Motion Forge CSS -->
+    <!-- SDS Motion Forge CSS
+         Netlify build copies dist/ into docs/dist/ so "dist/motion.min.css" resolves.
+         CDN onerror fallback covers local dev where docs/dist/ may not exist yet. -->
     <link
       rel="stylesheet"
       href="../dist/motion.min.css"
+      onerror="this.onerror=null;this.href='https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge@3.1.0/dist/motion.min.css'"
     />
 
     <!-- Fonts -->
