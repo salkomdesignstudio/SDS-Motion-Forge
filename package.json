@@ -1,6 +1,6 @@
 {
   "name": "@salkomdesignstudio/sds-motion-forge",
-  "version": "3.2.0",
+  "version": "3.2.1",
   "description": "Production-ready CSS animation library - 90+ class-based animations for text, buttons, inputs, cards, loaders, and scroll. No JavaScript required.",
   "type": "commonjs",
   "main": "./dist/motion.css",
