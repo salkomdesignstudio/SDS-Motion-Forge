@@ -1134,6 +1134,15 @@
         right: 16px;
       }
 
+      #modal-preview-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
       .modal-body {
         padding: 24px 28px;
       }
@@ -4654,33 +4663,36 @@
       /* ─────────────────────────────────────────────────
       PREVIEW RENDER BUILDER
      ───────────────────────────────────────────────── */
-      function buildPreviewHTML(anim, replayClass) {
+      function buildPreviewHTML(anim, replayClass, forCard) {
         const cls = replayClass || anim.cls;
+        /* In card/replay context, force looping so once-animations are always visible.
+           Trigger animations (focus/hover) are skipped — sds-loop has no effect on them. */
+        const L = (forCard && anim.tag !== 'trigger') ? ' sds-loop' : '';
         switch (anim.elem) {
           case "wave":
-            return `<span class="${cls} demo-text-preview" style="display:inline-flex;gap:1px">${anim.waveText
+            return `<span class="${cls}${L} demo-text-preview" style="display:inline-flex;gap:1px">${anim.waveText
               .map((c) => `<span>${c}</span>`)
               .join("")}</span>`;
           case "btn":
-            return `<button class="demo-btn ${cls}" style="pointer-events:none">Animate</button>`;
+            return `<button class="demo-btn ${cls}${L}" style="pointer-events:none">Animate</button>`;
           case "input":
             if (cls === "sds-input-focus" || cls === "sds-input-ink") {
               return `<input class="demo-input ${cls}" placeholder="${anim.placeholder || ""}" />`;
             }
-            return `<input class="demo-input ${cls}" placeholder="${anim.placeholder || ""}" readonly />`;
+            return `<input class="demo-input ${cls}${L}" placeholder="${anim.placeholder || ""}" readonly />`;
           case "elevate":
             return `<div class="elevate-demo sds-input-elevate-wrap">
           <input type="text" placeholder=" " class="demo-input" style="padding:16px 14px 6px;width:100%" />
           <label style="font-size:13px">Email address</label>
         </div>`;
           case "card":
-            return `<div class="demo-card ${cls}">
+            return `<div class="demo-card ${cls}${L}">
           <div class="demo-card-line"></div>
           <div class="demo-card-line"></div>
           <div class="demo-card-line"></div>
         </div>`;
           case "card-slice":
-            return `<div class="demo-card ${cls}">
+            return `<div class="demo-card ${cls}${L}">
           <div class="demo-card-line"></div>
           <div class="demo-card-line"></div>
           <div class="demo-card-line"></div>
@@ -4708,13 +4720,13 @@
           case "loader-target":
             return `<div class="sds-loader-target"></div>`;
           case "stagger-pop":
-            return `<div class="${cls}" style="display:flex;gap:8px">
+            return `<div class="${cls}${L}" style="display:flex;gap:8px">
           <div style="width:36px;height:36px;border-radius:10px;background:var(--brand)"></div>
           <div style="width:36px;height:36px;border-radius:10px;background:var(--brand);opacity:0.7"></div>
           <div style="width:36px;height:36px;border-radius:10px;background:var(--brand);opacity:0.5"></div>
         </div>`;
           case "stagger-grid":
-            return `<div class="${cls}" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px">
+            return `<div class="${cls}${L}" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px">
           <div style="height:28px;border-radius:6px;background:var(--brand)"></div>
           <div style="height:28px;border-radius:6px;background:var(--brand);opacity:0.7"></div>
           <div style="height:28px;border-radius:6px;background:var(--brand);opacity:0.5"></div>
@@ -4816,7 +4828,7 @@
             return buildImplodeHTML("Implode");
 
           default:
-            return `<span class="demo-text-preview ${cls}">Motion</span>`;
+            return `<span class="demo-text-preview ${cls}${L}">Motion</span>`;
         }
       }
 
@@ -5107,7 +5119,7 @@
 
           card.innerHTML = `
         <div class="anim-preview" id="preview-${anim.cls}">
-          <div class="anim-preview-inner">${buildPreviewHTML(anim)}</div>
+          <div class="anim-preview-inner">${buildPreviewHTML(anim, null, true)}</div>
         </div>
         <div class="anim-meta">
           <div class="anim-name">${anim.name}</div>
@@ -5164,7 +5176,7 @@
         cleanupJSAnimations(inner);
         inner.innerHTML = "";
         void preview.offsetWidth;
-        inner.innerHTML = buildPreviewHTML(anim);
+        inner.innerHTML = buildPreviewHTML(anim, null, true);
 
         if (anim.elem && anim.elem.startsWith("js-")) {
           requestAnimationFrame(() => bootJSAnimations(inner));
@@ -5190,6 +5202,9 @@
         previewContent.innerHTML = "";
         void previewContent.offsetWidth;
         previewContent.innerHTML = buildPreviewHTML(anim);
+        /* Force per-element reflow so CSS animations restart from t=0 */
+        const firstChild = previewContent.firstElementChild;
+        if (firstChild) void firstChild.offsetWidth;
 
         if (anim.elem && anim.elem.startsWith("js-")) {
           requestAnimationFrame(() => bootJSAnimations(previewContent));
@@ -5221,6 +5236,8 @@
         previewContent.innerHTML = "";
         void previewContent.offsetWidth;
         previewContent.innerHTML = buildPreviewHTML(activeModalAnim);
+        const firstChild = previewContent.firstElementChild;
+        if (firstChild) void firstChild.offsetWidth;
         if (activeModalAnim.elem && activeModalAnim.elem.startsWith("js-")) {
           requestAnimationFrame(() => bootJSAnimations(previewContent));
         }

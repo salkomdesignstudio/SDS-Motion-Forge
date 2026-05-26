@@ -1,0 +1,15 @@
+[build]
+  # Serve the entire repo root so /dist/ and /docs/ are both accessible.
+  # docs/index.html loads ../dist/motion.min.css which resolves to /dist/motion.min.css.
+  command = "npm run build"
+  publish = "."
+
+[[redirects]]
+  from = "/"
+  to   = "/docs/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/docs"
+  to   = "/docs/index.html"
+  status = 200
