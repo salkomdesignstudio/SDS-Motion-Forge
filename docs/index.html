@@ -6,7 +6,7 @@
     <title>SDS Motion Forge — Premium CSS Animation System</title>
     <meta
       name="description"
-      content="90+ production-ready CSS animations. Applied with a single class name. No JavaScript required."
+      content="116 production-ready CSS animations. Applied with a single class name. No JavaScript required."
     />
 
     <!-- SDS Motion Forge CSS
@@ -15,7 +15,7 @@
     <link
       rel="stylesheet"
       href="../dist/motion.min.css"
-      onerror="this.onerror=null;this.href='https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge@3.1.0/dist/motion.min.css'"
+      onerror="this.onerror=null;this.href='https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css'"
     />
 
     <!-- Fonts -->
@@ -23,6 +23,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Remix Icons for mobile menu -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
 
@@ -2411,6 +2417,332 @@
         will-change: transform, opacity;
       }
 
+      /* ═══════════════════════════════════════════════════════
+       MOBILE-FIRST RESPONSIVE REFINEMENTS
+       Tablet ≤768 · Phone ≤600 · Small phone ≤420
+       ═══════════════════════════════════════════════════════ */
+
+      /* ── Tablet and below ── */
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 20px;
+        }
+        .section {
+          padding: 64px 0;
+        }
+        .hero {
+          padding-top: 104px;
+          padding-bottom: 64px;
+        }
+        .hero-cta {
+          flex-wrap: wrap;
+          gap: 12px;
+        }
+        .hero-cta .btn-primary,
+        .hero-cta .btn-ghost {
+          flex: 1 1 auto;
+          justify-content: center;
+          min-width: 0;
+        }
+        /* Animation tabs scroll horizontally instead of wrapping messily */
+        .tabs-bar {
+          flex-wrap: nowrap;
+          overflow-x: auto;
+          width: 100%;
+          -webkit-overflow-scrolling: touch;
+          scrollbar-width: none;
+        }
+        .tabs-bar::-webkit-scrollbar {
+          display: none;
+        }
+        .tab-btn {
+          flex: 0 0 auto;
+        }
+        .fw-tabs {
+          flex-wrap: nowrap;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          scrollbar-width: none;
+        }
+        .fw-tabs::-webkit-scrollbar {
+          display: none;
+        }
+        .fw-tab {
+          flex: 0 0 auto;
+        }
+        .anim-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 12px;
+        }
+      }
+
+      /* ── Large phone and below ── */
+      @media (max-width: 600px) {
+        .container {
+          padding: 0 16px;
+        }
+        .section {
+          padding: 56px 0;
+        }
+        .hero {
+          padding-top: 96px;
+          padding-bottom: 56px;
+        }
+        .hero-title {
+          font-size: clamp(40px, 13vw, 64px);
+        }
+        .hero-subtitle {
+          font-size: 15px;
+        }
+        .hero-stats {
+          gap: 20px 28px;
+          margin-top: 48px;
+          padding-top: 28px;
+        }
+        .hero-stat-val {
+          font-size: 26px;
+        }
+        .hero-stat-divider {
+          display: none;
+        }
+        .section-title {
+          font-size: clamp(26px, 7vw, 36px);
+        }
+        .bento-large-num {
+          font-size: 64px;
+        }
+        /* Single column for animation cards on phones */
+        .anim-grid {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+        /* Stack any remaining 2-col grids */
+        .usage-grid,
+        .playground-body {
+          grid-template-columns: 1fr;
+        }
+        .footer-inner {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+        /* Code blocks scroll horizontally, never overflow the screen */
+        pre,
+        .code-block,
+        .fw-panel {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+        }
+      }
+
+      /* ── Small phone ── */
+      @media (max-width: 420px) {
+        .container {
+          padding: 0 14px;
+        }
+        .hero-title {
+          font-size: clamp(34px, 12vw, 48px);
+        }
+        .hero-badge {
+          font-size: 11px;
+          flex-wrap: wrap;
+          line-height: 1.5;
+        }
+        .hero-stats {
+          gap: 16px 20px;
+        }
+        .hero-stat-val {
+          font-size: 22px;
+        }
+        .bento-large-num {
+          font-size: 52px;
+        }
+        .nav-inner {
+          padding: 0;
+        }
+        /* Hide secondary nav button on tiny screens, keep primary */
+        .nav-cta .btn-ghost {
+          display: none;
+        }
+        .tab-btn {
+          padding: 7px 14px;
+          font-size: 12px;
+        }
+      }
+
+      /* ── Touch target accessibility — all interactive elements ≥44px ── */
+      @media (hover: none) and (pointer: coarse) {
+        .tab-btn,
+        .fw-tab,
+        .btn-primary,
+        .btn-ghost,
+        .anim-card {
+          min-height: 44px;
+        }
+      }
+
+      /* ═══════════════════════════════════════════════════════
+       MOBILE MENU — Hamburger + Drawer
+       ═══════════════════════════════════════════════════════ */
+
+      /* Scroll-margin so anchored sections aren't hidden under fixed nav */
+      section[id],
+      header[id],
+      [id="animations"],
+      [id="playground"],
+      [id="install"],
+      [id="modifiers"],
+      [id="home"] {
+        scroll-margin-top: 80px;
+      }
+
+      .nav-burger {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border: 1px solid var(--line-mid);
+        background: var(--bg-card);
+        border-radius: var(--r-md);
+        color: var(--text-1);
+        font-size: 22px;
+        cursor: pointer;
+        transition: background 0.15s ease;
+      }
+      .nav-burger:hover {
+        background: var(--surface);
+      }
+
+      .mobile-menu {
+        position: fixed;
+        inset: 0;
+        z-index: 200;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.25s ease, visibility 0.25s ease;
+      }
+      .mobile-menu.open {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .mobile-menu-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(10, 10, 15, 0.45);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+      }
+
+      .mobile-menu-panel {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: min(82vw, 320px);
+        background: var(--bg-card);
+        border-left: 1px solid var(--line);
+        box-shadow: -8px 0 40px rgba(0, 0, 0, 0.12);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        transform: translateX(100%);
+        transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .mobile-menu.open .mobile-menu-panel {
+        transform: translateX(0);
+      }
+
+      .mobile-menu-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 16px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--line);
+      }
+      .mobile-menu-title {
+        font-family: var(--font-display);
+        font-weight: 800;
+        font-size: 16px;
+        color: var(--text-1);
+      }
+      .mobile-menu-close {
+        display: grid;
+        place-items: center;
+        width: 38px;
+        height: 38px;
+        border: none;
+        background: var(--surface);
+        border-radius: var(--r-md);
+        color: var(--text-1);
+        font-size: 22px;
+        cursor: pointer;
+      }
+
+      .mobile-menu-panel a {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 14px;
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: 15px;
+        color: var(--text-1);
+        border-radius: var(--r-md);
+        text-decoration: none;
+        transition: background 0.15s ease;
+      }
+      .mobile-menu-panel a i {
+        font-size: 20px;
+        color: var(--brand);
+      }
+      .mobile-menu-panel a:hover {
+        background: var(--surface);
+      }
+
+      .mobile-menu-divider {
+        height: 1px;
+        background: var(--line);
+        margin: 12px 0;
+      }
+
+      .mobile-menu-cta {
+        margin-top: 8px;
+        background: var(--brand) !important;
+        color: white !important;
+        justify-content: center;
+      }
+      .mobile-menu-cta i {
+        color: white !important;
+      }
+
+      /* Show burger, hide desktop links/actions on mobile */
+      @media (max-width: 860px) {
+        .nav-links {
+          display: none;
+        }
+        .nav-actions {
+          display: none;
+        }
+        .nav-burger {
+          display: flex;
+        }
+      }
+
+      /* ── Code block overflow guard (scroll method cards) ── */
+      .usage-card {
+        min-width: 0;
+        overflow: hidden;
+      }
+      .usage-card > div[style*="overflow-x"] {
+        max-width: 100%;
+      }
+      .usage-grid {
+        min-width: 0;
+      }
+
     </style>
   </head>
 
@@ -2468,6 +2800,17 @@
             <li><a href="#modifiers">Modifiers</a></li>
           </ul>
 
+          <button
+            class="nav-burger"
+            id="navBurger"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+            onclick="toggleMobileMenu()"
+          >
+            <i class="ri-menu-3-fill" aria-hidden="true"></i>
+          </button>
+
           <div class="nav-actions">
             <a
               href="https://github.com/salkomdesignstudio/SDS-Motion-Forge"
@@ -2512,6 +2855,61 @@
     </nav>
 
     <!-- ════════════════════════════════════════════════════
+       MOBILE MENU DRAWER
+       ════════════════════════════════════════════════════ -->
+    <div
+      class="mobile-menu"
+      id="mobileMenu"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Mobile navigation"
+    >
+      <div class="mobile-menu-overlay" onclick="toggleMobileMenu()"></div>
+      <nav class="mobile-menu-panel" aria-label="Mobile navigation links">
+        <div class="mobile-menu-header">
+          <span class="mobile-menu-title">Menu</span>
+          <button
+            class="mobile-menu-close"
+            aria-label="Close menu"
+            onclick="toggleMobileMenu()"
+          >
+            <i class="ri-close-fill" aria-hidden="true"></i>
+          </button>
+        </div>
+        <a href="#animations" onclick="toggleMobileMenu()">
+          <i class="ri-sparkling-2-fill" aria-hidden="true"></i> Animations
+        </a>
+        <a href="#playground" onclick="toggleMobileMenu()">
+          <i class="ri-play-circle-fill" aria-hidden="true"></i> Playground
+        </a>
+        <a href="#install" onclick="toggleMobileMenu()">
+          <i class="ri-download-2-fill" aria-hidden="true"></i> Install
+        </a>
+        <a href="#modifiers" onclick="toggleMobileMenu()">
+          <i class="ri-equalizer-fill" aria-hidden="true"></i> Modifiers
+        </a>
+        <div class="mobile-menu-divider"></div>
+        <a
+          href="https://github.com/salkomdesignstudio/SDS-Motion-Forge"
+          target="_blank"
+          rel="noopener"
+          onclick="toggleMobileMenu()"
+        >
+          <i class="ri-github-fill" aria-hidden="true"></i> GitHub
+        </a>
+        <a
+          href="https://www.npmjs.com/package/@salkomdesignstudio/sds-motion-forge"
+          target="_blank"
+          rel="noopener"
+          class="mobile-menu-cta"
+          onclick="toggleMobileMenu()"
+        >
+          <i class="ri-npmjs-fill" aria-hidden="true"></i> npm Install
+        </a>
+      </nav>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════
        HERO
        ════════════════════════════════════════════════════ -->
     <header class="hero" id="home">
@@ -2519,7 +2917,7 @@
       <div class="container">
         <div class="hero-badge sds-liquid-rise">
           <div class="hero-badge-dot" aria-hidden="true"></div>
-          v3.2.0 — Production Engineering Release
+          v3.2.2 &middot; 800+ weekly downloads on npm
         </div>
 
         <h1 class="hero-title">
@@ -2530,7 +2928,7 @@
         </h1>
 
         <p class="hero-subtitle sds-phantom-blur sds-delay-4">
-          90+ production-ready CSS animations applied with a single class name.
+          116 production-ready CSS animations applied with a single class name.
           No JavaScript required. Drop into HTML, React, Vue, Angular, or
           Tailwind and start animating in seconds.
         </p>
@@ -2575,7 +2973,7 @@
 
         <div class="hero-stats" aria-label="Library statistics">
           <div>
-            <div class="hero-stat-val sds-gravity-drop sds-delay-3">90+</div>
+            <div class="hero-stat-val sds-gravity-drop sds-delay-3">116</div>
             <div class="hero-stat-label">Animations</div>
           </div>
           <div class="hero-stat-divider" aria-hidden="true"></div>
@@ -2969,7 +3367,7 @@
               Scale
             </div>
             <div class="bento-large-num" style="color: white">
-              90<span>+</span>
+              116
             </div>
             <div class="bento-title" style="color: white; margin-top: 8px">
               Animation<br />primitives
@@ -3708,6 +4106,74 @@
     </section>
 
     <!-- ════════════════════════════════════════════════════
+       SCROLL ANIMATIONS — How to activate
+       ════════════════════════════════════════════════════ -->
+    <section class="section section-alt" aria-labelledby="scroll-title">
+      <div class="container">
+        <div class="section-label" data-reveal>Scroll Animations</div>
+        <h2 class="section-title" id="scroll-title" data-reveal data-delay="1">
+          Trigger on scroll, two ways
+        </h2>
+        <p class="section-desc" data-reveal data-delay="2">
+          Scroll animations fire when the element enters the viewport. Pick the
+          method that fits your project — both are zero-dependency.
+        </p>
+
+        <div class="usage-grid" data-reveal data-delay="2">
+          <div class="usage-card">
+            <div class="usage-card-title" style="margin-bottom: 8px">
+              Method 1 &middot; Works everywhere
+            </div>
+            <p style="font-size: 14px; color: var(--text-3); margin-bottom: 16px">
+              Add <code style="font-family: var(--font-mono); font-size: 12px; color: var(--brand)">data-sds-scroll</code>
+              to your element, then paste this script once before
+              <code style="font-family: var(--font-mono); font-size: 12px; color: var(--brand)">&lt;/body&gt;</code>.
+            </p>
+            <div style="background: var(--text-1); border-radius: var(--r-md); padding: 14px 16px; overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch">
+              <code style="display: block; font-family: var(--font-mono); font-size: 11px; color: rgba(255, 255, 255, 0.85); white-space: pre; line-height: 1.7; width: max-content; min-width: 100%">&lt;div <span style="color: #79c0ff">data-sds-scroll</span> class=<span style="color: #a5d6ff">"sds-scroll-rise"</span>&gt;
+  Content
+&lt;/div&gt;
+
+&lt;script&gt;
+(function(){
+  var io=new IntersectionObserver(function(e){
+    e.forEach(function(x){
+      if(x.isIntersecting){
+        x.target.classList.add(<span style="color: #a5d6ff">'sds-in'</span>);
+        io.unobserve(x.target);
+      }
+    });
+  },{threshold:0.08});
+  document.querySelectorAll(<span style="color: #a5d6ff">'[data-sds-scroll]'</span>)
+    .forEach(function(el){io.observe(el);});
+})();
+&lt;/script&gt;</code>
+            </div>
+          </div>
+
+          <div class="usage-card">
+            <div class="usage-card-title" style="margin-bottom: 8px">
+              Method 2 &middot; Zero JS
+            </div>
+            <p style="font-size: 14px; color: var(--text-3); margin-bottom: 16px">
+              Add the <code style="font-family: var(--font-mono); font-size: 12px; color: var(--brand)">sds-scroll-auto</code>
+              class for native CSS scroll-driven animation. Chrome 115+, no script needed.
+            </p>
+            <div style="background: var(--text-1); border-radius: var(--r-md); padding: 14px 16px; overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch">
+              <code style="display: block; font-family: var(--font-mono); font-size: 11px; color: rgba(255, 255, 255, 0.85); white-space: pre; line-height: 1.7; width: max-content; min-width: 100%">&lt;div class=<span style="color: #a5d6ff">"sds-scroll-auto
+            sds-scroll-rise"</span>&gt;
+  Content
+&lt;/div&gt;
+
+<span style="color: #8b949e">/* Falls back gracefully in
+   browsers without support */</span></code>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════
        FOOTER
        ════════════════════════════════════════════════════ -->
     <footer class="footer">
@@ -3971,6 +4437,29 @@
        CORE JAVASCRIPT
        ════════════════════════════════════════════════════ -->
     <script>
+      /* ─────────────────────────────────────────────────
+      MOBILE MENU TOGGLE
+     ───────────────────────────────────────────────── */
+      function toggleMobileMenu() {
+        var menu = document.getElementById("mobileMenu");
+        var burger = document.getElementById("navBurger");
+        var isOpen = menu.classList.toggle("open");
+        burger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        burger.querySelector("i").className = isOpen
+          ? "ri-close-fill"
+          : "ri-menu-3-fill";
+        document.body.style.overflow = isOpen ? "hidden" : "";
+      }
+      /* Close menu on Escape key */
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          var menu = document.getElementById("mobileMenu");
+          if (menu && menu.classList.contains("open")) {
+            toggleMobileMenu();
+          }
+        }
+      });
+
       /* ─────────────────────────────────────────────────
       ANIMATION LIBRARY DATABASE
      ───────────────────────────────────────────────── */
