@@ -1,41 +1,41 @@
 # Changelog
 
-## 3.2.0 - Stability and Release Hardening
+## [3.2.2] - 2026-05-30
 
 ### Fixed
-- Restored required legacy aliases to avoid breaking existing consumers:
-  - `.sds-scroll-fade-up`
-  - `.sds-input-focus-glow`
-  - `.sds-card-neon`
-  - `.sds-card-depth`
-  - `.sds-card-flip`
-  - `.sds-loader-progress-glow`
-- Added a `prefers-reduced-motion` block for accessibility-safe default behavior.
+- `sds-loader-progress`, `sds-loader-data`, `sds-loader-bar` — added `position: relative` so `::after` pseudo-element renders correctly
+- `sds-perspective-swing`, `sds-film-burn`, `sds-smoke-reveal`, `sds-elastic-bounce`, `sds-unfurl`, `sds-scroll-unfold` — added `will-change` for GPU acceleration, no more jank
+- `sds-perspective-swing` — added `backface-visibility: hidden` to fix Chrome 3D flicker
+- `sds-typewriter-pro` — added `max-width: max-content` to prevent text clipping
+- `prefers-reduced-motion` — scroll-animated elements now stay visible instead of being permanently hidden at `opacity: 0`
+- `package.json` exports — added `"style"` condition so Vite, Webpack 5, and Rollup correctly resolve the CSS without silent failures
+- `package.json` — added `"sideEffects": ["**/*.css"]` to prevent bundlers from tree-shaking the stylesheet
+- Version mismatch between CSS header and package.json — now both say 3.2.2
 
-### Changed
-- Hardened `verify-build.js` with stricter selector/keyframe/token checks plus source-to-dist selector parity.
-- Added `types` export and included `index.d.ts` in publish `files`.
-- Added `release:check` script to enforce build, verify, publint, and pack dry-run before publish.
+### Added
+- Scroll animation activation via `data-sds-scroll` attribute + IntersectionObserver (paste-once script)
+- CSS scroll-driven animation support via `sds-scroll-auto` class (Chrome 115+, zero JS)
+- Full install guide in CSS header for Angular, React, Vue, Next.js, Flutter Web, CDN
+- Stagger/children animation documentation in header
+- Complete modifier reference in header
 
-### CI/CD
-- Added cross-platform and cross-node CI matrix (`ubuntu/windows/macos`, Node `18/20/22`).
-- Added publish workflow with `npm publish --provenance --access public`.
+## [3.2.1] - 2026-05-28
+- Minor patch release
 
-## 3.1.0 - Production Engineering Release
+## [3.2.0] - 2026-05-27
+- Extended animation set across all 6 categories
 
-### Bug Fixes and Breaking-Change Prevention
-- Expanded shorthand animation properties where needed to reduce cascade conflicts in consuming frameworks.
-- Namespaced keyframes with `sds-` prefixes to reduce collisions.
-- Added variable fallbacks in critical spots for safer imports.
-- Improved placeholder and Firefox selector compatibility in input classes.
-- Added Safari clip-path coverage for key scroll/text reveal effects.
+## [3.0.2] - 2026-05-27
+- Stability improvements
 
-### Features
-- Added `sideEffects` metadata.
-- Added package `exports` entries for CSS files.
-- Added TypeScript declaration file.
-- Added pre-publish verification script.
-- Added legacy aliases for renamed classes.
+## [3.0.1] - 2026-05-25
+- Performance improvements
 
-## 3.0.2
-- Initial public release with 90+ animation classes across 6 categories.
+## [1.1.2] - 2026-05-24
+- Bug fixes
+
+## [1.1.1] - 2026-05-24
+- Initial stable release
+
+## [1.1.0] - 2026-05-22
+- First public release
