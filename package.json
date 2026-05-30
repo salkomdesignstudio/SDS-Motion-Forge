@@ -1,6 +1,6 @@
 {
   "name": "@salkomdesignstudio/sds-motion-forge",
-  "version": "3.2.1",
+  "version": "3.2.2",
   "description": "Production-ready CSS animation library - 90+ class-based animations for text, buttons, inputs, cards, loaders, and scroll. No JavaScript required.",
   "type": "commonjs",
   "main": "./dist/motion.css",
@@ -8,6 +8,7 @@
   "types": "./index.d.ts",
   "exports": {
     ".": {
+      "style": "./dist/motion.css",
       "types": "./index.d.ts",
       "default": "./dist/motion.css"
     },
@@ -36,27 +37,24 @@
   },
   "keywords": [
     "css",
+    "animation",
+    "css-animation",
     "animations",
     "motion",
-    "ui",
-    "ux",
-    "class-based",
-    "tailwind",
+    "gsap-alternative",
+    "css-only",
     "angular",
     "react",
     "vue",
-    "bootstrap",
-    "scroll-animations",
-    "loaders",
-    "text-animations",
-    "button-animations",
+    "flutter",
+    "nextjs",
+    "ui",
     "frontend",
     "design-system",
-    "salkom",
-    "sds-motion",
+    "zero-js",
+    "transition",
     "keyframes",
-    "no-javascript",
-    "pure-css"
+    "animate"
   ],
   "author": {
     "name": "Salkom Design Studio",
@@ -85,7 +83,6 @@
   "unpkg": "./dist/motion.min.css",
   "jsdelivr": "./dist/motion.min.css",
   "sideEffects": [
-    "./dist/motion.css",
-    "./dist/motion.min.css"
+    "**/*.css"
   ]
 }
