@@ -1,7 +1,7 @@
 {
   "name": "@salkomdesignstudio/sds-motion-forge",
-  "version": "3.2.2",
-  "description": "Production-ready CSS animation library - 90+ class-based animations for text, buttons, inputs, cards, loaders, and scroll. No JavaScript required.",
+  "version": "4.0.0",
+  "description": "300+ production-ready CSS animations for text, buttons, inputs, cards, loaders, and scroll. 100 text animations, zero required JavaScript.",
   "type": "commonjs",
   "main": "./dist/motion.css",
   "style": "./dist/motion.css",
@@ -14,17 +14,21 @@
     },
     "./dist/motion.css": "./dist/motion.css",
     "./dist/motion.min.css": "./dist/motion.min.css",
+    "./dist/sds-scroll.min.js": "./dist/sds-scroll.min.js",
+    "./dist/motion-interactive.min.js": "./dist/motion-interactive.min.js",
     "./motion.css": "./dist/motion.css",
     "./motion.min.css": "./dist/motion.min.css",
     "./package.json": "./package.json"
   },
   "files": [
     "dist/",
+    "src/",
     "index.d.ts",
     "README.md",
     "LICENSE",
     "CHANGELOG.md"
   ],
+  "sideEffects": ["**/*.css"],
   "scripts": {
     "build": "postcss src/motion.css -o dist/motion.css && cleancss -o dist/motion.min.css dist/motion.css",
     "build:dev": "postcss src/motion.css -o dist/motion.css --map",
@@ -81,8 +85,5 @@
     "node": ">=14"
   },
   "unpkg": "./dist/motion.min.css",
-  "jsdelivr": "./dist/motion.min.css",
-  "sideEffects": [
-    "**/*.css"
-  ]
+  "jsdelivr": "./dist/motion.min.css"
 }
