@@ -14,7 +14,13 @@ const SRC_DIR = path.join(ROOT_DIR, "src");
 const REQUIRED_FILES = [
   path.join(DIST_DIR, "motion.css"),
   path.join(DIST_DIR, "motion.min.css"),
+  path.join(DIST_DIR, "sds-scroll.min.js"),
+  path.join(DIST_DIR, "sds-scroll.min.js.map"),
+  path.join(DIST_DIR, "motion-interactive.min.js"),
+  path.join(DIST_DIR, "motion-interactive.min.js.map"),
   path.join(SRC_DIR, "motion.css"),
+  path.join(SRC_DIR, "sds-scroll.js"),
+  path.join(SRC_DIR, "motion-interactive.js"),
 ];
 
 const REQUIRED_CLASSES = [
@@ -227,7 +233,7 @@ console.log("\n===========================================");
 console.log("  SDS Motion Forge - Pre-publish Verification");
 console.log("===========================================\n");
 
-console.log("[ 1/7 ] Checking required files...");
+console.log("[ 1/8 ] Checking required files...");
 for (const filePath of REQUIRED_FILES) {
   if (!fs.existsSync(filePath)) {
     fail(`Missing: ${path.relative(ROOT_DIR, filePath)}`);
@@ -254,7 +260,7 @@ const pkg = JSON.parse(fs.readFileSync(path.join(ROOT_DIR, "package.json"), "utf
 const docsPath = path.join(ROOT_DIR, "docs", "index.html");
 const docsHTML = fs.existsSync(docsPath) ? fs.readFileSync(docsPath, "utf8") : "";
 
-console.log("\n[ 2/7 ] Verifying class names in dist/motion.css...");
+console.log("\n[ 2/8 ] Verifying class names in dist/motion.css...");
 for (const cls of REQUIRED_CLASSES) {
   if (hasSelector(distCSS, cls)) {
     pass(cls);
@@ -263,7 +269,7 @@ for (const cls of REQUIRED_CLASSES) {
   }
 }
 
-console.log("\n[ 3/7 ] Verifying @keyframes...");
+console.log("\n[ 3/8 ] Verifying @keyframes...");
 for (const keyframe of REQUIRED_KEYFRAMES) {
   const pattern = `@keyframes ${keyframe}`;
   if (distCSS.includes(pattern)) {
@@ -273,7 +279,7 @@ for (const keyframe of REQUIRED_KEYFRAMES) {
   }
 }
 
-console.log("\n[ 4/7 ] Verifying design tokens and accessibility guardrails...");
+console.log("\n[ 4/8 ] Verifying design tokens and accessibility guardrails...");
 for (const token of REQUIRED_TOKENS) {
   if (distCSS.includes(token)) {
     pass(token);
@@ -287,7 +293,7 @@ if (distCSS.includes("@media (prefers-reduced-motion: reduce)")) {
   fail("Missing reduced motion media query");
 }
 
-console.log("\n[ 5/7 ] Verifying source->dist class parity...");
+console.log("\n[ 5/8 ] Verifying source->dist class parity...");
 const srcSelectors = extractSelectors(srcCSS);
 const distSelectors = extractSelectors(distCSS);
 let missingFromDist = 0;
@@ -301,7 +307,7 @@ if (missingFromDist === 0) {
   pass(`All ${srcSelectors.size} src selectors are present in dist`);
 }
 
-console.log("\n[ 6/7 ] Verifying package export paths...");
+console.log("\n[ 6/8 ] Verifying package export paths...");
 const requiredExports = [
   ".",
   "./dist/motion.css",
@@ -322,13 +328,78 @@ if (Array.isArray(pkg.sideEffects) && pkg.sideEffects.includes("./dist/motion.cs
 } else {
   fail("Package sideEffects must preserve dist CSS imports");
 }
-if (docsHTML && docsHTML.includes('href="../dist/motion.min.css"')) {
-  pass("docs preview uses local dist CSS");
+if (docsHTML && docsHTML.includes('href="dist/motion.min.css"')) {
+  pass("docs/index.html loads CSS from docs/dist/ (Netlify-safe path)");
 } else if (docsHTML) {
-  fail("docs preview must load ../dist/motion.min.css, not a stale CDN version");
+  fail("docs/index.html must use href=\"dist/motion.min.css\" (not ../dist/ — breaks on Netlify)");
 }
 
-console.log("\n[ 7/7 ] Verifying minified output existence...");
+// Verify scroll engine has valid rootMargin (no missing space crash)
+const scrollMinPath = path.join(DIST_DIR, "sds-scroll.min.js");
+if (fs.existsSync(scrollMinPath)) {
+  const scrollMin = fs.readFileSync(scrollMinPath, "utf8");
+  // Check for the missing-space pattern: digits immediately followed by dash without space
+  const rmMatch = scrollMin.match(/rootMargin:['""]([^'""]+)['""]/) ||
+                  scrollMin.match(/rootMargin:"([^"]+)"/) ||
+                  scrollMin.match(/rootMargin:'([^']+)'/);
+  if (rmMatch && /\d-\d/.test(rmMatch[1])) {
+    fail("sds-scroll.min.js rootMargin has missing space between values — crashes IntersectionObserver");
+  } else {
+    pass("sds-scroll.min.js rootMargin is valid");
+  }
+  // Verify min.js was built by terser (not hand-authored): must have sourceMappingURL
+  if (scrollMin.includes("sourceMappingURL")) {
+    pass("sds-scroll.min.js has sourceMappingURL — built by terser, not hand-authored");
+  } else {
+    fail("sds-scroll.min.js missing sourceMappingURL — run `npm run build:js` to regenerate from source");
+  }
+  // Interactive engine
+  const intMinPath = path.join(DIST_DIR, "motion-interactive.min.js");
+  if (fs.existsSync(intMinPath)) {
+    const intMin = fs.readFileSync(intMinPath, "utf8");
+    if (intMin.includes("sourceMappingURL")) {
+      pass("motion-interactive.min.js has sourceMappingURL — built by terser, not hand-authored");
+    } else {
+      fail("motion-interactive.min.js missing sourceMappingURL — run `npm run build:js` to regenerate from source");
+    }
+  }
+  // Size regression gates
+  const scrollSize = fs.statSync(scrollMinPath).size;
+  const intSize = fs.existsSync(intMinPath) ? fs.statSync(intMinPath).size : 0;
+  if (scrollSize > 5000) {
+    fail("sds-scroll.min.js is unexpectedly large (" + scrollSize + " bytes) — check for accidental bloat");
+  } else {
+    pass("sds-scroll.min.js size OK (" + scrollSize + " bytes)");
+  }
+  if (intSize > 15000) {
+    fail("motion-interactive.min.js is unexpectedly large (" + intSize + " bytes) — check for accidental bloat");
+  } else if (intSize > 0) {
+    pass("motion-interactive.min.js size OK (" + intSize + " bytes)");
+  }
+}
+
+console.log("\n[ 7/8 ] Verifying version consistency...");
+const pkgVersion = pkg.version;
+const cssVersionMatch = distCSS.match(/Version:\s*([\d.]+)/);
+const cssVersion = cssVersionMatch ? cssVersionMatch[1] : null;
+if (cssVersion && cssVersion === pkgVersion) {
+  pass(`CSS header version matches package.json (${pkgVersion})`);
+} else if (cssVersion) {
+  fail(`CSS header says ${cssVersion} but package.json says ${pkgVersion}`);
+} else {
+  pass("CSS header version not checked (comment may be stripped)");
+}
+if (docsHTML) {
+  const docsVersionMatch = docsHTML.match(/v([\d.]+)/);
+  const docsVersion = docsVersionMatch ? docsVersionMatch[1] : null;
+  if (docsVersion && docsVersion === pkgVersion) {
+    pass(`docs/index.html version matches package.json (v${pkgVersion})`);
+  } else if (docsVersion) {
+    fail(`docs/index.html shows v${docsVersion} but package.json says ${pkgVersion}`);
+  }
+}
+
+console.log("\n[ 8/8 ] Verifying minified output existence...");
 const minCssPath = path.join(DIST_DIR, "motion.min.css");
 if (fs.existsSync(minCssPath) && fs.statSync(minCssPath).size > 100) {
   pass("dist/motion.min.css generated");

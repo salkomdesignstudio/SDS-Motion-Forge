@@ -1,0 +1,1467 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SDS Motion Forge — Documentation</title>
+    <meta
+      name="description"
+      content="Complete developer documentation for SDS Motion Forge. Installation, animation reference, scroll gate, interactive engine, TypeScript, modifiers, theming, and contributing guide."
+    />
+
+    <link
+      rel="stylesheet"
+      href="dist/motion.min.css"
+      onerror="
+        this.onerror = null;
+        this.href =
+          'https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css';
+      "
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --brand: #0015d1;
+        --brand-mid: #0a1fff;
+        --brand-dim: rgba(0, 21, 209, 0.06);
+        --brand-glow: rgba(0, 21, 209, 0.25);
+        --accent: #d10028;
+        --success: #00c48c;
+
+        --bg: #f7f7f9;
+        --bg-2: #eeeef2;
+        --bg-card: #ffffff;
+        --ink: #08080c;
+        --ink-2: #34343f;
+        --ink-3: #76767f;
+        --line: rgba(8, 8, 12, 0.08);
+        --line-2: rgba(8, 8, 12, 0.14);
+
+        --stage: #0a0a12;
+        --stage-2: #12121d;
+        --stage-line: rgba(255, 255, 255, 0.09);
+        --stage-ink: rgba(255, 255, 255, 0.92);
+        --stage-ink-2: rgba(255, 255, 255, 0.55);
+
+        --f-disp: "Syne", sans-serif;
+        --f-serif: "Instrument Serif", serif;
+        --f-mono: "DM Mono", monospace;
+
+        --r-sm: 8px;
+        --r-md: 14px;
+        --r-lg: 22px;
+        --r-full: 9999px;
+
+        --sh-1: 0 1px 3px rgba(8, 8, 12, 0.04), 0 6px 28px rgba(8, 8, 12, 0.06);
+
+        --nav-h: 62px;
+        --sidebar-w: 248px;
+      }
+
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--ink);
+        font-family: var(--f-disp);
+        font-size: 15px;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a { color: inherit; text-decoration: none; }
+      code, pre { font-family: var(--f-mono); }
+      img, svg { display: block; }
+
+      /* ── TOP NAV ── */
+      .nav {
+        position: fixed;
+        inset: 0 0 auto 0;
+        height: var(--nav-h);
+        z-index: 100;
+        background: rgba(247, 247, 249, 0.9);
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        border-bottom: 1px solid var(--line);
+        display: flex;
+        align-items: center;
+        padding: 0 28px;
+        gap: 16px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 800;
+        font-size: 15px;
+        letter-spacing: -0.02em;
+      }
+      .brand-mark {
+        width: 28px;
+        height: 28px;
+        background: var(--brand);
+        color: #fff;
+        border-radius: 7px;
+        display: grid;
+        place-items: center;
+        font-size: 14px;
+      }
+      .nav-badge {
+        font-family: var(--f-mono);
+        font-size: 11px;
+        color: var(--brand);
+        background: var(--brand-dim);
+        padding: 3px 9px;
+        border-radius: var(--r-full);
+        border: 1px solid rgba(0, 21, 209, 0.12);
+        font-weight: 500;
+      }
+      .nav-sp { flex: 1; }
+      .nav-links {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+      }
+      .nav-links a {
+        padding: 6px 13px;
+        font-size: 13.5px;
+        font-weight: 500;
+        color: var(--ink-2);
+        border-radius: var(--r-full);
+        transition: background .15s, color .15s;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .nav-links a:hover { background: var(--bg-2); color: var(--ink); }
+      .nav-links a.active { color: var(--brand); font-weight: 700; }
+      .nav-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 8px 18px;
+        font-family: var(--f-disp);
+        font-weight: 700;
+        font-size: 13px;
+        border-radius: var(--r-full);
+        background: var(--brand);
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        letter-spacing: -0.01em;
+        transition: background .15s;
+      }
+      .nav-btn:hover { background: var(--brand-mid); }
+
+      /* ── LAYOUT ── */
+      .page {
+        display: grid;
+        grid-template-columns: var(--sidebar-w) 1fr;
+        min-height: 100vh;
+        padding-top: var(--nav-h);
+      }
+
+      /* ── SIDEBAR ── */
+      .sidebar {
+        position: sticky;
+        top: var(--nav-h);
+        height: calc(100vh - var(--nav-h));
+        overflow-y: auto;
+        border-right: 1px solid var(--line);
+        background: var(--bg-card);
+        padding: 24px 0 40px;
+        scrollbar-width: thin;
+        scrollbar-color: var(--line-2) transparent;
+      }
+      .sidebar::-webkit-scrollbar { width: 4px; }
+      .sidebar::-webkit-scrollbar-thumb { background: var(--line-2); border-radius: 4px; }
+
+      .sb-group {
+        padding: 0 16px;
+        margin-bottom: 4px;
+      }
+      .sb-label {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--ink-3);
+        padding: 14px 10px 6px;
+        display: block;
+      }
+      .sb-link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 7px 10px;
+        border-radius: var(--r-md);
+        font-size: 13.5px;
+        font-weight: 500;
+        color: var(--ink-2);
+        transition: background .13s, color .13s;
+        line-height: 1.3;
+      }
+      .sb-link:hover { background: var(--bg-2); color: var(--ink); }
+      .sb-link.active {
+        background: var(--brand-dim);
+        color: var(--brand);
+        font-weight: 700;
+      }
+      .sb-count {
+        font-family: var(--f-mono);
+        font-size: 10.5px;
+        color: var(--ink-3);
+        background: var(--bg-2);
+        padding: 1px 6px;
+        border-radius: 99px;
+      }
+      .sb-link.active .sb-count { background: rgba(0, 21, 209, 0.1); color: var(--brand); }
+
+      /* ── CONTENT ── */
+      .content {
+        max-width: 820px;
+        padding: 48px 52px 100px;
+      }
+
+      /* ── SECTION ── */
+      .doc-sec {
+        margin-bottom: 72px;
+        scroll-margin-top: 80px;
+      }
+      .doc-sec-title {
+        font-size: 28px;
+        font-weight: 800;
+        letter-spacing: -0.035em;
+        margin-bottom: 6px;
+        color: var(--ink);
+      }
+      .doc-sec-sub {
+        font-size: 16px;
+        color: var(--ink-2);
+        margin-bottom: 28px;
+        line-height: 1.7;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 20px;
+      }
+      .doc-h3 {
+        font-size: 17px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        margin: 28px 0 10px;
+        color: var(--ink);
+      }
+      .doc-p {
+        color: var(--ink-2);
+        line-height: 1.75;
+        margin-bottom: 14px;
+        font-size: 14.5px;
+      }
+      .doc-p + .doc-p { margin-top: -6px; }
+      .doc-p code, .doc-ul li code {
+        font-family: var(--f-mono);
+        font-size: 12px;
+        background: var(--brand-dim);
+        color: var(--brand);
+        padding: 2px 6px;
+        border-radius: 5px;
+        white-space: nowrap;
+      }
+      .doc-ul {
+        list-style: disc;
+        padding-left: 20px;
+        color: var(--ink-2);
+        font-size: 14.5px;
+        line-height: 1.8;
+        margin-bottom: 14px;
+      }
+      .doc-note {
+        background: var(--brand-dim);
+        border-left: 3px solid var(--brand);
+        border-radius: 0 var(--r-md) var(--r-md) 0;
+        padding: 12px 16px;
+        font-size: 13.5px;
+        color: var(--ink-2);
+        margin-bottom: 16px;
+      }
+      .doc-note strong { color: var(--ink); }
+      .doc-warn {
+        background: rgba(209, 0, 40, 0.05);
+        border-left: 3px solid var(--accent);
+        border-radius: 0 var(--r-md) var(--r-md) 0;
+        padding: 12px 16px;
+        font-size: 13.5px;
+        color: var(--ink-2);
+        margin-bottom: 16px;
+      }
+
+      /* ── CODE BLOCKS ── */
+      .codeblock {
+        background: var(--stage);
+        border-radius: var(--r-md);
+        overflow: hidden;
+        margin-bottom: 20px;
+      }
+      .codeblock-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 16px;
+        border-bottom: 1px solid var(--stage-line);
+      }
+      .codeblock-lang {
+        font-family: var(--f-mono);
+        font-size: 10.5px;
+        color: var(--stage-ink-2);
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+      }
+      .cb-copy {
+        background: rgba(255,255,255,.07);
+        border: 1px solid var(--stage-line);
+        border-radius: 5px;
+        padding: 3px 10px;
+        font-family: var(--f-mono);
+        font-size: 10.5px;
+        color: var(--stage-ink-2);
+        cursor: pointer;
+        transition: background .12s, color .12s;
+      }
+      .cb-copy:hover { background: rgba(255,255,255,.14); color: #fff; }
+      .cb-copy.copied { color: var(--success); }
+      .codeblock pre {
+        padding: 16px 18px;
+        overflow-x: auto;
+        font-size: 12.5px;
+        line-height: 1.7;
+        color: var(--stage-ink);
+        white-space: pre;
+        -webkit-overflow-scrolling: touch;
+      }
+      /* syntax tokens */
+      .ck { color: #79c0ff; }
+      .cs { color: #a5d6ff; }
+      .ct { color: #ff7b72; }
+      .cv { color: #7ee787; }
+      .cc { color: rgba(255,255,255,.35); }
+      .ccl { color: #d2a8ff; }
+      .cm { color: var(--stage-ink-2); }
+
+      /* inline code pill */
+      .pill-cls {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        font-family: var(--f-mono);
+        font-size: 12px;
+        color: var(--brand);
+        background: var(--brand-dim);
+        padding: 3px 9px;
+        border-radius: var(--r-sm);
+        white-space: nowrap;
+      }
+
+      /* ── TABLES ── */
+      .doc-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+        border: 1px solid var(--line);
+        border-radius: var(--r-md);
+        overflow: hidden;
+        margin-bottom: 20px;
+      }
+      .doc-table th {
+        text-align: left;
+        padding: 9px 14px;
+        background: var(--bg-2);
+        font-size: 10.5px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--ink-3);
+        font-weight: 700;
+        white-space: nowrap;
+      }
+      .doc-table td {
+        padding: 9px 14px;
+        border-top: 1px solid var(--line);
+        color: var(--ink-2);
+        vertical-align: top;
+        line-height: 1.5;
+      }
+      .doc-table td:first-child code {
+        font-family: var(--f-mono);
+        font-size: 11.5px;
+        color: var(--brand);
+        white-space: nowrap;
+      }
+      .doc-table tr:hover td { background: var(--bg); }
+
+      /* ── CLASS GRID ── */
+      .cls-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin-bottom: 20px;
+      }
+      .cls-tag {
+        font-family: var(--f-mono);
+        font-size: 11.5px;
+        color: var(--brand);
+        background: var(--brand-dim);
+        padding: 4px 10px;
+        border-radius: var(--r-sm);
+        border: 1px solid rgba(0, 21, 209, 0.10);
+        white-space: nowrap;
+      }
+
+      /* ── INSTALL STRIP ── */
+      .install-strip {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        background: var(--stage);
+        border-radius: var(--r-lg);
+        padding: 16px 20px;
+        margin-bottom: 20px;
+        font-family: var(--f-mono);
+        font-size: 14px;
+        color: var(--stage-ink);
+      }
+      .install-strip .prompt { color: var(--stage-ink-2); user-select: none; }
+      .install-strip .cmd { flex: 1; }
+      .install-copy {
+        background: var(--brand);
+        border: none;
+        color: #fff;
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
+        cursor: pointer;
+        display: grid;
+        place-items: center;
+        font-size: 15px;
+        flex-shrink: 0;
+        transition: background .12s;
+      }
+      .install-copy:hover { background: var(--brand-mid); }
+
+      /* ── FRAMEWORK TABS ── */
+      .fw-tabs {
+        display: flex;
+        gap: 3px;
+        background: var(--bg-2);
+        padding: 4px;
+        border-radius: 10px;
+        border: 1px solid var(--line);
+        margin-bottom: 0;
+        flex-wrap: wrap;
+      }
+      .fw-tab {
+        padding: 7px 14px;
+        font-size: 12.5px;
+        font-weight: 600;
+        color: var(--ink-3);
+        background: transparent;
+        border: none;
+        border-radius: 7px;
+        cursor: pointer;
+        transition: background .15s, color .15s;
+        white-space: nowrap;
+      }
+      .fw-tab:hover { color: var(--ink); }
+      .fw-tab.on { background: var(--bg-card); color: var(--ink); box-shadow: var(--sh-1); }
+      .fw-panel { display: none; }
+      .fw-panel.on { display: block; }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 900px) {
+        .page { grid-template-columns: 1fr; }
+        .sidebar {
+          position: static;
+          height: auto;
+          overflow-y: visible;
+          border-right: none;
+          border-bottom: 1px solid var(--line);
+          padding: 16px 0 12px;
+          display: flex;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+        }
+        .sb-group {
+          display: contents;
+        }
+        .sb-label { display: none; }
+        .sb-link { white-space: nowrap; }
+        .content { padding: 32px 20px 80px; }
+      }
+
+      @media (max-width: 600px) {
+        .nav-links { display: none; }
+        .content { padding: 24px 16px 60px; }
+        .doc-sec-title { font-size: 22px; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- TOP NAV -->
+    <nav class="nav">
+      <a href="index.html" class="brand">
+        <span class="brand-mark"><i class="ri-flashlight-fill"></i></span>
+        SDS Motion Forge
+      </a>
+      <span class="nav-badge">v4.0.1</span>
+      <div class="nav-sp"></div>
+      <nav class="nav-links">
+        <a href="index.html">
+          <i class="ri-gallery-fill"></i> Live Demo
+        </a>
+        <a
+          href="https://github.com/salkomdesignstudio/SDS-Motion-Forge"
+          target="_blank"
+          rel="noopener"
+        >
+          <i class="ri-github-fill"></i> GitHub
+        </a>
+        <a
+          href="https://www.npmjs.com/package/@salkomdesignstudio/sds-motion-forge"
+          target="_blank"
+          rel="noopener"
+        >
+          <i class="ri-npmjs-fill"></i> npm
+        </a>
+      </nav>
+    </nav>
+
+    <div class="page">
+      <!-- SIDEBAR -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sb-group">
+          <span class="sb-label">Getting Started</span>
+          <a href="#install" class="sb-link active">Installation</a>
+          <a href="#quickstart" class="sb-link">Quick Start</a>
+          <a href="#frameworks" class="sb-link">Framework Integration</a>
+        </div>
+        <div class="sb-group">
+          <span class="sb-label">Animation Reference</span>
+          <a href="#text" class="sb-link">Text <span class="sb-count">100</span></a>
+          <a href="#buttons" class="sb-link">Buttons <span class="sb-count">50</span></a>
+          <a href="#inputs" class="sb-link">Inputs <span class="sb-count">51</span></a>
+          <a href="#cards" class="sb-link">Cards <span class="sb-count">49</span></a>
+          <a href="#loaders" class="sb-link">Loaders <span class="sb-count">51</span></a>
+          <a href="#scroll" class="sb-link">Scroll <span class="sb-count">54</span></a>
+        </div>
+        <div class="sb-group">
+          <span class="sb-label">Advanced</span>
+          <a href="#interactive" class="sb-link">Interactive Engine</a>
+          <a href="#modifiers" class="sb-link">Modifiers</a>
+          <a href="#stagger" class="sb-link">Stagger &amp; Children</a>
+          <a href="#theming" class="sb-link">Theming</a>
+          <a href="#typescript" class="sb-link">TypeScript</a>
+        </div>
+        <div class="sb-group">
+          <span class="sb-label">Project</span>
+          <a href="#a11y" class="sb-link">Accessibility</a>
+          <a href="#browsers" class="sb-link">Browser Support</a>
+          <a href="#contributing" class="sb-link">Contributing</a>
+          <a href="#changelog" class="sb-link">Changelog</a>
+        </div>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="content">
+
+        <!-- ═══════════════ INSTALLATION ═══════════════ -->
+        <section class="doc-sec" id="install">
+          <h1 class="doc-sec-title">Installation</h1>
+          <p class="doc-sec-sub">
+            SDS Motion Forge ships as a single CSS file. Import it once — every animation is available immediately.
+          </p>
+
+          <h2 class="doc-h3">CDN — no build step</h2>
+          <p class="doc-p">Paste this into your <code>&lt;head&gt;</code>. Works in any HTML page, no npm required.</p>
+          <div class="codeblock">
+            <div class="codeblock-head">
+              <span class="codeblock-lang">HTML</span>
+              <button class="cb-copy" onclick="copyCB(this)">Copy</button>
+            </div>
+            <pre><span class="ct">&lt;link</span> <span class="ck">rel</span>=<span class="cs">"stylesheet"</span>
+  <span class="ck">href</span>=<span class="cs">"https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css"</span><span class="ct"> /&gt;</span></pre>
+          </div>
+
+          <h2 class="doc-h3">npm</h2>
+          <div class="install-strip">
+            <span class="prompt">$</span>
+            <span class="cmd">npm install @salkomdesignstudio/sds-motion-forge</span>
+            <button class="install-copy" onclick="copyInstall(this,'npm i @salkomdesignstudio/sds-motion-forge')" aria-label="Copy">
+              <i class="ri-file-copy-fill" id="npmIcon"></i>
+            </button>
+          </div>
+          <div class="codeblock">
+            <div class="codeblock-head">
+              <span class="codeblock-lang">JS / TS</span>
+              <button class="cb-copy" onclick="copyCB(this)">Copy</button>
+            </div>
+            <pre><span class="cm">// Import once in your app entry file</span>
+<span class="ck">import</span> <span class="cs">'@salkomdesignstudio/sds-motion-forge/dist/motion.min.css'</span>;</pre>
+          </div>
+
+          <h2 class="doc-h3">What gets installed</h2>
+          <table class="doc-table">
+            <thead><tr><th>File</th><th>Size</th><th>Purpose</th></tr></thead>
+            <tbody>
+              <tr><td><code>dist/motion.min.css</code></td><td>119 KB · ~20 KB gzip</td><td>Core library — required</td></tr>
+              <tr><td><code>dist/sds-scroll.min.js</code></td><td>1.28 KB · ~0.6 KB gzip</td><td>Scroll gate engine — optional</td></tr>
+              <tr><td><code>dist/motion-interactive.min.js</code></td><td>6.98 KB · ~2.4 KB gzip</td><td>Interactive / cursor engine — optional</td></tr>
+              <tr><td><code>src/motion.css</code></td><td>177 KB</td><td>PostCSS source for custom builds</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- ═══════════════ QUICK START ═══════════════ -->
+        <section class="doc-sec" id="quickstart">
+          <h1 class="doc-sec-title">Quick Start</h1>
+          <p class="doc-sec-sub">Add a class. The animation runs. That is the entire API for the CSS core.</p>
+
+          <div class="codeblock">
+            <div class="codeblock-head">
+              <span class="codeblock-lang">HTML</span>
+              <button class="cb-copy" onclick="copyCB(this)">Copy</button>
+            </div>
+            <pre><span class="cm">&lt;!-- Text --&gt;</span>
+<span class="ct">&lt;h1</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-velvet-drop</span>"</span><span class="ct">&gt;</span>Hello World<span class="ct">&lt;/h1&gt;</span>
+
+<span class="cm">&lt;!-- Button --&gt;</span>
+<span class="ct">&lt;button</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-btn-magnetic</span>"</span><span class="ct">&gt;</span>Click me<span class="ct">&lt;/button&gt;</span>
+
+<span class="cm">&lt;!-- Input --&gt;</span>
+<span class="ct">&lt;input</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-input-voltage</span>"</span> <span class="ck">placeholder</span>=<span class="cs">"Type here"</span><span class="ct"> /&gt;</span>
+
+<span class="cm">&lt;!-- Loader (empty element) --&gt;</span>
+<span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-loader-orbital</span>"</span><span class="ct">&gt;&lt;/span&gt;</span>
+
+<span class="cm">&lt;!-- Card --&gt;</span>
+<span class="ct">&lt;div</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-card-float</span>"</span><span class="ct">&gt;</span>Feature card<span class="ct">&lt;/div&gt;</span>
+
+<span class="cm">&lt;!-- Stack modifiers --&gt;</span>
+<span class="ct">&lt;h2</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-grand-entrance</span> sds-slow sds-delay-2"</span><span class="ct">&gt;</span>Delayed entrance<span class="ct">&lt;/h2&gt;</span></pre>
+          </div>
+
+          <div class="doc-note">
+            <strong>No JavaScript required</strong> for the CSS core. The two optional JS engines
+            (<code>sds-scroll.min.js</code> and <code>motion-interactive.min.js</code>)
+            add scroll-gating and cursor-reactive effects when you need them.
+          </div>
+        </section>
+
+        <!-- ═══════════════ FRAMEWORK INTEGRATION ═══════════════ -->
+        <section class="doc-sec" id="frameworks">
+          <h1 class="doc-sec-title">Framework Integration</h1>
+          <p class="doc-sec-sub">Import the CSS once in your entry file. No component, no wrapper, no setup beyond that.</p>
+
+          <div class="fw-tabs" id="fwTabs">
+            <button class="fw-tab on" data-panel="fw-react">React / Next.js</button>
+            <button class="fw-tab" data-panel="fw-vue">Vue</button>
+            <button class="fw-tab" data-panel="fw-angular">Angular</button>
+            <button class="fw-tab" data-panel="fw-svelte">Svelte</button>
+            <button class="fw-tab" data-panel="fw-tailwind">Tailwind</button>
+            <button class="fw-tab" data-panel="fw-postcss">PostCSS</button>
+          </div>
+
+          <div class="fw-panel on" id="fw-react">
+            <div class="codeblock">
+              <div class="codeblock-head"><span class="codeblock-lang">JSX — _app.js / layout.tsx</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+              <pre><span class="ck">import</span> <span class="cs">'@salkomdesignstudio/sds-motion-forge/dist/motion.min.css'</span>;
+
+<span class="cm">// Then use className anywhere:</span>
+<span class="ct">&lt;h1</span> <span class="ck">className</span>=<span class="cs">"sds-grand-entrance"</span><span class="ct">&gt;</span>Hello React<span class="ct">&lt;/h1&gt;</span></pre>
+            </div>
+          </div>
+
+          <div class="fw-panel" id="fw-vue">
+            <div class="codeblock">
+              <div class="codeblock-head"><span class="codeblock-lang">JS — main.js / main.ts</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+              <pre><span class="ck">import</span> <span class="cs">'@salkomdesignstudio/sds-motion-forge/dist/motion.min.css'</span>;
+
+<span class="cm">&lt;!-- template --&gt;</span>
+<span class="ct">&lt;h1</span> <span class="ck">class</span>=<span class="cs">"sds-zoom-punch"</span><span class="ct">&gt;</span>Hello Vue<span class="ct">&lt;/h1&gt;</span></pre>
+            </div>
+          </div>
+
+          <div class="fw-panel" id="fw-angular">
+            <div class="codeblock">
+              <div class="codeblock-head"><span class="codeblock-lang">SCSS — styles.scss</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+              <pre><span class="ck">@import</span> <span class="cs">'@salkomdesignstudio/sds-motion-forge/dist/motion.min.css'</span>;
+
+<span class="cm">&lt;!-- or add to angular.json → architect.build.options.styles --&gt;</span>
+<span class="cm">&lt;!-- template --&gt;</span>
+<span class="ct">&lt;h1</span> <span class="ck">class</span>=<span class="cs">"sds-door-open"</span><span class="ct">&gt;</span>Hello Angular<span class="ct">&lt;/h1&gt;</span></pre>
+            </div>
+          </div>
+
+          <div class="fw-panel" id="fw-svelte">
+            <div class="codeblock">
+              <div class="codeblock-head"><span class="codeblock-lang">Svelte — +layout.svelte</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+              <pre><span class="ct">&lt;script&gt;</span>
+  <span class="ck">import</span> <span class="cs">'@salkomdesignstudio/sds-motion-forge/dist/motion.min.css'</span>;
+<span class="ct">&lt;/script&gt;</span>
+
+<span class="ct">&lt;h1</span> <span class="ck">class</span>=<span class="cs">"sds-elastic-bounce"</span><span class="ct">&gt;</span>Hello Svelte<span class="ct">&lt;/h1&gt;</span></pre>
+            </div>
+          </div>
+
+          <div class="fw-panel" id="fw-tailwind">
+            <div class="codeblock">
+              <div class="codeblock-head"><span class="codeblock-lang">HTML — Tailwind + Motion Forge</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+              <pre><span class="cm">&lt;!-- Classes never conflict — all SDS classes are prefixed sds- --&gt;</span>
+<span class="ct">&lt;button</span> <span class="ck">class</span>=<span class="cs">"px-6 py-3 rounded-full bg-blue-600 text-white <span class="ccl">sds-btn-plasma</span>"</span><span class="ct">&gt;</span>
+  Tailwind + Motion
+<span class="ct">&lt;/button&gt;</span>
+
+<span class="ct">&lt;div</span> <span class="ck">class</span>=<span class="cs">"rounded-xl shadow-lg p-6 <span class="ccl">sds-card-levitate</span>"</span><span class="ct">&gt;</span>
+  Ambient float
+<span class="ct">&lt;/div&gt;</span></pre>
+            </div>
+          </div>
+
+          <div class="fw-panel" id="fw-postcss">
+            <div class="codeblock">
+              <div class="codeblock-head"><span class="codeblock-lang">CSS — PostCSS source import</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+              <pre><span class="cm">/* Import the source into your PostCSS pipeline */</span>
+<span class="ck">@import</span> <span class="cs">'@salkomdesignstudio/sds-motion-forge/src/motion.css'</span>;</pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══════════════ TEXT ═══════════════ -->
+        <section class="doc-sec" id="text">
+          <h1 class="doc-sec-title">Text Animations <span class="nav-badge" style="font-size:13px;vertical-align:middle">100</span></h1>
+          <p class="doc-sec-sub">Apply to any element containing text. Animations are CSS <code>@keyframes</code> — they fire once on load unless a loop modifier is added.</p>
+
+          <div class="codeblock">
+            <div class="codeblock-head"><span class="codeblock-lang">HTML</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <pre><span class="ct">&lt;h1</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-velvet-drop</span>"</span><span class="ct">&gt;</span>Soft drop-in with blur<span class="ct">&lt;/h1&gt;</span>
+<span class="ct">&lt;p</span>  <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-liquid-rise</span>"</span><span class="ct">&gt;</span>Fluid upward reveal<span class="ct">&lt;/p&gt;</span>
+<span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-grand-entrance</span>"</span><span class="ct">&gt;</span>Combined combo entrance<span class="ct">&lt;/span&gt;</span>
+<span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-refract</span> sds-loop</span>"</span><span class="ct">&gt;</span>RGB split loop<span class="ct">&lt;/span&gt;</span></pre>
+          </div>
+
+          <h2 class="doc-h3">All 100 text animation classes</h2>
+          <div class="cls-grid" id="textClassGrid"></div>
+
+          <h2 class="doc-h3">Physics per-character animations</h2>
+          <p class="doc-p">These 9 classes animate each character individually using the <code>--i</code> CSS variable as a stagger index. Each character must be wrapped in a <code>&lt;span class="sds-char" style="--i:N"&gt;</code>.</p>
+          <div class="doc-note">
+            <strong>Auto-split:</strong> Load <code>motion-interactive.min.js</code> once and these classes will split text automatically — no manual span markup needed.
+          </div>
+          <div class="codeblock">
+            <div class="codeblock-head"><span class="codeblock-lang">HTML — manual char split</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <pre><span class="ct">&lt;h1</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-drop-settle</span>"</span><span class="ct">&gt;</span>
+  <span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"sds-char"</span> <span class="ck">style</span>=<span class="cs">"--i:0"</span><span class="ct">&gt;</span>H<span class="ct">&lt;/span&gt;</span>
+  <span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"sds-char"</span> <span class="ck">style</span>=<span class="cs">"--i:1"</span><span class="ct">&gt;</span>e<span class="ct">&lt;/span&gt;</span>
+  <span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"sds-char"</span> <span class="ck">style</span>=<span class="cs">"--i:2"</span><span class="ct">&gt;</span>l<span class="ct">&lt;/span&gt;</span>
+  <span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"sds-char"</span> <span class="ck">style</span>=<span class="cs">"--i:3"</span><span class="ct">&gt;</span>l<span class="ct">&lt;/span&gt;</span>
+  <span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"sds-char"</span> <span class="ck">style</span>=<span class="cs">"--i:4"</span><span class="ct">&gt;</span>o<span class="ct">&lt;/span&gt;</span>
+<span class="ct">&lt;/h1&gt;</span></pre>
+          </div>
+
+          <p class="doc-p">For <code>sds-explode-formation</code>, add per-character displacement variables:</p>
+          <div class="codeblock">
+            <div class="codeblock-head"><span class="codeblock-lang">HTML — explode-formation</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <pre><span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"sds-explode-formation"</span><span class="ct">&gt;</span>
+  <span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"sds-char"</span> <span class="ck">style</span>=<span class="cs">"--i:0;--dx:-60px;--dy:-40px;--dr:-30deg"</span><span class="ct">&gt;</span>S<span class="ct">&lt;/span&gt;</span>
+  <span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"sds-char"</span> <span class="ck">style</span>=<span class="cs">"--i:1;--dx:20px;--dy:-60px;--dr:45deg"</span><span class="ct">&gt;</span>D<span class="ct">&lt;/span&gt;</span>
+  <span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"sds-char"</span> <span class="ck">style</span>=<span class="cs">"--i:2;--dx:70px;--dy:-20px;--dr:-20deg"</span><span class="ct">&gt;</span>S<span class="ct">&lt;/span&gt;</span>
+<span class="ct">&lt;/span&gt;</span></pre>
+          </div>
+        </section>
+
+        <!-- ═══════════════ BUTTONS ═══════════════ -->
+        <section class="doc-sec" id="buttons">
+          <h1 class="doc-sec-title">Button Animations <span class="nav-badge" style="font-size:13px;vertical-align:middle">50</span></h1>
+          <p class="doc-sec-sub">Apply directly to <code>&lt;button&gt;</code> or <code>&lt;a&gt;</code> elements. Effects are ambient — no hover or click required.</p>
+
+          <div class="codeblock">
+            <div class="codeblock-head"><span class="codeblock-lang">HTML</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <pre><span class="ct">&lt;button</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-btn-magnetic</span>"</span><span class="ct">&gt;</span>Magnetic pulse<span class="ct">&lt;/button&gt;</span>
+<span class="ct">&lt;button</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-btn-aurora</span>"</span><span class="ct">&gt;</span>Aurora border<span class="ct">&lt;/button&gt;</span>
+<span class="ct">&lt;button</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-btn-hologram</span>"</span><span class="ct">&gt;</span>Hologram flicker<span class="ct">&lt;/button&gt;</span></pre>
+          </div>
+
+          <h2 class="doc-h3">All 50 button classes</h2>
+          <div class="cls-grid" id="btnClassGrid"></div>
+        </section>
+
+        <!-- ═══════════════ INPUTS ═══════════════ -->
+        <section class="doc-sec" id="inputs">
+          <h1 class="doc-sec-title">Input Animations <span class="nav-badge" style="font-size:13px;vertical-align:middle">51</span></h1>
+          <p class="doc-sec-sub">State-based effects for <code>&lt;input&gt;</code> and <code>&lt;textarea&gt;</code> elements. Some trigger on <code>:focus</code>, others run continuously as ambient loops.</p>
+
+          <div class="codeblock">
+            <div class="codeblock-head"><span class="codeblock-lang">HTML</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <pre><span class="ct">&lt;input</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-input-focus</span>"</span>        <span class="ck">placeholder</span>=<span class="cs">"Focus glow"</span><span class="ct"> /&gt;</span>
+<span class="ct">&lt;input</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-input-voltage</span>"</span>     <span class="ck">placeholder</span>=<span class="cs">"Voltage pulse"</span><span class="ct"> /&gt;</span>
+<span class="ct">&lt;input</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-input-shake</span>"</span>       <span class="ck">placeholder</span>=<span class="cs">"Shake on error"</span><span class="ct"> /&gt;</span>
+<span class="ct">&lt;input</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-input-glow-border</span>"</span> <span class="ck">placeholder</span>=<span class="cs">"Animated glow border"</span><span class="ct"> /&gt;</span></pre>
+          </div>
+
+          <p class="doc-p"><strong>Floating label wrapper</strong> — <code>sds-input-elevate-wrap</code> requires a specific DOM structure:</p>
+          <div class="codeblock">
+            <div class="codeblock-head"><span class="codeblock-lang">HTML — floating label</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <pre><span class="ct">&lt;div</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-input-elevate-wrap</span>"</span><span class="ct">&gt;</span>
+  <span class="ct">&lt;label</span> <span class="ck">for</span>=<span class="cs">"email"</span><span class="ct">&gt;</span>Email address<span class="ct">&lt;/label&gt;</span>
+  <span class="ct">&lt;input</span> <span class="ck">id</span>=<span class="cs">"email"</span> <span class="ck">type</span>=<span class="cs">"email"</span> <span class="ck">placeholder</span>=<span class="cs">" "</span><span class="ct"> /&gt;</span>
+<span class="ct">&lt;/div&gt;</span></pre>
+          </div>
+
+          <h2 class="doc-h3">All 51 input classes</h2>
+          <div class="cls-grid" id="inputClassGrid"></div>
+        </section>
+
+        <!-- ═══════════════ CARDS ═══════════════ -->
+        <section class="doc-sec" id="cards">
+          <h1 class="doc-sec-title">Card Animations <span class="nav-badge" style="font-size:13px;vertical-align:middle">49</span></h1>
+          <p class="doc-sec-sub">Entry and ambient effects for card and container elements.</p>
+
+          <div class="codeblock">
+            <div class="codeblock-head"><span class="codeblock-lang">HTML</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <pre><span class="ct">&lt;div</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-card-float</span>"</span><span class="ct">&gt;</span>Ambient float<span class="ct">&lt;/div&gt;</span>
+<span class="ct">&lt;div</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-card-holo</span>"</span><span class="ct">&gt;</span>Holographic tilt<span class="ct">&lt;/div&gt;</span>
+<span class="ct">&lt;div</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-card-levitate</span>"</span><span class="ct">&gt;</span>Levitate with depth shadow<span class="ct">&lt;/div&gt;</span></pre>
+          </div>
+
+          <p class="doc-p">Three classes animate direct child elements and require children to be visible:</p>
+          <div class="codeblock">
+            <div class="codeblock-head"><span class="codeblock-lang">HTML — stagger cards</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <pre><span class="ct">&lt;div</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-card-stagger</span>"</span><span class="ct">&gt;</span>
+  <span class="ct">&lt;div&gt;</span>Item 1<span class="ct">&lt;/div&gt;</span>
+  <span class="ct">&lt;div&gt;</span>Item 2<span class="ct">&lt;/div&gt;</span>
+  <span class="ct">&lt;div&gt;</span>Item 3<span class="ct">&lt;/div&gt;</span>
+<span class="ct">&lt;/div&gt;</span>
+<span class="cm">&lt;!-- also: sds-card-cascade, sds-card-slice --&gt;</span></pre>
+          </div>
+
+          <h2 class="doc-h3">All 49 card classes</h2>
+          <div class="cls-grid" id="cardClassGrid"></div>
+        </section>
+
+        <!-- ═══════════════ LOADERS ═══════════════ -->
+        <section class="doc-sec" id="loaders">
+          <h1 class="doc-sec-title">Loader Animations <span class="nav-badge" style="font-size:13px;vertical-align:middle">51</span></h1>
+          <p class="doc-sec-sub">Add a class to an empty <code>&lt;span&gt;</code>. The animation is built entirely with CSS pseudo-elements — no child elements needed for most loaders.</p>
+
+          <div class="codeblock">
+            <div class="codeblock-head"><span class="codeblock-lang">HTML — self-contained</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <pre><span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-loader-orbital</span>"</span><span class="ct">&gt;&lt;/span&gt;</span>
+<span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-loader-fluid</span>"</span><span class="ct">&gt;&lt;/span&gt;</span>
+<span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-loader-arc</span>"</span><span class="ct">&gt;&lt;/span&gt;</span>
+<span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-loader-skeleton</span>"</span><span class="ct">&gt;&lt;/span&gt;</span></pre>
+          </div>
+
+          <p class="doc-p">Five loaders animate direct child elements and <strong>require children</strong>:</p>
+          <div class="codeblock">
+            <div class="codeblock-head"><span class="codeblock-lang">HTML — loaders with children</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <pre><span class="cm">&lt;!-- Wave: 5 bars --&gt;</span>
+<span class="ct">&lt;div</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-loader-wave</span>"</span><span class="ct">&gt;</span>
+  <span class="ct">&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;</span>
+<span class="ct">&lt;/div&gt;</span>
+
+<span class="cm">&lt;!-- Dots: 3 dots --&gt;</span>
+<span class="ct">&lt;div</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-loader-dots</span>"</span><span class="ct">&gt;</span>
+  <span class="ct">&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;</span>
+<span class="ct">&lt;/div&gt;</span>
+
+<span class="cm">&lt;!-- Grid: 9 items (3×3) --&gt;</span>
+<span class="ct">&lt;div</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-loader-grid</span>"</span><span class="ct">&gt;</span>
+  <span class="ct">&lt;span&gt;&lt;/span&gt;</span><span class="cm">&lt;!-- ×9 --&gt;</span>
+<span class="ct">&lt;/div&gt;</span>
+
+<span class="cm">&lt;!-- sds-loader-cascade and sds-loader-signal: variable children --&gt;</span></pre>
+          </div>
+
+          <h2 class="doc-h3">All 51 loader classes</h2>
+          <div class="cls-grid" id="loaderClassGrid"></div>
+        </section>
+
+        <!-- ═══════════════ SCROLL ═══════════════ -->
+        <section class="doc-sec" id="scroll">
+          <h1 class="doc-sec-title">Scroll Animations <span class="nav-badge" style="font-size:13px;vertical-align:middle">54</span></h1>
+          <p class="doc-sec-sub">Scroll animation classes fire immediately when applied. Gate them on viewport entry using one of three methods.</p>
+
+          <h2 class="doc-h3">Method 1 — JS scroll engine (recommended, works everywhere)</h2>
+          <p class="doc-p">Load <code>sds-scroll.min.js</code> once. Add <code>data-sds</code> to any animated element. The engine adds <code>sds-play</code> on viewport entry.</p>
+          <div class="codeblock">
+            <div class="codeblock-head"><span class="codeblock-lang">HTML</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <pre><span class="ct">&lt;script</span> <span class="ck">src</span>=<span class="cs">"dist/sds-scroll.min.js"</span> <span class="ck">defer</span><span class="ct">&gt;&lt;/script&gt;</span>
+
+<span class="cm">&lt;!-- Plays once on first entry --&gt;</span>
+<span class="ct">&lt;div</span> <span class="ck">data-sds</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-scroll-rise</span>"</span><span class="ct">&gt;</span>Rises on scroll<span class="ct">&lt;/div&gt;</span>
+
+<span class="cm">&lt;!-- Replays every time element re-enters the viewport --&gt;</span>
+<span class="ct">&lt;div</span> <span class="ck">data-sds</span> <span class="ck">data-sds-repeat</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-scroll-spring</span>"</span><span class="ct">&gt;</span>Replays on re-entry<span class="ct">&lt;/div&gt;</span>
+
+<span class="cm">&lt;!-- Wait 300ms after viewport entry --&gt;</span>
+<span class="ct">&lt;div</span> <span class="ck">data-sds</span> <span class="ck">data-sds-delay</span>=<span class="cs">"300"</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-scroll-blur</span>"</span><span class="ct">&gt;</span>Delayed<span class="ct">&lt;/div&gt;</span></pre>
+          </div>
+
+          <table class="doc-table">
+            <thead><tr><th>Attribute</th><th>Required</th><th>Effect</th></tr></thead>
+            <tbody>
+              <tr><td><code>data-sds</code></td><td>Yes</td><td>Gates animation until viewport entry. Script adds <code>sds-play</code> when element enters.</td></tr>
+              <tr><td><code>data-sds-repeat</code></td><td>No</td><td>Removes <code>sds-play</code> on exit so the animation replays on every re-entry.</td></tr>
+              <tr><td><code>data-sds-delay="N"</code></td><td>No</td><td>Wait N milliseconds after entering the viewport before adding <code>sds-play</code>.</td></tr>
+            </tbody>
+          </table>
+
+          <h2 class="doc-h3">Method 2 — Inline IntersectionObserver (paste-once, zero dependencies)</h2>
+          <div class="codeblock">
+            <div class="codeblock-head"><span class="codeblock-lang">HTML</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <pre><span class="ct">&lt;div</span> <span class="ck">data-sds-scroll</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-scroll-rise</span>"</span><span class="ct">&gt;</span>Content<span class="ct">&lt;/div&gt;</span>
+
+<span class="ct">&lt;script&gt;</span>
+<span class="cm">// Paste once per page — activates all [data-sds-scroll] elements</span>
+(<span class="ck">function</span>(){
+  <span class="ck">var</span> io = <span class="ck">new</span> IntersectionObserver(<span class="ck">function</span>(es){
+    es.forEach(<span class="ck">function</span>(e){
+      <span class="ck">if</span>(e.isIntersecting){
+        e.target.classList.add(<span class="cs">'sds-in'</span>);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: <span class="cv">0.08</span>, rootMargin: <span class="cs">'0px 0px -40px 0px'</span> });
+  document.querySelectorAll(<span class="cs">'[data-sds-scroll]'</span>).forEach(<span class="ck">function</span>(el){ io.observe(el); });
+})();
+<span class="ct">&lt;/script&gt;</span></pre>
+          </div>
+
+          <h2 class="doc-h3">Method 3 — CSS scroll-driven (Chrome / Edge 115+, zero JS)</h2>
+          <div class="codeblock">
+            <div class="codeblock-head"><span class="codeblock-lang">HTML</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <pre><span class="ct">&lt;div</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-scroll-auto</span> <span class="ccl">sds-scroll-rise</span>"</span><span class="ct">&gt;</span>Zero JS, animates via CSS scroll-driven API<span class="ct">&lt;/div&gt;</span></pre>
+          </div>
+          <div class="doc-warn">
+            <strong>Browser support:</strong> Chrome / Edge 115+ only. Other browsers see the element in its final visible state — graceful degradation, no JS error.
+          </div>
+
+          <h2 class="doc-h3">Stagger scroll animations (need children)</h2>
+          <div class="codeblock">
+            <div class="codeblock-head"><span class="codeblock-lang">HTML</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <pre><span class="ct">&lt;div</span> <span class="ck">data-sds</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-scroll-stagger-pop</span>"</span><span class="ct">&gt;</span>
+  <span class="ct">&lt;div&gt;</span>Item 1<span class="ct">&lt;/div&gt;</span>
+  <span class="ct">&lt;div&gt;</span>Item 2<span class="ct">&lt;/div&gt;</span>
+  <span class="ct">&lt;div&gt;</span>Item 3<span class="ct">&lt;/div&gt;</span>
+<span class="ct">&lt;/div&gt;</span>
+<span class="cm">&lt;!-- also: sds-scroll-stagger-grid, sds-scroll-cascade --&gt;</span></pre>
+          </div>
+
+          <h2 class="doc-h3">All 54 scroll classes</h2>
+          <div class="cls-grid" id="scrollClassGrid"></div>
+        </section>
+
+        <!-- ═══════════════ INTERACTIVE ═══════════════ -->
+        <section class="doc-sec" id="interactive">
+          <h1 class="doc-sec-title">Interactive Animations</h1>
+          <p class="doc-sec-sub">Load <code>motion-interactive.min.js</code> once. Add a class. Zero JavaScript from you — the engine auto-wires all listeners, physics loops, and cleanup.</p>
+
+          <div class="codeblock">
+            <div class="codeblock-head"><span class="codeblock-lang">HTML — load engine</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <pre><span class="ct">&lt;script</span> <span class="ck">src</span>=<span class="cs">"dist/motion-interactive.min.js"</span> <span class="ck">defer</span><span class="ct">&gt;&lt;/script&gt;</span></pre>
+          </div>
+
+          <table class="doc-table">
+            <thead><tr><th>Class</th><th>Trigger</th><th>Effect</th><th>Options</th></tr></thead>
+            <tbody>
+              <tr><td><code>sds-word-morph</code></td><td>Auto (interval)</td><td>Cycles through <code>data-words</code> with blur/translate</td><td><code>data-words="A,B,C"</code> required</td></tr>
+              <tr><td><code>sds-jelly-hover</code></td><td>mouseenter</td><td>Squash + stretch spring</td><td>—</td></tr>
+              <tr><td><code>sds-scatter-return</code></td><td>mouseenter / mouseleave</td><td>Chars scatter, spring back on leave</td><td>—</td></tr>
+              <tr><td><code>sds-shockwave</code></td><td>click</td><td>Radial impulse force from click point</td><td>—</td></tr>
+              <tr><td><code>sds-spring-kerning</code></td><td>mousemove</td><td>Mouse X → letter-spacing −12px…+12px</td><td>—</td></tr>
+              <tr><td><code>sds-magnetic-pull</code></td><td>mousemove</td><td>Cursor attracts each character span</td><td><code>data-sds-radius="N"</code> (default 110)</td></tr>
+              <tr><td><code>sds-repulsion-field</code></td><td>mousemove</td><td>Cursor pushes each character span away</td><td><code>data-sds-radius="N"</code> (default 110)</td></tr>
+            </tbody>
+          </table>
+
+          <div class="codeblock">
+            <div class="codeblock-head"><span class="codeblock-lang">HTML — examples</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <pre><span class="ct">&lt;h2</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-word-morph</span>"</span> <span class="ck">data-words</span>=<span class="cs">"Fast,Beautiful,Precise"</span><span class="ct">&gt;</span>Fast<span class="ct">&lt;/h2&gt;</span>
+<span class="ct">&lt;h2</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-magnetic-pull</span>"</span> <span class="ck">data-sds-radius</span>=<span class="cs">"140"</span><span class="ct">&gt;</span>Magnetic<span class="ct">&lt;/h2&gt;</span>
+<span class="ct">&lt;h2</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-shockwave</span>"</span><span class="ct">&gt;</span>Click for shockwave<span class="ct">&lt;/h2&gt;</span>
+<span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-scatter-return</span>"</span><span class="ct">&gt;</span>Hover to scatter<span class="ct">&lt;/span&gt;</span></pre>
+          </div>
+
+          <h2 class="doc-h3">SPA / dynamic content API</h2>
+          <p class="doc-p">After inserting new elements into the DOM, call these to initialize or clean up:</p>
+          <div class="codeblock">
+            <div class="codeblock-head"><span class="codeblock-lang">JS</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <pre><span class="cm">// Scan a container for new interactive elements</span>
+window.SDSInteractive.scan(containerElement);
+
+<span class="cm">// Initialize a single element manually</span>
+window.SDSInteractive.initEl(element);
+
+<span class="cm">// Remove all listeners / intervals (call before removing element)</span>
+window.SDSInteractive.cleanup(element);</pre>
+          </div>
+        </section>
+
+        <!-- ═══════════════ MODIFIERS ═══════════════ -->
+        <section class="doc-sec" id="modifiers">
+          <h1 class="doc-sec-title">Modifiers</h1>
+          <p class="doc-sec-sub">Stack any modifier on any animation class. All SDS classes are <code>sds-</code> prefixed — they never conflict with your existing CSS.</p>
+
+          <div class="codeblock">
+            <div class="codeblock-head"><span class="codeblock-lang">HTML — stacking examples</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <pre><span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-velvet-drop</span> sds-slow sds-delay-3"</span><span class="ct">&gt;</span>Slow, delayed<span class="ct">&lt;/span&gt;</span>
+<span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-refract</span> sds-loop sds-alt"</span><span class="ct">&gt;</span>Alternating loop<span class="ct">&lt;/span&gt;</span>
+<span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-neon-flare</span> sds-loop sds-xslow sds-pause-hover"</span><span class="ct">&gt;</span>Pauses on hover<span class="ct">&lt;/span&gt;</span></pre>
+          </div>
+
+          <table class="doc-table">
+            <thead><tr><th>Class</th><th>Effect</th></tr></thead>
+            <tbody>
+              <tr><td><code>sds-fast</code></td><td>0.5× duration (half speed)</td></tr>
+              <tr><td><code>sds-normal</code></td><td>1× duration (reset to default)</td></tr>
+              <tr><td><code>sds-slow</code></td><td>1.6× duration</td></tr>
+              <tr><td><code>sds-xslow</code></td><td>2.2× duration</td></tr>
+              <tr><td><code>sds-delay-1</code></td><td>0.1s start delay</td></tr>
+              <tr><td><code>sds-delay-2</code></td><td>0.2s start delay</td></tr>
+              <tr><td><code>sds-delay-3</code></td><td>0.3s start delay</td></tr>
+              <tr><td><code>sds-delay-4</code></td><td>0.4s start delay</td></tr>
+              <tr><td><code>sds-delay-5</code></td><td>0.5s start delay</td></tr>
+              <tr><td><code>sds-delay-6</code></td><td>0.6s start delay</td></tr>
+              <tr><td><code>sds-delay-8</code></td><td>0.8s start delay</td></tr>
+              <tr><td><code>sds-delay-10</code></td><td>1.0s start delay</td></tr>
+              <tr><td><code>sds-loop</code></td><td>Infinite iteration</td></tr>
+              <tr><td><code>sds-alt</code></td><td>Alternating direction each loop</td></tr>
+              <tr><td><code>sds-once</code></td><td>Play once, stop in final state</td></tr>
+              <tr><td><code>sds-fill-both</code></td><td>Hold both first and last keyframe</td></tr>
+              <tr><td><code>sds-fill-forward</code></td><td>Hold last keyframe after completion</td></tr>
+              <tr><td><code>sds-pause-hover</code></td><td>Pause animation when element is hovered</td></tr>
+            </tbody>
+          </table>
+
+          <div class="doc-note">
+            <strong>Note:</strong> <code>sds-delay-7</code> and <code>sds-delay-9</code> do not exist — the sequence steps 6 → 8 → 10 to match 0.6s, 0.8s, 1.0s timing intervals.
+          </div>
+        </section>
+
+        <!-- ═══════════════ STAGGER ═══════════════ -->
+        <section class="doc-sec" id="stagger">
+          <h1 class="doc-sec-title">Stagger &amp; Children Animations</h1>
+          <p class="doc-sec-sub">Some animation classes target direct child elements (<code>&gt; *</code>) rather than the element itself. These produce no visible effect without children.</p>
+
+          <table class="doc-table">
+            <thead><tr><th>Category</th><th>Classes requiring child elements</th></tr></thead>
+            <tbody>
+              <tr><td>Text</td><td><code>sds-kinetic-wave</code>, <code>sds-arc-orbit</code>, <code>sds-signal-wave</code>, <code>sds-stagger-chars</code></td></tr>
+              <tr><td>Text (physics)</td><td><code>sds-gravity-bounce</code>, <code>sds-drop-settle</code>, <code>sds-wave-cascade</code>, <code>sds-center-burst</code>, <code>sds-explode-formation</code></td></tr>
+              <tr><td>Cards</td><td><code>sds-card-cascade</code>, <code>sds-card-slice</code>, <code>sds-card-stagger</code></td></tr>
+              <tr><td>Loaders</td><td><code>sds-loader-cascade</code>, <code>sds-loader-dots</code>, <code>sds-loader-grid</code>, <code>sds-loader-signal</code>, <code>sds-loader-wave</code></td></tr>
+              <tr><td>Scroll</td><td><code>sds-scroll-stagger-pop</code>, <code>sds-scroll-stagger-grid</code>, <code>sds-scroll-cascade</code></td></tr>
+            </tbody>
+          </table>
+
+          <p class="doc-p">For char-split text animations (physics + wave), wrap each character in a span with <code>class="sds-char"</code> and a <code>--i</code> custom property:</p>
+          <div class="codeblock">
+            <div class="codeblock-head"><span class="codeblock-lang">HTML</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <pre><span class="ct">&lt;h1</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-kinetic-wave</span>"</span><span class="ct">&gt;</span>
+  <span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"sds-char"</span> <span class="ck">style</span>=<span class="cs">"--i:0"</span><span class="ct">&gt;</span>M<span class="ct">&lt;/span&gt;</span>
+  <span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"sds-char"</span> <span class="ck">style</span>=<span class="cs">"--i:1"</span><span class="ct">&gt;</span>o<span class="ct">&lt;/span&gt;</span>
+  <span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"sds-char"</span> <span class="ck">style</span>=<span class="cs">"--i:2"</span><span class="ct">&gt;</span>t<span class="ct">&lt;/span&gt;</span>
+  <span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"sds-char"</span> <span class="ck">style</span>=<span class="cs">"--i:3"</span><span class="ct">&gt;</span>i<span class="ct">&lt;/span&gt;</span>
+  <span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"sds-char"</span> <span class="ck">style</span>=<span class="cs">"--i:4"</span><span class="ct">&gt;</span>o<span class="ct">&lt;/span&gt;</span>
+  <span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"sds-char"</span> <span class="ck">style</span>=<span class="cs">"--i:5"</span><span class="ct">&gt;</span>n<span class="ct">&lt;/span&gt;</span>
+<span class="ct">&lt;/h1&gt;</span></pre>
+          </div>
+
+          <div class="doc-note">
+            <strong>Auto-split:</strong> Load <code>motion-interactive.min.js</code> — it automatically splits text into <code>sds-char</code> spans for all the above classes. Screen reader accessibility is preserved with <code>aria-label</code> on the parent.
+          </div>
+        </section>
+
+        <!-- ═══════════════ THEMING ═══════════════ -->
+        <section class="doc-sec" id="theming">
+          <h1 class="doc-sec-title">Theming</h1>
+          <p class="doc-sec-sub">Override CSS custom properties to match your brand. Changes propagate to every animation that uses that variable.</p>
+
+          <div class="codeblock">
+            <div class="codeblock-head"><span class="codeblock-lang">CSS — global override</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <pre><span class="ccl">:root</span> {
+  <span class="ck">--sds-primary</span>:      <span class="cv">#0015d1</span>;   <span class="cc">/* Brand colour — glows, gradients, text effects */</span>
+  <span class="ck">--sds-primary-dim</span>:  <span class="cv">rgba(0, 21, 209, 0.08)</span>;
+  <span class="ck">--sds-primary-glow</span>: <span class="cv">rgba(0, 21, 209, 0.30)</span>;
+  <span class="ck">--sds-accent</span>:       <span class="cv">#d10028</span>;   <span class="cc">/* Accent / error colour */</span>
+  <span class="ck">--sds-success</span>:      <span class="cv">#00c48c</span>;   <span class="cc">/* Success colour */</span>
+  <span class="ck">--sds-duration</span>:     <span class="cv">0.8s</span>;      <span class="cc">/* Base animation duration */</span>
+  <span class="ck">--sds-easing</span>:       <span class="cv">cubic-bezier(0.22, 1, 0.36, 1)</span>;
+}</pre>
+          </div>
+
+          <p class="doc-p">Scope to a specific section — changes only affect animations inside that container:</p>
+          <div class="codeblock">
+            <div class="codeblock-head"><span class="codeblock-lang">CSS — scoped override</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <pre><span class="ccl">.hero</span> {
+  <span class="ck">--sds-primary</span>:      <span class="cv">#7c3aed</span>;
+  <span class="ck">--sds-primary-glow</span>: <span class="cv">rgba(124, 58, 237, 0.35)</span>;
+  <span class="ck">--sds-duration</span>:     <span class="cv">1.2s</span>;
+}</pre>
+          </div>
+        </section>
+
+        <!-- ═══════════════ TYPESCRIPT ═══════════════ -->
+        <section class="doc-sec" id="typescript">
+          <h1 class="doc-sec-title">TypeScript &amp; Autocomplete</h1>
+          <p class="doc-sec-sub">The package ships a complete <code>index.d.ts</code> with typed unions for every class. Full autocomplete in VS Code, WebStorm, and any TypeScript-aware editor.</p>
+
+          <table class="doc-table">
+            <thead><tr><th>Exported type</th><th>Classes</th></tr></thead>
+            <tbody>
+              <tr><td><code>SdsTextAnimation</code></td><td>100 text animation classes</td></tr>
+              <tr><td><code>SdsButtonAnimation</code></td><td>50 button animation classes</td></tr>
+              <tr><td><code>SdsInputAnimation</code></td><td>51 input animation classes</td></tr>
+              <tr><td><code>SdsCardAnimation</code></td><td>49 card animation classes</td></tr>
+              <tr><td><code>SdsLoaderAnimation</code></td><td>51 loader animation classes</td></tr>
+              <tr><td><code>SdsScrollAnimation</code></td><td>54 scroll animation classes</td></tr>
+              <tr><td><code>SdsInteractiveAnimation</code></td><td>7 JS-engine animation classes</td></tr>
+              <tr><td><code>SdsModifier</code></td><td>18 modifier classes</td></tr>
+              <tr><td><code>SdsScrollGate</code></td><td><code>sds-play</code>, <code>sds-scroll-auto</code></td></tr>
+              <tr><td><code>SdsAnimationClass</code></td><td>Union of all the above</td></tr>
+            </tbody>
+          </table>
+
+          <div class="codeblock">
+            <div class="codeblock-head"><span class="codeblock-lang">TypeScript — utility function</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <pre><span class="ck">import</span> type { SdsTextAnimation, SdsModifier } <span class="ck">from</span> <span class="cs">'@salkomdesignstudio/sds-motion-forge'</span>;
+
+<span class="ck">function</span> anim(base: SdsTextAnimation, ...mods: SdsModifier[]): string {
+  <span class="ck">return</span> [base, ...mods].join(<span class="cs">' '</span>);
+}
+
+<span class="ck">const</span> cls = anim(<span class="cs">'sds-velvet-drop'</span>, <span class="cs">'sds-slow'</span>, <span class="cs">'sds-delay-2'</span>);
+<span class="cm">// → 'sds-velvet-drop sds-slow sds-delay-2'</span></pre>
+          </div>
+
+          <div class="codeblock">
+            <div class="codeblock-head"><span class="codeblock-lang">TypeScript — React component</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <pre><span class="ck">import</span> type { SdsButtonAnimation } <span class="ck">from</span> <span class="cs">'@salkomdesignstudio/sds-motion-forge'</span>;
+
+<span class="ck">interface</span> ButtonProps {
+  animation?: SdsButtonAnimation;
+  children: React.ReactNode;
+}
+
+<span class="ck">export function</span> Button({ animation = <span class="cs">'sds-btn-magnetic'</span>, children }: ButtonProps) {
+  <span class="ck">return</span> <span class="ct">&lt;button</span> <span class="ck">className</span>={animation}<span class="ct">&gt;</span>{children}<span class="ct">&lt;/button&gt;</span>;
+}</pre>
+          </div>
+        </section>
+
+        <!-- ═══════════════ ACCESSIBILITY ═══════════════ -->
+        <section class="doc-sec" id="a11y">
+          <h1 class="doc-sec-title">Accessibility</h1>
+          <p class="doc-sec-sub">Motion Forge respects <code>prefers-reduced-motion</code> automatically across all three layers. No configuration required.</p>
+
+          <table class="doc-table">
+            <thead><tr><th>Layer</th><th>Behavior under <code>prefers-reduced-motion: reduce</code></th></tr></thead>
+            <tbody>
+              <tr><td>CSS core</td><td>All animations collapse to <code>0.01ms</code> — elements immediately reach their final state</td></tr>
+              <tr><td>Scroll gate</td><td><code>sds-play</code> added immediately to all <code>[data-sds]</code> elements — no observer delay</td></tr>
+              <tr><td>Interactive engine</td><td>Transitions and physics loops skipped; static final state shown</td></tr>
+              <tr><td><code>sds-word-morph</code></td><td>Still cycles words but skips blur/translate — instant word swap</td></tr>
+            </tbody>
+          </table>
+
+          <p class="doc-p"><strong>Screen reader support:</strong> The interactive engine's text splitter sets <code>aria-label</code> on the parent element to preserve the full readable text, then marks each <code>&lt;span class="sds-char"&gt;</code> with <code>aria-hidden="true"</code>.</p>
+        </section>
+
+        <!-- ═══════════════ BROWSER SUPPORT ═══════════════ -->
+        <section class="doc-sec" id="browsers">
+          <h1 class="doc-sec-title">Browser Support</h1>
+          <p class="doc-sec-sub">The core library targets all modern browsers. IE 11 is not supported.</p>
+
+          <table class="doc-table">
+            <thead><tr><th>Feature</th><th>Support</th></tr></thead>
+            <tbody>
+              <tr><td>Core CSS animations (<code>@keyframes</code>)</td><td>Chrome 80+, Firefox 78+, Safari 14+, Edge 80+</td></tr>
+              <tr><td><code>clip-path</code> animations</td><td>All targets — <code>-webkit-</code> prefixed via autoprefixer</td></tr>
+              <tr><td><code>backdrop-filter</code></td><td>Chrome 76+, Firefox 103+, Safari 9+ (with <code>-webkit-</code>)</td></tr>
+              <tr><td>Scroll gate <code>data-sds</code></td><td><code>IntersectionObserver</code> — all modern browsers</td></tr>
+              <tr><td>CSS scroll-driven (<code>sds-scroll-auto</code>)</td><td>Chrome / Edge 115+ only — graceful fallback (element visible, animation skipped)</td></tr>
+              <tr><td>Interactive engine</td><td><code>WeakMap</code> + <code>MutationObserver</code> — all modern browsers</td></tr>
+              <tr><td>IE 11</td><td>Not supported</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- ═══════════════ CONTRIBUTING ═══════════════ -->
+        <section class="doc-sec" id="contributing">
+          <h1 class="doc-sec-title">Contributing</h1>
+          <p class="doc-sec-sub">SDS Motion Forge is MIT-licensed and open to contributions. Here is how to get involved.</p>
+
+          <h2 class="doc-h3">Reporting a bug</h2>
+          <p class="doc-p">
+            <a href="https://github.com/salkomdesignstudio/SDS-Motion-Forge/issues/new" target="_blank" rel="noopener" style="color:var(--brand)">Open an issue</a>
+            and include: the affected class name(s), what you expected, what actually happened, your browser and version, and a minimal reproduction (HTML snippet or CodePen).
+          </p>
+
+          <h2 class="doc-h3">Requesting an animation</h2>
+          <p class="doc-p">Open an issue with the label <strong>animation-request</strong> and describe the motion effect with a reference (gif, video, or live demo link).</p>
+
+          <h2 class="doc-h3">Local development setup</h2>
+          <div class="codeblock">
+            <div class="codeblock-head"><span class="codeblock-lang">BASH</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <pre>git clone https://github.com/salkomdesignstudio/SDS-Motion-Forge.git
+cd SDS-Motion-Forge
+npm install</pre>
+          </div>
+
+          <h2 class="doc-h3">Available scripts</h2>
+          <table class="doc-table">
+            <thead><tr><th>Command</th><th>What it does</th></tr></thead>
+            <tbody>
+              <tr><td><code>npm run build</code></td><td>Build CSS + JS engines for production</td></tr>
+              <tr><td><code>npm run build:css</code></td><td>Build CSS only (PostCSS → cleancss)</td></tr>
+              <tr><td><code>npm run build:js</code></td><td>Build JS engines only (terser + source maps)</td></tr>
+              <tr><td><code>npm run build:dev</code></td><td>Build CSS with source maps for development</td></tr>
+              <tr><td><code>npm run build:watch</code></td><td>Watch CSS and rebuild on save</td></tr>
+              <tr><td><code>npm run build:verify</code></td><td>Run the 8-stage pre-publish verification gate</td></tr>
+              <tr><td><code>npm run release:check</code></td><td>Full check: build + verify + publint + pack</td></tr>
+            </tbody>
+          </table>
+
+          <h2 class="doc-h3">Adding a new animation</h2>
+          <ul class="doc-ul">
+            <li>All CSS animations live in <code>src/motion.css</code></li>
+            <li>Class naming: <code>sds-[descriptive-name]</code> — lowercase, hyphenated</li>
+            <li>Keyframe naming: <code>sds-camelCaseName</code> matching the class (e.g. <code>.sds-velvet-drop</code> → <code>@keyframes sds-velvetDrop</code>)</li>
+            <li>Use <code>--sds-duration</code> and <code>--sds-easing</code> in the animation shorthand</li>
+            <li>Add <code>will-change: transform, opacity</code> for GPU-composited animations</li>
+            <li>The global <code>prefers-reduced-motion</code> block handles reduced motion automatically</li>
+            <li>Use <code>animation-fill-mode: both</code> so the element holds its pre-animation state</li>
+          </ul>
+
+          <p class="doc-p">After adding a CSS animation: add the class to <code>REQUIRED_CLASSES</code> and the <code>@keyframes</code> name to <code>REQUIRED_KEYFRAMES</code> in <code>verify-build.js</code>, and add the TypeScript type to the appropriate union in <code>index.d.ts</code>.</p>
+
+          <h2 class="doc-h3">Submitting a PR</h2>
+          <ul class="doc-ul">
+            <li>Fork the repo and create a branch: <code>git checkout -b feat/my-animation</code></li>
+            <li>Make changes in <code>src/</code> — never edit files in <code>dist/</code> directly</li>
+            <li>Run <code>npm run build</code> to regenerate dist artifacts</li>
+            <li>Run <code>npm run build:verify</code> — all 8 checks must pass</li>
+            <li>Open a PR against <code>main</code> with a description of what the animation does</li>
+          </ul>
+        </section>
+
+        <!-- ═══════════════ CHANGELOG ═══════════════ -->
+        <section class="doc-sec" id="changelog">
+          <h1 class="doc-sec-title">Changelog</h1>
+          <p class="doc-sec-sub">A detailed changelog is maintained in the repository.</p>
+          <p class="doc-p">
+            <a
+              href="https://github.com/salkomdesignstudio/SDS-Motion-Forge/blob/main/CHANGELOG.md"
+              target="_blank"
+              rel="noopener"
+              style="color:var(--brand);font-weight:600;display:inline-flex;align-items:center;gap:6px"
+            ><i class="ri-external-link-line"></i> View CHANGELOG.md on GitHub</a>
+          </p>
+
+          <h2 class="doc-h3">Current: v4.0.1</h2>
+          <ul class="doc-ul">
+            <li>Fixed critical <code>rootMargin</code> crash in <code>sds-scroll.min.js</code> — scroll-gate was broken for all users</li>
+            <li>Replaced hand-authored min.js files with automated terser build — source maps generated</li>
+            <li>Fixed CSS path for Netlify deployment (FOUC eliminated)</li>
+            <li>Fixed broken scroll animation docs code example</li>
+            <li>Completed TypeScript types — all 376 classes now typed</li>
+            <li>Fixed gallery accessibility (keyboard navigation, aria labels)</li>
+            <li>JS engine sizes: sds-scroll −20%, motion-interactive −25%</li>
+          </ul>
+
+          <p class="doc-p" style="margin-top:8px">
+            <a href="https://github.com/salkomdesignstudio/SDS-Motion-Forge/blob/main/CHANGELOG.md" target="_blank" rel="noopener" style="color:var(--brand)">See the full changelog →</a>
+          </p>
+        </section>
+
+      </main>
+    </div><!-- /page -->
+
+    <script>
+      /* ── Class lists for grids ── */
+      var CLASSES = {
+        text: [
+          'sds-arc-orbit','sds-aurora-text','sds-blur-focus','sds-bounce-drop','sds-bounce-in-up',
+          'sds-center-burst','sds-char-orbit','sds-chromatic-shift','sds-cinema-title','sds-cipher-reveal',
+          'sds-color-cycle','sds-data-stream','sds-depth-charge','sds-depth-warp','sds-door-open',
+          'sds-drop-settle','sds-echo-out','sds-elastic-bounce','sds-elastic-stamp','sds-explode-formation',
+          'sds-film-burn','sds-flicker-on','sds-flip-x','sds-flip-y','sds-float-bob',
+          'sds-focus-pull','sds-fold-down','sds-fold-up','sds-glitch-flicker','sds-glitch-slide',
+          'sds-glow-pulse','sds-gradient-sweep','sds-grand-entrance','sds-gravity-bounce','sds-gravity-drop',
+          'sds-heartbeat-text','sds-heat-shimmer','sds-highlight-burn','sds-hologram-text','sds-ink-bleed',
+          'sds-iris-open','sds-jello','sds-kinetic-wave','sds-levitate','sds-light-speed',
+          'sds-liquid-rise','sds-magnetic-drift','sds-morph-word','sds-neon-flare','sds-neon-flicker-in',
+          'sds-neon-pulse-text','sds-oscillate','sds-perspective-swing','sds-phantom-blur','sds-pixel-in',
+          'sds-pop-in','sds-prism-split','sds-refract','sds-reveal-down','sds-reveal-up',
+          'sds-ripple-text','sds-roll-in','sds-rubber-band','sds-scramble-decode','sds-shadow-lift',
+          'sds-shatter-in','sds-shimmer-sweep','sds-signal-wave','sds-skew-slide','sds-slant-rise',
+          'sds-slice-reveal','sds-slide-blur-left','sds-slide-blur-right','sds-smoke-reveal','sds-split-reveal',
+          'sds-spotlight-text','sds-squash-stretch','sds-stagger-chars','sds-static-burst','sds-streak-in',
+          'sds-strike-through','sds-swing-in','sds-tada','sds-tracking-contract','sds-tracking-expand',
+          'sds-typewriter-pro','sds-typing-caret','sds-underline-grow','sds-unfurl','sds-vapor-rise',
+          'sds-velocity-blur-text','sds-velvet-drop','sds-wave-cascade','sds-weight-drop','sds-wipe-left',
+          'sds-wipe-right','sds-wobble','sds-word-blur-in','sds-zoom-far','sds-zoom-punch'
+        ],
+        btn: [
+          'sds-btn-amp','sds-btn-aurora','sds-btn-border-flow','sds-btn-bounce','sds-btn-burst',
+          'sds-btn-charge','sds-btn-crystal','sds-btn-depth-press','sds-btn-dissolve','sds-btn-edge',
+          'sds-btn-energy','sds-btn-fire','sds-btn-flare','sds-btn-float','sds-btn-flux',
+          'sds-btn-glow-core','sds-btn-glow-surge','sds-btn-gradient-shift','sds-btn-gravity','sds-btn-gravity-pull',
+          'sds-btn-heartbeat','sds-btn-hologram','sds-btn-ice','sds-btn-kinetic','sds-btn-lift',
+          'sds-btn-liquid','sds-btn-magnetic','sds-btn-magnetic-trail','sds-btn-momentum','sds-btn-morph',
+          'sds-btn-neon','sds-btn-neon-trace','sds-btn-outline-grow','sds-btn-plasma','sds-btn-press',
+          'sds-btn-pulse-border','sds-btn-quantum','sds-btn-radar','sds-btn-recoil','sds-btn-ripple',
+          'sds-btn-rotate','sds-btn-scan','sds-btn-shimmer','sds-btn-shock','sds-btn-split',
+          'sds-btn-stretch','sds-btn-swipe','sds-btn-tilt','sds-btn-volt','sds-btn-warp'
+        ],
+        input: [
+          'sds-input-active-line','sds-input-aurora','sds-input-bloom','sds-input-border-beam','sds-input-burst',
+          'sds-input-caret','sds-input-charge','sds-input-comet','sds-input-crystal','sds-input-depth',
+          'sds-input-echo','sds-input-electric','sds-input-elevate-wrap','sds-input-expand','sds-input-fire',
+          'sds-input-flicker','sds-input-flow','sds-input-focus','sds-input-focus-glow','sds-input-frost',
+          'sds-input-ghost','sds-input-glitch-valid','sds-input-glow-border','sds-input-gradient-border','sds-input-gravity',
+          'sds-input-ink','sds-input-kinetic','sds-input-laser','sds-input-momentum','sds-input-morph',
+          'sds-input-morph-ph','sds-input-neon','sds-input-neural','sds-input-orbit','sds-input-plasma',
+          'sds-input-prism','sds-input-pulse-dot','sds-input-quantum','sds-input-radar','sds-input-ring',
+          'sds-input-ripple','sds-input-scan','sds-input-shake','sds-input-shimmer','sds-input-solar',
+          'sds-input-success','sds-input-unlock','sds-input-void','sds-input-voltage','sds-input-waveform',
+          'sds-input-zap'
+        ],
+        card: [
+          'sds-card-aurora','sds-card-bloom','sds-card-breath','sds-card-burst','sds-card-cascade',
+          'sds-card-cinematic','sds-card-deep-float','sds-card-depth','sds-card-drift','sds-card-electric',
+          'sds-card-expand','sds-card-flip','sds-card-flip-reveal','sds-card-float','sds-card-fold',
+          'sds-card-force','sds-card-glass','sds-card-glitch','sds-card-glow','sds-card-gravity',
+          'sds-card-holo','sds-card-ink','sds-card-iris','sds-card-levitate','sds-card-liquid-border',
+          'sds-card-magnetic','sds-card-momentum','sds-card-morph','sds-card-neon','sds-card-neon-border',
+          'sds-card-parallax','sds-card-portal','sds-card-prism','sds-card-rise','sds-card-rotate',
+          'sds-card-scan','sds-card-shadow-lift','sds-card-shimmer','sds-card-slice','sds-card-smoke',
+          'sds-card-snap','sds-card-spotlight','sds-card-spring','sds-card-stagger','sds-card-tilt',
+          'sds-card-unfold','sds-card-vortex','sds-card-warp','sds-card-wave'
+        ],
+        loader: [
+          'sds-loader-arc','sds-loader-bar','sds-loader-bounce','sds-loader-breath','sds-loader-cascade',
+          'sds-loader-clock','sds-loader-comet','sds-loader-crystal','sds-loader-cube','sds-loader-data',
+          'sds-loader-dna','sds-loader-dots','sds-loader-electric','sds-loader-expand','sds-loader-fluid',
+          'sds-loader-glitch','sds-loader-grid','sds-loader-helix','sds-loader-hex','sds-loader-hourglass',
+          'sds-loader-infinity','sds-loader-liquid-ring','sds-loader-matrix','sds-loader-morph','sds-loader-mosaic',
+          'sds-loader-neon-ring','sds-loader-neural','sds-loader-orbit-3','sds-loader-orbital','sds-loader-pendulum',
+          'sds-loader-ping','sds-loader-plasma-ring','sds-loader-prism','sds-loader-progress','sds-loader-progress-glow',
+          'sds-loader-pulse','sds-loader-quantum','sds-loader-radar','sds-loader-ring','sds-loader-ripple',
+          'sds-loader-signal','sds-loader-skeleton','sds-loader-snake','sds-loader-solar','sds-loader-spark',
+          'sds-loader-star','sds-loader-target','sds-loader-type','sds-loader-vortex','sds-loader-warp','sds-loader-wave'
+        ],
+        scroll: [
+          'sds-scroll-blur','sds-scroll-bounce','sds-scroll-cascade','sds-scroll-charge','sds-scroll-cinema',
+          'sds-scroll-clip-left','sds-scroll-clip-right','sds-scroll-crystallize','sds-scroll-curtain','sds-scroll-depth',
+          'sds-scroll-dissolve','sds-scroll-drift','sds-scroll-elastic','sds-scroll-elastic-pop','sds-scroll-fade-up',
+          'sds-scroll-flash','sds-scroll-flip','sds-scroll-fog','sds-scroll-glitch','sds-scroll-gravity',
+          'sds-scroll-hologram','sds-scroll-ink','sds-scroll-liquid','sds-scroll-magnetic','sds-scroll-morph',
+          'sds-scroll-neon','sds-scroll-orbit','sds-scroll-perspective-left','sds-scroll-phantom','sds-scroll-prism',
+          'sds-scroll-punch','sds-scroll-radial','sds-scroll-rise','sds-scroll-scale','sds-scroll-scan',
+          'sds-scroll-shatter','sds-scroll-skew','sds-scroll-slide','sds-scroll-slide-right','sds-scroll-snap',
+          'sds-scroll-spiral','sds-scroll-split','sds-scroll-spring','sds-scroll-stagger-grid','sds-scroll-stagger-pop',
+          'sds-scroll-streak','sds-scroll-tilt','sds-scroll-unfold','sds-scroll-velvet','sds-scroll-vortex',
+          'sds-scroll-warp','sds-scroll-warp-in','sds-scroll-wave-rise','sds-scroll-zoom-blur'
+        ]
+      };
+
+      function buildGrid(id, classes) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        el.innerHTML = classes.map(function(c) {
+          return '<span class="cls-tag">' + c + '</span>';
+        }).join('');
+      }
+
+      buildGrid('textClassGrid', CLASSES.text);
+      buildGrid('btnClassGrid', CLASSES.btn);
+      buildGrid('inputClassGrid', CLASSES.input);
+      buildGrid('cardClassGrid', CLASSES.card);
+      buildGrid('loaderClassGrid', CLASSES.loader);
+      buildGrid('scrollClassGrid', CLASSES.scroll);
+
+      /* ── Framework tabs ── */
+      document.getElementById('fwTabs').querySelectorAll('.fw-tab').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          document.querySelectorAll('.fw-tab').forEach(function(b) { b.classList.remove('on'); });
+          document.querySelectorAll('.fw-panel').forEach(function(p) { p.classList.remove('on'); });
+          btn.classList.add('on');
+          var panel = document.getElementById(btn.dataset.panel);
+          if (panel) panel.classList.add('on');
+        });
+      });
+
+      /* ── Copy buttons ── */
+      function copyCB(btn) {
+        var pre = btn.closest('.codeblock').querySelector('pre');
+        navigator.clipboard.writeText(pre.innerText).then(function() {
+          btn.textContent = 'Copied';
+          btn.classList.add('copied');
+          setTimeout(function() { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 1400);
+        }).catch(function() {
+          btn.textContent = 'Failed';
+          setTimeout(function() { btn.textContent = 'Copy'; }, 1500);
+        });
+      }
+
+      function copyInstall(btn, text) {
+        var ic = document.getElementById('npmIcon');
+        navigator.clipboard.writeText(text).then(function() {
+          ic.className = 'ri-check-line';
+          setTimeout(function() { ic.className = 'ri-file-copy-fill'; }, 1400);
+        }).catch(function() {
+          ic.className = 'ri-error-warning-line';
+          setTimeout(function() { ic.className = 'ri-file-copy-fill'; }, 1500);
+        });
+      }
+
+      /* ── Sidebar scrollspy ── */
+      (function() {
+        var links = document.querySelectorAll('.sb-link');
+        var sections = document.querySelectorAll('.doc-sec');
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(e) {
+            if (e.isIntersecting) {
+              var id = e.target.id;
+              links.forEach(function(l) {
+                l.classList.toggle('active', l.getAttribute('href') === '#' + id);
+              });
+            }
+          });
+        }, { rootMargin: '-15% 0px -70% 0px' });
+        sections.forEach(function(s) { observer.observe(s); });
+      })();
+    </script>
+  </body>
+</html>

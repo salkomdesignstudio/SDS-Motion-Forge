@@ -1,7 +1,8 @@
 [build]
-  # 1. Build the library CSS.
-  # 2. Copy dist into docs/ so docs/index.html can load dist/motion.min.css
-  #    without needing ../dist/ (which breaks when Netlify serves docs/ as root).
+  # 1. Build the library CSS + JS engines.
+  # 2. Copy dist into docs/ so docs/index.html and docs/docs.html can load
+  #    dist/motion.min.css without needing ../dist/ (which breaks when Netlify
+  #    serves docs/ as the web root).
   command = "npm run build && cp -r dist docs/dist"
   publish = "docs"
 

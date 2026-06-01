@@ -7,3 +7,15 @@ yarn-error.log*
 pnpm-debug.log*
 .DS_Store
 Thumbs.db
+
+# Local docs build artifact — created by `cp -r dist docs/dist` for local preview.
+# Netlify creates this during CI; do not commit it.
+docs/dist/
+
+# Generated JS build artifacts — produced by `npm run build:js` (terser).
+# These are regenerated on every build; never edit them manually.
+# They ARE included in the npm package (via "files": ["dist/"]) but not in git.
+dist/sds-scroll.min.js
+dist/sds-scroll.min.js.map
+dist/motion-interactive.min.js
+dist/motion-interactive.min.js.map

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SDS Motion Forge v4.0.0 — 300+ CSS Animations, Zero JS</title>
+    <title>SDS Motion Forge v4.0.1 — 300+ CSS Animations, Zero JS</title>
     <meta
       name="description"
       content="300+ production-ready CSS animations. One class name. Zero JavaScript. The motion library that proves itself on its own page."
@@ -11,7 +11,7 @@
 
     <link
       rel="stylesheet"
-      href="../dist/motion.min.css"
+      href="dist/motion.min.css"
       onerror="
         this.onerror = null;
         this.href =
@@ -931,124 +931,6 @@
         background: rgba(255, 255, 255, 0.12);
       }
 
-      /* ───────── DOCS ───────── */
-      .docs-layout {
-        display: grid;
-        grid-template-columns: 220px 1fr;
-        gap: 48px;
-        align-items: start;
-      }
-      .docs-nav {
-        position: sticky;
-        top: 90px;
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
-      }
-      .docs-nav a {
-        padding: 8px 14px;
-        font-size: 13.5px;
-        font-weight: 500;
-        color: var(--ink-2);
-        border-radius: var(--r-md);
-        transition:
-          background 0.15s,
-          color 0.15s;
-      }
-      .docs-nav a:hover {
-        background: var(--bg-2);
-        color: var(--ink);
-      }
-      .docs-nav a.active {
-        background: var(--brand-dim);
-        color: var(--brand);
-        font-weight: 700;
-      }
-      .docs-body {
-        min-width: 0;
-        max-width: 720px;
-      }
-      .doc-block {
-        margin-bottom: 56px;
-        scroll-margin-top: 90px;
-      }
-      .doc-block h3 {
-        font-size: 24px;
-        font-weight: 800;
-        letter-spacing: -0.03em;
-        margin-bottom: 14px;
-      }
-      .doc-block h4 {
-        font-size: 15px;
-        font-weight: 700;
-        margin: 24px 0 10px;
-      }
-      .doc-block p {
-        color: var(--ink-2);
-        line-height: 1.75;
-        margin-bottom: 14px;
-        font-size: 15px;
-      }
-      .doc-block p code,
-      .doc-block li code {
-        font-family: var(--f-mono);
-        font-size: 12.5px;
-        background: var(--brand-dim);
-        color: var(--brand);
-        padding: 2px 7px;
-        border-radius: var(--r-sm);
-      }
-      .doc-block ul {
-        margin: 0 0 14px 20px;
-        color: var(--ink-2);
-        line-height: 1.75;
-        font-size: 15px;
-      }
-      .codeblock {
-        background: var(--stage);
-        border-radius: var(--r-md);
-        overflow: hidden;
-        margin-bottom: 16px;
-      }
-      .codeblock-head {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 16px;
-        border-bottom: 1px solid var(--stage-line);
-      }
-      .codeblock-lang {
-        font-family: var(--f-mono);
-        font-size: 11px;
-        color: var(--stage-ink-2);
-        letter-spacing: 0.06em;
-      }
-      .codeblock-copy {
-        background: rgba(255, 255, 255, 0.07);
-        border: 1px solid var(--stage-line);
-        border-radius: 6px;
-        padding: 4px 11px;
-        font-family: var(--f-mono);
-        font-size: 11px;
-        color: var(--stage-ink-2);
-        cursor: pointer;
-      }
-      .codeblock-copy:hover {
-        background: rgba(255, 255, 255, 0.13);
-        color: #fff;
-      }
-      .codeblock-copy.copied {
-        color: var(--success);
-      }
-      .codeblock pre {
-        padding: 18px;
-        overflow-x: auto;
-        font-size: 12.5px;
-        line-height: 1.7;
-        color: var(--stage-ink);
-        white-space: pre;
-        -webkit-overflow-scrolling: touch;
-      }
       .ck {
         color: #79c0ff;
       }
@@ -1646,22 +1528,6 @@
         }
         .pg {
           grid-template-columns: 1fr;
-        }
-        .docs-layout {
-          grid-template-columns: 1fr;
-          gap: 24px;
-        }
-        .docs-nav {
-          position: static;
-          flex-direction: row;
-          overflow-x: auto;
-          gap: 6px;
-          padding-bottom: 8px;
-          -webkit-overflow-scrolling: touch;
-        }
-        .docs-nav a {
-          white-space: nowrap;
-          flex: 0 0 auto;
         }
         .tile.lg,
         .tile.md,
@@ -3029,6 +2895,57 @@
         opacity: 1 !important;
         animation-play-state: running !important;
       }
+
+      /* ───────── DOCS TEASER ───────── */
+      .sec-alt {
+        background: var(--bg-2);
+        border-block: 1px solid var(--line);
+      }
+      .sec-head-wide {
+        max-width: 760px;
+        margin-bottom: 40px;
+      }
+      .docs-card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 14px;
+        margin-bottom: 40px;
+      }
+      .docs-card {
+        background: var(--bg-card);
+        border: 1.5px solid var(--line);
+        border-radius: var(--r-lg);
+        padding: 22px;
+        display: block;
+        transition:
+          border-color .2s,
+          box-shadow .2s,
+          transform .2s;
+      }
+      .docs-card:hover {
+        border-color: var(--brand);
+        box-shadow: 0 0 0 4px var(--brand-dim), var(--sh-1);
+        transform: translateY(-2px);
+      }
+      .docs-card-ico {
+        font-size: 22px;
+        color: var(--brand);
+        margin-bottom: 10px;
+      }
+      .docs-card-name {
+        font-weight: 700;
+        font-size: 15px;
+        margin-bottom: 6px;
+      }
+      .docs-card-desc {
+        font-size: 13px;
+        color: var(--ink-3);
+      }
+      .docs-cta-row {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
     </style>
   </head>
   <body>
@@ -3043,11 +2960,11 @@
           <a href="#why">Why</a>
           <a href="#gallery">Gallery</a>
           <a href="#playground">Playground</a>
-          <a href="#docs">Docs</a>
+          <a href="docs.html">Docs</a>
         </div>
         <div class="nav-sp"></div>
         <div class="nav-actions">
-          <span class="pill">v4.0.0</span>
+          <span class="pill">v4.0.1</span>
           <a
             href="https://github.com/salkomdesignstudio/SDS-Motion-Forge"
             target="_blank"
@@ -3055,7 +2972,7 @@
             class="icon-btn"
             ><i class="ri-github-fill"></i
           ></a>
-          <a href="#docs" class="btn btn-primary"
+          <a href="docs.html" class="btn btn-primary"
             ><i class="ri-book-2-fill"></i> Get Started</a
           >
         </div>
@@ -3088,7 +3005,7 @@
         <a href="#playground" onclick="toggleDrawer()"
           ><i class="ri-play-circle-fill"></i> Playground</a
         >
-        <a href="#docs" onclick="toggleDrawer()"
+        <a href="docs.html" onclick="toggleDrawer()"
           ><i class="ri-book-2-fill"></i> Docs</a
         >
         <a
@@ -3114,37 +3031,37 @@
       <div class="wrap hero-in">
         <div>
           <div class="hero-badge">
-            <span class="dot"></span> 800+ weekly downloads · v4.0.0
+            <span class="dot"></span> 1,000+ developers · v4.0.1
           </div>
           <h1 class="hero-h1">
             <span class="kinetic" id="kinetic" aria-label="Motion"></span><br />
             at the <span class="serif">speed</span><br />of class
           </h1>
           <p class="hero-sub">
-            100 production-ready text animations. One class name. Zero
-            JavaScript. The motion library that proves itself on its own
-            homepage.
+            300+ production-ready CSS animations across 6 categories. One class
+            name. Zero required JavaScript. The motion library that proves
+            itself on its own page.
           </p>
           <div class="hero-cta">
-            <a href="#docs" class="btn btn-primary"
+            <a href="docs.html" class="btn btn-primary"
               ><i class="ri-rocket-2-fill"></i> Get Started</a
             >
             <a href="#gallery" class="btn btn-ghost"
-              ><i class="ri-gallery-fill"></i> Browse 300+ Animations</
+              ><i class="ri-gallery-fill"></i> Browse 300+ Animations</a
             >
           </div>
           <div class="hero-stats">
             <div>
-              <div class="hstat-v">100</div>
-              <div class="hstat-l">Text Animations</div>
+              <div class="hstat-v">300+</div>
+              <div class="hstat-l">Animations</div>
             </div>
             <div>
               <div class="hstat-v">0kb</div>
-              <div class="hstat-l">JavaScript</div>
+              <div class="hstat-l">Required JS</div>
             </div>
             <div>
-              <div class="hstat-v">38kb</div>
-              <div class="hstat-l">Minified</div>
+              <div class="hstat-v">~20kb</div>
+              <div class="hstat-l">Gzip</div>
             </div>
             <div>
               <div class="hstat-v">6</div>
@@ -3194,10 +3111,11 @@
           <div class="tile lg tile-dark" data-reveal="scale">
             <div class="tile-ico"><i class="ri-flashlight-fill"></i></div>
             <div>
-              <div class="tile-t">Zero JavaScript</div>
+              <div class="tile-t">Zero Required JS</div>
               <div class="tile-d">
-                Pure @keyframes and CSS classes. No observers, no listeners, no
-                runtime weight beyond the stylesheet itself.
+                Pure @keyframes and CSS classes. No required JavaScript. Two
+                optional engines (scroll gate, interactive) add progressive
+                enhancement when you need it.
               </div>
             </div>
           </div>
@@ -3252,25 +3170,21 @@
     </section>
 
     <!-- GALLERY -->
-    <section
-      class="sec section-alt"
-      id="gallery"
-      style="background: var(--bg-2); border-block: 1px solid var(--line)"
-    >
+    <section class="sec sec-alt" id="gallery">
       <div class="wrap">
         <div class="sec-head" data-reveal="up">
           <div class="eyebrow">Live Gallery</div>
           <h2 class="sec-title">Every animation, playing live</h2>
           <p class="sec-desc">
-            Hover any card to replay. Click to copy the class. These are the
-            real animations, running right here.
+            Hover any card to replay. Click to open the detail view and copy
+            code. These are the real animations, running right here.
           </p>
         </div>
         <div class="gal-bar" data-reveal="up">
           <div class="tabs" id="tabs"></div>
           <div class="gal-search">
             <i class="ri-search-line"></i
-            ><input type="text" id="search" placeholder="Search animations…" />
+            ><input type="text" id="search" placeholder="Search animations…" aria-label="Search animations" />
           </div>
         </div>
         <div class="gal-grid" id="galGrid"></div>
@@ -3336,192 +3250,59 @@
       </div>
     </section>
 
-    <!-- DOCS -->
-    <section class="sec" id="docs">
+    <!-- DOCS TEASER -->
+    <section class="sec sec-alt" id="docs">
       <div class="wrap">
-        <div class="sec-head" data-reveal="up">
+        <div class="sec-head sec-head-wide" data-reveal="up">
           <div class="eyebrow">Documentation</div>
-          <h2 class="sec-title">Everything you need</h2>
+          <h2 class="sec-title">Everything you need to ship</h2>
+          <p class="sec-desc">
+            Installation guides, the full animation reference, scroll engine, interactive engine,
+            TypeScript types, theming, accessibility, and contributing guide — all in one place.
+          </p>
         </div>
-        <div class="docs-layout">
-          <nav class="docs-nav" id="docsNav">
-            <a href="#d-install" class="active">Installation</a>
-            <a href="#d-usage">Usage</a>
-            <a href="#d-modifiers">Modifiers</a>
-            <a href="#d-scroll">Scroll Animations</a>
-            <a href="#d-theming">Theming</a>
-            <a href="#d-a11y">Accessibility</a>
-            <a href="#d-browser">Browser Support</a>
-          </nav>
-          <div class="docs-body">
-            <div class="doc-block" id="d-install">
-              <h3>Installation</h3>
-              <p>Choose any method — all deliver the same stylesheet.</p>
-              <h4>CDN</h4>
-              <div class="codeblock">
-                <div class="codeblock-head">
-                  <span class="codeblock-lang">HTML</span
-                  ><button class="codeblock-copy" onclick="copyCB(this)">
-                    Copy
-                  </button>
-                </div>
-                <pre><span class="ct">&lt;link</span> <span class="ck">rel</span>=<span class="cs">"stylesheet"</span>
-  <span class="ck">href</span>=<span class="cs">"https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css"</span><span class="ct">&gt;</span></pre>
-              </div>
-              <h4>npm</h4>
-              <div class="codeblock">
-                <div class="codeblock-head">
-                  <span class="codeblock-lang">BASH</span
-                  ><button class="codeblock-copy" onclick="copyCB(this)">
-                    Copy
-                  </button>
-                </div>
-                <pre>npm install @salkomdesignstudio/sds-motion-forge</pre>
-              </div>
-              <p>Then import once in your entry file:</p>
-              <div class="codeblock">
-                <div class="codeblock-head">
-                  <span class="codeblock-lang">JS</span
-                  ><button class="codeblock-copy" onclick="copyCB(this)">
-                    Copy
-                  </button>
-                </div>
-                <pre><span class="ck">import</span> <span class="cs">'@salkomdesignstudio/sds-motion-forge/dist/motion.min.css'</span>;</pre>
-              </div>
-            </div>
-
-            <div class="doc-block" id="d-usage">
-              <h3>Usage</h3>
-              <p>
-                Add an animation class to any element. That is the entire API.
-              </p>
-              <div class="codeblock">
-                <div class="codeblock-head">
-                  <span class="codeblock-lang">HTML</span
-                  ><button class="codeblock-copy" onclick="copyCB(this)">
-                    Copy
-                  </button>
-                </div>
-                <pre><span class="ct">&lt;h1</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-velvet-drop</span>"</span><span class="ct">&gt;</span>Hello<span class="ct">&lt;/h1&gt;</span></pre>
-              </div>
-            </div>
-
-            <div class="doc-block" id="d-modifiers">
-              <h3>Modifiers</h3>
-              <p>
-                Stack these on any animation to control timing and playback.
-              </p>
-              <table class="doc-table">
-                <thead>
-                  <tr>
-                    <th>Class</th>
-                    <th>Effect</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><code>sds-slow</code></td>
-                    <td>Slower (1.6×)</td>
-                  </tr>
-                  <tr>
-                    <td><code>sds-fast</code></td>
-                    <td>Faster (0.5×)</td>
-                  </tr>
-                  <tr>
-                    <td><code>sds-delay-1…10</code></td>
-                    <td>0.1s–1.0s delay</td>
-                  </tr>
-                  <tr>
-                    <td><code>sds-loop</code></td>
-                    <td>Repeat forever</td>
-                  </tr>
-                  <tr>
-                    <td><code>sds-pause-hover</code></td>
-                    <td>Pause on hover</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div class="doc-block" id="d-scroll">
-              <h3>Scroll Animations</h3>
-              <p>
-                Add <code>data-sds</code> and include this script once so the
-                animation fires when scrolled into view.
-              </p>
-              <div class="codeblock">
-                <div class="codeblock-head">
-                  <span class="codeblock-lang">HTML</span
-                  ><button class="codeblock-copy" onclick="copyCB(this)">
-                    Copy
-                  </button>
-                </div>
-                <pre><span class="ct">&lt;div</span> <span class="ck">data-sds</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-scroll-rise</span>"</span><span class="ct">&gt;</span>Content<span class="ct">&lt;/div&gt;</span>
-
-<span class="ct">&lt;script&gt;</span>
-<span class="ck">new</span> IntersectionObserver(<span class="ck">function</span>(es){
-  es.forEach(<span class="ck">function</span>(e){
-    <span class="ck">if</span>(e.isIntersecting) e.target.classList.add(<span class="cs">'sds-in'</span>);
-  });
-}).observe(document.querySelector(<span class="cs">'[data-sds]'</span>));
-<span class="ct">&lt;/script&gt;</span></pre>
-              </div>
-            </div>
-
-            <div class="doc-block" id="d-theming">
-              <h3>Theming</h3>
-              <p>Override these CSS variables to match your brand.</p>
-              <div class="codeblock">
-                <div class="codeblock-head">
-                  <span class="codeblock-lang">CSS</span
-                  ><button class="codeblock-copy" onclick="copyCB(this)">
-                    Copy
-                  </button>
-                </div>
-                <pre><span class="ccl">:root</span> {
-  <span class="ck">--sds-primary</span>: <span class="cs">#0015d1</span>;
-  <span class="ck">--sds-accent</span>: <span class="cs">#d10028</span>;
-  <span class="ck">--sds-duration</span>: <span class="cs">0.8s</span>;
-}</pre>
-              </div>
-            </div>
-
-            <div class="doc-block" id="d-a11y">
-              <h3>Accessibility</h3>
-              <p>
-                Motion Forge automatically respects
-                <code>prefers-reduced-motion: reduce</code>. When set,
-                animations are disabled and content shows in its final state. No
-                extra configuration needed.
-              </p>
-            </div>
-
-            <div class="doc-block" id="d-browser">
-              <h3>Browser Support</h3>
-              <table class="doc-table">
-                <thead>
-                  <tr>
-                    <th>Feature</th>
-                    <th>Support</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Core animations</td>
-                    <td>All modern browsers</td>
-                  </tr>
-                  <tr>
-                    <td>clip-path effects</td>
-                    <td>Includes -webkit- (Safari)</td>
-                  </tr>
-                  <tr>
-                    <td>Scroll-driven CSS</td>
-                    <td>Chrome 115+, graceful fallback</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
+        <div class="docs-card-grid" data-reveal="up">
+          <a href="docs.html#install" class="docs-card">
+            <div class="docs-card-ico"><i class="ri-download-cloud-2-fill"></i></div>
+            <div class="docs-card-name">Installation</div>
+            <div class="docs-card-desc">CDN, npm, yarn, all frameworks</div>
+          </a>
+          <a href="docs.html#text" class="docs-card">
+            <div class="docs-card-ico"><i class="ri-text"></i></div>
+            <div class="docs-card-name">Animation Reference</div>
+            <div class="docs-card-desc">All 376 classes across 6 categories</div>
+          </a>
+          <a href="docs.html#scroll" class="docs-card">
+            <div class="docs-card-ico"><i class="ri-scroll-to-bottom-fill"></i></div>
+            <div class="docs-card-name">Scroll Animations</div>
+            <div class="docs-card-desc">3 activation methods documented</div>
+          </a>
+          <a href="docs.html#interactive" class="docs-card">
+            <div class="docs-card-ico"><i class="ri-cursor-fill"></i></div>
+            <div class="docs-card-name">Interactive Engine</div>
+            <div class="docs-card-desc">Magnetic, shockwave, word morph &amp; more</div>
+          </a>
+          <a href="docs.html#typescript" class="docs-card">
+            <div class="docs-card-ico"><i class="ri-code-s-slash-fill"></i></div>
+            <div class="docs-card-name">TypeScript</div>
+            <div class="docs-card-desc">All 376 classes typed, React/Angular examples</div>
+          </a>
+          <a href="docs.html#contributing" class="docs-card">
+            <div class="docs-card-ico"><i class="ri-git-pull-request-fill"></i></div>
+            <div class="docs-card-name">Contributing</div>
+            <div class="docs-card-desc">Add animations, fix bugs, open PRs</div>
+          </a>
+        </div>
+        <div class="docs-cta-row" data-reveal="up">
+          <a href="docs.html" class="btn btn-primary"
+            ><i class="ri-book-2-fill"></i> Open Full Docs</a
+          >
+          <a
+            href="https://github.com/salkomdesignstudio/SDS-Motion-Forge"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-ghost"
+          ><i class="ri-github-fill"></i> View on GitHub</a>
         </div>
       </div>
     </section>
@@ -3551,15 +3332,15 @@
             SDS Motion Forge</a
           >
           <p>
-            300+ production-ready CSS animations. One class name. Zero
-            JavaScript. Built by Salkom Design Studio.
+            300+ production-ready CSS animations. One class name. Zero required
+            JavaScript. Open-source · MIT · Built by Salkom Design Studio.
           </p>
         </div>
         <div class="foot-cols">
           <div class="foot-col">
             <h5>Product</h5>
             <a href="#why">Features</a><a href="#gallery">Gallery</a
-            ><a href="#playground">Playground</a><a href="#docs">Docs</a>
+            ><a href="#playground">Playground</a><a href="docs.html">Docs</a>
           </div>
           <div class="foot-col">
             <h5>Resources</h5>
@@ -3573,11 +3354,31 @@
               target="_blank"
               rel="noopener"
               >npm</a
+            ><a
+              href="https://github.com/salkomdesignstudio/SDS-Motion-Forge/blob/main/CHANGELOG.md"
+              target="_blank"
+              rel="noopener"
+              >Changelog</a
+            ><a
+              href="https://github.com/salkomdesignstudio/SDS-Motion-Forge/issues"
+              target="_blank"
+              rel="noopener"
+              >Issues</a
+            ><a
+              href="https://github.com/salkomdesignstudio/SDS-Motion-Forge/blob/main/README.md#contributing"
+              target="_blank"
+              rel="noopener"
+              >Contributing</a
             >
           </div>
           <div class="foot-col">
             <h5>Studio</h5>
-            <a href="#">Salkom Design</a><a href="#docs">License</a>
+            <a
+              href="https://salkomdesignstudio.com"
+              target="_blank"
+              rel="noopener"
+              >Salkom Design</a
+            ><a href="https://github.com/salkomdesignstudio/SDS-Motion-Forge/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a>
           </div>
         </div>
       </div>
@@ -5166,6 +4967,17 @@
               splitToChars(a.name) +
               "</span>"
             );
+          if (a.elem === "stagger-pop" || a.elem === "stagger-grid")
+            return (
+              '<span class="card-demo ' +
+              cls +
+              '" style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center">' +
+              '<span style="display:inline-block;padding:3px 8px;background:var(--brand);color:#fff;border-radius:6px;font-size:12px">A</span>' +
+              '<span style="display:inline-block;padding:3px 8px;background:var(--brand);color:#fff;border-radius:6px;font-size:12px">B</span>' +
+              '<span style="display:inline-block;padding:3px 8px;background:var(--brand);color:#fff;border-radius:6px;font-size:12px">C</span>' +
+              '<span style="display:inline-block;padding:3px 8px;background:var(--brand);color:#fff;border-radius:6px;font-size:12px">D</span>' +
+              "</span>"
+            );
           return '<span class="card-demo ' + cls + '">' + a.name + "</span>";
         }
 
@@ -5184,7 +4996,9 @@
                 a.cls +
                 '" data-i="' +
                 i +
-                '">' +
+                '" tabindex="0" role="button" aria-label="' +
+                a.name +
+                ' animation — click for details">' +
                 '<div class="card-stage">' +
                 previewMarkup(a) +
                 "</div>" +
@@ -5207,13 +5021,22 @@
               card.querySelector("[class*='sds-']");
             function play() {
               if (!demo || reduce) return;
-              demo.style.animation = "none";
+              // For char-split wave animations, children carry the animation
+              var charSpans = demo.querySelectorAll(".sds-char");
+              var targets = charSpans.length ? Array.prototype.slice.call(charSpans) : [demo];
+              targets.forEach(function (el) { el.style.animation = "none"; });
               void demo.offsetWidth;
-              demo.style.animation = "";
+              targets.forEach(function (el) { el.style.animation = ""; });
             }
             card.addEventListener("mouseenter", play);
             card.addEventListener("click", function () {
               openModal(activeCat, parseInt(card.dataset.i, 10));
+            });
+            card.addEventListener("keydown", function (e) {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                openModal(activeCat, parseInt(card.dataset.i, 10));
+              }
             });
           });
           // trigger when in view
@@ -5321,34 +5144,42 @@
         };
         window.pgCopy = function (btn) {
           var code = document.getElementById("pgCode").textContent;
-          navigator.clipboard.writeText(code);
           var orig = btn.innerHTML;
-          btn.innerHTML = '<i class="ri-check-line"></i> Copied';
-          setTimeout(function () {
-            btn.innerHTML = orig;
-          }, 1200);
+          navigator.clipboard.writeText(code).then(function () {
+            btn.innerHTML = '<i class="ri-check-line"></i> Copied';
+            setTimeout(function () { btn.innerHTML = orig; }, 1200);
+          }).catch(function () {
+            btn.innerHTML = '<i class="ri-error-warning-line"></i> Failed';
+            setTimeout(function () { btn.innerHTML = orig; }, 1500);
+          });
         };
 
         /* ---------- Doc code copy ---------- */
         window.copyCB = function (btn) {
           var pre = btn.closest(".codeblock").querySelector("pre");
-          navigator.clipboard.writeText(pre.innerText);
-          btn.textContent = "Copied";
-          btn.classList.add("copied");
-          setTimeout(function () {
-            btn.textContent = "Copy";
-            btn.classList.remove("copied");
-          }, 1400);
+          navigator.clipboard.writeText(pre.innerText).then(function () {
+            btn.textContent = "Copied";
+            btn.classList.add("copied");
+            setTimeout(function () {
+              btn.textContent = "Copy";
+              btn.classList.remove("copied");
+            }, 1400);
+          }).catch(function () {
+            btn.textContent = "Failed";
+            setTimeout(function () { btn.textContent = "Copy"; }, 1500);
+          });
         };
         window.copyInstall = function (btn) {
+          var ic = document.getElementById("installIcon");
           navigator.clipboard.writeText(
             "npm i @salkomdesignstudio/sds-motion-forge",
-          );
-          var ic = document.getElementById("installIcon");
-          ic.className = "ri-check-line";
-          setTimeout(function () {
-            ic.className = "ri-file-copy-fill";
-          }, 1400);
+          ).then(function () {
+            ic.className = "ri-check-line";
+            setTimeout(function () { ic.className = "ri-file-copy-fill"; }, 1400);
+          }).catch(function () {
+            ic.className = "ri-error-warning-line";
+            setTimeout(function () { ic.className = "ri-file-copy-fill"; }, 1500);
+          });
         };
 
         /* ---------- Mobile drawer ---------- */
@@ -5383,31 +5214,6 @@
           );
           document.querySelectorAll("[data-reveal]").forEach(function (el) {
             io.observe(el);
-          });
-        })();
-
-        /* ---------- Docs scrollspy ---------- */
-        (function () {
-          var links = document.querySelectorAll("#docsNav a");
-          var blocks = document.querySelectorAll(".doc-block");
-          var spy = new IntersectionObserver(
-            function (es) {
-              es.forEach(function (e) {
-                if (e.isIntersecting) {
-                  var id = e.target.id;
-                  links.forEach(function (l) {
-                    l.classList.toggle(
-                      "active",
-                      l.getAttribute("href") === "#" + id,
-                    );
-                  });
-                }
-              });
-            },
-            { rootMargin: "-25% 0px -65% 0px" },
-          );
-          blocks.forEach(function (b) {
-            spy.observe(b);
           });
         })();
 
@@ -5447,6 +5253,17 @@
               '<div class="modal-demo ' +
               cls +
               '" id="modalDemo" style="width:120px;height:80px;border-radius:14px;background:var(--brand);box-shadow:var(--sh-1)"></div>'
+            );
+          if (a.elem === "stagger-pop" || a.elem === "stagger-grid")
+            return (
+              '<span class="modal-demo ' +
+              cls +
+              '" id="modalDemo" style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">' +
+              '<span style="display:inline-block;padding:6px 14px;background:var(--brand);color:#fff;border-radius:8px;font-weight:700">A</span>' +
+              '<span style="display:inline-block;padding:6px 14px;background:var(--brand);color:#fff;border-radius:8px;font-weight:700">B</span>' +
+              '<span style="display:inline-block;padding:6px 14px;background:var(--brand);color:#fff;border-radius:8px;font-weight:700">C</span>' +
+              '<span style="display:inline-block;padding:6px 14px;background:var(--brand);color:#fff;border-radius:8px;font-weight:700">D</span>' +
+              "</span>"
             );
           return (
             '<span class="modal-demo ' +
@@ -5528,6 +5345,16 @@
           };
         });
 
+        function modalAnimTargets() {
+          var demo = document.getElementById("modalDemo");
+          if (!demo) return [];
+          var a = modalState.anim;
+          if (a && (a.elem === "stagger-pop" || a.elem === "stagger-grid")) {
+            return Array.prototype.slice.call(demo.children);
+          }
+          return [demo];
+        }
+
         window.modalApply = function () {
           var a = modalState.anim;
           if (!a) return;
@@ -5537,29 +5364,30 @@
           document.getElementById("cDelayV").textContent =
             modalState.delay + "ms";
 
-          var demo = document.getElementById("modalDemo");
-          if (demo && !reduce) {
-            demo.style.animationDuration = modalState.dur + "ms";
-            demo.style.animationDelay = modalState.delay + "ms";
-            demo.style.animationIterationCount = modalState.iter;
-            demo.style.animationDirection = modalState.dir;
-            if (modalState.ease !== "default")
-              demo.style.animationTimingFunction = modalState.ease;
-            else demo.style.animationTimingFunction = "";
-            // replay
-            demo.style.animationName = "none";
-            void demo.offsetWidth;
-            demo.style.animationName = "";
+          var targets = modalAnimTargets();
+          if (targets.length && !reduce) {
+            targets.forEach(function (el) {
+              el.style.animationDuration = modalState.dur + "ms";
+              el.style.animationIterationCount = modalState.iter;
+              el.style.animationDirection = modalState.dir;
+              if (modalState.ease !== "default")
+                el.style.animationTimingFunction = modalState.ease;
+              else el.style.animationTimingFunction = "";
+            });
+            // replay: clear name, force reflow, restore
+            targets.forEach(function (el) { el.style.animationName = "none"; });
+            void targets[0].offsetWidth;
+            targets.forEach(function (el) { el.style.animationName = ""; });
           }
           renderModalCode();
         };
 
         window.modalReplay = function () {
-          var demo = document.getElementById("modalDemo");
-          if (!demo || reduce) return;
-          demo.style.animationName = "none";
-          void demo.offsetWidth;
-          demo.style.animationName = "";
+          var targets = modalAnimTargets();
+          if (!targets.length || reduce) return;
+          targets.forEach(function (el) { el.style.animationName = "none"; });
+          void targets[0].offsetWidth;
+          targets.forEach(function (el) { el.style.animationName = ""; });
         };
 
         function inlineStyle() {
@@ -5660,24 +5488,30 @@
         }
 
         window.copyModalCls = function () {
-          navigator.clipboard.writeText(modalState.anim.cls);
           var el = document.getElementById("modalClsText");
           var orig = el.textContent;
-          el.textContent = "Copied!";
-          setTimeout(function () {
-            el.textContent = orig;
-          }, 1200);
+          navigator.clipboard.writeText(modalState.anim.cls).then(function () {
+            el.textContent = "Copied!";
+            setTimeout(function () { el.textContent = orig; }, 1200);
+          }).catch(function () {
+            el.textContent = "Failed";
+            setTimeout(function () { el.textContent = orig; }, 1500);
+          });
         };
         window.copyModalCode = function (btn) {
           navigator.clipboard.writeText(
             document.getElementById("modalCode").textContent,
-          );
-          btn.textContent = "Copied";
-          btn.classList.add("copied");
-          setTimeout(function () {
-            btn.textContent = "Copy";
-            btn.classList.remove("copied");
-          }, 1400);
+          ).then(function () {
+            btn.textContent = "Copied";
+            btn.classList.add("copied");
+            setTimeout(function () {
+              btn.textContent = "Copy";
+              btn.classList.remove("copied");
+            }, 1400);
+          }).catch(function () {
+            btn.textContent = "Failed";
+            setTimeout(function () { btn.textContent = "Copy"; }, 1500);
+          });
         };
 
         document.addEventListener("keydown", function (e) {
@@ -5699,6 +5533,10 @@
     <script>
       /*!
        * SDS Motion Forge — Interactive Engine v4
+       * This is the inline demo copy of dist/motion-interactive.min.js.
+       * When changing behavior here, mirror the change in src/motion-interactive.js
+       * and run `npm run build:js` to regenerate the published engine.
+       *
        * Auto-initializes cursor / hover / click / physics text animations.
        * The developer only adds a class. This script does the rest.
        *

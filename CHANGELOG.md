@@ -1,5 +1,89 @@
 # Changelog
 
+## [4.0.1] - 2026-06-01
+
+### Fixed — Critical (production impact)
+
+- **`dist/sds-scroll.min.js`** — `rootMargin` value was `'0px 0px-40px 0px'` (missing space between `0px` and `-40px`), causing `new IntersectionObserver()` to throw a `DOMException` in all browsers. All `[data-sds]` scroll-gate animations were silently broken for every user of the scroll engine. Fixed to `'0px 0px -40px 0px'`.
+
+- **`dist/sds-scroll.min.js` + `dist/motion-interactive.min.js`** — Both minified JS files were hand-authored shadow copies of their source files with no automated build derivation. They had diverged from `src/` (confirmed by SHA256 hash comparison and structural analysis) and had no `sourceMappingURL`. Any future manual edit would reproduce the rootMargin class of bug. Added `terser` to `devDependencies` with a `build:js` script that generates both files from source with source maps. The hand-authored artifacts are now in `.gitignore` and must never be committed.
+
+- **`verify-build.js`** — The pre-publish gate checked for `href="../dist/motion.min.css"` in `docs/index.html`, which was the old incorrect path. This caused `npm run release:check`, CI, and `npm publish` to fail permanently. Updated to check the correct `dist/motion.min.css` path.
+
+- **`docs/index.html` — CSS path** — `href` was `../dist/motion.min.css`. When Netlify serves `docs/` as the web root (`netlify.toml`: `publish = "docs"`), `../dist/` resolves above the publish root and the file is not found. The CDN fallback fired on every production page load, adding ~200–400ms latency and FOUC. Changed to `dist/motion.min.css`, matching the `docs/dist/` copy created by the Netlify build command. The `netlify.toml` comment documented this as the correct path since v4.0.0 — the HTML was never updated to match.
+
+### Fixed — Correctness
+
+- **`docs/index.html` — Scroll docs** — Code example used `data-sds` attribute with `sds-in` class. These belong to different systems: `[data-sds]` is activated by `sds-play` (the `sds-scroll.min.js` engine); `sds-in` activates `[data-sds-scroll]` (the inline IntersectionObserver path). Any developer copying this example shipped a scroll animation that stayed hidden permanently. Fixed: attribute changed to `data-sds-scroll` and selector updated to match.
+
+- **`docs/index.html` — Stagger previews** — `sds-scroll-stagger-pop` and `sds-scroll-stagger-grid` gallery cards and modal previews rendered as a single childless `<span>`. The CSS for these classes targets `> *` (direct children), so animations were completely invisible. Added 4 child `<span>` elements to `previewMarkup` (gallery) and `previewMarkupModal` (modal). Updated `modalApply()` and `modalReplay()` to reset child elements for stagger types.
+
+- **`docs/index.html` — Wave replay** — Gallery card hover-replay reset `demo.style.animation` on the parent element. For wave and char-split animations, the actual CSS animations are on `.sds-char` child spans. `play()` now queries `.sds-char` descendants and resets them when present.
+
+- **`docs/index.html` — Malformed closing tag** — Hero CTA "Browse 300+ Animations" button had `</` + newline + `>` instead of `</a>`, producing a bogus comment token and an unclosed `<a>` element in the DOM.
+
+- **`docs/index.html` — Gallery description** — Copy said "Click to copy the class." Clicking opens the detail modal. Updated to "Click to open the detail view and copy code."
+
+- **`docs/index.html` — Clipboard** — All five `navigator.clipboard.writeText()` calls were fire-and-forget. Fails silently under `file://` or when clipboard permission is denied. Added `.then()/.catch()` with visual error state on every copy button.
+
+### Fixed — Accessibility
+
+- **`docs/index.html` — Gallery keyboard access** — Gallery `<div class="card">` elements had click handlers but no `tabindex`, `role`, or `keydown` support. Added `tabindex="0"`, `role="button"`, `aria-label`, and Enter/Space keyboard handlers to every generated card.
+
+- **`docs/index.html` — Search label** — Search `<input>` had no programmatic label. Added `aria-label="Search animations"`.
+
+### Fixed — Versioning
+
+- **`docs/index.html`** — Page `<title>`, nav version pill, and hero badge all showed `v4.0.0`. Updated all three to `v4.0.1`.
+
+- **`src/motion.css` + `dist/motion.css`** — CSS header comment showed `Version: 4.0.0`. Updated to `4.0.1`.
+
+### Fixed — TypeScript
+
+- **`index.d.ts`** — Type unions were severely incomplete. Every class in `dist/motion.css` is now typed:
+
+  | Type | Before | After |
+  |---|---|---|
+  | `SdsTextAnimation` | 28 / 100 | **100 / 100** |
+  | `SdsButtonAnimation` | 13 / 50 | **50 / 50** |
+  | `SdsInputAnimation` | 14 / 51 | **51 / 51** |
+  | `SdsCardAnimation` | 13 / 49 | **49 / 49** |
+  | `SdsLoaderAnimation` | 12 / 51 | **51 / 51** |
+  | `SdsScrollAnimation` | 20 / 54 | **54 / 54** |
+
+  Added `SdsInteractiveAnimation` (7 JS-engine classes) and `SdsScrollGate` (`sds-play`, `sds-scroll-auto`). JSDoc comments document which classes require child elements and which engines need to be loaded.
+
+### Added — Build Pipeline
+
+- **`terser@^5.48.0`** added to `devDependencies`. JS engines are now minified from source by `npm run build:js` with source maps. The `build` script now runs `npm run build:css && npm run build:js`.
+- **Source maps** generated for both engines: `dist/sds-scroll.min.js.map` and `dist/motion-interactive.min.js.map`. Both are included in the npm package and resolvable via CDN.
+- **`.gitignore`** — Added `dist/sds-scroll.min.js`, `dist/sds-scroll.min.js.map`, `dist/motion-interactive.min.js`, `dist/motion-interactive.min.js.map` and `docs/dist/`. Generated artifacts are never committed.
+- **`package.json` exports** — Added source map files to `exports` map and `"files"` array.
+- **`browserslist`** field added to `package.json` (`> 0.5%, last 2 versions, not dead, not ie 11`). Autoprefixer target is now explicit and deterministic.
+- **`"type": "commonjs"` removed** — CSS libraries have no module type. The field was incorrect and misleading to tooling.
+- **`engines.node`** updated from `>=14` to `>=18`. Node 14 reached EOL in April 2023.
+
+### Added — verify-build.js (8 stages, was 7)
+
+- **Stage 1** — Added source map files and JS source files to `REQUIRED_FILES`.
+- **Stage 6** — New: `sds-scroll.min.js` rootMargin validity check (no digit-immediately-adjacent-to-dash pattern).
+- **Stage 6** — New: both `*.min.js` files must contain `sourceMappingURL` — proves they were built by terser, not hand-authored.
+- **Stage 6** — New: size regression gates (scroll engine < 5 KB, interactive engine < 15 KB).
+- **Stage 7** — New: CSS header version must match `package.json` version.
+- **Stage 7** — New: `docs/index.html` version string must match `package.json` version.
+
+### Performance
+
+- `dist/sds-scroll.min.js`: 1.6 KB → **1.28 KB** on disk (0.62 KB gzip) — 20% smaller.
+- `dist/motion-interactive.min.js`: 9.3 KB → **6.98 KB** on disk (2.41 KB gzip) — 25% smaller.
+
+### Documentation
+
+- **`README.md`** — Complete rewrite: accurate file sizes, correct animation counts, TypeScript usage with React/Angular/Vue examples, full stagger/children documentation for all categories, Contributing guide, complete modifier reference, PostCSS integration, Svelte/SvelteKit integration, corrected project structure.
+- **`docs/index.html`** — Fixed incorrect "38kb" minified size stat, added CHANGELOG link in footer, updated contributor documentation.
+
+---
+
 ## [4.0.0] - 2026-06-01
 
 ### Added

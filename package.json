@@ -2,7 +2,6 @@
   "name": "@salkomdesignstudio/sds-motion-forge",
   "version": "4.0.1",
   "description": "300+ production-ready CSS animations for text, buttons, inputs, cards, loaders, and scroll. 100 text animations, zero required JavaScript.",
-  "type": "commonjs",
   "main": "./dist/motion.css",
   "style": "./dist/motion.css",
   "types": "./index.d.ts",
@@ -15,7 +14,9 @@
     "./dist/motion.css": "./dist/motion.css",
     "./dist/motion.min.css": "./dist/motion.min.css",
     "./dist/sds-scroll.min.js": "./dist/sds-scroll.min.js",
+    "./dist/sds-scroll.min.js.map": "./dist/sds-scroll.min.js.map",
     "./dist/motion-interactive.min.js": "./dist/motion-interactive.min.js",
+    "./dist/motion-interactive.min.js.map": "./dist/motion-interactive.min.js.map",
     "./motion.css": "./dist/motion.css",
     "./motion.min.css": "./dist/motion.min.css",
     "./package.json": "./package.json"
@@ -34,7 +35,9 @@
     "**/*.css"
   ],
   "scripts": {
-    "build": "postcss src/motion.css -o dist/motion.css && cleancss -o dist/motion.min.css dist/motion.css",
+    "build:css": "postcss src/motion.css -o dist/motion.css && cleancss -o dist/motion.min.css dist/motion.css",
+    "build:js": "terser src/sds-scroll.js -o dist/sds-scroll.min.js --compress --mangle --source-map \"url='sds-scroll.min.js.map'\" && terser src/motion-interactive.js -o dist/motion-interactive.min.js --compress --mangle --source-map \"url='motion-interactive.min.js.map'\"",
+    "build": "npm run build:css && npm run build:js",
     "build:dev": "postcss src/motion.css -o dist/motion.css --map",
     "build:watch": "postcss src/motion.css -o dist/motion.css --watch",
     "build:verify": "node verify-build.js",
@@ -83,11 +86,18 @@
     "clean-css-cli": "^5.6.3",
     "postcss": "^8.4.35",
     "postcss-cli": "^11.0.0",
-    "publint": "^0.3.21"
+    "publint": "^0.3.21",
+    "terser": "^5.48.0"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=18"
   },
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
   "unpkg": "./dist/motion.min.css",
   "jsdelivr": "./dist/motion.min.css"
 }
