@@ -3,11 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SDS Motion Forge v4.0.2 — 300+ CSS Animations, Zero JS</title>
-    <meta
-      name="description"
-      content="300+ production-ready CSS animations. One class name. Zero JavaScript. The motion library that proves itself on its own page."
-    />
+    <title>SDS Motion Forge — 300+ CSS Animations. One Class. Zero JS.</title>
+
+    <!-- Primary Meta -->
+    <meta name="description" content="SDS Motion Forge gives you 300+ production-ready CSS animations across 6 categories. Drop a single class name on any element — no JavaScript, no build step, no config." />
+    <meta name="keywords" content="CSS animations, animation library, motion library, CSS classes, web animations, SDS Motion Forge, Salkom Design Studio, no JavaScript animations, frontend animations" />
+    <meta name="author" content="Salkom Design Studio" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0015d1" />
+    <link rel="canonical" href="https://salkomdesignstudio.github.io/SDS-Motion-Forge/" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../images/favicon.png" />
+    <link rel="apple-touch-icon" href="../images/logo.png" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="SDS Motion Forge" />
+    <meta property="og:title" content="SDS Motion Forge — 300+ CSS Animations. One Class. Zero JS." />
+    <meta property="og:description" content="300+ production-ready CSS animations across 6 categories. Drop a single class name on any element — no JavaScript, no build step, no config. Free & open-source." />
+    <meta property="og:url" content="https://salkomdesignstudio.github.io/SDS-Motion-Forge/" />
+    <meta property="og:image" content="https://salkomdesignstudio.github.io/SDS-Motion-Forge/images/logo.png" />
+    <meta property="og:image:alt" content="SDS Motion Forge by Salkom Design Studio" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SDS Motion Forge — 300+ CSS Animations. One Class. Zero JS." />
+    <meta name="twitter:description" content="300+ production-ready CSS animations across 6 categories. Drop a single class name — no JavaScript required. Free & open-source." />
+    <meta name="twitter:image" content="https://salkomdesignstudio.github.io/SDS-Motion-Forge/images/logo.png" />
+    <meta name="twitter:creator" content="@salkomdesign" />
 
     <link
       rel="stylesheet"
@@ -21,7 +45,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Syne:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link
@@ -154,6 +178,55 @@
         align-items: center;
         gap: 18px;
         width: 100%;
+      }
+      .logo-link {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+      }
+      .logo-link img {
+        height: 36px;
+        width: auto;
+        display: block;
+      }
+      .logo-text {
+        display: flex;
+        align-items: baseline;
+        gap: 0;
+        line-height: 1;
+      }
+      .logo-sans {
+        font-family: 'DM Sans', sans-serif;
+        font-weight: 700;
+        font-size: 22px;
+        color: var(--brand);
+        letter-spacing: -0.02em;
+      }
+      .logo-serif {
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        font-style: italic;
+        font-size: 22px;
+        color: var(--brand);
+        letter-spacing: -0.03em;
+      }
+      .foot-logo-text .logo-sans {
+        font-size: 22px;
+      }
+      .foot-logo-text .logo-serif {
+        font-size: 22px;
+      }
+      .foot-logo img {
+        height: 40px;
+      }
+      .foot-studio-link {
+        color: var(--brand);
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .foot-studio-link:hover {
+        text-decoration: underline;
       }
       .brand {
         display: flex;
@@ -2970,10 +3043,12 @@
     <!-- NAV -->
     <nav class="nav">
       <div class="wrap nav-in">
-        <a href="#home" class="brand"
-          ><span class="brand-mark"><i class="ri-flashlight-fill"></i></span>
-          SDS Motion Forge</a
-        >
+        <div class="logo">
+          <a href="#home" class="logo-link">
+            <img src="../images/logo.png" alt="Salkom Design Studio — SDS Motion Forge" />
+            <span class="logo-text"><span class="logo-sans">SDS-</span><span class="logo-serif">Motion-Forge</span></span>
+          </a>
+        </div>
         <div class="nav-links">
           <a href="#why">Why</a>
           <a href="#gallery">Gallery</a>
@@ -3366,13 +3441,14 @@
     <footer class="foot">
       <div class="wrap foot-in">
         <div class="foot-brand">
-          <a href="#home" class="brand"
-            ><span class="brand-mark"><i class="ri-flashlight-fill"></i></span>
-            SDS Motion Forge</a
-          >
+          <a href="#home" class="logo-link foot-logo">
+            <img src="../images/logo.png" alt="Salkom Design Studio — SDS Motion Forge" />
+            <span class="logo-text foot-logo-text"><span class="logo-sans">SDS-</span><span class="logo-serif">Motion-Forge</span></span>
+          </a>
           <p>
             300+ production-ready CSS animations. One class name. Zero required
-            JavaScript. Open-source · MIT · Built by Salkom Design Studio.
+            JavaScript. Open-source · MIT · Designed and developed by
+            <a href="https://salkomdesignstudio.com" target="_blank" rel="noopener" class="foot-studio-link">Salkom Design Studio</a>.
           </p>
         </div>
         <div class="foot-cols">
@@ -3428,7 +3504,7 @@
       </div>
       <div class="wrap foot-bottom">
         <span>© 2026 Salkom Design Studio · MIT License</span
-        ><span>Made with care in Puducherry 🇮🇳</span>
+        ><span>Designed and developed by <a href="https://salkomdesignstudio.com" target="_blank" rel="noopener" class="foot-studio-link">Salkom Design Studio</a></span>
       </div>
     </footer>
 
