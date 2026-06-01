@@ -1,6 +1,6 @@
 # Changelog
 
-## [4.0.1] - 2026-06-01
+## [4.0.2] - 2026-06-01
 
 ### Fixed — Critical (production impact)
 
@@ -34,22 +34,22 @@
 
 ### Fixed — Versioning
 
-- **`docs/index.html`** — Page `<title>`, nav version pill, and hero badge all showed `v4.0.0`. Updated all three to `v4.0.1`.
+- **`docs/index.html`** — Page `<title>`, nav version pill, and hero badge all showed `v4.0.0`. Updated all three to `v4.0.2`.
 
-- **`src/motion.css` + `dist/motion.css`** — CSS header comment showed `Version: 4.0.0`. Updated to `4.0.1`.
+- **`src/motion.css` + `dist/motion.css`** — CSS header comment showed `Version: 4.0.0`. Updated to `4.0.2`.
 
 ### Fixed — TypeScript
 
 - **`index.d.ts`** — Type unions were severely incomplete. Every class in `dist/motion.css` is now typed:
 
-  | Type | Before | After |
-  |---|---|---|
-  | `SdsTextAnimation` | 28 / 100 | **100 / 100** |
-  | `SdsButtonAnimation` | 13 / 50 | **50 / 50** |
-  | `SdsInputAnimation` | 14 / 51 | **51 / 51** |
-  | `SdsCardAnimation` | 13 / 49 | **49 / 49** |
-  | `SdsLoaderAnimation` | 12 / 51 | **51 / 51** |
-  | `SdsScrollAnimation` | 20 / 54 | **54 / 54** |
+  | Type                 | Before   | After         |
+  | -------------------- | -------- | ------------- |
+  | `SdsTextAnimation`   | 28 / 100 | **100 / 100** |
+  | `SdsButtonAnimation` | 13 / 50  | **50 / 50**   |
+  | `SdsInputAnimation`  | 14 / 51  | **51 / 51**   |
+  | `SdsCardAnimation`   | 13 / 49  | **49 / 49**   |
+  | `SdsLoaderAnimation` | 12 / 51  | **51 / 51**   |
+  | `SdsScrollAnimation` | 20 / 54  | **54 / 54**   |
 
   Added `SdsInteractiveAnimation` (7 JS-engine classes) and `SdsScrollGate` (`sds-play`, `sds-scroll-auto`). JSDoc comments document which classes require child elements and which engines need to be loaded.
 
@@ -91,6 +91,7 @@
 #### Text animations — grew from 50 to 100 (+50 new classes)
 
 **5 physics animations (per-character, use `.sds-char` spans with `--i` index):**
+
 - `sds-gravity-bounce` — inelastic floor bounce with decreasing amplitude
 - `sds-drop-settle` — staggered per-char fall with spring overshoot
 - `sds-wave-cascade` — translateY wave propagates char-to-char (loop)
@@ -110,6 +111,7 @@
 `sds-underline-grow`, `sds-strike-through`
 
 #### New files
+
 - `src/sds-scroll.js` / `dist/sds-scroll.min.js` (1.6 KB) — scroll-gate engine
   - `[data-sds]` attribute gates any animation until viewport entry
   - `data-sds-repeat` replays on every re-entry
@@ -132,18 +134,30 @@
   - `prefers-reduced-motion`: skips all transitions, shows final state
 
 #### Scroll gate CSS (added to `src/motion.css`)
+
 ```css
-[data-sds]:not(.sds-play) { animation-play-state: paused; opacity: 0; }
-[data-sds].sds-play        { opacity: 1; animation-play-state: running; }
-html:not(.sds-js) [data-sds] { opacity: 1; animation-play-state: running; }
+[data-sds]:not(.sds-play) {
+  animation-play-state: paused;
+  opacity: 0;
+}
+[data-sds].sds-play {
+  opacity: 1;
+  animation-play-state: running;
+}
+html:not(.sds-js) [data-sds] {
+  opacity: 1;
+  animation-play-state: running;
+}
 ```
 
 ### Updated
+
 - `docs/index.html` — v4.0.0, updated stats (100 text animations, 300+ total), updated hero/badges
 - `package.json` — version 4.0.0, new exports for JS files, `src/` added to `files`
 - `README.md` — complete rewrite for v4.0.0
 
 ### No breaking changes
+
 All v3.x class names, keyframe names, and CSS custom properties are preserved.
 
 ---
@@ -151,6 +165,7 @@ All v3.x class names, keyframe names, and CSS custom properties are preserved.
 ## [3.2.2] - 2026-05-30
 
 ### Fixed
+
 - `sds-loader-progress`, `sds-loader-data`, `sds-loader-bar` — added `position: relative` so `::after` pseudo-element renders correctly
 - `sds-perspective-swing`, `sds-film-burn`, `sds-smoke-reveal`, `sds-elastic-bounce`, `sds-unfurl`, `sds-scroll-unfold` — added `will-change` for GPU acceleration, no more jank
 - `sds-perspective-swing` — added `backface-visibility: hidden` to fix Chrome 3D flicker
@@ -161,6 +176,7 @@ All v3.x class names, keyframe names, and CSS custom properties are preserved.
 - Version mismatch between CSS header and package.json — now both say 3.2.2
 
 ### Added
+
 - Scroll animation activation via `data-sds-scroll` attribute + IntersectionObserver (paste-once script)
 - CSS scroll-driven animation support via `sds-scroll-auto` class (Chrome 115+, zero JS)
 - Full install guide in CSS header for Angular, React, Vue, Next.js, Flutter Web, CDN
@@ -168,22 +184,29 @@ All v3.x class names, keyframe names, and CSS custom properties are preserved.
 - Complete modifier reference in header
 
 ## [3.2.1] - 2026-05-28
+
 - Minor patch release
 
 ## [3.2.0] - 2026-05-27
+
 - Extended animation set across all 6 categories
 
 ## [3.0.2] - 2026-05-27
+
 - Stability improvements
 
 ## [3.0.1] - 2026-05-25
+
 - Performance improvements
 
 ## [1.1.2] - 2026-05-24
+
 - Bug fixes
 
 ## [1.1.1] - 2026-05-24
+
 - Initial stable release
 
 ## [1.1.0] - 2026-05-22
+
 - First public release

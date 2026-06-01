@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SDS Motion Forge v4.0.1 — 300+ CSS Animations, Zero JS</title>
+    <title>SDS Motion Forge v4.0.2 — 300+ CSS Animations, Zero JS</title>
     <meta
       name="description"
       content="300+ production-ready CSS animations. One class name. Zero JavaScript. The motion library that proves itself on its own page."
@@ -2918,13 +2918,15 @@
         padding: 22px;
         display: block;
         transition:
-          border-color .2s,
-          box-shadow .2s,
-          transform .2s;
+          border-color 0.2s,
+          box-shadow 0.2s,
+          transform 0.2s;
       }
       .docs-card:hover {
         border-color: var(--brand);
-        box-shadow: 0 0 0 4px var(--brand-dim), var(--sh-1);
+        box-shadow:
+          0 0 0 4px var(--brand-dim),
+          var(--sh-1);
         transform: translateY(-2px);
       }
       .docs-card-ico {
@@ -2964,7 +2966,7 @@
         </div>
         <div class="nav-sp"></div>
         <div class="nav-actions">
-          <span class="pill">v4.0.1</span>
+          <span class="pill">v4.0.2</span>
           <a
             href="https://github.com/salkomdesignstudio/SDS-Motion-Forge"
             target="_blank"
@@ -3031,7 +3033,7 @@
       <div class="wrap hero-in">
         <div>
           <div class="hero-badge">
-            <span class="dot"></span> 1,000+ developers · v4.0.1
+            <span class="dot"></span> 1,000+ developers · v4.0.2
           </div>
           <h1 class="hero-h1">
             <span class="kinetic" id="kinetic" aria-label="Motion"></span><br />
@@ -3184,7 +3186,12 @@
           <div class="tabs" id="tabs"></div>
           <div class="gal-search">
             <i class="ri-search-line"></i
-            ><input type="text" id="search" placeholder="Search animations…" aria-label="Search animations" />
+            ><input
+              type="text"
+              id="search"
+              placeholder="Search animations…"
+              aria-label="Search animations"
+            />
           </div>
         </div>
         <div class="gal-grid" id="galGrid"></div>
@@ -3257,38 +3264,53 @@
           <div class="eyebrow">Documentation</div>
           <h2 class="sec-title">Everything you need to ship</h2>
           <p class="sec-desc">
-            Installation guides, the full animation reference, scroll engine, interactive engine,
-            TypeScript types, theming, accessibility, and contributing guide — all in one place.
+            Installation guides, the full animation reference, scroll engine,
+            interactive engine, TypeScript types, theming, accessibility, and
+            contributing guide — all in one place.
           </p>
         </div>
         <div class="docs-card-grid" data-reveal="up">
           <a href="docs.html#install" class="docs-card">
-            <div class="docs-card-ico"><i class="ri-download-cloud-2-fill"></i></div>
+            <div class="docs-card-ico">
+              <i class="ri-download-cloud-2-fill"></i>
+            </div>
             <div class="docs-card-name">Installation</div>
             <div class="docs-card-desc">CDN, npm, yarn, all frameworks</div>
           </a>
           <a href="docs.html#text" class="docs-card">
             <div class="docs-card-ico"><i class="ri-text"></i></div>
             <div class="docs-card-name">Animation Reference</div>
-            <div class="docs-card-desc">All 376 classes across 6 categories</div>
+            <div class="docs-card-desc">
+              All 376 classes across 6 categories
+            </div>
           </a>
           <a href="docs.html#scroll" class="docs-card">
-            <div class="docs-card-ico"><i class="ri-scroll-to-bottom-fill"></i></div>
+            <div class="docs-card-ico">
+              <i class="ri-scroll-to-bottom-fill"></i>
+            </div>
             <div class="docs-card-name">Scroll Animations</div>
             <div class="docs-card-desc">3 activation methods documented</div>
           </a>
           <a href="docs.html#interactive" class="docs-card">
             <div class="docs-card-ico"><i class="ri-cursor-fill"></i></div>
             <div class="docs-card-name">Interactive Engine</div>
-            <div class="docs-card-desc">Magnetic, shockwave, word morph &amp; more</div>
+            <div class="docs-card-desc">
+              Magnetic, shockwave, word morph &amp; more
+            </div>
           </a>
           <a href="docs.html#typescript" class="docs-card">
-            <div class="docs-card-ico"><i class="ri-code-s-slash-fill"></i></div>
+            <div class="docs-card-ico">
+              <i class="ri-code-s-slash-fill"></i>
+            </div>
             <div class="docs-card-name">TypeScript</div>
-            <div class="docs-card-desc">All 376 classes typed, React/Angular examples</div>
+            <div class="docs-card-desc">
+              All 376 classes typed, React/Angular examples
+            </div>
           </a>
           <a href="docs.html#contributing" class="docs-card">
-            <div class="docs-card-ico"><i class="ri-git-pull-request-fill"></i></div>
+            <div class="docs-card-ico">
+              <i class="ri-git-pull-request-fill"></i>
+            </div>
             <div class="docs-card-name">Contributing</div>
             <div class="docs-card-desc">Add animations, fix bugs, open PRs</div>
           </a>
@@ -3302,7 +3324,8 @@
             target="_blank"
             rel="noopener"
             class="btn btn-ghost"
-          ><i class="ri-github-fill"></i> View on GitHub</a>
+            ><i class="ri-github-fill"></i> View on GitHub</a
+          >
         </div>
       </div>
     </section>
@@ -3378,7 +3401,12 @@
               target="_blank"
               rel="noopener"
               >Salkom Design</a
-            ><a href="https://github.com/salkomdesignstudio/SDS-Motion-Forge/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a>
+            ><a
+              href="https://github.com/salkomdesignstudio/SDS-Motion-Forge/blob/main/LICENSE"
+              target="_blank"
+              rel="noopener"
+              >MIT License</a
+            >
           </div>
         </div>
       </div>
@@ -5023,10 +5051,16 @@
               if (!demo || reduce) return;
               // For char-split wave animations, children carry the animation
               var charSpans = demo.querySelectorAll(".sds-char");
-              var targets = charSpans.length ? Array.prototype.slice.call(charSpans) : [demo];
-              targets.forEach(function (el) { el.style.animation = "none"; });
+              var targets = charSpans.length
+                ? Array.prototype.slice.call(charSpans)
+                : [demo];
+              targets.forEach(function (el) {
+                el.style.animation = "none";
+              });
               void demo.offsetWidth;
-              targets.forEach(function (el) { el.style.animation = ""; });
+              targets.forEach(function (el) {
+                el.style.animation = "";
+              });
             }
             card.addEventListener("mouseenter", play);
             card.addEventListener("click", function () {
@@ -5145,41 +5179,58 @@
         window.pgCopy = function (btn) {
           var code = document.getElementById("pgCode").textContent;
           var orig = btn.innerHTML;
-          navigator.clipboard.writeText(code).then(function () {
-            btn.innerHTML = '<i class="ri-check-line"></i> Copied';
-            setTimeout(function () { btn.innerHTML = orig; }, 1200);
-          }).catch(function () {
-            btn.innerHTML = '<i class="ri-error-warning-line"></i> Failed';
-            setTimeout(function () { btn.innerHTML = orig; }, 1500);
-          });
+          navigator.clipboard
+            .writeText(code)
+            .then(function () {
+              btn.innerHTML = '<i class="ri-check-line"></i> Copied';
+              setTimeout(function () {
+                btn.innerHTML = orig;
+              }, 1200);
+            })
+            .catch(function () {
+              btn.innerHTML = '<i class="ri-error-warning-line"></i> Failed';
+              setTimeout(function () {
+                btn.innerHTML = orig;
+              }, 1500);
+            });
         };
 
         /* ---------- Doc code copy ---------- */
         window.copyCB = function (btn) {
           var pre = btn.closest(".codeblock").querySelector("pre");
-          navigator.clipboard.writeText(pre.innerText).then(function () {
-            btn.textContent = "Copied";
-            btn.classList.add("copied");
-            setTimeout(function () {
-              btn.textContent = "Copy";
-              btn.classList.remove("copied");
-            }, 1400);
-          }).catch(function () {
-            btn.textContent = "Failed";
-            setTimeout(function () { btn.textContent = "Copy"; }, 1500);
-          });
+          navigator.clipboard
+            .writeText(pre.innerText)
+            .then(function () {
+              btn.textContent = "Copied";
+              btn.classList.add("copied");
+              setTimeout(function () {
+                btn.textContent = "Copy";
+                btn.classList.remove("copied");
+              }, 1400);
+            })
+            .catch(function () {
+              btn.textContent = "Failed";
+              setTimeout(function () {
+                btn.textContent = "Copy";
+              }, 1500);
+            });
         };
         window.copyInstall = function (btn) {
           var ic = document.getElementById("installIcon");
-          navigator.clipboard.writeText(
-            "npm i @salkomdesignstudio/sds-motion-forge",
-          ).then(function () {
-            ic.className = "ri-check-line";
-            setTimeout(function () { ic.className = "ri-file-copy-fill"; }, 1400);
-          }).catch(function () {
-            ic.className = "ri-error-warning-line";
-            setTimeout(function () { ic.className = "ri-file-copy-fill"; }, 1500);
-          });
+          navigator.clipboard
+            .writeText("npm i @salkomdesignstudio/sds-motion-forge")
+            .then(function () {
+              ic.className = "ri-check-line";
+              setTimeout(function () {
+                ic.className = "ri-file-copy-fill";
+              }, 1400);
+            })
+            .catch(function () {
+              ic.className = "ri-error-warning-line";
+              setTimeout(function () {
+                ic.className = "ri-file-copy-fill";
+              }, 1500);
+            });
         };
 
         /* ---------- Mobile drawer ---------- */
@@ -5375,9 +5426,13 @@
               else el.style.animationTimingFunction = "";
             });
             // replay: clear name, force reflow, restore
-            targets.forEach(function (el) { el.style.animationName = "none"; });
+            targets.forEach(function (el) {
+              el.style.animationName = "none";
+            });
             void targets[0].offsetWidth;
-            targets.forEach(function (el) { el.style.animationName = ""; });
+            targets.forEach(function (el) {
+              el.style.animationName = "";
+            });
           }
           renderModalCode();
         };
@@ -5385,9 +5440,13 @@
         window.modalReplay = function () {
           var targets = modalAnimTargets();
           if (!targets.length || reduce) return;
-          targets.forEach(function (el) { el.style.animationName = "none"; });
+          targets.forEach(function (el) {
+            el.style.animationName = "none";
+          });
           void targets[0].offsetWidth;
-          targets.forEach(function (el) { el.style.animationName = ""; });
+          targets.forEach(function (el) {
+            el.style.animationName = "";
+          });
         };
 
         function inlineStyle() {
@@ -5490,28 +5549,38 @@
         window.copyModalCls = function () {
           var el = document.getElementById("modalClsText");
           var orig = el.textContent;
-          navigator.clipboard.writeText(modalState.anim.cls).then(function () {
-            el.textContent = "Copied!";
-            setTimeout(function () { el.textContent = orig; }, 1200);
-          }).catch(function () {
-            el.textContent = "Failed";
-            setTimeout(function () { el.textContent = orig; }, 1500);
-          });
+          navigator.clipboard
+            .writeText(modalState.anim.cls)
+            .then(function () {
+              el.textContent = "Copied!";
+              setTimeout(function () {
+                el.textContent = orig;
+              }, 1200);
+            })
+            .catch(function () {
+              el.textContent = "Failed";
+              setTimeout(function () {
+                el.textContent = orig;
+              }, 1500);
+            });
         };
         window.copyModalCode = function (btn) {
-          navigator.clipboard.writeText(
-            document.getElementById("modalCode").textContent,
-          ).then(function () {
-            btn.textContent = "Copied";
-            btn.classList.add("copied");
-            setTimeout(function () {
-              btn.textContent = "Copy";
-              btn.classList.remove("copied");
-            }, 1400);
-          }).catch(function () {
-            btn.textContent = "Failed";
-            setTimeout(function () { btn.textContent = "Copy"; }, 1500);
-          });
+          navigator.clipboard
+            .writeText(document.getElementById("modalCode").textContent)
+            .then(function () {
+              btn.textContent = "Copied";
+              btn.classList.add("copied");
+              setTimeout(function () {
+                btn.textContent = "Copy";
+                btn.classList.remove("copied");
+              }, 1400);
+            })
+            .catch(function () {
+              btn.textContent = "Failed";
+              setTimeout(function () {
+                btn.textContent = "Copy";
+              }, 1500);
+            });
         };
 
         document.addEventListener("keydown", function (e) {
