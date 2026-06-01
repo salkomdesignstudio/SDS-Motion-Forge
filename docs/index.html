@@ -608,10 +608,14 @@
         grid-column: span 2;
       }
       .tile.sm {
-        grid-column: span 2;
+        grid-column: span 3;
       }
       .tile.tall {
         grid-row: span 2;
+      }
+      /* Last bento tile spans full width so it never sits alone */
+      .bento > .tile:last-child {
+        grid-column: 1 / -1;
       }
       .tile-big-num {
         font-size: 64px;
@@ -1534,6 +1538,9 @@
         .tile.sm {
           grid-column: span 3;
         }
+        .bento > .tile:last-child {
+          grid-column: span 3;
+        }
       }
       @media (max-width: 900px) {
         .nav-links,
@@ -1567,6 +1574,12 @@
         .tile.sm {
           grid-column: auto;
         }
+        .bento > .tile:last-child {
+          grid-column: auto;
+        }
+        .docs-card-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
         .cta-box {
           padding: 44px 24px;
         }
@@ -1583,6 +1596,9 @@
         }
         .hero-stats {
           gap: 24px;
+        }
+        .docs-card-grid {
+          grid-template-columns: 1fr;
         }
         .cta-install {
           flex-direction: column;
@@ -2907,7 +2923,7 @@
       }
       .docs-card-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        grid-template-columns: repeat(3, 1fr);
         gap: 14px;
         margin-bottom: 40px;
       }
