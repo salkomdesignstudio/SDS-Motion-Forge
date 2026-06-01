@@ -1,5 +1,69 @@
 # Changelog
 
+## [4.0.0] - 2026-06-01
+
+### Added
+
+#### Text animations — grew from 50 to 100 (+50 new classes)
+
+**5 physics animations (per-character, use `.sds-char` spans with `--i` index):**
+- `sds-gravity-bounce` — inelastic floor bounce with decreasing amplitude
+- `sds-drop-settle` — staggered per-char fall with spring overshoot
+- `sds-wave-cascade` — translateY wave propagates char-to-char (loop)
+- `sds-center-burst` — chars start at center, fan out to reading position
+- `sds-explode-formation` — chars start scattered (`--dx`, `--dy`, `--dr`), spring into place
+
+**45 new motion family classes:**
+`sds-fold-down`, `sds-fold-up`, `sds-flip-x`, `sds-flip-y`, `sds-door-open`,
+`sds-zoom-punch`, `sds-zoom-far`, `sds-vapor-rise`, `sds-light-speed`, `sds-roll-in`,
+`sds-swing-in`, `sds-skew-slide`, `sds-pop-in`, `sds-tracking-expand`, `sds-tracking-contract`,
+`sds-blur-focus`, `sds-wipe-right`, `sds-wipe-left`, `sds-reveal-up`, `sds-reveal-down`,
+`sds-iris-open`, `sds-shimmer-sweep`, `sds-color-cycle`, `sds-glow-pulse`, `sds-neon-flicker-in`,
+`sds-echo-out`, `sds-shadow-lift`, `sds-spotlight-text`, `sds-pixel-in`, `sds-glitch-slide`,
+`sds-squash-stretch`, `sds-bounce-drop`, `sds-slant-rise`, `sds-grand-entrance`,
+`sds-slide-blur-left`, `sds-slide-blur-right`, `sds-wobble`, `sds-rubber-band`, `sds-jello`,
+`sds-tada`, `sds-heartbeat-text`, `sds-typing-caret`, `sds-float-bob`,
+`sds-underline-grow`, `sds-strike-through`
+
+#### New files
+- `src/sds-scroll.js` / `dist/sds-scroll.min.js` (1.6 KB) — scroll-gate engine
+  - `[data-sds]` attribute gates any animation until viewport entry
+  - `data-sds-repeat` replays on every re-entry
+  - `data-sds-delay="N"` waits N ms after entry before starting
+  - One shared `IntersectionObserver` for the whole page
+  - `MutationObserver` watches for dynamically added elements (SPA-safe)
+  - `prefers-reduced-motion`: immediately shows all elements, skips observer
+- `src/motion-interactive.js` / `dist/motion-interactive.min.js` (9.6 KB) — JS interactive engine
+  - Zero-config: add a class → engine auto-wires everything
+  - `sds-word-morph` + `data-words` — blur/translate word cycling, CPU-saved via IntersectionObserver
+  - `sds-jelly-hover` — squash + stretch spring on mouseenter
+  - `sds-scatter-return` — chars scatter on hover, spring back on leave
+  - `sds-shockwave` — click fires radial impulse force
+  - `sds-spring-kerning` — mouse X maps to letter-spacing −12px…+12px
+  - `sds-magnetic-pull` — cursor attracts char spans (shared rAF loop)
+  - `sds-repulsion-field` — cursor pushes char spans away (shared rAF loop)
+  - Exposes `window.SDSInteractive.{ scan, initEl, cleanup }` for SPA use
+  - `MutationObserver` for dynamic elements; `WeakMap` for clean memory management
+  - Touch/hover-incapable devices: disables magnetic, repulsion, scatter, spring-kerning
+  - `prefers-reduced-motion`: skips all transitions, shows final state
+
+#### Scroll gate CSS (added to `src/motion.css`)
+```css
+[data-sds]:not(.sds-play) { animation-play-state: paused; opacity: 0; }
+[data-sds].sds-play        { opacity: 1; animation-play-state: running; }
+html:not(.sds-js) [data-sds] { opacity: 1; animation-play-state: running; }
+```
+
+### Updated
+- `docs/index.html` — v4.0.0, updated stats (100 text animations, 300+ total), updated hero/badges
+- `package.json` — version 4.0.0, new exports for JS files, `src/` added to `files`
+- `README.md` — complete rewrite for v4.0.0
+
+### No breaking changes
+All v3.x class names, keyframe names, and CSS custom properties are preserved.
+
+---
+
 ## [3.2.2] - 2026-05-30
 
 ### Fixed

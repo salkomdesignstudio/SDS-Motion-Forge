@@ -8,8 +8,8 @@
   "types": "./index.d.ts",
   "exports": {
     ".": {
-      "style": "./dist/motion.css",
       "types": "./index.d.ts",
+      "style": "./dist/motion.css",
       "default": "./dist/motion.css"
     },
     "./dist/motion.css": "./dist/motion.css",
@@ -28,7 +28,7 @@
     "LICENSE",
     "CHANGELOG.md"
   ],
-  "sideEffects": ["**/*.css"],
+  "sideEffects": ["./dist/motion.css", "./dist/motion.min.css", "**/*.css"],
   "scripts": {
     "build": "postcss src/motion.css -o dist/motion.css && cleancss -o dist/motion.min.css dist/motion.css",
     "build:dev": "postcss src/motion.css -o dist/motion.css --map",

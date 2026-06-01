@@ -1,12 +1,16 @@
 /**
  * SDS Motion Forge — Premium CSS Animation System
- * Version: 3.2.1
+ * Version: 4.0.0
  * Author: Salkom Design Studio
  * License: MIT
  * https://github.com/salkomdesignstudio/SDS-Motion-Forge
  *
- * 300+ production-ready CSS animations · Zero JavaScript · Framework-agnostic
- * Text (50) · Buttons (60) · Inputs (50) · Cards (60) · Loaders (50) · Scroll (54)
+ * 300+ production-ready CSS animations · Framework-agnostic
+ * Text (100) · Buttons (50) · Inputs (50) · Cards (46) · Loaders (50) · Scroll (54)
+ *
+ * Optional engines (load with defer):
+ *   sds-scroll.min.js          — scroll-gate via [data-sds] attribute
+ *   motion-interactive.min.js  — cursor-reactive & hover interactive animations
  *
  * ─── HOW TO INSTALL ──────────────────────────────────────────
  *
@@ -298,7 +302,6 @@
 .sds-perspective-swing {
   will-change: transform;
   backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
   animation: sds-perspSwing var(--sds-duration) var(--sds-easing) both;
   display: inline-block;
   transform-origin: left center;
@@ -927,7 +930,6 @@
 .sds-flip-x {
   display: inline-block;
   backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
   animation: sds-flipX var(--sds-duration) var(--sds-easing) both;
 }
 @keyframes sds-flipX {
@@ -941,7 +943,6 @@
 .sds-flip-y {
   display: inline-block;
   backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
   animation: sds-flipY var(--sds-duration) var(--sds-easing) both;
 }
 @keyframes sds-flipY {
@@ -956,7 +957,6 @@
   display: inline-block;
   transform-origin: left center;
   backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
   animation: sds-doorOpen var(--sds-duration) var(--sds-easing) both;
 }
 @keyframes sds-doorOpen {
@@ -2771,7 +2771,6 @@
 .sds-card-glass {
   animation: sds-cardGlass 0.7s ease both;
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   background: rgba(255,255,255,0.1);
 }
 @keyframes sds-cardGlass {
