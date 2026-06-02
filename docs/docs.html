@@ -666,7 +666,7 @@
           <table class="doc-table">
             <thead><tr><th>File</th><th>Size (gzip)</th><th>When you need it</th></tr></thead>
             <tbody>
-              <tr><td><code>dist/motion.min.css</code></td><td>~20 KB</td><td><strong>Always</strong> — core library, 376 animations</td></tr>
+              <tr><td><code>dist/motion.min.css</code></td><td>~20 KB</td><td><strong>Always</strong> — core library, 177 animations</td></tr>
               <tr><td><code>dist/sds-scroll.min.js</code></td><td>~0.6 KB</td><td>When using <code>data-sds</code> scroll-gated animations</td></tr>
               <tr><td><code>dist/motion-interactive.min.js</code></td><td>~2.4 KB</td><td>When using cursor-reactive animations (word-morph, magnetic-pull, shockwave…)</td></tr>
               <tr><td><code>src/motion.css</code></td><td>177 KB raw</td><td>Custom PostCSS builds only</td></tr>
@@ -727,36 +727,66 @@
         <!-- ═══════════════ QUICK START ═══════════════ -->
         <section class="doc-sec" id="quickstart">
           <h1 class="doc-sec-title">Quick Start</h1>
-          <p class="doc-sec-sub">Add a class. The animation runs. That is the entire API for the CSS core.</p>
+          <p class="doc-sec-sub">
+            Copy this complete template into any HTML file — it includes the CSS and both optional JS engines.
+            Delete the script tags you don't need.
+          </p>
 
           <div class="codeblock">
             <div class="codeblock-head">
-              <span class="codeblock-lang">HTML</span>
+              <span class="codeblock-lang">HTML — complete setup</span>
               <button class="cb-copy" onclick="copyCB(this)">Copy</button>
             </div>
-            <pre><span class="cm">&lt;!-- Text --&gt;</span>
-<span class="ct">&lt;h1</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-velvet-drop</span>"</span><span class="ct">&gt;</span>Hello World<span class="ct">&lt;/h1&gt;</span>
+            <pre><span class="ct">&lt;!DOCTYPE html&gt;</span>
+<span class="ct">&lt;html</span> <span class="ck">lang</span>=<span class="cs">"en"</span><span class="ct">&gt;</span>
+<span class="ct">&lt;head&gt;</span>
+  <span class="cm">&lt;!-- ① REQUIRED — core CSS (177 animations, ~20 KB gzip) --&gt;</span>
+  <span class="ct">&lt;link</span> <span class="ck">rel</span>=<span class="cs">"stylesheet"</span>
+        <span class="ck">href</span>=<span class="cs">"https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css"</span><span class="ct"> /&gt;</span>
+<span class="ct">&lt;/head&gt;</span>
+<span class="ct">&lt;body&gt;</span>
 
-<span class="cm">&lt;!-- Button --&gt;</span>
-<span class="ct">&lt;button</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-btn-magnetic</span>"</span><span class="ct">&gt;</span>Click me<span class="ct">&lt;/button&gt;</span>
+  <span class="cm">&lt;!-- your HTML with animation classes --&gt;</span>
+  <span class="ct">&lt;h1</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-velvet-drop</span>"</span><span class="ct">&gt;</span>Hello World<span class="ct">&lt;/h1&gt;</span>
+  <span class="ct">&lt;button</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-btn-magnetic</span>"</span><span class="ct">&gt;</span>Click me<span class="ct">&lt;/button&gt;</span>
+  <span class="ct">&lt;input</span>  <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-input-voltage</span>"</span> <span class="ck">placeholder</span>=<span class="cs">"Type here"</span><span class="ct"> /&gt;</span>
+  <span class="ct">&lt;span</span>   <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-loader-orbital</span>"</span><span class="ct">&gt;&lt;/span&gt;</span>
+  <span class="ct">&lt;div</span>    <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-card-float</span>"</span><span class="ct">&gt;</span>Card<span class="ct">&lt;/div&gt;</span>
 
-<span class="cm">&lt;!-- Input --&gt;</span>
-<span class="ct">&lt;input</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-input-voltage</span>"</span> <span class="ck">placeholder</span>=<span class="cs">"Type here"</span><span class="ct"> /&gt;</span>
+  <span class="cm">&lt;!-- ② OPTIONAL — scroll engine (~0.6 KB gzip) --&gt;</span>
+  <span class="cm">&lt;!--   Needed only when using data-sds scroll-triggered animations --&gt;</span>
+  <span class="ct">&lt;script</span> <span class="ck">src</span>=<span class="cs">"https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/sds-scroll.min.js"</span><span class="ct">&gt;&lt;/script&gt;</span>
 
-<span class="cm">&lt;!-- Loader (empty element) --&gt;</span>
-<span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-loader-orbital</span>"</span><span class="ct">&gt;&lt;/span&gt;</span>
+  <span class="cm">&lt;!-- ③ OPTIONAL — interactive engine (~2.4 KB gzip) --&gt;</span>
+  <span class="cm">&lt;!--   Needed for: sds-word-morph  sds-magnetic-pull  sds-shockwave --&gt;</span>
+  <span class="cm">&lt;!--               sds-scatter-return  sds-spring-kerning  sds-repulsion-field --&gt;</span>
+  <span class="ct">&lt;script</span> <span class="ck">src</span>=<span class="cs">"https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion-interactive.min.js"</span><span class="ct">&gt;&lt;/script&gt;</span>
 
-<span class="cm">&lt;!-- Card --&gt;</span>
-<span class="ct">&lt;div</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-card-float</span>"</span><span class="ct">&gt;</span>Feature card<span class="ct">&lt;/div&gt;</span>
+<span class="ct">&lt;/body&gt;</span>
+<span class="ct">&lt;/html&gt;</span></pre>
+          </div>
 
-<span class="cm">&lt;!-- Stack modifiers --&gt;</span>
-<span class="ct">&lt;h2</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-grand-entrance</span> sds-slow sds-delay-2"</span><span class="ct">&gt;</span>Delayed entrance<span class="ct">&lt;/h2&gt;</span></pre>
+          <h2 class="doc-h3">npm import (JS / TS projects)</h2>
+          <div class="codeblock">
+            <div class="codeblock-head">
+              <span class="codeblock-lang">JS / TS — app entry file</span>
+              <button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button>
+            </div>
+            <pre><span class="cm">// ① Required — import CSS once</span>
+<span class="ck">import</span> <span class="cs">'@salkomdesignstudio/sds-motion-forge/dist/motion.min.css'</span>;
+
+<span class="cm">// ② Optional — scroll engine</span>
+<span class="ck">import</span> <span class="cs">'@salkomdesignstudio/sds-motion-forge/dist/sds-scroll.min.js'</span>;
+
+<span class="cm">// ③ Optional — interactive engine (word-morph, magnetic-pull, shockwave…)</span>
+<span class="ck">import</span> <span class="cs">'@salkomdesignstudio/sds-motion-forge/dist/motion-interactive.min.js'</span>;</pre>
           </div>
 
           <div class="doc-note">
-            <strong>No JavaScript required</strong> for the CSS core. The two optional JS engines
-            (<code>sds-scroll.min.js</code> and <code>motion-interactive.min.js</code>)
-            add scroll-gating and cursor-reactive effects when you need them.
+            <strong>Rule of thumb:</strong> start with the CSS only. Add
+            <code>sds-scroll.min.js</code> when you use <code>data-sds</code> attributes.
+            Add <code>motion-interactive.min.js</code> only when you use cursor-reactive
+            classes (they show a <strong>Needs JS</strong> badge in the live gallery).
           </div>
         </section>
 
@@ -1377,7 +1407,7 @@ npm install</pre>
             <li>Replaced hand-authored min.js files with automated terser build — source maps generated</li>
             <li>Fixed CSS path for Netlify deployment (FOUC eliminated)</li>
             <li>Fixed broken scroll animation docs code example</li>
-            <li>Completed TypeScript types — all 376 classes now typed</li>
+            <li>Completed TypeScript types — all 177 animation classes now typed</li>
             <li>Fixed gallery accessibility (keyboard navigation, aria labels)</li>
             <li>JS engine sizes: sds-scroll −20%, motion-interactive −25%</li>
           </ul>
