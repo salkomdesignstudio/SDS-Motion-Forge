@@ -1,6 +1,6 @@
 {
   "name": "@salkomdesignstudio/sds-motion-forge",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "description": "300+ production-ready CSS animations for text, buttons, inputs, cards, loaders, and scroll. 100 text animations, zero required JavaScript.",
   "main": "./dist/motion.css",
   "style": "./dist/motion.css",
