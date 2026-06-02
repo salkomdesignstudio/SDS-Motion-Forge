@@ -908,6 +908,8 @@
         background: var(--brand-dim);
         padding: 1px 5px;
         border-radius: 4px;
+        word-break: break-all;
+        overflow-wrap: anywhere;
       }
 
       /* ───────── PLAYGROUND (dark stage) ───────── */
@@ -1411,6 +1413,7 @@
         width: min(94vw, 640px);
         max-height: 90vh;
         overflow-y: auto;
+        overflow-x: hidden;
         background: var(--bg-card);
         border-radius: var(--r-xl);
         box-shadow: var(--sh-2);
@@ -1657,13 +1660,27 @@
           gap: 10px;
         }
         .modal-head {
-          padding: 20px 18px 16px;
+          padding: 18px 16px 14px;
+          gap: 10px;
+        }
+        .modal-title {
+          font-size: 20px;
+        }
+        .modal-notice {
+          margin: 0 16px;
+          padding: 10px 14px;
+          font-size: 12px;
         }
         .modal-controls {
-          padding: 18px;
+          padding: 16px;
         }
         .modal-tabs {
-          padding: 14px 18px 0;
+          padding: 12px 16px 0;
+          gap: 2px;
+        }
+        .mtab {
+          padding: 6px 12px;
+          font-size: 12px;
         }
         .modal-code {
           margin: 12px 18px 18px;
@@ -3745,11 +3762,10 @@
 
         <div class="modal-notice" id="modalNotice">
           <strong><i class="ri-javascript-fill"></i> Requires the Interactive Engine</strong><br/>
-          This animation is powered by <code>motion-interactive.min.js</code> — it
-          responds to cursor/hover events and cannot be replayed with a button.
-          Add the script to your page:<br/>
+          This animation responds to cursor/hover events — it cannot be replayed with a button.
+          Add one of these before <code>&lt;/body&gt;</code>:<br/>
           <code>&lt;script src="dist/motion-interactive.min.js"&gt;&lt;/script&gt;</code><br/>
-          or via CDN: <code>https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion-interactive.min.js</code>
+          <code>&lt;script src="cdn.jsdelivr.net/…/motion-interactive.min.js"&gt;&lt;/script&gt;</code>
         </div>
 
         <div class="modal-controls">
