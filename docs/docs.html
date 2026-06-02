@@ -631,18 +631,38 @@
         <section class="doc-sec" id="install">
           <h1 class="doc-sec-title">Installation</h1>
           <p class="doc-sec-sub">
-            SDS Motion Forge ships as a single CSS file. Import it once — every animation is available immediately.
+            SDS Motion Forge ships as one CSS file and two optional JS engines.
+            The CSS is always required. The JS files are only needed for specific features — include only what you use.
           </p>
 
           <h2 class="doc-h3">CDN — no build step</h2>
-          <p class="doc-p">Paste this into your <code>&lt;head&gt;</code>. Works in any HTML page, no npm required.</p>
+          <p class="doc-p">
+            Add the <code>&lt;link&gt;</code> to your <code>&lt;head&gt;</code>.
+            Add the <code>&lt;script&gt;</code> tags before <code>&lt;/body&gt;</code> only if you use those features.
+          </p>
           <div class="codeblock">
             <div class="codeblock-head">
-              <span class="codeblock-lang">HTML</span>
+              <span class="codeblock-lang">HTML — &lt;head&gt;</span>
               <button class="cb-copy" onclick="copyCB(this)">Copy</button>
             </div>
-            <pre><span class="ct">&lt;link</span> <span class="ck">rel</span>=<span class="cs">"stylesheet"</span>
-  <span class="ck">href</span>=<span class="cs">"https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css"</span><span class="ct"> /&gt;</span></pre>
+            <pre><span class="cm">&lt;!-- ① ALWAYS REQUIRED — core CSS (177 animations, ~20 KB gzip) --&gt;</span>
+<span class="ct">&lt;link</span> <span class="ck">rel</span>=<span class="cs">"stylesheet"</span>
+      <span class="ck">href</span>=<span class="cs">"https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css"</span><span class="ct"> /&gt;</span></pre>
+          </div>
+          <div class="codeblock">
+            <div class="codeblock-head">
+              <span class="codeblock-lang">HTML — before &lt;/body&gt;</span>
+              <button class="cb-copy" onclick="copyCB(this)">Copy</button>
+            </div>
+            <pre><span class="cm">&lt;!-- ② OPTIONAL — scroll engine (~0.6 KB gzip) --&gt;</span>
+<span class="cm">&lt;!--   Add this ONLY if you use data-sds scroll-triggered animations --&gt;</span>
+<span class="ct">&lt;script</span> <span class="ck">src</span>=<span class="cs">"https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/sds-scroll.min.js"</span><span class="ct">&gt;&lt;/script&gt;</span>
+
+<span class="cm">&lt;!-- ③ OPTIONAL — interactive engine (~2.4 KB gzip) --&gt;</span>
+<span class="cm">&lt;!--   Add this ONLY if you use cursor-reactive classes: --&gt;</span>
+<span class="cm">&lt;!--   sds-word-morph · sds-magnetic-pull · sds-shockwave --&gt;</span>
+<span class="cm">&lt;!--   sds-scatter-return · sds-spring-kerning · sds-repulsion-field --&gt;</span>
+<span class="ct">&lt;script</span> <span class="ck">src</span>=<span class="cs">"https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion-interactive.min.js"</span><span class="ct">&gt;&lt;/script&gt;</span></pre>
           </div>
 
           <h2 class="doc-h3">npm</h2>
@@ -655,11 +675,17 @@
           </div>
           <div class="codeblock">
             <div class="codeblock-head">
-              <span class="codeblock-lang">JS / TS</span>
+              <span class="codeblock-lang">JS / TS — app entry file</span>
               <button class="cb-copy" onclick="copyCB(this)">Copy</button>
             </div>
-            <pre><span class="cm">// Import once in your app entry file</span>
-<span class="ck">import</span> <span class="cs">'@salkomdesignstudio/sds-motion-forge/dist/motion.min.css'</span>;</pre>
+            <pre><span class="cm">// ① ALWAYS REQUIRED — import the core CSS</span>
+<span class="ck">import</span> <span class="cs">'@salkomdesignstudio/sds-motion-forge/dist/motion.min.css'</span>;
+
+<span class="cm">// ② OPTIONAL — scroll engine (only for data-sds scroll animations)</span>
+<span class="ck">import</span> <span class="cs">'@salkomdesignstudio/sds-motion-forge/dist/sds-scroll.min.js'</span>;
+
+<span class="cm">// ③ OPTIONAL — interactive engine (only for cursor-reactive classes)</span>
+<span class="ck">import</span> <span class="cs">'@salkomdesignstudio/sds-motion-forge/dist/motion-interactive.min.js'</span>;</pre>
           </div>
 
           <h2 class="doc-h3">What gets installed</h2>
