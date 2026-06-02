@@ -21,7 +21,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@400;600;700&family=Instrument+Serif:ital@0;1&family=Playfair+Display:ital,wght@1,700&family=Syne:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link
@@ -121,6 +121,39 @@
         display: grid;
         place-items: center;
         font-size: 14px;
+      }
+      /* ── LOGO (matches index.html style) ── */
+      .logo-link {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        flex-shrink: 0;
+      }
+      .logo-link img {
+        height: 32px;
+        width: auto;
+        display: block;
+      }
+      .logo-text {
+        display: flex;
+        align-items: baseline;
+        line-height: 1;
+      }
+      .logo-sans {
+        font-family: 'DM Sans', sans-serif;
+        font-weight: 700;
+        font-size: 19px;
+        color: var(--brand);
+        letter-spacing: -0.02em;
+      }
+      .logo-serif {
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        font-style: italic;
+        font-size: 19px;
+        color: var(--brand);
+        letter-spacing: -0.03em;
       }
       .nav-badge {
         font-family: var(--f-mono);
@@ -529,9 +562,9 @@
   <body>
     <!-- TOP NAV -->
     <nav class="nav">
-      <a href="index.html" class="brand">
-        <span class="brand-mark"><i class="ri-flashlight-fill"></i></span>
-        SDS Motion Forge
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.png" alt="Salkom Design Studio — SDS Motion Forge" />
+        <span class="logo-text"><span class="logo-sans">SDS-</span><span class="logo-serif">Motion-Forge</span></span>
       </a>
       <span class="nav-badge">v4.0.3</span>
       <div class="nav-sp"></div>
@@ -631,14 +664,64 @@
 
           <h2 class="doc-h3">What gets installed</h2>
           <table class="doc-table">
-            <thead><tr><th>File</th><th>Size</th><th>Purpose</th></tr></thead>
+            <thead><tr><th>File</th><th>Size (gzip)</th><th>When you need it</th></tr></thead>
             <tbody>
-              <tr><td><code>dist/motion.min.css</code></td><td>119 KB · ~20 KB gzip</td><td>Core library — required</td></tr>
-              <tr><td><code>dist/sds-scroll.min.js</code></td><td>1.28 KB · ~0.6 KB gzip</td><td>Scroll gate engine — optional</td></tr>
-              <tr><td><code>dist/motion-interactive.min.js</code></td><td>6.98 KB · ~2.4 KB gzip</td><td>Interactive / cursor engine — optional</td></tr>
-              <tr><td><code>src/motion.css</code></td><td>177 KB</td><td>PostCSS source for custom builds</td></tr>
+              <tr><td><code>dist/motion.min.css</code></td><td>~20 KB</td><td><strong>Always</strong> — core library, 376 animations</td></tr>
+              <tr><td><code>dist/sds-scroll.min.js</code></td><td>~0.6 KB</td><td>When using <code>data-sds</code> scroll-gated animations</td></tr>
+              <tr><td><code>dist/motion-interactive.min.js</code></td><td>~2.4 KB</td><td>When using cursor-reactive animations (word-morph, magnetic-pull, shockwave…)</td></tr>
+              <tr><td><code>src/motion.css</code></td><td>177 KB raw</td><td>Custom PostCSS builds only</td></tr>
             </tbody>
           </table>
+
+          <h2 class="doc-h3">Choose your setup</h2>
+          <p class="doc-p">Pick the row that matches what you need — each one builds on the previous.</p>
+          <table class="doc-table">
+            <thead><tr><th>You want…</th><th>Files to include</th></tr></thead>
+            <tbody>
+              <tr>
+                <td>CSS-only animations (text, buttons, inputs, cards, loaders)</td>
+                <td><code>motion.min.css</code> only</td>
+              </tr>
+              <tr>
+                <td>Scroll-triggered animations (<code>data-sds</code> attribute)</td>
+                <td><code>motion.min.css</code> + <code>sds-scroll.min.js</code></td>
+              </tr>
+              <tr>
+                <td>Cursor / hover interactive animations (word-morph, magnetic-pull, shockwave…)</td>
+                <td><code>motion.min.css</code> + <code>motion-interactive.min.js</code></td>
+              </tr>
+              <tr>
+                <td>Everything</td>
+                <td><code>motion.min.css</code> + <code>sds-scroll.min.js</code> + <code>motion-interactive.min.js</code></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 class="doc-h3">Full CDN setup (all features)</h2>
+          <div class="doc-note" style="margin-bottom:14px">
+            Copy this complete snippet into your <code>&lt;head&gt;</code> (and closing <code>&lt;body&gt;</code> tag) to enable every feature.
+          </div>
+          <div class="codeblock">
+            <div class="codeblock-head">
+              <span class="codeblock-lang">HTML — &lt;head&gt;</span>
+              <button class="cb-copy" onclick="copyCB(this)">Copy</button>
+            </div>
+            <pre><span class="cm">&lt;!-- Step 1 · Core CSS — required for ALL animations --&gt;</span>
+<span class="ct">&lt;link</span> <span class="ck">rel</span>=<span class="cs">"stylesheet"</span>
+  <span class="ck">href</span>=<span class="cs">"https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css"</span><span class="ct"> /&gt;</span></pre>
+          </div>
+          <div class="codeblock">
+            <div class="codeblock-head">
+              <span class="codeblock-lang">HTML — before &lt;/body&gt;</span>
+              <button class="cb-copy" onclick="copyCB(this)">Copy</button>
+            </div>
+            <pre><span class="cm">&lt;!-- Step 2 · Scroll engine — only if you use data-sds scroll animations --&gt;</span>
+<span class="ct">&lt;script</span> <span class="ck">src</span>=<span class="cs">"https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/sds-scroll.min.js"</span><span class="ct">&gt;&lt;/script&gt;</span>
+
+<span class="cm">&lt;!-- Step 3 · Interactive engine — only if you use cursor-reactive animations --&gt;</span>
+<span class="cm">&lt;!--         (sds-word-morph, sds-magnetic-pull, sds-shockwave, sds-scatter-return…) --&gt;</span>
+<span class="ct">&lt;script</span> <span class="ck">src</span>=<span class="cs">"https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion-interactive.min.js"</span><span class="ct">&gt;&lt;/script&gt;</span></pre>
+          </div>
         </section>
 
         <!-- ═══════════════ QUICK START ═══════════════ -->

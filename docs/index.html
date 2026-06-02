@@ -723,10 +723,6 @@
       .tile.tall {
         grid-row: span 2;
       }
-      /* Last bento tile spans full width so it never sits alone */
-      .bento > .tile:last-child {
-        grid-column: 1 / -1;
-      }
       .tile-big-num {
         font-size: 64px;
         font-weight: 800;
@@ -869,6 +865,47 @@
       .card-cls i {
         font-size: 12px;
         opacity: 0.6;
+      }
+      .card-meta-row {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        flex-wrap: wrap;
+      }
+      .badge-js {
+        font-family: var(--f-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: #fff;
+        background: var(--ink-2);
+        padding: 2px 7px;
+        border-radius: var(--r-sm);
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        flex-shrink: 0;
+      }
+
+      /* interactive animation notice inside modal */
+      .modal-notice {
+        display: none;
+        margin: 0 26px 0;
+        padding: 12px 16px;
+        background: rgba(0, 21, 209, 0.06);
+        border: 1px solid rgba(0, 21, 209, 0.16);
+        border-radius: var(--r-md);
+        font-size: 13px;
+        line-height: 1.55;
+        color: var(--ink-2);
+      }
+      .modal-notice strong { color: var(--brand); }
+      .modal-notice.visible { display: block; }
+      .modal-notice code {
+        font-family: var(--f-mono);
+        font-size: 11.5px;
+        color: var(--brand);
+        background: var(--brand-dim);
+        padding: 1px 5px;
+        border-radius: 4px;
       }
 
       /* ───────── PLAYGROUND (dark stage) ───────── */
@@ -3263,7 +3300,7 @@
             at the <span class="serif">speed</span><br />of class
           </h1>
           <p class="hero-sub">
-            300+ production-ready CSS animations across 6 categories. One class
+            376 production-ready CSS animations across 6 categories. One class
             name. Zero required JavaScript. The motion library that proves
             itself on its own page.
           </p>
@@ -3272,12 +3309,12 @@
               ><i class="ri-rocket-2-fill"></i> Get Started</a
             >
             <a href="#gallery" class="btn btn-ghost"
-              ><i class="ri-gallery-fill"></i> Browse 300+ Animations</a
+              ><i class="ri-gallery-fill"></i> Browse 376+ Animations</a
             >
           </div>
           <div class="hero-stats">
             <div>
-              <div class="hstat-v">300+</div>
+              <div class="hstat-v">376+</div>
               <div class="hstat-l">Animations</div>
             </div>
             <div>
@@ -3333,7 +3370,7 @@
           </p>
         </div>
         <div class="bento">
-          <div class="tile lg tile-dark" data-reveal="scale">
+          <div class="tile md tile-dark" data-reveal="scale">
             <div class="tile-ico"><i class="ri-flashlight-fill"></i></div>
             <div>
               <div class="tile-t">Zero Required JS</div>
@@ -3344,11 +3381,11 @@
               </div>
             </div>
           </div>
-          <div class="tile sm" data-reveal="up" data-delay="1">
-            <div class="tile-big-num">300+</div>
+          <div class="tile md" data-reveal="up" data-delay="1">
+            <div class="tile-ico"><i class="ri-sparkling-2-fill"></i></div>
             <div>
-              <div class="tile-t">Animations</div>
-              <div class="tile-d">Across six categories. 100 text alone.</div>
+              <div class="tile-t">376 Animations</div>
+              <div class="tile-d">Across six categories. 100 text alone. Physics engine included.</div>
             </div>
           </div>
           <div class="tile md" data-reveal="up" data-delay="2">
@@ -3376,7 +3413,7 @@
             <div>
               <div class="tile-t">GPU-accelerated</div>
               <div class="tile-d">
-                Transform & opacity only. Buttery on mobile, no layout thrash.
+                Transform &amp; opacity only. Buttery on mobile, no layout thrash.
               </div>
             </div>
           </div>
@@ -3688,6 +3725,15 @@
           <button class="modal-replay" onclick="modalReplay()">
             <i class="ri-restart-line"></i> Replay
           </button>
+        </div>
+
+        <div class="modal-notice" id="modalNotice">
+          <strong><i class="ri-javascript-fill"></i> Requires the Interactive Engine</strong><br/>
+          This animation is powered by <code>motion-interactive.min.js</code> — it
+          responds to cursor/hover events and cannot be replayed with a button.
+          Add the script to your page:<br/>
+          <code>&lt;script src="dist/motion-interactive.min.js"&gt;&lt;/script&gt;</code><br/>
+          or via CDN: <code>https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion-interactive.min.js</code>
         </div>
 
         <div class="modal-controls">
@@ -5279,9 +5325,14 @@
                 '<div class="card-name">' +
                 a.name +
                 "</div>" +
+                '<div class="card-meta-row">' +
                 '<span class="card-cls"><i class="ri-code-s-slash-line"></i>' +
                 a.cls +
                 "</span>" +
+                (INTERACTIVE.indexOf(a.cls) > -1
+                  ? '<span class="badge-js">Needs JS</span>'
+                  : "") +
+                "</div>" +
                 "</div></div>"
               );
             })
@@ -5595,6 +5646,19 @@
           var replay = stage.querySelector(".modal-replay");
           stage.innerHTML = previewMarkupModal(a);
           stage.appendChild(replay);
+
+          // show/hide interactive notice
+          var isInteractive = INTERACTIVE.indexOf(a.cls) > -1;
+          var notice = document.getElementById("modalNotice");
+          notice.classList.toggle("visible", isInteractive);
+          // hide replay button for interactive animations (JS engine drives them)
+          replay.style.display = isInteractive ? "none" : "";
+
+          // wire up interactive engine on the modal demo element if available
+          if (isInteractive && window.SDSInteractive && window.SDSInteractive.initEl) {
+            var demoEl = document.getElementById("modalDemo");
+            if (demoEl) window.SDSInteractive.initEl(demoEl);
+          }
 
           document.getElementById("modal").classList.add("open");
           document.body.style.overflow = "hidden";
