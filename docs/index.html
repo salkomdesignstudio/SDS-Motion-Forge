@@ -1654,36 +1654,159 @@
         color: var(--success);
       }
 
+      /* ═══ MODAL MOBILE — full responsive overhaul ≤540px ═══ */
       @media (max-width: 540px) {
-        .ctrl-row {
-          grid-template-columns: 90px 1fr 54px;
-          gap: 10px;
+
+        /* ── box ── */
+        .modal-box {
+          width: min(96vw, 640px);
+          max-height: 85vh;
+          border-radius: 20px;
         }
+
+        /* ── head ── */
         .modal-head {
-          padding: 18px 16px 14px;
+          padding: 16px 14px 12px;
           gap: 10px;
         }
         .modal-title {
-          font-size: 20px;
+          font-size: clamp(16px, 5vw, 20px);
+          letter-spacing: -0.02em;
         }
+        .modal-cls {
+          font-size: 11px;
+        }
+
+        /* ── notice ── */
         .modal-notice {
-          margin: 0 16px;
-          padding: 10px 14px;
-          font-size: 12px;
+          margin: 0 14px;
+          padding: 10px 12px;
+          font-size: 11.5px;
+          line-height: 1.5;
         }
+
+        /* ── stage ── */
+        .modal-stage {
+          min-height: 140px;
+          padding: 20px 16px;
+        }
+        .modal-demo {
+          font-size: clamp(20px, 6vw, 34px);
+        }
+
+        /* ── controls section ── */
         .modal-controls {
-          padding: 16px;
+          padding: 14px;
+          gap: 14px;
         }
+
+        /*
+         * Range rows (Duration, Delay):
+         *   Row 1: [LABEL .............. VALUE]
+         *   Row 2: [======slider full-width===]
+         */
+        .ctrl-row {
+          grid-template-columns: 1fr auto;
+          grid-template-rows: auto auto;
+          gap: 6px 8px;
+          align-items: center;
+        }
+        .ctrl-row .ctrl-label {
+          grid-column: 1;
+          grid-row: 1;
+          font-size: 10px;
+          letter-spacing: 0.1em;
+        }
+        .ctrl-row .ctrl-range {
+          grid-column: 1 / -1;   /* full width */
+          grid-row: 2;
+        }
+        .ctrl-row .ctrl-val {
+          grid-column: 2;
+          grid-row: 1;
+          font-size: 12px;
+          white-space: nowrap;
+          text-align: right;
+        }
+
+        /* bigger slider thumb for touch */
+        .ctrl-range::-webkit-slider-thumb {
+          width: 22px;
+          height: 22px;
+        }
+        .ctrl-range::-moz-range-thumb {
+          width: 22px;
+          height: 22px;
+          border: none;
+        }
+
+        /*
+         * Segment rows (Iteration, Direction, Easing):
+         *   Row 1: [LABEL]
+         *   Row 2: [btn][btn][btn][btn]  ← full width, wraps if needed
+         */
+        .ctrl-row.seg-row {
+          grid-template-columns: 1fr;
+          grid-template-rows: auto auto;
+          gap: 8px;
+        }
+
+        /* segment buttons: full-width row, wrap-safe */
+        .ctrl-seg {
+          flex-wrap: wrap;
+          gap: 5px;
+          padding: 4px;
+        }
+        .ctrl-seg button {
+          flex: 1 1 auto;
+          font-size: 12px;
+          padding: 9px 10px;
+          min-height: 40px; /* 44px touch target with 4px gap */
+          border-radius: 8px;
+          white-space: nowrap;
+        }
+
+        /* ── tabs ── */
         .modal-tabs {
-          padding: 12px 16px 0;
-          gap: 2px;
+          padding: 12px 14px 0;
+          gap: 3px;
+          flex-wrap: wrap;
         }
         .mtab {
-          padding: 6px 12px;
+          padding: 7px 12px;
           font-size: 12px;
         }
+
+        /* ── code block ──
+         * Extra top padding so the absolute Copy button never clips code text
+         */
         .modal-code {
-          margin: 12px 18px 18px;
+          margin: 10px 14px 14px;
+          border-radius: 10px;
+        }
+        .modal-code pre {
+          padding: 44px 14px 14px;
+          font-size: 12px;
+          line-height: 1.6;
+        }
+        .modal-code-copy {
+          padding: 5px 12px;
+          font-size: 10.5px;
+        }
+      }
+
+      /* ═══ VERY NARROW — 360px and below ═══ */
+      @media (max-width: 360px) {
+        .modal-controls {
+          padding: 12px;
+          gap: 12px;
+        }
+        .ctrl-row {
+          gap: 5px 6px;
+        }
+        /* 2-per-row buttons on the narrowest phones */
+        .ctrl-seg button {
+          flex: 1 1 calc(50% - 3px);
         }
       }
 
