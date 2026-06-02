@@ -459,6 +459,7 @@
 /* 14 · Perspective Swing ----------------------------------- */
 .sds-perspective-swing {
   will-change: transform;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   animation: sds-perspSwing var(--sds-duration) var(--sds-easing) both;
   display: inline-block;
@@ -555,7 +556,6 @@
   overflow: hidden;
   white-space: nowrap;
   width: 0;
-  max-width: -moz-max-content;
   max-width: max-content;
   animation:
     sds-typewriterPrem 2.5s steps(20) both,
@@ -1606,6 +1606,7 @@
 /* 58 · Flip X (180° horizontal axis flip entrance) ---------- */
 .sds-flip-x {
   display: inline-block;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   animation: sds-flipX var(--sds-duration) var(--sds-easing) both;
 }
@@ -1630,6 +1631,7 @@
 /* 59 · Flip Y (180° vertical axis flip entrance) ------------ */
 .sds-flip-y {
   display: inline-block;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   animation: sds-flipY var(--sds-duration) var(--sds-easing) both;
 }
@@ -1655,6 +1657,7 @@
 .sds-door-open {
   display: inline-block;
   transform-origin: left center;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   animation: sds-doorOpen var(--sds-duration) var(--sds-easing) both;
 }
@@ -1705,7 +1708,7 @@
 }
 
 /* 62 · Zoom Far (scale 2→1 with blur — coming from distance) */
-.sds-zoom-far {
+.sds-zoom-out-in {
   display: inline-block;
   animation: sds-zoomFar 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
@@ -1997,7 +2000,7 @@
 }
 
 /* 74 · Reveal Up (polygon mask slides up, scaleX settle) ---- */
-.sds-reveal-up {
+.sds-reveal-up-mask {
   display: inline-block;
   overflow: hidden;
   animation: sds-revealUp var(--sds-duration) var(--sds-easing) both;
@@ -2021,7 +2024,7 @@
 }
 
 /* 75 · Reveal Down (polygon mask slides down, rotate settle) - */
-.sds-reveal-down {
+.sds-reveal-down-mask {
   display: inline-block;
   overflow: hidden;
   animation: sds-revealDown var(--sds-duration) var(--sds-easing) both;
@@ -2258,7 +2261,7 @@
 }
 
 /* 83 · Spotlight Text (cyclic brightness + blur radial) ------ */
-.sds-spotlight-text {
+.sds-spotlight {
   display: inline-block;
   animation: sds-spotlightText 2.4s ease-in-out infinite;
 }
@@ -2374,7 +2377,7 @@
 }
 
 /* 87 · Bounce Drop (multi-bounce drop from high above) ------- */
-.sds-bounce-drop {
+.sds-bounce-drop-in {
   display: inline-block;
   animation: sds-bounceDrop 1.1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
 }
@@ -2677,7 +2680,6 @@
   overflow: hidden;
   white-space: nowrap;
   width: 0;
-  max-width: -moz-max-content;
   max-width: max-content;
   border-right: 2px solid var(--sds-primary);
   animation:
@@ -3976,9 +3978,6 @@
 }
 
 /* 51 · Morph Placeholder ----------------------------------- */
-.sds-input-morph-ph::-moz-placeholder {
-  animation: sds-morphPlaceholder 2s ease infinite;
-}
 .sds-input-morph-ph::placeholder {
   animation: sds-morphPlaceholder 2s ease infinite;
 }
@@ -4010,10 +4009,6 @@
     transform 0.25s var(--sds-easing),
     color 0.25s ease;
   color: rgba(0, 0, 0, 0.4);
-}
-.sds-input-elevate-wrap input:not(:-moz-placeholder) ~ label {
-  transform: translateY(-140%) scale(0.82);
-  color: var(--sds-primary);
 }
 .sds-input-elevate-wrap input:focus ~ label,
 .sds-input-elevate-wrap input:not(:placeholder-shown) ~ label {
@@ -5191,17 +5186,20 @@
 /* 75 · Glass ------------------------------------------- */
 .sds-card-glass {
   animation: sds-cardGlass 0.7s ease both;
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   background: rgba(255, 255, 255, 0.1);
 }
 @keyframes sds-cardGlass {
   from {
     opacity: 0;
+    -webkit-backdrop-filter: blur(0);
     backdrop-filter: blur(0);
     transform: scale(0.95);
   }
   to {
     opacity: 1;
+    -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
     transform: scale(1);
   }
@@ -8556,3 +8554,105 @@ html:not(.sds-js) [data-sds] {
   opacity: 1 !important;
   animation-play-state: running !important;
 }
+
+
+/* ─────────────────────────────────────────────────────────────
+   INTERACTIVE ANIMATION BASE RULES (v4)
+   JS engine in motion-interactive.js handles the actual effects.
+   Developer adds only the class. Engine auto-wires events.
+   ───────────────────────────────────────────────────────────── */
+
+.sds-jelly-hover { display: inline-block; cursor: default; }
+@keyframes sds-jellyKf {
+  0%,100% { transform: scale(1,1); }
+  30%     { transform: scaleX(1.25) scaleY(0.75); }
+  40%     { transform: scaleX(0.75) scaleY(1.25); }
+  55%     { transform: scaleX(1.15) scaleY(0.85); }
+  70%     { transform: scaleX(0.95) scaleY(1.05); }
+  85%     { transform: scaleX(1.02) scaleY(0.98); }
+}
+
+.sds-word-morph { display: inline-block; }
+
+.sds-scatter-return { display: inline-block; }
+.sds-scatter-return .sds-char { display: inline-block; will-change: transform; }
+
+.sds-shockwave { display: inline-block; cursor: pointer; }
+.sds-shockwave .sds-char { display: inline-block; will-change: transform; }
+
+.sds-spring-kerning { display: inline-block; }
+
+.sds-magnetic-pull { display: inline-block; }
+.sds-magnetic-pull .sds-char { display: inline-block; will-change: transform; }
+
+.sds-repulsion-field { display: inline-block; }
+.sds-repulsion-field .sds-char { display: inline-block; will-change: transform; }
+
+.sds-bounce-loop {
+  display: inline-block;
+  transform-origin: center bottom;
+  will-change: transform;
+  animation: sds-bounceLoop 1.4s cubic-bezier(0.28,0.84,0.42,1) infinite;
+}
+@keyframes sds-bounceLoop {
+  0%,100% { transform: translateY(0) scaleY(1); }
+  40%     { transform: translateY(-16px) scaleY(1.05); }
+  55%     { transform: translateY(0) scaleY(0.92); }
+  70%     { transform: translateY(-6px); }
+}
+
+.sds-char-orbit { display: inline-block; }
+.sds-char-orbit .sds-char {
+  display: inline-block;
+  will-change: transform;
+  animation: sds-charOrbitBob 2s ease-in-out infinite;
+  animation-delay: calc(var(--i,0) * 0.15s);
+}
+
+
+
+.sds-drop-bounce {
+  display: inline-block;
+  will-change: transform, opacity;
+  animation: sds-dropBounce 1.1s cubic-bezier(0.215,0.61,0.355,1) both;
+}
+@keyframes sds-dropBounce {
+  0%   { opacity:0; transform: translateY(-120px); }
+  38%  { opacity:1; transform: translateY(0) scaleY(0.88) scaleX(1.12); }
+  52%  { transform: translateY(-28px) scaleY(1.05) scaleX(0.96); }
+  65%  { transform: translateY(0) scaleY(0.93); }
+  78%  { transform: translateY(-10px); }
+  100% { transform: translateY(0) scaleY(1); }
+}
+
+.sds-pendulum {
+  display: inline-block;
+  transform-origin: top center;
+  will-change: transform;
+  animation: sds-pendulum 2.4s ease-in-out infinite;
+}
+@keyframes sds-pendulum {
+  0%,100% { transform: rotate(-8deg); }
+  50%     { transform: rotate(8deg); }
+}
+
+.sds-vibrate {
+  display: inline-block;
+  will-change: transform;
+  animation: sds-vibrate 0.3s linear infinite;
+}
+@keyframes sds-vibrate {
+  0%,100% { transform: translate(0,0); }
+  20% { transform: translate(-1px, 1px); }
+  40% { transform: translate(-1px,-1px); }
+  60% { transform: translate(1px, 1px); }
+  80% { transform: translate(1px,-1px); }
+}
+
+.sds-ink-bleed {
+  display: inline-block;
+  will-change: filter, opacity;
+  animation: sds-inkBleed 1.4s cubic-bezier(0.25,0.46,0.45,0.94) both;
+}
+
+
