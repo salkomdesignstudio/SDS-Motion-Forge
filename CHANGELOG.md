@@ -1,6 +1,6 @@
 # Changelog
 
-## [4.0.2] - 2026-06-01
+## [4.0.3] - 2026-06-01
 
 ### Fixed — Critical (production impact)
 
@@ -34,9 +34,9 @@
 
 ### Fixed — Versioning
 
-- **`docs/index.html`** — Page `<title>`, nav version pill, and hero badge all showed `v4.0.0`. Updated all three to `v4.0.2`.
+- **`docs/index.html`** — Page `<title>`, nav version pill, and hero badge all showed `v4.0.0`. Updated all three to `v4.0.3`.
 
-- **`src/motion.css` + `dist/motion.css`** — CSS header comment showed `Version: 4.0.0`. Updated to `4.0.2`.
+- **`src/motion.css` + `dist/motion.css`** — CSS header comment showed `Version: 4.0.0`. Updated to `4.0.3`.
 
 ### Fixed — TypeScript
 
