@@ -1,0 +1,3 @@
+# The R1 baseline is the published-tarball contract — never normalize it.
+baseline/** -text
+*.tgz binary

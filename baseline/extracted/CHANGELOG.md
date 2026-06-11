@@ -1,59 +1,5 @@
 # Changelog
 
-## [Unreleased] — v5 Phase 0: Motion Token System + Specification
-
-> **Compatibility statement:** zero computed-value deviations from published
-> 4.0.3, machine-proven on every build by `scripts/verify-against-published.js`
-> against the committed tarball baseline (`baseline/`). Report:
-> `compat/compatibility-report.md`.
-
-### Added
-
-- **Motion token system** — `tokens/motion.tokens.json` (W3C Design Tokens format):
-  - Duration scale `--sds-duration-{instant,fast,base,slow,slower,dramatic}`
-    (0.3s / 0.4s / 0.8s / 1.4s / 2.2s / 3s) — values derived from existing v4
-    usage so no default changed.
-  - Easing scale `--sds-ease-{standard,decelerate,accelerate,emphasized,spring,bounce}`
-    — the six cubic-beziers already shipped in v4, extracted and named verbatim.
-  - Distance scale `--sds-distance-{sm,md,lg}` (24/48/80px) for entrance offsets (new).
-- **`scripts/generate-tokens.js`** (`npm run build:tokens`) — generates from the
-  tokens JSON: the CSS custom-property block in `src/motion.css`,
-  `tokens/figma.tokens.json` (Tokens Studio format for the SDS Figma plugin suite),
-  and `tokens/sds-motion-tokens.ts` (TypeScript constants). `--check` mode fails
-  the build on drift (wired into `release:check`).
-- **`SPEC.md`** — the SDS Motion Specification: principles, duration/easing
-  selection matrix, choreography rules, reduced-motion philosophy,
-  compositor-only policy, naming and governance.
-- **`scripts/verify-against-published.js`** (`npm run verify:published`) — the
-  permanent R1 compatibility gate. Diffs exports map, every published selector's
-  computed declarations (var()-resolved), every keyframe block, `:root` token
-  defaults, and the JS engines' public API surface against the published
-  tarball. Any unapproved deviation fails the build; emits
-  `compat/compatibility-report.md`.
-- **`baseline/`** — committed `npm pack` of published 4.0.3 (the contract).
-- **`registry/inventory.json` + `registry/INVENTORY.md`** — generated inventory
-  of all 388 published classes: category, keyframes, custom properties,
-  compositor-safety audit, duration/easing usage statistics, and documented
-  pre-existing anomalies (e.g. `sds-charOrbitBob` referenced but never defined;
-  duplicate `.sds-ink-bleed` declaration).
-- **`index.d.ts`** — additive `SdsDurationToken`, `SdsEasingToken`,
-  `SdsDistanceToken` types.
-
-### Changed (value-identical, gate-verified)
-
-- `src/motion.css` animation declarations now reference tokens with literal
-  fallbacks (e.g. `var(--sds-duration-slow, 1.4s)`): 102 duration literals and
-  37 easing literals tokenized; `sds-fast`/`sds-normal`/`sds-slow`/`sds-xslow`
-  modifiers route through the scale; legacy `--sds-duration`/`--sds-easing`
-  resolve through the v5 tokens. Computed defaults are byte-for-byte identical.
-- `npm run build` now runs token generation first; `release:check` additionally
-  runs `verify:tokens` and `verify:published`.
-
-### Nothing removed, nothing renamed
-
-Every v3/v4 class name, keyframe name, dist path, export subpath, data
-attribute and CDN usage pattern is untouched.
-
 ## [4.0.3] - 2026-06-01
 
 ### Fixed — Critical (production impact)

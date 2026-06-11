@@ -492,31 +492,3 @@ export type SdsAnimationClass =
   | SdsInteractiveAnimation
   | SdsModifier
   | SdsScrollGate;
-
-/* ────────────────────────────────────────────────────────────────
-   v5 Motion Token Scale (Phase 0)
-   Source of truth: tokens/motion.tokens.json (W3C Design Tokens).
-   CSS custom properties: --sds-duration-{token}, --sds-ease-{token},
-   --sds-distance-{token}. See SPEC.md for the selection matrix.
-   ──────────────────────────────────────────────────────────────── */
-
-/** Duration token names. CSS: `--sds-duration-{token}` (instant=0.3s, fast=0.4s, base=0.8s, slow=1.4s, slower=2.2s, dramatic=3s). */
-export type SdsDurationToken =
-  | 'instant'
-  | 'fast'
-  | 'base'
-  | 'slow'
-  | 'slower'
-  | 'dramatic';
-
-/** Easing token names. CSS: `--sds-ease-{token}`. */
-export type SdsEasingToken =
-  | 'standard'
-  | 'decelerate'
-  | 'accelerate'
-  | 'emphasized'
-  | 'spring'
-  | 'bounce';
-
-/** Entrance-distance token names. CSS: `--sds-distance-{token}` (sm=24px, md=48px, lg=80px). */
-export type SdsDistanceToken = 'sm' | 'md' | 'lg';

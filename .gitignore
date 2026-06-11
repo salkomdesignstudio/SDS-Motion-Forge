@@ -1,6 +1,8 @@
 node_modules/
 .npm-cache/
 *.tgz
+# Exception: the committed R1 baseline — the published-tarball contract.
+!baseline/*.tgz
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

@@ -35,18 +35,15 @@
     "**/*.css"
   ],
   "scripts": {
-    "build:tokens": "node scripts/generate-tokens.js",
     "build:css": "postcss src/motion.css -o dist/motion.css && cleancss -o dist/motion.min.css dist/motion.css",
     "build:js": "terser src/sds-scroll.js -o dist/sds-scroll.min.js --compress --mangle --source-map \"url='sds-scroll.min.js.map'\" && terser src/motion-interactive.js -o dist/motion-interactive.min.js --compress --mangle --source-map \"url='motion-interactive.min.js.map'\"",
-    "build": "npm run build:tokens && npm run build:css && npm run build:js",
+    "build": "npm run build:css && npm run build:js",
     "build:dev": "postcss src/motion.css -o dist/motion.css --map",
     "build:watch": "postcss src/motion.css -o dist/motion.css --watch",
     "build:verify": "node verify-build.js",
-    "verify:tokens": "node scripts/generate-tokens.js --check",
-    "verify:published": "node scripts/verify-against-published.js",
     "validate": "publint",
     "pack:check": "npm pack --dry-run",
-    "release:check": "npm run build && npm run build:verify && npm run verify:tokens && npm run verify:published && npm run validate && npm run pack:check",
+    "release:check": "npm run build && npm run build:verify && npm run validate && npm run pack:check",
     "prepublishOnly": "npm run release:check"
   },
   "keywords": [
@@ -89,7 +86,6 @@
     "clean-css-cli": "^5.6.3",
     "postcss": "^8.4.35",
     "postcss-cli": "^11.0.0",
-    "postcss-import": "^16.1.1",
     "publint": "^0.3.21",
     "terser": "^5.48.0"
   },

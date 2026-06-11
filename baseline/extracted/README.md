@@ -10,7 +10,6 @@
 A production-grade motion system for modern UI — framework-agnostic, accessible, and backward-compatible. Add a class and your element animates. That is the entire API.
 
 > **Live demo:** [sds-motion-forge.netlify.app](https://sds-motion-forge.netlify.app)
-> **Motion specification:** [SPEC.md](SPEC.md) — principles, token scale, duration/easing selection matrix, choreography rules.
 
 ---
 
@@ -868,30 +867,6 @@ Override CSS custom properties to match your brand. Changes apply to every anima
   --sds-duration:     0.8s;      /* Base animation duration */
   --sds-easing:       cubic-bezier(0.22, 1, 0.36, 1);  /* Base easing */
 }
-```
-
-### Motion tokens (v5 scale)
-
-The library's timing now flows through a named token scale, specified in
-[`SPEC.md`](SPEC.md) and sourced from [`tokens/motion.tokens.json`](tokens/motion.tokens.json)
-(W3C Design Tokens format — also exported for Figma Tokens / Tokens Studio and as a
-generated TypeScript constants module). Defaults are identical to v4; the legacy
-`--sds-duration` / `--sds-easing` tokens keep working forever.
-
-| Token | Value | Token | Curve |
-|---|---|---|---|
-| `--sds-duration-instant` | 0.3s | `--sds-ease-standard` | `cubic-bezier(0.22, 1, 0.36, 1)` |
-| `--sds-duration-fast` | 0.4s | `--sds-ease-decelerate` | `cubic-bezier(0.16, 1, 0.3, 1)` |
-| `--sds-duration-base` | 0.8s | `--sds-ease-accelerate` | `cubic-bezier(0.6, -0.28, 0.74, 0.05)` |
-| `--sds-duration-slow` | 1.4s | `--sds-ease-emphasized` | `cubic-bezier(0.215, 0.61, 0.355, 1)` |
-| `--sds-duration-slower` | 2.2s | `--sds-ease-spring` | `cubic-bezier(0.34, 1.56, 0.64, 1)` |
-| `--sds-duration-dramatic` | 3s | `--sds-ease-bounce` | `cubic-bezier(0.68, -0.55, 0.27, 1.55)` |
-
-Entrance distances: `--sds-distance-sm` (24px), `--sds-distance-md` (48px), `--sds-distance-lg` (80px).
-
-```css
-/* Speed up every standard entrance, keep everything else */
-:root { --sds-duration-base: 0.6s; }
 
 /* Scoped override — affects only animations inside .hero */
 .hero {

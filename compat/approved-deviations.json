@@ -1,0 +1,4 @@
+{
+  "$comment": "Explicit, written approvals for deviations from the published tarball (R1). Each entry must carry the deviation id reported by scripts/verify-against-published.js, a reason, who approved it, and when. An empty list means the build must be 100% computed-value-identical to the published package.",
+  "deviations": []
+}

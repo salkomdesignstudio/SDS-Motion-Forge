@@ -1,0 +1,87 @@
+{
+  "sds": {
+    "motion": {
+      "duration": {
+        "instant": {
+          "value": "300ms",
+          "type": "other",
+          "description": "Micro-feedback: focus rings, validation flashes, press states. Existing uses: sds-input-focus, sds-input-ink."
+        },
+        "fast": {
+          "value": "400ms",
+          "type": "other",
+          "description": "Quick entrances and snappy UI moves. Identical to the sds-fast modifier (0.4s)."
+        },
+        "base": {
+          "value": "800ms",
+          "type": "other",
+          "description": "Default entrance duration. Identical to the legacy --sds-duration default (0.8s) — the most-used entrance duration in the library (73 direct/indirect uses)."
+        },
+        "slow": {
+          "value": "1400ms",
+          "type": "other",
+          "description": "Deliberate, cinematic entrances. Identical to the sds-slow modifier (1.4s); 15 direct uses."
+        },
+        "slower": {
+          "value": "2200ms",
+          "type": "other",
+          "description": "Hero-scale reveals. Identical to the sds-xslow modifier (2.2s)."
+        },
+        "dramatic": {
+          "value": "3000ms",
+          "type": "other",
+          "description": "Ambient loops and atmosphere (glow, aurora, drift). 30 direct uses of 3s in v4.0.3."
+        }
+      },
+      "easing": {
+        "standard": {
+          "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+          "type": "other",
+          "description": "The SDS signature ease-out (legacy --sds-easing default, 100+ uses). Confident deceleration with a soft landing. Use for most entrances."
+        },
+        "decelerate": {
+          "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+          "type": "other",
+          "description": "Expo-style deceleration — starts very fast, lands very softly. Use for large translations and streaks (liquid-rise, streak-in, slide-blur)."
+        },
+        "accelerate": {
+          "value": "cubic-bezier(0.6, -0.28, 0.74, 0.05)",
+          "type": "other",
+          "description": "Anticipate-then-accelerate (back-in). Element winds up slightly, then commits. Use for exits and weight-drop style falls."
+        },
+        "emphasized": {
+          "value": "cubic-bezier(0.215, 0.61, 0.355, 1)",
+          "type": "other",
+          "description": "Cubic ease-out used by the multi-bounce choreography family (bounce-in-up, gravity-bounce, drop-bounce). Strong start, controlled settle."
+        },
+        "spring": {
+          "value": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+          "type": "other",
+          "description": "Back-out overshoot (~6%). The library's signature 'pop' — use for scale/pop entrances and spring settles (12 uses)."
+        },
+        "bounce": {
+          "value": "cubic-bezier(0.68, -0.55, 0.27, 1.55)",
+          "type": "other",
+          "description": "Anticipation + overshoot on both ends. Use for playful gravity effects (gravity-drop, card-snap; 8 uses)."
+        }
+      },
+      "distance": {
+        "sm": {
+          "value": "24px",
+          "type": "dimension",
+          "description": "Subtle entrance offset — text lines, list items."
+        },
+        "md": {
+          "value": "48px",
+          "type": "dimension",
+          "description": "Standard entrance offset — cards, sections."
+        },
+        "lg": {
+          "value": "80px",
+          "type": "dimension",
+          "description": "Dramatic entrance offset — heroes, full-bleed media."
+        }
+      }
+    }
+  }
+}

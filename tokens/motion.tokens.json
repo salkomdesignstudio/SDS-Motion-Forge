@@ -1,0 +1,79 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "sds": {
+    "motion": {
+      "duration": {
+        "$type": "duration",
+        "$description": "SDS Motion duration scale. Values are derived from the durations already shipped in motion.css v4.0.3 so that defaults never change: 'fast/base/slow/slower' mirror the existing sds-fast / default / sds-slow / sds-xslow modifiers exactly.",
+        "instant": {
+          "$value": "300ms",
+          "$description": "Micro-feedback: focus rings, validation flashes, press states. Existing uses: sds-input-focus, sds-input-ink."
+        },
+        "fast": {
+          "$value": "400ms",
+          "$description": "Quick entrances and snappy UI moves. Identical to the sds-fast modifier (0.4s)."
+        },
+        "base": {
+          "$value": "800ms",
+          "$description": "Default entrance duration. Identical to the legacy --sds-duration default (0.8s) — the most-used entrance duration in the library (73 direct/indirect uses)."
+        },
+        "slow": {
+          "$value": "1400ms",
+          "$description": "Deliberate, cinematic entrances. Identical to the sds-slow modifier (1.4s); 15 direct uses."
+        },
+        "slower": {
+          "$value": "2200ms",
+          "$description": "Hero-scale reveals. Identical to the sds-xslow modifier (2.2s)."
+        },
+        "dramatic": {
+          "$value": "3000ms",
+          "$description": "Ambient loops and atmosphere (glow, aurora, drift). 30 direct uses of 3s in v4.0.3."
+        }
+      },
+      "easing": {
+        "$type": "cubicBezier",
+        "$description": "SDS Motion easing scale. Each curve is extracted verbatim from motion.css v4.0.3 and named; no curve was altered.",
+        "standard": {
+          "$value": [0.22, 1, 0.36, 1],
+          "$description": "The SDS signature ease-out (legacy --sds-easing default, 100+ uses). Confident deceleration with a soft landing. Use for most entrances."
+        },
+        "decelerate": {
+          "$value": [0.16, 1, 0.3, 1],
+          "$description": "Expo-style deceleration — starts very fast, lands very softly. Use for large translations and streaks (liquid-rise, streak-in, slide-blur)."
+        },
+        "accelerate": {
+          "$value": [0.6, -0.28, 0.74, 0.05],
+          "$description": "Anticipate-then-accelerate (back-in). Element winds up slightly, then commits. Use for exits and weight-drop style falls."
+        },
+        "emphasized": {
+          "$value": [0.215, 0.61, 0.355, 1],
+          "$description": "Cubic ease-out used by the multi-bounce choreography family (bounce-in-up, gravity-bounce, drop-bounce). Strong start, controlled settle."
+        },
+        "spring": {
+          "$value": [0.34, 1.56, 0.64, 1],
+          "$description": "Back-out overshoot (~6%). The library's signature 'pop' — use for scale/pop entrances and spring settles (12 uses)."
+        },
+        "bounce": {
+          "$value": [0.68, -0.55, 0.27, 1.55],
+          "$description": "Anticipation + overshoot on both ends. Use for playful gravity effects (gravity-drop, card-snap; 8 uses)."
+        }
+      },
+      "distance": {
+        "$type": "dimension",
+        "$description": "Entrance-offset scale for translate distances, derived from the most common offsets in v4.0.3 keyframes (16–30px small, 40–60px medium, 60–80px+ large). New in v5; existing keyframes keep their literal offsets until individually migrated under R1 verification.",
+        "sm": {
+          "$value": "24px",
+          "$description": "Subtle entrance offset — text lines, list items."
+        },
+        "md": {
+          "$value": "48px",
+          "$description": "Standard entrance offset — cards, sections."
+        },
+        "lg": {
+          "$value": "80px",
+          "$description": "Dramatic entrance offset — heroes, full-bleed media."
+        }
+      }
+    }
+  }
+}
