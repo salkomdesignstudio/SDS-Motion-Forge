@@ -1,0 +1,6 @@
+{
+  "plugins": ["./scripts/stylelint/sds-compositor-only.cjs"],
+  "rules": {
+    "sds/compositor-only": true
+  }
+}

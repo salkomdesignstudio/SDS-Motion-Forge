@@ -6,21 +6,115 @@ on:
   pull_request:
 
 jobs:
-  validate:
+  # ── Core gates: every push, full OS × Node matrix ───────────────────
+  core:
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
         node: [18, 20, 22]
-
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
           cache: npm
-
       - run: npm ci
+      # build + verify-build + verify:tokens + verify:registry + verify:split
+      # + verify:published (R1) + publint + pack dry-run
       - run: npm run release:check
+      - run: npm run verify:reduced-motion
+      - run: npm run lint:css
+      - run: npx size-limit
+
+  # ── Framework packages: build + tests + publint ─────────────────────
+  packages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm run build:packages
+      - run: npm run test:packages
+      - run: npx publint
+        working-directory: packages/tailwind
+      - run: npx publint
+        working-directory: packages/react
+      - run: npx publint
+        working-directory: packages/elements
+      - run: npx publint dist
+        working-directory: packages/angular
+
+  # ── Visual regression + performance: PRs to main ────────────────────
+  visual-perf:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: node scripts/visual/generate-fixture.js
+      # Linux baselines live in test/visual/__screenshots__/linux/.
+      # Bootstrap/refresh them via the update-visual-baselines workflow;
+      # here any unintended pixel change fails the PR.
+      - run: npx playwright test --project=visual
+      - run: npx playwright test --project=perf
+        env:
+          # CI runners are slower than dev machines; floor stays meaningful.
+          SDS_PERF_MIN_FPS: "55"
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: visual-diffs
+          path: test-results/
+          retention-days: 7
+
+  # ── Accessibility: docs site + example app ──────────────────────────
+  a11y:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm ci
+        working-directory: examples/vite-loaders
+      - run: npm run build
+        working-directory: examples/vite-loaders
+      - run: npx playwright install --with-deps chromium
+      - run: npx playwright test --project=a11y
+
+  # ── Pack-tarball install smoke: proves the npm-install path ─────────
+  pack-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm run build:packages
+      - run: npm ci
+        working-directory: examples/vite-loaders
+      - run: npm ci
+        working-directory: examples/tailwind-v4
+      - run: npm ci
+        working-directory: examples/nextjs
+      - run: npm ci
+        working-directory: examples/angular
+      - run: node scripts/smoke-pack-install.js

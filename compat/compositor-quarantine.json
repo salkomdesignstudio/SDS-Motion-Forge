@@ -1,0 +1,434 @@
+{
+  "$comment": "FROZEN R4 quarantine — keyframes shipped in 4.0.3 that animate non-compositor properties, with exactly the properties they may keep. Never add entries; new keyframes must be compositor-only (transform/opacity/filter/clip-path/custom props). Enforced by stylelint rule sds/compositor-only.",
+  "generatedFrom": "4.0.3 source",
+  "keyframes": {
+    "sds-refract": [
+      "text-shadow"
+    ],
+    "sds-inkBleed": [
+      "letter-spacing"
+    ],
+    "sds-neonFlare": [
+      "color",
+      "text-shadow"
+    ],
+    "sds-scramblePulse": [
+      "letter-spacing"
+    ],
+    "sds-gradSweep": [
+      "background-position"
+    ],
+    "sds-typewriterPrem": [
+      "width"
+    ],
+    "sds-cursorBlink": [
+      "border-color"
+    ],
+    "sds-highlightBurn": [
+      "background-size"
+    ],
+    "sds-prismSplit": [
+      "letter-spacing",
+      "text-shadow"
+    ],
+    "sds-glitchFlicker": [
+      "text-shadow"
+    ],
+    "sds-neonPulseText": [
+      "text-shadow"
+    ],
+    "sds-morphWord": [
+      "letter-spacing"
+    ],
+    "sds-cipherReveal": [
+      "color",
+      "letter-spacing"
+    ],
+    "sds-auroraFlow": [
+      "background-position"
+    ],
+    "sds-rippleText": [
+      "letter-spacing"
+    ],
+    "sds-cinematicTitle": [
+      "letter-spacing"
+    ],
+    "sds-trackingExpand": [
+      "letter-spacing"
+    ],
+    "sds-trackingContract": [
+      "letter-spacing"
+    ],
+    "sds-blurFocus": [
+      "letter-spacing"
+    ],
+    "sds-shimmerSweep": [
+      "background-position"
+    ],
+    "sds-colorCycle": [
+      "background-position"
+    ],
+    "sds-glowPulse": [
+      "text-shadow"
+    ],
+    "sds-neonFlickerIn": [
+      "text-shadow"
+    ],
+    "sds-echoOut": [
+      "text-shadow"
+    ],
+    "sds-shadowLift": [
+      "text-shadow"
+    ],
+    "sds-glitchSlide": [
+      "color"
+    ],
+    "sds-typingCaretExpand": [
+      "width"
+    ],
+    "sds-magnetPulse": [
+      "box-shadow"
+    ],
+    "sds-liquidFill": [
+      "background-position"
+    ],
+    "sds-energyRipple": [
+      "box-shadow"
+    ],
+    "sds-pressDepth": [
+      "box-shadow"
+    ],
+    "sds-edgeTrace": [
+      "background-size"
+    ],
+    "sds-plasmaGlow": [
+      "box-shadow"
+    ],
+    "sds-morphPill": [
+      "border-radius"
+    ],
+    "sds-liftShadow": [
+      "box-shadow"
+    ],
+    "sds-shockwave": [
+      "outline-color",
+      "outline-offset",
+      "outline-width"
+    ],
+    "sds-neonSign": [
+      "box-shadow"
+    ],
+    "sds-glowSurge": [
+      "box-shadow"
+    ],
+    "sds-btnRipple": [
+      "box-shadow"
+    ],
+    "sds-btnSwipe": [
+      "background-position"
+    ],
+    "sds-btnBurst": [
+      "outline-color",
+      "outline-offset",
+      "outline-width"
+    ],
+    "sds-btnScan": [
+      "background-position"
+    ],
+    "sds-btnGradShift": [
+      "background-position"
+    ],
+    "sds-btnOutlineGrow": [
+      "outline-color",
+      "outline-offset",
+      "outline-width"
+    ],
+    "sds-btnShimmer": [
+      "background-position"
+    ],
+    "sds-btnFloat": [
+      "box-shadow"
+    ],
+    "sds-btnBorderFlow": [
+      "box-shadow"
+    ],
+    "sds-btnGlowCore": [
+      "box-shadow"
+    ],
+    "sds-btnCharge": [
+      "box-shadow"
+    ],
+    "sds-btnAurora": [
+      "box-shadow"
+    ],
+    "sds-btnNeonTrace": [
+      "box-shadow"
+    ],
+    "sds-btnGravity": [
+      "box-shadow"
+    ],
+    "sds-btnIce": [
+      "box-shadow"
+    ],
+    "sds-btnFire": [
+      "box-shadow"
+    ],
+    "sds-btnRadar": [
+      "box-shadow"
+    ],
+    "sds-btnDepthPress": [
+      "box-shadow"
+    ],
+    "sds-btnPulseBorder": [
+      "border-color",
+      "border-width",
+      "box-shadow"
+    ],
+    "sds-btnGravityPull": [
+      "box-shadow"
+    ],
+    "sds-btnSplit": [
+      "box-shadow"
+    ],
+    "sds-btnMagTrail": [
+      "box-shadow"
+    ],
+    "sds-btnCrystal": [
+      "box-shadow"
+    ],
+    "sds-btnFlare": [
+      "box-shadow"
+    ],
+    "sds-focusField": [
+      "box-shadow"
+    ],
+    "sds-borderMorph": [
+      "border-radius"
+    ],
+    "sds-shimmerScan": [
+      "background-position"
+    ],
+    "sds-voltagePulse": [
+      "border-color",
+      "box-shadow"
+    ],
+    "sds-successGlow": [
+      "border-color",
+      "box-shadow"
+    ],
+    "sds-caretTrail": [
+      "box-shadow"
+    ],
+    "sds-morphPlaceholder": [
+      "letter-spacing"
+    ],
+    "sds-inkStroke": [
+      "outline-color",
+      "outline-offset"
+    ],
+    "sds-inputScan": [
+      "background-position"
+    ],
+    "sds-inputGlowBorder": [
+      "box-shadow"
+    ],
+    "sds-inputNeural": [
+      "box-shadow"
+    ],
+    "sds-inputAurora": [
+      "box-shadow"
+    ],
+    "sds-inputBorderBeam": [
+      "outline-color",
+      "outline-offset",
+      "outline-width"
+    ],
+    "sds-inputDepth": [
+      "box-shadow"
+    ],
+    "sds-inputCharge": [
+      "border-color",
+      "box-shadow"
+    ],
+    "sds-inputRipple": [
+      "box-shadow"
+    ],
+    "sds-inputPulseDot": [
+      "border-left-color",
+      "box-shadow"
+    ],
+    "sds-inputOrbit": [
+      "outline-color",
+      "outline-offset"
+    ],
+    "sds-inputActiveLine": [
+      "border-bottom-color",
+      "box-shadow"
+    ],
+    "sds-inputGlitchValid": [
+      "border-color"
+    ],
+    "sds-inputWaveform": [
+      "border-color"
+    ],
+    "sds-inputSolar": [
+      "box-shadow"
+    ],
+    "sds-inputBurst": [
+      "box-shadow"
+    ],
+    "sds-inputEcho": [
+      "outline-color",
+      "outline-offset",
+      "outline-width"
+    ],
+    "sds-inputLaser": [
+      "background-position"
+    ],
+    "sds-inputVoid": [
+      "box-shadow"
+    ],
+    "sds-inputComet": [
+      "box-shadow"
+    ],
+    "sds-inputZap": [
+      "border-color",
+      "box-shadow"
+    ],
+    "sds-inputGhost": [
+      "background-position"
+    ],
+    "sds-inputCrystal": [
+      "border-color",
+      "box-shadow"
+    ],
+    "sds-inputPrism": [
+      "border-color",
+      "box-shadow"
+    ],
+    "sds-inputFire": [
+      "border-color",
+      "box-shadow"
+    ],
+    "sds-inputQuantum": [
+      "border-color"
+    ],
+    "sds-inputExpand": [
+      "border-radius"
+    ],
+    "sds-inputFlow": [
+      "background-position"
+    ],
+    "sds-inputElectric": [
+      "border-color",
+      "box-shadow"
+    ],
+    "sds-inputRadar": [
+      "box-shadow"
+    ],
+    "sds-inputBloom": [
+      "box-shadow"
+    ],
+    "sds-refractionShimmer": [
+      "background-position"
+    ],
+    "sds-magneticHover": [
+      "box-shadow"
+    ],
+    "sds-ambientFloat": [
+      "box-shadow"
+    ],
+    "sds-cardSpotlight": [
+      "background-position"
+    ],
+    "sds-cardMorph": [
+      "border-radius"
+    ],
+    "sds-cardBreath": [
+      "box-shadow"
+    ],
+    "sds-cardAurora": [
+      "box-shadow"
+    ],
+    "sds-cardElectric": [
+      "box-shadow"
+    ],
+    "sds-cardLevitate": [
+      "box-shadow"
+    ],
+    "sds-cardShadowLift": [
+      "box-shadow"
+    ],
+    "sds-cardNeonBorder": [
+      "box-shadow"
+    ],
+    "sds-cardBloom": [
+      "box-shadow"
+    ],
+    "sds-cardLiquidBorder": [
+      "border-radius",
+      "box-shadow"
+    ],
+    "sds-cardDeepFloat": [
+      "box-shadow"
+    ],
+    "sds-cardForce": [
+      "box-shadow"
+    ],
+    "sds-fluidFlow": [
+      "border-radius"
+    ],
+    "sds-progressGlow": [
+      "box-shadow"
+    ],
+    "sds-skeletonPulse": [
+      "background-position"
+    ],
+    "sds-loaderDna": [
+      "top"
+    ],
+    "sds-loaderMorph": [
+      "border-radius"
+    ],
+    "sds-loaderCascade": [
+      "height"
+    ],
+    "sds-loaderNeonRing": [
+      "box-shadow"
+    ],
+    "sds-loaderElectric": [
+      "border-color",
+      "box-shadow"
+    ],
+    "sds-loaderExpand": [
+      "border-radius"
+    ],
+    "sds-loaderNeural": [
+      "box-shadow"
+    ],
+    "sds-loaderCube": [
+      "border-radius"
+    ],
+    "sds-loaderSolar": [
+      "box-shadow"
+    ],
+    "sds-loaderMatrix": [
+      "height"
+    ],
+    "sds-loaderPlasmaRing": [
+      "box-shadow"
+    ],
+    "sds-loaderBar": [
+      "transform-origin"
+    ],
+    "sds-loaderSpark": [
+      "box-shadow"
+    ],
+    "sds-scrollCinema": [
+      "letter-spacing"
+    ],
+    "sds-scrollNeon": [
+      "text-shadow"
+    ]
+  }
+}

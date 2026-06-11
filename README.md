@@ -112,14 +112,14 @@ import '@salkomdesignstudio/sds-motion-forge/categories/loaders';
 <!-- @sds-size-table:start -->
 | Bundle | Import | Minified | Gzip |
 |---|---|---|---|
-| text | `@salkomdesignstudio/sds-motion-forge/categories/text` | 45.3 KB | 8.4 KB |
+| text | `@salkomdesignstudio/sds-motion-forge/categories/text` | 45.4 KB | 8.4 KB |
 | buttons | `@salkomdesignstudio/sds-motion-forge/categories/buttons` | 18.9 KB | 4.1 KB |
 | inputs | `@salkomdesignstudio/sds-motion-forge/categories/inputs` | 18.6 KB | 4.1 KB |
-| cards | `@salkomdesignstudio/sds-motion-forge/categories/cards` | 18.2 KB | 3.9 KB |
-| loaders | `@salkomdesignstudio/sds-motion-forge/categories/loaders` | 26.3 KB | 5.0 KB |
-| scroll | `@salkomdesignstudio/sds-motion-forge/categories/scroll` | 20.9 KB | 3.9 KB |
-| core only | `@salkomdesignstudio/sds-motion-forge/categories/core` | 3.1 KB | 1.0 KB |
-| **everything** | `@salkomdesignstudio/sds-motion-forge` | **126.9 KB** | **20.6 KB** |
+| cards | `@salkomdesignstudio/sds-motion-forge/categories/cards` | 18.3 KB | 3.9 KB |
+| loaders | `@salkomdesignstudio/sds-motion-forge/categories/loaders` | 26.3 KB | 5.1 KB |
+| scroll | `@salkomdesignstudio/sds-motion-forge/categories/scroll` | 21.0 KB | 3.9 KB |
+| core only | `@salkomdesignstudio/sds-motion-forge/categories/core` | 3.2 KB | 1.0 KB |
+| **everything** | `@salkomdesignstudio/sds-motion-forge` | **127.0 KB** | **20.6 KB** |
 <!-- @sds-size-table:end -->
 
 Core is intentionally **inlined** into every category bundle so each one works

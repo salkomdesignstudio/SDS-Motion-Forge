@@ -5,7 +5,7 @@
   "type": "module",
   "description": "Phase 1 acceptance fixture: a Vite app that imports ONLY the loaders category bundle and renders every loader from the registry.",
   "scripts": {
-    "build": "vite build",
+    "build": "vite build --base=./",
     "dev": "vite"
   },
   "dependencies": {

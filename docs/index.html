@@ -613,7 +613,7 @@
         gap: 10px;
         font-size: 15px;
         font-weight: 600;
-        color: var(--ink-3);
+        color: #5e5e68; /* >=4.5:1 on white (WCAG AA, axe gate) */
         letter-spacing: -0.01em;
       }
       .marquee-item i {
@@ -1222,7 +1222,7 @@
       }
       .foot-brand p {
         font-size: 13.5px;
-        color: var(--ink-3);
+        color: #5e5e68; /* >=4.5:1 (WCAG AA, axe gate) */
         margin-top: 14px;
         line-height: 1.6;
       }
@@ -1235,7 +1235,7 @@
         font-size: 12px;
         letter-spacing: 0.08em;
         text-transform: uppercase;
-        color: var(--ink-3);
+        color: #5e5e68; /* >=4.5:1 (WCAG AA, axe gate) */
         margin-bottom: 14px;
       }
       .foot-col a {
@@ -1257,7 +1257,7 @@
         gap: 16px;
         flex-wrap: wrap;
         font-size: 12.5px;
-        color: var(--ink-3);
+        color: #5e5e68; /* >=4.5:1 (WCAG AA, axe gate) */
       }
 
       /* ───────── REVEAL ───────── */
@@ -3388,6 +3388,7 @@
             target="_blank"
             rel="noopener"
             class="icon-btn"
+            aria-label="GitHub repository"
             ><i class="ri-github-fill"></i
           ></a>
           <a href="docs.html" class="btn btn-primary"
@@ -3410,7 +3411,7 @@
       <nav class="drawer-panel">
         <div class="drawer-head">
           <span>Menu</span
-          ><button class="icon-btn" onclick="toggleDrawer()">
+          ><button class="icon-btn" onclick="toggleDrawer()" aria-label="Close menu">
             <i class="ri-close-fill"></i>
           </button>
         </div>
@@ -3452,7 +3453,7 @@
             <span class="dot"></span> 1,000+ developers · v4.0.3
           </div>
           <h1 class="hero-h1">
-            <span class="kinetic" id="kinetic" aria-label="Motion"></span><br />
+            <span class="kinetic" id="kinetic" role="img" aria-label="Motion"></span><br />
             at the <span class="serif">speed</span><br />of class
           </h1>
           <p class="hero-sub">
@@ -3632,7 +3633,7 @@
           </div>
           <div class="pg-panel">
             <div class="pg-field">
-              <label>Animation</label>
+              <label for="pgSelect">Animation</label>
               <select
                 class="pg-select"
                 id="pgSelect"
@@ -3754,7 +3755,7 @@
           <p>Free and open-source. MIT licensed. No build step required.</p>
           <div class="cta-install">
             npm i @salkomdesignstudio/sds-motion-forge
-            <button onclick="copyInstall(this)">
+            <button onclick="copyInstall(this)" aria-label="Copy install command">
               <i class="ri-file-copy-fill" id="installIcon"></i>
             </button>
           </div>

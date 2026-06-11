@@ -1,0 +1,26 @@
+name: update-visual-baselines
+
+# Manually triggered: regenerates the linux visual baselines on CI hardware
+# and uploads them as an artifact to be reviewed and committed. This is the
+# ONLY sanctioned way to change baselines — never hand-edit screenshots.
+on:
+  workflow_dispatch:
+
+jobs:
+  baselines:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: node scripts/visual/generate-fixture.js
+      - run: npx playwright test --project=visual --update-snapshots
+      - uses: actions/upload-artifact@v4
+        with:
+          name: visual-baselines-linux
+          path: test/visual/__screenshots__/linux/

@@ -150,7 +150,12 @@
    ============================================================ */
 
 @media (prefers-reduced-motion: reduce) {
+  /* `> *` added in v5 (R5 gate): child-driven effects (kinetic-wave,
+     staggers, loader dots/bars) animate plain child elements that carry no
+     sds- class of their own — without it they kept moving under reduced
+     motion in <= 4.0.3. */
   [class*="sds-"],
+  [class*="sds-"] > *,
   [class*="sds-"]::before,
   [class*="sds-"]::after {
     animation-duration: 0.01ms !important;

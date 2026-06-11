@@ -19,13 +19,34 @@
     "./dist/motion-interactive.min.js.map": "./dist/motion-interactive.min.js.map",
     "./motion.css": "./dist/motion.css",
     "./motion.min.css": "./dist/motion.min.css",
-    "./categories/core": { "style": "./dist/categories/core.css", "default": "./dist/categories/core.css" },
-    "./categories/text": { "style": "./dist/categories/text.css", "default": "./dist/categories/text.css" },
-    "./categories/buttons": { "style": "./dist/categories/buttons.css", "default": "./dist/categories/buttons.css" },
-    "./categories/inputs": { "style": "./dist/categories/inputs.css", "default": "./dist/categories/inputs.css" },
-    "./categories/cards": { "style": "./dist/categories/cards.css", "default": "./dist/categories/cards.css" },
-    "./categories/loaders": { "style": "./dist/categories/loaders.css", "default": "./dist/categories/loaders.css" },
-    "./categories/scroll": { "style": "./dist/categories/scroll.css", "default": "./dist/categories/scroll.css" },
+    "./categories/core": {
+      "style": "./dist/categories/core.css",
+      "default": "./dist/categories/core.css"
+    },
+    "./categories/text": {
+      "style": "./dist/categories/text.css",
+      "default": "./dist/categories/text.css"
+    },
+    "./categories/buttons": {
+      "style": "./dist/categories/buttons.css",
+      "default": "./dist/categories/buttons.css"
+    },
+    "./categories/inputs": {
+      "style": "./dist/categories/inputs.css",
+      "default": "./dist/categories/inputs.css"
+    },
+    "./categories/cards": {
+      "style": "./dist/categories/cards.css",
+      "default": "./dist/categories/cards.css"
+    },
+    "./categories/loaders": {
+      "style": "./dist/categories/loaders.css",
+      "default": "./dist/categories/loaders.css"
+    },
+    "./categories/scroll": {
+      "style": "./dist/categories/scroll.css",
+      "default": "./dist/categories/scroll.css"
+    },
     "./dist/categories/core.css": "./dist/categories/core.css",
     "./dist/categories/core.min.css": "./dist/categories/core.min.css",
     "./dist/categories/text.css": "./dist/categories/text.css",
@@ -74,13 +95,20 @@
     "build:dev": "postcss src/motion.css -o dist/motion.css --map",
     "build:watch": "postcss src/motion.css -o dist/motion.css --watch",
     "build:verify": "node verify-build.js",
+    "verify:reduced-motion": "node scripts/verify-reduced-motion.js",
+    "lint:css": "stylelint \"src/categories/*.css\"",
+    "test:visual": "node scripts/visual/generate-fixture.js && playwright test --project=visual",
+    "test:perf": "node scripts/visual/generate-fixture.js && playwright test --project=perf",
+    "test:a11y": "playwright test --project=a11y",
+    "smoke:pack": "node scripts/smoke-pack-install.js",
     "verify:tokens": "node scripts/generate-tokens.js --check",
     "verify:registry": "node scripts/generate-registry.js --check",
     "verify:split": "node scripts/verify-split.js",
     "verify:published": "node scripts/verify-against-published.js",
     "validate": "publint",
     "pack:check": "npm pack --dry-run",
-    "release:check": "npm run build && npm run build:verify && npm run verify:tokens && npm run verify:registry && npm run verify:split && npm run verify:published && npm run validate && npm run pack:check",
+    "size": "size-limit",
+    "release:check": "npm run build && npm run build:verify && npm run verify:tokens && npm run verify:registry && npm run verify:split && npm run verify:published && npm run verify:reduced-motion && npm run lint:css && npm run size && npm run validate && npm run pack:check",
     "prepublishOnly": "npm run release:check"
   },
   "keywords": [
@@ -122,12 +150,18 @@
     "url": "https://github.com/salkomdesignstudio/SDS-Motion-Forge/issues"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.11.3",
+    "@playwright/test": "^1.60.0",
+    "@size-limit/file": "^12.1.0",
     "autoprefixer": "^10.4.18",
     "clean-css-cli": "^5.6.3",
+    "http-server": "^14.1.1",
     "postcss": "^8.4.35",
     "postcss-cli": "^11.0.0",
     "postcss-import": "^16.1.1",
     "publint": "^0.3.21",
+    "size-limit": "^12.1.0",
+    "stylelint": "^17.13.0",
     "terser": "^5.48.0"
   },
   "engines": {

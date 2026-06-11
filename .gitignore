@@ -28,6 +28,12 @@ packages/*/dist/
 packages/*/src/generated/
 packages/*/out-tsc/
 
+# Playwright artifacts. Committed: test/visual/__screenshots__/ (baselines).
+test-results/
+playwright-report/
+# The fixture is generated from the registry on every run.
+test/visual/fixture.html
+
 # Generated JS build artifacts — produced by `npm run build:js` (terser).
 # These are regenerated on every build; never edit them manually.
 # They ARE included in the npm package (via "files": ["dist/"]) but not in git.

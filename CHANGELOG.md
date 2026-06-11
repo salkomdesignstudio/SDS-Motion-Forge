@@ -1,5 +1,74 @@
 # Changelog
 
+## [Unreleased] — v5 Phase 3: Quality Infrastructure
+
+> Every gate below runs in CI; the publish gate (`release:check`) now includes
+> reduced-motion, compositor-lint and size budgets. R1 gate remains green
+> (0 deviations vs published 4.0.3).
+
+### Added — gates
+
+- **Visual regression** (`npm run test:visual`) — Playwright renders every
+  registry effect (359) on a generated fixture page and snapshots **three
+  deterministic frames** per effect (1,077 committed baselines, 2.1 MB).
+  Determinism technique: every CSS animation (incl. pseudo-elements) is
+  paused via the Web Animations API and seeked with
+  `anim.currentTime = delay + fraction × iterationDuration` at fractions
+  0.13/0.47/0.86 (avoiding steps() boundaries) — identical pixels on every
+  run. Verified: full re-run passes 359/359 in ~40s. Linux baselines are
+  maintained by the `update-visual-baselines` workflow (artifact-reviewed,
+  never hand-edited).
+- **Performance gate** (`npm run test:perf`) — Playwright + CDP on the
+  heaviest effect per category, measured in isolation (all other animations
+  paused): requires **0-ish layout reflows** (budget 6), bounded style
+  recalcs, and ≥ 55 fps (env-tunable). Current: all six at 60 fps,
+  layoutΔ = 0.
+- **Compositor-only stylelint rule** (`npm run lint:css`) — custom plugin
+  `sds/compositor-only` forbids non-compositor properties inside @keyframes.
+  The 133 pre-existing 4.0.3 offender keyframes are FROZEN in
+  `compat/compositor-quarantine.json` with exactly their legacy properties;
+  the list can never grow.
+- **Reduced-motion gate** (`npm run verify:reduced-motion`) — parses the
+  built CSS and proves all 373 animating selectors (self, pseudo-element,
+  child, attribute-gated) are neutralized under
+  `prefers-reduced-motion: reduce`, and scroll-gated content is forced
+  visible.
+- **A11y gate** (`npm run test:a11y`) — axe-core WCAG 2.x A/AA on the docs
+  site and the loaders example. Live animation previews (`.card-demo`) are
+  excluded with documented rationale (axe samples them mid-frame; their
+  colors are the demonstrated effect).
+- **Bundle budgets** (`npm run size`) — size-limit on 14 artifacts (core CSS,
+  both JS engines, all category bundles, react/elements/tailwind outputs);
+  budgets committed at current+4 % so any 5 % regression fails.
+- **Pack-tarball install smoke** (`npm run smoke:pack`) — `npm pack`s the
+  core package and all four wrappers and installs the real tarballs into all
+  four example apps, then builds them — proving the npm-install path, not the
+  repo path. All green.
+- **CI matrix** rewritten: core gates on 3 OS × Node 18/20/22 every push;
+  packages build+test+publint; visual+perf on PRs to main (diff artifacts on
+  failure); a11y; pack-smoke.
+
+### Fixed — accessibility (R5)
+
+- **Reduced motion now covers child-driven effects.** In ≤ 4.0.3, effects
+  animating plain child elements (`sds-kinetic-wave`, stagger/cascade
+  containers, `sds-loader-dots/wave/grid/...` — 20 selectors) kept moving
+  under `prefers-reduced-motion: reduce`, because the children carry no
+  `sds-` class and matched no neutralizer. Added `[class*="sds-"] > *` to the
+  reduced-motion clamp (additive; no effect outside the media query).
+- Docs site now passes axe WCAG AA: accessible names for icon-only
+  controls, label association for the playground select, `role="img"` on the
+  hero kinetic text, and AA-contrast footer/marquee text.
+
+### Acceptance demonstrations (all verified)
+
+1. A keyframe animating `width` → `lint:css` exits non-zero with the R4
+   message; revert restores green.
+2. Stripping the reduced-motion block → `verify:reduced-motion` exits 1
+   reporting 5 gaps.
+3. Appending +5 % to `dist/motion.min.css` → `size-limit` fails
+   ("exceeded by 1.81 kB"); rebuild restores green.
+
 ## [Unreleased] — v5 Phase 2: Framework Layer (generated, not hand-written)
 
 > Repo is now an npm workspace; the root package publishes exactly as before
