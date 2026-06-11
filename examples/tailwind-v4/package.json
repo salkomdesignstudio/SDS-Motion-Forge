@@ -1,0 +1,16 @@
+{
+  "name": "sds-tailwind-v4-example",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Phase 2 acceptance fixture: Tailwind v4 app using three animate-sds-* utilities; compiled CSS must be < 6KB with only the used keyframes emitted.",
+  "scripts": {
+    "build": "tailwindcss -i input.css -o dist/out.css --minify"
+  },
+  "dependencies": {
+    "@salkomdesignstudio/motion-forge-tailwind": "file:../../packages/tailwind"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.0",
+    "tailwindcss": "^4.1.0"
+  }
+}

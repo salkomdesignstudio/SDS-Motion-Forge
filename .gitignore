@@ -17,6 +17,16 @@ docs/dist/
 # Example apps — installed/built locally and in CI smoke tests.
 examples/*/node_modules/
 examples/*/dist/
+examples/nextjs/.next/
+examples/nextjs/next-env.d.ts
+examples/tailwind-v4/probe*.html
+examples/tailwind-v4/probe*.css
+examples/angular/.angular/
+
+# Framework packages — generated build artifacts (rebuilt by npm run build -ws).
+packages/*/dist/
+packages/*/src/generated/
+packages/*/out-tsc/
 
 # Generated JS build artifacts — produced by `npm run build:js` (terser).
 # These are regenerated on every build; never edit them manually.

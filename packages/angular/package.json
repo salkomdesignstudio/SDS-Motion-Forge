@@ -1,0 +1,38 @@
+{
+  "name": "@salkomdesignstudio/motion-forge-angular",
+  "version": "1.0.0",
+  "description": "Angular bindings for SDS Motion Forge — standalone sdsMotion / sdsText / sdsInView directives with signal inputs. SSR-safe, zoneless-compatible. Effect types generated from the motion registry.",
+  "license": "MIT",
+  "author": {
+    "name": "Salkom Design Studio",
+    "email": "hello@salkomdesignstudio.com",
+    "url": "https://salkomdesignstudio.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/salkomdesignstudio/SDS-Motion-Forge.git",
+    "directory": "packages/angular"
+  },
+  "keywords": ["angular", "animation", "motion", "css-animation", "sds-motion-forge"],
+  "scripts": {
+    "generate": "node scripts/generate.cjs",
+    "build": "npm run generate && ng-packagr -p ng-package.json -c tsconfig.lib.json",
+    "validate": "publint --pack-dir dist"
+  },
+  "peerDependencies": {
+    "@angular/core": ">=17.1.0",
+    "@angular/common": ">=17.1.0"
+  },
+  "devDependencies": {
+    "@angular/common": "^20.0.0",
+    "@angular/compiler": "^20.0.0",
+    "@angular/compiler-cli": "^20.0.0",
+    "@angular/core": "^20.0.0",
+    "ng-packagr": "^20.0.0",
+    "publint": "^0.3.21",
+    "rxjs": "^7.8.2",
+    "typescript": "~5.8.3",
+    "zone.js": "^0.15.1"
+  },
+  "sideEffects": false
+}

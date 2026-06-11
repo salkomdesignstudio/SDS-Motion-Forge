@@ -1,0 +1,25 @@
+{
+  "name": "sds-angular-example",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Phase 2 acceptance fixture: zoneless standalone Angular app using sdsMotion / sdsText / sdsInView directives.",
+  "scripts": {
+    "build": "ng build",
+    "start": "ng serve"
+  },
+  "dependencies": {
+    "@angular/common": "^20.0.0",
+    "@angular/compiler": "^20.0.0",
+    "@angular/core": "^20.0.0",
+    "@angular/platform-browser": "^20.0.0",
+    "@salkomdesignstudio/motion-forge-angular": "file:../../packages/angular/dist",
+    "@salkomdesignstudio/sds-motion-forge": "file:../..",
+    "rxjs": "^7.8.2",
+    "tslib": "^2.8.1"
+  },
+  "devDependencies": {
+    "@angular/build": "^20.0.0",
+    "@angular/cli": "^20.0.0",
+    "typescript": "~5.8.3"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "name": "@salkomdesignstudio/motion-forge-react",
+  "version": "1.0.0",
+  "description": "React bindings for SDS Motion Forge — <SdsMotion>, SSR-safe <SdsText> char splitting, and useSdsInView. Effect types generated from the motion registry.",
+  "license": "MIT",
+  "author": {
+    "name": "Salkom Design Studio",
+    "email": "hello@salkomdesignstudio.com",
+    "url": "https://salkomdesignstudio.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/salkomdesignstudio/SDS-Motion-Forge.git",
+    "directory": "packages/react"
+  },
+  "keywords": ["react", "nextjs", "animation", "motion", "css-animation", "sds-motion-forge"],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "files": ["dist/", "README.md"],
+  "sideEffects": false,
+  "scripts": {
+    "generate": "node scripts/generate.cjs",
+    "build": "npm run generate && tsup",
+    "test": "vitest run",
+    "validate": "publint"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^16.3.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "jsdom": "^26.1.0",
+    "publint": "^0.3.21",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  }
+}

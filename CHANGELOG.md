@@ -1,5 +1,58 @@
 # Changelog
 
+## [Unreleased] — v5 Phase 2: Framework Layer (generated, not hand-written)
+
+> Repo is now an npm workspace; the root package publishes exactly as before
+> (R1 gate still 0 deviations). All wrapper packages launch at 1.0.0
+> independently, with zero runtime dependencies, and generate their effect
+> types/artifacts from `registry/motion.registry.json` (R3).
+
+### Added — packages/
+
+- **`@salkomdesignstudio/motion-forge-tailwind` 1.0.0** — Tailwind v4
+  CSS-first plugin generated from the registry: 353 `animate-sds-*` utilities
+  carrying the FULL effect rules (statics, pseudo-elements, child staggers via
+  nesting), all 324 keyframes inside `@theme` (verified tree-shaken: 3
+  utilities compile to 5.63 KB minified, zero keyframe leakage), SDS tokens in
+  `@theme`, reduced-motion neutralization, and functional speed variants
+  `animate-sds-x-{instant…dramatic}` over the `--sds-duration-*` namespace.
+  Slash modifiers (`/slow`) are not possible on static utilities in Tailwind
+  v4 (measured) — documented in the package README. Also ships a generated
+  Tailwind v3 preset (`/v3-preset`, keyframes+animation only, limitation
+  documented). Acceptance fixture: `examples/tailwind-v4`.
+- **`@salkomdesignstudio/motion-forge-react` 1.0.0** — `<SdsMotion as effect
+  inView replay delay duration easing>` (polymorphic, registry-typed
+  effects, token-aware timing), SSR-safe `<SdsText>` char splitting
+  (server renders plain text; split on mount; aria-label container +
+  aria-hidden chars), `useSdsInView` hook. tsup ESM+CJS+d.ts; `react>=18`
+  peer; imports no CSS (dev-only console warning when effect styles are
+  absent). 12 vitest tests cover observer cleanup, StrictMode double-mount,
+  50× fast re-render leak accounting and SSR renderToString. Acceptance
+  fixture: `examples/nextjs` — `next build` prerenders the page (verified:
+  plain text, no premature `.sds-char` spans, effect classes present).
+- **`@salkomdesignstudio/motion-forge-angular` 1.0.0** — standalone
+  `sdsMotion` / `sdsText` / `sdsInView` directives with signal inputs
+  (`input()`/`output()`), Renderer2 char splitting, `isPlatformBrowser` +
+  `afterNextRender` SSR safety, no zone APIs. Built with ng-packagr (partial
+  compilation), peers `@angular/core >= 17.1`. Acceptance fixture:
+  `examples/angular` — bootstraps with `provideZonelessChangeDetection()`.
+- **`@salkomdesignstudio/motion-forge-elements` 1.0.0** — vanilla-TS Web
+  Components `<sds-motion>` / `<sds-text>`, zero deps, no Lit. Shadow DOM is
+  OFF by design: SDS effects are page-level classes and must inherit document
+  CSS (tokens, reduced-motion, theming) — rationale documented. Ships
+  ESM+CJS+IIFE (`/global` auto-registers for CDN use).
+
+### Changed
+
+- Root `package.json` gains `workspaces: ["packages/*"]` (publishing
+  unaffected), plus `build:packages` / `test:packages` scripts.
+- `postcss.config.js` converted to object/string plugin form — required by
+  bundlers (Next.js) that resolve the repo config through symlinked workspace
+  deps; identical output with postcss-cli (gate-verified).
+- All shared codegen lives in `scripts/codegen/effects-data.js`; the three TS
+  packages generate `src/generated/effects.ts` from it at build time —
+  identical unions, impossible to diverge.
+
 ## [Unreleased] — v5 Phase 1: Registry + Lossless Modular Builds
 
 > **Compatibility statement:** dist/motion.css remains computed-value-identical

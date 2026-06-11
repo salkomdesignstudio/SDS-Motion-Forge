@@ -67,6 +67,8 @@
     "build:css": "postcss src/motion.css -o dist/motion.css && cleancss -o dist/motion.min.css dist/motion.css",
     "build:js": "terser src/sds-scroll.js -o dist/sds-scroll.min.js --compress --mangle --source-map \"url='sds-scroll.min.js.map'\" && terser src/motion-interactive.js -o dist/motion-interactive.min.js --compress --mangle --source-map \"url='motion-interactive.min.js.map'\"",
     "build:categories": "node scripts/build-categories.js",
+    "build:packages": "npm run build --workspaces --if-present",
+    "test:packages": "npm run test --workspaces --if-present",
     "generate:registry": "node scripts/generate-registry.js",
     "build": "npm run build:tokens && npm run build:css && npm run build:js && npm run build:categories && npm run generate:registry",
     "build:dev": "postcss src/motion.css -o dist/motion.css --map",
@@ -108,6 +110,9 @@
     "url": "https://salkomdesignstudio.com"
   },
   "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/salkomdesignstudio/SDS-Motion-Forge.git"

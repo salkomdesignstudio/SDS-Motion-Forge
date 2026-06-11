@@ -1,0 +1,45 @@
+{
+  "name": "@salkomdesignstudio/motion-forge-tailwind",
+  "version": "1.0.0",
+  "description": "Tailwind CSS plugin for SDS Motion Forge — every animation as an on-demand animate-sds-* utility, generated from the motion registry. Tailwind v4 CSS-first plugin + v3 preset.",
+  "license": "MIT",
+  "author": {
+    "name": "Salkom Design Studio",
+    "email": "hello@salkomdesignstudio.com",
+    "url": "https://salkomdesignstudio.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/salkomdesignstudio/SDS-Motion-Forge.git",
+    "directory": "packages/tailwind"
+  },
+  "keywords": ["tailwindcss", "tailwind", "css", "animation", "motion", "sds-motion-forge"],
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18"
+  },
+  "exports": {
+    ".": {
+      "style": "./dist/sds-motion.css",
+      "default": "./dist/sds-motion.css"
+    },
+    "./sds-motion.css": "./dist/sds-motion.css",
+    "./v3-preset": {
+      "require": "./dist/v3-preset.cjs",
+      "default": "./dist/v3-preset.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": ["dist/", "README.md"],
+  "scripts": {
+    "generate": "node scripts/generate.cjs",
+    "build": "npm run generate",
+    "validate": "publint"
+  },
+  "peerDependencies": {
+    "tailwindcss": ">=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "tailwindcss": { "optional": false }
+  }
+}

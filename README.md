@@ -146,6 +146,20 @@ broken styles when a pipeline strips `@import`. Core costs ~3 KB minified
   defer></script>
 ```
 
+### Framework packages (v5)
+
+First-class wrappers, generated from the motion registry — typed effect
+unions for all 350+ animations, zero runtime dependencies:
+
+| Package | What you get |
+|---|---|
+| [`@salkomdesignstudio/motion-forge-tailwind`](packages/tailwind) | `animate-sds-*` utilities for Tailwind v4 (CSS-first, tree-shaken) + v3 preset |
+| [`@salkomdesignstudio/motion-forge-react`](packages/react) | `<SdsMotion>`, SSR-safe `<SdsText>`, `useSdsInView` |
+| [`@salkomdesignstudio/motion-forge-angular`](packages/angular) | standalone `sdsMotion` / `sdsText` / `sdsInView` directives (signal inputs, zoneless-ready) |
+| [`@salkomdesignstudio/motion-forge-elements`](packages/elements) | framework-free `<sds-motion>` / `<sds-text>` Web Components |
+
+The core package stays 100 % framework-agnostic — wrappers are optional sugar.
+
 ### Framework Integrations
 
 #### React / Next.js

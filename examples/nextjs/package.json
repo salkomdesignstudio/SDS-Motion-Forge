@@ -1,0 +1,22 @@
+{
+  "name": "sds-nextjs-example",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Phase 2 acceptance fixture: Next.js App Router app using <SdsMotion> and <SdsText>; `next build` is the SSR smoke test (prerendering executes both on the server).",
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev"
+  },
+  "dependencies": {
+    "@salkomdesignstudio/motion-forge-react": "file:../../packages/react",
+    "@salkomdesignstudio/sds-motion-forge": "file:../..",
+    "next": "^15.3.3",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "@types/react": "^19.1.0",
+    "typescript": "^5.8.3"
+  }
+}
