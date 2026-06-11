@@ -1,0 +1,1164 @@
+/*!
+ * SDS Motion Forge — scroll.css
+ * Scroll / viewport animations (Section 6) + scroll legacy alias.
+ * Part of the lossless v5 category split — combined entry: src/motion.css
+ */
+
+/* ============================================================
+   SECTION 6 — SCROLL / VIEWPORT ANIMATIONS
+   Namespace: .sds-scroll-*
+   Usage: Add the class via IntersectionObserver when the
+   element enters the viewport. The animation fires once on
+   class add (fill-mode: both holds the final state).
+   ============================================================ */
+
+/* 78 · Viewport Rise --------------------------------------- */
+
+.sds-scroll-rise {
+  animation: sds-viewportRise var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+}
+
+@keyframes sds-viewportRise {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 79 · Curtain Lift ---------------------------------------- */
+
+.sds-scroll-curtain {
+  animation: sds-curtainLift var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+}
+
+@keyframes sds-curtainLift {
+  from {
+    clip-path: inset(0 0 100% 0);
+    opacity: 0;
+  }
+  to {
+    clip-path: inset(0 0 0% 0);
+    opacity: 1;
+  }
+}
+
+/* 80 · Scroll Warp ----------------------------------------- */
+
+.sds-scroll-warp {
+  animation: sds-scrollWarp 0.9s var(--sds-easing) both;
+}
+
+@keyframes sds-scrollWarp {
+  from {
+    opacity: 0;
+    transform: perspective(600px) rotateX(20deg) translateY(30px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(600px) rotateX(0) translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* 81 · Momentum Slide -------------------------------------- */
+
+.sds-scroll-slide {
+  animation: sds-momentumSlide var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+}
+
+@keyframes sds-momentumSlide {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  70% {
+    transform: translateX(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 82 · Scale Reveal ---------------------------------------- */
+
+.sds-scroll-scale {
+  animation: sds-scaleReveal var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+}
+
+@keyframes sds-scaleReveal {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+    filter: blur(8px);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.02);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 83 · Radial Expand --------------------------------------- */
+
+.sds-scroll-radial {
+  animation: sds-radialExpand 0.9s var(--sds-easing) both;
+}
+
+@keyframes sds-radialExpand {
+  from {
+    clip-path: circle(0% at 50% 100%);
+    opacity: 0;
+  }
+  to {
+    clip-path: circle(150% at 50% 100%);
+    opacity: 1;
+  }
+}
+
+/* 84 · Blur Ascend ----------------------------------------- */
+
+.sds-scroll-blur {
+  animation: sds-blurAscend var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+}
+
+@keyframes sds-blurAscend {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+    filter: blur(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* 85 · Tilt Reveal ----------------------------------------- */
+
+.sds-scroll-tilt {
+  animation: sds-tiltReveal var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+}
+
+@keyframes sds-tiltReveal {
+  from {
+    opacity: 0;
+    transform: perspective(400px) rotateX(50deg) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(400px) rotateX(0) translateY(0);
+  }
+}
+
+/* 86 · Scan Line ------------------------------------------- */
+
+.sds-scroll-scan {
+  animation: sds-scanLine var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+}
+
+@keyframes sds-scanLine {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0% 0 0);
+  }
+}
+
+/* 87 · Stagger Pop (up to 12 children) --------------------- */
+
+.sds-scroll-stagger-pop > * {
+  animation: sds-staggerPop 0.7s var(--sds-easing) both;
+}
+
+.sds-scroll-stagger-pop > *:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.sds-scroll-stagger-pop > *:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.sds-scroll-stagger-pop > *:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.sds-scroll-stagger-pop > *:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.sds-scroll-stagger-pop > *:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+.sds-scroll-stagger-pop > *:nth-child(6) {
+  animation-delay: 0.5s;
+}
+
+.sds-scroll-stagger-pop > *:nth-child(7) {
+  animation-delay: 0.6s;
+}
+
+.sds-scroll-stagger-pop > *:nth-child(8) {
+  animation-delay: 0.7s;
+}
+
+.sds-scroll-stagger-pop > *:nth-child(9) {
+  animation-delay: 0.8s;
+}
+
+.sds-scroll-stagger-pop > *:nth-child(10) {
+  animation-delay: 0.9s;
+}
+
+.sds-scroll-stagger-pop > *:nth-child(11) {
+  animation-delay: 1s;
+}
+
+.sds-scroll-stagger-pop > *:nth-child(12) {
+  animation-delay: 1.1s;
+}
+
+@keyframes sds-staggerPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.7) rotate(-4deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.06) rotate(1deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}
+
+/* 88 · Depth Enter ----------------------------------------- */
+
+.sds-scroll-depth {
+  animation: sds-depthPortal 0.9s var(--sds-easing) both;
+}
+
+/* 89 · Shatter Enter --------------------------------------- */
+
+.sds-scroll-shatter {
+  animation: sds-shatterIn var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+}
+
+/* 90 · Phantom Rise ---------------------------------------- */
+
+.sds-scroll-phantom {
+  animation: sds-phantomBlur var(--sds-duration-base, 0.8s) ease both;
+}
+
+/* 91 · Gravity Land ---------------------------------------- */
+
+.sds-scroll-gravity {
+  animation: sds-gravityDrop var(--sds-duration-base, 0.8s) var(--sds-ease-bounce, cubic-bezier(0.68, -0.55, 0.27, 1.55)) both;
+}
+
+/* 92 · Liquid Enter ---------------------------------------- */
+
+.sds-scroll-liquid {
+  animation: sds-liquidRise var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+}
+
+/* 93 · Velvet Drop Scroll ---------------------------------- */
+
+.sds-scroll-velvet {
+  animation: sds-velvetDrop var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+}
+
+/* 94 · Stagger Grid (up to 12 children) -------------------- */
+
+.sds-scroll-stagger-grid > * {
+  animation: sds-viewportRise 0.6s var(--sds-easing) both;
+}
+
+.sds-scroll-stagger-grid > *:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.sds-scroll-stagger-grid > *:nth-child(2) {
+  animation-delay: 0.08s;
+}
+
+.sds-scroll-stagger-grid > *:nth-child(3) {
+  animation-delay: 0.16s;
+}
+
+.sds-scroll-stagger-grid > *:nth-child(4) {
+  animation-delay: 0.24s;
+}
+
+.sds-scroll-stagger-grid > *:nth-child(5) {
+  animation-delay: 0.32s;
+}
+
+.sds-scroll-stagger-grid > *:nth-child(6) {
+  animation-delay: 0.4s;
+}
+
+.sds-scroll-stagger-grid > *:nth-child(7) {
+  animation-delay: 0.48s;
+}
+
+.sds-scroll-stagger-grid > *:nth-child(8) {
+  animation-delay: 0.56s;
+}
+
+.sds-scroll-stagger-grid > *:nth-child(9) {
+  animation-delay: 0.64s;
+}
+
+.sds-scroll-stagger-grid > *:nth-child(10) {
+  animation-delay: 0.72s;
+}
+
+.sds-scroll-stagger-grid > *:nth-child(11) {
+  animation-delay: 0.8s;
+}
+
+.sds-scroll-stagger-grid > *:nth-child(12) {
+  animation-delay: 0.88s;
+}
+
+/* 95 · Orbit Enter ----------------------------------------- */
+
+.sds-scroll-orbit {
+  animation: sds-perspSwing var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+}
+
+/* 96 · Glitch Reveal --------------------------------------- */
+
+.sds-scroll-glitch {
+  animation:
+    sds-staticBurst 0.6s steps(1) both,
+    sds-viewportRise var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+}
+
+/* 97 · Flip Reveal -------------------------------------- */
+
+.sds-scroll-flip {
+  animation: sds-scrollFlip var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+}
+
+@keyframes sds-scrollFlip {
+  from {
+    opacity: 0;
+    transform: perspective(600px) rotateX(60deg) translateY(30px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(600px) rotateX(0) translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* 98 · Zoom Blur ---------------------------------------- */
+
+.sds-scroll-zoom-blur {
+  animation: sds-scrollZoomBlur 0.9s var(--sds-easing) both;
+}
+
+@keyframes sds-scrollZoomBlur {
+  from {
+    opacity: 0;
+    transform: scale(1.3);
+    filter: blur(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+/* 99 · Split Reveal ------------------------------------- */
+
+.sds-scroll-split {
+  animation: sds-scrollSplit 0.9s var(--sds-easing) both;
+}
+
+@keyframes sds-scrollSplit {
+  from {
+    clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%);
+    opacity: 0;
+  }
+  to {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    opacity: 1;
+  }
+}
+
+/* 100 · Morph Rise -------------------------------------- */
+
+.sds-scroll-morph {
+  animation: sds-scrollMorph 0.9s var(--sds-easing) both;
+}
+
+@keyframes sds-scrollMorph {
+  from {
+    opacity: 0;
+    transform: translateY(40px) skewY(4deg) scaleX(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) skewY(0) scaleX(1);
+  }
+}
+
+/* 101 · Spring ------------------------------------------ */
+
+.sds-scroll-spring {
+  animation: sds-scrollSpring 0.9s var(--sds-ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1)) both;
+}
+
+@keyframes sds-scrollSpring {
+  from {
+    opacity: 0;
+    transform: translateY(60px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 102 · Clip Left --------------------------------------- */
+
+.sds-scroll-clip-left {
+  animation: sds-scrollClipLeft var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+}
+
+@keyframes sds-scrollClipLeft {
+  from {
+    clip-path: inset(0 0 0 100%);
+    opacity: 0;
+  }
+  to {
+    clip-path: inset(0 0 0 0%);
+    opacity: 1;
+  }
+}
+
+/* 103 · Clip Right -------------------------------------- */
+
+.sds-scroll-clip-right {
+  animation: sds-scrollClipRight var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+}
+
+@keyframes sds-scrollClipRight {
+  from {
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+  }
+  to {
+    clip-path: inset(0 0% 0 0);
+    opacity: 1;
+  }
+}
+
+/* 104 · Elastic ----------------------------------------- */
+
+.sds-scroll-elastic {
+  animation: sds-scrollElastic 1s var(--sds-ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1)) both;
+}
+
+@keyframes sds-scrollElastic {
+  0% {
+    opacity: 0;
+    transform: translateY(80px) scaleY(0.6);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-8px) scaleY(1.08);
+  }
+  80% {
+    transform: translateY(3px) scaleY(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+  }
+}
+
+/* 105 · Cinema ------------------------------------------ */
+
+.sds-scroll-cinema {
+  animation: sds-scrollCinema 1.2s var(--sds-easing) both;
+}
+
+@keyframes sds-scrollCinema {
+  from {
+    opacity: 0;
+    letter-spacing: 0.4em;
+    transform: scale(0.85);
+    filter: blur(12px);
+  }
+  to {
+    opacity: 1;
+    letter-spacing: 0;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+/* 106 · Fog --------------------------------------------- */
+
+.sds-scroll-fog {
+  animation: sds-scrollFog 1.2s ease both;
+}
+
+@keyframes sds-scrollFog {
+  from {
+    opacity: 0;
+    filter: blur(30px) brightness(2);
+    transform: scale(1.1);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0) brightness(1);
+    transform: scale(1);
+  }
+}
+
+/* 107 · Neon Reveal ------------------------------------- */
+
+.sds-scroll-neon {
+  animation: sds-scrollNeon 1s var(--sds-easing) both;
+}
+
+@keyframes sds-scrollNeon {
+  0% {
+    opacity: 0;
+    text-shadow: 0 0 0 var(--sds-primary);
+    transform: translateY(20px);
+  }
+  60% {
+    opacity: 1;
+    text-shadow:
+      0 0 20px var(--sds-primary-glow),
+      0 0 40px var(--sds-primary-dim);
+    transform: translateY(-3px);
+  }
+  100% {
+    opacity: 1;
+    text-shadow: none;
+    transform: translateY(0);
+  }
+}
+
+/* 108 · Prism Reveal ------------------------------------ */
+
+.sds-scroll-prism {
+  animation: sds-scrollPrism 1s var(--sds-easing) both;
+}
+
+@keyframes sds-scrollPrism {
+  0% {
+    opacity: 0;
+    filter: hue-rotate(180deg) blur(8px) brightness(2);
+    transform: scale(0.9);
+  }
+  60% {
+    opacity: 1;
+    filter: hue-rotate(30deg) blur(0) brightness(1.1);
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    filter: hue-rotate(0deg) blur(0) brightness(1);
+    transform: scale(1);
+  }
+}
+
+/* 109 · Charge Reveal ----------------------------------- */
+
+.sds-scroll-charge {
+  animation: sds-scrollCharge var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+}
+
+@keyframes sds-scrollCharge {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: brightness(3) blur(6px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-4px);
+    filter: brightness(1.4) blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: brightness(1);
+  }
+}
+
+/* 110 · Magnetic Pull ----------------------------------- */
+
+.sds-scroll-magnetic {
+  animation: sds-scrollMagnetic 0.9s var(--sds-ease-decelerate, cubic-bezier(0.16, 1, 0.3, 1)) both;
+}
+
+@keyframes sds-scrollMagnetic {
+  0% {
+    opacity: 0;
+    transform: scale(1.2) translateY(-20px);
+    filter: blur(8px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(0.98) translateY(3px);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* 111 · Wave Rise --------------------------------------- */
+
+.sds-scroll-wave-rise > * {
+  animation: sds-viewportRise 0.7s var(--sds-easing) both;
+}
+
+.sds-scroll-wave-rise > *:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.sds-scroll-wave-rise > *:nth-child(2) {
+  animation-delay: 0.08s;
+}
+
+.sds-scroll-wave-rise > *:nth-child(3) {
+  animation-delay: 0.16s;
+}
+
+.sds-scroll-wave-rise > *:nth-child(4) {
+  animation-delay: 0.24s;
+}
+
+.sds-scroll-wave-rise > *:nth-child(5) {
+  animation-delay: 0.32s;
+}
+
+.sds-scroll-wave-rise > *:nth-child(6) {
+  animation-delay: 0.4s;
+}
+
+.sds-scroll-wave-rise > *:nth-child(7) {
+  animation-delay: 0.48s;
+}
+
+.sds-scroll-wave-rise > *:nth-child(8) {
+  animation-delay: 0.56s;
+}
+
+.sds-scroll-wave-rise > *:nth-child(9) {
+  animation-delay: 0.64s;
+}
+
+.sds-scroll-wave-rise > *:nth-child(10) {
+  animation-delay: 0.72s;
+}
+
+.sds-scroll-wave-rise > *:nth-child(11) {
+  animation-delay: 0.8s;
+}
+
+.sds-scroll-wave-rise > *:nth-child(12) {
+  animation-delay: 0.88s;
+}
+
+/* 112 · Dissolve ---------------------------------------- */
+
+.sds-scroll-dissolve {
+  animation: sds-scrollDissolve 1s ease both;
+}
+
+@keyframes sds-scrollDissolve {
+  0% {
+    opacity: 0;
+    filter: blur(16px) saturate(0);
+    transform: scale(1.05);
+  }
+  60% {
+    opacity: 1;
+    filter: blur(2px) saturate(0.6);
+    transform: scale(1.01);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0) saturate(1);
+    transform: scale(1);
+  }
+}
+
+/* 113 · Unfold ------------------------------------------ */
+
+.sds-scroll-unfold {
+  will-change: transform, opacity;
+  transform-origin: top center;
+  animation: sds-scrollUnfold var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+}
+
+@keyframes sds-scrollUnfold {
+  from {
+    opacity: 0;
+    transform: perspective(500px) rotateX(-70deg) scaleY(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(500px) rotateX(0) scaleY(1);
+  }
+}
+
+/* 114 · Perspective Left -------------------------------- */
+
+.sds-scroll-perspective-left {
+  animation: sds-scrollPerspLeft var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+}
+
+@keyframes sds-scrollPerspLeft {
+  from {
+    opacity: 0;
+    transform: perspective(600px) rotateY(-50deg) translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(600px) rotateY(0) translateX(0);
+  }
+}
+
+/* 115 · Bounce ------------------------------------------ */
+
+.sds-scroll-bounce {
+  animation: sds-scrollBounce 0.9s var(--sds-ease-emphasized, cubic-bezier(0.215, 0.61, 0.355, 1)) both;
+}
+
+@keyframes sds-scrollBounce {
+  0% {
+    opacity: 0;
+    transform: translateY(70px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-16px);
+  }
+  78% {
+    transform: translateY(8px);
+  }
+  90% {
+    transform: translateY(-4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 116 · Ink --------------------------------------------- */
+
+.sds-scroll-ink {
+  animation: sds-scrollInk 1s var(--sds-easing) both;
+}
+
+@keyframes sds-scrollInk {
+  from {
+    clip-path: circle(0% at 0% 50%);
+    opacity: 0;
+  }
+  to {
+    clip-path: circle(150% at 0% 50%);
+    opacity: 1;
+  }
+}
+
+/* 117 · Snap -------------------------------------------- */
+
+.sds-scroll-snap {
+  animation: sds-scrollSnap 0.5s var(--sds-ease-bounce, cubic-bezier(0.68, -0.55, 0.27, 1.55)) both;
+}
+
+@keyframes sds-scrollSnap {
+  0% {
+    opacity: 0;
+    transform: scale(1.25) rotate(3deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(0.95) rotate(-1deg);
+  }
+  80% {
+    transform: scale(1.03) rotate(0.5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}
+
+/* 118 · Spiral ------------------------------------------ */
+
+.sds-scroll-spiral {
+  animation: sds-scrollSpiral 0.9s var(--sds-easing) both;
+}
+
+@keyframes sds-scrollSpiral {
+  0% {
+    opacity: 0;
+    transform: rotate(-180deg) scale(0.3);
+    filter: blur(12px);
+  }
+  60% {
+    opacity: 1;
+    transform: rotate(8deg) scale(1.04);
+    filter: blur(0);
+  }
+  80% {
+    transform: rotate(-3deg) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+
+/* 119 · Vortex ------------------------------------------ */
+
+.sds-scroll-vortex {
+  animation: sds-scrollVortex var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+}
+
+@keyframes sds-scrollVortex {
+  0% {
+    opacity: 0;
+    transform: perspective(400px) translateZ(-200px) rotate(-20deg) scale(0.5);
+    filter: blur(16px);
+  }
+  60% {
+    opacity: 1;
+    transform: perspective(400px) translateZ(8px) rotate(4deg) scale(1.03);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(400px) translateZ(0) rotate(0) scale(1);
+  }
+}
+
+/* 120 · Skew -------------------------------------------- */
+
+.sds-scroll-skew {
+  animation: sds-scrollSkew var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+}
+
+@keyframes sds-scrollSkew {
+  from {
+    opacity: 0;
+    transform: translateX(-40px) skewX(-12deg) scaleX(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) skewX(0) scaleX(1);
+  }
+}
+
+/* 121 · Punch ------------------------------------------- */
+
+.sds-scroll-punch {
+  animation: sds-scrollPunch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes sds-scrollPunch {
+  0% {
+    opacity: 0;
+    transform: scale(0.4);
+    filter: blur(16px) brightness(3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+    filter: blur(1px) brightness(1.3);
+  }
+  70% {
+    transform: scale(0.96);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(1);
+  }
+}
+
+/* 122 · Crystallize ------------------------------------- */
+
+.sds-scroll-crystallize {
+  animation: sds-scrollCrystallize 1s ease both;
+}
+
+@keyframes sds-scrollCrystallize {
+  0% {
+    opacity: 0;
+    filter: blur(20px) brightness(2) contrast(0.5);
+    transform: scale(0.95);
+  }
+  40% {
+    opacity: 1;
+    filter: blur(4px) brightness(1.3) contrast(0.8);
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0) brightness(1) contrast(1);
+    transform: scale(1);
+  }
+}
+
+/* 123 · Cascade (up to 12 children) -------------------- */
+
+.sds-scroll-cascade > * {
+  animation: sds-scrollCascadeChild 0.6s var(--sds-easing) both;
+}
+
+.sds-scroll-cascade > *:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.sds-scroll-cascade > *:nth-child(2) {
+  animation-delay: 0.08s;
+}
+
+.sds-scroll-cascade > *:nth-child(3) {
+  animation-delay: 0.16s;
+}
+
+.sds-scroll-cascade > *:nth-child(4) {
+  animation-delay: 0.24s;
+}
+
+.sds-scroll-cascade > *:nth-child(5) {
+  animation-delay: 0.32s;
+}
+
+.sds-scroll-cascade > *:nth-child(6) {
+  animation-delay: 0.4s;
+}
+
+.sds-scroll-cascade > *:nth-child(7) {
+  animation-delay: 0.48s;
+}
+
+.sds-scroll-cascade > *:nth-child(8) {
+  animation-delay: 0.56s;
+}
+
+.sds-scroll-cascade > *:nth-child(9) {
+  animation-delay: 0.64s;
+}
+
+.sds-scroll-cascade > *:nth-child(10) {
+  animation-delay: 0.72s;
+}
+
+.sds-scroll-cascade > *:nth-child(11) {
+  animation-delay: 0.8s;
+}
+
+.sds-scroll-cascade > *:nth-child(12) {
+  animation-delay: 0.88s;
+}
+
+@keyframes sds-scrollCascadeChild {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+/* 124 · Hologram ---------------------------------------- */
+
+.sds-scroll-hologram {
+  animation: sds-scrollHologram 1s var(--sds-easing) both;
+}
+
+@keyframes sds-scrollHologram {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: hue-rotate(180deg) brightness(2) blur(6px);
+  }
+  50% {
+    opacity: 1;
+    filter: hue-rotate(20deg) brightness(1.2) blur(0);
+    transform: translateY(-4px);
+  }
+  100% {
+    opacity: 1;
+    filter: hue-rotate(0deg) brightness(1);
+    transform: translateY(0);
+  }
+}
+
+/* 125 · Drift ------------------------------------------- */
+
+.sds-scroll-drift {
+  animation: sds-scrollDrift 1.2s var(--sds-easing) both;
+}
+
+@keyframes sds-scrollDrift {
+  from {
+    opacity: 0;
+    transform: translate(-24px, 24px) rotate(-3deg);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0);
+    filter: blur(0);
+  }
+}
+
+/* 126 · Streak ------------------------------------------ */
+
+.sds-scroll-streak {
+  animation: sds-scrollStreak 0.7s var(--sds-ease-decelerate, cubic-bezier(0.16, 1, 0.3, 1)) both;
+}
+
+@keyframes sds-scrollStreak {
+  0% {
+    opacity: 0;
+    transform: translateX(-200px) scaleX(3);
+    filter: blur(20px);
+  }
+  40% {
+    opacity: 1;
+    filter: blur(4px);
+  }
+  70% {
+    transform: translateX(6px) scaleX(0.98);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scaleX(1);
+  }
+}
+
+/* 127 · Elastic Pop ------------------------------------- */
+
+.sds-scroll-elastic-pop {
+  animation: sds-scrollElasticPop 0.7s var(--sds-ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1)) both;
+}
+
+@keyframes sds-scrollElasticPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.4) rotate(-8deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.1) rotate(3deg);
+  }
+  80% {
+    transform: scale(0.96) rotate(-1deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}
+
+/* 128 · Slide Right ------------------------------------- */
+
+.sds-scroll-slide-right {
+  animation: sds-scrollSlideRight var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+}
+
+@keyframes sds-scrollSlideRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  70% {
+    transform: translateX(-6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 129 · Warp Enter -------------------------------------- */
+
+.sds-scroll-warp-in {
+  animation: sds-scrollWarpIn 0.9s var(--sds-easing) both;
+}
+
+@keyframes sds-scrollWarpIn {
+  from {
+    opacity: 0;
+    transform: perspective(500px) rotateX(25deg) scaleX(0.8) translateY(40px);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(500px) rotateX(0) scaleX(1) translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* 130 · Bright Flash ------------------------------------ */
+
+.sds-scroll-flash {
+  animation: sds-scrollFlash 0.7s ease both;
+}
+
+@keyframes sds-scrollFlash {
+  0% {
+    opacity: 0;
+    filter: brightness(5) blur(12px);
+    transform: scale(0.9);
+  }
+  30% {
+    opacity: 1;
+    filter: brightness(2) blur(2px);
+    transform: scale(1.04);
+  }
+  60% {
+    filter: brightness(1.2);
+  }
+  100% {
+    opacity: 1;
+    filter: brightness(1) blur(0);
+    transform: scale(1);
+  }
+}
+
+.sds-scroll-fade-up {
+  animation: sds-viewportRise var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+}

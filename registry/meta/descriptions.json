@@ -1,0 +1,1554 @@
+{
+  "sds-alt": {
+    "description": "Alt — playback modifier.",
+    "seeded": true
+  },
+  "sds-arc-orbit": {
+    "description": "Arc Orbit — text animation.",
+    "seeded": true
+  },
+  "sds-aurora-text": {
+    "description": "Aurora Text — text animation.",
+    "seeded": true
+  },
+  "sds-blur-focus": {
+    "description": "Blur Focus — text animation.",
+    "seeded": true
+  },
+  "sds-bounce-drop-in": {
+    "description": "Bounce Drop In — text animation.",
+    "seeded": true
+  },
+  "sds-bounce-in-up": {
+    "description": "Bounce In Up — text animation.",
+    "seeded": true
+  },
+  "sds-bounce-loop": {
+    "description": "Bounce Loop — text animation.",
+    "seeded": true
+  },
+  "sds-btn-amp": {
+    "description": "Amp — button animation.",
+    "seeded": true
+  },
+  "sds-btn-aurora": {
+    "description": "Aurora — button animation.",
+    "seeded": true
+  },
+  "sds-btn-border-flow": {
+    "description": "Border Flow — button animation.",
+    "seeded": true
+  },
+  "sds-btn-bounce": {
+    "description": "Bounce — button animation.",
+    "seeded": true
+  },
+  "sds-btn-burst": {
+    "description": "Burst — button animation.",
+    "seeded": true
+  },
+  "sds-btn-charge": {
+    "description": "Charge — button animation.",
+    "seeded": true
+  },
+  "sds-btn-crystal": {
+    "description": "Crystal — button animation.",
+    "seeded": true
+  },
+  "sds-btn-depth-press": {
+    "description": "Depth Press — button animation.",
+    "seeded": true
+  },
+  "sds-btn-dissolve": {
+    "description": "Dissolve — button animation.",
+    "seeded": true
+  },
+  "sds-btn-edge": {
+    "description": "Edge Trace — button animation.",
+    "seeded": true
+  },
+  "sds-btn-energy": {
+    "description": "Energy Ripple — button animation.",
+    "seeded": true
+  },
+  "sds-btn-fire": {
+    "description": "Fire — button animation.",
+    "seeded": true
+  },
+  "sds-btn-flare": {
+    "description": "Flare — button animation.",
+    "seeded": true
+  },
+  "sds-btn-float": {
+    "description": "Float — button animation.",
+    "seeded": true
+  },
+  "sds-btn-flux": {
+    "description": "Flux — button animation.",
+    "seeded": true
+  },
+  "sds-btn-glow-core": {
+    "description": "Glow Core — button animation.",
+    "seeded": true
+  },
+  "sds-btn-glow-surge": {
+    "description": "Glow Surge — button animation.",
+    "seeded": true
+  },
+  "sds-btn-gradient-shift": {
+    "description": "Gradient Shift — button animation.",
+    "seeded": true
+  },
+  "sds-btn-gravity": {
+    "description": "Gravity — button animation.",
+    "seeded": true
+  },
+  "sds-btn-gravity-pull": {
+    "description": "Gravity Pull — button animation.",
+    "seeded": true
+  },
+  "sds-btn-heartbeat": {
+    "description": "Heartbeat — button animation.",
+    "seeded": true
+  },
+  "sds-btn-hologram": {
+    "description": "Hologram — button animation.",
+    "seeded": true
+  },
+  "sds-btn-ice": {
+    "description": "Ice — button animation.",
+    "seeded": true
+  },
+  "sds-btn-kinetic": {
+    "description": "Kinetic — button animation.",
+    "seeded": true
+  },
+  "sds-btn-lift": {
+    "description": "Lift Shadow — button animation.",
+    "seeded": true
+  },
+  "sds-btn-liquid": {
+    "description": "Liquid Fill — button animation.",
+    "seeded": true
+  },
+  "sds-btn-magnetic": {
+    "description": "Magnetic Pulse — button animation.",
+    "seeded": true
+  },
+  "sds-btn-magnetic-trail": {
+    "description": "Magnetic Trail — button animation.",
+    "seeded": true
+  },
+  "sds-btn-momentum": {
+    "description": "Momentum — button animation.",
+    "seeded": true
+  },
+  "sds-btn-morph": {
+    "description": "Morph Pill — button animation.",
+    "seeded": true
+  },
+  "sds-btn-neon": {
+    "description": "Neon Sign — button animation.",
+    "seeded": true
+  },
+  "sds-btn-neon-trace": {
+    "description": "Neon Trace — button animation.",
+    "seeded": true
+  },
+  "sds-btn-outline-grow": {
+    "description": "Outline Grow — button animation.",
+    "seeded": true
+  },
+  "sds-btn-plasma": {
+    "description": "Plasma Glow — button animation.",
+    "seeded": true
+  },
+  "sds-btn-press": {
+    "description": "Press Depth — button animation.",
+    "seeded": true
+  },
+  "sds-btn-pulse-border": {
+    "description": "Pulse Border — button animation.",
+    "seeded": true
+  },
+  "sds-btn-quantum": {
+    "description": "Quantum Stamp — button animation.",
+    "seeded": true
+  },
+  "sds-btn-radar": {
+    "description": "Radar — button animation.",
+    "seeded": true
+  },
+  "sds-btn-recoil": {
+    "description": "Recoil — button animation.",
+    "seeded": true
+  },
+  "sds-btn-ripple": {
+    "description": "Ripple — button animation.",
+    "seeded": true
+  },
+  "sds-btn-rotate": {
+    "description": "Rotate — button animation.",
+    "seeded": true
+  },
+  "sds-btn-scan": {
+    "description": "Scan — button animation.",
+    "seeded": true
+  },
+  "sds-btn-shimmer": {
+    "description": "Shimmer — button animation.",
+    "seeded": true
+  },
+  "sds-btn-shock": {
+    "description": "Shockwave — button animation.",
+    "seeded": true
+  },
+  "sds-btn-split": {
+    "description": "Split — button animation.",
+    "seeded": true
+  },
+  "sds-btn-stretch": {
+    "description": "Stretch — button animation.",
+    "seeded": true
+  },
+  "sds-btn-swipe": {
+    "description": "Swipe — button animation.",
+    "seeded": true
+  },
+  "sds-btn-tilt": {
+    "description": "Tilt — button animation.",
+    "seeded": true
+  },
+  "sds-btn-volt": {
+    "description": "Volt Strike — button animation.",
+    "seeded": true
+  },
+  "sds-btn-warp": {
+    "description": "Warp — button animation.",
+    "seeded": true
+  },
+  "sds-card-aurora": {
+    "description": "Aurora — card animation.",
+    "seeded": true
+  },
+  "sds-card-bloom": {
+    "description": "Bloom — card animation.",
+    "seeded": true
+  },
+  "sds-card-breath": {
+    "description": "Breath — card animation.",
+    "seeded": true
+  },
+  "sds-card-burst": {
+    "description": "Burst — card animation.",
+    "seeded": true
+  },
+  "sds-card-cascade": {
+    "description": "Cascade — card animation.",
+    "seeded": true
+  },
+  "sds-card-cinematic": {
+    "description": "Cinematic Reveal — card animation.",
+    "seeded": true
+  },
+  "sds-card-deep-float": {
+    "description": "Deep Float — card animation.",
+    "seeded": true
+  },
+  "sds-card-depth": {
+    "description": "Depth — card animation.",
+    "seeded": true
+  },
+  "sds-card-drift": {
+    "description": "Drift — card animation.",
+    "seeded": true
+  },
+  "sds-card-electric": {
+    "description": "Electric — card animation.",
+    "seeded": true
+  },
+  "sds-card-expand": {
+    "description": "Expand — card animation.",
+    "seeded": true
+  },
+  "sds-card-flip": {
+    "description": "Flip — card animation.",
+    "seeded": true
+  },
+  "sds-card-flip-reveal": {
+    "description": "Flip Reveal — card animation.",
+    "seeded": true
+  },
+  "sds-card-float": {
+    "description": "Ambient Float — card animation.",
+    "seeded": true
+  },
+  "sds-card-fold": {
+    "description": "Fold — card animation.",
+    "seeded": true
+  },
+  "sds-card-force": {
+    "description": "Force — card animation.",
+    "seeded": true
+  },
+  "sds-card-glass": {
+    "description": "Glass — card animation.",
+    "seeded": true
+  },
+  "sds-card-glitch": {
+    "description": "Glitch — card animation.",
+    "seeded": true
+  },
+  "sds-card-glow": {
+    "description": "Glow Surge — card animation.",
+    "seeded": true
+  },
+  "sds-card-gravity": {
+    "description": "Gravity — card animation.",
+    "seeded": true
+  },
+  "sds-card-holo": {
+    "description": "Holographic Tilt — card animation.",
+    "seeded": true
+  },
+  "sds-card-ink": {
+    "description": "Ink — card animation.",
+    "seeded": true
+  },
+  "sds-card-iris": {
+    "description": "Iris — card animation.",
+    "seeded": true
+  },
+  "sds-card-levitate": {
+    "description": "Levitate — card animation.",
+    "seeded": true
+  },
+  "sds-card-liquid-border": {
+    "description": "Liquid Border — card animation.",
+    "seeded": true
+  },
+  "sds-card-magnetic": {
+    "description": "Magnetic Hover — card animation.",
+    "seeded": true
+  },
+  "sds-card-momentum": {
+    "description": "Momentum — card animation.",
+    "seeded": true
+  },
+  "sds-card-morph": {
+    "description": "Morph — card animation.",
+    "seeded": true
+  },
+  "sds-card-neon": {
+    "description": "Neon — card animation.",
+    "seeded": true
+  },
+  "sds-card-neon-border": {
+    "description": "Neon Border — card animation.",
+    "seeded": true
+  },
+  "sds-card-parallax": {
+    "description": "Parallax Depth — card animation.",
+    "seeded": true
+  },
+  "sds-card-portal": {
+    "description": "Depth Portal — card animation.",
+    "seeded": true
+  },
+  "sds-card-prism": {
+    "description": "Prism — card animation.",
+    "seeded": true
+  },
+  "sds-card-rise": {
+    "description": "Rise — card animation.",
+    "seeded": true
+  },
+  "sds-card-rotate": {
+    "description": "Rotate — card animation.",
+    "seeded": true
+  },
+  "sds-card-scan": {
+    "description": "Scan — card animation.",
+    "seeded": true
+  },
+  "sds-card-shadow-lift": {
+    "description": "Shadow Lift — card animation.",
+    "seeded": true
+  },
+  "sds-card-shimmer": {
+    "description": "Refraction Shimmer — card animation.",
+    "seeded": true
+  },
+  "sds-card-slice": {
+    "description": "Slice — card animation.",
+    "seeded": true
+  },
+  "sds-card-smoke": {
+    "description": "Smoke — card animation.",
+    "seeded": true
+  },
+  "sds-card-snap": {
+    "description": "Snap — card animation.",
+    "seeded": true
+  },
+  "sds-card-spotlight": {
+    "description": "Spotlight — card animation.",
+    "seeded": true
+  },
+  "sds-card-spring": {
+    "description": "Spring — card animation.",
+    "seeded": true
+  },
+  "sds-card-stagger": {
+    "description": "Stagger — card animation.",
+    "seeded": true
+  },
+  "sds-card-tilt": {
+    "description": "Tilt — card animation.",
+    "seeded": true
+  },
+  "sds-card-unfold": {
+    "description": "Unfold — card animation.",
+    "seeded": true
+  },
+  "sds-card-vortex": {
+    "description": "Vortex — card animation.",
+    "seeded": true
+  },
+  "sds-card-warp": {
+    "description": "Warp Gate — card animation.",
+    "seeded": true
+  },
+  "sds-card-wave": {
+    "description": "Wave — card animation.",
+    "seeded": true
+  },
+  "sds-center-burst": {
+    "description": "Center Burst — text animation.",
+    "seeded": true
+  },
+  "sds-char-orbit": {
+    "description": "Char Orbit — text animation.",
+    "seeded": true
+  },
+  "sds-chromatic-shift": {
+    "description": "Chromatic Shift — text animation.",
+    "seeded": true
+  },
+  "sds-cinema-title": {
+    "description": "Cinema Title — text animation.",
+    "seeded": true
+  },
+  "sds-cipher-reveal": {
+    "description": "Cipher Reveal — text animation.",
+    "seeded": true
+  },
+  "sds-color-cycle": {
+    "description": "Color Cycle — text animation.",
+    "seeded": true
+  },
+  "sds-data-stream": {
+    "description": "Data Stream — text animation.",
+    "seeded": true
+  },
+  "sds-delay-1": {
+    "description": "Delay 1 — playback modifier.",
+    "seeded": true
+  },
+  "sds-delay-10": {
+    "description": "Delay 10 — playback modifier.",
+    "seeded": true
+  },
+  "sds-delay-2": {
+    "description": "Delay 2 — playback modifier.",
+    "seeded": true
+  },
+  "sds-delay-3": {
+    "description": "Delay 3 — playback modifier.",
+    "seeded": true
+  },
+  "sds-delay-4": {
+    "description": "Delay 4 — playback modifier.",
+    "seeded": true
+  },
+  "sds-delay-5": {
+    "description": "Delay 5 — playback modifier.",
+    "seeded": true
+  },
+  "sds-delay-6": {
+    "description": "Delay 6 — playback modifier.",
+    "seeded": true
+  },
+  "sds-delay-8": {
+    "description": "Delay 8 — playback modifier.",
+    "seeded": true
+  },
+  "sds-depth-charge": {
+    "description": "Depth Charge — text animation.",
+    "seeded": true
+  },
+  "sds-depth-warp": {
+    "description": "Depth Warp — text animation.",
+    "seeded": true
+  },
+  "sds-door-open": {
+    "description": "Door Open — text animation.",
+    "seeded": true
+  },
+  "sds-drop-bounce": {
+    "description": "Drop Bounce — text animation.",
+    "seeded": true
+  },
+  "sds-drop-settle": {
+    "description": "Drop Settle — text animation.",
+    "seeded": true
+  },
+  "sds-echo-out": {
+    "description": "Echo Out — text animation.",
+    "seeded": true
+  },
+  "sds-elastic-bounce": {
+    "description": "Elastic Bounce — text animation.",
+    "seeded": true
+  },
+  "sds-elastic-stamp": {
+    "description": "Elastic Stamp — text animation.",
+    "seeded": true
+  },
+  "sds-explode-formation": {
+    "description": "Explode Formation — text animation.",
+    "seeded": true
+  },
+  "sds-fast": {
+    "description": "Fast — playback modifier.",
+    "seeded": true
+  },
+  "sds-fill-both": {
+    "description": "Fill Both — playback modifier.",
+    "seeded": true
+  },
+  "sds-fill-forward": {
+    "description": "Fill Forward — playback modifier.",
+    "seeded": true
+  },
+  "sds-film-burn": {
+    "description": "Film Burn — text animation.",
+    "seeded": true
+  },
+  "sds-flicker-on": {
+    "description": "Flicker On — text animation.",
+    "seeded": true
+  },
+  "sds-flip-x": {
+    "description": "Flip X — text animation.",
+    "seeded": true
+  },
+  "sds-flip-y": {
+    "description": "Flip Y — text animation.",
+    "seeded": true
+  },
+  "sds-float-bob": {
+    "description": "Float Bob — text animation.",
+    "seeded": true
+  },
+  "sds-focus-pull": {
+    "description": "Focus Pull — text animation.",
+    "seeded": true
+  },
+  "sds-fold-down": {
+    "description": "Fold Down — text animation.",
+    "seeded": true
+  },
+  "sds-fold-up": {
+    "description": "Fold Up — text animation.",
+    "seeded": true
+  },
+  "sds-glitch-flicker": {
+    "description": "Glitch Flicker — text animation.",
+    "seeded": true
+  },
+  "sds-glitch-slide": {
+    "description": "Glitch Slide — text animation.",
+    "seeded": true
+  },
+  "sds-glow-pulse": {
+    "description": "Glow Pulse — text animation.",
+    "seeded": true
+  },
+  "sds-gradient-sweep": {
+    "description": "Gradient Sweep — text animation.",
+    "seeded": true
+  },
+  "sds-grand-entrance": {
+    "description": "Grand Entrance — text animation.",
+    "seeded": true
+  },
+  "sds-gravity-bounce": {
+    "description": "Gravity Bounce — text animation.",
+    "seeded": true
+  },
+  "sds-gravity-drop": {
+    "description": "Gravity Drop — text animation.",
+    "seeded": true
+  },
+  "sds-heartbeat-text": {
+    "description": "Heartbeat Text — text animation.",
+    "seeded": true
+  },
+  "sds-heat-shimmer": {
+    "description": "Heat Shimmer — text animation.",
+    "seeded": true
+  },
+  "sds-highlight-burn": {
+    "description": "Highlight Burn — text animation.",
+    "seeded": true
+  },
+  "sds-hologram-text": {
+    "description": "Hologram Text — text animation.",
+    "seeded": true
+  },
+  "sds-in": {
+    "description": "In — infrastructure animation.",
+    "seeded": true
+  },
+  "sds-ink-bleed": {
+    "description": "Ink Bleed — text animation.",
+    "seeded": true
+  },
+  "sds-input-active-line": {
+    "description": "Active Line — input animation.",
+    "seeded": true
+  },
+  "sds-input-aurora": {
+    "description": "Aurora — input animation.",
+    "seeded": true
+  },
+  "sds-input-bloom": {
+    "description": "Bloom — input animation.",
+    "seeded": true
+  },
+  "sds-input-border-beam": {
+    "description": "Border Beam — input animation.",
+    "seeded": true
+  },
+  "sds-input-burst": {
+    "description": "Burst — input animation.",
+    "seeded": true
+  },
+  "sds-input-caret": {
+    "description": "Caret Trail — input animation.",
+    "seeded": true
+  },
+  "sds-input-charge": {
+    "description": "Charge — input animation.",
+    "seeded": true
+  },
+  "sds-input-comet": {
+    "description": "Comet — input animation.",
+    "seeded": true
+  },
+  "sds-input-crystal": {
+    "description": "Crystal — input animation.",
+    "seeded": true
+  },
+  "sds-input-depth": {
+    "description": "Depth — input animation.",
+    "seeded": true
+  },
+  "sds-input-echo": {
+    "description": "Echo — input animation.",
+    "seeded": true
+  },
+  "sds-input-electric": {
+    "description": "Electric — input animation.",
+    "seeded": true
+  },
+  "sds-input-elevate-wrap": {
+    "description": "Elevate Focus — input animation.",
+    "seeded": true
+  },
+  "sds-input-expand": {
+    "description": "Expand — input animation.",
+    "seeded": true
+  },
+  "sds-input-fire": {
+    "description": "Fire — input animation.",
+    "seeded": true
+  },
+  "sds-input-flicker": {
+    "description": "Flicker — input animation.",
+    "seeded": true
+  },
+  "sds-input-flow": {
+    "description": "Flow — input animation.",
+    "seeded": true
+  },
+  "sds-input-focus": {
+    "description": "Focus Field — input animation.",
+    "seeded": true
+  },
+  "sds-input-focus-glow": {
+    "description": "Focus Glow — input animation.",
+    "seeded": true
+  },
+  "sds-input-frost": {
+    "description": "Frost — input animation.",
+    "seeded": true
+  },
+  "sds-input-ghost": {
+    "description": "Ghost — input animation.",
+    "seeded": true
+  },
+  "sds-input-glitch-valid": {
+    "description": "Glitch Valid — input animation.",
+    "seeded": true
+  },
+  "sds-input-glow-border": {
+    "description": "Glow Border — input animation.",
+    "seeded": true
+  },
+  "sds-input-gradient-border": {
+    "description": "Gradient Border — input animation.",
+    "seeded": true
+  },
+  "sds-input-gravity": {
+    "description": "Gravity — input animation.",
+    "seeded": true
+  },
+  "sds-input-ink": {
+    "description": "Ink Stroke — input animation.",
+    "seeded": true
+  },
+  "sds-input-kinetic": {
+    "description": "Kinetic — input animation.",
+    "seeded": true
+  },
+  "sds-input-laser": {
+    "description": "Laser — input animation.",
+    "seeded": true
+  },
+  "sds-input-momentum": {
+    "description": "Momentum — input animation.",
+    "seeded": true
+  },
+  "sds-input-morph": {
+    "description": "Border Morph — input animation.",
+    "seeded": true
+  },
+  "sds-input-morph-ph": {
+    "description": "Morph Placeholder — input animation.",
+    "seeded": true
+  },
+  "sds-input-neon": {
+    "description": "Neon Input — input animation.",
+    "seeded": true
+  },
+  "sds-input-neural": {
+    "description": "Neural — input animation.",
+    "seeded": true
+  },
+  "sds-input-orbit": {
+    "description": "Orbit — input animation.",
+    "seeded": true
+  },
+  "sds-input-plasma": {
+    "description": "Plasma Field — input animation.",
+    "seeded": true
+  },
+  "sds-input-prism": {
+    "description": "Prism — input animation.",
+    "seeded": true
+  },
+  "sds-input-pulse-dot": {
+    "description": "Pulse Dot — input animation.",
+    "seeded": true
+  },
+  "sds-input-quantum": {
+    "description": "Quantum — input animation.",
+    "seeded": true
+  },
+  "sds-input-radar": {
+    "description": "Radar — input animation.",
+    "seeded": true
+  },
+  "sds-input-ring": {
+    "description": "Ring Pulse — input animation.",
+    "seeded": true
+  },
+  "sds-input-ripple": {
+    "description": "Ripple — input animation.",
+    "seeded": true
+  },
+  "sds-input-scan": {
+    "description": "Scan — input animation.",
+    "seeded": true
+  },
+  "sds-input-shake": {
+    "description": "Seismic Shake — input animation.",
+    "seeded": true
+  },
+  "sds-input-shimmer": {
+    "description": "Shimmer Scan — input animation.",
+    "seeded": true
+  },
+  "sds-input-solar": {
+    "description": "Solar — input animation.",
+    "seeded": true
+  },
+  "sds-input-success": {
+    "description": "Success Glow — input animation.",
+    "seeded": true
+  },
+  "sds-input-unlock": {
+    "description": "Unlock — input animation.",
+    "seeded": true
+  },
+  "sds-input-void": {
+    "description": "Void — input animation.",
+    "seeded": true
+  },
+  "sds-input-voltage": {
+    "description": "Voltage Pulse — input animation.",
+    "seeded": true
+  },
+  "sds-input-waveform": {
+    "description": "Waveform — input animation.",
+    "seeded": true
+  },
+  "sds-input-zap": {
+    "description": "Zap — input animation.",
+    "seeded": true
+  },
+  "sds-iris-open": {
+    "description": "Iris Open — text animation.",
+    "seeded": true
+  },
+  "sds-jello": {
+    "description": "Jello — text animation.",
+    "seeded": true
+  },
+  "sds-jelly-hover": {
+    "description": "Jelly Hover — interactive animation.",
+    "seeded": true
+  },
+  "sds-js": {
+    "description": "Js — infrastructure animation.",
+    "seeded": true
+  },
+  "sds-kinetic-wave": {
+    "description": "Kinetic Wave — text animation.",
+    "seeded": true
+  },
+  "sds-levitate": {
+    "description": "Levitate — text animation.",
+    "seeded": true
+  },
+  "sds-light-speed": {
+    "description": "Light Speed — text animation.",
+    "seeded": true
+  },
+  "sds-liquid-rise": {
+    "description": "Liquid Rise — text animation.",
+    "seeded": true
+  },
+  "sds-loader-arc": {
+    "description": "Arc — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-bar": {
+    "description": "Bar — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-bounce": {
+    "description": "Bounce — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-breath": {
+    "description": "Breath — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-cascade": {
+    "description": "Cascade Bars — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-clock": {
+    "description": "Clock — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-comet": {
+    "description": "Comet Trail — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-crystal": {
+    "description": "Crystal — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-cube": {
+    "description": "Cube — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-data": {
+    "description": "Data — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-dna": {
+    "description": "DNA Helix — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-dots": {
+    "description": "Particle Sync — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-electric": {
+    "description": "Electric Arc — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-expand": {
+    "description": "Expand — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-fluid": {
+    "description": "Fluid Flow — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-glitch": {
+    "description": "Glitch — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-grid": {
+    "description": "Dot Grid — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-helix": {
+    "description": "Helix Dots — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-hex": {
+    "description": "Hex — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-hourglass": {
+    "description": "Hourglass — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-infinity": {
+    "description": "Infinity — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-liquid-ring": {
+    "description": "Liquid Ring — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-matrix": {
+    "description": "Matrix Bars — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-morph": {
+    "description": "Morph — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-mosaic": {
+    "description": "Mosaic — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-neon-ring": {
+    "description": "Neon Ring — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-neural": {
+    "description": "Neural — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-orbit-3": {
+    "description": "Triple Orbit — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-orbital": {
+    "description": "Orbital System — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-pendulum": {
+    "description": "Pendulum — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-ping": {
+    "description": "Ping Cascade — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-plasma-ring": {
+    "description": "Plasma Ring — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-prism": {
+    "description": "Prism — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-progress": {
+    "description": "Progress Glow — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-progress-glow": {
+    "description": "Progress Glow — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-pulse": {
+    "description": "Pulse — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-quantum": {
+    "description": "Quantum — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-radar": {
+    "description": "Radar — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-ring": {
+    "description": "Ring System — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-ripple": {
+    "description": "Ripple Rings — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-signal": {
+    "description": "Signal Bars — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-skeleton": {
+    "description": "Skeleton Pulse — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-snake": {
+    "description": "Snake — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-solar": {
+    "description": "Solar — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-spark": {
+    "description": "Spark — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-star": {
+    "description": "Star — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-target": {
+    "description": "Target Lock — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-type": {
+    "description": "Typewriter Loader — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-vortex": {
+    "description": "Vortex Spin — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-warp": {
+    "description": "Warp — loader animation.",
+    "seeded": true
+  },
+  "sds-loader-wave": {
+    "description": "Waveform — loader animation.",
+    "seeded": true
+  },
+  "sds-loop": {
+    "description": "Loop — playback modifier.",
+    "seeded": true
+  },
+  "sds-magnetic-drift": {
+    "description": "Magnetic Drift — text animation.",
+    "seeded": true
+  },
+  "sds-magnetic-pull": {
+    "description": "Magnetic Pull — interactive animation.",
+    "seeded": true
+  },
+  "sds-morph-word": {
+    "description": "Morph Word — text animation.",
+    "seeded": true
+  },
+  "sds-neon-flare": {
+    "description": "Neon Flare — text animation.",
+    "seeded": true
+  },
+  "sds-neon-flicker-in": {
+    "description": "Neon Flicker In — text animation.",
+    "seeded": true
+  },
+  "sds-neon-pulse-text": {
+    "description": "Neon Pulse Text — text animation.",
+    "seeded": true
+  },
+  "sds-normal": {
+    "description": "Normal — playback modifier.",
+    "seeded": true
+  },
+  "sds-once": {
+    "description": "Once — playback modifier.",
+    "seeded": true
+  },
+  "sds-oscillate": {
+    "description": "Oscillate — text animation.",
+    "seeded": true
+  },
+  "sds-pause-hover": {
+    "description": "Pause Hover — playback modifier.",
+    "seeded": true
+  },
+  "sds-pendulum": {
+    "description": "Pendulum — text animation.",
+    "seeded": true
+  },
+  "sds-perspective-swing": {
+    "description": "Perspective Swing — text animation.",
+    "seeded": true
+  },
+  "sds-phantom-blur": {
+    "description": "Phantom Blur — text animation.",
+    "seeded": true
+  },
+  "sds-pixel-in": {
+    "description": "Pixel In — text animation.",
+    "seeded": true
+  },
+  "sds-play": {
+    "description": "Play — infrastructure animation.",
+    "seeded": true
+  },
+  "sds-pop-in": {
+    "description": "Pop In — text animation.",
+    "seeded": true
+  },
+  "sds-prism-split": {
+    "description": "Prism Split — text animation.",
+    "seeded": true
+  },
+  "sds-refract": {
+    "description": "Refract — text animation.",
+    "seeded": true
+  },
+  "sds-repulsion-field": {
+    "description": "Repulsion Field — interactive animation.",
+    "seeded": true
+  },
+  "sds-reveal-down-mask": {
+    "description": "Reveal Down Mask — text animation.",
+    "seeded": true
+  },
+  "sds-reveal-up-mask": {
+    "description": "Reveal Up Mask — text animation.",
+    "seeded": true
+  },
+  "sds-ripple-text": {
+    "description": "Ripple Text — text animation.",
+    "seeded": true
+  },
+  "sds-roll-in": {
+    "description": "Roll In — text animation.",
+    "seeded": true
+  },
+  "sds-rubber-band": {
+    "description": "Rubber Band — text animation.",
+    "seeded": true
+  },
+  "sds-scatter-return": {
+    "description": "Scatter Return — interactive animation.",
+    "seeded": true
+  },
+  "sds-scramble-decode": {
+    "description": "Scramble Decode — text animation.",
+    "seeded": true
+  },
+  "sds-scroll-auto": {
+    "description": "Auto — infrastructure animation.",
+    "seeded": true
+  },
+  "sds-scroll-blur": {
+    "description": "Blur Ascend — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-bounce": {
+    "description": "Bounce — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-cascade": {
+    "description": "Cascade — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-charge": {
+    "description": "Charge Reveal — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-cinema": {
+    "description": "Cinema — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-clip-left": {
+    "description": "Clip Left — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-clip-right": {
+    "description": "Clip Right — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-crystallize": {
+    "description": "Crystallize — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-curtain": {
+    "description": "Curtain Lift — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-depth": {
+    "description": "Depth Enter — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-dissolve": {
+    "description": "Dissolve — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-drift": {
+    "description": "Drift — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-elastic": {
+    "description": "Elastic — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-elastic-pop": {
+    "description": "Elastic Pop — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-fade-up": {
+    "description": "Fade Up — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-flash": {
+    "description": "Bright Flash — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-flip": {
+    "description": "Flip Reveal — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-fog": {
+    "description": "Fog — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-glitch": {
+    "description": "Glitch Reveal — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-gravity": {
+    "description": "Gravity Land — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-hologram": {
+    "description": "Hologram — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-ink": {
+    "description": "Ink — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-liquid": {
+    "description": "Liquid Enter — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-magnetic": {
+    "description": "Magnetic Pull — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-morph": {
+    "description": "Morph Rise — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-neon": {
+    "description": "Neon Reveal — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-orbit": {
+    "description": "Orbit Enter — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-perspective-left": {
+    "description": "Perspective Left — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-phantom": {
+    "description": "Phantom Rise — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-prism": {
+    "description": "Prism Reveal — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-punch": {
+    "description": "Punch — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-radial": {
+    "description": "Radial Expand — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-rise": {
+    "description": "Viewport Rise — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-scale": {
+    "description": "Scale Reveal — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-scan": {
+    "description": "Scan Line — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-shatter": {
+    "description": "Shatter Enter — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-skew": {
+    "description": "Skew — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-slide": {
+    "description": "Momentum Slide — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-slide-right": {
+    "description": "Slide Right — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-snap": {
+    "description": "Snap — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-spiral": {
+    "description": "Spiral — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-split": {
+    "description": "Split Reveal — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-spring": {
+    "description": "Spring — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-stagger-grid": {
+    "description": "Stagger Grid — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-stagger-pop": {
+    "description": "Stagger Pop — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-streak": {
+    "description": "Streak — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-tilt": {
+    "description": "Tilt Reveal — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-unfold": {
+    "description": "Unfold — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-velvet": {
+    "description": "Velvet Drop Scroll — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-vortex": {
+    "description": "Vortex — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-warp": {
+    "description": "Scroll Warp — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-warp-in": {
+    "description": "Warp Enter — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-wave-rise": {
+    "description": "Wave Rise — scroll animation.",
+    "seeded": true
+  },
+  "sds-scroll-zoom-blur": {
+    "description": "Zoom Blur — scroll animation.",
+    "seeded": true
+  },
+  "sds-shadow-lift": {
+    "description": "Shadow Lift — text animation.",
+    "seeded": true
+  },
+  "sds-shatter-in": {
+    "description": "Shatter In — text animation.",
+    "seeded": true
+  },
+  "sds-shimmer-sweep": {
+    "description": "Shimmer Sweep — text animation.",
+    "seeded": true
+  },
+  "sds-shockwave": {
+    "description": "Shockwave — interactive animation.",
+    "seeded": true
+  },
+  "sds-signal-wave": {
+    "description": "Signal Wave — text animation.",
+    "seeded": true
+  },
+  "sds-skew-slide": {
+    "description": "Skew Slide — text animation.",
+    "seeded": true
+  },
+  "sds-slant-rise": {
+    "description": "Slant Rise — text animation.",
+    "seeded": true
+  },
+  "sds-slice-reveal": {
+    "description": "Slice Reveal — text animation.",
+    "seeded": true
+  },
+  "sds-slide-blur-left": {
+    "description": "Slide Blur Left — text animation.",
+    "seeded": true
+  },
+  "sds-slide-blur-right": {
+    "description": "Slide Blur Right — text animation.",
+    "seeded": true
+  },
+  "sds-slow": {
+    "description": "Slow — playback modifier.",
+    "seeded": true
+  },
+  "sds-smoke-reveal": {
+    "description": "Smoke Reveal — text animation.",
+    "seeded": true
+  },
+  "sds-split-reveal": {
+    "description": "Split Reveal — text animation.",
+    "seeded": true
+  },
+  "sds-spotlight": {
+    "description": "Spotlight — text animation.",
+    "seeded": true
+  },
+  "sds-spring-kerning": {
+    "description": "Spring Kerning — interactive animation.",
+    "seeded": true
+  },
+  "sds-squash-stretch": {
+    "description": "Squash Stretch — text animation.",
+    "seeded": true
+  },
+  "sds-stagger-chars": {
+    "description": "Stagger Chars — text animation.",
+    "seeded": true
+  },
+  "sds-static-burst": {
+    "description": "Static Burst — text animation.",
+    "seeded": true
+  },
+  "sds-streak-in": {
+    "description": "Streak In — text animation.",
+    "seeded": true
+  },
+  "sds-strike-through": {
+    "description": "Strike Through — text animation.",
+    "seeded": true
+  },
+  "sds-swing-in": {
+    "description": "Swing In — text animation.",
+    "seeded": true
+  },
+  "sds-tada": {
+    "description": "Tada — text animation.",
+    "seeded": true
+  },
+  "sds-tracking-contract": {
+    "description": "Tracking Contract — text animation.",
+    "seeded": true
+  },
+  "sds-tracking-expand": {
+    "description": "Tracking Expand — text animation.",
+    "seeded": true
+  },
+  "sds-typewriter-pro": {
+    "description": "Typewriter Pro — text animation.",
+    "seeded": true
+  },
+  "sds-typing-caret": {
+    "description": "Typing Caret — text animation.",
+    "seeded": true
+  },
+  "sds-underline-grow": {
+    "description": "Underline Grow — text animation.",
+    "seeded": true
+  },
+  "sds-unfurl": {
+    "description": "Unfurl — text animation.",
+    "seeded": true
+  },
+  "sds-vapor-rise": {
+    "description": "Vapor Rise — text animation.",
+    "seeded": true
+  },
+  "sds-velocity-blur-text": {
+    "description": "Velocity Blur Text — text animation.",
+    "seeded": true
+  },
+  "sds-velvet-drop": {
+    "description": "Velvet Drop — text animation.",
+    "seeded": true
+  },
+  "sds-vibrate": {
+    "description": "Vibrate — text animation.",
+    "seeded": true
+  },
+  "sds-wave-cascade": {
+    "description": "Wave Cascade — text animation.",
+    "seeded": true
+  },
+  "sds-weight-drop": {
+    "description": "Weight Drop — text animation.",
+    "seeded": true
+  },
+  "sds-wipe-left": {
+    "description": "Wipe Left — text animation.",
+    "seeded": true
+  },
+  "sds-wipe-right": {
+    "description": "Wipe Right — text animation.",
+    "seeded": true
+  },
+  "sds-wobble": {
+    "description": "Wobble — text animation.",
+    "seeded": true
+  },
+  "sds-word-blur-in": {
+    "description": "Word Blur In — text animation.",
+    "seeded": true
+  },
+  "sds-word-morph": {
+    "description": "Word Morph — interactive animation.",
+    "seeded": true
+  },
+  "sds-xslow": {
+    "description": "Xslow — playback modifier.",
+    "seeded": true
+  },
+  "sds-zoom-out-in": {
+    "description": "Zoom Far — text animation.",
+    "seeded": true
+  },
+  "sds-zoom-punch": {
+    "description": "Zoom Punch — text animation.",
+    "seeded": true
+  }
+}

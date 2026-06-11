@@ -107,6 +107,10 @@ function parseAnimationShorthand(value) {
         times.push(normalizeTime(t));
       } else if (lower.startsWith("cubic-bezier(") || lower.startsWith("steps(") || TIMING_KEYWORDS.has(lower)) {
         out.easing = normalizeValue(t);
+      } else if (lower.startsWith("var(")) {
+        // unresolved token reference — classify by token name
+        if (/--sds-ease|--sds-easing|ease/.test(lower)) out.easing = normalizeValue(t);
+        else times.push(normalizeValue(t));
       } else if (FILL_MODES.has(lower)) {
         out.fill = lower;
       } else if (DIRECTIONS.has(lower)) {

@@ -20,6 +20,29 @@ declare module '@salkomdesignstudio/sds-motion-forge/motion.css' {}
 declare module '@salkomdesignstudio/sds-motion-forge/motion.min.css' {}
 declare module '@salkomdesignstudio/sds-motion-forge' {}
 
+/** Per-category standalone bundles (v5) — each includes core (tokens, modifiers, reduced-motion). */
+declare module '@salkomdesignstudio/sds-motion-forge/categories/core' {}
+declare module '@salkomdesignstudio/sds-motion-forge/categories/text' {}
+declare module '@salkomdesignstudio/sds-motion-forge/categories/buttons' {}
+declare module '@salkomdesignstudio/sds-motion-forge/categories/inputs' {}
+declare module '@salkomdesignstudio/sds-motion-forge/categories/cards' {}
+declare module '@salkomdesignstudio/sds-motion-forge/categories/loaders' {}
+declare module '@salkomdesignstudio/sds-motion-forge/categories/scroll' {}
+declare module '@salkomdesignstudio/sds-motion-forge/dist/categories/core.css' {}
+declare module '@salkomdesignstudio/sds-motion-forge/dist/categories/core.min.css' {}
+declare module '@salkomdesignstudio/sds-motion-forge/dist/categories/text.css' {}
+declare module '@salkomdesignstudio/sds-motion-forge/dist/categories/text.min.css' {}
+declare module '@salkomdesignstudio/sds-motion-forge/dist/categories/buttons.css' {}
+declare module '@salkomdesignstudio/sds-motion-forge/dist/categories/buttons.min.css' {}
+declare module '@salkomdesignstudio/sds-motion-forge/dist/categories/inputs.css' {}
+declare module '@salkomdesignstudio/sds-motion-forge/dist/categories/inputs.min.css' {}
+declare module '@salkomdesignstudio/sds-motion-forge/dist/categories/cards.css' {}
+declare module '@salkomdesignstudio/sds-motion-forge/dist/categories/cards.min.css' {}
+declare module '@salkomdesignstudio/sds-motion-forge/dist/categories/loaders.css' {}
+declare module '@salkomdesignstudio/sds-motion-forge/dist/categories/loaders.min.css' {}
+declare module '@salkomdesignstudio/sds-motion-forge/dist/categories/scroll.css' {}
+declare module '@salkomdesignstudio/sds-motion-forge/dist/categories/scroll.min.css' {}
+
 /**
  * All 100 text animation class names.
  * Apply to any inline or block text element.

@@ -52,11 +52,12 @@ for (const [name, t] of entries(motion.distance)) {
 cssLines.push("  /* @sds-generated-tokens:end */");
 const cssBlock = cssLines.join("\n");
 
-const motionCssPath = path.join(ROOT, "src", "motion.css");
+/* Tokens live in core.css since the Phase 1 category split. */
+const motionCssPath = path.join(ROOT, "src", "categories", "core.css");
 const motionCss = fs.readFileSync(motionCssPath, "utf8");
 const markerRe = /[ \t]*\/\* @sds-generated-tokens:start[\s\S]*?@sds-generated-tokens:end \*\//;
 if (!markerRe.test(motionCss)) {
-  console.error("Marker block '@sds-generated-tokens' not found in src/motion.css :root.");
+  console.error("Marker block '@sds-generated-tokens' not found in src/categories/core.css :root.");
   process.exit(1);
 }
 const nextCss = motionCss.replace(markerRe, cssBlock);
@@ -122,7 +123,7 @@ const tsOut = ts.join("\n");
 
 /* ── write or check ──────────────────────────────────────────── */
 const outputs = [
-  { file: motionCssPath, content: nextCss, label: "src/motion.css token block" },
+  { file: motionCssPath, content: nextCss, label: "src/categories/core.css token block" },
   { file: path.join(ROOT, "tokens", "figma.tokens.json"), content: figmaOut, label: "tokens/figma.tokens.json" },
   { file: path.join(ROOT, "tokens", "sds-motion-tokens.ts"), content: tsOut, label: "tokens/sds-motion-tokens.ts" },
 ];

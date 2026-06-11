@@ -20,7 +20,15 @@ const ROOT = path.join(__dirname, "..");
 const inputPath = process.argv[2] || path.join(ROOT, "src", "motion.css");
 const outputPath = process.argv[3] || path.join(ROOT, "registry", "inventory.json");
 
-const css = fs.readFileSync(inputPath, "utf8");
+// Since the Phase 1 split, src/motion.css is an @import entry — inline the
+// category files synchronously, in entry order.
+let css = fs.readFileSync(inputPath, "utf8");
+const importMatches = [...css.matchAll(/@import\s+"(\.\/categories\/[a-z]+\.css)";?/g)];
+if (importMatches.length) {
+  css = importMatches
+    .map((m) => fs.readFileSync(path.join(path.dirname(inputPath), m[1]), "utf8"))
+    .join("\n");
+}
 const root = postcss.parse(css);
 
 /* Properties that only touch the compositor (with opacity). */

@@ -1,0 +1,17 @@
+{
+  "name": "sds-vite-loaders-example",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Phase 1 acceptance fixture: a Vite app that imports ONLY the loaders category bundle and renders every loader from the registry.",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite"
+  },
+  "dependencies": {
+    "@salkomdesignstudio/sds-motion-forge": "file:../.."
+  },
+  "devDependencies": {
+    "vite": "^6.3.5"
+  }
+}

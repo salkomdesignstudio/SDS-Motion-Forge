@@ -1,0 +1,1712 @@
+/*!
+ * SDS Motion Forge — loaders.css
+ * Loader animations (Section 5).
+ * Part of the lossless v5 category split — combined entry: src/motion.css
+ */
+
+/* ============================================================
+   SECTION 5 — LOADER ANIMATIONS
+   Namespace: .sds-loader-*
+   ============================================================ */
+
+/* 67 · Orbital System -------------------------------------- */
+
+.sds-loader-orbital {
+  position: relative;
+  width: 48px;
+  height: 48px;
+}
+
+.sds-loader-orbital::before,
+.sds-loader-orbital::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--sds-primary);
+  top: 50%;
+  left: 50%;
+  margin: -4px 0 0 -4px;
+}
+
+.sds-loader-orbital::before {
+  animation: sds-orbitalA 1.2s linear infinite;
+}
+
+.sds-loader-orbital::after {
+  animation: sds-orbitalB 1.8s linear infinite;
+}
+
+@keyframes sds-orbitalA {
+  from {
+    transform: rotate(0deg) translateX(18px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(18px) rotate(-360deg);
+  }
+}
+
+@keyframes sds-orbitalB {
+  from {
+    transform: rotate(120deg) translateX(26px) rotate(-120deg);
+  }
+  to {
+    transform: rotate(480deg) translateX(26px) rotate(-480deg);
+  }
+}
+
+/* 68 · Fluid Flow ------------------------------------------ */
+
+.sds-loader-fluid {
+  width: 36px;
+  height: 36px;
+  background: var(--sds-primary);
+  animation: sds-fluidFlow 2s ease infinite;
+}
+
+@keyframes sds-fluidFlow {
+  0% {
+    border-radius: 50%;
+    transform: scale(1) rotate(0);
+  }
+  25% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    transform: scale(1.15) rotate(45deg);
+  }
+  50% {
+    border-radius: 50%;
+    transform: scale(0.9) rotate(90deg);
+  }
+  75% {
+    border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
+    transform: scale(1.1) rotate(135deg);
+  }
+  100% {
+    border-radius: 50%;
+    transform: scale(1) rotate(180deg);
+  }
+}
+
+/* 69 · Particle Sync --------------------------------------- */
+
+.sds-loader-dots {
+  display: inline-flex;
+  gap: 6px;
+}
+
+.sds-loader-dots > * {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--sds-primary);
+  animation: sds-particleSync 1s ease infinite;
+}
+
+.sds-loader-dots > *:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.sds-loader-dots > *:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes sds-particleSync {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+/* 70 · Comet Trail ----------------------------------------- */
+
+.sds-loader-comet {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--sds-primary-dim);
+}
+
+.sds-loader-comet::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: var(--sds-primary);
+  animation: sds-cometSpin 1s linear infinite;
+}
+
+@keyframes sds-cometSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 71 · Waveform -------------------------------------------- */
+
+.sds-loader-wave {
+  display: inline-flex;
+  gap: 3px;
+  align-items: center;
+  height: 32px;
+}
+
+.sds-loader-wave > * {
+  width: 4px;
+  border-radius: 2px;
+  background: var(--sds-primary);
+  animation: sds-waveBar 0.9s ease infinite;
+}
+
+.sds-loader-wave > *:nth-child(1) {
+  animation-delay: 0s;
+  height: 60%;
+}
+
+.sds-loader-wave > *:nth-child(2) {
+  animation-delay: 0.15s;
+  height: 90%;
+}
+
+.sds-loader-wave > *:nth-child(3) {
+  animation-delay: 0.3s;
+  height: 50%;
+}
+
+.sds-loader-wave > *:nth-child(4) {
+  animation-delay: 0.1s;
+  height: 80%;
+}
+
+.sds-loader-wave > *:nth-child(5) {
+  animation-delay: 0.25s;
+  height: 65%;
+}
+
+@keyframes sds-waveBar {
+  0%,
+  100% {
+    transform: scaleY(0.2);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+/* 72 · Ping Cascade ---------------------------------------- */
+
+.sds-loader-ping {
+  position: relative;
+  width: 16px;
+  height: 16px;
+}
+
+/* Pseudo-elements get content:''; real <span> does not need it */
+
+.sds-loader-ping::before,
+.sds-loader-ping::after {
+  content: "";
+}
+
+.sds-loader-ping::before,
+.sds-loader-ping::after,
+.sds-loader-ping > span {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1.5px solid var(--sds-primary);
+  animation: sds-pingCascade 2s ease infinite;
+}
+
+.sds-loader-ping::after {
+  animation-delay: 0.6s;
+}
+
+.sds-loader-ping > span {
+  animation-delay: 1.2s;
+}
+
+@keyframes sds-pingCascade {
+  0% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+/* 73 · Progress Glow --------------------------------------- */
+
+/*   Uses transform:scaleX to avoid width-animation reflow    */
+
+.sds-loader-progress {
+  width: 100%;
+  height: 4px;
+  background: var(--sds-primary-dim);
+  border-radius: 99px;
+  overflow: hidden;
+  position: relative;
+}
+
+.sds-loader-progress::after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: var(--sds-primary);
+  border-radius: 99px;
+  transform-origin: left center;
+  animation: sds-progressGlow 2s ease infinite;
+}
+
+@keyframes sds-progressGlow {
+  0% {
+    transform: scaleX(0);
+    box-shadow: none;
+  }
+  50% {
+    box-shadow:
+      0 0 12px var(--sds-primary-glow),
+      4px 0 16px var(--sds-primary-glow);
+  }
+  85% {
+    transform: scaleX(1);
+    box-shadow: 0 0 8px var(--sds-primary-glow);
+  }
+  100% {
+    transform: scaleX(1);
+    box-shadow: 0 0 8px var(--sds-primary-glow);
+  }
+}
+
+/* 74 · Skeleton Pulse -------------------------------------- */
+
+.sds-loader-skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--sds-primary-dim) 25%,
+    rgba(0, 21, 209, 0.04) 50%,
+    var(--sds-primary-dim) 75%
+  );
+  background-size: 400% 100%;
+  animation: sds-skeletonPulse 1.6s ease infinite;
+  border-radius: 4px;
+}
+
+@keyframes sds-skeletonPulse {
+  0% {
+    background-position: -300% 0;
+  }
+  100% {
+    background-position: 300% 0;
+  }
+}
+
+/* 75 · Vortex Spin ----------------------------------------- */
+
+.sds-loader-vortex {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--sds-primary),
+    var(--sds-accent),
+    var(--sds-primary)
+  );
+  animation: sds-vortexSpin 1.6s ease infinite;
+}
+
+@keyframes sds-vortexSpin {
+  from {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(0.7);
+  }
+  to {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+/* 76 · Typewriter Loader ----------------------------------- */
+
+.sds-loader-type {
+  font-family: monospace;
+  border-right: 2px solid var(--sds-primary);
+  overflow: hidden;
+  white-space: nowrap;
+  animation:
+    sds-typewriterPrem 2s steps(10) infinite alternate,
+    sds-cursorBlink var(--sds-duration-base, 0.8s) step-end infinite;
+}
+
+/* 77 · Target Lock ----------------------------------------- */
+
+.sds-loader-target {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.sds-loader-target::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px dashed rgba(0, 21, 209, 0.3);
+  animation: sds-cometSpin 4s linear infinite;
+}
+
+/* 78 · DNA Helix ------------------------------------------- */
+
+.sds-loader-dna {
+  position: relative;
+  width: 10px;
+  height: 48px;
+}
+
+.sds-loader-dna::before,
+.sds-loader-dna::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  left: 0;
+  animation: sds-loaderDna var(--sds-duration-slow, 1.4s) ease-in-out infinite;
+}
+
+.sds-loader-dna::before {
+  background: var(--sds-primary);
+}
+
+.sds-loader-dna::after {
+  background: var(--sds-accent);
+  animation-delay: 0.7s;
+}
+
+@keyframes sds-loaderDna {
+  0%,
+  100% {
+    top: 0;
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  25% {
+    transform: scaleX(0.4);
+    opacity: 0.4;
+  }
+  50% {
+    top: 38px;
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  75% {
+    transform: scaleX(0.4);
+    opacity: 0.4;
+  }
+}
+
+/* 79 · Pulse ------------------------------------------- */
+
+.sds-loader-pulse {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--sds-primary);
+  animation: sds-loaderPulse 1s ease-in-out infinite;
+}
+
+@keyframes sds-loaderPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.4;
+  }
+}
+
+/* 80 · Arc -------------------------------------------- */
+
+.sds-loader-arc {
+  position: relative;
+  width: 44px;
+  height: 44px;
+}
+
+.sds-loader-arc::before,
+.sds-loader-arc::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 3px solid transparent;
+}
+
+.sds-loader-arc::before {
+  border-top-color: var(--sds-primary);
+  border-right-color: var(--sds-primary);
+  animation: sds-cometSpin 0.9s linear infinite;
+}
+
+.sds-loader-arc::after {
+  border-bottom-color: var(--sds-accent);
+  border-left-color: var(--sds-accent);
+  animation: sds-cometSpin var(--sds-duration-slow, 1.4s) linear infinite reverse;
+  inset: 6px;
+}
+
+/* 81 · Signal Bars ------------------------------------- */
+
+.sds-loader-signal {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 36px;
+}
+
+.sds-loader-signal > * {
+  width: 7px;
+  border-radius: 3px 3px 0 0;
+  background: var(--sds-primary);
+  animation: sds-loaderSignal 1.2s ease-in-out infinite;
+}
+
+.sds-loader-signal > *:nth-child(1) {
+  height: 35%;
+  animation-delay: 0s;
+}
+
+.sds-loader-signal > *:nth-child(2) {
+  height: 60%;
+  animation-delay: 0.15s;
+}
+
+.sds-loader-signal > *:nth-child(3) {
+  height: 85%;
+  animation-delay: 0.3s;
+}
+
+.sds-loader-signal > *:nth-child(4) {
+  height: 100%;
+  animation-delay: 0.45s;
+}
+
+@keyframes sds-loaderSignal {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+/* 82 · Bounce ----------------------------------------- */
+
+.sds-loader-bounce {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--sds-primary);
+  animation: sds-loaderBounce var(--sds-duration-base, 0.8s) var(--sds-ease-emphasized, cubic-bezier(0.215, 0.61, 0.355, 1)) infinite;
+}
+
+@keyframes sds-loaderBounce {
+  0%,
+  100% {
+    transform: translateY(0) scaleY(1) scaleX(1);
+  }
+  20% {
+    transform: translateY(-22px) scaleY(1.08) scaleX(0.94);
+  }
+  80% {
+    transform: translateY(0) scaleY(0.72) scaleX(1.28);
+  }
+  90% {
+    transform: translateY(0) scaleY(1.04) scaleX(0.97);
+  }
+}
+
+/* 83 · Radar ------------------------------------------ */
+
+.sds-loader-radar {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 21, 209, 0.2);
+  overflow: hidden;
+}
+
+.sds-loader-radar::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--sds-primary));
+  top: 50%;
+  left: 50%;
+  transform-origin: left center;
+  animation: sds-cometSpin 2s linear infinite;
+}
+
+.sds-loader-radar::after {
+  content: "";
+  position: absolute;
+  inset: 30%;
+  border-radius: 50%;
+  background: var(--sds-primary);
+}
+
+/* 84 · Morph ------------------------------------------ */
+
+.sds-loader-morph {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--sds-primary), var(--sds-accent));
+  animation: sds-loaderMorph var(--sds-duration-slower, 2.2s) ease-in-out infinite;
+}
+
+@keyframes sds-loaderMorph {
+  0%,
+  100% {
+    border-radius: 50%;
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    border-radius: 20% 80% 80% 20% / 20% 20% 80% 80%;
+    transform: rotate(90deg) scale(1.1);
+  }
+  50% {
+    border-radius: 50% 50% 50% 50% / 80% 80% 20% 20%;
+    transform: rotate(180deg) scale(0.9);
+  }
+  75% {
+    border-radius: 80% 20% 20% 80% / 80% 20% 80% 20%;
+    transform: rotate(270deg) scale(1.05);
+  }
+}
+
+/* 85 · Cascade Bars ------------------------------------ */
+
+.sds-loader-cascade {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 36px;
+}
+
+.sds-loader-cascade > * {
+  width: 6px;
+  border-radius: 3px;
+  background: var(--sds-primary);
+  animation: sds-loaderCascade 1s ease infinite;
+}
+
+.sds-loader-cascade > *:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.sds-loader-cascade > *:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.sds-loader-cascade > *:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.sds-loader-cascade > *:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.sds-loader-cascade > *:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+@keyframes sds-loaderCascade {
+  0%,
+  100% {
+    height: 8px;
+    opacity: 0.4;
+  }
+  50% {
+    height: 36px;
+    opacity: 1;
+  }
+}
+
+/* 86 · Dot Grid --------------------------------------- */
+
+.sds-loader-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 10px);
+  gap: 5px;
+}
+
+.sds-loader-grid > * {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--sds-primary);
+  animation: sds-loaderGrid 1.6s ease-in-out infinite;
+}
+
+.sds-loader-grid > *:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.sds-loader-grid > *:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.sds-loader-grid > *:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.sds-loader-grid > *:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.sds-loader-grid > *:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+.sds-loader-grid > *:nth-child(6) {
+  animation-delay: 0.5s;
+}
+
+.sds-loader-grid > *:nth-child(7) {
+  animation-delay: 0.6s;
+}
+
+.sds-loader-grid > *:nth-child(8) {
+  animation-delay: 0.7s;
+}
+
+.sds-loader-grid > *:nth-child(9) {
+  animation-delay: 0.8s;
+}
+
+@keyframes sds-loaderGrid {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(0.2);
+    opacity: 0.1;
+  }
+}
+
+/* 87 · Ring System ------------------------------------ */
+
+.sds-loader-ring {
+  position: relative;
+  width: 44px;
+  height: 44px;
+}
+
+.sds-loader-ring::before,
+.sds-loader-ring::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid transparent;
+}
+
+.sds-loader-ring::before {
+  inset: 0;
+  border-top-color: var(--sds-primary);
+  animation: sds-cometSpin 1s linear infinite;
+}
+
+.sds-loader-ring::after {
+  inset: 8px;
+  border-bottom-color: var(--sds-accent);
+  animation: sds-cometSpin 1.6s linear infinite reverse;
+}
+
+/* 88 · Ripple Rings ----------------------------------- */
+
+.sds-loader-ripple {
+  position: relative;
+  width: 44px;
+  height: 44px;
+}
+
+.sds-loader-ripple::before,
+.sds-loader-ripple::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid var(--sds-primary);
+  animation: sds-loaderRipple 2s ease-out infinite;
+}
+
+.sds-loader-ripple::after {
+  animation-delay: 0.8s;
+}
+
+@keyframes sds-loaderRipple {
+  0% {
+    transform: scale(0.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* 89 · Neon Ring -------------------------------------- */
+
+.sds-loader-neon-ring {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: var(--sds-primary);
+  animation:
+    sds-cometSpin 1s linear infinite,
+    sds-loaderNeonRing 2s ease-in-out infinite;
+}
+
+@keyframes sds-loaderNeonRing {
+  0%,
+  100% {
+    box-shadow:
+      0 0 8px var(--sds-primary-glow),
+      inset 0 0 8px var(--sds-primary-dim);
+  }
+  50% {
+    box-shadow:
+      0 0 20px var(--sds-primary-glow),
+      inset 0 0 16px var(--sds-primary-dim);
+  }
+}
+
+/* 90 · Triple Orbit ----------------------------------- */
+
+.sds-loader-orbit-3 {
+  position: relative;
+  width: 44px;
+  height: 44px;
+}
+
+.sds-loader-orbit-3::before,
+.sds-loader-orbit-3::after {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  margin: -3.5px 0 0 -3.5px;
+}
+
+.sds-loader-orbit-3::before {
+  background: var(--sds-primary);
+  animation: sds-orbitalA 1s linear infinite;
+}
+
+.sds-loader-orbit-3::after {
+  background: var(--sds-accent);
+  animation: sds-orbitalB var(--sds-duration-slow, 1.4s) linear infinite;
+}
+
+/* 91 · Electric Arc ----------------------------------- */
+
+.sds-loader-electric {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 21, 209, 0.15);
+  animation: sds-loaderElectric 1.5s ease infinite;
+}
+
+@keyframes sds-loaderElectric {
+  0%,
+  100% {
+    box-shadow: 0 0 0 rgba(0, 21, 209, 0);
+    border-color: rgba(0, 21, 209, 0.15);
+  }
+  10% {
+    box-shadow: 0 0 12px var(--sds-primary-glow);
+    border-color: var(--sds-primary);
+  }
+  12% {
+    box-shadow: 0 0 2px rgba(0, 21, 209, 0.1);
+    border-color: rgba(0, 21, 209, 0.15);
+  }
+  30% {
+    box-shadow: 0 0 8px var(--sds-primary-glow);
+    border-color: rgba(0, 21, 209, 0.5);
+  }
+  32% {
+    box-shadow: none;
+    border-color: rgba(0, 21, 209, 0.15);
+  }
+}
+
+/* 92 · Expand ----------------------------------------- */
+
+.sds-loader-expand {
+  width: 12px;
+  height: 12px;
+  background: var(--sds-primary);
+  animation: sds-loaderExpand 1.6s ease-in-out infinite;
+}
+
+@keyframes sds-loaderExpand {
+  0%,
+  100% {
+    transform: scale(1);
+    border-radius: 4px;
+  }
+  50% {
+    transform: scale(2.5);
+    border-radius: 50%;
+    opacity: 0.5;
+  }
+}
+
+/* 93 · Prism ------------------------------------------ */
+
+.sds-loader-prism {
+  width: 36px;
+  height: 36px;
+  background: conic-gradient(
+    var(--sds-primary),
+    #8b5cf6,
+    var(--sds-accent),
+    #06b6d4,
+    #10b981,
+    var(--sds-primary)
+  );
+  border-radius: 50%;
+  animation: sds-cometSpin 2s linear infinite;
+}
+
+/* 94 · Neural ----------------------------------------- */
+
+.sds-loader-neural {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(0, 21, 209, 0.2);
+  animation: sds-loaderNeural var(--sds-duration-dramatic, 3s) ease-in-out infinite;
+}
+
+@keyframes sds-loaderNeural {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(0, 21, 209, 0.15),
+      0 0 0 0 rgba(0, 21, 209, 0.05);
+  }
+  33% {
+    box-shadow:
+      0 0 0 6px rgba(0, 21, 209, 0.1),
+      0 0 0 12px rgba(0, 21, 209, 0.03);
+  }
+  66% {
+    box-shadow:
+      0 0 0 10px rgba(0, 21, 209, 0.06),
+      0 0 0 20px rgba(0, 21, 209, 0.02);
+  }
+}
+
+/* 95 · Breath ----------------------------------------- */
+
+.sds-loader-breath {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--sds-primary);
+  animation: sds-loaderBreath 2s ease-in-out infinite;
+}
+
+@keyframes sds-loaderBreath {
+  0%,
+  100% {
+    transform: scale(0.7);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+/* 96 · Pendulum --------------------------------------- */
+
+.sds-loader-pendulum {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--sds-primary);
+  animation: sds-loaderPendulum 1.2s ease-in-out infinite;
+  transform-origin: center -18px;
+}
+
+@keyframes sds-loaderPendulum {
+  0%,
+  100% {
+    transform: rotate(-28deg);
+  }
+  50% {
+    transform: rotate(28deg);
+  }
+}
+
+/* 97 · Cube ------------------------------------------- */
+
+.sds-loader-cube {
+  width: 28px;
+  height: 28px;
+  background: var(--sds-primary);
+  animation: sds-loaderCube 2s ease-in-out infinite;
+}
+
+@keyframes sds-loaderCube {
+  0% {
+    transform: perspective(200px) rotateX(0deg) rotateY(0deg);
+    border-radius: 4px;
+  }
+  25% {
+    transform: perspective(200px) rotateX(90deg) rotateY(0deg);
+    border-radius: 50%;
+  }
+  50% {
+    transform: perspective(200px) rotateX(90deg) rotateY(90deg);
+    border-radius: 4px;
+  }
+  75% {
+    transform: perspective(200px) rotateX(0deg) rotateY(90deg);
+    border-radius: 50%;
+  }
+  100% {
+    transform: perspective(200px) rotateX(0deg) rotateY(180deg);
+    border-radius: 4px;
+  }
+}
+
+/* 98 · Solar ------------------------------------------ */
+
+.sds-loader-solar {
+  position: relative;
+  width: 44px;
+  height: 44px;
+}
+
+.sds-loader-solar::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border-radius: 50%;
+  background: var(--sds-primary);
+  animation: sds-loaderSolar 2s ease-in-out infinite;
+}
+
+.sds-loader-solar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(0, 21, 209, 0.4);
+  animation: sds-cometSpin var(--sds-duration-dramatic, 3s) linear infinite;
+}
+
+@keyframes sds-loaderSolar {
+  0%,
+  100% {
+    box-shadow: 0 0 8px var(--sds-primary-glow);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow:
+      0 0 20px var(--sds-primary-glow),
+      0 0 40px rgba(0, 21, 209, 0.1);
+    transform: scale(1.15);
+  }
+}
+
+/* 99 · Infinity --------------------------------------- */
+
+.sds-loader-infinity {
+  position: relative;
+  width: 56px;
+  height: 28px;
+}
+
+.sds-loader-infinity::before,
+.sds-loader-infinity::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2.5px solid var(--sds-primary);
+  top: 50%;
+  margin-top: -10px;
+}
+
+.sds-loader-infinity::before {
+  left: 0;
+  animation: sds-cometSpin 1.2s linear infinite;
+  border-top-color: transparent;
+}
+
+.sds-loader-infinity::after {
+  right: 0;
+  animation: sds-cometSpin 1.2s linear infinite reverse;
+  border-bottom-color: transparent;
+}
+
+/* 100 · Star ------------------------------------------ */
+
+.sds-loader-star {
+  width: 36px;
+  height: 36px;
+  background: var(--sds-primary);
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  animation:
+    sds-cometSpin 2s linear infinite,
+    sds-loaderStar 2s ease-in-out infinite;
+}
+
+@keyframes sds-loaderStar {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(0.8) rotate(180deg);
+  }
+}
+
+/* 101 · Matrix Bars ----------------------------------- */
+
+.sds-loader-matrix {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  height: 36px;
+}
+
+.sds-loader-matrix > * {
+  width: 4px;
+  border-radius: 2px;
+  background: var(--sds-primary);
+  animation: sds-loaderMatrix 1.2s steps(4) infinite;
+}
+
+.sds-loader-matrix > *:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.sds-loader-matrix > *:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.sds-loader-matrix > *:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.sds-loader-matrix > *:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.sds-loader-matrix > *:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+@keyframes sds-loaderMatrix {
+  0% {
+    height: 100%;
+    opacity: 1;
+  }
+  25% {
+    height: 40%;
+    opacity: 0.6;
+  }
+  50% {
+    height: 80%;
+    opacity: 0.9;
+  }
+  75% {
+    height: 20%;
+    opacity: 0.3;
+  }
+  100% {
+    height: 100%;
+    opacity: 1;
+  }
+}
+
+/* 102 · Snake ----------------------------------------- */
+
+.sds-loader-snake {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 3px solid var(--sds-primary-dim);
+}
+
+.sds-loader-snake::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: var(--sds-primary);
+  border-right-color: var(--sds-primary);
+  animation: sds-cometSpin 1.2s var(--sds-ease-bounce, cubic-bezier(0.68, -0.55, 0.27, 1.55)) infinite;
+}
+
+/* 103 · Glitch ---------------------------------------- */
+
+.sds-loader-glitch {
+  width: 36px;
+  height: 36px;
+  background: var(--sds-primary);
+  border-radius: 4px;
+  animation: sds-loaderGlitch 2s steps(1) infinite;
+}
+
+@keyframes sds-loaderGlitch {
+  0%,
+  100% {
+    transform: none;
+    opacity: 1;
+    filter: none;
+  }
+  8% {
+    transform: translate(3px, -2px) scaleX(1.1);
+    filter: hue-rotate(60deg);
+  }
+  9% {
+    transform: none;
+    filter: none;
+  }
+  40% {
+    transform: translate(-2px, 1px);
+    opacity: 0.7;
+  }
+  41% {
+    transform: none;
+    opacity: 1;
+  }
+  75% {
+    transform: scaleY(1.2) scaleX(0.9);
+  }
+  76% {
+    transform: none;
+  }
+}
+
+/* 104 · Warp ------------------------------------------ */
+
+.sds-loader-warp {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    var(--sds-primary),
+    var(--sds-primary-dim),
+    var(--sds-primary)
+  );
+  animation:
+    sds-cometSpin 1.2s linear infinite,
+    sds-loaderWarp 2s ease-in-out infinite;
+}
+
+@keyframes sds-loaderWarp {
+  0%,
+  100% {
+    transform: scale(1) rotate(0);
+  }
+  50% {
+    transform: scale(0.7) rotate(180deg);
+  }
+}
+
+/* 105 · Hex ------------------------------------------- */
+
+.sds-loader-hex {
+  width: 36px;
+  height: 36px;
+  background: var(--sds-primary);
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  animation:
+    sds-cometSpin 2s linear infinite,
+    sds-loaderHex 2s ease-in-out infinite;
+}
+
+@keyframes sds-loaderHex {
+  0%,
+  100% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 0.6;
+    filter: brightness(1.4);
+  }
+}
+
+/* 106 · Quantum --------------------------------------- */
+
+.sds-loader-quantum {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--sds-primary);
+  animation: sds-loaderQuantum 1.6s steps(1) infinite;
+}
+
+@keyframes sds-loaderQuantum {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  10% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  30% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0;
+    transform: scale(1.4);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 107 · Liquid Ring ----------------------------------- */
+
+.sds-loader-liquid-ring {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: var(--sds-primary);
+  border-bottom-color: var(--sds-accent);
+  animation:
+    sds-cometSpin 1s linear infinite,
+    sds-loaderLiquidRing var(--sds-duration-dramatic, 3s) ease-in-out infinite;
+}
+
+@keyframes sds-loaderLiquidRing {
+  0%,
+  100% {
+    filter: blur(0);
+  }
+  50% {
+    filter: blur(1px) brightness(1.3);
+  }
+}
+
+/* 108 · Hourglass ------------------------------------- */
+
+.sds-loader-hourglass {
+  width: 20px;
+  height: 36px;
+  background: var(--sds-primary);
+  clip-path: polygon(0 0, 100% 0, 60% 50%, 100% 100%, 0 100%, 40% 50%);
+  animation: sds-loaderHourglass 1.8s ease-in-out infinite;
+}
+
+@keyframes sds-loaderHourglass {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+}
+
+/* 109 · Crystal --------------------------------------- */
+
+.sds-loader-crystal {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(
+    135deg,
+    rgba(6, 182, 212, 0.6),
+    var(--sds-primary),
+    rgba(139, 92, 246, 0.6)
+  );
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  animation:
+    sds-cometSpin var(--sds-duration-dramatic, 3s) linear infinite,
+    sds-loaderCrystal var(--sds-duration-dramatic, 3s) ease-in-out infinite;
+}
+
+@keyframes sds-loaderCrystal {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.5) saturate(1.4);
+  }
+}
+
+/* 110 · Plasma Ring ----------------------------------- */
+
+.sds-loader-plasma-ring {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  animation:
+    sds-cometSpin 1.6s linear infinite,
+    sds-loaderPlasmaRing 2.4s ease-in-out infinite;
+  border: 2px solid var(--sds-primary);
+}
+
+@keyframes sds-loaderPlasmaRing {
+  0%,
+  100% {
+    box-shadow:
+      0 0 8px var(--sds-primary-glow),
+      inset 0 0 8px var(--sds-primary-dim);
+    filter: hue-rotate(0deg);
+  }
+  33% {
+    box-shadow:
+      0 0 16px rgba(139, 92, 246, 0.4),
+      inset 0 0 12px rgba(139, 92, 246, 0.1);
+    filter: hue-rotate(120deg);
+  }
+  66% {
+    box-shadow:
+      0 0 12px rgba(209, 0, 40, 0.3),
+      inset 0 0 8px rgba(209, 0, 40, 0.08);
+    filter: hue-rotate(240deg);
+  }
+}
+
+/* 111 · Helix Dots ------------------------------------ */
+
+.sds-loader-helix {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 36px;
+}
+
+.sds-loader-helix > * {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--sds-primary);
+  animation: sds-loaderHelix 1.2s ease-in-out infinite;
+}
+
+.sds-loader-helix > *:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.sds-loader-helix > *:nth-child(2) {
+  animation-delay: 0.12s;
+  background: color-mix(in srgb, var(--sds-primary) 70%, var(--sds-accent));
+}
+
+.sds-loader-helix > *:nth-child(3) {
+  animation-delay: 0.24s;
+}
+
+.sds-loader-helix > *:nth-child(4) {
+  animation-delay: 0.36s;
+  background: color-mix(in srgb, var(--sds-primary) 70%, var(--sds-accent));
+}
+
+.sds-loader-helix > *:nth-child(5) {
+  animation-delay: 0.48s;
+}
+
+@keyframes sds-loaderHelix {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-16px) scale(0.7);
+    opacity: 0.5;
+  }
+}
+
+/* 112 · Clock ----------------------------------------- */
+
+.sds-loader-clock {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 21, 209, 0.25);
+}
+
+.sds-loader-clock::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 40%;
+  background: var(--sds-primary);
+  top: 10%;
+  left: calc(50% - 1px);
+  transform-origin: bottom center;
+  animation: sds-cometSpin 2s linear infinite;
+}
+
+.sds-loader-clock::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 30%;
+  background: var(--sds-accent);
+  top: 20%;
+  left: calc(50% - 1px);
+  transform-origin: bottom center;
+  animation: sds-cometSpin 24s linear infinite;
+}
+
+/* 113 · Mosaic ---------------------------------------- */
+
+.sds-loader-mosaic {
+  display: grid;
+  grid-template-columns: repeat(3, 12px);
+  gap: 3px;
+}
+
+.sds-loader-mosaic > * {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  background: var(--sds-primary);
+  animation: sds-loaderMosaic 1.8s ease-in-out infinite;
+}
+
+.sds-loader-mosaic > *:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.sds-loader-mosaic > *:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.sds-loader-mosaic > *:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.sds-loader-mosaic > *:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.sds-loader-mosaic > *:nth-child(5) {
+  animation-delay: 0.4s;
+  background: var(--sds-accent);
+}
+
+.sds-loader-mosaic > *:nth-child(6) {
+  animation-delay: 0.5s;
+}
+
+.sds-loader-mosaic > *:nth-child(7) {
+  animation-delay: 0.6s;
+}
+
+.sds-loader-mosaic > *:nth-child(8) {
+  animation-delay: 0.7s;
+}
+
+.sds-loader-mosaic > *:nth-child(9) {
+  animation-delay: 0.8s;
+}
+
+@keyframes sds-loaderMosaic {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+/* 114 · Data ------------------------------------------ */
+
+.sds-loader-data {
+  width: 44px;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--sds-primary-dim);
+  overflow: hidden;
+  position: relative;
+}
+
+.sds-loader-data::before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 40%;
+  border-radius: 3px;
+  background: var(--sds-primary);
+  animation: sds-loaderData var(--sds-duration-slow, 1.4s) ease-in-out infinite;
+}
+
+@keyframes sds-loaderData {
+  0% {
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(260%);
+    opacity: 0.4;
+  }
+}
+
+/* 115 · Bar ------------------------------------------- */
+
+.sds-loader-bar {
+  width: 44px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--sds-primary-dim);
+  overflow: hidden;
+  position: relative;
+}
+
+.sds-loader-bar::after {
+  content: "";
+  display: block;
+  height: 100%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--sds-primary), #8b5cf6);
+  animation: sds-loaderBar 1.8s ease-in-out infinite;
+}
+
+@keyframes sds-loaderBar {
+  0% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  45% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  55% {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  100% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+}
+
+/* 116 · Spark ----------------------------------------- */
+
+.sds-loader-spark {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--sds-primary);
+  animation: sds-loaderSpark 1.8s ease-in-out infinite;
+}
+
+.sds-loader-spark::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  background: var(--sds-primary);
+  animation: sds-loaderPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes sds-loaderSpark {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(0, 21, 209, 0);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 16px var(--sds-primary-glow);
+  }
+}
+
+.sds-loader-progress-glow {
+  animation: sds-progressGlow 2.4s ease infinite;
+}
+
+/*  GPU compositing hints (loaders) — split from the global will-change rule; must stay after the class definitions above  */
+
+.sds-loader-vortex,
+.sds-loader-fluid,
+.sds-loader-morph,
+.sds-loader-prism,
+.sds-loader-warp,
+.sds-loader-plasma-ring,
+.sds-loader-orbital::before,
+.sds-loader-orbital::after {
+  will-change: transform, opacity;
+}

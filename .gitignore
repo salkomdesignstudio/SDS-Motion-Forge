@@ -14,6 +14,10 @@ Thumbs.db
 # Netlify creates this during CI; do not commit it.
 docs/dist/
 
+# Example apps — installed/built locally and in CI smoke tests.
+examples/*/node_modules/
+examples/*/dist/
+
 # Generated JS build artifacts — produced by `npm run build:js` (terser).
 # These are regenerated on every build; never edit them manually.
 # They ARE included in the npm package (via "files": ["dist/"]) but not in git.

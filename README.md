@@ -92,6 +92,42 @@ yarn add @salkomdesignstudio/sds-motion-forge
 pnpm add @salkomdesignstudio/sds-motion-forge
 ```
 
+### Category bundles (v5) — import only what you use
+
+Each category ships as a self-sufficient bundle (its animations + their
+keyframes + core: tokens, modifiers, reduced-motion, scroll gate). One import,
+no other setup:
+
+```js
+// Only the loaders — nothing else ships
+import '@salkomdesignstudio/sds-motion-forge/categories/loaders';
+```
+
+```html
+<!-- Or via CDN -->
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/categories/loaders.min.css" />
+```
+
+<!-- @sds-size-table:start -->
+| Bundle | Import | Minified | Gzip |
+|---|---|---|---|
+| text | `@salkomdesignstudio/sds-motion-forge/categories/text` | 45.3 KB | 8.4 KB |
+| buttons | `@salkomdesignstudio/sds-motion-forge/categories/buttons` | 18.9 KB | 4.1 KB |
+| inputs | `@salkomdesignstudio/sds-motion-forge/categories/inputs` | 18.6 KB | 4.1 KB |
+| cards | `@salkomdesignstudio/sds-motion-forge/categories/cards` | 18.2 KB | 3.9 KB |
+| loaders | `@salkomdesignstudio/sds-motion-forge/categories/loaders` | 26.3 KB | 5.0 KB |
+| scroll | `@salkomdesignstudio/sds-motion-forge/categories/scroll` | 20.9 KB | 3.9 KB |
+| core only | `@salkomdesignstudio/sds-motion-forge/categories/core` | 3.1 KB | 1.0 KB |
+| **everything** | `@salkomdesignstudio/sds-motion-forge` | **126.9 KB** | **20.6 KB** |
+<!-- @sds-size-table:end -->
+
+Core is intentionally **inlined** into every category bundle so each one works
+standalone via npm or a single CDN `<link>` — no peer imports to forget, no
+broken styles when a pipeline strips `@import`. Core costs ~3 KB minified
+(~1 KB gzip); if you combine **two or more** categories, import the full
+`dist/motion.css` instead — it ships exactly one copy of core and every class.
+
 ### CDN (no build step)
 
 ```html

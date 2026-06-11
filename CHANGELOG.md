@@ -1,5 +1,57 @@
 # Changelog
 
+## [Unreleased] — v5 Phase 1: Registry + Lossless Modular Builds
+
+> **Compatibility statement:** dist/motion.css remains computed-value-identical
+> to published 4.0.3 (verify-against-published: 0 deviations). All new files
+> are additive; no existing export, path, class or keyframe changed.
+
+### Added
+
+- **`registry/motion.registry.json`** — the machine-readable single source of
+  truth (R3): 388 classes with category, keyframes, tokens used, custom
+  properties, compositor-safety, requires-char-split / requires-children /
+  requires-js flags, trigger type, alias links and since-version. Generated
+  from source CSS by `scripts/generate-registry.js`; authored descriptions
+  live only in `registry/meta/descriptions.json`. `npm run verify:registry`
+  fails the build on any drift (permanent CI step).
+- **Category source split** — `src/categories/{core,text,buttons,inputs,cards,loaders,scroll}.css`.
+  `src/motion.css` is now a thin `@import` entry inlined by postcss-import at
+  build time. The one-time split was machine-verified lossless
+  (`scripts/split-css.js`): 607 selectors and 324 keyframes — zero missing,
+  zero duplicated, per-selector cascade order preserved. The cross-category
+  `will-change` hint rule was split per category (appended after each
+  category's own rules, preserving its cascade position); the interactive tail
+  block stayed in text.css to keep the published `.sds-ink-bleed` /
+  `.sds-char-orbit` declaration order.
+- **Standalone category bundles** — `dist/categories/{name}.css` + `.min.css`,
+  built by `scripts/build-categories.js`: core (tokens + modifiers +
+  reduced-motion + scroll gate) + the category + cross-category keyframe
+  dependencies resolved from the source partition (never regex). Decision:
+  core is inlined (≈3 KB min / ≈1 KB gzip) so every bundle is paste-and-go via
+  npm and CDN; multi-category users should import `dist/motion.css` (single
+  core copy). Verified per-build by `npm run verify:split` (partition
+  integrity, keyframe closure, entry order, standalone completeness incl.
+  reduced-motion).
+- **New exports** (all additive): `./categories/{core,text,buttons,inputs,cards,loaders,scroll}`,
+  explicit `./dist/categories/*.css(.min.css)` paths,
+  `./registry/motion.registry.json`, `./tokens/motion.tokens.json`,
+  `./tokens/figma.tokens.json`. Tokens + registry now ship in the tarball.
+- **`examples/vite-loaders`** — acceptance fixture: a Vite app importing only
+  `categories/loaders`, rendering all 51 loaders from the registry export;
+  `scripts/verify-loaders-example.js` asserts selector + keyframe completeness
+  of the emitted CSS.
+- **`index.d.ts`** — module declarations for every new CSS subpath.
+- README: per-category min+gzip size table (generated into markers by the
+  build — never hand-edited) and category-bundle usage docs.
+
+### Changed
+
+- `npm run build` additionally builds category bundles and regenerates the
+  registry; `release:check` adds `verify:registry` and `verify:split`.
+- `postcss.config.js` adds `postcss-import` (devDependency) to inline the
+  category entry; `dist/motion.css` output remains equivalent (gate-proven).
+
 ## [Unreleased] — v5 Phase 0: Motion Token System + Specification
 
 > **Compatibility statement:** zero computed-value deviations from published

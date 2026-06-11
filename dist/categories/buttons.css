@@ -1,0 +1,1570 @@
+/*!
+ * SDS Motion Forge — standalone buttons bundle
+ * Generated from src/categories/ by scripts/build-categories.js — do not edit.
+ * Contains: core (tokens, modifiers, reduced-motion, scroll gate) + buttons +
+ * cross-category keyframe dependencies. Combining 2+ categories? Use
+ * dist/motion.css instead — it ships exactly one copy of core.
+ */
+/*!
+ * SDS Motion Forge — core.css
+ * Core — design tokens, utility modifiers, reduced-motion neutralization,
+ * and scroll-gate infrastructure shared by every category.
+ * Part of the lossless v5 category split — combined entry: src/motion.css
+ */
+
+/**
+ * SDS Motion Forge — Premium CSS Animation System
+ * Version: 4.0.3
+ * Author: Salkom Design Studio
+ * License: MIT
+ * https://github.com/salkomdesignstudio/SDS-Motion-Forge
+ *
+ * 300+ production-ready CSS animations · Framework-agnostic
+ * Text (100) · Buttons (50) · Inputs (50) · Cards (46) · Loaders (50) · Scroll (54)
+ *
+ * Optional engines (load with defer):
+ *   sds-scroll.min.js          — scroll-gate via [data-sds] attribute
+ *   motion-interactive.min.js  — cursor-reactive & hover interactive animations
+ *
+ * ─── HOW TO INSTALL ──────────────────────────────────────────
+ *
+ * CDN (simplest — paste in <head>):
+ *   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css">
+ *
+ * npm + Angular (styles.css or styles.scss):
+ *   @import '@salkomdesignstudio/sds-motion-forge/dist/motion.css';
+ *
+ * npm + React / Next.js (in index.js, _app.js or layout.js):
+ *   import '@salkomdesignstudio/sds-motion-forge/dist/motion.css';
+ *
+ * npm + Vue (in main.js):
+ *   import '@salkomdesignstudio/sds-motion-forge/dist/motion.css';
+ *
+ * npm + Flutter Web (in web/index.html):
+ *   <link rel="stylesheet" href="packages/sds_motion_forge/motion.min.css">
+ *
+ * ─── USAGE ───────────────────────────────────────────────────
+ *
+ *   <h1 class="sds-velvet-drop">Heading</h1>
+ *   <p  class="sds-liquid-rise">Paragraph</p>
+ *   <button class="sds-btn-magnetic">Button</button>
+ *   <div class="sds-card-float">Card</div>
+ *   <span class="sds-loader-orbit"></span>
+ *
+ * ─── MODIFIERS ───────────────────────────────────────────────
+ *
+ *   sds-slow       slower animation (1.6× duration)
+ *   sds-fast       faster animation (0.5× duration)
+ *   sds-delay-1    0.1s delay  (up to sds-delay-10 = 1.0s)
+ *   sds-loop       loop forever
+ *   sds-once       play once then stop
+ *   sds-pause-hover  pause on hover
+ *
+ * ─── STAGGER / CHILDREN ANIMATIONS ──────────────────────────
+ *
+ *   Some animations target children (> *). Apply to the PARENT:
+ *   <div class="sds-kinetic-wave">
+ *     <span>Word</span><span>By</span><span>Word</span>
+ *   </div>
+ *
+ *   Classes that need this: sds-kinetic-wave, sds-stagger-chars,
+ *   sds-arc-orbit, sds-signal-wave, sds-card-stagger,
+ *   sds-card-cascade, sds-card-slice, sds-loader-dots,
+ *   sds-loader-wave, sds-loader-signal, sds-loader-cascade,
+ *   sds-loader-grid, sds-scroll-stagger-pop, sds-scroll-stagger-grid,
+ *   sds-scroll-cascade
+ *
+ * ─── SCROLL ANIMATIONS ───────────────────────────────────────
+ *
+ *   Scroll animations fire when the class is added to the element,
+ *   not automatically on scroll. Use one of these two methods:
+ *
+ *   Method 1 — data-sds-scroll (works everywhere, paste once):
+ *   <div data-sds-scroll class="sds-scroll-rise">Content</div>
+ *   <script>
+ *   (function(){
+ *     var io=new IntersectionObserver(function(e){
+ *       e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('sds-in');io.unobserve(x.target);}});
+ *     },{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+ *     document.querySelectorAll('[data-sds-scroll]').forEach(function(el){io.observe(el);});
+ *   })();
+ *   </script>
+ *
+ *   Method 2 — sds-scroll-auto (Chrome 115+, zero JS):
+ *   <div class="sds-scroll-auto sds-scroll-rise">Content</div>
+ *
+ * ─── BUG FIXES IN THIS BUILD ─────────────────────────────────
+ *
+ *   ✓ sds-loader-progress/data/bar — position:relative added
+ *   ✓ will-change on GPU-heavy animations — no jank
+ *   ✓ backface-visibility on 3D transforms — no Chrome flicker
+ *   ✓ max-width:max-content on typewriter — no text clipping
+ *   ✓ prefers-reduced-motion — scroll elements stay visible
+ *   ✓ CSS scroll-driven animations via .sds-scroll-auto
+ *
+ */
+
+/* ============================================================
+   DESIGN TOKENS
+   Override these in :root to theme SDS Motion to your brand.
+   ============================================================ */
+
+:root {
+  --sds-primary: #0015d1;
+  --sds-primary-dim: rgba(0, 21, 209, 0.08);
+  --sds-primary-glow: rgba(0, 21, 209, 0.3);
+  --sds-accent: #d10028;
+  --sds-success: #00c48c;
+
+  /* ── v5 Motion Token Scale ──────────────────────────────────
+     Source of truth: tokens/motion.tokens.json (W3C Design Tokens).
+     Regenerate with `npm run build:tokens`. See SPEC.md.        */
+  /* @sds-generated-tokens:start — generated from tokens/motion.tokens.json by scripts/generate-tokens.js; do not edit by hand */
+  --sds-duration-instant: 0.3s;
+  --sds-duration-fast: 0.4s;
+  --sds-duration-base: 0.8s;
+  --sds-duration-slow: 1.4s;
+  --sds-duration-slower: 2.2s;
+  --sds-duration-dramatic: 3s;
+  --sds-ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  --sds-ease-decelerate: cubic-bezier(0.16, 1, 0.3, 1);
+  --sds-ease-accelerate: cubic-bezier(0.6, -0.28, 0.74, 0.05);
+  --sds-ease-emphasized: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --sds-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --sds-ease-bounce: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  --sds-distance-sm: 24px;
+  --sds-distance-md: 48px;
+  --sds-distance-lg: 80px;
+  /* @sds-generated-tokens:end */
+
+  /* Legacy tokens — permanent public API (R2). They now resolve
+     through the v5 scale; computed defaults are unchanged
+     (0.8s / cubic-bezier(0.22, 1, 0.36, 1)).                    */
+  --sds-duration: var(--sds-duration-base, 0.8s);
+  --sds-easing: var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1));
+}
+
+/* ============================================================
+   ACCESSIBILITY — REDUCED MOTION
+   Matches the user's OS preference. Skips all animation.
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  [class*="sds-"],
+  [class*="sds-"]::before,
+  [class*="sds-"]::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Scroll-animated elements must stay visible under reduced motion */
+  [class*="sds-scroll-"],
+  [class*="sds-scroll-"] > * {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    clip-path: none !important;
+    -webkit-clip-path: none !important;
+  }
+}
+
+/* ============================================================
+   UTILITY MODIFIERS
+   Stack these on any animation class.
+   ============================================================ */
+
+/* Delay helpers */
+
+.sds-delay-1 {
+  animation-delay: 0.1s !important;
+}
+
+.sds-delay-2 {
+  animation-delay: 0.2s !important;
+}
+
+.sds-delay-3 {
+  animation-delay: 0.3s !important;
+}
+
+.sds-delay-4 {
+  animation-delay: 0.4s !important;
+}
+
+.sds-delay-5 {
+  animation-delay: 0.5s !important;
+}
+
+.sds-delay-6 {
+  animation-delay: 0.6s !important;
+}
+
+.sds-delay-8 {
+  animation-delay: 0.8s !important;
+}
+
+.sds-delay-10 {
+  animation-delay: 1s !important;
+}
+
+/* Duration helpers — override --sds-duration token */
+
+.sds-fast {
+  --sds-duration: var(--sds-duration-fast, 0.4s);
+}
+
+.sds-normal {
+  --sds-duration: var(--sds-duration-base, 0.8s);
+}
+
+.sds-slow {
+  --sds-duration: var(--sds-duration-slow, 1.4s);
+}
+
+.sds-xslow {
+  --sds-duration: var(--sds-duration-slower, 2.2s);
+}
+
+/* Iteration helpers */
+
+.sds-once {
+  animation-iteration-count: 1 !important;
+  animation-fill-mode: both !important;
+}
+
+/* Cascade to > * so stagger/wave containers (arc-orbit, kinetic-wave, signal-wave,
+   stagger-pop, stagger-grid) loop correctly — their animations live on children. */
+
+.sds-loop,
+.sds-loop > * {
+  animation-iteration-count: infinite !important;
+}
+
+.sds-alt,
+.sds-alt > * {
+  animation-direction: alternate;
+  animation-iteration-count: infinite !important;
+}
+
+/* Fill modes */
+
+.sds-fill-both {
+  animation-fill-mode: both !important;
+}
+
+.sds-fill-forward {
+  animation-fill-mode: forwards !important;
+}
+
+/* Pause on hover */
+
+.sds-pause-hover:hover,
+.sds-pause-hover:hover *,
+.sds-pause-hover:hover::before,
+.sds-pause-hover:hover::after {
+  animation-play-state: paused !important;
+}
+
+/* ============================================================
+   SCROLL ANIMATION ACTIVATION
+   ============================================================
+   Add data-sds-scroll to your element, then include this
+   script once in your page. The animation fires when the
+   element enters the viewport.
+
+   <div data-sds-scroll class="sds-scroll-rise">Your content</div>
+
+   <script>
+   (function(){
+     var io=new IntersectionObserver(function(e){
+       e.forEach(function(x){
+         if(x.isIntersecting){
+           x.target.classList.add('sds-in');
+           io.unobserve(x.target);
+         }
+       });
+     },{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+     document.querySelectorAll('[data-sds-scroll]').forEach(function(el){
+       io.observe(el);
+     });
+   })();
+   </script>
+   ============================================================ */
+
+[data-sds-scroll][class*="sds-scroll-"] {
+  opacity: 0;
+  animation-play-state: paused;
+}
+
+[data-sds-scroll].sds-in[class*="sds-scroll-"] {
+  opacity: 1;
+  animation-play-state: running;
+}
+
+/* CSS Scroll-Driven Animations — Chrome 115+, zero JS */
+
+@supports (animation-timeline: scroll()) {
+  .sds-scroll-auto[class*="sds-scroll-"] {
+    animation-timeline: view();
+    animation-range: entry 0% entry 40%;
+    animation-play-state: running;
+    opacity: 1;
+  }
+}
+
+/* ============================================================
+   SCROLL GATE — sds-scroll.js engine (data-sds attribute)
+   ============================================================
+   Requires: <script src="sds-scroll.min.js" defer></script>
+   The JS adds "sds-js" to <html> and "sds-play" to each
+   [data-sds] element when it enters the viewport.
+   ============================================================ */
+
+/* Gate: hidden + paused until JS grants sds-play */
+
+[data-sds]:not(.sds-play) {
+  animation-play-state: paused !important;
+  animation-delay: -1ms !important;
+  opacity: 0 !important;
+}
+
+/* Release: visible + running */
+
+[data-sds].sds-play {
+  opacity: 1;
+  animation-play-state: running !important;
+}
+
+/* Fallback: if JS never loads, show content normally */
+
+html:not(.sds-js) [data-sds] {
+  opacity: 1 !important;
+  animation-play-state: running !important;
+}
+
+/*!
+ * SDS Motion Forge — buttons.css
+ * Button animations (Section 2).
+ * Part of the lossless v5 category split — combined entry: src/motion.css
+ */
+
+/* ============================================================
+   SECTION 2 — BUTTON ANIMATIONS
+   Namespace: .sds-btn-*
+   ============================================================ */
+
+/* 31 · Magnetic Pulse -------------------------------------- */
+
+.sds-btn-magnetic {
+  animation: sds-magnetPulse 2s ease infinite;
+  outline: 2px solid transparent;
+}
+
+@keyframes sds-magnetPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 var(--sds-primary-glow);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(0, 21, 209, 0);
+    transform: scale(1.02);
+  }
+}
+
+/* 32 · Liquid Fill ----------------------------------------- */
+
+.sds-btn-liquid {
+  background-image: linear-gradient(
+    90deg,
+    var(--sds-primary) 50%,
+    transparent 50%
+  );
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  animation: sds-liquidFill 2s ease infinite alternate;
+}
+
+@keyframes sds-liquidFill {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: 0% 0;
+  }
+}
+
+/* 33 · Energy Ripple --------------------------------------- */
+
+.sds-btn-energy {
+  animation: sds-energyRipple 2s ease infinite;
+}
+
+@keyframes sds-energyRipple {
+  0% {
+    box-shadow:
+      0 0 0 0 var(--sds-primary-glow),
+      0 0 0 0 var(--sds-primary-dim);
+  }
+  70% {
+    box-shadow:
+      0 0 0 12px rgba(0, 21, 209, 0),
+      0 0 0 24px rgba(0, 21, 209, 0);
+  }
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(0, 21, 209, 0),
+      0 0 0 0 rgba(0, 21, 209, 0);
+  }
+}
+
+/* 34 · Press Depth ----------------------------------------- */
+
+.sds-btn-press {
+  animation: sds-pressDepth 1.8s ease infinite;
+}
+
+@keyframes sds-pressDepth {
+  0%,
+  100% {
+    transform: translateY(0);
+    box-shadow:
+      0 8px 0 rgba(0, 21, 209, 0.15),
+      0 4px 16px rgba(0, 21, 209, 0.08);
+  }
+  50% {
+    transform: translateY(4px);
+    box-shadow:
+      0 4px 0 rgba(0, 21, 209, 0.15),
+      0 2px 8px rgba(0, 21, 209, 0.08);
+  }
+}
+
+/* 35 · Edge Trace ------------------------------------------ */
+
+.sds-btn-edge {
+  border: none;
+  background-image:
+    linear-gradient(var(--sds-primary), var(--sds-primary)),
+    linear-gradient(var(--sds-primary), var(--sds-primary)),
+    linear-gradient(var(--sds-primary), var(--sds-primary)),
+    linear-gradient(var(--sds-primary), var(--sds-primary));
+  background-repeat: no-repeat;
+  background-position:
+    top left,
+    right top,
+    bottom right,
+    left bottom;
+  animation: sds-edgeTrace 2s linear infinite alternate;
+}
+
+@keyframes sds-edgeTrace {
+  0% {
+    background-size:
+      0% 2px,
+      2px 0%,
+      0% 2px,
+      2px 0%;
+  }
+  25% {
+    background-size:
+      100% 2px,
+      2px 0%,
+      0% 2px,
+      2px 0%;
+  }
+  50% {
+    background-size:
+      100% 2px,
+      2px 100%,
+      0% 2px,
+      2px 0%;
+  }
+  75% {
+    background-size:
+      100% 2px,
+      2px 100%,
+      100% 2px,
+      2px 0%;
+  }
+  100% {
+    background-size:
+      100% 2px,
+      2px 100%,
+      100% 2px,
+      2px 100%;
+  }
+}
+
+/* 36 · Plasma Glow ----------------------------------------- */
+
+.sds-btn-plasma {
+  animation: sds-plasmaGlow var(--sds-duration-dramatic, 3s) ease infinite;
+}
+
+@keyframes sds-plasmaGlow {
+  0% {
+    box-shadow:
+      0 0 12px var(--sds-primary-glow),
+      inset 0 0 12px var(--sds-primary-dim);
+  }
+  33% {
+    box-shadow:
+      0 0 24px var(--sds-primary-glow),
+      inset 0 0 18px var(--sds-primary-dim);
+  }
+  66% {
+    box-shadow:
+      0 0 20px rgba(209, 0, 40, 0.35),
+      inset 0 0 14px rgba(209, 0, 40, 0.06);
+  }
+  100% {
+    box-shadow:
+      0 0 12px var(--sds-primary-glow),
+      inset 0 0 12px var(--sds-primary-dim);
+  }
+}
+
+/* 37 · Morph Pill ------------------------------------------ */
+
+.sds-btn-morph {
+  animation: sds-morphPill 2s ease infinite;
+}
+
+@keyframes sds-morphPill {
+  0%,
+  100% {
+    border-radius: 10px;
+  }
+  50% {
+    border-radius: 40px;
+    transform: scaleX(0.95);
+  }
+}
+
+/* 38 · Lift Shadow ----------------------------------------- */
+
+.sds-btn-lift {
+  animation: sds-liftShadow 2s ease infinite;
+}
+
+@keyframes sds-liftShadow {
+  0%,
+  100% {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 21, 209, 0.1);
+  }
+  50% {
+    transform: translateY(-6px);
+    box-shadow:
+      0 20px 40px rgba(0, 21, 209, 0.18),
+      0 8px 16px rgba(0, 21, 209, 0.12);
+  }
+}
+
+/* 39 · Shockwave ------------------------------------------- */
+
+.sds-btn-shock {
+  outline-style: solid;
+  outline-color: transparent;
+  animation: sds-shockwave 2s ease infinite;
+}
+
+@keyframes sds-shockwave {
+  0% {
+    outline-offset: 0;
+    outline-width: 0;
+    outline-color: var(--sds-primary-glow);
+  }
+  40% {
+    outline-offset: 8px;
+    outline-width: 2px;
+    outline-color: rgba(0, 21, 209, 0.3);
+  }
+  100% {
+    outline-offset: 20px;
+    outline-width: 0;
+    outline-color: rgba(0, 21, 209, 0);
+  }
+}
+
+/* 40 · Neon Sign ------------------------------------------- */
+
+.sds-btn-neon {
+  animation: sds-neonSign 4s ease infinite;
+}
+
+@keyframes sds-neonSign {
+  0%,
+  95%,
+  100% {
+    box-shadow:
+      0 0 8px var(--sds-primary-glow),
+      0 0 20px var(--sds-primary-dim),
+      inset 0 0 8px var(--sds-primary-dim);
+  }
+  96% {
+    box-shadow: 0 0 2px rgba(0, 21, 209, 0.2);
+  }
+  97.5% {
+    box-shadow:
+      0 0 8px var(--sds-primary-glow),
+      0 0 20px var(--sds-primary-dim);
+  }
+  98.5% {
+    box-shadow: 0 0 1px rgba(0, 21, 209, 0.1);
+  }
+}
+
+/* 41 · Volt Strike ----------------------------------------- */
+
+.sds-btn-volt {
+  animation: sds-voltagePulse 2.5s ease infinite;
+}
+
+/* 42 · Glow Surge ------------------------------------------ */
+
+.sds-btn-glow-surge {
+  animation: sds-glowSurge 2s ease infinite;
+}
+
+@keyframes sds-glowSurge {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 1px rgba(0, 21, 209, 0.15),
+      0 4px 20px rgba(0, 21, 209, 0.06);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px rgba(0, 21, 209, 0.5),
+      0 0 24px rgba(0, 21, 209, 0.2),
+      0 4px 30px rgba(0, 21, 209, 0.1);
+  }
+}
+
+/* 43 · Quantum Stamp --------------------------------------- */
+
+.sds-btn-quantum {
+  animation: sds-elasticStamp var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+  display: inline-block;
+}
+
+/* 44 · Ripple -------------------------------------------- */
+
+.sds-btn-ripple {
+  animation: sds-btnRipple 2s ease infinite;
+}
+
+@keyframes sds-btnRipple {
+  0% {
+    box-shadow:
+      0 0 0 0 var(--sds-primary-glow),
+      0 0 0 0 rgba(0, 21, 209, 0.12);
+  }
+  60% {
+    box-shadow:
+      0 0 0 10px rgba(0, 21, 209, 0),
+      0 0 0 20px rgba(0, 21, 209, 0);
+  }
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(0, 21, 209, 0),
+      0 0 0 0 rgba(0, 21, 209, 0);
+  }
+}
+
+/* 45 · Swipe ---------------------------------------------- */
+
+.sds-btn-swipe {
+  background-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 21, 209, 0.12) 40%,
+    rgba(0, 21, 209, 0.18) 50%,
+    rgba(0, 21, 209, 0.12) 60%,
+    transparent 100%
+  );
+  background-size: 300% 100%;
+  animation: sds-btnSwipe 2.4s ease infinite;
+}
+
+@keyframes sds-btnSwipe {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 300% center;
+  }
+}
+
+/* 46 · Burst ---------------------------------------------- */
+
+.sds-btn-burst {
+  outline-style: solid;
+  outline-color: transparent;
+  animation: sds-btnBurst var(--sds-duration-slower, 2.2s) ease-in-out infinite;
+}
+
+@keyframes sds-btnBurst {
+  0% {
+    outline-width: 0;
+    outline-offset: 0;
+    outline-color: var(--sds-primary-glow);
+    transform: scale(1);
+  }
+  30% {
+    outline-width: 3px;
+    outline-offset: 4px;
+    outline-color: rgba(0, 21, 209, 0.3);
+    transform: scale(1.03);
+  }
+  80% {
+    outline-width: 0;
+    outline-offset: 14px;
+    outline-color: rgba(0, 21, 209, 0);
+    transform: scale(1);
+  }
+  100% {
+    outline-width: 0;
+    outline-offset: 0;
+  }
+}
+
+/* 47 · Scan ---------------------------------------------- */
+
+.sds-btn-scan {
+  background-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 48%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.3) 52%,
+    transparent 100%
+  );
+  background-size: 250% 100%;
+  animation: sds-btnScan 2s linear infinite;
+}
+
+@keyframes sds-btnScan {
+  0% {
+    background-position: -150% center;
+  }
+  100% {
+    background-position: 250% center;
+  }
+}
+
+/* 48 · Bounce -------------------------------------------- */
+
+.sds-btn-bounce {
+  animation: sds-btnBounce var(--sds-duration-slow, 1.4s) var(--sds-ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1)) infinite;
+}
+
+@keyframes sds-btnBounce {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.07);
+  }
+  60% {
+    transform: scale(0.96);
+  }
+}
+
+/* 49 · Gradient Shift ------------------------------------- */
+
+.sds-btn-gradient-shift {
+  background-image: linear-gradient(
+    135deg,
+    var(--sds-primary),
+    #6366f1,
+    var(--sds-accent),
+    #8b5cf6,
+    var(--sds-primary)
+  );
+  background-size: 400% 100%;
+  animation: sds-btnGradShift 4s ease infinite;
+}
+
+@keyframes sds-btnGradShift {
+  0% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}
+
+/* 50 · Outline Grow --------------------------------------- */
+
+.sds-btn-outline-grow {
+  animation: sds-btnOutlineGrow 2s ease infinite;
+  outline-style: solid;
+  outline-offset: 0;
+}
+
+@keyframes sds-btnOutlineGrow {
+  0%,
+  100% {
+    outline-width: 0;
+    outline-offset: 0;
+    outline-color: var(--sds-primary-glow);
+  }
+  50% {
+    outline-width: 2px;
+    outline-offset: 5px;
+    outline-color: rgba(0, 21, 209, 0.4);
+  }
+}
+
+/* 51 · Shimmer -------------------------------------------- */
+
+.sds-btn-shimmer {
+  background-image: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.45) 50%,
+    transparent 60%
+  );
+  background-size: 200% 100%;
+  animation: sds-btnShimmer 1.8s ease-in-out infinite;
+}
+
+@keyframes sds-btnShimmer {
+  0% {
+    background-position: -100% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* 52 · Float --------------------------------------------- */
+
+.sds-btn-float {
+  animation: sds-btnFloat 2.6s ease-in-out infinite;
+}
+
+@keyframes sds-btnFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 21, 209, 0.1);
+  }
+  50% {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 32px rgba(0, 21, 209, 0.16);
+  }
+}
+
+/* 53 · Border Flow ---------------------------------------- */
+
+.sds-btn-border-flow {
+  animation: sds-btnBorderFlow var(--sds-duration-dramatic, 3s) linear infinite;
+  outline: 2px solid transparent;
+}
+
+@keyframes sds-btnBorderFlow {
+  0%,
+  100% {
+    box-shadow:
+      inset 0 0 0 1.5px var(--sds-primary),
+      0 0 8px var(--sds-primary-glow);
+  }
+  25% {
+    box-shadow:
+      inset 0 0 0 1.5px #8b5cf6,
+      0 0 8px rgba(139, 92, 246, 0.3);
+  }
+  50% {
+    box-shadow:
+      inset 0 0 0 1.5px var(--sds-accent),
+      0 0 8px rgba(209, 0, 40, 0.2);
+  }
+  75% {
+    box-shadow:
+      inset 0 0 0 1.5px #06b6d4,
+      0 0 8px rgba(6, 182, 212, 0.25);
+  }
+}
+
+/* 54 · Glow Core ------------------------------------------ */
+
+.sds-btn-glow-core {
+  animation: sds-btnGlowCore var(--sds-duration-slower, 2.2s) ease-in-out infinite;
+}
+
+@keyframes sds-btnGlowCore {
+  0%,
+  100% {
+    box-shadow:
+      inset 0 0 0 rgba(0, 21, 209, 0),
+      0 0 0 rgba(0, 21, 209, 0);
+  }
+  50% {
+    box-shadow:
+      inset 0 0 20px var(--sds-primary-dim),
+      0 0 30px var(--sds-primary-glow),
+      0 0 60px rgba(0, 21, 209, 0.08);
+  }
+}
+
+/* 55 · Kinetic -------------------------------------------- */
+
+.sds-btn-kinetic {
+  animation: sds-btnKinetic var(--sds-duration-base, 0.8s) ease-in-out infinite;
+}
+
+@keyframes sds-btnKinetic {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+  20% {
+    transform: scale(1.04) rotate(0.3deg);
+  }
+  40% {
+    transform: scale(0.97) rotate(-0.2deg);
+  }
+  60% {
+    transform: scale(1.02) rotate(0.15deg);
+  }
+  80% {
+    transform: scale(0.99) rotate(-0.1deg);
+  }
+}
+
+/* 56 · Charge -------------------------------------------- */
+
+.sds-btn-charge {
+  animation: sds-btnCharge 2.4s ease-in-out infinite;
+}
+
+@keyframes sds-btnCharge {
+  0% {
+    box-shadow: 0 0 0 rgba(0, 21, 209, 0);
+    filter: brightness(1);
+  }
+  60% {
+    box-shadow:
+      0 0 24px var(--sds-primary-glow),
+      0 0 48px rgba(0, 21, 209, 0.12);
+    filter: brightness(1.15);
+    transform: scale(1.03);
+  }
+  80% {
+    box-shadow: 0 0 4px rgba(0, 21, 209, 0.1);
+    filter: brightness(1);
+    transform: scale(1);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(0, 21, 209, 0);
+  }
+}
+
+/* 57 · Aurora -------------------------------------------- */
+
+.sds-btn-aurora {
+  animation: sds-btnAurora 4s ease-in-out infinite;
+}
+
+@keyframes sds-btnAurora {
+  0%,
+  100% {
+    box-shadow:
+      0 0 12px rgba(0, 21, 209, 0.25),
+      0 0 30px rgba(0, 21, 209, 0.1);
+  }
+  25% {
+    box-shadow:
+      0 0 20px rgba(139, 92, 246, 0.35),
+      0 0 40px rgba(139, 92, 246, 0.12);
+  }
+  50% {
+    box-shadow:
+      0 0 16px rgba(6, 182, 212, 0.3),
+      0 0 35px rgba(6, 182, 212, 0.1);
+  }
+  75% {
+    box-shadow:
+      0 0 18px rgba(16, 185, 129, 0.3),
+      0 0 36px rgba(16, 185, 129, 0.1);
+  }
+}
+
+/* 58 · Heartbeat ----------------------------------------- */
+
+.sds-btn-heartbeat {
+  animation: sds-btnHeartbeat 1.2s ease-in-out infinite;
+}
+
+@keyframes sds-btnHeartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.08);
+  }
+  28% {
+    transform: scale(0.97);
+  }
+  42% {
+    transform: scale(1.05);
+  }
+  56% {
+    transform: scale(1);
+  }
+}
+
+/* 59 · Neon Trace ---------------------------------------- */
+
+.sds-btn-neon-trace {
+  animation: sds-btnNeonTrace var(--sds-duration-dramatic, 3s) ease infinite;
+}
+
+@keyframes sds-btnNeonTrace {
+  0%,
+  90%,
+  100% {
+    box-shadow:
+      0 0 6px var(--sds-primary-glow),
+      inset 0 0 6px var(--sds-primary-dim);
+  }
+  92% {
+    box-shadow: 0 0 1px rgba(0, 21, 209, 0.1);
+  }
+  94% {
+    box-shadow:
+      0 0 10px var(--sds-primary-glow),
+      inset 0 0 10px var(--sds-primary-dim);
+  }
+  96% {
+    box-shadow: 0 0 2px rgba(0, 21, 209, 0.1);
+  }
+}
+
+/* 60 · Gravity ------------------------------------------- */
+
+.sds-btn-gravity {
+  animation: sds-btnGravity 1.8s var(--sds-ease-bounce, cubic-bezier(0.68, -0.55, 0.27, 1.55)) infinite;
+}
+
+@keyframes sds-btnGravity {
+  0%,
+  100% {
+    transform: translateY(0);
+    box-shadow: 0 6px 0 rgba(0, 21, 209, 0.2);
+  }
+  50% {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 rgba(0, 21, 209, 0.2);
+  }
+}
+
+/* 61 · Momentum ------------------------------------------ */
+
+.sds-btn-momentum {
+  animation: sds-btnMomentum 2s var(--sds-easing) both;
+}
+
+@keyframes sds-btnMomentum {
+  0% {
+    transform: translateX(-40px);
+    filter: blur(8px);
+    opacity: 0;
+  }
+  40% {
+    filter: blur(0);
+    opacity: 1;
+    transform: translateX(4px);
+  }
+  60% {
+    transform: translateX(-2px);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* 62 · Ice ----------------------------------------------- */
+
+.sds-btn-ice {
+  animation: sds-btnIce var(--sds-duration-dramatic, 3s) ease-in-out infinite;
+}
+
+@keyframes sds-btnIce {
+  0%,
+  100% {
+    box-shadow:
+      0 0 8px rgba(6, 182, 212, 0.3),
+      inset 0 0 8px rgba(6, 182, 212, 0.08);
+    filter: brightness(1);
+  }
+  50% {
+    box-shadow:
+      0 0 24px rgba(6, 182, 212, 0.5),
+      inset 0 0 16px rgba(6, 182, 212, 0.12);
+    filter: brightness(1.1);
+  }
+}
+
+/* 63 · Fire ---------------------------------------------- */
+
+.sds-btn-fire {
+  animation: sds-btnFire 2s ease-in-out infinite;
+}
+
+@keyframes sds-btnFire {
+  0%,
+  100% {
+    box-shadow:
+      0 0 8px rgba(251, 113, 133, 0.35),
+      0 4px 16px rgba(239, 68, 68, 0.15);
+    filter: brightness(1);
+  }
+  33% {
+    box-shadow:
+      0 0 20px rgba(251, 146, 60, 0.5),
+      0 6px 24px rgba(239, 68, 68, 0.2);
+    filter: brightness(1.1);
+  }
+  66% {
+    box-shadow:
+      0 0 14px rgba(239, 68, 68, 0.4),
+      0 4px 12px rgba(251, 113, 133, 0.15);
+  }
+}
+
+/* 64 · Flux ---------------------------------------------- */
+
+.sds-btn-flux {
+  animation: sds-btnFlux 1.6s ease-in-out infinite;
+}
+
+@keyframes sds-btnFlux {
+  0%,
+  100% {
+    filter: brightness(1) saturate(1);
+    transform: scale(1);
+  }
+  25% {
+    filter: brightness(1.12) saturate(1.3);
+    transform: scale(1.02);
+  }
+  50% {
+    filter: brightness(0.95) saturate(0.8);
+    transform: scale(0.99);
+  }
+  75% {
+    filter: brightness(1.08) saturate(1.2);
+    transform: scale(1.01);
+  }
+}
+
+/* 65 · Radar --------------------------------------------- */
+
+.sds-btn-radar {
+  position: relative;
+  overflow: hidden;
+  animation: sds-btnRadar 2s ease infinite;
+}
+
+@keyframes sds-btnRadar {
+  0%,
+  100% {
+    box-shadow: inset 0 0 0 1px rgba(0, 21, 209, 0.25);
+  }
+  50% {
+    box-shadow:
+      inset 0 0 0 1px rgba(0, 21, 209, 0.6),
+      inset 0 0 20px rgba(0, 21, 209, 0.06);
+  }
+}
+
+/* 66 · Tilt ---------------------------------------------- */
+
+.sds-btn-tilt {
+  animation: sds-btnTilt var(--sds-duration-dramatic, 3s) ease-in-out infinite;
+}
+
+@keyframes sds-btnTilt {
+  0%,
+  100% {
+    transform: perspective(400px) rotateY(0deg) rotateX(0deg);
+  }
+  25% {
+    transform: perspective(400px) rotateY(6deg) rotateX(-2deg);
+  }
+  75% {
+    transform: perspective(400px) rotateY(-6deg) rotateX(2deg);
+  }
+}
+
+/* 67 · Stretch ------------------------------------------- */
+
+.sds-btn-stretch {
+  animation: sds-btnStretch 2s var(--sds-ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1)) infinite;
+}
+
+@keyframes sds-btnStretch {
+  0%,
+  100% {
+    transform: scaleX(1) scaleY(1);
+  }
+  30% {
+    transform: scaleX(1.1) scaleY(0.94);
+  }
+  60% {
+    transform: scaleX(0.96) scaleY(1.04);
+  }
+}
+
+/* 68 · Recoil -------------------------------------------- */
+
+.sds-btn-recoil {
+  animation: sds-btnRecoil 2.4s ease-in-out infinite;
+}
+
+@keyframes sds-btnRecoil {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.9);
+  }
+  20% {
+    transform: scale(1.06);
+  }
+  30% {
+    transform: scale(0.98);
+  }
+  40% {
+    transform: scale(1.02);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+
+/* 69 · Depth Press --------------------------------------- */
+
+.sds-btn-depth-press {
+  animation: sds-btnDepthPress 2s ease-in-out infinite;
+}
+
+@keyframes sds-btnDepthPress {
+  0%,
+  100% {
+    transform: perspective(300px) translateZ(0);
+    box-shadow:
+      0 10px 0 rgba(0, 21, 209, 0.18),
+      0 5px 20px rgba(0, 21, 209, 0.1);
+  }
+  50% {
+    transform: perspective(300px) translateZ(-8px);
+    box-shadow:
+      0 4px 0 rgba(0, 21, 209, 0.18),
+      0 2px 8px rgba(0, 21, 209, 0.08);
+  }
+}
+
+/* 70 · Rotate -------------------------------------------- */
+
+.sds-btn-rotate {
+  animation: sds-btnRotate 4s linear infinite;
+}
+
+@keyframes sds-btnRotate {
+  0% {
+    transform: perspective(500px) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(500px) rotateY(360deg);
+  }
+}
+
+/* 71 · Pulse Border -------------------------------------- */
+
+.sds-btn-pulse-border {
+  animation: sds-btnPulseBorder 2s ease-in-out infinite;
+  border: 1px solid rgba(0, 21, 209, 0.3);
+}
+
+@keyframes sds-btnPulseBorder {
+  0%,
+  100% {
+    border-color: rgba(0, 21, 209, 0.3);
+    border-width: 1px;
+  }
+  50% {
+    border-color: var(--sds-primary);
+    border-width: 2px;
+    box-shadow: 0 0 12px var(--sds-primary-glow);
+  }
+}
+
+/* 72 · Gravity Pull -------------------------------------- */
+
+.sds-btn-gravity-pull {
+  animation: sds-btnGravityPull 2.4s ease-in-out infinite;
+}
+
+@keyframes sds-btnGravityPull {
+  0%,
+  100% {
+    box-shadow: 0 4px 6px rgba(0, 21, 209, 0.12);
+    transform: translateY(0);
+  }
+  50% {
+    box-shadow:
+      0 24px 40px rgba(0, 21, 209, 0.22),
+      0 8px 12px rgba(0, 21, 209, 0.1);
+    transform: translateY(-4px);
+  }
+}
+
+/* 73 · Warp --------------------------------------------- */
+
+.sds-btn-warp {
+  animation: sds-btnWarp 2.6s ease-in-out infinite;
+}
+
+@keyframes sds-btnWarp {
+  0%,
+  100% {
+    transform: scaleX(1) scaleY(1) skewX(0deg);
+  }
+  25% {
+    transform: scaleX(1.06) scaleY(0.95) skewX(-2deg);
+  }
+  75% {
+    transform: scaleX(0.96) scaleY(1.04) skewX(2deg);
+  }
+}
+
+/* 74 · Dissolve ------------------------------------------ */
+
+.sds-btn-dissolve {
+  animation: sds-btnDissolve var(--sds-duration-dramatic, 3s) ease-in-out infinite;
+}
+
+@keyframes sds-btnDissolve {
+  0%,
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+  40% {
+    opacity: 0.7;
+    filter: blur(1px) brightness(1.3);
+  }
+  60% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+/* 75 · Split -------------------------------------------- */
+
+.sds-btn-split {
+  animation: sds-btnSplit 2.8s ease-in-out infinite;
+}
+
+@keyframes sds-btnSplit {
+  0%,
+  100% {
+    box-shadow:
+      inset 0 0 0 1.5px rgba(0, 21, 209, 0.25),
+      0 0 0 rgba(0, 21, 209, 0);
+  }
+  40% {
+    box-shadow:
+      inset 0 0 0 1.5px var(--sds-primary),
+      0 0 20px var(--sds-primary-glow);
+    transform: scaleX(1.04);
+  }
+  60% {
+    box-shadow: inset 0 0 0 1.5px rgba(0, 21, 209, 0.4);
+    transform: scaleX(0.97);
+  }
+}
+
+/* 76 · Magnetic Trail ------------------------------------ */
+
+.sds-btn-magnetic-trail {
+  animation: sds-btnMagTrail 2s ease-in-out infinite;
+}
+
+@keyframes sds-btnMagTrail {
+  0%,
+  100% {
+    box-shadow:
+      -8px 0 20px rgba(0, 21, 209, 0),
+      8px 0 20px rgba(0, 21, 209, 0);
+  }
+  50% {
+    box-shadow:
+      -12px 0 24px rgba(0, 21, 209, 0.2),
+      12px 0 24px rgba(0, 21, 209, 0.1);
+    transform: scale(1.02);
+  }
+}
+
+/* 77 · Hologram ------------------------------------------ */
+
+.sds-btn-hologram {
+  animation: sds-btnHologram 4s linear infinite;
+}
+
+@keyframes sds-btnHologram {
+  0%,
+  100% {
+    filter: hue-rotate(0deg) brightness(1);
+  }
+  5% {
+    filter: hue-rotate(30deg) brightness(1.2);
+  }
+  6% {
+    filter: hue-rotate(0deg) brightness(1);
+  }
+  40% {
+    filter: hue-rotate(200deg) brightness(1.15);
+  }
+  41% {
+    filter: hue-rotate(0deg) brightness(1);
+  }
+  80% {
+    filter: hue-rotate(100deg) brightness(1.1);
+  }
+  81% {
+    filter: hue-rotate(0deg) brightness(1);
+  }
+}
+
+/* 78 · Crystal ------------------------------------------- */
+
+.sds-btn-crystal {
+  animation: sds-btnCrystal 2.4s ease-in-out infinite;
+}
+
+@keyframes sds-btnCrystal {
+  0%,
+  100% {
+    filter: brightness(1) contrast(1);
+  }
+  30% {
+    filter: brightness(1.25) contrast(1.1);
+    box-shadow:
+      0 0 16px rgba(255, 255, 255, 0.4),
+      0 0 4px rgba(0, 21, 209, 0.2);
+  }
+  60% {
+    filter: brightness(1) contrast(1);
+  }
+}
+
+/* 79 · Flare -------------------------------------------- */
+
+.sds-btn-flare {
+  animation: sds-btnFlare 2.5s ease-in-out infinite;
+}
+
+@keyframes sds-btnFlare {
+  0%,
+  100% {
+    box-shadow: 0 0 0 rgba(0, 21, 209, 0);
+  }
+  50% {
+    box-shadow:
+      0 0 40px rgba(0, 21, 209, 0.25),
+      0 0 80px rgba(0, 21, 209, 0.08),
+      0 0 120px rgba(0, 21, 209, 0.04);
+    transform: scale(1.02);
+  }
+}
+
+/* 80 · Amp ---------------------------------------------- */
+
+.sds-btn-amp {
+  animation: sds-btnAmp 0.6s ease-in-out infinite;
+}
+
+@keyframes sds-btnAmp {
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+  25% {
+    transform: scaleY(1.05);
+  }
+  75% {
+    transform: scaleY(0.96);
+  }
+}
+
+/*  GPU compositing hints (buttons) — split from the global will-change rule; must stay after the class definitions above  */
+
+.sds-btn-neon,
+.sds-btn-plasma,
+.sds-btn-aurora,
+.sds-btn-float,
+.sds-btn-tilt,
+.sds-btn-rotate {
+  will-change: transform, opacity;
+}
+
+/* ── Cross-category keyframe dependencies ── */
+/* dependency: @keyframes sds-voltagePulse (defined in inputs.css) */
+@keyframes sds-voltagePulse {
+  0%,
+  100% {
+    border-color: rgba(0, 21, 209, 0.3);
+  }
+  10% {
+    border-color: var(--sds-primary);
+    box-shadow: 0 0 12px var(--sds-primary-glow);
+  }
+  20% {
+    border-color: rgba(0, 21, 209, 0.3);
+    box-shadow: none;
+  }
+  30% {
+    border-color: var(--sds-primary);
+    box-shadow: 0 0 8px var(--sds-primary-glow);
+  }
+  40% {
+    border-color: rgba(0, 21, 209, 0.3);
+  }
+}
+/* dependency: @keyframes sds-elasticStamp (defined in text.css) */
+@keyframes sds-elasticStamp {
+  0% {
+    transform: scale(0) rotate(-6deg);
+    opacity: 0;
+  }
+  55% {
+    transform: scale(1.15) rotate(1.5deg);
+    opacity: 1;
+  }
+  72% {
+    transform: scale(0.94) rotate(-0.5deg);
+  }
+  86% {
+    transform: scale(1.04) rotate(0.3deg);
+  }
+  100% {
+    transform: scale(1) rotate(0);
+    opacity: 1;
+  }
+}

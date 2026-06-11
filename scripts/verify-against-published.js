@@ -123,12 +123,17 @@ function computedDecls(rule, vars) {
 }
 
 function groupRules(model) {
-  // key: context + '|' + selector  -> array of rules in source order
+  // key: context + '|' + INDIVIDUAL selector -> array of rules in source order.
+  // Selector lists are exploded so that structurally splitting a multi-selector
+  // rule (same declarations per selector) is not a deviation, while any change
+  // to what a given selector receives still is.
   const map = new Map();
   for (const r of model.rules) {
-    const key = `${r.context}|${r.selector}`;
-    if (!map.has(key)) map.set(key, []);
-    map.get(key).push(r);
+    for (const sel of r.selector.split(",").map((s) => s.replace(/\s+/g, " ").trim())) {
+      const key = `${r.context}|${sel}`;
+      if (!map.has(key)) map.set(key, []);
+      map.get(key).push(r);
+    }
   }
   return map;
 }
