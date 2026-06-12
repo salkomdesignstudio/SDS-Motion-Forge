@@ -1,5 +1,7 @@
 # SDS Motion Forge
 
+**Every class that worked in v3/v4 works identically in v5 — machine-verified against the published tarball on every build.**
+
 **300+ production-ready CSS animations. One class name. Zero required JavaScript.**
 
 [![npm version](https://img.shields.io/npm/v/@salkomdesignstudio/sds-motion-forge.svg?style=flat-square)](https://www.npmjs.com/package/@salkomdesignstudio/sds-motion-forge)
@@ -1173,6 +1175,13 @@ cp -r dist docs/dist
 ## Contributing
 
 Contributions are welcome. This is an MIT-licensed open-source project.
+
+**Start with [CONTRIBUTING.md](CONTRIBUTING.md)** — it explains the
+registry → codegen architecture, the compatibility contract, and the
+machine-enforced checklist for new animations. Public API changes and new
+categories go through the [RFC process](docs/rfcs/0000-template.md).
+Governance: [VERSIONING.md](VERSIONING.md) · [SECURITY.md](SECURITY.md) ·
+[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 
 ### Reporting bugs
 

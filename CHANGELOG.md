@@ -1,5 +1,48 @@
 # Changelog
 
+## [5.0.0] — Unreleased
+
+> ## Nothing removed, nothing changed.
+> Every class name, keyframe, computed animation value, export path, dist
+> file, data attribute and CDN usage pattern from v3/v4 works identically in
+> v5. This is not a promise — it is machine-proven on every build by the
+> published-tarball gate (`npm run verify:published`) against the committed
+> 4.0.3 baseline, with the full diff published in
+> [`compat/compatibility-report.md`](compat/compatibility-report.md). The two
+> intentional deviations (both pure bug fixes: reduced-motion coverage for
+> child-driven effects; scroll-gating of clip-path effects that never fired)
+> are documented with rationale in
+> [`compat/approved-deviations.json`](compat/approved-deviations.json).
+>
+> v5 is purely additive: motion tokens + SPEC (Phase 0), the effect registry
+> and per-category bundles (Phase 1), generated Tailwind/React/Angular/
+> Web-Components packages (Phase 2), the visual/perf/a11y/size quality gates
+> (Phase 3), the docs platform with the machine-enforced copy-paste guarantee
+> and the custom bundle builder (Phase 4), and open-source governance
+> (Phase 5). Details per phase below.
+
+## [Unreleased] — v5 Phase 5: Open-Source Governance
+
+### Added
+
+- **`CONTRIBUTING.md`** — the registry → codegen architecture, the published-
+  tarball contract, local dev setup, and the machine-enforced checklist for
+  new animations (registry entry, authored description, visual baseline,
+  compositor lint, budgets).
+- **RFC process** — `docs/rfcs/0000-template.md`; required for new
+  categories, public API changes, token changes, and anything needing a
+  compatibility deviation.
+- **`VERSIONING.md`** — strict semver, the one-major deprecation cycle,
+  permanent v3 alias exemption, independent wrapper versioning, and the
+  `next` dist-tag promote/rollback mechanics.
+- **`SECURITY.md`** (private reporting, 72h ack, supply-chain scope) and
+  **`CODE_OF_CONDUCT.md`** (Contributor Covenant 2.1).
+- **Issue/PR templates** — bug reports ask for a docs-playground snippet
+  reproduction (the snippets are machine-verified, so the diff against them
+  isolates the bug); animation requests ask for a named motion family with a
+  one-line motion description and a distinctness statement, mirroring the
+  SPEC quality bar; the PR template carries the compatibility statement.
+
 ## [Unreleased] — v5 Phase 4: Docs Platform + Copy-Paste Guarantee + Bundle Builder
 
 > The website IS the product: what you see in a preview, what you copy, and

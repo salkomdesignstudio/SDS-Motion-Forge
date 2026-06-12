@@ -1,0 +1,45 @@
+name: ✨ Animation request
+description: Propose a new effect or motion family.
+labels: ["animation-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        New effects must clear the quality bar in [SPEC.md](../../blob/main/SPEC.md):
+        multi-property choreography, compositor-only, token-driven, visually
+        distinct from the existing catalogue. Check the
+        [gallery](https://sds-motion-forge.netlify.app) for near-duplicates first.
+  - type: input
+    id: name
+    attributes:
+      label: Proposed name (sds-{category}-{name})
+      placeholder: sds-card-iris-bloom
+    validations:
+      required: true
+  - type: textarea
+    id: motion
+    attributes:
+      label: One-line motion description
+      description: Anticipation → action → settle. What moves, how it feels.
+      placeholder: "Card blooms from a centered iris: clip-path circle opens while the card scales from 0.92 with a spring settle and a brightness flare that decays."
+    validations:
+      required: true
+  - type: textarea
+    id: reference
+    attributes:
+      label: Reference (gif, video, live site)
+      description: Direction to refine, not to copy.
+  - type: dropdown
+    id: distinct
+    attributes:
+      label: Closest existing effect
+      description: Name the nearest neighbour and say why this one is meaningfully different.
+      options: ["I checked the gallery — described below", "Not sure"]
+    validations:
+      required: true
+  - type: textarea
+    id: distinctness
+    attributes:
+      label: Why it's distinct
+    validations:
+      required: true

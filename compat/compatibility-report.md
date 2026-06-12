@@ -1,6 +1,6 @@
 # Compatibility Report — new build vs published tarball
 
-- Generated: 2026-06-12T03:59:47.362Z
+- Generated: 2026-06-12T04:24:25.456Z
 - Baseline: @salkomdesignstudio/sds-motion-forge@4.0.3 (baseline/extracted)
 - Candidate: @salkomdesignstudio/sds-motion-forge@4.0.3 (working tree build)
 - Selectors compared: 609

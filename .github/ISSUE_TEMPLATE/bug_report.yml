@@ -1,0 +1,54 @@
+name: 🐞 Bug report
+description: Something animates wrong, or not at all.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please reproduce in the **docs playground first**: open the effect at
+        https://sds-motion-forge.netlify.app, adjust the modal controls, and
+        copy the exact snippet from one of the six code tabs. Those snippets
+        are machine-verified against the published package — if the playground
+        works and your app doesn't, the diff between them IS the bug report.
+  - type: input
+    id: classes
+    attributes:
+      label: Affected class name(s)
+      placeholder: sds-scroll-curtain
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Package version (or "CDN latest")
+      placeholder: 4.0.3
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Reproduction snippet
+      description: The playground snippet (HTML tab preferred), edited only as much as needed to show the bug. CodePen/StackBlitz links welcome.
+      render: html
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected vs what happened
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser + version (and OS)
+      placeholder: Chrome 126 / Windows 11
+    validations:
+      required: true
+  - type: dropdown
+    id: reduced
+    attributes:
+      label: Is "reduce motion" enabled in your OS?
+      options: ["No", "Yes", "Not sure"]
+    validations:
+      required: true

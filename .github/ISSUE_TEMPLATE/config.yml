@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Question / discussion
+    url: https://github.com/salkomdesignstudio/SDS-Motion-Forge/discussions
+    about: Usage questions and ideas that aren't bugs or animation requests.
+  - name: 🔒 Security report (private)
+    url: https://github.com/salkomdesignstudio/SDS-Motion-Forge/security/advisories/new
+    about: Never report vulnerabilities in public issues — see SECURITY.md.
