@@ -1,4 +1,12 @@
 {
   "$comment": "Explicit, written approvals for deviations from the published tarball (R1). Each entry must carry the deviation id reported by scripts/verify-against-published.js, a reason, who approved it, and when. An empty list means the build must be 100% computed-value-identical to the published package.",
-  "deviations": []
+  "deviations": [
+    {
+      "id": "selector-count:|[data-sds]:not(.sds-play)",
+      "kind": "css-selector",
+      "reason": "Bug fix (Phase 4): Chromium computes IntersectionObserver geometry AFTER the target's own clip-path/transform. The scroll gate pauses effects at their 0% frame, so effects whose first frame fully clips (sds-scroll-curtain/clip-left/clip-right/radial/ink/scan/split) or moves the box off-screen (sds-scroll-velvet/gravity) NEVER fired and stayed permanently invisible in <= 4.0.3 with every documented scroll method. A new additive rule neutralizes clip-path/transform ONLY while the element is gated (it is opacity:0 — visually identical); the moment sds-play/sds-in lands the rule stops matching and the animation plays from its true 0% frame. Verified by Playwright probe before/after.",
+      "approvedBy": "project owner — ratified with Phase 4 approval (flagged in the Phase 4 report; revert = delete the rule + this entry)",
+      "date": "2026-06-11"
+    }
+  ]
 }

@@ -200,15 +200,18 @@ function collectVars(value, set) {
 
     let compositorSafe = true;
     const paint = new Set(); const layout = new Set();
+    const animatedProps = new Set();
     for (const kf of kfNames) {
       const def = keyframes[kf];
       if (!def) continue; // known anomaly (sds-charOrbitBob)
       for (const p of def.props) {
+        if (!p.startsWith("--") && p !== "animation-timing-function") animatedProps.add(p);
         if (p.startsWith("--") || COMPOSITOR_SAFE.has(p)) continue;
         if (PAINT_ONLY.has(p)) { paint.add(p); compositorSafe = false; }
         else { layout.add(p); compositorSafe = false; }
       }
     }
+    const loop = e.animations.some((a) => a.iterations === "infinite");
 
     const tokensUsed = [...e.customPropsUsed]
       .filter((v) => /^--sds-(duration|ease|easing|distance)/.test(v)).sort();
@@ -222,7 +225,7 @@ function collectVars(value, set) {
     else if (e.triggers.has("hover")) trigger = "hover";
     else trigger = "load";
 
-    const displayName = e.displayName ||
+    const displayName = (meta[name] && meta[name].displayName) || e.displayName ||
       name.replace(/^sds-(btn-|input-|card-|loader-|scroll-)?/, "")
         .split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join(" ");
 
@@ -243,6 +246,8 @@ function collectVars(value, set) {
       tokensUsed,
       customProperties: themeProps,
       compositorSafe,
+      loop,
+      animatedProps: [...animatedProps].sort(),
       animatedPaintProps: [...paint].sort(),
       animatedLayoutProps: [...layout].sort(),
       requiresCharSplit: e.requiresCharSplit,

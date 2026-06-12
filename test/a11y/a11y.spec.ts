@@ -19,13 +19,14 @@ function format(violations: any[]) {
 
 test("a11y: docs site (docs/index.html)", async ({ page }) => {
   await page.goto("/docs/index.html", { waitUntil: "domcontentloaded" });
-  // Live animation previews are excluded from the scan: axe samples them
-  // mid-animation (semi-transparent entrance frames) and their colors ARE the
-  // demonstrated effect (e.g. neon glow). Their text duplicates the adjacent
-  // accessible card labels. Everything else on the page must pass WCAG AA.
+  // Live animation preview CANVASES are excluded from the scan: axe samples
+  // them mid-animation (semi-transparent entrance frames) and their colors
+  // ARE the demonstrated effect (e.g. neon glow). Their text duplicates the
+  // adjacent accessible card labels. Everything else must pass WCAG AA.
   const results = await new AxeBuilder({ page })
     .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
-    .exclude(".card-demo")
+    .exclude(".card-stage")
+    .exclude(".modal-stage")
     .analyze();
   expect(results.violations, format(results.violations)).toEqual([]);
 });

@@ -9,8 +9,10 @@
 
 A production-grade motion system for modern UI — framework-agnostic, accessible, and backward-compatible. Add a class and your element animates. That is the entire API.
 
-> **Live demo:** [sds-motion-forge.netlify.app](https://sds-motion-forge.netlify.app)
+> **Live demo:** [sds-motion-forge.netlify.app](https://sds-motion-forge.netlify.app) — every effect with six copy-paste code tabs (HTML, JS, React, Angular, Tailwind, Bootstrap), each one machine-verified against the packed npm tarball before it can ship.
+> **Custom bundle builder:** [/builder.html](https://sds-motion-forge.netlify.app/builder.html) — pick effects, download exactly their CSS (+ tokens, reduced-motion, keyframes), live size estimate.
 > **Motion specification:** [SPEC.md](SPEC.md) — principles, token scale, duration/easing selection matrix, choreography rules.
+> **For AI tools:** [llms.txt](https://sds-motion-forge.netlify.app/llms.txt) · [registry.json](https://sds-motion-forge.netlify.app/registry.json) — the full machine-readable effect registry.
 
 ---
 
@@ -112,14 +114,14 @@ import '@salkomdesignstudio/sds-motion-forge/categories/loaders';
 <!-- @sds-size-table:start -->
 | Bundle | Import | Minified | Gzip |
 |---|---|---|---|
-| text | `@salkomdesignstudio/sds-motion-forge/categories/text` | 45.4 KB | 8.4 KB |
-| buttons | `@salkomdesignstudio/sds-motion-forge/categories/buttons` | 18.9 KB | 4.1 KB |
-| inputs | `@salkomdesignstudio/sds-motion-forge/categories/inputs` | 18.6 KB | 4.1 KB |
-| cards | `@salkomdesignstudio/sds-motion-forge/categories/cards` | 18.3 KB | 3.9 KB |
-| loaders | `@salkomdesignstudio/sds-motion-forge/categories/loaders` | 26.3 KB | 5.1 KB |
-| scroll | `@salkomdesignstudio/sds-motion-forge/categories/scroll` | 21.0 KB | 3.9 KB |
-| core only | `@salkomdesignstudio/sds-motion-forge/categories/core` | 3.2 KB | 1.0 KB |
-| **everything** | `@salkomdesignstudio/sds-motion-forge` | **127.0 KB** | **20.6 KB** |
+| text | `@salkomdesignstudio/sds-motion-forge/categories/text` | 45.5 KB | 8.4 KB |
+| buttons | `@salkomdesignstudio/sds-motion-forge/categories/buttons` | 19.1 KB | 4.1 KB |
+| inputs | `@salkomdesignstudio/sds-motion-forge/categories/inputs` | 18.8 KB | 4.1 KB |
+| cards | `@salkomdesignstudio/sds-motion-forge/categories/cards` | 18.4 KB | 4.0 KB |
+| loaders | `@salkomdesignstudio/sds-motion-forge/categories/loaders` | 26.5 KB | 5.1 KB |
+| scroll | `@salkomdesignstudio/sds-motion-forge/categories/scroll` | 21.1 KB | 3.9 KB |
+| core only | `@salkomdesignstudio/sds-motion-forge/categories/core` | 3.3 KB | 1.0 KB |
+| **everything** | `@salkomdesignstudio/sds-motion-forge` | **127.1 KB** | **20.6 KB** |
 <!-- @sds-size-table:end -->
 
 Core is intentionally **inlined** into every category bundle so each one works

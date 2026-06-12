@@ -29,5 +29,8 @@ export default defineConfig({
     { name: "visual", testMatch: /visual\/.*\.spec\.ts/ },
     { name: "perf", testMatch: /perf\/.*\.spec\.ts/ },
     { name: "a11y", testMatch: /a11y\/.*\.spec\.ts/ },
+    { name: "docs", testMatch: /docs\/.*\.spec\.ts/ },
+    { name: "snippets", testMatch: /snippets\/.*\.spec\.ts/ },
+    { name: "builder", testMatch: /builder\/.*\.spec\.ts/ },
   ],
 });

@@ -79,6 +79,38 @@ jobs:
           path: test-results/
           retention-days: 7
 
+  # ── Copy-paste guarantee: every snippet vs the PACKED tarball ───────
+  snippets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm run build:packages
+      - run: npx playwright install --with-deps chromium
+      # the Tailwind full-utility compile runs inside the tailwind example
+      - run: npm ci
+        working-directory: examples/tailwind-v4
+      # HTML + Bootstrap tabs: each snippet loads standalone against the
+      # npm-packed tarball; JS engine attach / animation-name asserted.
+      - run: npm run verify:snippets
+      # docs gallery / six-tab modal / bundle-builder acceptance
+      - run: npm run test:docs
+      # React/Angular rotating samples type-check in the real apps
+      - run: npm run generate:samples
+      - run: npm ci
+        working-directory: examples/nextjs
+      - run: npm run build
+        working-directory: examples/nextjs
+      - run: npm ci
+        working-directory: examples/angular
+      - run: npm run build
+        working-directory: examples/angular
+
   # ── Accessibility: docs site + example app ──────────────────────────
   a11y:
     runs-on: ubuntu-latest

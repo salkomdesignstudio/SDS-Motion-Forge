@@ -4,28 +4,34 @@
     "seeded": true
   },
   "sds-arc-orbit": {
-    "description": "Arc Orbit — text animation.",
-    "seeded": true
+    "description": "Each child orbits in with stagger delay",
+    "displayName": "Arc Orbit",
+    "source": "docs-import"
   },
   "sds-aurora-text": {
-    "description": "Aurora Text — text animation.",
-    "seeded": true
+    "description": "Six-colour gradient clip sweeps through text",
+    "displayName": "Aurora Text",
+    "source": "docs-import"
   },
   "sds-blur-focus": {
-    "description": "Blur Focus — text animation.",
-    "seeded": true
+    "description": "Sharpens from heavy blur with tracking",
+    "displayName": "Blur Focus",
+    "source": "docs-import"
   },
   "sds-bounce-drop-in": {
-    "description": "Bounce Drop In — text animation.",
-    "seeded": true
+    "description": "Drops in with a squashy bounce",
+    "displayName": "Bounce Drop In",
+    "source": "docs-import"
   },
   "sds-bounce-in-up": {
-    "description": "Bounce In Up — text animation.",
-    "seeded": true
+    "description": "Multi-step elastic Y-axis bounce entrance",
+    "displayName": "Bounce In Up",
+    "source": "docs-import"
   },
   "sds-bounce-loop": {
-    "description": "Bounce Loop — text animation.",
-    "seeded": true
+    "description": "Bounces continuously (loop)",
+    "displayName": "Bounce Loop",
+    "source": "docs-import"
   },
   "sds-btn-amp": {
     "description": "Amp — button animation.",
@@ -64,12 +70,14 @@
     "seeded": true
   },
   "sds-btn-edge": {
-    "description": "Edge Trace — button animation.",
-    "seeded": true
+    "description": "Border traces the perimeter sequentially",
+    "displayName": "Edge Trace",
+    "source": "docs-import"
   },
   "sds-btn-energy": {
-    "description": "Energy Ripple — button animation.",
-    "seeded": true
+    "description": "Double box-shadow ripple propagates out",
+    "displayName": "Energy Ripple",
+    "source": "docs-import"
   },
   "sds-btn-fire": {
     "description": "Fire — button animation.",
@@ -92,8 +100,9 @@
     "seeded": true
   },
   "sds-btn-glow-surge": {
-    "description": "Glow Surge — button animation.",
-    "seeded": true
+    "description": "Subtle outer glow that breathes",
+    "displayName": "Glow Surge",
+    "source": "docs-import"
   },
   "sds-btn-gradient-shift": {
     "description": "Gradient Shift — button animation.",
@@ -124,16 +133,19 @@
     "seeded": true
   },
   "sds-btn-lift": {
-    "description": "Lift Shadow — button animation.",
-    "seeded": true
+    "description": "Lifts with a growing depth shadow",
+    "displayName": "Lift Shadow",
+    "source": "docs-import"
   },
   "sds-btn-liquid": {
-    "description": "Liquid Fill — button animation.",
-    "seeded": true
+    "description": "Background fills from right to left",
+    "displayName": "Liquid Fill",
+    "source": "docs-import"
   },
   "sds-btn-magnetic": {
-    "description": "Magnetic Pulse — button animation.",
-    "seeded": true
+    "description": "Outward pulse ring on a loop",
+    "displayName": "Magnetic Pulse",
+    "source": "docs-import"
   },
   "sds-btn-magnetic-trail": {
     "description": "Magnetic Trail — button animation.",
@@ -144,12 +156,14 @@
     "seeded": true
   },
   "sds-btn-morph": {
-    "description": "Morph Pill — button animation.",
-    "seeded": true
+    "description": "Border-radius morphs between rect/pill",
+    "displayName": "Morph Pill",
+    "source": "docs-import"
   },
   "sds-btn-neon": {
-    "description": "Neon Sign — button animation.",
-    "seeded": true
+    "description": "Neon box-shadow with a flicker glitch",
+    "displayName": "Neon Sign",
+    "source": "docs-import"
   },
   "sds-btn-neon-trace": {
     "description": "Neon Trace — button animation.",
@@ -160,20 +174,23 @@
     "seeded": true
   },
   "sds-btn-plasma": {
-    "description": "Plasma Glow — button animation.",
-    "seeded": true
+    "description": "Plasma-like glow shifts through colours",
+    "displayName": "Plasma Glow",
+    "source": "docs-import"
   },
   "sds-btn-press": {
-    "description": "Press Depth — button animation.",
-    "seeded": true
+    "description": "Presses down as if physically clicked",
+    "displayName": "Press Depth",
+    "source": "docs-import"
   },
   "sds-btn-pulse-border": {
     "description": "Pulse Border — button animation.",
     "seeded": true
   },
   "sds-btn-quantum": {
-    "description": "Quantum Stamp — button animation.",
-    "seeded": true
+    "description": "Scale-in with elastic overshoot",
+    "displayName": "Quantum Stamp",
+    "source": "docs-import"
   },
   "sds-btn-radar": {
     "description": "Radar — button animation.",
@@ -200,8 +217,9 @@
     "seeded": true
   },
   "sds-btn-shock": {
-    "description": "Shockwave — button animation.",
-    "seeded": true
+    "description": "Outline rings expand outward in a pulse",
+    "displayName": "Shockwave",
+    "source": "docs-import"
   },
   "sds-btn-split": {
     "description": "Split — button animation.",
@@ -220,8 +238,9 @@
     "seeded": true
   },
   "sds-btn-volt": {
-    "description": "Volt Strike — button animation.",
-    "seeded": true
+    "description": "High-voltage border pulse",
+    "displayName": "Volt Strike",
+    "source": "docs-import"
   },
   "sds-btn-warp": {
     "description": "Warp — button animation.",
@@ -248,8 +267,9 @@
     "seeded": true
   },
   "sds-card-cinematic": {
-    "description": "Cinematic Reveal — card animation.",
-    "seeded": true
+    "description": "Wipes open from center via clip-path",
+    "displayName": "Cinematic Reveal",
+    "source": "docs-import"
   },
   "sds-card-deep-float": {
     "description": "Deep Float — card animation.",
@@ -280,8 +300,9 @@
     "seeded": true
   },
   "sds-card-float": {
-    "description": "Ambient Float — card animation.",
-    "seeded": true
+    "description": "Gentle floating with shadow growth",
+    "displayName": "Ambient Float",
+    "source": "docs-import"
   },
   "sds-card-fold": {
     "description": "Fold — card animation.",
@@ -300,16 +321,18 @@
     "seeded": true
   },
   "sds-card-glow": {
-    "description": "Glow Surge — card animation.",
-    "seeded": true
+    "description": "Breathing outer glow on a card",
+    "displayName": "Glow Surge",
+    "source": "docs-import"
   },
   "sds-card-gravity": {
     "description": "Gravity — card animation.",
     "seeded": true
   },
   "sds-card-holo": {
-    "description": "Holographic Tilt — card animation.",
-    "seeded": true
+    "description": "Rotates on X/Y with hue shift effect",
+    "displayName": "Holographic Tilt",
+    "source": "docs-import"
   },
   "sds-card-ink": {
     "description": "Ink — card animation.",
@@ -328,8 +351,9 @@
     "seeded": true
   },
   "sds-card-magnetic": {
-    "description": "Magnetic Hover — card animation.",
-    "seeded": true
+    "description": "Lifts and rotates slightly in a float",
+    "displayName": "Magnetic Hover",
+    "source": "docs-import"
   },
   "sds-card-momentum": {
     "description": "Momentum — card animation.",
@@ -348,12 +372,14 @@
     "seeded": true
   },
   "sds-card-parallax": {
-    "description": "Parallax Depth — card animation.",
-    "seeded": true
+    "description": "Perspective rotateX with Z push",
+    "displayName": "Parallax Depth",
+    "source": "docs-import"
   },
   "sds-card-portal": {
-    "description": "Depth Portal — card animation.",
-    "seeded": true
+    "description": "Flies in from deep Z perspective",
+    "displayName": "Depth Portal",
+    "source": "docs-import"
   },
   "sds-card-prism": {
     "description": "Prism — card animation.",
@@ -376,12 +402,14 @@
     "seeded": true
   },
   "sds-card-shimmer": {
-    "description": "Refraction Shimmer — card animation.",
-    "seeded": true
+    "description": "Diagonal shimmer background cycles",
+    "displayName": "Refraction Shimmer",
+    "source": "docs-import"
   },
   "sds-card-slice": {
-    "description": "Slice — card animation.",
-    "seeded": true
+    "description": "Children slice up in sequence",
+    "displayName": "Slice Up",
+    "source": "docs-import"
   },
   "sds-card-smoke": {
     "description": "Smoke — card animation.",
@@ -416,40 +444,48 @@
     "seeded": true
   },
   "sds-card-warp": {
-    "description": "Warp Gate — card animation.",
-    "seeded": true
+    "description": "Rotates in from -90° on the Y axis",
+    "displayName": "Warp Gate",
+    "source": "docs-import"
   },
   "sds-card-wave": {
     "description": "Wave — card animation.",
     "seeded": true
   },
   "sds-center-burst": {
-    "description": "Center Burst — text animation.",
-    "seeded": true
+    "description": "Chars start at center, fan out",
+    "displayName": "Center Burst",
+    "source": "docs-import"
   },
   "sds-char-orbit": {
-    "description": "Char Orbit — text animation.",
-    "seeded": true
+    "description": "Orbits in from above with rotation",
+    "displayName": "Char Orbit",
+    "source": "docs-import"
   },
   "sds-chromatic-shift": {
-    "description": "Chromatic Shift — text animation.",
-    "seeded": true
+    "description": "Slow hue-rotate + saturate colour cycle",
+    "displayName": "Chromatic Shift",
+    "source": "docs-import"
   },
   "sds-cinema-title": {
-    "description": "Cinema Title — text animation.",
-    "seeded": true
+    "description": "Letter-spacing collapses with blur in cinematic style",
+    "displayName": "Cinema Title",
+    "source": "docs-import"
   },
   "sds-cipher-reveal": {
-    "description": "Cipher Reveal — text animation.",
-    "seeded": true
+    "description": "Brightness and blur resolve like decryption",
+    "displayName": "Cipher Reveal",
+    "source": "docs-import"
   },
   "sds-color-cycle": {
-    "description": "Color Cycle — text animation.",
-    "seeded": true
+    "description": "Cycles through a flowing gradient (loop)",
+    "displayName": "Color Cycle",
+    "source": "docs-import"
   },
   "sds-data-stream": {
-    "description": "Data Stream — text animation.",
-    "seeded": true
+    "description": "Clip-path + brightness data-decode entrance",
+    "displayName": "Data Stream",
+    "source": "docs-import"
   },
   "sds-delay-1": {
     "description": "Delay 1 — playback modifier.",
@@ -484,40 +520,49 @@
     "seeded": true
   },
   "sds-depth-charge": {
-    "description": "Depth Charge — text animation.",
-    "seeded": true
+    "description": "Deep warp from Z-space with delay",
+    "displayName": "Depth Charge",
+    "source": "docs-import"
   },
   "sds-depth-warp": {
-    "description": "Depth Warp — text animation.",
-    "seeded": true
+    "description": "Flies in from deep Z-space",
+    "displayName": "Depth Warp",
+    "source": "docs-import"
   },
   "sds-door-open": {
-    "description": "Door Open — text animation.",
-    "seeded": true
+    "description": "Swings open like a door in 3D",
+    "displayName": "Door Open",
+    "source": "docs-import"
   },
   "sds-drop-bounce": {
-    "description": "Drop Bounce — text animation.",
-    "seeded": true
+    "description": "Drops and bounces on the floor",
+    "displayName": "Drop Bounce",
+    "source": "docs-import"
   },
   "sds-drop-settle": {
-    "description": "Drop Settle — text animation.",
-    "seeded": true
+    "description": "Per-char staggered fall from above",
+    "displayName": "Drop & Settle",
+    "source": "docs-import"
   },
   "sds-echo-out": {
-    "description": "Echo Out — text animation.",
-    "seeded": true
+    "description": "Casts a layered echo shadow",
+    "displayName": "Echo Out",
+    "source": "docs-import"
   },
   "sds-elastic-bounce": {
-    "description": "Elastic Bounce — text animation.",
-    "seeded": true
+    "description": "Spring overshoot with cubic-bezier(0.34,1.56,0.64,1)",
+    "displayName": "Elastic Bounce",
+    "source": "docs-import"
   },
   "sds-elastic-stamp": {
-    "description": "Elastic Stamp — text animation.",
-    "seeded": true
+    "description": "Scales in from zero with elastic rotation",
+    "displayName": "Elastic Stamp",
+    "source": "docs-import"
   },
   "sds-explode-formation": {
-    "description": "Explode Formation — text animation.",
-    "seeded": true
+    "description": "Scattered start, spring to position",
+    "displayName": "Explode Formation",
+    "source": "docs-import"
   },
   "sds-fast": {
     "description": "Fast — playback modifier.",
@@ -532,88 +577,108 @@
     "seeded": true
   },
   "sds-film-burn": {
-    "description": "Film Burn — text animation.",
-    "seeded": true
+    "description": "Sepia-tinted focus-pull entrance",
+    "displayName": "Film Burn",
+    "source": "docs-import"
   },
   "sds-flicker-on": {
-    "description": "Flicker On — text animation.",
-    "seeded": true
+    "description": "Light-bulb turn-on with stepped opacity flicker",
+    "displayName": "Flicker On",
+    "source": "docs-import"
   },
   "sds-flip-x": {
-    "description": "Flip X — text animation.",
-    "seeded": true
+    "description": "Flips in on the X axis",
+    "displayName": "Flip X",
+    "source": "docs-import"
   },
   "sds-flip-y": {
-    "description": "Flip Y — text animation.",
-    "seeded": true
+    "description": "Flips in on the Y axis",
+    "displayName": "Flip Y",
+    "source": "docs-import"
   },
   "sds-float-bob": {
-    "description": "Float Bob — text animation.",
-    "seeded": true
+    "description": "Gently floats and bobs (loop)",
+    "displayName": "Float Bob",
+    "source": "docs-import"
   },
   "sds-focus-pull": {
-    "description": "Focus Pull — text animation.",
-    "seeded": true
+    "description": "Camera-focus pull from soft to sharp",
+    "displayName": "Focus Pull",
+    "source": "docs-import"
   },
   "sds-fold-down": {
-    "description": "Fold Down — text animation.",
-    "seeded": true
+    "description": "Folds down into view on a 3D hinge",
+    "displayName": "Fold Down",
+    "source": "docs-import"
   },
   "sds-fold-up": {
-    "description": "Fold Up — text animation.",
-    "seeded": true
+    "description": "Folds up into view on a 3D hinge",
+    "displayName": "Fold Up",
+    "source": "docs-import"
   },
   "sds-glitch-flicker": {
-    "description": "Glitch Flicker — text animation.",
-    "seeded": true
+    "description": "Flickering analog noise with slicing displacement",
+    "displayName": "Glitch Flicker",
+    "source": "docs-import"
   },
   "sds-glitch-slide": {
-    "description": "Glitch Slide — text animation.",
-    "seeded": true
+    "description": "Glitch-steps into place",
+    "displayName": "Glitch Slide",
+    "source": "docs-import"
   },
   "sds-glow-pulse": {
-    "description": "Glow Pulse — text animation.",
-    "seeded": true
+    "description": "Pulses with a soft neon glow (loop)",
+    "displayName": "Glow Pulse",
+    "source": "docs-import"
   },
   "sds-gradient-sweep": {
-    "description": "Gradient Sweep — text animation.",
-    "seeded": true
+    "description": "Moving gradient mask over the text",
+    "displayName": "Gradient Sweep",
+    "source": "docs-import"
   },
   "sds-grand-entrance": {
-    "description": "Grand Entrance — text animation.",
-    "seeded": true
+    "description": "Big orchestrated scale-blur entrance",
+    "displayName": "Grand Entrance",
+    "source": "docs-import"
   },
   "sds-gravity-bounce": {
-    "description": "Gravity Bounce — text animation.",
-    "seeded": true
+    "description": "Falls under gravity, inelastic floor bounce",
+    "displayName": "Gravity Bounce",
+    "source": "docs-import"
   },
   "sds-gravity-drop": {
-    "description": "Gravity Drop — text animation.",
-    "seeded": true
+    "description": "Falls from above with overshoot bounce",
+    "displayName": "Gravity Drop",
+    "source": "docs-import"
   },
   "sds-heartbeat-text": {
-    "description": "Heartbeat Text — text animation.",
-    "seeded": true
+    "description": "Beats like a heartbeat (loop)",
+    "displayName": "Heartbeat",
+    "source": "docs-import"
   },
   "sds-heat-shimmer": {
-    "description": "Heat Shimmer — text animation.",
-    "seeded": true
+    "description": "Subtle heat-distortion skewX + scaleY loop",
+    "displayName": "Heat Shimmer",
+    "source": "docs-import"
   },
   "sds-highlight-burn": {
-    "description": "Highlight Burn — text animation.",
-    "seeded": true
+    "description": "Highlight marker swipes across the text",
+    "displayName": "Highlight Burn",
+    "source": "docs-import"
   },
   "sds-hologram-text": {
-    "description": "Hologram Text — text animation.",
-    "seeded": true
+    "description": "Holographic skew flicker with hue rotation",
+    "displayName": "Hologram Text",
+    "source": "docs-import"
   },
   "sds-in": {
     "description": "In — infrastructure animation.",
     "seeded": true
   },
   "sds-ink-bleed": {
-    "description": "Ink Bleed — text animation.",
-    "seeded": true
+    "description": "Letter-spacing collapses as blur resolves",
+    "displayName": "Ink Bleed",
+    "source": "docs-import"
   },
   "sds-input-active-line": {
     "description": "Active Line — input animation.",
@@ -636,8 +701,9 @@
     "seeded": true
   },
   "sds-input-caret": {
-    "description": "Caret Trail — input animation.",
-    "seeded": true
+    "description": "Pulsing inner ring emulates caret activity",
+    "displayName": "Caret Trail",
+    "source": "docs-import"
   },
   "sds-input-charge": {
     "description": "Charge — input animation.",
@@ -664,8 +730,9 @@
     "seeded": true
   },
   "sds-input-elevate-wrap": {
-    "description": "Elevate Focus — input animation.",
-    "seeded": true
+    "description": "Label floats up on focus/fill",
+    "displayName": "Elevate Focus",
+    "source": "docs-import"
   },
   "sds-input-expand": {
     "description": "Expand — input animation.",
@@ -684,8 +751,9 @@
     "seeded": true
   },
   "sds-input-focus": {
-    "description": "Focus Field — input animation.",
-    "seeded": true
+    "description": "Glow ring appears on :focus",
+    "displayName": "Focus Field",
+    "source": "docs-import"
   },
   "sds-input-focus-glow": {
     "description": "Focus Glow — input animation.",
@@ -716,8 +784,9 @@
     "seeded": true
   },
   "sds-input-ink": {
-    "description": "Ink Stroke — input animation.",
-    "seeded": true
+    "description": "Outline expands with ink-stroke feel",
+    "displayName": "Ink Stroke",
+    "source": "docs-import"
   },
   "sds-input-kinetic": {
     "description": "Kinetic — input animation.",
@@ -732,16 +801,19 @@
     "seeded": true
   },
   "sds-input-morph": {
-    "description": "Border Morph — input animation.",
-    "seeded": true
+    "description": "Border-radius morphs between shapes",
+    "displayName": "Border Morph",
+    "source": "docs-import"
   },
   "sds-input-morph-ph": {
-    "description": "Morph Placeholder — input animation.",
-    "seeded": true
+    "description": "Placeholder letter-spacing breathes",
+    "displayName": "Morph Placeholder",
+    "source": "docs-import"
   },
   "sds-input-neon": {
-    "description": "Neon Input — input animation.",
-    "seeded": true
+    "description": "Neon glow with flicker on the border",
+    "displayName": "Neon Input",
+    "source": "docs-import"
   },
   "sds-input-neural": {
     "description": "Neural — input animation.",
@@ -752,8 +824,9 @@
     "seeded": true
   },
   "sds-input-plasma": {
-    "description": "Plasma Field — input animation.",
-    "seeded": true
+    "description": "Plasma glow cycles around the field",
+    "displayName": "Plasma Field",
+    "source": "docs-import"
   },
   "sds-input-prism": {
     "description": "Prism — input animation.",
@@ -772,8 +845,9 @@
     "seeded": true
   },
   "sds-input-ring": {
-    "description": "Ring Pulse — input animation.",
-    "seeded": true
+    "description": "Magnetic ring pulse on the border",
+    "displayName": "Ring Pulse",
+    "source": "docs-import"
   },
   "sds-input-ripple": {
     "description": "Ripple — input animation.",
@@ -784,20 +858,23 @@
     "seeded": true
   },
   "sds-input-shake": {
-    "description": "Seismic Shake — input animation.",
-    "seeded": true
+    "description": "Horizontal shake for invalid state",
+    "displayName": "Seismic Shake",
+    "source": "docs-import"
   },
   "sds-input-shimmer": {
-    "description": "Shimmer Scan — input animation.",
-    "seeded": true
+    "description": "Light shimmer scans across the field",
+    "displayName": "Shimmer Scan",
+    "source": "docs-import"
   },
   "sds-input-solar": {
     "description": "Solar — input animation.",
     "seeded": true
   },
   "sds-input-success": {
-    "description": "Success Glow — input animation.",
-    "seeded": true
+    "description": "Green glow for a validated field",
+    "displayName": "Success Glow",
+    "source": "docs-import"
   },
   "sds-input-unlock": {
     "description": "Unlock — input animation.",
@@ -808,8 +885,9 @@
     "seeded": true
   },
   "sds-input-voltage": {
-    "description": "Voltage Pulse — input animation.",
-    "seeded": true
+    "description": "Border brightens like voltage spikes",
+    "displayName": "Voltage Pulse",
+    "source": "docs-import"
   },
   "sds-input-waveform": {
     "description": "Waveform — input animation.",
@@ -820,36 +898,43 @@
     "seeded": true
   },
   "sds-iris-open": {
-    "description": "Iris Open — text animation.",
-    "seeded": true
+    "description": "Opens from a circular iris",
+    "displayName": "Iris Open",
+    "source": "docs-import"
   },
   "sds-jello": {
-    "description": "Jello — text animation.",
-    "seeded": true
+    "description": "Jiggles with a jello skew",
+    "displayName": "Jello",
+    "source": "docs-import"
   },
   "sds-jelly-hover": {
-    "description": "Jelly Hover — interactive animation.",
-    "seeded": true
+    "description": "Squash + stretch spring on hover",
+    "displayName": "Jelly Hover",
+    "source": "docs-import"
   },
   "sds-js": {
     "description": "Js — infrastructure animation.",
     "seeded": true
   },
   "sds-kinetic-wave": {
-    "description": "Kinetic Wave — text animation.",
-    "seeded": true
+    "description": "Each child bounces up/down in a wave",
+    "displayName": "Kinetic Wave",
+    "source": "docs-import"
   },
   "sds-levitate": {
-    "description": "Levitate — text animation.",
-    "seeded": true
+    "description": "Gentle float with subtle rotation",
+    "displayName": "Levitate",
+    "source": "docs-import"
   },
   "sds-light-speed": {
-    "description": "Light Speed — text animation.",
-    "seeded": true
+    "description": "Streaks in with a skewed light-speed motion",
+    "displayName": "Light Speed",
+    "source": "docs-import"
   },
   "sds-liquid-rise": {
-    "description": "Liquid Rise — text animation.",
-    "seeded": true
+    "description": "Rises up with skew and blur in one fluid arc",
+    "displayName": "Liquid Rise",
+    "source": "docs-import"
   },
   "sds-loader-arc": {
     "description": "Arc — loader animation.",
@@ -876,8 +961,9 @@
     "seeded": true
   },
   "sds-loader-comet": {
-    "description": "Comet Trail — loader animation.",
-    "seeded": true
+    "description": "Spinning arc on a track ring",
+    "displayName": "Comet Trail",
+    "source": "docs-import"
   },
   "sds-loader-crystal": {
     "description": "Crystal — loader animation.",
@@ -896,8 +982,9 @@
     "seeded": true
   },
   "sds-loader-dots": {
-    "description": "Particle Sync — loader animation.",
-    "seeded": true
+    "description": "3 dots scale to zero in staggered sync",
+    "displayName": "Particle Sync",
+    "source": "docs-import"
   },
   "sds-loader-electric": {
     "description": "Electric Arc — loader animation.",
@@ -908,8 +995,9 @@
     "seeded": true
   },
   "sds-loader-fluid": {
-    "description": "Fluid Flow — loader animation.",
-    "seeded": true
+    "description": "Blob morphs continuously with rotation",
+    "displayName": "Fluid Flow",
+    "source": "docs-import"
   },
   "sds-loader-glitch": {
     "description": "Glitch — loader animation.",
@@ -964,16 +1052,18 @@
     "seeded": true
   },
   "sds-loader-orbital": {
-    "description": "Orbital System — loader animation.",
-    "seeded": true
+    "description": "Two particles orbit at different radii",
+    "displayName": "Orbital System",
+    "source": "docs-import"
   },
   "sds-loader-pendulum": {
     "description": "Pendulum — loader animation.",
     "seeded": true
   },
   "sds-loader-ping": {
-    "description": "Ping Cascade — loader animation.",
-    "seeded": true
+    "description": "3 rings expand and fade in cascade",
+    "displayName": "Ping Cascade",
+    "source": "docs-import"
   },
   "sds-loader-plasma-ring": {
     "description": "Plasma Ring — loader animation.",
@@ -984,8 +1074,9 @@
     "seeded": true
   },
   "sds-loader-progress": {
-    "description": "Progress Glow — loader animation.",
-    "seeded": true
+    "description": "Progress bar fills with glowing head",
+    "displayName": "Progress Glow",
+    "source": "docs-import"
   },
   "sds-loader-progress-glow": {
     "description": "Progress Glow — loader animation.",
@@ -1016,8 +1107,9 @@
     "seeded": true
   },
   "sds-loader-skeleton": {
-    "description": "Skeleton Pulse — loader animation.",
-    "seeded": true
+    "description": "Shimmer scan for loading placeholders",
+    "displayName": "Skeleton Pulse",
+    "source": "docs-import"
   },
   "sds-loader-snake": {
     "description": "Snake — loader animation.",
@@ -1036,52 +1128,62 @@
     "seeded": true
   },
   "sds-loader-target": {
-    "description": "Target Lock — loader animation.",
-    "seeded": true
+    "description": "Dashed ring rotates slowly",
+    "displayName": "Target Lock",
+    "source": "docs-import"
   },
   "sds-loader-type": {
-    "description": "Typewriter Loader — loader animation.",
-    "seeded": true
+    "description": "Monospace text typing in a loop",
+    "displayName": "Typewriter Loader",
+    "source": "docs-import"
   },
   "sds-loader-vortex": {
-    "description": "Vortex Spin — loader animation.",
-    "seeded": true
+    "description": "Conic gradient spins with scale pulse",
+    "displayName": "Vortex Spin",
+    "source": "docs-import"
   },
   "sds-loader-warp": {
     "description": "Warp — loader animation.",
     "seeded": true
   },
   "sds-loader-wave": {
-    "description": "Waveform — loader animation.",
-    "seeded": true
+    "description": "5 bars scale vertically as a wave",
+    "displayName": "Waveform",
+    "source": "docs-import"
   },
   "sds-loop": {
     "description": "Loop — playback modifier.",
     "seeded": true
   },
   "sds-magnetic-drift": {
-    "description": "Magnetic Drift — text animation.",
-    "seeded": true
+    "description": "Circular XY drift like magnetic field pull",
+    "displayName": "Magnetic Drift",
+    "source": "docs-import"
   },
   "sds-magnetic-pull": {
-    "description": "Magnetic Pull — interactive animation.",
-    "seeded": true
+    "description": "Cursor attracts chars toward it",
+    "displayName": "Magnetic Pull",
+    "source": "docs-import"
   },
   "sds-morph-word": {
-    "description": "Morph Word — text animation.",
-    "seeded": true
+    "description": "ScaleX + skewX + letter-spacing morphing loop",
+    "displayName": "Morph Word",
+    "source": "docs-import"
   },
   "sds-neon-flare": {
-    "description": "Neon Flare — text animation.",
-    "seeded": true
+    "description": "Pulsing neon glow with colour shift",
+    "displayName": "Neon Flare",
+    "source": "docs-import"
   },
   "sds-neon-flicker-in": {
-    "description": "Neon Flicker In — text animation.",
-    "seeded": true
+    "description": "Flickers on like a neon sign",
+    "displayName": "Neon Flicker In",
+    "source": "docs-import"
   },
   "sds-neon-pulse-text": {
-    "description": "Neon Pulse Text — text animation.",
-    "seeded": true
+    "description": "Neon text glow that breathes on a loop",
+    "displayName": "Neon Pulse Text",
+    "source": "docs-import"
   },
   "sds-normal": {
     "description": "Normal — playback modifier.",
@@ -1092,84 +1194,101 @@
     "seeded": true
   },
   "sds-oscillate": {
-    "description": "Oscillate — text animation.",
-    "seeded": true
+    "description": "Sine-wave Y + rotate + scaleX oscillation",
+    "displayName": "Oscillate",
+    "source": "docs-import"
   },
   "sds-pause-hover": {
     "description": "Pause Hover — playback modifier.",
     "seeded": true
   },
   "sds-pendulum": {
-    "description": "Pendulum — text animation.",
-    "seeded": true
+    "description": "Swings like a pendulum (loop)",
+    "displayName": "Pendulum",
+    "source": "docs-import"
   },
   "sds-perspective-swing": {
-    "description": "Perspective Swing — text animation.",
-    "seeded": true
+    "description": "Swings in on the Y-axis with perspective",
+    "displayName": "Perspective Swing",
+    "source": "docs-import"
   },
   "sds-phantom-blur": {
-    "description": "Phantom Blur — text animation.",
-    "seeded": true
+    "description": "Crystallises from a bright radial blur",
+    "displayName": "Phantom Blur",
+    "source": "docs-import"
   },
   "sds-pixel-in": {
-    "description": "Pixel In — text animation.",
-    "seeded": true
+    "description": "Resolves from a pixelated blur",
+    "displayName": "Pixel In",
+    "source": "docs-import"
   },
   "sds-play": {
     "description": "Play — infrastructure animation.",
     "seeded": true
   },
   "sds-pop-in": {
-    "description": "Pop In — text animation.",
-    "seeded": true
+    "description": "Pops in from zero with a spring",
+    "displayName": "Pop In",
+    "source": "docs-import"
   },
   "sds-prism-split": {
-    "description": "Prism Split — text animation.",
-    "seeded": true
+    "description": "Chromatic aberration effect on loop",
+    "displayName": "Prism Split",
+    "source": "docs-import"
   },
   "sds-refract": {
-    "description": "Refract — text animation.",
-    "seeded": true
+    "description": "RGB glitch split, loops smoothly",
+    "displayName": "Refract",
+    "source": "docs-import"
   },
   "sds-repulsion-field": {
-    "description": "Repulsion Field — interactive animation.",
-    "seeded": true
+    "description": "Cursor pushes chars away",
+    "displayName": "Repulsion Field",
+    "source": "docs-import"
   },
   "sds-reveal-down-mask": {
-    "description": "Reveal Down Mask — text animation.",
-    "seeded": true
+    "description": "Wipes down behind a mask",
+    "displayName": "Reveal Down Mask",
+    "source": "docs-import"
   },
   "sds-reveal-up-mask": {
-    "description": "Reveal Up Mask — text animation.",
-    "seeded": true
+    "description": "Wipes up behind a mask",
+    "displayName": "Reveal Up Mask",
+    "source": "docs-import"
   },
   "sds-ripple-text": {
-    "description": "Ripple Text — text animation.",
-    "seeded": true
+    "description": "Letter-spacing + scale + blur ripple entrance",
+    "displayName": "Ripple Text",
+    "source": "docs-import"
   },
   "sds-roll-in": {
-    "description": "Roll In — text animation.",
-    "seeded": true
+    "description": "Rolls in rotating from the left",
+    "displayName": "Roll In",
+    "source": "docs-import"
   },
   "sds-rubber-band": {
-    "description": "Rubber Band — text animation.",
-    "seeded": true
+    "description": "Stretches like a rubber band",
+    "displayName": "Rubber Band",
+    "source": "docs-import"
   },
   "sds-scatter-return": {
-    "description": "Scatter Return — interactive animation.",
-    "seeded": true
+    "description": "Hover scatters chars, leave springs home",
+    "displayName": "Scatter & Return",
+    "source": "docs-import"
   },
   "sds-scramble-decode": {
-    "description": "Scramble Decode — text animation.",
-    "seeded": true
+    "description": "Blurs and skews repeatedly like decoding",
+    "displayName": "Scramble Decode",
+    "source": "docs-import"
   },
   "sds-scroll-auto": {
     "description": "Auto — infrastructure animation.",
     "seeded": true
   },
   "sds-scroll-blur": {
-    "description": "Blur Ascend — scroll animation.",
-    "seeded": true
+    "description": "Rises and resolves from 16px blur",
+    "displayName": "Blur Ascend",
+    "source": "docs-import"
   },
   "sds-scroll-bounce": {
     "description": "Bounce — scroll animation.",
@@ -1200,12 +1319,14 @@
     "seeded": true
   },
   "sds-scroll-curtain": {
-    "description": "Curtain Lift — scroll animation.",
-    "seeded": true
+    "description": "Clips up from bottom like a curtain",
+    "displayName": "Curtain Lift",
+    "source": "docs-import"
   },
   "sds-scroll-depth": {
-    "description": "Depth Enter — scroll animation.",
-    "seeded": true
+    "description": "Portal entrance from deep Z-space",
+    "displayName": "Depth Enter",
+    "source": "docs-import"
   },
   "sds-scroll-dissolve": {
     "description": "Dissolve — scroll animation.",
@@ -1240,12 +1361,14 @@
     "seeded": true
   },
   "sds-scroll-glitch": {
-    "description": "Glitch Reveal — scroll animation.",
-    "seeded": true
+    "description": "Glitch burst + viewport rise combo",
+    "displayName": "Glitch Reveal",
+    "source": "docs-import"
   },
   "sds-scroll-gravity": {
-    "description": "Gravity Land — scroll animation.",
-    "seeded": true
+    "description": "Drops in from above with elastic bounce",
+    "displayName": "Gravity Land",
+    "source": "docs-import"
   },
   "sds-scroll-hologram": {
     "description": "Hologram — scroll animation.",
@@ -1256,8 +1379,9 @@
     "seeded": true
   },
   "sds-scroll-liquid": {
-    "description": "Liquid Enter — scroll animation.",
-    "seeded": true
+    "description": "Liquid skew-rise on viewport enter",
+    "displayName": "Liquid Enter",
+    "source": "docs-import"
   },
   "sds-scroll-magnetic": {
     "description": "Magnetic Pull — scroll animation.",
@@ -1272,16 +1396,18 @@
     "seeded": true
   },
   "sds-scroll-orbit": {
-    "description": "Orbit Enter — scroll animation.",
-    "seeded": true
+    "description": "Perspective swing from the left",
+    "displayName": "Orbit Enter",
+    "source": "docs-import"
   },
   "sds-scroll-perspective-left": {
     "description": "Perspective Left — scroll animation.",
     "seeded": true
   },
   "sds-scroll-phantom": {
-    "description": "Phantom Rise — scroll animation.",
-    "seeded": true
+    "description": "Crystallises from a bright blur",
+    "displayName": "Phantom Rise",
+    "source": "docs-import"
   },
   "sds-scroll-prism": {
     "description": "Prism Reveal — scroll animation.",
@@ -1292,32 +1418,38 @@
     "seeded": true
   },
   "sds-scroll-radial": {
-    "description": "Radial Expand — scroll animation.",
-    "seeded": true
+    "description": "Circle expands from the bottom center",
+    "displayName": "Radial Expand",
+    "source": "docs-import"
   },
   "sds-scroll-rise": {
-    "description": "Viewport Rise — scroll animation.",
-    "seeded": true
+    "description": "Rises up as it enters the viewport",
+    "displayName": "Viewport Rise",
+    "source": "docs-import"
   },
   "sds-scroll-scale": {
-    "description": "Scale Reveal — scroll animation.",
-    "seeded": true
+    "description": "Scales up from 70% with blur resolve",
+    "displayName": "Scale Reveal",
+    "source": "docs-import"
   },
   "sds-scroll-scan": {
-    "description": "Scan Line — scroll animation.",
-    "seeded": true
+    "description": "Wipes in from left via clip-path",
+    "displayName": "Scan Line",
+    "source": "docs-import"
   },
   "sds-scroll-shatter": {
-    "description": "Shatter Enter — scroll animation.",
-    "seeded": true
+    "description": "Explodes in from large scale",
+    "displayName": "Shatter Enter",
+    "source": "docs-import"
   },
   "sds-scroll-skew": {
     "description": "Skew — scroll animation.",
     "seeded": true
   },
   "sds-scroll-slide": {
-    "description": "Momentum Slide — scroll animation.",
-    "seeded": true
+    "description": "Slides in from the left with overshoot",
+    "displayName": "Momentum Slide",
+    "source": "docs-import"
   },
   "sds-scroll-slide-right": {
     "description": "Slide Right — scroll animation.",
@@ -1340,36 +1472,41 @@
     "seeded": true
   },
   "sds-scroll-stagger-grid": {
-    "description": "Stagger Grid — scroll animation.",
-    "seeded": true
+    "description": "Grid children rise in sequence",
+    "displayName": "Stagger Grid",
+    "source": "docs-import"
   },
   "sds-scroll-stagger-pop": {
-    "description": "Stagger Pop — scroll animation.",
-    "seeded": true
+    "description": "Children pop in with scale+rotate stagger",
+    "displayName": "Stagger Pop",
+    "source": "docs-import"
   },
   "sds-scroll-streak": {
     "description": "Streak — scroll animation.",
     "seeded": true
   },
   "sds-scroll-tilt": {
-    "description": "Tilt Reveal — scroll animation.",
-    "seeded": true
+    "description": "Folds down from a 50° X-axis rotation",
+    "displayName": "Tilt Reveal",
+    "source": "docs-import"
   },
   "sds-scroll-unfold": {
     "description": "Unfold — scroll animation.",
     "seeded": true
   },
   "sds-scroll-velvet": {
-    "description": "Velvet Drop Scroll — scroll animation.",
-    "seeded": true
+    "description": "Velvet drop on viewport enter",
+    "displayName": "Velvet Drop Scroll",
+    "source": "docs-import"
   },
   "sds-scroll-vortex": {
     "description": "Vortex — scroll animation.",
     "seeded": true
   },
   "sds-scroll-warp": {
-    "description": "Scroll Warp — scroll animation.",
-    "seeded": true
+    "description": "Perspective-warp entrance from below",
+    "displayName": "Scroll Warp",
+    "source": "docs-import"
   },
   "sds-scroll-warp-in": {
     "description": "Warp Enter — scroll animation.",
@@ -1384,171 +1521,211 @@
     "seeded": true
   },
   "sds-shadow-lift": {
-    "description": "Shadow Lift — text animation.",
-    "seeded": true
+    "description": "Lifts up casting a soft shadow",
+    "displayName": "Shadow Lift",
+    "source": "docs-import"
   },
   "sds-shatter-in": {
-    "description": "Shatter In — text animation.",
-    "seeded": true
+    "description": "Explodes in from massive scale with blur",
+    "displayName": "Shatter In",
+    "source": "docs-import"
   },
   "sds-shimmer-sweep": {
-    "description": "Shimmer Sweep — text animation.",
-    "seeded": true
+    "description": "A light shimmer sweeps across (loop)",
+    "displayName": "Shimmer Sweep",
+    "source": "docs-import"
   },
   "sds-shockwave": {
-    "description": "Shockwave — interactive animation.",
-    "seeded": true
+    "description": "Click fires a radial impulse",
+    "displayName": "Shockwave",
+    "source": "docs-import"
   },
   "sds-signal-wave": {
-    "description": "Signal Wave — text animation.",
-    "seeded": true
+    "description": "Wider stagger wave, slower period",
+    "displayName": "Signal Wave",
+    "source": "docs-import"
   },
   "sds-skew-slide": {
-    "description": "Skew Slide — text animation.",
-    "seeded": true
+    "description": "Slides in with a skew shear",
+    "displayName": "Skew Slide",
+    "source": "docs-import"
   },
   "sds-slant-rise": {
-    "description": "Slant Rise — text animation.",
-    "seeded": true
+    "description": "Rises in on a slant",
+    "displayName": "Slant Rise",
+    "source": "docs-import"
   },
   "sds-slice-reveal": {
-    "description": "Slice Reveal — text animation.",
-    "seeded": true
+    "description": "Wipes in from left via clip-path",
+    "displayName": "Slice Reveal",
+    "source": "docs-import"
   },
   "sds-slide-blur-left": {
-    "description": "Slide Blur Left — text animation.",
-    "seeded": true
+    "description": "Slides from left through a blur",
+    "displayName": "Slide Blur Left",
+    "source": "docs-import"
   },
   "sds-slide-blur-right": {
-    "description": "Slide Blur Right — text animation.",
-    "seeded": true
+    "description": "Slides from right through a blur",
+    "displayName": "Slide Blur Right",
+    "source": "docs-import"
   },
   "sds-slow": {
     "description": "Slow — playback modifier.",
     "seeded": true
   },
   "sds-smoke-reveal": {
-    "description": "Smoke Reveal — text animation.",
-    "seeded": true
+    "description": "Resolves from a smoke-like blur field",
+    "displayName": "Smoke Reveal",
+    "source": "docs-import"
   },
   "sds-split-reveal": {
-    "description": "Split Reveal — text animation.",
-    "seeded": true
+    "description": "Polygon clip-path splits open from center",
+    "displayName": "Split Reveal",
+    "source": "docs-import"
   },
   "sds-spotlight": {
-    "description": "Spotlight — text animation.",
-    "seeded": true
+    "description": "Brightens in under a spotlight",
+    "displayName": "Spotlight",
+    "source": "docs-import"
   },
   "sds-spring-kerning": {
-    "description": "Spring Kerning — interactive animation.",
-    "seeded": true
+    "description": "Mouse X expands/compresses spacing",
+    "displayName": "Spring Kerning",
+    "source": "docs-import"
   },
   "sds-squash-stretch": {
-    "description": "Squash Stretch — text animation.",
-    "seeded": true
+    "description": "Squashes then stretches into place",
+    "displayName": "Squash Stretch",
+    "source": "docs-import"
   },
   "sds-stagger-chars": {
-    "description": "Stagger Chars — text animation.",
-    "seeded": true
+    "description": "Up to 12 children stagger in with skewY",
+    "displayName": "Stagger Chars",
+    "source": "docs-import"
   },
   "sds-static-burst": {
-    "description": "Static Burst — text animation.",
-    "seeded": true
+    "description": "Glitchy signal-noise corruption loop",
+    "displayName": "Static Burst",
+    "source": "docs-import"
   },
   "sds-streak-in": {
-    "description": "Streak In — text animation.",
-    "seeded": true
+    "description": "High-speed streak entrance from the left",
+    "displayName": "Streak In",
+    "source": "docs-import"
   },
   "sds-strike-through": {
-    "description": "Strike Through — text animation.",
-    "seeded": true
+    "description": "Strike line draws across",
+    "displayName": "Strike Through",
+    "source": "docs-import"
   },
   "sds-swing-in": {
-    "description": "Swing In — text animation.",
-    "seeded": true
+    "description": "Swings in with a pendulum overshoot",
+    "displayName": "Swing In",
+    "source": "docs-import"
   },
   "sds-tada": {
-    "description": "Tada — text animation.",
-    "seeded": true
+    "description": "Celebratory scale-and-rotate tada",
+    "displayName": "Tada",
+    "source": "docs-import"
   },
   "sds-tracking-contract": {
-    "description": "Tracking Contract — text animation.",
-    "seeded": true
+    "description": "Letters contract into place",
+    "displayName": "Tracking Contract",
+    "source": "docs-import"
   },
   "sds-tracking-expand": {
-    "description": "Tracking Expand — text animation.",
-    "seeded": true
+    "description": "Letters expand out into place",
+    "displayName": "Tracking Expand",
+    "source": "docs-import"
   },
   "sds-typewriter-pro": {
-    "description": "Typewriter Pro — text animation.",
-    "seeded": true
+    "description": "Classic typewriter with blinking cursor",
+    "displayName": "Typewriter Pro",
+    "source": "docs-import"
   },
   "sds-typing-caret": {
-    "description": "Typing Caret — text animation.",
-    "seeded": true
+    "description": "Types out with a blinking caret",
+    "displayName": "Typing Caret",
+    "source": "docs-import"
   },
   "sds-underline-grow": {
-    "description": "Underline Grow — text animation.",
-    "seeded": true
+    "description": "Underline draws on from left",
+    "displayName": "Underline Grow",
+    "source": "docs-import"
   },
   "sds-unfurl": {
-    "description": "Unfurl — text animation.",
-    "seeded": true
+    "description": "Clip-path inset + scaleX unfurls from the left",
+    "displayName": "Unfurl",
+    "source": "docs-import"
   },
   "sds-vapor-rise": {
-    "description": "Vapor Rise — text animation.",
-    "seeded": true
+    "description": "Rises and sharpens from a vapor blur",
+    "displayName": "Vapor Rise",
+    "source": "docs-import"
   },
   "sds-velocity-blur-text": {
-    "description": "Velocity Blur Text — text animation.",
-    "seeded": true
+    "description": "Streaks in from left with motion blur",
+    "displayName": "Velocity Blur",
+    "source": "docs-import"
   },
   "sds-velvet-drop": {
-    "description": "Velvet Drop — text animation.",
-    "seeded": true
+    "description": "Drops in with a soft blur and bounce",
+    "displayName": "Velvet Drop",
+    "source": "docs-import"
   },
   "sds-vibrate": {
-    "description": "Vibrate — text animation.",
-    "seeded": true
+    "description": "Rapid vibrate buzz (loop)",
+    "displayName": "Vibrate",
+    "source": "docs-import"
   },
   "sds-wave-cascade": {
-    "description": "Wave Cascade — text animation.",
-    "seeded": true
+    "description": "Disturbance propagates char-to-char (loop)",
+    "displayName": "Wave Cascade",
+    "source": "docs-import"
   },
   "sds-weight-drop": {
-    "description": "Weight Drop — text animation.",
-    "seeded": true
+    "description": "Overshoot gravity with extreme easing",
+    "displayName": "Weight Drop",
+    "source": "docs-import"
   },
   "sds-wipe-left": {
-    "description": "Wipe Left — text animation.",
-    "seeded": true
+    "description": "Clip-wipes in to the left",
+    "displayName": "Wipe Left",
+    "source": "docs-import"
   },
   "sds-wipe-right": {
-    "description": "Wipe Right — text animation.",
-    "seeded": true
+    "description": "Clip-wipes in to the right",
+    "displayName": "Wipe Right",
+    "source": "docs-import"
   },
   "sds-wobble": {
-    "description": "Wobble — text animation.",
-    "seeded": true
+    "description": "Wobbles side to side on entry",
+    "displayName": "Wobble",
+    "source": "docs-import"
   },
   "sds-word-blur-in": {
-    "description": "Word Blur In — text animation.",
-    "seeded": true
+    "description": "Blur resolves to sharp with scale focus",
+    "displayName": "Word Blur In",
+    "source": "docs-import"
   },
   "sds-word-morph": {
-    "description": "Word Morph — interactive animation.",
-    "seeded": true
+    "description": "Cycles through words (loop)",
+    "displayName": "Word Morph",
+    "source": "docs-import"
   },
   "sds-xslow": {
     "description": "Xslow — playback modifier.",
     "seeded": true
   },
   "sds-zoom-out-in": {
-    "description": "Zoom Far — text animation.",
-    "seeded": true
+    "description": "Settles from oversized with blur",
+    "displayName": "Zoom Out In",
+    "source": "docs-import"
   },
   "sds-zoom-punch": {
-    "description": "Zoom Punch — text animation.",
-    "seeded": true
+    "description": "Punches in from tiny to full with overshoot",
+    "displayName": "Zoom Punch",
+    "source": "docs-import"
   }
 }

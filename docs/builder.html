@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Bundle Builder — SDS Motion Forge</title>
+    <meta
+      name="description"
+      content="Build a custom SDS Motion Forge CSS bundle: pick effects, get exactly their rules + keyframes + required tokens. Live size estimate, instant download."
+    />
+    <link rel="icon" href="favicon.png" />
+    <style>
+      :root {
+        --brand: #0015d1;
+        --brand-dim: rgba(0, 21, 209, 0.06);
+        --bg: #f7f7f9;
+        --bg-card: #ffffff;
+        --ink: #08080c;
+        --ink-2: #34343f;
+        --ink-3: #5e5e68;
+        --line: rgba(8, 8, 12, 0.08);
+        --line-2: rgba(8, 8, 12, 0.14);
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0; background: var(--bg); color: var(--ink);
+        font-family: "Segoe UI", system-ui, sans-serif;
+      }
+      .top {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 18px 28px; border-bottom: 1px solid var(--line); background: var(--bg-card);
+        position: sticky; top: 0; z-index: 5;
+      }
+      .top h1 { font-size: 17px; margin: 0; }
+      .top a { color: var(--brand); text-decoration: none; font-size: 14px; font-weight: 600; }
+      .layout { display: grid; grid-template-columns: 1fr 340px; gap: 24px; padding: 24px 28px; max-width: 1280px; margin: 0 auto; }
+      @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+      .cat { background: var(--bg-card); border: 1px solid var(--line); border-radius: 14px; margin-bottom: 16px; overflow: hidden; }
+      .cat-head {
+        display: flex; align-items: center; gap: 10px; padding: 12px 16px;
+        border-bottom: 1px solid var(--line); background: var(--brand-dim);
+        font-weight: 700; font-size: 14px; cursor: pointer; user-select: none;
+      }
+      .cat-head .count { color: var(--ink-3); font-weight: 500; font-size: 12.5px; }
+      .cat-body {
+        display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+        gap: 2px; padding: 10px 12px;
+      }
+      .cat[data-collapsed] .cat-body { display: none; }
+      label.fx {
+        display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--ink-2);
+        padding: 5px 8px; border-radius: 8px; cursor: pointer;
+      }
+      label.fx:hover { background: var(--brand-dim); }
+      input[type="checkbox"] { accent-color: var(--brand); }
+      .panel {
+        position: sticky; top: 84px; align-self: start;
+        background: var(--bg-card); border: 1px solid var(--line); border-radius: 16px; padding: 20px;
+      }
+      .stat { display: flex; justify-content: space-between; font-size: 14px; padding: 7px 0; border-bottom: 1px dashed var(--line); }
+      .stat b { font-variant-numeric: tabular-nums; }
+      .ok { color: #067a52; }
+      button.dl {
+        width: 100%; margin-top: 16px; padding: 13px; border: none; border-radius: 12px;
+        background: var(--brand); color: #fff; font-size: 15px; font-weight: 700; cursor: pointer;
+      }
+      button.dl:disabled { opacity: 0.4; cursor: not-allowed; }
+      .hint { font-size: 12.5px; color: var(--ink-3); line-height: 1.55; margin-top: 14px; }
+      .toolbar { display: flex; gap: 10px; margin-bottom: 16px; }
+      .toolbar input {
+        flex: 1; padding: 10px 14px; border: 1px solid var(--line-2); border-radius: 10px; font-size: 14px;
+      }
+      .toolbar button {
+        padding: 10px 14px; border: 1px solid var(--line-2); border-radius: 10px;
+        background: var(--bg-card); cursor: pointer; font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top">
+      <h1>SDS Motion Forge — Custom Bundle Builder</h1>
+      <a href="index.html">← Back to the gallery</a>
+    </div>
+    <div class="layout">
+      <main>
+        <div class="toolbar">
+          <input id="filter" type="search" placeholder="Filter effects…" aria-label="Filter effects" />
+          <button id="clearAll" type="button">Clear all</button>
+        </div>
+        <div id="tree" aria-live="polite">Loading registry…</div>
+      </main>
+      <aside class="panel" aria-label="Bundle summary">
+        <div class="stat"><span>Selected effects</span><b id="selCount">0</b></div>
+        <div class="stat"><span>Keyframes included</span><b id="kfCount">0</b></div>
+        <div class="stat"><span>Minified</span><b id="minSize">—</b></div>
+        <div class="stat"><span>Gzip (network)</span><b id="gzSize">—</b></div>
+        <button class="dl" id="download" disabled>Download sds-motion-custom.min.css</button>
+        <p class="hint">
+          Your bundle contains exactly the selected effects' rules, their
+          @keyframes, and the shared core (design tokens, modifiers,
+          reduced-motion accessibility, scroll gate) — resolved from the
+          motion registry, never by text matching. Sizes are computed live in
+          your browser (gzip via CompressionStream).
+        </p>
+      </aside>
+    </div>
+
+    <script>
+      (function () {
+        var DATA = null;
+        var selected = new Set();
+        var CATS = [
+          ["text", "Text"], ["buttons", "Buttons"], ["inputs", "Inputs"],
+          ["cards", "Cards"], ["loaders", "Loaders"], ["scroll", "Scroll"],
+        ];
+
+        fetch("builder-data.json")
+          .then(function (r) { return r.json(); })
+          .then(function (d) { DATA = d; renderTree(); });
+
+        function renderTree(filter) {
+          var tree = document.getElementById("tree");
+          tree.innerHTML = "";
+          CATS.forEach(function (c) {
+            var cat = c[0];
+            var items = Object.keys(DATA.classes)
+              .filter(function (k) { return DATA.classes[k].category === cat; })
+              .filter(function (k) {
+                if (!filter) return true;
+                return (k + " " + DATA.classes[k].displayName).toLowerCase().indexOf(filter) > -1;
+              })
+              .sort();
+            if (!items.length) return;
+            var box = document.createElement("section");
+            box.className = "cat";
+            var selectedInCat = items.filter(function (k) { return selected.has(k); }).length;
+            box.innerHTML =
+              '<div class="cat-head"><input type="checkbox" aria-label="Select all ' + c[1] + '" ' +
+              (selectedInCat === items.length && items.length ? "checked" : "") +
+              ' data-cat="' + cat + '" /> ' + c[1] +
+              ' <span class="count">' + selectedInCat + " / " + items.length + "</span></div>" +
+              '<div class="cat-body">' +
+              items.map(function (k) {
+                return (
+                  '<label class="fx"><input type="checkbox" value="' + k + '" ' +
+                  (selected.has(k) ? "checked" : "") + " /> " +
+                  DATA.classes[k].displayName + " <code style=\"color:var(--ink-3);font-size:11px\">" + k + "</code></label>"
+                );
+              }).join("") +
+              "</div>";
+            tree.appendChild(box);
+          });
+
+          tree.querySelectorAll('input[type="checkbox"][value]').forEach(function (cb) {
+            cb.addEventListener("change", function () {
+              if (cb.checked) selected.add(cb.value); else selected.delete(cb.value);
+              update();
+              renderTree(document.getElementById("filter").value.toLowerCase().trim());
+            });
+          });
+          tree.querySelectorAll("input[data-cat]").forEach(function (cb) {
+            cb.addEventListener("change", function () {
+              Object.keys(DATA.classes).forEach(function (k) {
+                if (DATA.classes[k].category !== cb.dataset.cat) return;
+                if (cb.checked) selected.add(k); else selected.delete(k);
+              });
+              update();
+              renderTree(document.getElementById("filter").value.toLowerCase().trim());
+            });
+          });
+        }
+
+        document.getElementById("filter").addEventListener("input", function (e) {
+          renderTree(e.target.value.toLowerCase().trim());
+        });
+        document.getElementById("clearAll").addEventListener("click", function () {
+          selected.clear(); update(); renderTree();
+        });
+
+        /* ── assembly: structured registry data, never regex ── */
+        function assemble() {
+          if (!selected.size) return { css: "", keyframes: 0 };
+          var kf = new Set();
+          var parts = [
+            "/*! SDS Motion Forge — custom bundle (" + selected.size + " effects, v" + DATA.version + ") */",
+            DATA.core,
+          ];
+          selected.forEach(function (k) {
+            var c = DATA.classes[k];
+            if (!c) return;
+            parts.push("/* " + k + " */");
+            parts.push(c.css.join("\n"));
+            c.keyframes.forEach(function (name) { kf.add(name); });
+          });
+          kf.forEach(function (name) {
+            if (DATA.keyframes[name]) parts.push(DATA.keyframes[name]);
+          });
+          return { css: parts.join("\n"), keyframes: kf.size };
+        }
+
+        /* in-browser minify: strip comments (keep /*!), collapse whitespace */
+        function minify(css) {
+          return css
+            .replace(/\/\*(?!\!)[\s\S]*?\*\//g, "")
+            .replace(/\s+/g, " ")
+            .replace(/\s*([{}:;,>])\s*/g, "$1")
+            .replace(/;}/g, "}")
+            .trim();
+        }
+
+        function gzipSize(text) {
+          if (typeof CompressionStream === "undefined") return Promise.resolve(null);
+          var stream = new Blob([text]).stream().pipeThrough(new CompressionStream("gzip"));
+          return new Response(stream).arrayBuffer().then(function (b) { return b.byteLength; });
+        }
+
+        var latest = "";
+        function update() {
+          var out = assemble();
+          latest = out.css ? minify(out.css) : "";
+          window.__sdsBuilderCss = latest; /* consumed by the CI smoke test */
+          document.getElementById("selCount").textContent = selected.size;
+          document.getElementById("kfCount").textContent = out.keyframes;
+          document.getElementById("download").disabled = !latest;
+          var minEl = document.getElementById("minSize");
+          var gzEl = document.getElementById("gzSize");
+          if (!latest) { minEl.textContent = "—"; gzEl.textContent = "—"; return; }
+          minEl.textContent = (latest.length / 1024).toFixed(2) + " KB";
+          gzipSize(latest).then(function (n) {
+            gzEl.textContent = n === null ? "n/a" : (n / 1024).toFixed(2) + " KB";
+          });
+        }
+
+        document.getElementById("download").addEventListener("click", function () {
+          var blob = new Blob([latest], { type: "text/css" });
+          var a = document.createElement("a");
+          a.href = URL.createObjectURL(blob);
+          a.download = "sds-motion-custom.min.css";
+          a.click();
+          URL.revokeObjectURL(a.href);
+        });
+      })();
+    </script>
+  </body>
+</html>

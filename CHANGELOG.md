@@ -1,5 +1,77 @@
 # Changelog
 
+## [Unreleased] — v5 Phase 4: Docs Platform + Copy-Paste Guarantee + Bundle Builder
+
+> The website IS the product: what you see in a preview, what you copy, and
+> what npm ships are now one machine-verified artifact.
+
+### Added — the copy-paste guarantee (machine-enforced)
+
+- **`npm run verify:snippets`** — `npm pack`s the core package, installs the
+  tarball into `test/snippets-fixture/`, renders every generated snippet as
+  its own standalone page (732 pages: HTML tab + Bootstrap tab × 366 effects)
+  and asserts in Playwright that each one actually animates (computed
+  `animation-name`, `sds-play` arrival for scroll, engine attach for
+  interactive, transition wiring for label-float). **All 732 pass.** A snippet
+  that only works because the docs site loaded a helper fails CI.
+- **Six generated code tabs per effect** — HTML+CSS (paste-into-empty-file
+  complete, with exact CDN lines), vanilla JS (engine options as comments),
+  React (`<SdsMotion>`/`<SdsText>` with imports + CSS import), Angular
+  (standalone component + directive), Tailwind (setup + utility + speed
+  variants), Bootstrap 5 (real `btn`/`form-control`/`card` components with the
+  SDS class layered on — rule documented: SDS layers on top, never replaces).
+  Zero hand-written snippets; "How it works" copy (trigger, animated
+  properties, controlling tokens, customization) is templated per category and
+  interpolated from registry facts.
+- **Tailwind tab enforcement** — all 353 utilities + 353 speed variants
+  compile against the real plugin in the example app's toolchain
+  (`scripts/docs/verify-tailwind-utilities.js`).
+- **Rotating React/Angular samples** — 3 effects per category (deterministic
+  per ISO week) generated into `examples/nextjs/app/snippets` and
+  `examples/angular/src/app/snippets.component.ts`; both apps build green —
+  type errors in registry-generated unions fail CI.
+
+### Added — docs platform
+
+- **Single artifact (preview = npm = snippet):** the docs page's inline copy
+  of the animation CSS (~1,300 lines) and inline copy of the interactive
+  engine were deleted; the page now consumes `dist/motion.min.css` and the
+  built engines (CDN fallback). The hand-maintained ANIMATIONS literal is
+  replaced by registry-generated `docs/docs-data.js`; the gallery/modal
+  preview markup is byte-identical to the HTML tab's body — they cannot
+  diverge. Drift gate: `npm run verify:docs` (in `release:check`).
+- **Gallery upgrades** (bento design and #0014D1 kept): per-card replay
+  buttons, a reduced-motion preview toggle that simulates the accessible
+  fallback, search/filter as before — now over registry data.
+- **`docs/builder.html` — custom bundle builder:** checkbox tree from the
+  registry; client-side assembly of selected rules + their keyframes + core
+  (tokens, modifiers, reduced-motion, scroll gate) resolved from structured
+  `builder-data.json` — never regex; in-browser minify; live min+gzip via
+  CompressionStream; downloads `sds-motion-custom.min.css`. **Acceptance
+  verified in CI:** driving the real page, 5 selected effects produce a
+  standalone stylesheet < 8 KB whose every effect animates in a smoke page.
+- **`docs/llms.txt` + publicly served `docs/registry.json`** — AI coding
+  tools get install lines, usage patterns, token names and the full
+  machine-readable registry.
+- Authored effect descriptions were imported from the docs page into
+  `registry/meta/descriptions.json` (single authored home); the registry
+  gains `animatedProps`, `loop` and meta display names.
+
+### Fixed — a shipped 4.0.3 bug found by the snippet gate
+
+- **Nine scroll effects never played when scroll-gated, in any browser using
+  Chromium's intersection semantics.** IntersectionObserver computes the
+  target's intersection AFTER its own clip-path/transform; the scroll gate
+  pauses effects at their 0% frame, so effects whose first frame fully clips
+  (`sds-scroll-curtain`, `-clip-left`, `-clip-right`, `-radial`, `-ink`,
+  `-scan`, `-split`) or moves the box off-screen (`-velvet`, `-gravity`)
+  never intersected — content stayed permanently invisible with every
+  documented scroll method. Fix: an additive rule neutralizes
+  clip-path/transform ONLY while the element is gated (it is `opacity: 0` —
+  visually identical); on `sds-play`/`sds-in` the rule stops matching and the
+  animation plays from its true first frame. Verified by before/after
+  Playwright probes; recorded in `compat/approved-deviations.json`.
+
 ## [Unreleased] — v5 Phase 3: Quality Infrastructure
 
 > Every gate below runs in CI; the publish gate (`release:check`) now includes

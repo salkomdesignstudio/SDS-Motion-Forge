@@ -350,6 +350,23 @@ html:not(.sds-js) [data-sds] {
   animation-play-state: running !important;
 }
 
+/* v5 fix (additive): while an element is scroll-gated it is opacity:0, but
+   its PAUSED 0% keyframe still applied clip-path/transform — and Chromium
+   computes IntersectionObserver geometry AFTER the target's own clip and
+   transform. Effects whose first frame fully clips (curtain, clip-left/right,
+   radial, ink, scan, split) or moves the box off-screen (velvet, gravity)
+   therefore NEVER intersected and never played in <= 4.0.3, with every
+   documented scroll method. Neutralizing clip/transform only in the hidden,
+   gated state restores the element's real box for the observer; the moment
+   sds-play / sds-in lands, these rules stop matching and the animation plays
+   from its true 0% frame. */
+[data-sds]:not(.sds-play),
+[data-sds-scroll][class*="sds-scroll-"]:not(.sds-in) {
+  clip-path: none !important;
+  -webkit-clip-path: none !important;
+  transform: none !important;
+}
+
 /*!
  * SDS Motion Forge — inputs.css
  * Input animations (Section 3).

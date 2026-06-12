@@ -29,7 +29,7 @@
   },
   {
     "path": "dist/categories/core.min.css",
-    "limit": "3347 B",
+    "limit": "3535 B",
     "name": "dist/categories/core.min.css",
     "gzip": false,
     "brotli": false
