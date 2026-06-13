@@ -2397,6 +2397,7 @@ html:not(.sds-js) [data-sds] {
 .sds-input-border-heartline {
   position: relative;
   display: inline-block;
+  overflow: hidden;
 }
 .sds-input-border-heartline::before {
   content: "";
@@ -2412,7 +2413,7 @@ html:not(.sds-js) [data-sds] {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -4px;
+  bottom: 0;
   width: 14px;
   height: 8px;
   background: var(--sds-primary);
@@ -2431,12 +2432,12 @@ html:not(.sds-js) [data-sds] {
     opacity: 0.9;
   }
   74% {
-    transform: translateX(min(75vw, 200px));
+    transform: translateX(calc(100% + 160px));
     opacity: 0.9;
   }
   78%,
   100% {
-    transform: translateX(min(80vw, 215px));
+    transform: translateX(calc(100% + 180px));
     opacity: 0;
   }
 }
