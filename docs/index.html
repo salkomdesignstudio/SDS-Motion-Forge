@@ -3045,6 +3045,31 @@
                   window.SDSInteractive.initEl(el);
               });
           }
+          // Auto-replay all visible cards every 2.8s so entrance effects keep
+          // demonstrating rather than settling to a static final state.
+          if (!reduce) {
+            if (window._galReplayTimer) clearInterval(window._galReplayTimer);
+            window._galReplayTimer = setInterval(function () {
+              grid.querySelectorAll(".card").forEach(function (card) {
+                var rect = card.getBoundingClientRect();
+                if (rect.top > window.innerHeight || rect.bottom < 0) return;
+                var cls = card.dataset.cls;
+                var demo =
+                  card.querySelector("." + cls.split(" ")[0]) ||
+                  card.querySelector("[class*='sds-']");
+                if (!demo) return;
+                var charSpans = demo.querySelectorAll(".sds-char");
+                var targets = charSpans.length
+                  ? Array.prototype.slice.call(charSpans)
+                  : CHILD_DRIVEN.indexOf(cls) > -1 && demo.children.length
+                    ? Array.prototype.slice.call(demo.children)
+                    : [demo];
+                targets.forEach(function (el) { el.style.animation = "none"; });
+                void demo.offsetWidth;
+                targets.forEach(function (el) { el.style.animation = ""; });
+              });
+            }, 2800);
+          }
         }
 
         // reduced-motion preview toggle (shows the accessible fallback)
