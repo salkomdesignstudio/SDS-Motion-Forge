@@ -600,12 +600,12 @@
         </div>
         <div class="sb-group">
           <span class="sb-label">Animation Reference</span>
-          <a href="#text" class="sb-link">Text <span class="sb-count">100</span></a>
-          <a href="#buttons" class="sb-link">Buttons <span class="sb-count">50</span></a>
-          <a href="#inputs" class="sb-link">Inputs <span class="sb-count">51</span></a>
-          <a href="#cards" class="sb-link">Cards <span class="sb-count">49</span></a>
-          <a href="#loaders" class="sb-link">Loaders <span class="sb-count">51</span></a>
-          <a href="#scroll" class="sb-link">Scroll <span class="sb-count">54</span></a>
+          <a href="#text" class="sb-link">Text <span class="sb-count">104</span></a>
+          <a href="#buttons" class="sb-link">Buttons <span class="sb-count">100</span></a>
+          <a href="#inputs" class="sb-link">Inputs <span class="sb-count">100</span></a>
+          <a href="#cards" class="sb-link">Cards <span class="sb-count">100</span></a>
+          <a href="#loaders" class="sb-link">Loaders <span class="sb-count">100</span></a>
+          <a href="#scroll" class="sb-link">Scroll <span class="sb-count">100</span></a>
         </div>
         <div class="sb-group">
           <span class="sb-label">Advanced</span>
@@ -645,7 +645,7 @@
               <span class="codeblock-lang">HTML — &lt;head&gt;</span>
               <button class="cb-copy" onclick="copyCB(this)">Copy</button>
             </div>
-            <pre><span class="cm">&lt;!-- ① ALWAYS REQUIRED — core CSS (177 animations, ~20 KB gzip) --&gt;</span>
+            <pre><span class="cm">&lt;!-- ① ALWAYS REQUIRED — core CSS (600+ animations, ~39 KB gzip) --&gt;</span>
 <span class="ct">&lt;link</span> <span class="ck">rel</span>=<span class="cs">"stylesheet"</span>
       <span class="ck">href</span>=<span class="cs">"https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css"</span><span class="ct"> /&gt;</span></pre>
           </div>
@@ -692,10 +692,10 @@
           <table class="doc-table">
             <thead><tr><th>File</th><th>Size (gzip)</th><th>When you need it</th></tr></thead>
             <tbody>
-              <tr><td><code>dist/motion.min.css</code></td><td>~20 KB</td><td><strong>Always</strong> — core library, 177 animations</td></tr>
+              <tr><td><code>dist/motion.min.css</code></td><td>~39 KB gzip</td><td><strong>Always</strong> — core library, 600+ animations</td></tr>
               <tr><td><code>dist/sds-scroll.min.js</code></td><td>~0.6 KB</td><td>When using <code>data-sds</code> scroll-gated animations</td></tr>
               <tr><td><code>dist/motion-interactive.min.js</code></td><td>~2.4 KB</td><td>When using cursor-reactive animations (word-morph, magnetic-pull, shockwave…)</td></tr>
-              <tr><td><code>src/motion.css</code></td><td>177 KB raw</td><td>Custom PostCSS builds only</td></tr>
+              <tr><td><code>src/motion.css</code></td><td>~366 KB raw</td><td>Custom PostCSS builds only</td></tr>
             </tbody>
           </table>
 
@@ -766,7 +766,7 @@
             <pre><span class="ct">&lt;!DOCTYPE html&gt;</span>
 <span class="ct">&lt;html</span> <span class="ck">lang</span>=<span class="cs">"en"</span><span class="ct">&gt;</span>
 <span class="ct">&lt;head&gt;</span>
-  <span class="cm">&lt;!-- ① REQUIRED — core CSS (177 animations, ~20 KB gzip) --&gt;</span>
+  <span class="cm">&lt;!-- ① REQUIRED — core CSS (600+ animations, ~39 KB gzip) --&gt;</span>
   <span class="ct">&lt;link</span> <span class="ck">rel</span>=<span class="cs">"stylesheet"</span>
         <span class="ck">href</span>=<span class="cs">"https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css"</span><span class="ct"> /&gt;</span>
 <span class="ct">&lt;/head&gt;</span>
@@ -897,7 +897,7 @@
 
         <!-- ═══════════════ TEXT ═══════════════ -->
         <section class="doc-sec" id="text">
-          <h1 class="doc-sec-title">Text Animations <span class="nav-badge" style="font-size:13px;vertical-align:middle">100</span></h1>
+          <h1 class="doc-sec-title">Text Animations <span class="nav-badge" style="font-size:13px;vertical-align:middle">104</span></h1>
           <p class="doc-sec-sub">Apply to any element containing text. Animations are CSS <code>@keyframes</code> — they fire once on load unless a loop modifier is added.</p>
 
           <div class="codeblock">
@@ -908,7 +908,7 @@
 <span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-refract</span> sds-loop</span>"</span><span class="ct">&gt;</span>RGB split loop<span class="ct">&lt;/span&gt;</span></pre>
           </div>
 
-          <h2 class="doc-h3">All 100 text animation classes</h2>
+          <h2 class="doc-h3">All 104 text animation classes</h2>
           <div class="cls-grid" id="textClassGrid"></div>
 
           <h2 class="doc-h3">Physics per-character animations</h2>
@@ -940,7 +940,7 @@
 
         <!-- ═══════════════ BUTTONS ═══════════════ -->
         <section class="doc-sec" id="buttons">
-          <h1 class="doc-sec-title">Button Animations <span class="nav-badge" style="font-size:13px;vertical-align:middle">50</span></h1>
+          <h1 class="doc-sec-title">Button Animations <span class="nav-badge" style="font-size:13px;vertical-align:middle">100</span></h1>
           <p class="doc-sec-sub">Apply directly to <code>&lt;button&gt;</code> or <code>&lt;a&gt;</code> elements. Effects are ambient — no hover or click required.</p>
 
           <div class="codeblock">
@@ -950,13 +950,13 @@
 <span class="ct">&lt;button</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-btn-hologram</span>"</span><span class="ct">&gt;</span>Hologram flicker<span class="ct">&lt;/button&gt;</span></pre>
           </div>
 
-          <h2 class="doc-h3">All 50 button classes</h2>
+          <h2 class="doc-h3">All 100 button classes</h2>
           <div class="cls-grid" id="btnClassGrid"></div>
         </section>
 
         <!-- ═══════════════ INPUTS ═══════════════ -->
         <section class="doc-sec" id="inputs">
-          <h1 class="doc-sec-title">Input Animations <span class="nav-badge" style="font-size:13px;vertical-align:middle">51</span></h1>
+          <h1 class="doc-sec-title">Input Animations <span class="nav-badge" style="font-size:13px;vertical-align:middle">100</span></h1>
           <p class="doc-sec-sub">State-based effects for <code>&lt;input&gt;</code> and <code>&lt;textarea&gt;</code> elements. Some trigger on <code>:focus</code>, others run continuously as ambient loops.</p>
 
           <div class="codeblock">
@@ -976,13 +976,13 @@
 <span class="ct">&lt;/div&gt;</span></pre>
           </div>
 
-          <h2 class="doc-h3">All 51 input classes</h2>
+          <h2 class="doc-h3">All 100 input classes</h2>
           <div class="cls-grid" id="inputClassGrid"></div>
         </section>
 
         <!-- ═══════════════ CARDS ═══════════════ -->
         <section class="doc-sec" id="cards">
-          <h1 class="doc-sec-title">Card Animations <span class="nav-badge" style="font-size:13px;vertical-align:middle">49</span></h1>
+          <h1 class="doc-sec-title">Card Animations <span class="nav-badge" style="font-size:13px;vertical-align:middle">100</span></h1>
           <p class="doc-sec-sub">Entry and ambient effects for card and container elements.</p>
 
           <div class="codeblock">
@@ -992,7 +992,7 @@
 <span class="ct">&lt;div</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-card-levitate</span>"</span><span class="ct">&gt;</span>Levitate with depth shadow<span class="ct">&lt;/div&gt;</span></pre>
           </div>
 
-          <p class="doc-p">Three classes animate direct child elements and require children to be visible:</p>
+          <p class="doc-p">Eight classes animate direct child elements and require children to be visible:</p>
           <div class="codeblock">
             <div class="codeblock-head"><span class="codeblock-lang">HTML — stagger cards</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
             <pre><span class="ct">&lt;div</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-card-stagger</span>"</span><span class="ct">&gt;</span>
@@ -1000,16 +1000,17 @@
   <span class="ct">&lt;div&gt;</span>Item 2<span class="ct">&lt;/div&gt;</span>
   <span class="ct">&lt;div&gt;</span>Item 3<span class="ct">&lt;/div&gt;</span>
 <span class="ct">&lt;/div&gt;</span>
-<span class="cm">&lt;!-- also: sds-card-cascade, sds-card-slice --&gt;</span></pre>
+<span class="cm">&lt;!-- also: sds-card-cascade, sds-card-slice, sds-card-accordion-in,</span>
+<span class="cm">     sds-card-checker, sds-card-fan-spread, sds-card-layers, sds-card-reveal-stack --&gt;</span></pre>
           </div>
 
-          <h2 class="doc-h3">All 49 card classes</h2>
+          <h2 class="doc-h3">All 100 card classes</h2>
           <div class="cls-grid" id="cardClassGrid"></div>
         </section>
 
         <!-- ═══════════════ LOADERS ═══════════════ -->
         <section class="doc-sec" id="loaders">
-          <h1 class="doc-sec-title">Loader Animations <span class="nav-badge" style="font-size:13px;vertical-align:middle">51</span></h1>
+          <h1 class="doc-sec-title">Loader Animations <span class="nav-badge" style="font-size:13px;vertical-align:middle">100</span></h1>
           <p class="doc-sec-sub">Add a class to an empty <code>&lt;span&gt;</code>. The animation is built entirely with CSS pseudo-elements — no child elements needed for most loaders.</p>
 
           <div class="codeblock">
@@ -1020,7 +1021,7 @@
 <span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-loader-skeleton</span>"</span><span class="ct">&gt;&lt;/span&gt;</span></pre>
           </div>
 
-          <p class="doc-p">Five loaders animate direct child elements and <strong>require children</strong>:</p>
+          <p class="doc-p">Sixteen loaders animate direct child elements and <strong>require children</strong>:</p>
           <div class="codeblock">
             <div class="codeblock-head"><span class="codeblock-lang">HTML — loaders with children</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
             <pre><span class="cm">&lt;!-- Wave: 5 bars --&gt;</span>
@@ -1041,13 +1042,13 @@
 <span class="cm">&lt;!-- sds-loader-cascade and sds-loader-signal: variable children --&gt;</span></pre>
           </div>
 
-          <h2 class="doc-h3">All 51 loader classes</h2>
+          <h2 class="doc-h3">All 100 loader classes</h2>
           <div class="cls-grid" id="loaderClassGrid"></div>
         </section>
 
         <!-- ═══════════════ SCROLL ═══════════════ -->
         <section class="doc-sec" id="scroll">
-          <h1 class="doc-sec-title">Scroll Animations <span class="nav-badge" style="font-size:13px;vertical-align:middle">54</span></h1>
+          <h1 class="doc-sec-title">Scroll Animations <span class="nav-badge" style="font-size:13px;vertical-align:middle">100</span></h1>
           <p class="doc-sec-sub">Scroll animation classes fire immediately when applied. Gate them on viewport entry using one of three methods.</p>
 
           <h2 class="doc-h3">Method 1 — JS scroll engine (recommended, works everywhere)</h2>
@@ -1116,7 +1117,7 @@
 <span class="cm">&lt;!-- also: sds-scroll-stagger-grid, sds-scroll-cascade --&gt;</span></pre>
           </div>
 
-          <h2 class="doc-h3">All 54 scroll classes</h2>
+          <h2 class="doc-h3">All 100 scroll classes</h2>
           <div class="cls-grid" id="scrollClassGrid"></div>
         </section>
 
@@ -1278,12 +1279,12 @@ window.SDSInteractive.cleanup(element);</pre>
           <table class="doc-table">
             <thead><tr><th>Exported type</th><th>Classes</th></tr></thead>
             <tbody>
-              <tr><td><code>SdsTextAnimation</code></td><td>100 text animation classes</td></tr>
-              <tr><td><code>SdsButtonAnimation</code></td><td>50 button animation classes</td></tr>
-              <tr><td><code>SdsInputAnimation</code></td><td>51 input animation classes</td></tr>
-              <tr><td><code>SdsCardAnimation</code></td><td>49 card animation classes</td></tr>
-              <tr><td><code>SdsLoaderAnimation</code></td><td>51 loader animation classes</td></tr>
-              <tr><td><code>SdsScrollAnimation</code></td><td>54 scroll animation classes</td></tr>
+              <tr><td><code>SdsTextAnimation</code></td><td>104 text animation classes</td></tr>
+              <tr><td><code>SdsButtonAnimation</code></td><td>100 button animation classes</td></tr>
+              <tr><td><code>SdsInputAnimation</code></td><td>100 input animation classes</td></tr>
+              <tr><td><code>SdsCardAnimation</code></td><td>100 card animation classes</td></tr>
+              <tr><td><code>SdsLoaderAnimation</code></td><td>100 loader animation classes</td></tr>
+              <tr><td><code>SdsScrollAnimation</code></td><td>100 scroll animation classes</td></tr>
               <tr><td><code>SdsInteractiveAnimation</code></td><td>7 JS-engine animation classes</td></tr>
               <tr><td><code>SdsModifier</code></td><td>18 modifier classes</td></tr>
               <tr><td><code>SdsScrollGate</code></td><td><code>sds-play</code>, <code>sds-scroll-auto</code></td></tr>
@@ -1433,7 +1434,7 @@ npm install</pre>
             <li>Replaced hand-authored min.js files with automated terser build — source maps generated</li>
             <li>Fixed CSS path for Netlify deployment (FOUC eliminated)</li>
             <li>Fixed broken scroll animation docs code example</li>
-            <li>Completed TypeScript types — all 177 animation classes now typed</li>
+            <li>Completed TypeScript types — all 177 animation classes now typed (v5.0.0: 600+ classes typed)</li>
             <li>Fixed gallery accessibility (keyboard navigation, aria labels)</li>
             <li>JS engine sizes: sds-scroll −20%, motion-interactive −25%</li>
           </ul>
