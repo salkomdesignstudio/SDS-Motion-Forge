@@ -14,13 +14,13 @@
 
 /**
  * SDS Motion Forge — Premium CSS Animation System
- * Version: 4.0.3
+ * Version: 5.0.0
  * Author: Salkom Design Studio
  * License: MIT
  * https://github.com/salkomdesignstudio/SDS-Motion-Forge
  *
- * 300+ production-ready CSS animations · Framework-agnostic
- * Text (100) · Buttons (50) · Inputs (50) · Cards (46) · Loaders (50) · Scroll (54)
+ * 600+ production-ready CSS animations · Framework-agnostic
+ * Text (104) · Buttons (100) · Inputs (100) · Cards (100) · Loaders (100) · Scroll (100)
  *
  * Optional engines (load with defer):
  *   sds-scroll.min.js          — scroll-gate via [data-sds] attribute
@@ -1544,6 +1544,1902 @@ html:not(.sds-js) [data-sds] {
 .sds-btn-tilt,
 .sds-btn-rotate {
   will-change: transform, opacity;
+}
+
+/* ============================================================
+   SECTION 2b — BUTTON ANIMATIONS (v5 additions, 81–130)
+   Compositor-only (R4): transform / opacity / filter / clip-path.
+   Token-driven (SPEC §2): --sds-duration-*, --sds-ease-*.
+   ============================================================ */
+
+/* ─── Family: Liquid & Morph Fill ──────────────────────────── */
+
+/* 81 · Fill Rise -------------------------------------------- */
+.sds-btn-fill-rise {
+  position: relative;
+  overflow: hidden;
+}
+.sds-btn-fill-rise::before {
+  content: "";
+  position: absolute;
+  left: -5%;
+  right: -5%;
+  bottom: 0;
+  height: 130%;
+  background: var(--sds-primary);
+  opacity: 0.22;
+  clip-path: polygon(0 18%, 25% 14%, 50% 19%, 75% 13%, 100% 17%, 100% 100%, 0 100%);
+  transform: translateY(101%);
+  animation: sds-btnFillRise var(--sds-duration-slower, 2.2s) var(--sds-ease-decelerate, cubic-bezier(0.16, 1, 0.3, 1)) infinite;
+}
+@keyframes sds-btnFillRise {
+  0% {
+    transform: translateY(101%);
+    clip-path: polygon(0 18%, 25% 14%, 50% 19%, 75% 13%, 100% 17%, 100% 100%, 0 100%);
+  }
+  45% {
+    transform: translateY(12%);
+    clip-path: polygon(0 13%, 25% 19%, 50% 12%, 75% 18%, 100% 14%, 100% 100%, 0 100%);
+  }
+  60% {
+    transform: translateY(-2%);
+    clip-path: polygon(0 17%, 25% 13%, 50% 18%, 75% 14%, 100% 18%, 100% 100%, 0 100%);
+  }
+  70%,
+  82% {
+    transform: translateY(0%);
+    clip-path: polygon(0 15%, 25% 15%, 50% 15%, 75% 15%, 100% 15%, 100% 100%, 0 100%);
+  }
+  100% {
+    transform: translateY(101%);
+  }
+}
+
+/* 82 · Fill Sweep ------------------------------------------- */
+.sds-btn-fill-sweep {
+  position: relative;
+  overflow: hidden;
+}
+.sds-btn-fill-sweep::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 -40%;
+  width: 120%;
+  background: var(--sds-primary);
+  opacity: 0.2;
+  transform: translateX(-110%) skewX(-18deg);
+  animation: sds-btnFillSweep var(--sds-duration-slower, 2.2s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) infinite;
+}
+@keyframes sds-btnFillSweep {
+  0% {
+    transform: translateX(-110%) skewX(-18deg);
+    filter: brightness(1);
+  }
+  42% {
+    transform: translateX(28%) skewX(-18deg);
+    filter: brightness(1.35);
+  }
+  55%,
+  70% {
+    transform: translateX(4%) skewX(-18deg);
+    filter: brightness(1);
+  }
+  100% {
+    transform: translateX(120%) skewX(-18deg);
+  }
+}
+
+/* 83 · Fill Iris -------------------------------------------- */
+.sds-btn-fill-iris {
+  position: relative;
+  overflow: hidden;
+  animation: sds-btnFillIrisHost var(--sds-duration-slower, 2.2s) var(--sds-ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1)) infinite;
+}
+.sds-btn-fill-iris::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--sds-primary);
+  opacity: 0.24;
+  clip-path: circle(0% at 50% 50%);
+  animation: sds-btnFillIris var(--sds-duration-slower, 2.2s) var(--sds-ease-decelerate, cubic-bezier(0.16, 1, 0.3, 1)) infinite;
+}
+@keyframes sds-btnFillIris {
+  0%,
+  8% {
+    clip-path: circle(0% at 50% 50%);
+  }
+  42% {
+    clip-path: circle(75% at 50% 50%);
+  }
+  62%,
+  78% {
+    clip-path: circle(72% at 50% 50%);
+    opacity: 0.24;
+  }
+  100% {
+    clip-path: circle(75% at 50% 50%);
+    opacity: 0;
+  }
+}
+@keyframes sds-btnFillIrisHost {
+  0%,
+  8% {
+    transform: scale(0.985);
+  }
+  46% {
+    transform: scale(1.012);
+  }
+  64%,
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* 84 · Fill Split ------------------------------------------- */
+.sds-btn-fill-split {
+  position: relative;
+  overflow: hidden;
+}
+.sds-btn-fill-split::before,
+.sds-btn-fill-split::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 51%;
+  background: var(--sds-primary);
+  opacity: 0.2;
+}
+.sds-btn-fill-split::before {
+  left: 0;
+  transform: translateX(-102%);
+  animation: sds-btnFillSplitL var(--sds-duration-slower, 2.2s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) infinite;
+}
+.sds-btn-fill-split::after {
+  right: 0;
+  transform: translateX(102%);
+  animation: sds-btnFillSplitR var(--sds-duration-slower, 2.2s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) infinite;
+}
+@keyframes sds-btnFillSplitL {
+  0%,
+  6% {
+    transform: translateX(-102%);
+    filter: brightness(1);
+  }
+  38% {
+    transform: translateX(0);
+    filter: brightness(1.45);
+  }
+  46%,
+  74% {
+    transform: translateX(0);
+    filter: brightness(1);
+  }
+  100% {
+    transform: translateX(-102%);
+  }
+}
+@keyframes sds-btnFillSplitR {
+  0%,
+  6% {
+    transform: translateX(102%);
+    filter: brightness(1);
+  }
+  38% {
+    transform: translateX(0);
+    filter: brightness(1.45);
+  }
+  46%,
+  74% {
+    transform: translateX(0);
+    filter: brightness(1);
+  }
+  100% {
+    transform: translateX(102%);
+  }
+}
+
+/* 85 · Fill Corner ------------------------------------------ */
+.sds-btn-fill-corner {
+  position: relative;
+  overflow: hidden;
+  animation: sds-btnFillCornerHost var(--sds-duration-slower, 2.2s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) infinite;
+}
+.sds-btn-fill-corner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--sds-primary);
+  opacity: 0.22;
+  clip-path: polygon(0 0, 0 0, 0 0);
+  animation: sds-btnFillCorner var(--sds-duration-slower, 2.2s) var(--sds-ease-decelerate, cubic-bezier(0.16, 1, 0.3, 1)) infinite;
+}
+@keyframes sds-btnFillCorner {
+  0%,
+  6% {
+    clip-path: polygon(0 0, 0 0, 0 0);
+  }
+  44% {
+    clip-path: polygon(0 0, 230% 0, 0 230%);
+  }
+  58%,
+  78% {
+    clip-path: polygon(0 0, 220% 0, 0 220%);
+    opacity: 0.22;
+  }
+  100% {
+    clip-path: polygon(0 0, 230% 0, 0 230%);
+    opacity: 0;
+  }
+}
+@keyframes sds-btnFillCornerHost {
+  0%,
+  40% {
+    transform: rotate(0deg);
+  }
+  52% {
+    transform: rotate(-0.5deg);
+  }
+  66%,
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* 86 · Fill Drain ------------------------------------------- */
+.sds-btn-fill-drain {
+  position: relative;
+  overflow: hidden;
+}
+.sds-btn-fill-drain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--sds-primary);
+  opacity: 0.22;
+  animation: sds-btnFillDrain var(--sds-duration-dramatic, 3s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) infinite;
+}
+@keyframes sds-btnFillDrain {
+  0%,
+  12% {
+    transform: translateY(0);
+  }
+  38% {
+    transform: translateY(96%);
+  }
+  44%,
+  56% {
+    transform: translateY(101%);
+  }
+  62% {
+    transform: translateY(96%);
+  }
+  88%,
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* 87 · Fill Wave -------------------------------------------- */
+.sds-btn-fill-wave {
+  position: relative;
+  overflow: hidden;
+}
+.sds-btn-fill-wave::before {
+  content: "";
+  position: absolute;
+  left: -15%;
+  right: -15%;
+  top: 30%;
+  bottom: -10%;
+  background: var(--sds-primary);
+  opacity: 0.2;
+  transform: translateY(120%) rotate(-8deg);
+  animation: sds-btnFillWave var(--sds-duration-slower, 2.2s) var(--sds-ease-decelerate, cubic-bezier(0.16, 1, 0.3, 1)) infinite;
+}
+.sds-btn-fill-wave > * {
+  display: inline-block;
+  animation: sds-btnFillWaveLabel var(--sds-duration-slower, 2.2s) var(--sds-ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1)) infinite;
+}
+@keyframes sds-btnFillWave {
+  0%,
+  8% {
+    transform: translateY(120%) rotate(-8deg);
+  }
+  45% {
+    transform: translateY(6%) rotate(-3deg);
+  }
+  62%,
+  80% {
+    transform: translateY(0%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(120%) rotate(-6deg);
+  }
+}
+@keyframes sds-btnFillWaveLabel {
+  0%,
+  38% {
+    transform: translateY(0);
+  }
+  52% {
+    transform: translateY(-2px);
+  }
+  68%,
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ─── Family: Border Draw & Corner Trace ───────────────────── */
+
+/* 88 · Draw Perimeter --------------------------------------- */
+.sds-btn-draw-perimeter {
+  position: relative;
+}
+.sds-btn-draw-perimeter::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid var(--sds-primary);
+  border-radius: inherit;
+  clip-path: polygon(0 0, 0 0, 0 0);
+  animation: sds-btnDrawPerimeter var(--sds-duration-slower, 2.2s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) infinite;
+}
+@keyframes sds-btnDrawPerimeter {
+  0% {
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0, 0 0, 0 0);
+    opacity: 1;
+  }
+  24% {
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 100% 50%, 100% 50%, 0 0);
+  }
+  48% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%, 50% 100%, 0 0);
+  }
+  52% {
+    transform: scale(1.012);
+  }
+  70%,
+  84% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 50%, 0 0);
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 50%, 0 0);
+    opacity: 0;
+  }
+}
+
+/* 89 · Draw Corners ----------------------------------------- */
+.sds-btn-draw-corners {
+  position: relative;
+}
+.sds-btn-draw-corners::before,
+.sds-btn-draw-corners::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 2px solid var(--sds-primary);
+}
+.sds-btn-draw-corners::before {
+  clip-path: polygon(0 0, 26% 0, 26% 3px, 3px 3px, 3px 26%, 0 26%, 0 0, 74% 0, 74% 3px, 100% 3px, 100% 0, 100% 26%, calc(100% - 3px) 26%, calc(100% - 3px) 0, 74% 0, 74% 0);
+  animation: sds-btnDrawCornersA var(--sds-duration-slower, 2.2s) var(--sds-ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1)) infinite;
+}
+.sds-btn-draw-corners::after {
+  clip-path: polygon(0 74%, 3px 74%, 3px calc(100% - 3px), 26% calc(100% - 3px), 26% 100%, 0 100%, 0 74%, 74% 100%, 74% calc(100% - 3px), calc(100% - 3px) calc(100% - 3px), calc(100% - 3px) 74%, 100% 74%, 100% 100%, 74% 100%, 74% 100%, 0 74%);
+  animation: sds-btnDrawCornersB var(--sds-duration-slower, 2.2s) var(--sds-ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1)) infinite;
+}
+@keyframes sds-btnDrawCornersA {
+  0%,
+  10% {
+    opacity: 0;
+    transform: scale(1.18);
+  }
+  34% {
+    opacity: 1;
+    transform: scale(0.99);
+  }
+  44%,
+  82% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.12);
+  }
+}
+@keyframes sds-btnDrawCornersB {
+  0%,
+  16% {
+    opacity: 0;
+    transform: scale(1.18);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(0.99);
+  }
+  50%,
+  82% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.12);
+  }
+}
+
+/* 90 · Draw Dash -------------------------------------------- */
+.sds-btn-draw-dash {
+  position: relative;
+}
+.sds-btn-draw-dash::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px dashed var(--sds-primary);
+  border-radius: inherit;
+  animation: sds-btnDrawDash var(--sds-duration-slower, 2.2s) steps(6) infinite;
+}
+@keyframes sds-btnDrawDash {
+  0% {
+    clip-path: inset(0 100% 0 0);
+    opacity: 1;
+    filter: brightness(1);
+  }
+  48% {
+    clip-path: inset(0 0 0 0);
+    filter: brightness(1);
+  }
+  60% {
+    clip-path: inset(0 0 0 0);
+    filter: brightness(0.75);
+  }
+  72%,
+  86% {
+    clip-path: inset(0 0 0 0);
+    filter: brightness(1.15);
+    opacity: 1;
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    opacity: 0;
+  }
+}
+
+/* 91 · Draw Cross ------------------------------------------- */
+.sds-btn-draw-cross {
+  position: relative;
+  overflow: hidden;
+}
+.sds-btn-draw-cross::before,
+.sds-btn-draw-cross::after {
+  content: "";
+  position: absolute;
+  top: -60%;
+  bottom: -60%;
+  width: 2px;
+  background: var(--sds-primary);
+  opacity: 0;
+}
+.sds-btn-draw-cross::before {
+  left: 20%;
+  transform: rotate(28deg) translateX(-60px);
+  animation: sds-btnDrawCrossA var(--sds-duration-slower, 2.2s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) infinite;
+}
+.sds-btn-draw-cross::after {
+  right: 20%;
+  transform: rotate(-28deg) translateX(60px);
+  animation: sds-btnDrawCrossB var(--sds-duration-slower, 2.2s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) infinite;
+}
+@keyframes sds-btnDrawCrossA {
+  0%,
+  8% {
+    transform: rotate(28deg) translateX(-70px);
+    opacity: 0;
+  }
+  22% {
+    opacity: 0.9;
+  }
+  46% {
+    transform: rotate(28deg) translateX(70px);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(28deg) translateX(70px);
+    opacity: 0;
+  }
+}
+@keyframes sds-btnDrawCrossB {
+  0%,
+  18% {
+    transform: rotate(-28deg) translateX(70px);
+    opacity: 0;
+  }
+  32% {
+    opacity: 0.9;
+  }
+  56% {
+    transform: rotate(-28deg) translateX(-70px);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(-28deg) translateX(-70px);
+    opacity: 0;
+  }
+}
+
+/* 92 · Draw Pulse Frame ------------------------------------- */
+.sds-btn-draw-pulse-frame {
+  position: relative;
+}
+.sds-btn-draw-pulse-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1.5px solid var(--sds-primary);
+  border-radius: inherit;
+  animation: sds-btnDrawPulseFrame var(--sds-duration-dramatic, 3s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) infinite;
+}
+@keyframes sds-btnDrawPulseFrame {
+  0% {
+    clip-path: inset(0 100% 98% 0);
+    opacity: 1;
+    transform: scale(1);
+  }
+  20% {
+    clip-path: inset(0 0 0 0);
+    transform: scale(1);
+  }
+  38% {
+    transform: scale(1.04);
+    opacity: 0.55;
+  }
+  52% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  68% {
+    transform: scale(1.04);
+    opacity: 0.55;
+  }
+  82%,
+  100% {
+    clip-path: inset(0 0 0 0);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 93 · Draw Underline Orbit --------------------------------- */
+.sds-btn-draw-underline-orbit {
+  position: relative;
+}
+.sds-btn-draw-underline-orbit::before {
+  content: "";
+  position: absolute;
+  left: 18%;
+  bottom: 4px;
+  width: 64%;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--sds-primary);
+  transform-origin: 50% -14px;
+  animation: sds-btnDrawUnderlineOrbit var(--sds-duration-dramatic, 3s) var(--sds-ease-emphasized, cubic-bezier(0.215, 0.61, 0.355, 1)) infinite;
+}
+@keyframes sds-btnDrawUnderlineOrbit {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  14% {
+    transform: scaleX(1) rotate(0deg);
+    opacity: 1;
+  }
+  28%,
+  40% {
+    transform: scaleX(1) rotate(0deg);
+  }
+  64% {
+    transform: scaleX(0.5) rotate(180deg);
+    opacity: 0.7;
+  }
+  82% {
+    transform: scaleX(1) rotate(360deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1) rotate(360deg);
+  }
+}
+
+/* ─── Family: Depth & Press Physics ────────────────────────── */
+
+/* 94 · Press Spring ----------------------------------------- */
+.sds-btn-press-spring {
+  animation: sds-btnPressSpring var(--sds-duration-slower, 2.2s) var(--sds-ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1)) infinite;
+}
+@keyframes sds-btnPressSpring {
+  0%,
+  18% {
+    transform: translateY(0) scale(1, 1);
+  }
+  26% {
+    transform: translateY(-1px) scale(1.005, 1);
+  }
+  38% {
+    transform: translateY(3px) scale(1.04, 0.96);
+  }
+  50% {
+    transform: translateY(-2px) scale(0.99, 1.02);
+  }
+  60% {
+    transform: translateY(1px) scale(1.01, 0.995);
+  }
+  70%,
+  100% {
+    transform: translateY(0) scale(1, 1);
+  }
+}
+
+/* 95 · Press Coin ------------------------------------------- */
+.sds-btn-press-coin {
+  position: relative;
+  backface-visibility: hidden;
+  animation: sds-btnPressCoin var(--sds-duration-slower, 2.2s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) infinite;
+}
+.sds-btn-press-coin::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: #000;
+  opacity: 0;
+  animation: sds-btnPressCoinShade var(--sds-duration-slower, 2.2s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) infinite;
+}
+@keyframes sds-btnPressCoin {
+  0%,
+  20% {
+    transform: perspective(400px) rotateX(0deg);
+  }
+  36% {
+    transform: perspective(400px) rotateX(12deg);
+  }
+  48% {
+    transform: perspective(400px) rotateX(-3deg);
+  }
+  58%,
+  100% {
+    transform: perspective(400px) rotateX(0deg);
+  }
+}
+@keyframes sds-btnPressCoinShade {
+  0%,
+  20% {
+    opacity: 0;
+  }
+  36% {
+    opacity: 0.18;
+  }
+  58%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* 96 · Press Pop -------------------------------------------- */
+.sds-btn-press-pop {
+  animation: sds-btnPressPop var(--sds-duration-slower, 2.2s) var(--sds-ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1)) infinite;
+}
+.sds-btn-press-pop > * {
+  display: inline-block;
+  animation: sds-btnPressPopLabel var(--sds-duration-slower, 2.2s) var(--sds-ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1)) infinite;
+}
+@keyframes sds-btnPressPop {
+  0%,
+  22% {
+    transform: scale(1);
+  }
+  32% {
+    transform: scale(0.97);
+  }
+  46% {
+    transform: scale(1.06);
+  }
+  58% {
+    transform: scale(0.99);
+  }
+  68%,
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes sds-btnPressPopLabel {
+  0%,
+  19% {
+    transform: scale(1);
+  }
+  29% {
+    transform: scale(0.95);
+  }
+  43% {
+    transform: scale(1.1);
+  }
+  55% {
+    transform: scale(0.99);
+  }
+  65%,
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* 97 · Press Seesaw ----------------------------------------- */
+.sds-btn-press-seesaw {
+  animation: sds-btnPressSeesaw var(--sds-duration-dramatic, 3s) ease-in-out infinite;
+}
+@keyframes sds-btnPressSeesaw {
+  0%,
+  100% {
+    transform: perspective(420px) rotateX(0) rotateY(0);
+  }
+  12% {
+    transform: perspective(420px) rotateX(3deg) rotateY(-2.4deg);
+  }
+  28% {
+    transform: perspective(420px) rotateX(-2.4deg) rotateY(2deg);
+  }
+  44% {
+    transform: perspective(420px) rotateX(1.6deg) rotateY(-1.2deg);
+  }
+  58% {
+    transform: perspective(420px) rotateX(-1deg) rotateY(0.8deg);
+  }
+  70% {
+    transform: perspective(420px) rotateX(0.5deg) rotateY(-0.4deg);
+  }
+  80% {
+    transform: perspective(420px) rotateX(0) rotateY(0);
+  }
+}
+
+/* 98 · Press Drop ------------------------------------------- */
+.sds-btn-press-drop {
+  position: relative;
+  animation: sds-btnPressDrop var(--sds-duration-base, 0.8s) var(--sds-ease-emphasized, cubic-bezier(0.215, 0.61, 0.355, 1)) both;
+}
+.sds-btn-press-drop::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 70%;
+  height: 8px;
+  border-radius: 50%;
+  border: 1.5px solid var(--sds-primary);
+  opacity: 0;
+  transform: translateX(-50%) scale(0.4);
+  animation: sds-btnPressDropDust var(--sds-duration-base, 0.8s) var(--sds-ease-decelerate, cubic-bezier(0.16, 1, 0.3, 1)) both;
+}
+@keyframes sds-btnPressDrop {
+  0% {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(0) scale(1.05, 0.94);
+  }
+  60% {
+    transform: translateY(-3px) scale(0.99, 1.02);
+  }
+  78% {
+    transform: translateY(0) scale(1.01, 0.99);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1, 1);
+  }
+}
+@keyframes sds-btnPressDropDust {
+  0%,
+  38% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.4);
+  }
+  52% {
+    opacity: 0.55;
+    transform: translateX(-50%) scale(0.9);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) scale(1.5);
+  }
+}
+
+/* 99 · Press Elastic ---------------------------------------- */
+.sds-btn-press-elastic {
+  animation: sds-btnPressElastic var(--sds-duration-slower, 2.2s) ease-in-out infinite;
+}
+@keyframes sds-btnPressElastic {
+  0%,
+  18% {
+    transform: scale(1, 1);
+  }
+  30% {
+    transform: scale(1.08, 0.94);
+  }
+  42% {
+    transform: scale(0.95, 1.05);
+  }
+  54% {
+    transform: scale(1.04, 0.97);
+  }
+  64% {
+    transform: scale(0.99, 1.01);
+  }
+  74%,
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+/* ─── Family: Glow & Energy (drop-shadow only) ─────────────── */
+
+/* 100 · Halo Breathe ---------------------------------------- */
+.sds-btn-halo-breathe {
+  animation: sds-btnHaloBreathe var(--sds-duration-dramatic, 3s) ease-in-out infinite;
+}
+@keyframes sds-btnHaloBreathe {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 2px var(--sds-primary-glow)) brightness(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 14px var(--sds-primary-glow)) brightness(1.08);
+  }
+}
+
+/* 101 · Halo Flicker On ------------------------------------- */
+.sds-btn-halo-flicker-on {
+  animation: sds-btnHaloFlickerOn var(--sds-duration-slow, 1.4s) steps(1) both;
+}
+@keyframes sds-btnHaloFlickerOn {
+  0% {
+    opacity: 0;
+    filter: drop-shadow(0 0 0 transparent);
+  }
+  10% {
+    opacity: 0.7;
+    filter: drop-shadow(0 0 6px var(--sds-primary-glow));
+  }
+  14% {
+    opacity: 0.15;
+    filter: drop-shadow(0 0 0 transparent);
+  }
+  30% {
+    opacity: 0.9;
+    filter: drop-shadow(0 0 10px var(--sds-primary-glow));
+  }
+  36% {
+    opacity: 0.4;
+  }
+  52% {
+    opacity: 1;
+    filter: drop-shadow(0 0 16px var(--sds-primary-glow)) brightness(1.15);
+  }
+  72%,
+  100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 8px var(--sds-primary-glow)) brightness(1);
+  }
+}
+
+/* 102 · Spark Orbit ----------------------------------------- */
+.sds-btn-spark-orbit {
+  position: relative;
+}
+.sds-btn-spark-orbit::before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--sds-primary);
+  filter: drop-shadow(0 0 5px var(--sds-primary-glow));
+  /* the spark rides the button's own border box; browsers without
+     offset-path support simply show no orbiting spark (decorative) */
+  offset-path: border-box;
+  offset-rotate: 0deg;
+  animation: sds-btnSparkOrbit var(--sds-duration-dramatic, 3s) linear infinite;
+}
+@keyframes sds-btnSparkOrbit {
+  0% {
+    offset-distance: 0%;
+    opacity: 1;
+  }
+  46% {
+    opacity: 1;
+  }
+  50% {
+    offset-distance: 50%;
+    opacity: 0.45;
+  }
+  54% {
+    opacity: 1;
+  }
+  100% {
+    offset-distance: 100%;
+    opacity: 1;
+  }
+}
+
+/* 103 · Surge Charge ---------------------------------------- */
+.sds-btn-surge-charge {
+  animation: sds-btnSurgeCharge var(--sds-duration-dramatic, 3s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) infinite;
+}
+@keyframes sds-btnSurgeCharge {
+  0%,
+  14% {
+    filter: brightness(1) drop-shadow(0 0 0 transparent);
+    transform: scale(1);
+  }
+  38% {
+    filter: brightness(0.85) saturate(1.15) drop-shadow(0 0 1px var(--sds-primary-glow));
+    transform: scale(0.99);
+  }
+  52% {
+    filter: brightness(1.3) drop-shadow(0 0 18px var(--sds-primary-glow));
+    transform: scale(1.025);
+  }
+  64% {
+    filter: brightness(1.05) drop-shadow(0 0 6px var(--sds-primary-glow));
+    transform: scale(1);
+  }
+  80%,
+  100% {
+    filter: brightness(1) drop-shadow(0 0 0 transparent);
+    transform: scale(1);
+  }
+}
+
+/* 104 · Halo Split ------------------------------------------ */
+.sds-btn-halo-split {
+  position: relative;
+}
+.sds-btn-halo-split::before,
+.sds-btn-halo-split::after {
+  content: "";
+  position: absolute;
+  inset: 15% 30%;
+  border-radius: 50%;
+  background: var(--sds-primary);
+  filter: blur(12px);
+  opacity: 0;
+  z-index: -1;
+}
+.sds-btn-halo-split::before {
+  animation: sds-btnHaloSplitL var(--sds-duration-dramatic, 3s) ease-in-out infinite;
+}
+.sds-btn-halo-split::after {
+  animation: sds-btnHaloSplitR var(--sds-duration-dramatic, 3s) ease-in-out infinite;
+}
+@keyframes sds-btnHaloSplitL {
+  0%,
+  100% {
+    transform: translateX(0);
+    opacity: 0.4;
+  }
+  45% {
+    transform: translateX(-58%);
+    opacity: 0.12;
+  }
+  62% {
+    transform: translateX(-62%);
+    opacity: 0;
+  }
+  80% {
+    transform: translateX(-10%);
+    opacity: 0.3;
+  }
+}
+@keyframes sds-btnHaloSplitR {
+  0%,
+  100% {
+    transform: translateX(0);
+    opacity: 0.4;
+  }
+  45% {
+    transform: translateX(58%);
+    opacity: 0.12;
+  }
+  62% {
+    transform: translateX(62%);
+    opacity: 0;
+  }
+  80% {
+    transform: translateX(10%);
+    opacity: 0.3;
+  }
+}
+
+/* 105 · Ember ----------------------------------------------- */
+.sds-btn-ember {
+  animation: sds-btnEmber var(--sds-duration-dramatic, 3s) ease-in-out infinite;
+}
+@keyframes sds-btnEmber {
+  0%,
+  100% {
+    transform: skewX(0deg);
+    filter: hue-rotate(0deg) brightness(1) drop-shadow(0 0 2px rgba(209, 64, 0, 0.25));
+  }
+  22% {
+    transform: skewX(0.6deg);
+    filter: hue-rotate(8deg) brightness(1.04) drop-shadow(0 0 5px rgba(209, 64, 0, 0.3));
+  }
+  48% {
+    transform: skewX(-0.4deg);
+    filter: hue-rotate(14deg) brightness(1.12) drop-shadow(0 0 10px rgba(209, 64, 0, 0.4));
+  }
+  72% {
+    transform: skewX(0.3deg);
+    filter: hue-rotate(6deg) brightness(1.03) drop-shadow(0 0 4px rgba(209, 64, 0, 0.28));
+  }
+}
+
+/* ─── Family: Split & Slice ────────────────────────────────── */
+
+/* 106 · Slice Reveal ---------------------------------------- */
+.sds-btn-slice-reveal {
+  animation: sds-btnSliceReveal var(--sds-duration-base, 0.8s) var(--sds-ease-decelerate, cubic-bezier(0.16, 1, 0.3, 1)) both;
+}
+@keyframes sds-btnSliceReveal {
+  0% {
+    opacity: 0;
+    clip-path: polygon(0 0, 0 0, 0 50%, 100% 50%, 100% 100%, 100% 100%);
+    transform: translateX(-14px);
+  }
+  45% {
+    opacity: 1;
+    clip-path: polygon(0 0, 80% 0, 80% 50%, 20% 50%, 20% 100%, 0 100%);
+    transform: translateX(4px);
+    filter: brightness(1.2);
+  }
+  70% {
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%, 0 100%, 0 100%);
+    filter: brightness(1);
+  }
+  100% {
+    opacity: 1;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 100%, 0 0);
+    transform: translateX(0);
+  }
+}
+
+/* 107 · Slice Hover ----------------------------------------- */
+.sds-btn-slice-hover {
+  animation: sds-btnSliceHover var(--sds-duration-dramatic, 3s) steps(1) infinite;
+}
+@keyframes sds-btnSliceHover {
+  0%,
+  100% {
+    clip-path: none;
+    transform: none;
+  }
+  6% {
+    clip-path: inset(0 0 48% 0);
+    transform: translateX(4px);
+  }
+  8% {
+    clip-path: inset(52% 0 0 0);
+    transform: translateX(-4px);
+  }
+  10% {
+    clip-path: none;
+    transform: none;
+  }
+  54% {
+    clip-path: inset(0 0 48% 0);
+    transform: translateX(-3px);
+  }
+  56% {
+    clip-path: inset(52% 0 0 0);
+    transform: translateX(3px);
+  }
+  58% {
+    clip-path: none;
+    transform: none;
+  }
+}
+
+/* 108 · Blinds ---------------------------------------------- */
+.sds-btn-blinds {
+  position: relative;
+  animation: sds-btnBlindsHost var(--sds-duration-base, 0.8s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) both;
+}
+.sds-btn-blinds::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--sds-primary) 0 25%,
+    rgba(0, 21, 209, 0.65) 25% 50%
+  );
+  opacity: 0.85;
+  animation: sds-btnBlinds var(--sds-duration-base, 0.8s) steps(4) both;
+}
+@keyframes sds-btnBlinds {
+  0% {
+    clip-path: inset(0 0 0 0);
+    opacity: 0.85;
+  }
+  99% {
+    clip-path: inset(0 0 0 100%);
+    opacity: 0.5;
+  }
+  100% {
+    clip-path: inset(0 0 0 100%);
+    opacity: 0;
+  }
+}
+@keyframes sds-btnBlindsHost {
+  0% {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  35% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 109 · Guillotine ------------------------------------------ */
+.sds-btn-guillotine {
+  animation: sds-btnGuillotine var(--sds-duration-base, 0.8s) var(--sds-ease-emphasized, cubic-bezier(0.215, 0.61, 0.355, 1)) both;
+}
+@keyframes sds-btnGuillotine {
+  0% {
+    opacity: 0;
+    clip-path: inset(0 0 50% 0);
+    transform: translateY(-10px);
+  }
+  34% {
+    opacity: 1;
+    clip-path: inset(0 0 50% 0);
+    transform: translateY(-2px);
+  }
+  52% {
+    clip-path: inset(0 0 0 0);
+    transform: translateY(2px) scale(1.03, 0.95);
+  }
+  70% {
+    transform: translateY(-1px) scale(0.99, 1.02);
+  }
+  100% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transform: translateY(0) scale(1, 1);
+  }
+}
+
+/* 110 · Shutter Snap ---------------------------------------- */
+.sds-btn-shutter-snap {
+  animation: sds-btnShutterSnap var(--sds-duration-slower, 2.2s) var(--sds-ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1)) infinite;
+}
+@keyframes sds-btnShutterSnap {
+  0%,
+  16% {
+    clip-path: polygon(50% -60%, 160% 50%, 50% 160%, -60% 50%);
+    transform: scale(1);
+  }
+  34% {
+    clip-path: polygon(50% 38%, 62% 50%, 50% 62%, 38% 50%);
+    transform: scale(0.98);
+  }
+  40% {
+    clip-path: polygon(50% 34%, 66% 50%, 50% 66%, 34% 50%);
+  }
+  58% {
+    clip-path: polygon(50% -75%, 175% 50%, 50% 175%, -75% 50%);
+    transform: scale(1.02);
+  }
+  70%,
+  100% {
+    clip-path: polygon(50% -60%, 160% 50%, 50% 160%, -60% 50%);
+    transform: scale(1);
+  }
+}
+
+/* ─── Family: Icon & Label Orchestration (child spans) ─────── */
+
+/* 111 · Label Slide ----------------------------------------- */
+.sds-btn-label-slide {
+  overflow: hidden;
+}
+.sds-btn-label-slide > * {
+  display: inline-block;
+  animation: sds-btnLabelSlide var(--sds-duration-dramatic, 3s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) infinite;
+}
+@keyframes sds-btnLabelSlide {
+  0%,
+  62% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  70% {
+    transform: translateY(-130%);
+    opacity: 0;
+  }
+  70.1% {
+    transform: translateY(130%);
+    opacity: 0;
+  }
+  80% {
+    transform: translateY(-6%);
+    opacity: 1;
+  }
+  88%,
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* 112 · Label Wave ------------------------------------------ */
+.sds-btn-label-wave > * {
+  display: inline-block;
+  animation: sds-btnLabelWave var(--sds-duration-slower, 2.2s) ease-in-out infinite;
+}
+.sds-btn-label-wave > *:nth-child(2) { animation-delay: 0.09s; }
+.sds-btn-label-wave > *:nth-child(3) { animation-delay: 0.18s; }
+.sds-btn-label-wave > *:nth-child(4) { animation-delay: 0.27s; }
+.sds-btn-label-wave > *:nth-child(5) { animation-delay: 0.36s; }
+.sds-btn-label-wave > *:nth-child(6) { animation-delay: 0.45s; }
+@keyframes sds-btnLabelWave {
+  0%,
+  30%,
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+  10% {
+    transform: translateY(-2px) rotate(-2deg);
+  }
+  20% {
+    transform: translateY(1px) rotate(1.4deg);
+  }
+}
+
+/* 113 · Icon Launch ----------------------------------------- */
+.sds-btn-icon-launch > *:first-child {
+  display: inline-block;
+  animation: sds-btnIconLaunch var(--sds-duration-slower, 2.2s) var(--sds-ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1)) infinite;
+}
+.sds-btn-icon-launch > *:last-child {
+  display: inline-block;
+  animation: sds-btnIconLaunchLabel var(--sds-duration-slower, 2.2s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) infinite;
+}
+@keyframes sds-btnIconLaunch {
+  0%,
+  22% {
+    transform: translateX(0);
+    filter: blur(0);
+  }
+  36% {
+    transform: translateX(-2px);
+    filter: blur(0);
+  }
+  48% {
+    transform: translateX(6px);
+    filter: blur(1.5px);
+  }
+  62% {
+    transform: translateX(4px);
+    filter: blur(0);
+  }
+  76%,
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes sds-btnIconLaunchLabel {
+  0%,
+  40% {
+    transform: skewX(0deg) translateX(0);
+  }
+  54% {
+    transform: skewX(-4deg) translateX(1.5px);
+  }
+  70%,
+  100% {
+    transform: skewX(0deg) translateX(0);
+  }
+}
+
+/* 114 · Icon Spin Settle ------------------------------------ */
+.sds-btn-icon-spin-settle > *:first-child {
+  display: inline-block;
+  animation: sds-btnIconSpinSettle var(--sds-duration-slower, 2.2s) var(--sds-ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1)) infinite;
+}
+.sds-btn-icon-spin-settle > *:last-child {
+  display: inline-block;
+  animation: sds-btnIconSpinLabel var(--sds-duration-slower, 2.2s) ease-in-out infinite;
+}
+@keyframes sds-btnIconSpinSettle {
+  0%,
+  20% {
+    transform: rotate(0deg);
+  }
+  56% {
+    transform: rotate(380deg);
+  }
+  68% {
+    transform: rotate(356deg);
+  }
+  78%,
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes sds-btnIconSpinLabel {
+  0%,
+  20%,
+  78%,
+  100% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(0.98);
+  }
+}
+
+/* 115 · Swap Flip ------------------------------------------- */
+.sds-btn-swap-flip > *:first-child {
+  display: inline-block;
+  animation: sds-btnSwapFlipA var(--sds-duration-dramatic, 3s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) infinite;
+}
+.sds-btn-swap-flip > *:last-child {
+  display: inline-block;
+  animation: sds-btnSwapFlipB var(--sds-duration-dramatic, 3s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) infinite;
+}
+@keyframes sds-btnSwapFlipA {
+  0%,
+  30% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  46% {
+    transform: translateX(14px) translateY(-4px);
+    opacity: 0.55;
+  }
+  62%,
+  76% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes sds-btnSwapFlipB {
+  0%,
+  30% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  46% {
+    transform: translateX(-14px) translateY(4px);
+    opacity: 0.55;
+  }
+  62%,
+  76% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* 116 · Label Typewrite ------------------------------------- */
+.sds-btn-label-typewrite > * {
+  display: inline-block;
+  animation: sds-btnLabelTypewrite var(--sds-duration-slower, 2.2s) steps(2) infinite;
+}
+.sds-btn-label-typewrite > *:nth-child(2) { animation-delay: 0.12s; }
+.sds-btn-label-typewrite > *:nth-child(3) { animation-delay: 0.24s; }
+.sds-btn-label-typewrite > *:nth-child(4) { animation-delay: 0.36s; }
+.sds-btn-label-typewrite > *:nth-child(5) { animation-delay: 0.48s; }
+.sds-btn-label-typewrite > *:nth-child(6) { animation-delay: 0.6s; }
+.sds-btn-label-typewrite > *:nth-child(7) { animation-delay: 0.72s; }
+.sds-btn-label-typewrite > *:nth-child(8) { animation-delay: 0.84s; }
+@keyframes sds-btnLabelTypewrite {
+  0% {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+  12%,
+  86% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  93% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* 117 · Nudge ----------------------------------------------- */
+.sds-btn-nudge > *:last-child {
+  display: inline-block;
+  animation: sds-btnNudge var(--sds-duration-slower, 2.2s) var(--sds-ease-emphasized, cubic-bezier(0.215, 0.61, 0.355, 1)) infinite;
+}
+@keyframes sds-btnNudge {
+  0%,
+  40%,
+  76%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  60% {
+    transform: translateX(0);
+  }
+  66% {
+    transform: translateX(2.5px);
+  }
+}
+
+/* ─── Family: CSS-only Magnetic Tilt ───────────────────────── */
+
+/* 118 · Tilt Orbit ------------------------------------------ */
+.sds-btn-tilt-orbit {
+  will-change: transform;
+  animation: sds-btnTiltOrbit var(--sds-duration-dramatic, 3s) ease-in-out infinite;
+}
+@keyframes sds-btnTiltOrbit {
+  0%,
+  100% {
+    transform: perspective(420px) rotateX(4deg) rotateY(0deg);
+  }
+  25% {
+    transform: perspective(420px) rotateX(0deg) rotateY(5deg);
+  }
+  50% {
+    transform: perspective(420px) rotateX(-4deg) rotateY(0deg);
+  }
+  75% {
+    transform: perspective(420px) rotateX(0deg) rotateY(-5deg);
+  }
+}
+
+/* 119 · Tilt Pendulum --------------------------------------- */
+.sds-btn-tilt-pendulum {
+  transform-origin: top center;
+  animation: sds-btnTiltPendulum var(--sds-duration-dramatic, 3s) ease-in-out infinite;
+}
+@keyframes sds-btnTiltPendulum {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  14% {
+    transform: rotate(4deg);
+  }
+  32% {
+    transform: rotate(-3deg);
+  }
+  48% {
+    transform: rotate(2deg);
+  }
+  62% {
+    transform: rotate(-1.2deg);
+  }
+  74% {
+    transform: rotate(0.5deg);
+  }
+  84% {
+    transform: rotate(0deg);
+  }
+}
+
+/* 120 · Tilt Scan ------------------------------------------- */
+.sds-btn-tilt-scan {
+  animation: sds-btnTiltScan var(--sds-duration-dramatic, 3s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) infinite;
+}
+@keyframes sds-btnTiltScan {
+  0%,
+  10% {
+    transform: perspective(420px) rotateX(3deg) rotateY(-4deg);
+  }
+  24%,
+  36% {
+    transform: perspective(420px) rotateX(3deg) rotateY(4deg);
+  }
+  50%,
+  62% {
+    transform: perspective(420px) rotateX(-3deg) rotateY(4deg);
+  }
+  74%,
+  86% {
+    transform: perspective(420px) rotateX(-3deg) rotateY(-4deg);
+  }
+  100% {
+    transform: perspective(420px) rotateX(3deg) rotateY(-4deg);
+  }
+}
+
+/* 121 · Tilt Float ------------------------------------------ */
+.sds-btn-tilt-float {
+  animation: sds-btnTiltFloat var(--sds-duration-dramatic, 3s) ease-in-out infinite;
+}
+@keyframes sds-btnTiltFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+    filter: drop-shadow(0 3px 3px rgba(0, 21, 209, 0.18));
+  }
+  35% {
+    transform: translateY(-5px) rotate(1.2deg);
+    filter: drop-shadow(0 10px 8px rgba(0, 21, 209, 0.12));
+  }
+  65% {
+    transform: translateY(-3px) rotate(-0.8deg);
+    filter: drop-shadow(0 7px 6px rgba(0, 21, 209, 0.14));
+  }
+}
+
+/* ─── Family: Sheen & Spotlight Overlays ───────────────────── */
+
+/* 122 · Sheen Pass ------------------------------------------ */
+.sds-btn-sheen-pass {
+  position: relative;
+  overflow: hidden;
+}
+.sds-btn-sheen-pass::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  bottom: -20%;
+  left: 0;
+  width: 34%;
+  background: rgba(255, 255, 255, 0.45);
+  filter: blur(6px);
+  transform: translateX(-180%) skewX(-20deg);
+  animation: sds-btnSheenPass var(--sds-duration-slower, 2.2s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) infinite;
+}
+@keyframes sds-btnSheenPass {
+  0%,
+  18% {
+    transform: translateX(-180%) skewX(-20deg);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  48% {
+    transform: translateX(180%) skewX(-20deg);
+    opacity: 1;
+  }
+  60%,
+  100% {
+    transform: translateX(320%) skewX(-20deg);
+    opacity: 0;
+  }
+}
+
+/* 123 · Sheen Double ---------------------------------------- */
+.sds-btn-sheen-double {
+  position: relative;
+  overflow: hidden;
+}
+.sds-btn-sheen-double::before,
+.sds-btn-sheen-double::after {
+  content: "";
+  position: absolute;
+  top: -20%;
+  bottom: -20%;
+  width: 26%;
+  background: rgba(255, 255, 255, 0.38);
+  filter: blur(5px);
+}
+.sds-btn-sheen-double::before {
+  left: 0;
+  transform: translateX(-200%) skewX(-18deg);
+  animation: sds-btnSheenDoubleA var(--sds-duration-slower, 2.2s) ease-in-out infinite;
+}
+.sds-btn-sheen-double::after {
+  right: 0;
+  transform: translateX(200%) skewX(18deg);
+  animation: sds-btnSheenDoubleB var(--sds-duration-slower, 2.2s) ease-in-out infinite;
+}
+@keyframes sds-btnSheenDoubleA {
+  0%,
+  14% {
+    transform: translateX(-200%) skewX(-18deg);
+    opacity: 0;
+  }
+  26% {
+    opacity: 1;
+  }
+  44% {
+    transform: translateX(190%) skewX(-18deg);
+    opacity: 1;
+    filter: blur(5px) brightness(1.5);
+  }
+  58%,
+  100% {
+    transform: translateX(420%) skewX(-18deg);
+    opacity: 0;
+  }
+}
+@keyframes sds-btnSheenDoubleB {
+  0%,
+  14% {
+    transform: translateX(200%) skewX(18deg);
+    opacity: 0;
+  }
+  26% {
+    opacity: 1;
+  }
+  44% {
+    transform: translateX(-190%) skewX(18deg);
+    opacity: 1;
+    filter: blur(5px) brightness(1.5);
+  }
+  58%,
+  100% {
+    transform: translateX(-420%) skewX(18deg);
+    opacity: 0;
+  }
+}
+
+/* 124 · Prism Edge ------------------------------------------ */
+.sds-btn-prism-edge {
+  position: relative;
+}
+.sds-btn-prism-edge::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1.5px solid var(--sds-primary);
+  animation: sds-btnPrismEdge var(--sds-duration-dramatic, 3s) linear infinite;
+}
+@keyframes sds-btnPrismEdge {
+  0% {
+    filter: hue-rotate(0deg) brightness(1.1);
+    clip-path: inset(0 0 0 0);
+    opacity: 0.9;
+  }
+  25% {
+    filter: hue-rotate(90deg) brightness(1.3);
+    clip-path: inset(0 0 55% 0);
+  }
+  50% {
+    filter: hue-rotate(180deg) brightness(1.1);
+    clip-path: inset(0 0 0 0);
+    opacity: 0.65;
+  }
+  75% {
+    filter: hue-rotate(270deg) brightness(1.3);
+    clip-path: inset(55% 0 0 0);
+  }
+  100% {
+    filter: hue-rotate(360deg) brightness(1.1);
+    clip-path: inset(0 0 0 0);
+    opacity: 0.9;
+  }
+}
+
+/* 125 · Night Sweep ----------------------------------------- */
+.sds-btn-night-sweep {
+  position: relative;
+  overflow: hidden;
+}
+.sds-btn-night-sweep::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #06060c;
+  opacity: 0.55;
+  animation: sds-btnNightSweep var(--sds-duration-dramatic, 3s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) infinite;
+}
+@keyframes sds-btnNightSweep {
+  0%,
+  12% {
+    clip-path: inset(0 0 0 0);
+    opacity: 0.55;
+  }
+  46% {
+    clip-path: inset(0 0 0 100%);
+    opacity: 0.45;
+  }
+  56%,
+  72% {
+    clip-path: inset(0 0 0 100%);
+    opacity: 0;
+  }
+  84% {
+    clip-path: inset(0 0 0 0);
+    opacity: 0.3;
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    opacity: 0.55;
+  }
+}
+
+/* 126 · Spotlight Pan --------------------------------------- */
+.sds-btn-spotlight-pan {
+  position: relative;
+  overflow: hidden;
+}
+.sds-btn-spotlight-pan::before {
+  content: "";
+  position: absolute;
+  top: -75%;
+  left: -25%;
+  width: 90%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 65%);
+  animation: sds-btnSpotlightPan var(--sds-duration-dramatic, 3s) ease-in-out infinite;
+}
+@keyframes sds-btnSpotlightPan {
+  0%,
+  100% {
+    transform: translate(-30%, 0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(130%, 55%);
+    opacity: 1;
+  }
+}
+
+/* ─── Family: Attention Rhythms ────────────────────────────── */
+
+/* 127 · Beacon ---------------------------------------------- */
+.sds-btn-beacon {
+  position: relative;
+}
+.sds-btn-beacon::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1.5px solid var(--sds-primary);
+  opacity: 0;
+  animation: sds-btnBeacon var(--sds-duration-slower, 2.2s) var(--sds-ease-decelerate, cubic-bezier(0.16, 1, 0.3, 1)) infinite;
+}
+@keyframes sds-btnBeacon {
+  0%,
+  58% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  62% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  88%,
+  100% {
+    transform: scale(1.28, 1.65);
+    opacity: 0;
+  }
+}
+
+/* 128 · Tick Tock ------------------------------------------- */
+.sds-btn-tick-tock {
+  animation: sds-btnTickTock var(--sds-duration-slower, 2.2s) var(--sds-ease-emphasized, cubic-bezier(0.215, 0.61, 0.355, 1)) infinite;
+}
+@keyframes sds-btnTickTock {
+  0%,
+  8% {
+    transform: rotate(-1.5deg) scale(1);
+  }
+  25%,
+  33% {
+    transform: rotate(1.5deg) scale(1);
+  }
+  50%,
+  58% {
+    transform: rotate(-1.5deg) scale(1);
+  }
+  75%,
+  80% {
+    transform: rotate(1.5deg) scale(1);
+  }
+  90% {
+    transform: rotate(0deg) scale(1.04);
+  }
+  100% {
+    transform: rotate(-1.5deg) scale(1);
+  }
+}
+
+/* 129 · Breath Hold ----------------------------------------- */
+.sds-btn-breath-hold {
+  animation: sds-btnBreathHold var(--sds-duration-dramatic, 3s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) infinite;
+}
+@keyframes sds-btnBreathHold {
+  0%,
+  10% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  42% {
+    transform: scale(1.03);
+    filter: brightness(1.09);
+  }
+  58% {
+    transform: scale(1.03);
+    filter: brightness(1.09);
+  }
+  70% {
+    transform: scale(0.995);
+    filter: brightness(0.98);
+  }
+  80%,
+  100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+}
+
+/* 130 · Wink ------------------------------------------------ */
+.sds-btn-wink {
+  position: relative;
+  overflow: hidden;
+}
+.sds-btn-wink::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 38%;
+  height: 60%;
+  background: rgba(255, 255, 255, 0.5);
+  filter: blur(7px);
+  clip-path: polygon(35% 0, 100% 0, 100% 100%, 0 100%);
+  opacity: 0;
+  animation: sds-btnWink var(--sds-duration-dramatic, 3s) steps(1) infinite;
+}
+@keyframes sds-btnWink {
+  0%,
+  72% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  76% {
+    opacity: 0.85;
+    transform: translateX(-8%);
+  }
+  80% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  84% {
+    opacity: 0.5;
+    transform: translateX(-4%);
+  }
+  88%,
+  100% {
+    opacity: 0;
+  }
 }
 
 /* ── Cross-category keyframe dependencies ── */

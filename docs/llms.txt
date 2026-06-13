@@ -1,6 +1,6 @@
 # SDS Motion Forge
 
-> 366+ production-ready CSS animations across text, buttons, inputs,
+> 611+ production-ready CSS animations across text, buttons, inputs,
 > cards, loaders and scroll. One class name per effect, zero required
 > JavaScript, fully backward compatible, MIT licensed.
 

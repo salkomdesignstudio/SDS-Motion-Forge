@@ -2,7 +2,7 @@
 
 **Every class that worked in v3/v4 works identically in v5 — machine-verified against the published tarball on every build.**
 
-**300+ production-ready CSS animations. One class name. Zero required JavaScript.**
+**600+ production-ready CSS animations. One class name. Zero required JavaScript.**
 
 [![npm version](https://img.shields.io/npm/v/@salkomdesignstudio/sds-motion-forge.svg?style=flat-square)](https://www.npmjs.com/package/@salkomdesignstudio/sds-motion-forge)
 [![Bundle size](https://img.shields.io/bundlephobia/minzip/@salkomdesignstudio/sds-motion-forge?style=flat-square)](https://bundlephobia.com/package/@salkomdesignstudio/sds-motion-forge)
@@ -20,7 +20,7 @@ A production-grade motion system for modern UI — framework-agnostic, accessibl
 
 ## Table of Contents
 
-- [What's in v4](#whats-in-v4)
+- [What's in v5](#whats-in-v5)
 - [Quick Start](#quick-start)
 - [Installation](#installation)
   - [npm / yarn / pnpm](#npm--yarn--pnpm)
@@ -28,12 +28,12 @@ A production-grade motion system for modern UI — framework-agnostic, accessibl
   - [Framework Integrations](#framework-integrations)
 - [How It Works](#how-it-works)
 - [Animation Reference](#animation-reference)
-  - [Text — 100 classes](#text--100-classes)
-  - [Buttons — 50 classes](#buttons--50-classes)
-  - [Inputs — 51 classes](#inputs--51-classes)
-  - [Cards — 49 classes](#cards--49-classes)
-  - [Loaders — 51 classes](#loaders--51-classes)
-  - [Scroll — 54 classes](#scroll--54-classes)
+  - [Text — 104 classes](#text--104-classes)
+  - [Buttons — 100 classes](#buttons--100-classes)
+  - [Inputs — 100 classes](#inputs--100-classes)
+  - [Cards — 100 classes](#cards--100-classes)
+  - [Loaders — 100 classes](#loaders--100-classes)
+  - [Scroll — 100 classes](#scroll--100-classes)
 - [Interactive Animations (JS engine)](#interactive-animations-js-engine)
 - [Modifiers](#modifiers)
 - [Stagger & Children Animations](#stagger--children-animations)
@@ -49,14 +49,14 @@ A production-grade motion system for modern UI — framework-agnostic, accessibl
 
 ---
 
-## What's in v4
+## What's in v5
 
-- **100 text animations** — 50 originals + 5 physics per-character animations + 45 new motion families
-- **50 button animations** — ambient, hover, and entrance effects for interactive elements
-- **51 input animations** — focus, validation, and ambient states for form fields
-- **49 card animations** — entry, ambient, and hover effects for containers
-- **51 loader animations** — self-contained spinners and progress indicators
-- **54 scroll animations** — viewport-triggered entrance effects
+- **104 text animations** — 50 originals + 5 physics per-character animations + 49 new motion families
+- **100 button animations** — ambient, hover, entrance, and kinetic effects for interactive elements
+- **100 input animations** — focus, validation, ambient, and reveal states for form fields
+- **100 card animations** — entry, ambient, hover, 3D, and choreography effects for containers
+- **100 loader animations** — self-contained spinners, progress indicators, and motion loaders
+- **100 scroll animations** — viewport-triggered entrance effects across 15+ motion families
 - **`sds-scroll.min.js`** — 1.28 KB scroll-gate engine. Elements stay hidden until they enter the viewport, with optional replay and delay.
 - **`motion-interactive.min.js`** — 6.98 KB cursor-reactive engine. Magnetic pull, repulsion field, shockwave click, scatter return, spring kerning, word morph, jelly hover. Zero config.
 - **Full backward compatibility** — every v3.x class name still works identically
@@ -117,13 +117,13 @@ import '@salkomdesignstudio/sds-motion-forge/categories/loaders';
 | Bundle | Import | Minified | Gzip |
 |---|---|---|---|
 | text | `@salkomdesignstudio/sds-motion-forge/categories/text` | 45.5 KB | 8.4 KB |
-| buttons | `@salkomdesignstudio/sds-motion-forge/categories/buttons` | 19.1 KB | 4.1 KB |
-| inputs | `@salkomdesignstudio/sds-motion-forge/categories/inputs` | 18.8 KB | 4.1 KB |
-| cards | `@salkomdesignstudio/sds-motion-forge/categories/cards` | 18.4 KB | 4.0 KB |
-| loaders | `@salkomdesignstudio/sds-motion-forge/categories/loaders` | 26.5 KB | 5.1 KB |
-| scroll | `@salkomdesignstudio/sds-motion-forge/categories/scroll` | 21.1 KB | 3.9 KB |
+| buttons | `@salkomdesignstudio/sds-motion-forge/categories/buttons` | 49.1 KB | 8.6 KB |
+| inputs | `@salkomdesignstudio/sds-motion-forge/categories/inputs` | 47.0 KB | 8.4 KB |
+| cards | `@salkomdesignstudio/sds-motion-forge/categories/cards` | 39.6 KB | 7.5 KB |
+| loaders | `@salkomdesignstudio/sds-motion-forge/categories/loaders` | 49.1 KB | 8.1 KB |
+| scroll | `@salkomdesignstudio/sds-motion-forge/categories/scroll` | 33.6 KB | 5.8 KB |
 | core only | `@salkomdesignstudio/sds-motion-forge/categories/core` | 3.3 KB | 1.0 KB |
-| **everything** | `@salkomdesignstudio/sds-motion-forge` | **127.1 KB** | **20.6 KB** |
+| **everything** | `@salkomdesignstudio/sds-motion-forge` | **241.6 KB** | **38.4 KB** |
 <!-- @sds-size-table:end -->
 
 Core is intentionally **inlined** into every category bundle so each one works
@@ -314,7 +314,7 @@ Load once. Zero JavaScript from you — just add a class. The engine auto-wires 
 
 ## Animation Reference
 
-### Text — 100 classes
+### Text — 104 classes
 
 Apply to any element containing text.
 
@@ -459,7 +459,7 @@ For `sds-explode-formation`, set per-character displacement variables:
 
 ---
 
-### Buttons — 50 classes
+### Buttons — 100 classes
 
 Apply directly to `<button>` or `<a>` elements. Effects are ambient — no interaction required.
 
@@ -472,7 +472,7 @@ Apply directly to `<button>` or `<a>` elements. Effects are ambient — no inter
 <button class="sds-btn-hologram">Hologram flicker</button>
 ```
 
-All 50 button classes:
+All 100 button classes:
 
 ```
 sds-btn-amp          sds-btn-aurora       sds-btn-border-flow  sds-btn-bounce
@@ -492,7 +492,7 @@ sds-btn-volt         sds-btn-warp
 
 ---
 
-### Inputs — 51 classes
+### Inputs — 100 classes
 
 State-based effects for `<input>` and `<textarea>` elements. Some activate on `:focus`, others run continuously.
 
@@ -515,7 +515,7 @@ State-based effects for `<input>` and `<textarea>` elements. Some activate on `:
 </div>
 ```
 
-All 51 input classes:
+All 100 input classes:
 
 ```
 sds-input-active-line    sds-input-aurora         sds-input-bloom
@@ -539,7 +539,7 @@ sds-input-voltage        sds-input-waveform       sds-input-zap
 
 ---
 
-### Cards — 49 classes
+### Cards — 100 classes
 
 Entry and ambient effects for card and container elements.
 
@@ -563,7 +563,7 @@ Entry and ambient effects for card and container elements.
 </div>
 ```
 
-All 49 card classes:
+All 100 card classes:
 
 ```
 sds-card-aurora       sds-card-bloom        sds-card-breath       sds-card-burst
@@ -583,7 +583,7 @@ sds-card-wave
 
 ---
 
-### Loaders — 51 classes
+### Loaders — 100 classes
 
 Add a class to an empty `<span>` or `<div>`. The CSS generates the animation entirely with pseudo-elements.
 
@@ -629,7 +629,7 @@ Add a class to an empty `<span>` or `<div>`. The CSS generates the animation ent
 </div>
 ```
 
-All 51 loader classes:
+All 100 loader classes:
 
 ```
 sds-loader-arc          sds-loader-bar          sds-loader-bounce
@@ -653,7 +653,7 @@ sds-loader-vortex       sds-loader-warp         sds-loader-wave
 
 ---
 
-### Scroll — 54 classes
+### Scroll — 100 classes
 
 Scroll animations fire immediately when the class is applied. Gate them on viewport entry using one of the three methods below.
 
@@ -716,7 +716,7 @@ These animate direct child elements — they must have children to be visible:
 </div>
 ```
 
-All 54 scroll classes:
+All 100 scroll classes:
 
 ```
 sds-scroll-blur         sds-scroll-bounce       sds-scroll-cascade
@@ -884,9 +884,10 @@ Some animation classes target direct child elements (`> *`) rather than the elem
 |---|---|
 | Text | `sds-kinetic-wave`, `sds-arc-orbit`, `sds-signal-wave`, `sds-stagger-chars` |
 | Text (physics) | `sds-gravity-bounce`, `sds-drop-settle`, `sds-wave-cascade`, `sds-center-burst`, `sds-explode-formation` |
-| Cards | `sds-card-cascade`, `sds-card-slice`, `sds-card-stagger` |
-| Loaders | `sds-loader-cascade`, `sds-loader-dots`, `sds-loader-grid`, `sds-loader-signal`, `sds-loader-wave` |
-| Scroll | `sds-scroll-stagger-pop`, `sds-scroll-stagger-grid`, `sds-scroll-cascade` |
+| Buttons | `sds-btn-icon-launch`, `sds-btn-spin-settle`, `sds-btn-label-slide`, `sds-btn-label-typewrite`, `sds-btn-label-wave`, `sds-btn-nudge`, `sds-btn-swap-flip` |
+| Cards | `sds-card-cascade`, `sds-card-slice`, `sds-card-stagger`, `sds-card-accordion-in`, `sds-card-checker`, `sds-card-fan-spread`, `sds-card-layers`, `sds-card-reveal-stack` |
+| Loaders | `sds-loader-cascade`, `sds-loader-dots`, `sds-loader-grid`, `sds-loader-signal`, `sds-loader-wave`, `sds-loader-bounce-bar`, `sds-loader-dots-bounce`, `sds-loader-dots-expand`, `sds-loader-dots-fade`, `sds-loader-dots-flip`, `sds-loader-dots-wave`, `sds-loader-equalizer`, `sds-loader-pinwheel`, `sds-loader-spin-fade`, `sds-loader-squares`, `sds-loader-windmill` |
+| Scroll | `sds-scroll-stagger-pop`, `sds-scroll-stagger-grid`, `sds-scroll-cascade`, `sds-scroll-stagger-fade`, `sds-scroll-stagger-rise`, `sds-scroll-stagger-slide` |
 
 ### Char-split text animations
 
@@ -977,12 +978,12 @@ Available exported types:
 
 | Type | Classes |
 |---|---|
-| `SdsTextAnimation` | All 100 text animation classes |
-| `SdsButtonAnimation` | All 50 button animation classes |
-| `SdsInputAnimation` | All 51 input animation classes |
-| `SdsCardAnimation` | All 49 card animation classes |
-| `SdsLoaderAnimation` | All 51 loader animation classes |
-| `SdsScrollAnimation` | All 54 scroll animation classes |
+| `SdsTextAnimation` | All 104 text animation classes |
+| `SdsButtonAnimation` | All 100 button animation classes |
+| `SdsInputAnimation` | All 100 input animation classes |
+| `SdsCardAnimation` | All 100 card animation classes |
+| `SdsLoaderAnimation` | All 100 loader animation classes |
+| `SdsScrollAnimation` | All 100 scroll animation classes |
 | `SdsInteractiveAnimation` | All 7 JS-engine classes |
 | `SdsModifier` | All 18 modifier classes |
 | `SdsScrollGate` | `sds-play`, `sds-scroll-auto` |

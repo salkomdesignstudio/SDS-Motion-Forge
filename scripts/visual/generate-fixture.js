@@ -16,8 +16,8 @@ const effects = registry.classes.filter((c) => c.kind === "effect");
 function hostFor(c) {
   switch (c.category) {
     case "buttons": return { tag: "button", text: "Button" };
-    case "inputs": return c.name === "sds-input-elevate-wrap"
-      ? { tag: "wrap-input" }
+    case "inputs": return c.inputWrap
+      ? { tag: "wrap-input", withLabel: (c.selectors || []).some((s) => /\blabel\b/.test(s)) }
       : { tag: "input", text: null };
     case "loaders": return { tag: "span", text: c.name === "sds-loader-type" ? "load" : null };
     case "cards": return { tag: "div", text: "Card", card: true };
@@ -32,6 +32,7 @@ function childrenMarkup(c) {
       `<span class="sds-char" style="display:inline-block;--i:${i}">${ch}</span>`).join("");
   }
   if (c.requiresChildren) {
+    if (c.category === "buttons") return "<span>→</span><span>Go</span>";
     const n = /grid|mosaic/.test(c.name) ? 9 : /ping/.test(c.name) ? 1 : 4;
     const childText = ["cards", "scroll", "text"].includes(c.category) ? "It" : "";
     return Array.from({ length: n }, () => `<span>${childText}</span>`).join("");
@@ -44,7 +45,9 @@ const cards = effects.map((c) => {
   let el;
   const kids = childrenMarkup(c);
   if (host.tag === "wrap-input") {
-    el = `<div class="${c.name}" id="el-${c.name}"><input placeholder=" " /><label>Label</label></div>`;
+    el = host.withLabel
+      ? `<div class="${c.name}" id="el-${c.name}"><input placeholder=" " /><label>Label</label></div>`
+      : `<div class="${c.name}" id="el-${c.name}"><input placeholder="Type here" /></div>`;
   } else if (host.tag === "input") {
     el = `<input class="${c.name}" id="el-${c.name}" value="Input" />`;
   } else {

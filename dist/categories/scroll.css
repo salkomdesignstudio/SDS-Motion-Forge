@@ -14,13 +14,13 @@
 
 /**
  * SDS Motion Forge — Premium CSS Animation System
- * Version: 4.0.3
+ * Version: 5.0.0
  * Author: Salkom Design Studio
  * License: MIT
  * https://github.com/salkomdesignstudio/SDS-Motion-Forge
  *
- * 300+ production-ready CSS animations · Framework-agnostic
- * Text (100) · Buttons (50) · Inputs (50) · Cards (46) · Loaders (50) · Scroll (54)
+ * 600+ production-ready CSS animations · Framework-agnostic
+ * Text (104) · Buttons (100) · Inputs (100) · Cards (100) · Loaders (100) · Scroll (100)
  *
  * Optional engines (load with defer):
  *   sds-scroll.min.js          — scroll-gate via [data-sds] attribute
@@ -1530,6 +1530,822 @@ html:not(.sds-js) [data-sds] {
 
 .sds-scroll-fade-up {
   animation: sds-viewportRise var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+}
+
+
+/* ====================================================================
+   BATCH 16 � Scroll: Clean Entrances (6) + Drama & Emphasis (6)
+   ==================================================================== */
+
+/* 131 � Zoom In ----------------------------------------- */
+
+.sds-scroll-zoom-in {
+  animation: sds-scrollZoomIn var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+}
+
+@keyframes sds-scrollZoomIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 132 � Zoom Out ---------------------------------------- */
+
+.sds-scroll-zoom-out {
+  animation: sds-scrollZoomOut var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+}
+
+@keyframes sds-scrollZoomOut {
+  from {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 133 � Rotate In --------------------------------------- */
+
+.sds-scroll-rotate-in {
+  animation: sds-scrollRotateIn var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+}
+
+@keyframes sds-scrollRotateIn {
+  from {
+    transform: rotate(-8deg) translateY(24px);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(0deg) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* 134 � Hinge In ---------------------------------------- */
+
+.sds-scroll-hinge-in {
+  animation: sds-scrollHingeIn var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+  transform-origin: top;
+}
+
+@keyframes sds-scrollHingeIn {
+  from {
+    transform: perspective(600px) rotateX(-55deg);
+    opacity: 0;
+  }
+  to {
+    transform: perspective(600px) rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+/* 135 � Roll In ----------------------------------------- */
+
+.sds-scroll-roll-in {
+  animation: sds-scrollRollIn var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+}
+
+@keyframes sds-scrollRollIn {
+  from {
+    transform: translateX(-60px) rotate(-10deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* 136 � Rise Right -------------------------------------- */
+
+.sds-scroll-rise-right {
+  animation: sds-scrollRiseRight var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+}
+
+@keyframes sds-scrollRiseRight {
+  from {
+    transform: translate(-28px, 28px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+/* 137 � Cinematic --------------------------------------- */
+
+.sds-scroll-cinematic {
+  animation: sds-scrollCinematic var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+}
+
+@keyframes sds-scrollCinematic {
+  from {
+    clip-path: inset(22% 0);
+    transform: scale(1.06);
+    opacity: 0.5;
+  }
+  to {
+    clip-path: inset(0% 0);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 138 � Kaboom ------------------------------------------ */
+
+.sds-scroll-kaboom {
+  animation: sds-scrollKaboom 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes sds-scrollKaboom {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 139 � Lean -------------------------------------------- */
+
+.sds-scroll-lean {
+  animation: sds-scrollLean var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+}
+
+@keyframes sds-scrollLean {
+  from {
+    transform: perspective(400px) rotateY(-20deg) translateX(30px);
+    opacity: 0;
+  }
+  to {
+    transform: perspective(400px) rotateY(0deg) translateX(0);
+    opacity: 1;
+  }
+}
+
+/* 140 � Peel -------------------------------------------- */
+
+.sds-scroll-peel {
+  animation: sds-scrollPeel var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+}
+
+@keyframes sds-scrollPeel {
+  from {
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    opacity: 0.4;
+  }
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    opacity: 1;
+  }
+}
+
+/* 141 � Stretch ----------------------------------------- */
+
+.sds-scroll-stretch {
+  animation: sds-scrollStretchIn var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+}
+
+@keyframes sds-scrollStretchIn {
+  from {
+    transform: scaleX(0.08) scaleY(1.3);
+    opacity: 0;
+  }
+  55% {
+    transform: scaleX(1.05) scaleY(0.94);
+    opacity: 1;
+  }
+  to {
+    transform: scaleX(1) scaleY(1);
+    opacity: 1;
+  }
+}
+
+/* 142 � Jello ------------------------------------------- */
+
+.sds-scroll-jello {
+  animation: sds-scrollJello 0.85s ease both;
+}
+
+@keyframes sds-scrollJello {
+  0% {
+    transform: scale(0) skewX(0deg);
+    opacity: 0;
+  }
+  20% {
+    transform: scale(1.1) skewX(-8deg);
+    opacity: 1;
+  }
+  40% {
+    transform: scale(0.95) skewX(5deg);
+  }
+  60% {
+    transform: scale(1.03) skewX(-3deg);
+  }
+  80% {
+    transform: scale(0.99) skewX(1deg);
+  }
+  100% {
+    transform: scale(1) skewX(0deg);
+    opacity: 1;
+  }
+}
+
+
+/* ====================================================================
+   BATCH 17 � Scroll: 3D Hinges (4) + Filter Reveals (4) + Clip Wipes (4)
+   ==================================================================== */
+
+/* 143 � Flip Up ----------------------------------------- */
+
+.sds-scroll-flip-up {
+  animation: sds-scrollFlipUp var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+  transform-origin: bottom;
+}
+
+@keyframes sds-scrollFlipUp {
+  from {
+    transform: perspective(600px) rotateX(50deg);
+    opacity: 0;
+  }
+  to {
+    transform: perspective(600px) rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+/* 144 � Door Left --------------------------------------- */
+
+.sds-scroll-door-left {
+  animation: sds-scrollDoorLeft var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+  transform-origin: left;
+}
+
+@keyframes sds-scrollDoorLeft {
+  from {
+    transform: perspective(800px) rotateY(-70deg);
+    opacity: 0;
+  }
+  to {
+    transform: perspective(800px) rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+/* 145 � Door Right -------------------------------------- */
+
+.sds-scroll-door-right {
+  animation: sds-scrollDoorRight var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+  transform-origin: right;
+}
+
+@keyframes sds-scrollDoorRight {
+  from {
+    transform: perspective(800px) rotateY(70deg);
+    opacity: 0;
+  }
+  to {
+    transform: perspective(800px) rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+/* 146 � Barrel ------------------------------------------ */
+
+.sds-scroll-barrel {
+  animation: sds-scrollBarrel 0.9s var(--sds-easing) both;
+}
+
+@keyframes sds-scrollBarrel {
+  from {
+    transform: perspective(600px) rotate3d(1, 1, 0, -90deg);
+    opacity: 0;
+  }
+  to {
+    transform: perspective(600px) rotate3d(1, 1, 0, 0deg);
+    opacity: 1;
+  }
+}
+
+/* 147 � Saturate ---------------------------------------- */
+
+.sds-scroll-saturate {
+  animation: sds-scrollSaturate var(--sds-duration-base, 0.8s) ease-out both;
+}
+
+@keyframes sds-scrollSaturate {
+  from {
+    filter: saturate(0);
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    filter: saturate(1);
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 148 � Sepia ------------------------------------------- */
+
+.sds-scroll-sepia {
+  animation: sds-scrollSepia var(--sds-duration-base, 0.8s) ease-out both;
+}
+
+@keyframes sds-scrollSepia {
+  from {
+    filter: sepia(1) contrast(0.9);
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    filter: sepia(0) contrast(1);
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 149 � Overexpose -------------------------------------- */
+
+.sds-scroll-overexpose {
+  animation: sds-scrollOverexpose var(--sds-duration-base, 0.8s) ease-out both;
+}
+
+@keyframes sds-scrollOverexpose {
+  from {
+    filter: brightness(4) contrast(0.55);
+    opacity: 0.3;
+  }
+  50% {
+    filter: brightness(1.4) contrast(0.9);
+    opacity: 0.9;
+  }
+  to {
+    filter: brightness(1) contrast(1);
+    opacity: 1;
+  }
+}
+
+/* 150 � Thermal ----------------------------------------- */
+
+.sds-scroll-thermal {
+  animation: sds-scrollThermal var(--sds-duration-base, 0.8s) ease-out both;
+}
+
+@keyframes sds-scrollThermal {
+  from {
+    filter: hue-rotate(120deg) saturate(3);
+    opacity: 0;
+  }
+  45% {
+    filter: hue-rotate(40deg) saturate(1.6);
+    opacity: 0.85;
+  }
+  to {
+    filter: hue-rotate(0deg) saturate(1);
+    opacity: 1;
+  }
+}
+
+/* 151 � Iris -------------------------------------------- */
+
+.sds-scroll-iris {
+  animation: sds-scrollIris var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+}
+
+@keyframes sds-scrollIris {
+  from {
+    clip-path: circle(0% at 50% 50%);
+    opacity: 0.6;
+  }
+  to {
+    clip-path: circle(150% at 50% 50%);
+    opacity: 1;
+  }
+}
+
+/* 152 � Wipe Up ----------------------------------------- */
+
+.sds-scroll-wipe-up {
+  animation: sds-scrollWipeUp var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+}
+
+@keyframes sds-scrollWipeUp {
+  from {
+    clip-path: inset(100% 0 0 0);
+    opacity: 0.7;
+  }
+  to {
+    clip-path: inset(0% 0 0 0);
+    opacity: 1;
+  }
+}
+
+/* 153 � Wipe Right -------------------------------------- */
+
+.sds-scroll-wipe-right {
+  animation: sds-scrollWipeRight var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+}
+
+@keyframes sds-scrollWipeRight {
+  from {
+    clip-path: inset(0 100% 0 0);
+    opacity: 0.7;
+  }
+  to {
+    clip-path: inset(0 0% 0 0);
+    opacity: 1;
+  }
+}
+
+/* 154 � Drop In ----------------------------------------- */
+
+.sds-scroll-drop-in {
+  animation: sds-scrollDropIn var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+}
+
+@keyframes sds-scrollDropIn {
+  0% {
+    transform: translateY(-60px) scaleY(0.8);
+    opacity: 0;
+  }
+  65% {
+    transform: translateY(8px) scaleY(1.04);
+    opacity: 1;
+  }
+  82% {
+    transform: translateY(-3px) scaleY(0.98);
+  }
+  100% {
+    transform: translateY(0) scaleY(1);
+    opacity: 1;
+  }
+}
+
+
+/* ====================================================================
+   BATCH 18 � Scroll: Subtle Motion (5) + Stagger (2) + Kinetic (4)
+   ==================================================================== */
+
+/* 155 � Float ------------------------------------------- */
+
+.sds-scroll-float {
+  animation: sds-scrollFloat 1.2s cubic-bezier(0.2, 0, 0, 1) both;
+}
+
+@keyframes sds-scrollFloat {
+  from {
+    transform: translateY(6px);
+    opacity: 0;
+    filter: blur(2px);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+/* 156 � Sink -------------------------------------------- */
+
+.sds-scroll-sink {
+  animation: sds-scrollSink var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+}
+
+@keyframes sds-scrollSink {
+  from {
+    transform: translateY(-18px) scale(1.02);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* 157 � Shudder ----------------------------------------- */
+
+.sds-scroll-shudder {
+  animation: sds-scrollShudder 0.7s ease both;
+}
+
+@keyframes sds-scrollShudder {
+  0%   { transform: translateX(-8px) scaleX(0.92); opacity: 0; }
+  15%  { transform: translateX(6px) scaleX(1.04); opacity: 0.8; }
+  30%  { transform: translateX(-5px) scaleX(0.97); opacity: 1; }
+  50%  { transform: translateX(3px); }
+  65%  { transform: translateX(-2px); }
+  80%  { transform: translateX(1px); }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+/* 158 � Spin Y ------------------------------------------ */
+
+.sds-scroll-spin-y {
+  animation: sds-scrollSpinY 0.9s var(--sds-easing) both;
+}
+
+@keyframes sds-scrollSpinY {
+  from {
+    transform: perspective(500px) rotateY(-180deg);
+    opacity: 0;
+  }
+  to {
+    transform: perspective(500px) rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+/* 159 � Rubber Band ------------------------------------- */
+
+.sds-scroll-rubber-band {
+  animation: sds-scrollRubberBand 0.8s ease both;
+}
+
+@keyframes sds-scrollRubberBand {
+  0%   { transform: scaleX(0.5) scaleY(1.3); opacity: 0; }
+  25%  { transform: scaleX(1.2) scaleY(0.82); opacity: 1; }
+  45%  { transform: scaleX(0.9) scaleY(1.1); }
+  65%  { transform: scaleX(1.06) scaleY(0.96); }
+  80%  { transform: scaleX(0.98) scaleY(1.02); }
+  100% { transform: scaleX(1) scaleY(1); opacity: 1; }
+}
+
+/* 160 � Stagger Fade � children fade in sequence (requiresChildren) */
+
+.sds-scroll-stagger-fade > * {
+  animation: sds-scrollStaggerFadeChild 0.5s ease both;
+}
+.sds-scroll-stagger-fade > *:nth-child(2) { animation-delay: .1s; }
+.sds-scroll-stagger-fade > *:nth-child(3) { animation-delay: .2s; }
+.sds-scroll-stagger-fade > *:nth-child(4) { animation-delay: .3s; }
+.sds-scroll-stagger-fade > *:nth-child(5) { animation-delay: .4s; }
+.sds-scroll-stagger-fade > *:nth-child(6) { animation-delay: .5s; }
+
+@keyframes sds-scrollStaggerFadeChild {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* 161 � Stagger Rise � children rise up in sequence (requiresChildren) */
+
+.sds-scroll-stagger-rise > * {
+  animation: sds-scrollStaggerRiseChild 0.6s var(--sds-easing) both;
+}
+.sds-scroll-stagger-rise > *:nth-child(2) { animation-delay: .1s; }
+.sds-scroll-stagger-rise > *:nth-child(3) { animation-delay: .2s; }
+.sds-scroll-stagger-rise > *:nth-child(4) { animation-delay: .3s; }
+.sds-scroll-stagger-rise > *:nth-child(5) { animation-delay: .4s; }
+.sds-scroll-stagger-rise > *:nth-child(6) { animation-delay: .5s; }
+
+@keyframes sds-scrollStaggerRiseChild {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+/* 162 � Glare ------------------------------------------- */
+
+.sds-scroll-glare {
+  animation: sds-scrollGlare 0.7s ease-out both;
+}
+
+@keyframes sds-scrollGlare {
+  0%   { filter: brightness(3.5) contrast(0.5); opacity: 0; transform: scale(1.06); }
+  40%  { filter: brightness(1.3) contrast(0.9); opacity: 1; }
+  100% { filter: brightness(1) contrast(1); transform: scale(1); opacity: 1; }
+}
+
+/* 163 � Skid In ----------------------------------------- */
+
+.sds-scroll-skid-in {
+  animation: sds-scrollSkidIn 0.7s cubic-bezier(0.2, 0, 0.3, 1) both;
+}
+
+@keyframes sds-scrollSkidIn {
+  0%   { transform: translateX(80px); opacity: 0; }
+  60%  { transform: translateX(-12px); opacity: 1; }
+  80%  { transform: translateX(6px); }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+/* 164 � Slingshot --------------------------------------- */
+
+.sds-scroll-slingshot {
+  animation: sds-scrollSlingshot 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes sds-scrollSlingshot {
+  0%   { transform: translateX(-40px) scaleX(0.6); opacity: 0; }
+  50%  { transform: translateX(12px) scaleX(1.08); opacity: 1; }
+  75%  { transform: translateX(-4px) scaleX(0.97); }
+  100% { transform: translateX(0) scaleX(1); opacity: 1; }
+}
+
+/* 165 � Blink In ---------------------------------------- */
+
+.sds-scroll-blink-in {
+  animation: sds-scrollBlinkIn 0.8s linear both;
+}
+
+@keyframes sds-scrollBlinkIn {
+  0%,19%  { opacity: 0; }
+  20%,39% { opacity: 0.3; }
+  40%,59% { opacity: 0.6; }
+  60%,79% { opacity: 0.85; }
+  80%,100% { opacity: 1; }
+}
+
+
+/* ====================================================================
+   BATCH 19 � Scroll: Stagger (1) + Reveal FX (5) + Character (5)
+   scroll complete at 100/100
+   ==================================================================== */
+
+/* 166 � Stagger Slide � children slide from left in sequence (requiresChildren) */
+
+.sds-scroll-stagger-slide > * {
+  animation: sds-scrollStaggerSlideChild 0.6s var(--sds-easing) both;
+}
+.sds-scroll-stagger-slide > *:nth-child(2) { animation-delay: .1s; }
+.sds-scroll-stagger-slide > *:nth-child(3) { animation-delay: .2s; }
+.sds-scroll-stagger-slide > *:nth-child(4) { animation-delay: .3s; }
+.sds-scroll-stagger-slide > *:nth-child(5) { animation-delay: .4s; }
+.sds-scroll-stagger-slide > *:nth-child(6) { animation-delay: .5s; }
+
+@keyframes sds-scrollStaggerSlideChild {
+  from { transform: translateX(-24px); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+
+/* 167 � Neon Pop ---------------------------------------- */
+
+.sds-scroll-neon-pop {
+  animation: sds-scrollNeonPop 0.7s ease-out both;
+}
+
+@keyframes sds-scrollNeonPop {
+  0%   { transform: scale(0.8); opacity: 0; filter: drop-shadow(0 0 0px currentColor); }
+  55%  { transform: scale(1.05); opacity: 1; filter: drop-shadow(0 0 14px currentColor); }
+  100% { transform: scale(1); opacity: 1; filter: drop-shadow(0 0 4px currentColor); }
+}
+
+/* 168 � Pixel In ---------------------------------------- */
+
+.sds-scroll-pixel-in {
+  animation: sds-scrollPixelIn 0.8s ease-out both;
+}
+
+@keyframes sds-scrollPixelIn {
+  from {
+    filter: blur(16px);
+    transform: scale(1.08);
+    opacity: 0.4;
+  }
+  to {
+    filter: blur(0);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 169 � Tidal ------------------------------------------- */
+
+.sds-scroll-tidal {
+  animation: sds-scrollTidal 0.9s ease both;
+}
+
+@keyframes sds-scrollTidal {
+  0%   { transform: translateX(-30px); opacity: 0; }
+  40%  { transform: translateX(10px); opacity: 1; }
+  60%  { transform: translateX(-6px); }
+  75%  { transform: translateX(3px); }
+  88%  { transform: translateX(-1px); }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+/* 170 � Materialize ------------------------------------- */
+
+.sds-scroll-materialize {
+  animation: sds-scrollMaterialize 1s steps(4, end) both;
+}
+
+@keyframes sds-scrollMaterialize {
+  0%   { opacity: 0;    transform: scale(0.9);  filter: blur(8px); }
+  25%  { opacity: 0.25; transform: scale(0.93); filter: blur(6px); }
+  50%  { opacity: 0.5;  transform: scale(0.96); filter: blur(3px); }
+  75%  { opacity: 0.8;  transform: scale(0.99); filter: blur(1px); }
+  100% { opacity: 1;    transform: scale(1);    filter: blur(0); }
+}
+
+/* 171 � Exhale ------------------------------------------ */
+
+.sds-scroll-exhale {
+  animation: sds-scrollExhale 1s cubic-bezier(0.2, 0, 0, 1) both;
+}
+
+@keyframes sds-scrollExhale {
+  from {
+    transform: scale(1.12);
+    opacity: 0.6;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 172 � Typewriter -------------------------------------- */
+
+.sds-scroll-typewriter {
+  animation: sds-scrollTypewriter 0.9s steps(14, end) both;
+}
+
+@keyframes sds-scrollTypewriter {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0% 0 0); }
+}
+
+/* 173 � Glitch In --------------------------------------- */
+
+.sds-scroll-glitch-in {
+  animation: sds-scrollGlitchIn 0.7s ease-out both;
+}
+
+@keyframes sds-scrollGlitchIn {
+  0%   { transform: translateX(-6px); opacity: 0; filter: hue-rotate(90deg); clip-path: inset(40% 0 10% 0); }
+  20%  { transform: translateX(4px);  opacity: 0.6; filter: hue-rotate(-40deg); clip-path: inset(5% 0 30% 0); }
+  40%  { transform: translateX(-2px); opacity: 0.85; clip-path: inset(0 0 0 0); filter: hue-rotate(15deg); }
+  65%  { transform: translateX(1px); filter: hue-rotate(0deg); }
+  100% { transform: translateX(0); opacity: 1; filter: hue-rotate(0deg); clip-path: inset(0 0 0 0); }
+}
+
+/* 174 � Unfurl ------------------------------------------ */
+
+.sds-scroll-unfurl {
+  animation: sds-scrollUnfurl var(--sds-duration-base, 0.8s) var(--sds-easing) both;
+  transform-origin: top left;
+}
+
+@keyframes sds-scrollUnfurl {
+  from {
+    transform: rotate(-12deg) translate(-20px, -20px) scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: rotate(3deg) translate(5px, 5px) scale(1.02);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(0deg) translate(0, 0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* 175 � Pop In ------------------------------------------ */
+
+.sds-scroll-pop-in {
+  animation: sds-scrollPopIn 0.65s ease both;
+}
+
+@keyframes sds-scrollPopIn {
+  0%   { transform: scale(0); opacity: 0; }
+  55%  { transform: scale(1.15); opacity: 1; }
+  75%  { transform: scale(0.94); }
+  90%  { transform: scale(1.04); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* 176 � Contrast In ------------------------------------- */
+
+.sds-scroll-contrast-in {
+  animation: sds-scrollContrastIn 0.8s ease-out both;
+}
+
+@keyframes sds-scrollContrastIn {
+  from {
+    filter: contrast(3) brightness(0.6);
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  50% {
+    filter: contrast(1.4) brightness(0.9);
+    opacity: 0.9;
+  }
+  to {
+    filter: contrast(1) brightness(1);
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* ── Cross-category keyframe dependencies ── */

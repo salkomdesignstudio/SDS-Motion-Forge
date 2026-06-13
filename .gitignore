@@ -46,3 +46,4 @@ dist/motion-interactive.min.js.map
 test/snippets-fixture/node_modules/
 test/snippets-fixture/package-lock.json
 test/.snippets-tmp/
+docs/batch-preview.html

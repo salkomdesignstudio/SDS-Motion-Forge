@@ -1727,5 +1727,1230 @@
     "description": "Punches in from tiny to full with overshoot",
     "displayName": "Zoom Punch",
     "source": "docs-import"
+  },
+  "sds-btn-fill-rise": {
+    "displayName": "Fill Rise",
+    "description": "Liquid sheet rises from the floor with a wobbling top edge, levels off, then ebbs away",
+    "source": "phase6-authored"
+  },
+  "sds-btn-fill-sweep": {
+    "displayName": "Fill Sweep",
+    "description": "Skewed tint sweeps across with a brightness kiss, holds, then exits with momentum",
+    "source": "phase6-authored"
+  },
+  "sds-btn-fill-iris": {
+    "displayName": "Fill Iris",
+    "description": "Tint blooms from the center as an iris while the button breathes 0.985→1 on a spring",
+    "source": "phase6-authored"
+  },
+  "sds-btn-fill-split": {
+    "displayName": "Fill Split",
+    "description": "Two half-fills race from opposite edges and seal mid-button with a decaying flare",
+    "source": "phase6-authored"
+  },
+  "sds-btn-fill-corner": {
+    "displayName": "Fill Corner",
+    "description": "Tint unfolds diagonally from the top-left corner with a −0.5° settle",
+    "source": "phase6-authored"
+  },
+  "sds-btn-fill-drain": {
+    "displayName": "Fill Drain",
+    "description": "Fill drains to the floor, pauses empty, then refills — a patient three-act loop",
+    "source": "phase6-authored"
+  },
+  "sds-btn-fill-wave": {
+    "displayName": "Fill Wave",
+    "description": "A tilted wave climbs in and levels flat while the label bobs once above it",
+    "source": "phase6-authored"
+  },
+  "sds-btn-draw-perimeter": {
+    "displayName": "Draw Perimeter",
+    "description": "Border draws itself around the button, clicks at full frame, then fades for the next pass",
+    "source": "phase6-authored"
+  },
+  "sds-btn-draw-corners": {
+    "displayName": "Draw Corners",
+    "description": "Four corner brackets pop in from outside and snap onto the corners with spring",
+    "source": "phase6-authored"
+  },
+  "sds-btn-draw-dash": {
+    "displayName": "Draw Dash",
+    "description": "A dashed frame appears segment-by-segment, dims, then solidifies bright before resetting",
+    "source": "phase6-authored"
+  },
+  "sds-btn-draw-cross": {
+    "displayName": "Draw Cross",
+    "description": "Two diagonal light lines sweep across in opposite directions, crossing mid-button",
+    "source": "phase6-authored"
+  },
+  "sds-btn-draw-pulse-frame": {
+    "displayName": "Draw Pulse Frame",
+    "description": "Frame draws once, then breathes outward with fading echoes",
+    "source": "phase6-authored"
+  },
+  "sds-btn-draw-underline-orbit": {
+    "displayName": "Underline Orbit",
+    "description": "Underline draws under the label, then swings a full orbit and parks back home",
+    "source": "phase6-authored"
+  },
+  "sds-btn-press-spring": {
+    "displayName": "Press Spring",
+    "description": "Drops 3px with a squash, then rebounds through a two-step spring — the press you can feel",
+    "source": "phase6-authored"
+  },
+  "sds-btn-press-coin": {
+    "displayName": "Press Coin",
+    "description": "Tips 12° like a pressed coin edge while its shaded side deepens, then rights itself",
+    "source": "phase6-authored"
+  },
+  "sds-btn-press-pop": {
+    "displayName": "Press Pop",
+    "description": "Anticipation dip, pop past full size, settle — the label leads the button by a beat",
+    "source": "phase6-authored"
+  },
+  "sds-btn-press-seesaw": {
+    "displayName": "Press Seesaw",
+    "description": "Alternating corner tilts decay to rest, like a key that hasn't seated yet",
+    "source": "phase6-authored"
+  },
+  "sds-btn-press-drop": {
+    "displayName": "Press Drop",
+    "description": "Falls in from above, lands with a squash and a single dust ring",
+    "source": "phase6-authored"
+  },
+  "sds-btn-press-elastic": {
+    "displayName": "Press Elastic",
+    "description": "Horizontal tug stretches it wide then tall, snapping back through a three-bounce decay",
+    "source": "phase6-authored"
+  },
+  "sds-btn-halo-breathe": {
+    "displayName": "Halo Breathe",
+    "description": "A soft halo grows and recedes with brightness in sync — calm, steady presence",
+    "source": "phase6-authored"
+  },
+  "sds-btn-halo-flicker-on": {
+    "displayName": "Halo Flicker On",
+    "description": "Powers on through three stepped flickers, then the halo blooms and holds",
+    "source": "phase6-authored"
+  },
+  "sds-btn-spark-orbit": {
+    "displayName": "Spark Orbit",
+    "description": "A glowing spark rides the button's outline in a full lap, dimming on the far side",
+    "source": "phase6-authored"
+  },
+  "sds-btn-surge-charge": {
+    "displayName": "Surge Charge",
+    "description": "Gathers (dims), surges bright with a halo flare, then calms — a three-act energy cycle",
+    "source": "phase6-authored"
+  },
+  "sds-btn-halo-split": {
+    "displayName": "Halo Split",
+    "description": "The glow splits into two lobes that drift apart, dissolve, and re-merge each cycle",
+    "source": "phase6-authored"
+  },
+  "sds-btn-ember": {
+    "displayName": "Ember",
+    "description": "Heat shimmer: micro-skew, warm hue drift, and an ember glow that brightens on the exhale",
+    "source": "phase6-authored"
+  },
+  "sds-btn-slice-reveal": {
+    "displayName": "Slice Reveal",
+    "description": "Assembles as top and bottom edges arrive out of phase, sealing with a brightness flash",
+    "source": "phase6-authored"
+  },
+  "sds-btn-slice-hover": {
+    "displayName": "Slice Hover",
+    "description": "Top and bottom halves shear apart for two frames like a shutter glitch, then realign",
+    "source": "phase6-authored"
+  },
+  "sds-btn-blinds": {
+    "displayName": "Blinds",
+    "description": "A slatted cover wipes away in four steps, revealing the button like opening blinds",
+    "source": "phase6-authored"
+  },
+  "sds-btn-guillotine": {
+    "displayName": "Guillotine",
+    "description": "The top half drops onto the emerging bottom half with a landing squash",
+    "source": "phase6-authored"
+  },
+  "sds-btn-shutter-snap": {
+    "displayName": "Shutter Snap",
+    "description": "A diamond iris pinches almost closed, holds, then snaps open with overshoot",
+    "source": "phase6-authored"
+  },
+  "sds-btn-label-slide": {
+    "displayName": "Label Slide",
+    "description": "The label slides up and out, then returns from below with a soft overshoot — a quiet refresh tick",
+    "source": "phase6-authored"
+  },
+  "sds-btn-label-wave": {
+    "displayName": "Label Wave",
+    "description": "Label pieces ripple a 2px wave left to right with tiny rotations",
+    "source": "phase6-authored"
+  },
+  "sds-btn-icon-launch": {
+    "displayName": "Icon Launch",
+    "description": "The icon winds up, rockets forward with motion blur, and glides back as the label leans after it",
+    "source": "phase6-authored"
+  },
+  "sds-btn-icon-spin-settle": {
+    "displayName": "Icon Spin Settle",
+    "description": "The icon overshoots a full spin (380°→360°) while the label squeezes in sympathy",
+    "source": "phase6-authored"
+  },
+  "sds-btn-swap-flip": {
+    "displayName": "Swap Flip",
+    "description": "Icon and label trade a crossing gesture — passing each other with a dip, then re-seating",
+    "source": "phase6-authored"
+  },
+  "sds-btn-label-typewrite": {
+    "displayName": "Label Typewrite",
+    "description": "Label pieces type in on a stepped cascade, hold, then clear for the next pass",
+    "source": "phase6-authored"
+  },
+  "sds-btn-nudge": {
+    "displayName": "Nudge",
+    "description": "The trailing chevron nudges forward twice with decaying amplitude — the go-on gesture",
+    "source": "phase6-authored"
+  },
+  "sds-btn-tilt-orbit": {
+    "displayName": "Tilt Orbit",
+    "description": "The button leans through a slow elliptical orbit on two phase-shifted axes",
+    "source": "phase6-authored"
+  },
+  "sds-btn-tilt-pendulum": {
+    "displayName": "Tilt Pendulum",
+    "description": "Hangs from its top edge and swings with natural decay, re-energizing each cycle",
+    "source": "phase6-authored"
+  },
+  "sds-btn-tilt-scan": {
+    "displayName": "Tilt Scan",
+    "description": "Leans corner-to-corner with brief holds, as if scanning for the cursor",
+    "source": "phase6-authored"
+  },
+  "sds-btn-tilt-float": {
+    "displayName": "Tilt Float",
+    "description": "Levitates with a Y-bob, a 1.2° roll, and a drop-shadow that breathes with the height",
+    "source": "phase6-authored"
+  },
+  "sds-btn-sheen-pass": {
+    "displayName": "Sheen Pass",
+    "description": "A glossy bar sweeps across at a skew with a brightness kiss at center",
+    "source": "phase6-authored"
+  },
+  "sds-btn-sheen-double": {
+    "displayName": "Sheen Double",
+    "description": "Two sheens cross from opposite ends, flaring where they meet mid-button",
+    "source": "phase6-authored"
+  },
+  "sds-btn-prism-edge": {
+    "displayName": "Prism Edge",
+    "description": "A spectral border cycles hue while sweeping emphasis around the frame",
+    "source": "phase6-authored"
+  },
+  "sds-btn-night-sweep": {
+    "displayName": "Night Sweep",
+    "description": "A dark veil wipes off to reveal the lit button, rests, then falls again",
+    "source": "phase6-authored"
+  },
+  "sds-btn-spotlight-pan": {
+    "displayName": "Spotlight Pan",
+    "description": "A soft radial spotlight pans corner to corner; the label brightens as it passes",
+    "source": "phase6-authored"
+  },
+  "sds-btn-beacon": {
+    "displayName": "Beacon",
+    "description": "One ring ping every couple of seconds with true rest between — rhythm, not noise",
+    "source": "phase6-authored"
+  },
+  "sds-btn-tick-tock": {
+    "displayName": "Tick Tock",
+    "description": "Metronome micro-rotation with an end-of-bar accent scale",
+    "source": "phase6-authored"
+  },
+  "sds-btn-breath-hold": {
+    "displayName": "Breath Hold",
+    "description": "Inhale, hold at the top, quick exhale — asymmetric breathing that draws the eye",
+    "source": "phase6-authored"
+  },
+  "sds-btn-wink": {
+    "displayName": "Wink",
+    "description": "A corner highlight blinks twice every few seconds, then keeps a straight face",
+    "source": "phase6-authored"
+  },
+  "sds-input-label-spring": {
+    "displayName": "Label Spring",
+    "description": "On focus the label lifts with an 8% overshoot and settles small while the field swells a hair",
+    "source": "phase6-authored"
+  },
+  "sds-input-underline-draw": {
+    "displayName": "Underline Draw",
+    "description": "Underline draws from the center to both edges with a snap of overshoot",
+    "source": "phase6-authored"
+  },
+  "sds-input-underline-trail": {
+    "displayName": "Underline Trail",
+    "description": "Underline draws left to right behind a bright comet head that burns out at the far edge",
+    "source": "phase6-authored"
+  },
+  "sds-input-frame-bloom": {
+    "displayName": "Frame Bloom",
+    "description": "Four corner accents bloom outward then seat back onto the field, top pair leading",
+    "source": "phase6-authored"
+  },
+  "sds-input-tilt-in": {
+    "displayName": "Tilt In",
+    "description": "The field tips toward you on focus while its shadow approaches — a 3D nod",
+    "source": "phase6-authored"
+  },
+  "sds-input-zoom-focus": {
+    "displayName": "Zoom Focus",
+    "description": "Camera-focus on the field: a breath of blur clears as it sharpens and brightens",
+    "source": "phase6-authored"
+  },
+  "sds-input-gate-open": {
+    "displayName": "Gate Open",
+    "description": "Two tinted panels part horizontally over the field when it takes focus",
+    "source": "phase6-authored"
+  },
+  "sds-input-caret-pop": {
+    "displayName": "Caret Pop",
+    "description": "A caret bar pops in at the text start with a double bounce, blinks once, and hands over",
+    "source": "phase6-authored"
+  },
+  "sds-input-success-ripple": {
+    "displayName": "Success Ripple",
+    "description": "Two green glow rings ripple off the field as it does a contented little bob",
+    "source": "phase6-authored"
+  },
+  "sds-input-success-tick": {
+    "displayName": "Success Tick",
+    "description": "A checkmark draws itself in two strokes and snaps at the finish",
+    "source": "phase6-authored"
+  },
+  "sds-input-error-quake": {
+    "displayName": "Error Quake",
+    "description": "Caret-safe shake — the frame quakes while the field counter-shifts so your text stays readable",
+    "source": "phase6-authored"
+  },
+  "sds-input-error-buzz": {
+    "displayName": "Error Buzz",
+    "description": "Three sharp 1px vibrations with a red-shifted flash, then an apologetic settle",
+    "source": "phase6-authored"
+  },
+  "sds-input-error-sink": {
+    "displayName": "Error Sink",
+    "description": "The field sinks 2px and desaturates, recovering slowly — the weight of the error",
+    "source": "phase6-authored"
+  },
+  "sds-input-warn-tilt": {
+    "displayName": "Warn Tilt",
+    "description": "Leans one degree with an amber cast, then rights itself — visible uncertainty",
+    "source": "phase6-authored"
+  },
+  "sds-input-saved-flash": {
+    "displayName": "Saved Flash",
+    "description": "A quick brightness sweep with a 1% stamp-squash — saved, confirmed",
+    "source": "phase6-authored"
+  },
+  "sds-input-ph-breathe": {
+    "displayName": "Placeholder Breathe",
+    "description": "The placeholder breathes slowly between half-light and dim — alive, not urgent",
+    "source": "phase6-authored"
+  },
+  "sds-input-ph-fade-steps": {
+    "displayName": "Placeholder Fade Steps",
+    "description": "On focus the placeholder vanishes in three stepped after-images, like type lifting off",
+    "source": "phase6-authored"
+  },
+  "sds-input-ph-ghost": {
+    "displayName": "Placeholder Ghost",
+    "description": "On focus the placeholder dips to a ghost, lingers a beat, then lets go",
+    "source": "phase6-authored"
+  },
+  "sds-input-ph-flicker-in": {
+    "displayName": "Placeholder Flicker In",
+    "description": "The placeholder powers on through stepped flickers when the field loads",
+    "source": "phase6-authored"
+  },
+  "sds-input-ph-wave": {
+    "displayName": "Placeholder Wave",
+    "description": "Soft irregular pulses roll through the placeholder, like text under water",
+    "source": "phase6-authored"
+  },
+  "sds-input-ph-blink": {
+    "displayName": "Placeholder Blink",
+    "description": "A double-blink invitation every few seconds, then a straight face",
+    "source": "phase6-authored"
+  },
+  "sds-input-border-comet-loop": {
+    "displayName": "Border Comet Loop",
+    "description": "A glowing comet head rides the field's outline in a steady lap, dimming on the far side",
+    "source": "phase6-authored"
+  },
+  "sds-input-border-tide": {
+    "displayName": "Border Tide",
+    "description": "Border emphasis flows around the frame like a tide through four phases",
+    "source": "phase6-authored"
+  },
+  "sds-input-border-corners": {
+    "displayName": "Border Corners",
+    "description": "Corners take turns glowing — NE, SE, SW, NW — with a crossfade between each",
+    "source": "phase6-authored"
+  },
+  "sds-input-border-static": {
+    "displayName": "Border Static",
+    "description": "A quiet frame with an occasional two-frame static jitter — idle tech energy",
+    "source": "phase6-authored"
+  },
+  "sds-input-border-rain": {
+    "displayName": "Border Rain",
+    "description": "Thin light streaks run down both sides of the field in offset phase",
+    "source": "phase6-authored"
+  },
+  "sds-input-border-heartline": {
+    "displayName": "Border Heartline",
+    "description": "An ECG blip races along the underline every few seconds, then flatlines politely",
+    "source": "phase6-authored"
+  },
+  "sds-input-border-orbiters": {
+    "displayName": "Border Orbiters",
+    "description": "Two dim satellites orbit the field on opposite sides of its outline",
+    "source": "phase6-authored"
+  },
+  "sds-input-fill-rise": {
+    "displayName": "Fill Rise",
+    "description": "On focus a tint rises from the floor and settles at a shallow waterline",
+    "source": "phase6-authored"
+  },
+  "sds-input-fill-scanline": {
+    "displayName": "Fill Scanline",
+    "description": "One soft scanline crosses the field on focus, then drifts back and parks at the caret edge",
+    "source": "phase6-authored"
+  },
+  "sds-input-fill-meter": {
+    "displayName": "Fill Meter",
+    "description": "While focused, a meter advances in confident bursts with holds — progress you can feel",
+    "source": "phase6-authored"
+  },
+  "sds-input-fill-corner-shade": {
+    "displayName": "Fill Corner Shade",
+    "description": "A shade wedge sweeps in from the bottom-right corner on focus, adding active depth",
+    "source": "phase6-authored"
+  },
+  "sds-input-fill-pulse-floor": {
+    "displayName": "Fill Pulse Floor",
+    "description": "The field's floor pulses brighter on a slow loop while it holds focus",
+    "source": "phase6-authored"
+  },
+  "sds-input-fill-flood": {
+    "displayName": "Fill Flood",
+    "description": "On focus the interior floods with tint, then drains down to a strong underline — two acts",
+    "source": "phase6-authored"
+  },
+  "sds-input-arrive-slide-label": {
+    "displayName": "Arrive Slide Label",
+    "description": "The field slides in from the left as its label drops from above, meeting with a synced bounce",
+    "source": "phase6-authored"
+  },
+  "sds-input-arrive-unzip": {
+    "displayName": "Arrive Unzip",
+    "description": "The field unzips open from its center line with a bright seam that cools as it spreads",
+    "source": "phase6-authored"
+  },
+  "sds-input-arrive-drop": {
+    "displayName": "Arrive Drop",
+    "description": "Drops in from above and lands with a squash while its shadow snaps up to meet it",
+    "source": "phase6-authored"
+  },
+  "sds-input-arrive-materialize": {
+    "displayName": "Arrive Materialize",
+    "description": "Assembles in stepped slices out of blur and brightness, left to right",
+    "source": "phase6-authored"
+  },
+  "sds-input-arrive-pendulum": {
+    "displayName": "Arrive Pendulum",
+    "description": "Swings in from a top hinge through two decaying swings, then levels out",
+    "source": "phase6-authored"
+  },
+  "sds-input-arrive-stretch": {
+    "displayName": "Arrive Stretch",
+    "description": "Stretches open from a narrow pill to full width with an elastic settle",
+    "source": "phase6-authored"
+  },
+  "sds-input-arrive-spotlight": {
+    "displayName": "Arrive Spotlight",
+    "description": "A dark veil lifts as a spotlight passes over the arriving field",
+    "source": "phase6-authored"
+  },
+  "sds-input-arrive-stack": {
+    "displayName": "Arrive Stack",
+    "description": "Frame, interior tint, and field arrive as three staggered layers",
+    "source": "phase6-authored"
+  },
+  "sds-input-idle-floatline": {
+    "displayName": "Idle Floatline",
+    "description": "The underline drifts gently side to side like a buoy line at rest",
+    "source": "phase6-authored"
+  },
+  "sds-input-idle-glimmer": {
+    "displayName": "Idle Glimmer",
+    "description": "A tiny star glimmers at the corner every few seconds, spins a quarter turn, and is gone",
+    "source": "phase6-authored"
+  },
+  "sds-input-idle-depth": {
+    "displayName": "Idle Depth",
+    "description": "The field breathes in depth — its shadow approaches and recedes on a slow tide",
+    "source": "phase6-authored"
+  },
+  "sds-input-idle-lean": {
+    "displayName": "Idle Lean",
+    "description": "A barely-perceptible lean cycle, like paper that isn't quite flat",
+    "source": "phase6-authored"
+  },
+  "sds-input-idle-noise": {
+    "displayName": "Idle Noise",
+    "description": "Film-grain dots shimmer at 7% opacity in stepped jumps — analog quiet",
+    "source": "phase6-authored"
+  },
+  "sds-input-idle-perimeter-dot": {
+    "displayName": "Idle Perimeter Dot",
+    "description": "A single dot blinks at each corner in turn, patrolling the field's perimeter",
+    "source": "phase6-authored"
+  },
+  "sds-input-idle-soft-zoom": {
+    "displayName": "Idle Soft Zoom",
+    "description": "A 0.6% scale tide — imperceptibly alive",
+    "source": "phase6-authored"
+  },
+  "sds-card-tilt-orbit": {
+    "displayName": "Tilt Orbit",
+    "description": "Slow elliptical perspective lean — phase-shifted rotateX/rotateY on a 6 s loop, drop-shadow traces the tilt.",
+    "source": "phase6-authored"
+  },
+  "sds-card-layers": {
+    "displayName": "Layers",
+    "description": "Children bob at staggered amplitudes (5 px → 13 px) for a parallax depth illusion. Requires child elements.",
+    "source": "phase6-authored"
+  },
+  "sds-card-door-peek": {
+    "displayName": "Door Peek",
+    "description": "Card pivots open −18° on its left hinge, holds, then swings shut — like a door ajar.",
+    "source": "phase6-authored"
+  },
+  "sds-card-flip-loop": {
+    "displayName": "Flip Loop",
+    "description": "Full 360° Y-axis rotation; brightness dips to 35% at the 90° and 270° edges, elastic overshoot on landing.",
+    "source": "phase6-authored"
+  },
+  "sds-card-carousel-step": {
+    "displayName": "Carousel Step",
+    "description": "Cycles through four yaw poses (0°, −30°, −60°, −90°) with held pauses — mimics a rotating carousel.",
+    "source": "phase6-authored"
+  },
+  "sds-card-dive": {
+    "displayName": "Dive",
+    "description": "Entrance from overhead: rotateX 65° + upward translate, blur clears on two-stage deceleration brake.",
+    "source": "phase6-authored"
+  },
+  "sds-card-float-gimbal": {
+    "displayName": "Float Gimbal",
+    "description": "Gentle levitation loop with micro counter-rotations on both axes — stabiliser-gimbal quality.",
+    "source": "phase6-authored"
+  },
+  "sds-card-iris-bloom": {
+    "displayName": "Iris Bloom",
+    "description": "Iris opens from an off-centre point with a brightness flare at full aperture, then settles.",
+    "source": "phase6-authored"
+  },
+  "sds-card-diagonal-wipe": {
+    "displayName": "Diagonal Wipe",
+    "description": "Polygon clip sweeps diagonally from left; a 2 px brightness seam rides the clip edge at reveal.",
+    "source": "phase6-authored"
+  },
+  "sds-card-shutter": {
+    "displayName": "Shutter",
+    "description": "Five stepped horizontal reveals — mechanical shutter feel via steps(5) clip-path inset.",
+    "source": "phase6-authored"
+  },
+  "sds-card-spiral-reveal": {
+    "displayName": "Spiral Reveal",
+    "description": "Radar wedge sweeps 360° clockwise from 12 o'clock, revealing the card as it goes.",
+    "source": "phase6-authored"
+  },
+  "sds-card-letterbox": {
+    "displayName": "Letterbox",
+    "description": "Cinematic black bars part vertically while card content scales 1.04 → 1.",
+    "source": "phase6-authored"
+  },
+  "sds-card-tear": {
+    "displayName": "Tear",
+    "description": "Jagged clip-path rips diagonally from the top-left corner with a paper-curl rotate.",
+    "source": "phase6-authored"
+  },
+  "sds-card-checker": {
+    "displayName": "Checker",
+    "description": "Four quadrant children scale in as two alternating diagonal pairs. Requires 4 child elements.",
+    "source": "phase6-authored"
+  },
+  "sds-card-reveal-stack": {
+    "displayName": "Reveal Stack",
+    "description": "Children slide up from beneath with 100 ms stagger — like cards fanning out of a deck.",
+    "source": "phase6-authored"
+  },
+  "sds-card-curtain-fall": {
+    "displayName": "Curtain Fall",
+    "description": "A dark curtain drops from above, holds, then retracts to reveal the card — theatre-stage entrance.",
+    "source": "phase6-authored"
+  },
+  "sds-card-accordion-in": {
+    "displayName": "Accordion In",
+    "description": "Children unfold sequentially from scaleY(0) at the top — like opening accordion panels.",
+    "source": "phase6-authored"
+  },
+  "sds-card-fan-spread": {
+    "displayName": "Fan Spread",
+    "description": "Children rotate out from their shared bottom-left corner with stagger — playing-card fan open.",
+    "source": "phase6-authored"
+  },
+  "sds-card-content-flood": {
+    "displayName": "Content Flood",
+    "description": "Diagonal clip-path floods from the top-left corner, filling the card in two sweeping phases.",
+    "source": "phase6-authored"
+  },
+  "sds-card-unpack": {
+    "displayName": "Unpack",
+    "description": "Card spring-expands from a compressed scaleY(0.25) / rotateX state — box-opening effect.",
+    "source": "phase6-authored"
+  },
+  "sds-card-border-beam": {
+    "displayName": "Border Beam",
+    "description": "Single light bead orbits the card border continuously via CSS Motion Path (offset-path: border-box).",
+    "source": "phase6-authored"
+  },
+  "sds-card-frame-draw": {
+    "displayName": "Frame Draw",
+    "description": "The card's border ring is drawn in left to right via clip-path — drawn-on feel.",
+    "source": "phase6-authored"
+  },
+  "sds-card-corner-charge": {
+    "displayName": "Corner Charge",
+    "description": "Diagonal corner pairs (top-right + bottom-left) flash in alternating rhythm — energy charge effect.",
+    "source": "phase6-authored"
+  },
+  "sds-card-edge-scan": {
+    "displayName": "Edge Scan",
+    "description": "Gloss scan line sweeps across top then bottom edge in sequence — scanner/lidar aesthetic.",
+    "source": "phase6-authored"
+  },
+  "sds-card-frame-breathe": {
+    "displayName": "Frame Breathe",
+    "description": "The card's border ring pulses opacity and blur in a slow 2.4 s breath cycle.",
+    "source": "phase6-authored"
+  },
+  "sds-card-border-tide": {
+    "displayName": "Border Tide",
+    "description": "Twin light beads 180° apart chase each other around the border — tidal wave pattern.",
+    "source": "phase6-authored"
+  },
+  "sds-card-glass-frost": {
+    "displayName": "Glass Frost",
+    "description": "Blur + brightness frost cycle — card appears to ice over and clear on a 3.5 s loop.",
+    "source": "phase6-authored"
+  },
+  "sds-card-lens-bulge": {
+    "displayName": "Lens Bulge",
+    "description": "Subtle scale + perspective pulse that mimics a magnifying lens swelling and receding.",
+    "source": "phase6-authored"
+  },
+  "sds-card-hue-shift": {
+    "displayName": "Hue Shift",
+    "description": "Full 360° hue-rotate sweep — prismatic rainbow wash cycling through the card.",
+    "source": "phase6-authored"
+  },
+  "sds-card-refract-slide": {
+    "displayName": "Refract Slide",
+    "description": "Diagonal caustic-light beam (blurred 135° gradient) slides across the card surface.",
+    "source": "phase6-authored"
+  },
+  "sds-card-crystal-pulse": {
+    "displayName": "Crystal Pulse",
+    "description": "Brightness + contrast + scale pulse — card catches light like a crystal facet.",
+    "source": "phase6-authored"
+  },
+  "sds-card-glass-wipe": {
+    "displayName": "Glass Wipe",
+    "description": "Frosted-glass strip (blurred translucent slab) sweeps across the card with a skew.",
+    "source": "phase6-authored"
+  },
+  "sds-card-stack-pop": {
+    "displayName": "Stack Pop",
+    "description": "Card lifts from its stack with rising translateY and a growing drop-shadow on a 2.2 s loop.",
+    "source": "phase6-authored"
+  },
+  "sds-card-shuffle-deal": {
+    "displayName": "Shuffle Deal",
+    "description": "Entrance: card is dealt from upper-left with a diagonal translate and −14° rotation.",
+    "source": "phase6-authored"
+  },
+  "sds-card-deck-peek": {
+    "displayName": "Deck Peek",
+    "description": "Two ghost cards peek from behind the main card with staggered offset-rotate on a loop.",
+    "source": "phase6-authored"
+  },
+  "sds-card-deck-cycle": {
+    "displayName": "Deck Cycle",
+    "description": "Perspective yaw cycle — card tips 22° and returns, mimicking thumbing through a deck.",
+    "source": "phase6-authored"
+  },
+  "sds-card-stack-drop": {
+    "displayName": "Stack Drop",
+    "description": "Entrance: card drops from 38 px above with a two-stage deceleration brake.",
+    "source": "phase6-authored"
+  },
+  "sds-card-deal-arc": {
+    "displayName": "Deal Arc",
+    "description": "Entrance: card arcs in from upper-left with −18° rotation — classic card-deal motion.",
+    "source": "phase6-authored"
+  },
+  "sds-card-bounce-in": {
+    "displayName": "Bounce In",
+    "description": "Entrance from below with spring overshoot — 5-stage oscillation settles at rest.",
+    "source": "phase6-authored"
+  },
+  "sds-card-elastic-drop": {
+    "displayName": "Elastic Drop",
+    "description": "Drops from 55 px above with 3-cycle scaleY oscillation — bungee-cord physics.",
+    "source": "phase6-authored"
+  },
+  "sds-card-slingshot": {
+    "displayName": "Slingshot",
+    "description": "Launched from lower-left on a diagonal arc with deceleration overshoot and settle.",
+    "source": "phase6-authored"
+  },
+  "sds-card-rubber-band": {
+    "displayName": "Rubber Band",
+    "description": "scaleX/scaleY squeeze-stretch alternation — rubber-band snap entrance.",
+    "source": "phase6-authored"
+  },
+  "sds-card-free-fall": {
+    "displayName": "Free Fall",
+    "description": "Gravity-curve fall from 64 px above; blur clears on a two-stage deceleration.",
+    "source": "phase6-authored"
+  },
+  "sds-card-pinball": {
+    "displayName": "Pinball",
+    "description": "Enters with 4 direction changes and rotation damping — pinball ricochet physics.",
+    "source": "phase6-authored"
+  },
+  "sds-card-snap-back": {
+    "displayName": "Snap Back",
+    "description": "Overshoots right, snaps back left with rotation settle — stretched-elastic return.",
+    "source": "phase6-authored"
+  },
+  "sds-card-idle-breathe": {
+    "displayName": "Idle Breathe",
+    "description": "Micro scale pulse 1 → 1.018 — barely perceptible ambient breath.",
+    "source": "phase6-authored"
+  },
+  "sds-card-idle-sway": {
+    "displayName": "Idle Sway",
+    "description": "Slow ±6 px lateral sway on a 4 s ease-in-out loop.",
+    "source": "phase6-authored"
+  },
+  "sds-card-idle-bob": {
+    "displayName": "Idle Bob",
+    "description": "Gentle 8 px vertical float — calm levitation ambient.",
+    "source": "phase6-authored"
+  },
+  "sds-card-idle-pulse": {
+    "displayName": "Idle Pulse",
+    "description": "Scale + opacity pulse — subtle attention-seeking ambient loop.",
+    "source": "phase6-authored"
+  },
+  "sds-card-idle-glow": {
+    "displayName": "Idle Glow",
+    "description": "drop-shadow glow breathes in and out on a 2.8 s loop.",
+    "source": "phase6-authored"
+  },
+  "sds-card-idle-rock": {
+    "displayName": "Idle Rock",
+    "description": "±2° rotation rock — gentle pendulum ambient on a 3.5 s loop.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-dots-wave": {
+    "displayName": "Dots Wave",
+    "description": "Four dots ripple up and down in a cascading wave.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-dots-fade": {
+    "displayName": "Dots Fade",
+    "description": "Four dots pulse in and out of opacity in sequence.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-dots-flip": {
+    "displayName": "Dots Flip",
+    "description": "Four dots perform a staggered rotateY flip.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-dots-bounce": {
+    "displayName": "Dots Bounce",
+    "description": "Four dots bounce with a gravity arc in sequence.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-dots-expand": {
+    "displayName": "Dots Expand",
+    "description": "Four dots scale in and out in a rolling sequence.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-blob": {
+    "displayName": "Blob",
+    "description": "A polygon morphs through organic rounded shapes continuously.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-bubble": {
+    "displayName": "Bubble",
+    "description": "A ring expands outward and fades as if a bubble popping.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-dual-ring": {
+    "displayName": "Dual Ring",
+    "description": "Two concentric rings spin in opposite directions.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-ring-split": {
+    "displayName": "Ring Split",
+    "description": "Two opposing half-arcs counter-rotate around the same circle.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-spin-dot": {
+    "displayName": "Spin Dot",
+    "description": "A bead orbits a faint ring via offset-path.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-ring-chase": {
+    "displayName": "Ring Chase",
+    "description": "Two arc beads chase each other around the ring.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-eclipse": {
+    "displayName": "Eclipse",
+    "description": "Two discs slide past each other creating an eclipse effect.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-halo": {
+    "displayName": "Halo",
+    "description": "Two staggered rings expand outward and fade like a halo pulse.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-fill-bar": {
+    "displayName": "Fill Bar",
+    "description": "A progress bar fills from left to right then fades and resets.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-bar-pulse": {
+    "displayName": "Bar Pulse",
+    "description": "A bar breathes by scaling its width from narrow to full.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-bar-swing": {
+    "displayName": "Bar Swing",
+    "description": "A bright sliver slides from one end of a track to the other.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-track": {
+    "displayName": "Track",
+    "description": "A dot races back and forth along a horizontal rail.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-stripes": {
+    "displayName": "Stripes",
+    "description": "Diagonal stripes scroll continuously along a bar.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-equalizer": {
+    "displayName": "Equalizer",
+    "description": "Four bars animate to different heights like an audio equalizer.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-morph-geo": {
+    "displayName": "Morph Geo",
+    "description": "A shape morphs through square, diamond, and circle via clip-path.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-fold": {
+    "displayName": "Fold",
+    "description": "A square folds in 3D perspective cycling through each axis.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-pinwheel": {
+    "displayName": "Pinwheel",
+    "description": "Four petal-dots fade in sequence around the cardinal positions.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-coil": {
+    "displayName": "Coil",
+    "description": "Three nested arcs spin at different speeds creating a coil illusion.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-flip-card": {
+    "displayName": "Flip Card",
+    "description": "A rectangle flips on its Y axis like continuously turning a card.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-diamond": {
+    "displayName": "Diamond",
+    "description": "A diamond rotates 180° while pulsing scale and opacity.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-squares": {
+    "displayName": "Squares",
+    "description": "Four squares in a 2×2 grid pop in and out in a rolling sequence.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-isocube": {
+    "displayName": "Isocube",
+    "description": "A square spins on a tilted perspective axis like a 3D cube.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-metronome": {
+    "displayName": "Metronome",
+    "description": "A thin bar pivots left and right from its base like a metronome.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-tape": {
+    "displayName": "Tape",
+    "description": "A ball squashes on landing and stretches on lift in a bounce loop.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-chase-box": {
+    "displayName": "Chase Box",
+    "description": "A bead races continuously along the host border via offset-path.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-windmill": {
+    "displayName": "Windmill",
+    "description": "Four rectangular blades fade in sequence at the cardinal positions.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-glow-pulse": {
+    "displayName": "Glow Pulse",
+    "description": "A dot radiates a breathing drop-shadow glow that expands and contracts.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-neon-flicker": {
+    "displayName": "Neon Flicker",
+    "description": "A bar sputters with neon flicker like a fluorescent tube warming up.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-scanner": {
+    "displayName": "Scanner",
+    "description": "A horizontal scan line sweeps down through a bordered box.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-spotlight": {
+    "displayName": "Spotlight",
+    "description": "A conic gradient wedge sweeps in a circle like a rotating spotlight.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-beam": {
+    "displayName": "Beam",
+    "description": "A bar wipes in from the left then exits to the right via clip-path.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-blur-pulse": {
+    "displayName": "Blur Pulse",
+    "description": "A dot dissolves in from a blur then fades back out.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-timer": {
+    "displayName": "Timer",
+    "description": "A pie-fill sweeps around a circle like a countdown clock.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-cursor": {
+    "displayName": "Cursor",
+    "description": "A thin bar blinks on and off like a text insertion cursor.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-bounce-bar": {
+    "displayName": "Bounce Bar",
+    "description": "Four bars bounce upward in sequence like bouncing columns.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-ripple-dot": {
+    "displayName": "Ripple Dot",
+    "description": "A central dot radiates two concentric expanding ring waves.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-yo-yo": {
+    "displayName": "Yo-Yo",
+    "description": "A ball drops, mini-bounces at the bottom, then snaps back up.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-swivel": {
+    "displayName": "Swivel",
+    "description": "A dot oscillates side to side with an ease-out-and-back timing.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-gear": {
+    "displayName": "Gear",
+    "description": "A jagged gear polygon rotates continuously like a mechanical cog.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-drop": {
+    "displayName": "Drop",
+    "description": "A teardrop shape falls, squashes flat on impact, then lifts off.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-ticker": {
+    "displayName": "Ticker",
+    "description": "A rectangle flips on its X axis like a flip-board display tile.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-expand-ring": {
+    "displayName": "Expand Ring",
+    "description": "Three concentric rings radiate outward in staggered waves.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-spin-fade": {
+    "displayName": "Spin Fade",
+    "description": "Four horizontal bars fade in rotational sequence like a spinner.",
+    "source": "phase6-authored"
+  },
+  "sds-loader-throb": {
+    "displayName": "Throb",
+    "description": "An energetic overshoot pulse — more forceful and abrupt than breath.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-zoom-in": {
+    "displayName": "Zoom In",
+    "description": "Element scales up from 50% while fading in.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-zoom-out": {
+    "displayName": "Zoom Out",
+    "description": "Element scales down from 135% while fading in.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-rotate-in": {
+    "displayName": "Rotate In",
+    "description": "Element rotates from −8° and rises while fading in.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-hinge-in": {
+    "displayName": "Hinge In",
+    "description": "Element hinges open from its top edge like a trap door.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-roll-in": {
+    "displayName": "Roll In",
+    "description": "Element slides in from the left while rotating into place.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-rise-right": {
+    "displayName": "Rise Right",
+    "description": "Element rises diagonally from the lower-left while fading in.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-cinematic": {
+    "displayName": "Cinematic",
+    "description": "Letterbox bars open outward from the center as the element reveals.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-kaboom": {
+    "displayName": "Kaboom",
+    "description": "Element explodes into view from zero scale with an overshoot pop.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-lean": {
+    "displayName": "Lean",
+    "description": "Element leans in from the right in perspective then snaps upright.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-peel": {
+    "displayName": "Peel",
+    "description": "Element peels upward from its bottom edge like a sticker lifting.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-stretch": {
+    "displayName": "Stretch",
+    "description": "Element stretches out from a narrow vertical sliver to full width.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-jello": {
+    "displayName": "Jello",
+    "description": "Element bounces in with a wobbly jello-like scale and skew oscillation.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-flip-up": {
+    "displayName": "Flip Up",
+    "description": "Element hinges open from its bottom edge like a trap door swinging up.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-door-left": {
+    "displayName": "Door Left",
+    "description": "Element swings open from its left edge like a door on a left hinge.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-door-right": {
+    "displayName": "Door Right",
+    "description": "Element swings open from its right edge like a door on a right hinge.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-barrel": {
+    "displayName": "Barrel",
+    "description": "Element tumbles in with a diagonal barrel-roll 3D rotation.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-saturate": {
+    "displayName": "Saturate",
+    "description": "Element transitions from grayscale to full color while fading in.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-sepia": {
+    "displayName": "Sepia",
+    "description": "Element transitions from sepia tone to full color while fading in.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-overexpose": {
+    "displayName": "Overexpose",
+    "description": "Element burns in from an overexposed flash to natural brightness.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-thermal": {
+    "displayName": "Thermal",
+    "description": "Element resolves from a thermal hue-shift and high saturation to natural color.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-iris": {
+    "displayName": "Iris",
+    "description": "A circular iris expands from the center to reveal the element.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-wipe-up": {
+    "displayName": "Wipe Up",
+    "description": "Element is revealed by a clip-path that wipes upward from the bottom.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-wipe-right": {
+    "displayName": "Wipe Right",
+    "description": "Element is revealed by a clip-path that wipes across from left to right.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-drop-in": {
+    "displayName": "Drop In",
+    "description": "Element drops from above and bounces into its final position.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-float": {
+    "displayName": "Float",
+    "description": "Drifts up 6px with a soft blur dissolve — weightless and ethereal.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-sink": {
+    "displayName": "Sink",
+    "description": "Settles gently downward from above while fading in.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-shudder": {
+    "displayName": "Shudder",
+    "description": "Shakes horizontally on entry then vibrates to a stop.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-spin-y": {
+    "displayName": "Spin Y",
+    "description": "Spins in with a 180° rotateY perspective rotation.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-rubber-band": {
+    "displayName": "Rubber Band",
+    "description": "Squashes and stretches into place with rubber-band physics.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-stagger-fade": {
+    "displayName": "Stagger Fade",
+    "description": "Children fade in one by one in a staggered sequence.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-stagger-rise": {
+    "displayName": "Stagger Rise",
+    "description": "Children rise up and fade in one by one in sequence.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-glare": {
+    "displayName": "Glare",
+    "description": "Element burns in from a bright overexposed glare to natural.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-skid-in": {
+    "displayName": "Skid In",
+    "description": "Slides in fast from the right, overshoots, and brakes.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-slingshot": {
+    "displayName": "Slingshot",
+    "description": "Compressed from the left then launched forward with elastic overshoot.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-blink-in": {
+    "displayName": "Blink In",
+    "description": "Opacity steps up through four discrete levels like a screen powering on.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-stagger-slide": {
+    "displayName": "Stagger Slide",
+    "description": "Children slide in from the left one by one in a staggered sequence.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-neon-pop": {
+    "displayName": "Neon Pop",
+    "description": "Scales in with a burst of neon drop-shadow glow that settles.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-pixel-in": {
+    "displayName": "Pixel In",
+    "description": "Resolves from a heavy blur and slight zoom to sharp full detail.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-tidal": {
+    "displayName": "Tidal",
+    "description": "Slides in from the left with a wave-like settling oscillation.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-materialize": {
+    "displayName": "Materialize",
+    "description": "Steps through four discrete opacity and blur levels like materializing digitally.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-exhale": {
+    "displayName": "Exhale",
+    "description": "Gently scales down from 112% while fading in — like a slow exhale.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-typewriter": {
+    "displayName": "Typewriter",
+    "description": "Reveals in discrete steps from left to right like a typewriter printing.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-glitch-in": {
+    "displayName": "Glitch In",
+    "description": "Tears in through glitch artifacts — hue shifts, clip flickers, and X displacement.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-unfurl": {
+    "displayName": "Unfurl",
+    "description": "Unrolls from the top-left corner with a gentle rotate and scale.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-pop-in": {
+    "displayName": "Pop In",
+    "description": "Snaps from zero to overshoot then settles with a springy multi-step pop.",
+    "source": "phase6-authored"
+  },
+  "sds-scroll-contrast-in": {
+    "displayName": "Contrast In",
+    "description": "Emerges from high-contrast darkness into natural color and brightness.",
+    "source": "phase6-authored"
   }
 }

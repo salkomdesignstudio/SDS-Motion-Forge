@@ -14,13 +14,13 @@
 
 /**
  * SDS Motion Forge — Premium CSS Animation System
- * Version: 4.0.3
+ * Version: 5.0.0
  * Author: Salkom Design Studio
  * License: MIT
  * https://github.com/salkomdesignstudio/SDS-Motion-Forge
  *
- * 300+ production-ready CSS animations · Framework-agnostic
- * Text (100) · Buttons (50) · Inputs (50) · Cards (46) · Loaders (50) · Scroll (54)
+ * 600+ production-ready CSS animations · Framework-agnostic
+ * Text (104) · Buttons (100) · Inputs (100) · Cards (100) · Loaders (100) · Scroll (100)
  *
  * Optional engines (load with defer):
  *   sds-scroll.min.js          — scroll-gate via [data-sds] attribute
@@ -1472,6 +1472,772 @@ html:not(.sds-js) [data-sds] {
 .sds-card-levitate,
 .sds-card-deep-float {
   will-change: transform, opacity;
+}
+
+
+/* ====================================================================
+   BATCH 8 � Cards: 3D Depth & Parallax (7) + Clip Reveals (7)
+   ==================================================================== */
+
+/* -- 3D Depth & Parallax ------------------------------------------- */
+
+/* 103 � Tilt Orbit ------------------------------------------ */
+@keyframes sds-tiltOrbit {
+  0%,100% { transform: perspective(600px) rotateX(7deg) rotateY(-10deg); filter: drop-shadow(4px 8px 10px rgba(0,0,0,.22)); }
+  25%     { transform: perspective(600px) rotateX(-5deg) rotateY(10deg);  filter: drop-shadow(-3px 6px 14px rgba(0,0,0,.18)); }
+  50%     { transform: perspective(600px) rotateX(-7deg) rotateY(-8deg);  filter: drop-shadow(-4px -8px 10px rgba(0,0,0,.22)); }
+  75%     { transform: perspective(600px) rotateX(5deg) rotateY(8deg);    filter: drop-shadow(3px 6px 14px rgba(0,0,0,.18)); }
+}
+.sds-card-tilt-orbit {
+  animation: sds-tiltOrbit 6s cubic-bezier(.45,.05,.55,.95) infinite;
+  transform-style: preserve-3d;
+}
+
+/* 104 � Layers (up to 3 children, parallax-bob) --------------- */
+@keyframes sds-layerBobA {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-5px); }
+}
+@keyframes sds-layerBobB {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-9px); }
+}
+@keyframes sds-layerBobC {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-13px); }
+}
+.sds-card-layers > *:nth-child(1) { animation: sds-layerBobA 3s ease-in-out infinite; }
+.sds-card-layers > *:nth-child(2) { animation: sds-layerBobB 3s ease-in-out infinite .2s; }
+.sds-card-layers > *:nth-child(3) { animation: sds-layerBobC 3s ease-in-out infinite .4s; }
+
+/* 105 � Door Peek ------------------------------------------- */
+@keyframes sds-doorPeek {
+  0%,100% { transform: perspective(600px) rotateY(0deg); }
+  15%     { transform: perspective(600px) rotateY(-18deg); }
+  70%     { transform: perspective(600px) rotateY(-18deg); }
+  88%     { transform: perspective(600px) rotateY(0deg); }
+}
+.sds-card-door-peek {
+  animation: sds-doorPeek 3.2s cubic-bezier(.25,.46,.45,.94) infinite;
+  transform-origin: left center;
+}
+
+/* 106 � Flip Loop ------------------------------------------- */
+@keyframes sds-flipLoop {
+  0%   { transform: perspective(800px) rotateY(0deg);   filter: brightness(1); }
+  22%  { transform: perspective(800px) rotateY(90deg);  filter: brightness(.35); }
+  45%  { transform: perspective(800px) rotateY(180deg); filter: brightness(1); }
+  68%  { transform: perspective(800px) rotateY(270deg); filter: brightness(.35); }
+  82%  { transform: perspective(800px) rotateY(375deg); filter: brightness(1); }
+  90%  { transform: perspective(800px) rotateY(352deg); filter: brightness(1); }
+  100% { transform: perspective(800px) rotateY(360deg); filter: brightness(1); }
+}
+.sds-card-flip-loop {
+  animation: sds-flipLoop 2.8s cubic-bezier(.34,1.2,.64,1) infinite;
+}
+
+/* 107 � Carousel Step --------------------------------------- */
+@keyframes sds-carouselStep {
+  0%,12%   { transform: perspective(800px) rotateY(0deg); }
+  18%,32%  { transform: perspective(800px) rotateY(-30deg); }
+  38%,52%  { transform: perspective(800px) rotateY(-60deg); }
+  58%,72%  { transform: perspective(800px) rotateY(-90deg); }
+  78%,88%  { transform: perspective(800px) rotateY(-45deg); }
+  94%,100% { transform: perspective(800px) rotateY(0deg); }
+}
+.sds-card-carousel-step {
+  animation: sds-carouselStep 5s ease-in-out infinite;
+}
+
+/* 108 � Dive ----------------------------------------------- */
+@keyframes sds-cardDive {
+  0%   { transform: perspective(800px) rotateX(65deg) translateY(-36px) scale(.86); filter: blur(4px); opacity: 0; }
+  50%  { transform: perspective(800px) rotateX(10deg) translateY(-8px) scale(.97);  filter: blur(1px); opacity: 1; }
+  75%  { transform: perspective(800px) rotateX(-4deg) translateY(2px) scale(1.01);  filter: blur(0px); opacity: 1; }
+  88%  { transform: perspective(800px) rotateX(2deg) translateY(-1px) scale(1);     filter: blur(0px); opacity: 1; }
+  100% { transform: perspective(800px) rotateX(0deg) translateY(0px) scale(1);      filter: blur(0px); opacity: 1; }
+}
+.sds-card-dive {
+  animation: sds-cardDive 1s cubic-bezier(.2,.6,.3,1) both;
+}
+
+/* 109 � Float Gimbal --------------------------------------- */
+@keyframes sds-floatGimbal {
+  0%   { transform: perspective(600px) translateY(0px)   rotateX(2deg) rotateY(-3deg); }
+  25%  { transform: perspective(600px) translateY(-8px)  rotateX(-2deg) rotateY(3deg); }
+  50%  { transform: perspective(600px) translateY(-4px)  rotateX(3deg) rotateY(-2deg); }
+  75%  { transform: perspective(600px) translateY(-10px) rotateX(-1deg) rotateY(2deg); }
+  100% { transform: perspective(600px) translateY(0px)   rotateX(2deg) rotateY(-3deg); }
+}
+.sds-card-float-gimbal {
+  animation: sds-floatGimbal 5s ease-in-out infinite;
+}
+
+/* -- Clip Reveals -------------------------------------------------- */
+
+/* 110 � Iris Bloom ------------------------------------------ */
+@keyframes sds-irisBloom {
+  0%   { clip-path: circle(0% at 35% 42%); opacity: .7; filter: brightness(1); }
+  60%  { clip-path: circle(85% at 50% 50%); opacity: 1; filter: brightness(1.25); }
+  80%  { clip-path: circle(100% at 50% 50%); filter: brightness(1.12); }
+  100% { clip-path: circle(100% at 50% 50%); filter: brightness(1); }
+}
+.sds-card-iris-bloom {
+  animation: sds-irisBloom .85s cubic-bezier(.2,.6,.2,1) both;
+}
+
+/* 111 � Diagonal Wipe --------------------------------------- */
+@keyframes sds-diagWipe {
+  0%   { clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%); filter: brightness(1); }
+  70%  { clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 0% 100%); filter: brightness(1); }
+  80%  { clip-path: polygon(0% 0%, 98% 0%, 100% 100%, 0% 100%); filter: brightness(1.14); }
+  100% { clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); filter: brightness(1); }
+}
+.sds-card-diagonal-wipe {
+  animation: sds-diagWipe .75s cubic-bezier(.4,0,.2,1) both;
+}
+
+/* 112 � Shutter --------------------------------------------- */
+@keyframes sds-cardShutter {
+  0%   { clip-path: inset(100% 0 0 0); }
+  100% { clip-path: inset(0 0 0 0); }
+}
+.sds-card-shutter {
+  animation: sds-cardShutter .55s steps(5, start) both;
+}
+
+/* 113 � Spiral Reveal --------------------------------------- */
+@keyframes sds-spiralReveal {
+  /* 10 fixed points: center + 9 swept clockwise from 12-o'clock */
+  0%   { clip-path: polygon(50% 50%, 50% 0%, 51% 0%, 51% 0%, 51% 0%, 51% 0%, 51% 0%, 51% 0%, 51% 0%, 51% 0%); opacity: .8; }
+  11%  { clip-path: polygon(50% 50%, 50% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%); opacity: 1; }
+  22%  { clip-path: polygon(50% 50%, 50% 0%, 100% 0%, 100% 25%, 100% 25%, 100% 25%, 100% 25%, 100% 25%, 100% 25%, 100% 25%); }
+  33%  { clip-path: polygon(50% 50%, 50% 0%, 100% 0%, 100% 25%, 100% 75%, 100% 75%, 100% 75%, 100% 75%, 100% 75%, 100% 75%); }
+  44%  { clip-path: polygon(50% 50%, 50% 0%, 100% 0%, 100% 25%, 100% 75%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%); }
+  55%  { clip-path: polygon(50% 50%, 50% 0%, 100% 0%, 100% 25%, 100% 75%, 100% 100%, 50% 100%, 0% 100%, 0% 100%, 0% 100%); }
+  66%  { clip-path: polygon(50% 50%, 50% 0%, 100% 0%, 100% 25%, 100% 75%, 100% 100%, 50% 100%, 0% 100%, 0% 50%, 0% 50%); }
+  77%  { clip-path: polygon(50% 50%, 50% 0%, 100% 0%, 100% 25%, 100% 75%, 100% 100%, 50% 100%, 0% 100%, 0% 50%, 0% 0%); }
+  88%  { clip-path: polygon(50% 50%, 50% 0%, 100% 0%, 100% 25%, 100% 75%, 100% 100%, 50% 100%, 0% 100%, 0% 0%, 30% 0%); }
+  100% { clip-path: polygon(50% 50%, 50% 0%, 100% 0%, 100% 25%, 100% 75%, 100% 100%, 50% 100%, 0% 100%, 0% 0%, 50% 0%); }
+}
+.sds-card-spiral-reveal {
+  animation: sds-spiralReveal 1.2s cubic-bezier(.4,0,.6,1) both;
+}
+
+/* 114 � Letterbox ------------------------------------------- */
+@keyframes sds-letterbox {
+  0%   { clip-path: inset(22% 0 22% 0); transform: scale(1.04); }
+  50%  { clip-path: inset(10% 0 10% 0); transform: scale(1.02); }
+  100% { clip-path: inset(0% 0 0% 0);   transform: scale(1); }
+}
+.sds-card-letterbox {
+  animation: sds-letterbox .9s cubic-bezier(.4,0,.2,1) both;
+}
+
+/* 115 � Tear ----------------------------------------------- */
+@keyframes sds-cardTear {
+  0%   { clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%); transform: rotate(-4deg); opacity: .9; }
+  30%  { clip-path: polygon(0% 0%, 55% 0%, 22% 55%, 0% 100%); transform: rotate(-2.5deg); opacity: 1; }
+  60%  { clip-path: polygon(0% 0%, 100% 0%, 72% 48%, 88% 100%, 0% 100%); transform: rotate(-1deg); }
+  85%  { clip-path: polygon(0% 0%, 100% 0%, 100% 68%, 88% 100%, 0% 100%); transform: rotate(-.3deg); }
+  100% { clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); transform: rotate(0deg); }
+}
+.sds-card-tear {
+  animation: sds-cardTear .85s cubic-bezier(.34,1.1,.64,1) both;
+}
+
+/* 116 � Checker (4 quadrant children, diagonal pairs) --------- */
+@keyframes sds-checkerPop {
+  0%   { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.sds-card-checker {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+}
+.sds-card-checker > * {
+  flex: 1;
+}
+.sds-card-checker > *:nth-child(1),
+.sds-card-checker > *:nth-child(4) {
+  animation: sds-checkerPop .35s cubic-bezier(.2,0,.2,1) both;
+}
+.sds-card-checker > *:nth-child(2),
+.sds-card-checker > *:nth-child(3) {
+  animation: sds-checkerPop .35s cubic-bezier(.2,0,.2,1) .2s both;
+}
+
+/*  GPU compositing hints � Batch 8 */
+.sds-card-tilt-orbit,
+.sds-card-door-peek,
+.sds-card-flip-loop,
+.sds-card-carousel-step,
+.sds-card-dive,
+.sds-card-float-gimbal {
+  will-change: transform, filter;
+}
+
+
+/* ====================================================================
+   BATCH 9 � Cards: Staged Content Choreography (6) + Border Beam & Frame (6)
+   ==================================================================== */
+
+/* -- Staged Content Choreography ---------------------------------- */
+
+/* 117 � Reveal Stack � children stagger-slide up from beneath */
+@keyframes sds-revealStack {
+  0%   { transform: translateY(24px); opacity: 0; }
+  100% { transform: translateY(0px);  opacity: 1; }
+}
+.sds-card-reveal-stack > *:nth-child(1) { animation: sds-revealStack .45s cubic-bezier(.2,0,.2,1) both; }
+.sds-card-reveal-stack > *:nth-child(2) { animation: sds-revealStack .45s cubic-bezier(.2,0,.2,1) .1s both; }
+.sds-card-reveal-stack > *:nth-child(3) { animation: sds-revealStack .45s cubic-bezier(.2,0,.2,1) .2s both; }
+.sds-card-reveal-stack > *:nth-child(4) { animation: sds-revealStack .45s cubic-bezier(.2,0,.2,1) .3s both; }
+
+/* 118 � Curtain Fall � pseudo-curtain drops then retracts, revealing card */
+@keyframes sds-curtainFallKf {
+  0%   { transform: translateY(-100%); }
+  35%  { transform: translateY(0%); }
+  65%  { transform: translateY(0%); }
+  100% { transform: translateY(100%); }
+}
+.sds-card-curtain-fall {
+  position: relative;
+  overflow: hidden;
+}
+.sds-card-curtain-fall::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 20, 50, 0.88);
+  animation: sds-curtainFallKf 1.4s cubic-bezier(.4,0,.6,1) both;
+  z-index: 1;
+}
+
+/* 119 � Accordion In � children unfold from scaleY(0) with stagger */
+@keyframes sds-accordionIn {
+  0%   { transform: scaleY(0); opacity: 0; }
+  100% { transform: scaleY(1); opacity: 1; }
+}
+.sds-card-accordion-in {
+  overflow: hidden;
+}
+.sds-card-accordion-in > * {
+  transform-origin: top center;
+}
+.sds-card-accordion-in > *:nth-child(1) { animation: sds-accordionIn .3s cubic-bezier(.2,0,.2,1) both; }
+.sds-card-accordion-in > *:nth-child(2) { animation: sds-accordionIn .3s cubic-bezier(.2,0,.2,1) .12s both; }
+.sds-card-accordion-in > *:nth-child(3) { animation: sds-accordionIn .3s cubic-bezier(.2,0,.2,1) .24s both; }
+.sds-card-accordion-in > *:nth-child(4) { animation: sds-accordionIn .3s cubic-bezier(.2,0,.2,1) .36s both; }
+
+/* 120 � Fan Spread � children rotate out from bottom-left origin */
+@keyframes sds-fanSpread1 { 0% { transform: rotate(0deg); opacity: 0; } 100% { transform: rotate(-2deg);  opacity: 1; } }
+@keyframes sds-fanSpread2 { 0% { transform: rotate(0deg); opacity: 0; } 100% { transform: rotate(-8deg);  opacity: 1; } }
+@keyframes sds-fanSpread3 { 0% { transform: rotate(0deg); opacity: 0; } 100% { transform: rotate(-14deg); opacity: 1; } }
+@keyframes sds-fanSpread4 { 0% { transform: rotate(0deg); opacity: 0; } 100% { transform: rotate(-20deg); opacity: 1; } }
+.sds-card-fan-spread > * {
+  transform-origin: bottom left;
+}
+.sds-card-fan-spread > *:nth-child(1) { animation: sds-fanSpread1 .5s cubic-bezier(.34,1.3,.64,1) both; }
+.sds-card-fan-spread > *:nth-child(2) { animation: sds-fanSpread2 .5s cubic-bezier(.34,1.3,.64,1) .08s both; }
+.sds-card-fan-spread > *:nth-child(3) { animation: sds-fanSpread3 .5s cubic-bezier(.34,1.3,.64,1) .16s both; }
+.sds-card-fan-spread > *:nth-child(4) { animation: sds-fanSpread4 .5s cubic-bezier(.34,1.3,.64,1) .24s both; }
+
+/* 121 � Content Flood � diagonal clip-path fill from top-left corner */
+@keyframes sds-contentFlood {
+  0%   { clip-path: polygon(0% 0%, 0% 0%, 0% 0%); opacity: .5; }
+  40%  { clip-path: polygon(0% 0%, 100% 0%, 0% 100%); opacity: 1; }
+  100% { clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); opacity: 1; }
+}
+.sds-card-content-flood {
+  animation: sds-contentFlood .7s cubic-bezier(.4,0,.2,1) both;
+}
+
+/* 122 � Unpack � spring-expand from compressed vertical state */
+@keyframes sds-unpack {
+  0%   { transform: perspective(600px) scaleY(.25) rotateX(22deg); opacity: 0; filter: blur(2px); }
+  55%  { transform: perspective(600px) scaleY(1.06) rotateX(-2deg); opacity: 1; filter: blur(0px); }
+  75%  { transform: perspective(600px) scaleY(.97) rotateX(1deg); }
+  90%  { transform: perspective(600px) scaleY(1.01) rotateX(0deg); }
+  100% { transform: perspective(600px) scaleY(1) rotateX(0deg); opacity: 1; filter: blur(0px); }
+}
+.sds-card-unpack {
+  animation: sds-unpack .8s cubic-bezier(.34,1.1,.64,1) both;
+  transform-origin: bottom center;
+}
+
+/* -- Border Beam & Frame ------------------------------------------ */
+
+/* 123 � Border Beam � orbiting light bead via CSS Motion Path */
+@keyframes sds-borderBeamOrbit {
+  to { offset-distance: 100%; }
+}
+.sds-card-border-beam {
+  position: relative;
+}
+.sds-card-border-beam::before {
+  content: "";
+  position: absolute;
+  width: 28%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.95), transparent);
+  border-radius: 2px;
+  offset-path: border-box;
+  offset-distance: 0%;
+  animation: sds-borderBeamOrbit 2s linear infinite;
+}
+
+/* 124 � Frame Draw � border ring revealed left to right */
+@keyframes sds-frameDrawKf {
+  0%   { clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%); opacity: .8; }
+  100% { clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); opacity: 1; }
+}
+.sds-card-frame-draw {
+  position: relative;
+}
+.sds-card-frame-draw::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border: 2px solid rgba(255,255,255,.85);
+  border-radius: inherit;
+  animation: sds-frameDrawKf .7s cubic-bezier(.4,0,.2,1) both;
+  pointer-events: none;
+}
+
+/* 125 � Corner Charge � alternating diagonal corner pair flash */
+@keyframes sds-cornerChargeKf {
+  0%,100% { opacity: 0; filter: brightness(1); }
+  30%,70% { opacity: 1; filter: brightness(2.2); }
+}
+.sds-card-corner-charge {
+  position: relative;
+}
+.sds-card-corner-charge::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  border-top-color: rgba(255,255,255,.9);
+  border-right-color: rgba(255,255,255,.9);
+  border-radius: inherit;
+  animation: sds-cornerChargeKf 1.4s ease-in-out infinite;
+}
+.sds-card-corner-charge::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  border-bottom-color: rgba(255,255,255,.9);
+  border-left-color: rgba(255,255,255,.9);
+  border-radius: inherit;
+  animation: sds-cornerChargeKf 1.4s ease-in-out infinite .7s;
+}
+
+/* 126 � Edge Scan � gloss scan line sweeps top then bottom edge */
+@keyframes sds-edgeScanKf {
+  0%,4%    { transform: translateX(-110%); opacity: 0; }
+  8%       { opacity: 1; }
+  44%,56%  { transform: translateX(110%); opacity: 0; }
+  60%      { transform: translateX(-110%); opacity: 0; }
+  64%      { opacity: 1; }
+  96%,100% { transform: translateX(110%); opacity: 0; }
+}
+.sds-card-edge-scan {
+  position: relative;
+  overflow: hidden;
+}
+.sds-card-edge-scan::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%; height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.9) 50%, transparent);
+  animation: sds-edgeScanKf 3s ease-in-out infinite;
+}
+.sds-card-edge-scan::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 100%; height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.9) 50%, transparent);
+  animation: sds-edgeScanKf 3s ease-in-out infinite 1.5s;
+}
+
+/* 127 � Frame Breathe � border ring opacity-blur pulse */
+@keyframes sds-frameBreathKf {
+  0%,100% { opacity: .15; filter: blur(1px); }
+  50%     { opacity: .75; filter: blur(0px); }
+}
+.sds-card-frame-breathe {
+  position: relative;
+}
+.sds-card-frame-breathe::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border: 2px solid rgba(255,255,255,.8);
+  border-radius: inherit;
+  animation: sds-frameBreathKf 2.4s ease-in-out infinite;
+}
+
+/* 128 � Border Tide � twin beads 180� apart tracing the border */
+.sds-card-border-tide {
+  position: relative;
+}
+.sds-card-border-tide::before {
+  content: "";
+  position: absolute;
+  width: 26%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.9), transparent);
+  offset-path: border-box;
+  offset-distance: 0%;
+  animation: sds-borderBeamOrbit 2.2s linear infinite;
+}
+.sds-card-border-tide::after {
+  content: "";
+  position: absolute;
+  width: 26%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(180,200,255,.85), transparent);
+  offset-path: border-box;
+  offset-distance: 50%;
+  animation: sds-borderBeamOrbit 2.2s linear infinite;
+}
+
+
+/* ====================================================================
+   BATCH 10 � Cards: Glass & Refraction (6) + Stack & Shuffle (6)
+   ==================================================================== */
+
+/* -- Glass & Refraction -------------------------------------------- */
+
+/* 129 � Glass Frost � blur + brightness frost breath loop */
+@keyframes sds-glassFrost {
+  0%,100% { filter: blur(0px) brightness(1) saturate(1); opacity: 1; }
+  35%     { filter: blur(5px) brightness(1.1) saturate(.75); opacity: .82; }
+  65%     { filter: blur(5px) brightness(1.1) saturate(.75); opacity: .82; }
+}
+.sds-card-glass-frost {
+  animation: sds-glassFrost 3.5s ease-in-out infinite;
+}
+
+/* 130 � Lens Bulge � scale + perspective pulse (lens-like magnification) */
+@keyframes sds-lensBulge {
+  0%,100% { transform: perspective(400px) scale(1) rotateX(0deg); filter: brightness(1); }
+  50%     { transform: perspective(300px) scale(1.04) rotateX(-1deg); filter: brightness(1.1); }
+}
+.sds-card-lens-bulge {
+  animation: sds-lensBulge 3s ease-in-out infinite;
+}
+
+/* 131 � Hue Shift � full hue-rotate sweep through spectrum */
+@keyframes sds-hueShift {
+  0%   { filter: hue-rotate(0deg) brightness(1); }
+  50%  { filter: hue-rotate(180deg) brightness(1.08); }
+  100% { filter: hue-rotate(360deg) brightness(1); }
+}
+.sds-card-hue-shift {
+  animation: sds-hueShift 4s linear infinite;
+}
+
+/* 132 � Refract Slide � diagonal caustic-light beam passes over card */
+@keyframes sds-refractSlide {
+  0%   { transform: translate(-120%, -120%); opacity: 0; }
+  12%  { opacity: .55; }
+  50%  { transform: translate(10%, 10%); opacity: .35; }
+  88%  { opacity: .55; }
+  100% { transform: translate(120%, 120%); opacity: 0; }
+}
+.sds-card-refract-slide {
+  position: relative;
+  overflow: hidden;
+}
+.sds-card-refract-slide::before {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  background: linear-gradient(135deg, transparent 35%, rgba(255,255,255,.4) 50%, transparent 65%);
+  filter: blur(3px);
+  animation: sds-refractSlide 4s ease-in-out infinite;
+}
+
+/* 133 � Crystal Pulse � brightness + contrast + scale energy pulse */
+@keyframes sds-crystalPulse {
+  0%,100% { transform: scale(1);    filter: brightness(1) contrast(1); }
+  45%     { transform: scale(1.025); filter: brightness(1.28) contrast(1.06); }
+}
+.sds-card-crystal-pulse {
+  animation: sds-crystalPulse 2.2s ease-in-out infinite;
+}
+
+/* 134 � Glass Wipe � frosted-glass strip sweeps across card */
+@keyframes sds-glassWipe {
+  0%   { transform: translateX(-140%) skewX(-12deg); opacity: 0; }
+  12%  { opacity: 1; }
+  88%  { opacity: 1; }
+  100% { transform: translateX(140%) skewX(-12deg); opacity: 0; }
+}
+.sds-card-glass-wipe {
+  position: relative;
+  overflow: hidden;
+}
+.sds-card-glass-wipe::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 38%;
+  background: rgba(255,255,255,.22);
+  filter: blur(6px);
+  animation: sds-glassWipe 3s ease-in-out infinite;
+}
+
+/* -- Stack & Shuffle ----------------------------------------------- */
+
+/* 135 � Stack Pop � card lifts from stack with growing drop-shadow */
+@keyframes sds-stackPop {
+  0%,100% { transform: translateY(0) scale(1);    filter: drop-shadow(0 2px 4px rgba(0,0,0,.15)); }
+  40%     { transform: translateY(-16px) scale(1.04); filter: drop-shadow(0 12px 20px rgba(0,0,0,.3)); }
+  70%     { transform: translateY(-12px) scale(1.03); filter: drop-shadow(0 10px 16px rgba(0,0,0,.25)); }
+}
+.sds-card-stack-pop {
+  animation: sds-stackPop 2.2s cubic-bezier(.34,1.2,.64,1) infinite;
+}
+
+/* 136 � Shuffle Deal � dealt from upper-left with translate + rotate */
+@keyframes sds-shuffleDeal {
+  0%   { transform: translate(-60px, -18px) rotate(-14deg) scale(.86); opacity: 0; filter: blur(2px); }
+  55%  { transform: translate(4px, 2px) rotate(1deg) scale(1.02); opacity: 1; filter: blur(0px); }
+  75%  { transform: translate(-2px, -1px) rotate(-.5deg) scale(.99); }
+  100% { transform: translate(0, 0) rotate(0deg) scale(1); opacity: 1; filter: blur(0px); }
+}
+.sds-card-shuffle-deal {
+  animation: sds-shuffleDeal .72s cubic-bezier(.34,1.1,.64,1) both;
+}
+
+/* 137 � Deck Peek � two ghost cards peek from behind with stagger */
+@keyframes sds-deckPeekB {
+  0%,100% { transform: translate(-5px, 5px) rotate(-2deg); opacity: .55; }
+  50%     { transform: translate(-10px, 10px) rotate(-4deg); opacity: .75; }
+}
+@keyframes sds-deckPeekA {
+  0%,100% { transform: translate(-10px, 10px) rotate(-4deg); opacity: .35; }
+  50%     { transform: translate(-18px, 18px) rotate(-7deg); opacity: .55; }
+}
+.sds-card-deck-peek {
+  position: relative;
+  overflow: visible;
+}
+.sds-card-deck-peek::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(180, 190, 230, .82);
+  border-radius: inherit;
+  z-index: -1;
+  animation: sds-deckPeekB 2.5s ease-in-out infinite;
+}
+.sds-card-deck-peek::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(160, 172, 220, .65);
+  border-radius: inherit;
+  z-index: -2;
+  animation: sds-deckPeekA 2.5s ease-in-out infinite .15s;
+}
+
+/* 138 � Deck Cycle � perspective yaw cycle like advancing a deck */
+@keyframes sds-deckCycle {
+  0%,15%  { transform: perspective(700px) rotateY(0deg) translateX(0); }
+  35%,55% { transform: perspective(700px) rotateY(22deg) translateX(8px); }
+  70%     { transform: perspective(700px) rotateY(-4deg) translateX(-2px); }
+  85%,100% { transform: perspective(700px) rotateY(0deg) translateX(0); }
+}
+.sds-card-deck-cycle {
+  animation: sds-deckCycle 2.8s ease-in-out infinite;
+}
+
+/* 139 � Stack Drop � entrance: card drops onto stack from above */
+@keyframes sds-stackDrop {
+  0%   { transform: translateY(-38px) scale(1.08); opacity: 0; filter: blur(3px); }
+  52%  { transform: translateY(4px) scale(.98);   opacity: 1; filter: blur(0px); }
+  70%  { transform: translateY(-2px) scale(1.01); }
+  85%  { transform: translateY(1px) scale(.998); }
+  100% { transform: translateY(0) scale(1);       opacity: 1; filter: blur(0px); }
+}
+.sds-card-stack-drop {
+  animation: sds-stackDrop .65s cubic-bezier(.34,1.15,.64,1) both;
+}
+
+/* 140 � Deal Arc � entrance: arc-sweep from upper-left like dealing */
+@keyframes sds-dealArc {
+  0%   { transform: translate(-72px, -12px) rotate(-18deg) scale(.82); opacity: 0; }
+  55%  { transform: translate(5px, -3px) rotate(1.5deg) scale(1.02); opacity: 1; }
+  75%  { transform: translate(-2px, 1px) rotate(-.4deg) scale(.99); }
+  100% { transform: translate(0, 0) rotate(0deg) scale(1); opacity: 1; }
+}
+.sds-card-deal-arc {
+  animation: sds-dealArc .7s cubic-bezier(.2,.6,.3,1) both;
+}
+
+
+/* ====================================================================
+   BATCH 11 � Cards: Entrance Physics (7) + Ambient Loops (6)
+   Cards category complete: 100 effects
+   ==================================================================== */
+
+/* -- Entrance Physics ---------------------------------------------- */
+
+/* 141 � Bounce In � spring-bounce entrance from below */
+@keyframes sds-bounceIn {
+  0%   { transform: translateY(50px) scale(.9); opacity: 0; }
+  45%  { transform: translateY(-12px) scale(1.04); opacity: 1; }
+  65%  { transform: translateY(5px) scale(.98); }
+  80%  { transform: translateY(-4px) scale(1.01); }
+  92%  { transform: translateY(2px) scale(1); }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+.sds-card-bounce-in {
+  animation: sds-bounceIn .75s cubic-bezier(.2,0,.2,1) both;
+}
+
+/* 142 � Elastic Drop � oscillating drop from above, 3-cycle settle */
+@keyframes sds-elasticDrop {
+  0%   { transform: translateY(-55px) scaleY(.85); opacity: 0; filter: blur(2px); }
+  30%  { transform: translateY(8px) scaleY(1.06); opacity: 1; filter: blur(0px); }
+  48%  { transform: translateY(-5px) scaleY(.97); }
+  62%  { transform: translateY(3px) scaleY(1.02); }
+  74%  { transform: translateY(-2px) scaleY(.99); }
+  84%  { transform: translateY(1px) scaleY(1.005); }
+  100% { transform: translateY(0) scaleY(1); opacity: 1; filter: blur(0px); }
+}
+.sds-card-elastic-drop {
+  animation: sds-elasticDrop .9s cubic-bezier(.34,1.4,.64,1) both;
+}
+
+/* 143 � Slingshot � diagonal launch from lower-left with decel arc */
+@keyframes sds-slingshot {
+  0%   { transform: translate(-80px, 30px) rotate(-8deg) scale(.8); opacity: 0; }
+  40%  { transform: translate(10px, -6px) rotate(2deg) scale(1.03); opacity: 1; }
+  60%  { transform: translate(-4px, 2px) rotate(-1deg) scale(.99); }
+  80%  { transform: translate(2px, -1px) rotate(.4deg) scale(1.005); }
+  100% { transform: translate(0, 0) rotate(0deg) scale(1); opacity: 1; }
+}
+.sds-card-slingshot {
+  animation: sds-slingshot .65s cubic-bezier(.2,.6,.3,1) both;
+}
+
+/* 144 � Rubber Band � squeeze-stretch XY oscillation settle */
+@keyframes sds-cardRubberBand {
+  0%   { transform: scale(.6, .6); opacity: 0; }
+  22%  { transform: scale(1.2, .82); opacity: 1; }
+  40%  { transform: scale(.88, 1.14); }
+  55%  { transform: scale(1.07, .95); }
+  68%  { transform: scale(.97, 1.03); }
+  80%  { transform: scale(1.02, .99); }
+  100% { transform: scale(1, 1); opacity: 1; }
+}
+.sds-card-rubber-band {
+  animation: sds-cardRubberBand .78s cubic-bezier(.34,1.3,.64,1) both;
+}
+
+/* 145 � Free Fall � gravity-curve accelerating entrance from above */
+@keyframes sds-freeFall {
+  0%   { transform: translateY(-64px) scale(.92); opacity: 0; filter: blur(2px); }
+  55%  { transform: translateY(4px) scale(1.01); opacity: 1; filter: blur(0px); }
+  72%  { transform: translateY(-2px) scale(1); }
+  100% { transform: translateY(0) scale(1); opacity: 1; filter: blur(0px); }
+}
+.sds-card-free-fall {
+  animation: sds-freeFall .68s cubic-bezier(.4,0,.2,1) both;
+}
+
+/* 146 � Pinball � ricochets with direction changes before settling */
+@keyframes sds-pinball {
+  0%   { transform: translate(-60px, -38px) rotate(-12deg); opacity: 0; }
+  20%  { transform: translate(12px, 18px) rotate(6deg); opacity: 1; }
+  38%  { transform: translate(-8px, -10px) rotate(-3deg); }
+  54%  { transform: translate(4px, 5px) rotate(1.5deg); }
+  70%  { transform: translate(-2px, -2px) rotate(-.5deg); }
+  84%  { transform: translate(1px, 1px) rotate(.2deg); }
+  100% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+}
+.sds-card-pinball {
+  animation: sds-pinball .88s cubic-bezier(.2,.6,.3,1) both;
+}
+
+/* 147 � Snap Back � overshoots left then snaps to rest with rotate */
+@keyframes sds-snapBack {
+  0%   { transform: translateX(-50px) rotate(-10deg) scale(.9); opacity: 0; }
+  30%  { transform: translateX(18px) rotate(5deg) scale(1.04); opacity: 1; }
+  50%  { transform: translateX(-6px) rotate(-1.5deg) scale(.98); }
+  68%  { transform: translateX(3px) rotate(.5deg) scale(1.01); }
+  84%  { transform: translateX(-1px) rotate(-.2deg) scale(1); }
+  100% { transform: translateX(0) rotate(0deg) scale(1); opacity: 1; }
+}
+.sds-card-snap-back {
+  animation: sds-snapBack .72s cubic-bezier(.34,1.25,.64,1) both;
+}
+
+/* -- Ambient Loops ------------------------------------------------- */
+
+/* 148 � Idle Breathe � micro scale pulse (barely perceptible) */
+@keyframes sds-idleBreathe {
+  0%,100% { transform: scale(1); }
+  50%     { transform: scale(1.018); }
+}
+.sds-card-idle-breathe {
+  animation: sds-idleBreathe 3s ease-in-out infinite;
+}
+
+/* 149 � Idle Sway � slow side-to-side lateral sway */
+@keyframes sds-idleSway {
+  0%,100% { transform: translateX(0px); }
+  35%     { transform: translateX(-6px); }
+  65%     { transform: translateX(6px); }
+}
+.sds-card-idle-sway {
+  animation: sds-idleSway 4s ease-in-out infinite;
+}
+
+/* 150 � Idle Bob � gentle vertical float */
+@keyframes sds-idleBob {
+  0%,100% { transform: translateY(0px); }
+  50%     { transform: translateY(-8px); }
+}
+.sds-card-idle-bob {
+  animation: sds-idleBob 2.5s ease-in-out infinite;
+}
+
+/* 151 � Idle Pulse � opacity + scale attention loop */
+@keyframes sds-idlePulse {
+  0%,100% { transform: scale(1);     opacity: 1; }
+  45%,55% { transform: scale(1.025); opacity: .82; }
+}
+.sds-card-idle-pulse {
+  animation: sds-idlePulse 2s ease-in-out infinite;
+}
+
+/* 152 � Idle Glow � drop-shadow glow breathe */
+@keyframes sds-idleGlow {
+  0%,100% { filter: drop-shadow(0 0 0px rgba(100,120,255,.0)); }
+  50%     { filter: drop-shadow(0 0 18px rgba(100,120,255,.55)); }
+}
+.sds-card-idle-glow {
+  animation: sds-idleGlow 2.8s ease-in-out infinite;
+}
+
+/* 153 � Idle Rock � rotation rock left-right */
+@keyframes sds-idleRock {
+  0%,100% { transform: rotate(0deg); }
+  25%     { transform: rotate(-2deg); }
+  75%     { transform: rotate(2deg); }
+}
+.sds-card-idle-rock {
+  animation: sds-idleRock 3.5s ease-in-out infinite;
 }
 
 /* ── Cross-category keyframe dependencies ── */

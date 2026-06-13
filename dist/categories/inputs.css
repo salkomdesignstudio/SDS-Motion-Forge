@@ -14,13 +14,13 @@
 
 /**
  * SDS Motion Forge — Premium CSS Animation System
- * Version: 4.0.3
+ * Version: 5.0.0
  * Author: Salkom Design Studio
  * License: MIT
  * https://github.com/salkomdesignstudio/SDS-Motion-Forge
  *
- * 300+ production-ready CSS animations · Framework-agnostic
- * Text (100) · Buttons (50) · Inputs (50) · Cards (46) · Loaders (50) · Scroll (54)
+ * 600+ production-ready CSS animations · Framework-agnostic
+ * Text (104) · Buttons (100) · Inputs (100) · Cards (100) · Loaders (100) · Scroll (100)
  *
  * Optional engines (load with defer):
  *   sds-scroll.min.js          — scroll-gate via [data-sds] attribute
@@ -1475,6 +1475,1748 @@ html:not(.sds-js) [data-sds] {
 
 .sds-input-focus-glow:focus {
   animation: sds-focusField 0.45s ease both;
+}
+
+/* ============================================================
+   SECTION 3b — INPUT ANIMATIONS (v5 additions, 131–179)
+   Compositor-only (R4). Wrapper classes (div around the input)
+   are used wherever pseudo-element overlays are needed —
+   <input> elements cannot render ::before/::after.
+   ============================================================ */
+
+/* ─── Family: Focus Choreography ───────────────────────────── */
+
+/* 131 · Label Spring (wrap: input + label) ------------------ */
+.sds-input-label-spring {
+  position: relative;
+  display: inline-block;
+}
+.sds-input-label-spring label {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  transform-origin: left center;
+  pointer-events: none;
+  opacity: 0.55;
+}
+.sds-input-label-spring input:not(:-moz-placeholder) ~ label {
+  animation: sds-inputLabelSpring var(--sds-duration-fast, 0.4s) var(--sds-ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1)) both;
+}
+.sds-input-label-spring:focus-within label,
+.sds-input-label-spring input:not(:placeholder-shown) ~ label {
+  animation: sds-inputLabelSpring var(--sds-duration-fast, 0.4s) var(--sds-ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1)) both;
+}
+.sds-input-label-spring:focus-within input {
+  animation: sds-inputLabelSpringField var(--sds-duration-fast, 0.4s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) both;
+}
+@keyframes sds-inputLabelSpring {
+  0% {
+    transform: translateY(-50%) scale(1);
+    opacity: 0.55;
+  }
+  60% {
+    transform: translateY(-158%) scale(0.8);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(-146%) scale(0.83);
+  }
+  100% {
+    transform: translateY(-150%) scale(0.82);
+    opacity: 1;
+  }
+}
+@keyframes sds-inputLabelSpringField {
+  0% {
+    transform: scale(1);
+  }
+  55% {
+    transform: scale(1.013);
+  }
+  100% {
+    transform: scale(1.01);
+  }
+}
+
+/* 132 · Underline Draw (wrap) ------------------------------- */
+.sds-input-underline-draw {
+  position: relative;
+  display: inline-block;
+}
+.sds-input-underline-draw::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--sds-primary);
+  transform: scaleX(0);
+  transform-origin: center;
+}
+.sds-input-underline-draw:focus-within::after {
+  animation: sds-inputUnderlineDraw var(--sds-duration-fast, 0.4s) var(--sds-ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1)) both;
+}
+@keyframes sds-inputUnderlineDraw {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  60% {
+    transform: scaleX(1.04);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+/* 133 · Underline Trail (wrap) ------------------------------ */
+.sds-input-underline-trail {
+  position: relative;
+  display: inline-block;
+}
+.sds-input-underline-trail::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--sds-primary);
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+.sds-input-underline-trail::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 8px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--sds-primary);
+  filter: blur(2px) brightness(1.6);
+  opacity: 0;
+}
+.sds-input-underline-trail:focus-within::after {
+  animation: sds-inputUnderlineTrail var(--sds-duration-instant, 0.3s) var(--sds-ease-decelerate, cubic-bezier(0.16, 1, 0.3, 1)) both;
+}
+.sds-input-underline-trail:focus-within::before {
+  animation: sds-inputUnderlineTrailHead var(--sds-duration-instant, 0.3s) var(--sds-ease-decelerate, cubic-bezier(0.16, 1, 0.3, 1)) both;
+}
+@keyframes sds-inputUnderlineTrail {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes sds-inputUnderlineTrailHead {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(min(28vw, 240px));
+    opacity: 0;
+  }
+}
+
+/* 134 · Frame Bloom (wrap) ---------------------------------- */
+.sds-input-frame-bloom {
+  position: relative;
+  display: inline-block;
+}
+.sds-input-frame-bloom::before,
+.sds-input-frame-bloom::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border: 2px solid var(--sds-primary);
+  border-radius: 8px;
+  opacity: 0;
+}
+.sds-input-frame-bloom::before {
+  clip-path: polygon(0 0, 30% 0, 30% 18%, 18% 18%, 18% 30%, 0 30%, 0 0, 100% 0, 100% 30%, 82% 30%, 82% 18%, 70% 18%, 70% 0, 100% 0);
+}
+.sds-input-frame-bloom::after {
+  clip-path: polygon(0 70%, 18% 70%, 18% 82%, 30% 82%, 30% 100%, 0 100%, 0 70%, 100% 70%, 100% 100%, 70% 100%, 70% 82%, 82% 82%, 82% 70%, 100% 70%);
+}
+.sds-input-frame-bloom:focus-within::before {
+  animation: sds-inputFrameBloom var(--sds-duration-fast, 0.4s) var(--sds-ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1)) both;
+}
+.sds-input-frame-bloom:focus-within::after {
+  animation: sds-inputFrameBloom var(--sds-duration-fast, 0.4s) var(--sds-ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1)) 0.06s both;
+}
+@keyframes sds-inputFrameBloom {
+  0% {
+    opacity: 0;
+    transform: scale(1.12);
+  }
+  55% {
+    opacity: 1;
+    transform: scale(0.985);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 135 · Tilt In --------------------------------------------- */
+.sds-input-tilt-in:focus {
+  animation: sds-inputTiltIn var(--sds-duration-fast, 0.4s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) both;
+}
+@keyframes sds-inputTiltIn {
+  0% {
+    transform: perspective(500px) rotateX(4deg);
+    filter: drop-shadow(0 1px 1px rgba(0, 21, 209, 0.1));
+  }
+  60% {
+    transform: perspective(500px) rotateX(-1deg);
+    filter: drop-shadow(0 5px 7px rgba(0, 21, 209, 0.16));
+  }
+  100% {
+    transform: perspective(500px) rotateX(0);
+    filter: drop-shadow(0 4px 6px rgba(0, 21, 209, 0.14));
+  }
+}
+
+/* 136 · Zoom Focus ------------------------------------------ */
+.sds-input-zoom-focus:focus {
+  animation: sds-inputZoomFocus var(--sds-duration-instant, 0.3s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) both;
+}
+@keyframes sds-inputZoomFocus {
+  0% {
+    transform: scale(1);
+    filter: blur(0.4px) brightness(0.98);
+  }
+  65% {
+    transform: scale(1.024);
+    filter: blur(0) brightness(1.05);
+  }
+  100% {
+    transform: scale(1.02);
+    filter: blur(0) brightness(1.02);
+  }
+}
+
+/* 137 · Gate Open (wrap) ------------------------------------ */
+.sds-input-gate-open {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+.sds-input-gate-open::before,
+.sds-input-gate-open::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 51%;
+  background: var(--sds-primary);
+  opacity: 0.12;
+  pointer-events: none;
+}
+.sds-input-gate-open::before {
+  left: 0;
+}
+.sds-input-gate-open::after {
+  right: 0;
+}
+.sds-input-gate-open:focus-within::before {
+  animation: sds-inputGateOpenL var(--sds-duration-fast, 0.4s) var(--sds-ease-decelerate, cubic-bezier(0.16, 1, 0.3, 1)) both;
+}
+.sds-input-gate-open:focus-within::after {
+  animation: sds-inputGateOpenR var(--sds-duration-fast, 0.4s) var(--sds-ease-decelerate, cubic-bezier(0.16, 1, 0.3, 1)) both;
+}
+@keyframes sds-inputGateOpenL {
+  from {
+    transform: translateX(0);
+    opacity: 0.12;
+  }
+  to {
+    transform: translateX(-102%);
+    opacity: 0.2;
+  }
+}
+@keyframes sds-inputGateOpenR {
+  from {
+    transform: translateX(0);
+    opacity: 0.12;
+  }
+  to {
+    transform: translateX(102%);
+    opacity: 0.2;
+  }
+}
+
+/* 138 · Caret Pop (wrap) ------------------------------------ */
+.sds-input-caret-pop {
+  position: relative;
+  display: inline-block;
+}
+.sds-input-caret-pop::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 25%;
+  bottom: 25%;
+  width: 2px;
+  border-radius: 1px;
+  background: var(--sds-primary);
+  opacity: 0;
+}
+.sds-input-caret-pop:focus-within::before {
+  animation: sds-inputCaretPop var(--sds-duration-base, 0.8s) var(--sds-ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1)) both;
+}
+@keyframes sds-inputCaretPop {
+  0% {
+    opacity: 0;
+    transform: scaleY(0.2);
+  }
+  25% {
+    opacity: 1;
+    transform: scaleY(1.25);
+  }
+  40% {
+    transform: scaleY(0.9);
+  }
+  55% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  70% {
+    opacity: 0.2;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scaleY(1);
+  }
+}
+
+/* ─── Family: Validation Drama ─────────────────────────────── */
+
+/* 139 · Success Ripple -------------------------------------- */
+.sds-input-success-ripple {
+  animation: sds-inputSuccessRipple var(--sds-duration-base, 0.8s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) both;
+}
+@keyframes sds-inputSuccessRipple {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0 rgba(0, 196, 140, 0));
+  }
+  25% {
+    transform: scale(1.012);
+    filter: drop-shadow(0 0 10px rgba(0, 196, 140, 0.45));
+  }
+  45% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 2px rgba(0, 196, 140, 0.15));
+  }
+  62% {
+    transform: scale(1.008);
+    filter: drop-shadow(0 0 7px rgba(0, 196, 140, 0.3));
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0 rgba(0, 196, 140, 0));
+  }
+}
+
+/* 140 · Success Tick (wrap) --------------------------------- */
+.sds-input-success-tick {
+  position: relative;
+  display: inline-block;
+}
+.sds-input-success-tick::after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  width: 14px;
+  height: 8px;
+  margin-top: -6px;
+  border-left: 2.5px solid var(--sds-success);
+  border-bottom: 2.5px solid var(--sds-success);
+  transform: rotate(-45deg);
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  animation: sds-inputSuccessTick var(--sds-duration-fast, 0.4s) var(--sds-ease-emphasized, cubic-bezier(0.215, 0.61, 0.355, 1)) both;
+}
+@keyframes sds-inputSuccessTick {
+  0% {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    transform: rotate(-45deg) scale(1);
+  }
+  45% {
+    clip-path: polygon(0 0, 45% 0, 45% 100%, 0 100%);
+    transform: rotate(-45deg) scale(1);
+  }
+  75% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    transform: rotate(-45deg) scale(1.18);
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    transform: rotate(-45deg) scale(1);
+  }
+}
+
+/* 141 · Error Quake (wrap; caret-safe counter-shift) -------- */
+.sds-input-error-quake {
+  display: inline-block;
+  animation: sds-inputErrorQuake var(--sds-duration-fast, 0.4s) ease-in-out both;
+}
+.sds-input-error-quake input {
+  animation: sds-inputErrorQuakeInner var(--sds-duration-fast, 0.4s) ease-in-out both;
+}
+@keyframes sds-inputErrorQuake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  18% {
+    transform: translateX(-5px);
+  }
+  38% {
+    transform: translateX(4px);
+  }
+  58% {
+    transform: translateX(-2.5px);
+  }
+  78% {
+    transform: translateX(1.5px);
+  }
+}
+@keyframes sds-inputErrorQuakeInner {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  18% {
+    transform: translateX(2.5px);
+  }
+  38% {
+    transform: translateX(-2px);
+  }
+  58% {
+    transform: translateX(1.2px);
+  }
+  78% {
+    transform: translateX(-0.7px);
+  }
+}
+
+/* 142 · Error Buzz ------------------------------------------ */
+.sds-input-error-buzz {
+  animation: sds-inputErrorBuzz var(--sds-duration-instant, 0.3s) linear both;
+}
+@keyframes sds-inputErrorBuzz {
+  0%,
+  100% {
+    transform: translate(0, 0);
+    filter: none;
+  }
+  12% {
+    transform: translate(-1px, 0.5px);
+    filter: hue-rotate(-12deg) brightness(1.08) saturate(1.4);
+  }
+  28% {
+    transform: translate(1px, -0.5px);
+  }
+  44% {
+    transform: translate(-1px, 0);
+    filter: hue-rotate(-8deg) saturate(1.25);
+  }
+  60% {
+    transform: translate(1px, 0);
+  }
+  76% {
+    transform: translate(0, 0);
+    filter: none;
+  }
+}
+
+/* 143 · Error Sink ------------------------------------------ */
+.sds-input-error-sink {
+  animation: sds-inputErrorSink var(--sds-duration-slow, 1.4s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) both;
+}
+@keyframes sds-inputErrorSink {
+  0% {
+    transform: translateY(0);
+    filter: saturate(1);
+  }
+  22% {
+    transform: translateY(2.5px);
+    filter: saturate(0.35) brightness(0.97);
+  }
+  55% {
+    transform: translateY(2px);
+    filter: saturate(0.5);
+  }
+  100% {
+    transform: translateY(0);
+    filter: saturate(1) brightness(1);
+  }
+}
+
+/* 144 · Warn Tilt ------------------------------------------- */
+.sds-input-warn-tilt {
+  animation: sds-inputWarnTilt var(--sds-duration-base, 0.8s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) both;
+}
+@keyframes sds-inputWarnTilt {
+  0% {
+    transform: rotate(0deg);
+    filter: none;
+  }
+  22% {
+    transform: rotate(-1deg);
+    filter: sepia(0.5) saturate(1.6) brightness(1.04);
+  }
+  48% {
+    transform: rotate(-0.7deg);
+    filter: sepia(0.4) saturate(1.4);
+  }
+  78% {
+    transform: rotate(0.2deg);
+    filter: sepia(0.12);
+  }
+  100% {
+    transform: rotate(0deg);
+    filter: none;
+  }
+}
+
+/* 145 · Saved Flash ----------------------------------------- */
+.sds-input-saved-flash {
+  animation: sds-inputSavedFlash var(--sds-duration-fast, 0.4s) var(--sds-ease-emphasized, cubic-bezier(0.215, 0.61, 0.355, 1)) both;
+}
+@keyframes sds-inputSavedFlash {
+  0% {
+    transform: scale(1, 1);
+    filter: brightness(1);
+  }
+  30% {
+    transform: scale(1.01, 0.97);
+    filter: brightness(1.18);
+  }
+  55% {
+    transform: scale(0.998, 1.005);
+    filter: brightness(1.05);
+  }
+  100% {
+    transform: scale(1, 1);
+    filter: brightness(1);
+  }
+}
+
+/* ─── Family: Placeholder Morphs ───────────────────────────────
+   ::placeholder reliably animates ONLY opacity across engines —
+   these six are pure opacity choreography with distinct rhythms. */
+
+/* 146 · Placeholder Breathe --------------------------------- */
+.sds-input-ph-breathe::-moz-placeholder {
+  animation: sds-inputPhBreathe var(--sds-duration-dramatic, 3s) ease-in-out infinite;
+}
+.sds-input-ph-breathe::placeholder {
+  animation: sds-inputPhBreathe var(--sds-duration-dramatic, 3s) ease-in-out infinite;
+}
+@keyframes sds-inputPhBreathe {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  35% {
+    opacity: 0.25;
+  }
+  55% {
+    opacity: 0.6;
+  }
+  70% {
+    opacity: 0.5;
+  }
+}
+
+/* 147 · Placeholder Fade Steps ------------------------------ */
+.sds-input-ph-fade-steps:focus::-moz-placeholder {
+  animation: sds-inputPhFadeSteps var(--sds-duration-fast, 0.4s) steps(1) both;
+}
+.sds-input-ph-fade-steps:focus::placeholder {
+  animation: sds-inputPhFadeSteps var(--sds-duration-fast, 0.4s) steps(1) both;
+}
+@keyframes sds-inputPhFadeSteps {
+  0% {
+    opacity: 0.55;
+  }
+  30% {
+    opacity: 0.3;
+  }
+  60% {
+    opacity: 0.12;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* 148 · Placeholder Ghost ----------------------------------- */
+.sds-input-ph-ghost:focus::-moz-placeholder {
+  animation: sds-inputPhGhost var(--sds-duration-base, 0.8s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) both;
+}
+.sds-input-ph-ghost:focus::placeholder {
+  animation: sds-inputPhGhost var(--sds-duration-base, 0.8s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) both;
+}
+@keyframes sds-inputPhGhost {
+  0% {
+    opacity: 0.55;
+  }
+  30% {
+    opacity: 0.15;
+  }
+  55% {
+    opacity: 0.22;
+  }
+  75% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* 149 · Placeholder Flicker In ------------------------------ */
+.sds-input-ph-flicker-in::-moz-placeholder {
+  animation: sds-inputPhFlickerIn var(--sds-duration-slow, 1.4s) steps(1) both;
+}
+.sds-input-ph-flicker-in::placeholder {
+  animation: sds-inputPhFlickerIn var(--sds-duration-slow, 1.4s) steps(1) both;
+}
+@keyframes sds-inputPhFlickerIn {
+  0% {
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.4;
+  }
+  18% {
+    opacity: 0;
+  }
+  34% {
+    opacity: 0.5;
+  }
+  40% {
+    opacity: 0.1;
+  }
+  56% {
+    opacity: 0.55;
+  }
+  68% {
+    opacity: 0.35;
+  }
+  80%,
+  100% {
+    opacity: 0.55;
+  }
+}
+
+/* 150 · Placeholder Wave ------------------------------------ */
+.sds-input-ph-wave::-moz-placeholder {
+  animation: sds-inputPhWave var(--sds-duration-slower, 2.2s) ease-in-out infinite;
+}
+.sds-input-ph-wave::placeholder {
+  animation: sds-inputPhWave var(--sds-duration-slower, 2.2s) ease-in-out infinite;
+}
+@keyframes sds-inputPhWave {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  18% {
+    opacity: 0.62;
+  }
+  32% {
+    opacity: 0.38;
+  }
+  48% {
+    opacity: 0.58;
+  }
+  64% {
+    opacity: 0.42;
+  }
+  80% {
+    opacity: 0.55;
+  }
+}
+
+/* 151 · Placeholder Blink ----------------------------------- */
+.sds-input-ph-blink::-moz-placeholder {
+  animation: sds-inputPhBlink var(--sds-duration-dramatic, 3s) steps(1) infinite;
+}
+.sds-input-ph-blink::placeholder {
+  animation: sds-inputPhBlink var(--sds-duration-dramatic, 3s) steps(1) infinite;
+}
+@keyframes sds-inputPhBlink {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  70% {
+    opacity: 0.1;
+  }
+  76% {
+    opacity: 0.55;
+  }
+  82% {
+    opacity: 0.1;
+  }
+  88% {
+    opacity: 0.55;
+  }
+}
+
+/* ─── Family: Border Energy Ambient (wrap classes) ─────────── */
+
+/* 152 · Border Comet Loop (wrap) ---------------------------- */
+.sds-input-border-comet-loop {
+  position: relative;
+  display: inline-block;
+}
+.sds-input-border-comet-loop::before {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--sds-primary);
+  filter: drop-shadow(0 0 4px var(--sds-primary-glow));
+  offset-path: border-box;
+  offset-rotate: 0deg;
+  animation: sds-inputBorderCometLoop var(--sds-duration-dramatic, 3s) linear infinite;
+}
+@keyframes sds-inputBorderCometLoop {
+  0% {
+    offset-distance: 0%;
+    opacity: 0.9;
+  }
+  50% {
+    offset-distance: 50%;
+    opacity: 0.5;
+  }
+  100% {
+    offset-distance: 100%;
+    opacity: 0.9;
+  }
+}
+
+/* 153 · Border Tide (wrap) ---------------------------------- */
+.sds-input-border-tide {
+  position: relative;
+  display: inline-block;
+}
+.sds-input-border-tide::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border: 1.5px solid var(--sds-primary);
+  border-radius: 8px;
+  opacity: 0.18;
+}
+.sds-input-border-tide::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border: 1.5px solid var(--sds-primary);
+  border-radius: 8px;
+  filter: drop-shadow(0 0 3px var(--sds-primary-glow));
+  animation: sds-inputBorderTide var(--sds-duration-dramatic, 3s) ease-in-out infinite;
+}
+@keyframes sds-inputBorderTide {
+  0%,
+  100% {
+    clip-path: inset(0 65% 65% 0);
+    opacity: 0.85;
+  }
+  25% {
+    clip-path: inset(0 0 65% 35%);
+    opacity: 0.7;
+  }
+  50% {
+    clip-path: inset(65% 0 0 35%);
+    opacity: 0.85;
+  }
+  75% {
+    clip-path: inset(65% 65% 0 0);
+    opacity: 0.7;
+  }
+}
+
+/* 154 · Border Corners (wrap) ------------------------------- */
+.sds-input-border-corners {
+  position: relative;
+  display: inline-block;
+}
+.sds-input-border-corners::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border: 2px solid var(--sds-primary);
+  border-radius: 8px;
+  animation: sds-inputBorderCorners var(--sds-duration-dramatic, 3s) steps(1) infinite,
+    sds-inputBorderCornersFade var(--sds-duration-dramatic, 3s) ease-in-out infinite;
+}
+@keyframes sds-inputBorderCorners {
+  0%,
+  100% {
+    clip-path: polygon(70% 0, 100% 0, 100% 55%, calc(100% - 3px) 55%, calc(100% - 3px) 3px, 70% 3px);
+  }
+  25% {
+    clip-path: polygon(100% 45%, 100% 100%, 70% 100%, 70% calc(100% - 3px), calc(100% - 3px) calc(100% - 3px), calc(100% - 3px) 45%);
+  }
+  50% {
+    clip-path: polygon(30% 100%, 0 100%, 0 45%, 3px 45%, 3px calc(100% - 3px), 30% calc(100% - 3px));
+  }
+  75% {
+    clip-path: polygon(0 55%, 0 0, 30% 0, 30% 3px, 3px 3px, 3px 55%);
+  }
+}
+@keyframes sds-inputBorderCornersFade {
+  0%,
+  20%,
+  25%,
+  45%,
+  50%,
+  70%,
+  75%,
+  95%,
+  100% {
+    opacity: 0.85;
+  }
+  22%,
+  47%,
+  72%,
+  97% {
+    opacity: 0.2;
+  }
+}
+
+/* 155 · Border Static (wrap) -------------------------------- */
+.sds-input-border-static {
+  position: relative;
+  display: inline-block;
+}
+.sds-input-border-static::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border: 1.5px solid var(--sds-primary);
+  border-radius: 8px;
+  opacity: 0.35;
+  animation: sds-inputBorderStatic var(--sds-duration-dramatic, 3s) steps(1) infinite;
+}
+@keyframes sds-inputBorderStatic {
+  0%,
+  100% {
+    transform: translate(0, 0);
+    clip-path: none;
+    opacity: 0.35;
+  }
+  64% {
+    transform: translate(1px, -1px);
+    clip-path: inset(0 0 38% 0);
+    opacity: 0.7;
+  }
+  66% {
+    transform: translate(-1px, 1px);
+    clip-path: inset(42% 0 0 0);
+    opacity: 0.55;
+  }
+  68% {
+    transform: translate(0, 0);
+    clip-path: none;
+    opacity: 0.35;
+  }
+}
+
+/* 156 · Border Rain (wrap) ---------------------------------- */
+.sds-input-border-rain {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+.sds-input-border-rain::before,
+.sds-input-border-rain::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 2px;
+  height: 45%;
+  border-radius: 2px;
+  background: var(--sds-primary);
+  opacity: 0;
+}
+.sds-input-border-rain::before {
+  left: 0;
+  animation: sds-inputBorderRain var(--sds-duration-slower, 2.2s) var(--sds-ease-accelerate, cubic-bezier(0.6, -0.28, 0.74, 0.05)) infinite;
+}
+.sds-input-border-rain::after {
+  right: 0;
+  animation: sds-inputBorderRain var(--sds-duration-slower, 2.2s) var(--sds-ease-accelerate, cubic-bezier(0.6, -0.28, 0.74, 0.05)) 1.1s infinite;
+}
+@keyframes sds-inputBorderRain {
+  0% {
+    transform: translateY(-110%);
+    opacity: 0;
+  }
+  18% {
+    opacity: 0.7;
+  }
+  60% {
+    transform: translateY(240%);
+    opacity: 0.4;
+  }
+  61%,
+  100% {
+    transform: translateY(240%);
+    opacity: 0;
+  }
+}
+
+/* 157 · Border Heartline (wrap) ----------------------------- */
+.sds-input-border-heartline {
+  position: relative;
+  display: inline-block;
+}
+.sds-input-border-heartline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1.5px;
+  background: var(--sds-primary);
+  opacity: 0.25;
+}
+.sds-input-border-heartline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 14px;
+  height: 8px;
+  background: var(--sds-primary);
+  clip-path: polygon(0 70%, 30% 70%, 45% 0, 60% 100%, 75% 70%, 100% 70%, 100% 85%, 0 85%);
+  filter: drop-shadow(0 0 3px var(--sds-primary-glow));
+  opacity: 0;
+  animation: sds-inputBorderHeartline var(--sds-duration-dramatic, 3s) linear infinite;
+}
+@keyframes sds-inputBorderHeartline {
+  0%,
+  54% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  58% {
+    opacity: 0.9;
+  }
+  74% {
+    transform: translateX(min(75vw, 200px));
+    opacity: 0.9;
+  }
+  78%,
+  100% {
+    transform: translateX(min(80vw, 215px));
+    opacity: 0;
+  }
+}
+
+/* 158 · Border Orbiters (wrap) ------------------------------ */
+.sds-input-border-orbiters {
+  position: relative;
+  display: inline-block;
+}
+.sds-input-border-orbiters::before,
+.sds-input-border-orbiters::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--sds-primary);
+  opacity: 0.5;
+  offset-path: border-box;
+  offset-rotate: 0deg;
+}
+.sds-input-border-orbiters::before {
+  animation: sds-inputBorderOrbiterA var(--sds-duration-dramatic, 3s) linear infinite;
+}
+.sds-input-border-orbiters::after {
+  animation: sds-inputBorderOrbiterB var(--sds-duration-dramatic, 3s) linear infinite;
+}
+@keyframes sds-inputBorderOrbiterA {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+@keyframes sds-inputBorderOrbiterB {
+  0% {
+    offset-distance: 50%;
+  }
+  100% {
+    offset-distance: 150%;
+  }
+}
+
+/* ─── Family: Fill-Progress Focus (wrap classes) ───────────── */
+
+/* 159 · Fill Rise (wrap) ------------------------------------ */
+.sds-input-fill-rise {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+.sds-input-fill-rise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--sds-primary);
+  opacity: 0.1;
+  transform: translateY(101%);
+  pointer-events: none;
+}
+.sds-input-fill-rise:focus-within::before {
+  animation: sds-inputFillRise var(--sds-duration-fast, 0.4s) var(--sds-ease-decelerate, cubic-bezier(0.16, 1, 0.3, 1)) both;
+}
+@keyframes sds-inputFillRise {
+  0% {
+    transform: translateY(101%);
+  }
+  60% {
+    transform: translateY(78%);
+  }
+  100% {
+    transform: translateY(82%);
+  }
+}
+
+/* 160 · Fill Scanline (wrap) -------------------------------- */
+.sds-input-fill-scanline {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+.sds-input-fill-scanline::before {
+  content: "";
+  position: absolute;
+  top: 15%;
+  bottom: 15%;
+  left: 0;
+  width: 18%;
+  background: var(--sds-primary);
+  opacity: 0;
+  filter: blur(6px);
+  pointer-events: none;
+}
+.sds-input-fill-scanline:focus-within::before {
+  animation: sds-inputFillScanline var(--sds-duration-base, 0.8s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) both;
+}
+@keyframes sds-inputFillScanline {
+  0% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.3;
+  }
+  55% {
+    transform: translateX(480%);
+    opacity: 0.3;
+  }
+  80% {
+    transform: translateX(-40%);
+    opacity: 0.22;
+  }
+  100% {
+    transform: translateX(-60%);
+    opacity: 0.18;
+  }
+}
+
+/* 161 · Fill Meter (wrap) ----------------------------------- */
+.sds-input-fill-meter {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+.sds-input-fill-meter::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background: var(--sds-primary);
+  opacity: 0.12;
+  transform: scaleX(0);
+  transform-origin: left center;
+  pointer-events: none;
+}
+.sds-input-fill-meter:focus-within::before {
+  animation: sds-inputFillMeter var(--sds-duration-dramatic, 3s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) infinite;
+}
+@keyframes sds-inputFillMeter {
+  0% {
+    transform: scaleX(0);
+  }
+  14% {
+    transform: scaleX(0.22);
+  }
+  22%,
+  30% {
+    transform: scaleX(0.34);
+  }
+  44% {
+    transform: scaleX(0.58);
+  }
+  52%,
+  62% {
+    transform: scaleX(0.66);
+  }
+  74% {
+    transform: scaleX(0.9);
+  }
+  82%,
+  92% {
+    transform: scaleX(1);
+    opacity: 0.12;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 0;
+  }
+}
+
+/* 162 · Fill Corner Shade (wrap) ---------------------------- */
+.sds-input-fill-corner-shade {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+.sds-input-fill-corner-shade::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--sds-primary);
+  opacity: 0.14;
+  clip-path: polygon(100% 100%, 100% 100%, 100% 100%);
+  pointer-events: none;
+}
+.sds-input-fill-corner-shade:focus-within::before {
+  animation: sds-inputFillCornerShade var(--sds-duration-fast, 0.4s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) both;
+}
+@keyframes sds-inputFillCornerShade {
+  0% {
+    clip-path: polygon(100% 100%, 100% 100%, 100% 100%);
+  }
+  65% {
+    clip-path: polygon(100% 100%, 100% -80%, -80% 100%);
+  }
+  100% {
+    clip-path: polygon(100% 100%, 100% -60%, -60% 100%);
+  }
+}
+
+/* 163 · Fill Pulse Floor (wrap) ----------------------------- */
+.sds-input-fill-pulse-floor {
+  position: relative;
+  display: inline-block;
+}
+.sds-input-fill-pulse-floor::before {
+  content: "";
+  position: absolute;
+  left: 6%;
+  right: 6%;
+  bottom: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--sds-primary);
+  opacity: 0.2;
+  pointer-events: none;
+}
+.sds-input-fill-pulse-floor:focus-within::before {
+  animation: sds-inputFillPulseFloor var(--sds-duration-slower, 2.2s) ease-in-out infinite;
+}
+@keyframes sds-inputFillPulseFloor {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scaleX(0.96);
+    filter: drop-shadow(0 0 0 transparent);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scaleX(1);
+    filter: drop-shadow(0 0 5px var(--sds-primary-glow));
+  }
+}
+
+/* 164 · Fill Flood (wrap) ----------------------------------- */
+.sds-input-fill-flood {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+.sds-input-fill-flood::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--sds-primary);
+  opacity: 0;
+  pointer-events: none;
+}
+.sds-input-fill-flood:focus-within::before {
+  animation: sds-inputFillFlood var(--sds-duration-base, 0.8s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) both;
+}
+@keyframes sds-inputFillFlood {
+  0% {
+    transform: translateY(101%);
+    opacity: 0.18;
+  }
+  32% {
+    transform: translateY(0);
+    opacity: 0.18;
+  }
+  55% {
+    transform: translateY(0);
+    opacity: 0.14;
+  }
+  100% {
+    transform: translateY(96%);
+    opacity: 0.35;
+  }
+}
+
+/* ─── Family: Entrance Personalities ───────────────────────── */
+
+/* 165 · Arrive Slide Label (wrap: input + label) ------------ */
+.sds-input-arrive-slide-label {
+  position: relative;
+  display: inline-block;
+}
+.sds-input-arrive-slide-label label {
+  position: absolute;
+  left: 14px;
+  top: -1.4em;
+  pointer-events: none;
+  animation: sds-inputArriveLabelDrop var(--sds-duration-base, 0.8s) var(--sds-ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1)) both;
+}
+.sds-input-arrive-slide-label input {
+  animation: sds-inputArriveFieldSlide var(--sds-duration-base, 0.8s) var(--sds-ease-decelerate, cubic-bezier(0.16, 1, 0.3, 1)) both;
+}
+@keyframes sds-inputArriveFieldSlide {
+  0% {
+    opacity: 0;
+    transform: translateX(-26px);
+  }
+  55% {
+    opacity: 1;
+    transform: translateX(3px);
+  }
+  75% {
+    transform: translateX(-1px) scaleY(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scaleY(1);
+  }
+}
+@keyframes sds-inputArriveLabelDrop {
+  0% {
+    opacity: 0;
+    transform: translateY(-14px);
+  }
+  45% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 166 · Arrive Unzip ---------------------------------------- */
+.sds-input-arrive-unzip {
+  animation: sds-inputArriveUnzip var(--sds-duration-base, 0.8s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) both;
+}
+@keyframes sds-inputArriveUnzip {
+  0% {
+    opacity: 0;
+    clip-path: inset(48% 0 48% 0);
+    filter: brightness(2.2);
+  }
+  45% {
+    opacity: 1;
+    clip-path: inset(12% 0 12% 0);
+    filter: brightness(1.4);
+  }
+  100% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    filter: brightness(1);
+  }
+}
+
+/* 167 · Arrive Drop ----------------------------------------- */
+.sds-input-arrive-drop {
+  animation: sds-inputArriveDrop var(--sds-duration-base, 0.8s) var(--sds-ease-emphasized, cubic-bezier(0.215, 0.61, 0.355, 1)) both;
+}
+@keyframes sds-inputArriveDrop {
+  0% {
+    opacity: 0;
+    transform: translateY(-16px);
+    filter: drop-shadow(0 14px 8px rgba(0, 21, 209, 0.12));
+  }
+  42% {
+    opacity: 1;
+    transform: translateY(0) scale(1.03, 0.94);
+    filter: drop-shadow(0 1px 1px rgba(0, 21, 209, 0.22)) blur(0);
+  }
+  62% {
+    transform: translateY(-2.5px) scale(0.99, 1.02);
+    filter: drop-shadow(0 5px 4px rgba(0, 21, 209, 0.14));
+  }
+  80% {
+    transform: translateY(0) scale(1.01, 0.99);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1, 1);
+    filter: drop-shadow(0 2px 2px rgba(0, 21, 209, 0.08));
+  }
+}
+
+/* 168 · Arrive Materialize ---------------------------------- */
+.sds-input-arrive-materialize {
+  animation: sds-inputArriveMaterialize var(--sds-duration-base, 0.8s) steps(4) both;
+}
+@keyframes sds-inputArriveMaterialize {
+  0% {
+    opacity: 0;
+    clip-path: inset(0 88% 0 0);
+    filter: blur(8px) brightness(1.6);
+    transform: scale(1.04);
+  }
+  30% {
+    opacity: 0.7;
+    clip-path: inset(0 44% 0 22%);
+    filter: blur(5px) brightness(1.35);
+  }
+  60% {
+    opacity: 0.9;
+    clip-path: inset(0 12% 0 44%);
+    filter: blur(2.5px) brightness(1.15);
+    transform: scale(1.02);
+  }
+  99% {
+    clip-path: inset(0 0 0 0);
+  }
+  100% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    filter: blur(0) brightness(1);
+    transform: scale(1);
+  }
+}
+
+/* 169 · Arrive Pendulum ------------------------------------- */
+.sds-input-arrive-pendulum {
+  transform-origin: top center;
+  animation: sds-inputArrivePendulum var(--sds-duration-slow, 1.4s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) both;
+}
+@keyframes sds-inputArrivePendulum {
+  0% {
+    opacity: 0;
+    transform: rotate(-5deg) translateY(-8px);
+  }
+  28% {
+    opacity: 1;
+    transform: rotate(3.4deg) translateY(0);
+  }
+  52% {
+    transform: rotate(-2deg);
+  }
+  72% {
+    transform: rotate(1deg);
+  }
+  88% {
+    transform: rotate(-0.4deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg) translateY(0);
+  }
+}
+
+/* 170 · Arrive Stretch -------------------------------------- */
+.sds-input-arrive-stretch {
+  animation: sds-inputArriveStretch var(--sds-duration-base, 0.8s) var(--sds-ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1)) both;
+}
+@keyframes sds-inputArriveStretch {
+  0% {
+    opacity: 0;
+    transform: scaleX(0.4);
+  }
+  55% {
+    opacity: 1;
+    transform: scaleX(1.05);
+  }
+  72% {
+    transform: scaleX(0.98);
+  }
+  86% {
+    transform: scaleX(1.01);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+/* 171 · Arrive Spotlight (wrap) ----------------------------- */
+.sds-input-arrive-spotlight {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  animation: sds-inputArriveSpotlightHost var(--sds-duration-slow, 1.4s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) both;
+}
+.sds-input-arrive-spotlight::before {
+  content: "";
+  position: absolute;
+  top: -80%;
+  left: -30%;
+  width: 70%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 65%);
+  pointer-events: none;
+  animation: sds-inputArriveSpotlightBeam var(--sds-duration-slow, 1.4s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) both;
+}
+@keyframes sds-inputArriveSpotlightHost {
+  0% {
+    opacity: 0;
+    filter: brightness(0.6);
+  }
+  35% {
+    opacity: 1;
+    filter: brightness(0.85);
+  }
+  100% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+}
+@keyframes sds-inputArriveSpotlightBeam {
+  0% {
+    transform: translate(-40%, 0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  85% {
+    transform: translate(200%, 60%);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(230%, 70%);
+    opacity: 0;
+  }
+}
+
+/* 172 · Arrive Stack (wrap) --------------------------------- */
+.sds-input-arrive-stack {
+  position: relative;
+  display: inline-block;
+}
+.sds-input-arrive-stack::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border: 1.5px solid var(--sds-primary);
+  border-radius: 8px;
+  animation: sds-inputArriveStackFrame var(--sds-duration-base, 0.8s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) both;
+}
+.sds-input-arrive-stack::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--sds-primary);
+  border-radius: 6px;
+  pointer-events: none;
+  animation: sds-inputArriveStackTint var(--sds-duration-base, 0.8s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) 0.12s both;
+}
+.sds-input-arrive-stack input {
+  animation: sds-inputArriveStackField var(--sds-duration-base, 0.8s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) 0.22s both;
+}
+@keyframes sds-inputArriveStackFrame {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 0.6;
+    transform: translateY(0);
+  }
+}
+@keyframes sds-inputArriveStackTint {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  55% {
+    opacity: 0.14;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0.06;
+    transform: translateY(0);
+  }
+}
+@keyframes sds-inputArriveStackField {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ─── Family: Ambient Idle ─────────────────────────────────── */
+
+/* 173 · Idle Floatline (wrap) ------------------------------- */
+.sds-input-idle-floatline {
+  position: relative;
+  display: inline-block;
+}
+.sds-input-idle-floatline::before {
+  content: "";
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: -1px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--sds-primary);
+  opacity: 0.4;
+  animation: sds-inputIdleFloatline var(--sds-duration-dramatic, 3s) ease-in-out infinite;
+}
+@keyframes sds-inputIdleFloatline {
+  0%,
+  100% {
+    transform: translateX(-2px);
+  }
+  50% {
+    transform: translateX(2px);
+  }
+}
+
+/* 174 · Idle Glimmer (wrap) --------------------------------- */
+.sds-input-idle-glimmer {
+  position: relative;
+  display: inline-block;
+}
+.sds-input-idle-glimmer::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  right: 6px;
+  width: 9px;
+  height: 9px;
+  background: var(--sds-primary);
+  clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%);
+  opacity: 0;
+  animation: sds-inputIdleGlimmer var(--sds-duration-dramatic, 3s) var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) infinite;
+}
+@keyframes sds-inputIdleGlimmer {
+  0%,
+  76%,
+  100% {
+    opacity: 0;
+    transform: scale(0.3) rotate(0deg);
+  }
+  82% {
+    opacity: 0.9;
+    transform: scale(1.15) rotate(40deg);
+    filter: drop-shadow(0 0 4px var(--sds-primary-glow));
+  }
+  88% {
+    opacity: 0.5;
+    transform: scale(0.8) rotate(70deg);
+  }
+  94% {
+    opacity: 0;
+    transform: scale(0.3) rotate(90deg);
+  }
+}
+
+/* 175 · Idle Depth ------------------------------------------ */
+.sds-input-idle-depth {
+  animation: sds-inputIdleDepth var(--sds-duration-dramatic, 3s) ease-in-out infinite;
+}
+@keyframes sds-inputIdleDepth {
+  0%,
+  100% {
+    filter: drop-shadow(0 1px 1.5px rgba(0, 21, 209, 0.12));
+    transform: translateY(0);
+  }
+  50% {
+    filter: drop-shadow(0 6px 8px rgba(0, 21, 209, 0.16));
+    transform: translateY(-1.5px);
+  }
+}
+
+/* 176 · Idle Lean ------------------------------------------- */
+.sds-input-idle-lean {
+  animation: sds-inputIdleLean var(--sds-duration-dramatic, 3s) ease-in-out infinite;
+}
+@keyframes sds-inputIdleLean {
+  0%,
+  100% {
+    transform: rotate(-0.35deg);
+  }
+  50% {
+    transform: rotate(0.35deg);
+  }
+}
+
+/* 177 · Idle Noise (wrap) ----------------------------------- */
+.sds-input-idle-noise {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+.sds-input-idle-noise::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  background-image: radial-gradient(circle at 25% 35%, var(--sds-primary) 1px, transparent 1.5px),
+    radial-gradient(circle at 65% 70%, var(--sds-primary) 1px, transparent 1.5px),
+    radial-gradient(circle at 85% 20%, var(--sds-primary) 1px, transparent 1.5px),
+    radial-gradient(circle at 45% 85%, var(--sds-primary) 1px, transparent 1.5px);
+  background-size: 36px 36px;
+  opacity: 0.07;
+  pointer-events: none;
+  animation: sds-inputIdleNoise var(--sds-duration-slower, 2.2s) steps(5) infinite;
+}
+@keyframes sds-inputIdleNoise {
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(3px, -2px);
+  }
+  40% {
+    transform: translate(-2px, 3px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(-3px, -1px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* 178 · Idle Perimeter Dot (wrap) --------------------------- */
+.sds-input-idle-perimeter-dot {
+  position: relative;
+  display: inline-block;
+}
+.sds-input-idle-perimeter-dot::before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--sds-primary);
+  top: -2px;
+  left: -2px;
+  animation: sds-inputIdlePerimeterDot var(--sds-duration-dramatic, 3s) steps(1) infinite;
+}
+@keyframes sds-inputIdlePerimeterDot {
+  0%,
+  100% {
+    transform: translate(0, 0);
+    opacity: 0.85;
+  }
+  12%,
+  24% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(min(78vw, 210px), 0);
+    opacity: 0.85;
+  }
+  37%,
+  49% {
+    opacity: 0;
+    transform: translate(min(78vw, 210px), 0);
+  }
+  50% {
+    transform: translate(min(78vw, 210px), 34px);
+    opacity: 0.85;
+  }
+  62%,
+  74% {
+    opacity: 0;
+    transform: translate(min(78vw, 210px), 34px);
+  }
+  75% {
+    transform: translate(0, 34px);
+    opacity: 0.85;
+  }
+  87%,
+  99% {
+    opacity: 0;
+    transform: translate(0, 34px);
+  }
+}
+
+/* 179 · Idle Soft Zoom -------------------------------------- */
+.sds-input-idle-soft-zoom {
+  animation: sds-inputIdleSoftZoom var(--sds-duration-dramatic, 3s) ease-in-out infinite;
+}
+@keyframes sds-inputIdleSoftZoom {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.006);
+  }
 }
 
 /* ── Cross-category keyframe dependencies ── */

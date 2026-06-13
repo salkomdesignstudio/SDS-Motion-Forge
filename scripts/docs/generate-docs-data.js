@@ -51,10 +51,16 @@ function markupFor(c) {
   const cls = c.name;
   switch (c.category) {
     case "buttons":
+      if (c.requiresChildren)
+        return `<button class="${cls}"><span>→</span> <span>Button</span></button>`;
       return `<button class="${cls}">Button</button>`;
     case "inputs":
-      if (cls === "sds-input-elevate-wrap")
-        return `<div class="${cls}">\n  <input id="sds-email" placeholder=" " />\n  <label for="sds-email">Email</label>\n</div>`;
+      if (c.inputWrap) {
+        const withLabel = c.selectors.some((s) => /\blabel\b/.test(s));
+        return withLabel
+          ? `<div class="${cls}">\n  <input id="sds-email" placeholder=" " />\n  <label for="sds-email">Email</label>\n</div>`
+          : `<div class="${cls}">\n  <input placeholder="Type here" />\n</div>`;
+      }
       return `<input class="${cls}" placeholder="Type here" />`;
     case "loaders":
       if (cls === "sds-loader-type") return `<span class="${cls}">loading…</span>`;
@@ -250,10 +256,14 @@ function bootstrapTab(c) {
   let body;
   switch (c.category) {
     case "buttons":
-      body = `<button type="button" class="btn btn-primary ${c.name}">Save changes</button>`;
+      body = c.requiresChildren
+        ? `<button type="button" class="btn btn-primary ${c.name}"><span>→</span> <span>Save changes</span></button>`
+        : `<button type="button" class="btn btn-primary ${c.name}">Save changes</button>`;
       break;
     case "inputs":
-      body = `<input type="text" class="form-control ${c.name}" placeholder="Email address" />`;
+      body = c.inputWrap
+        ? `<div class="${c.name}">\n      <input type="text" class="form-control" placeholder="Email address" />\n      ${c.selectors.some((s) => /\blabel\b/.test(s)) ? "<label>Email</label>\n      " : ""}</div>`
+        : `<input type="text" class="form-control ${c.name}" placeholder="Email address" />`;
       break;
     case "cards":
       body = `<div class="card ${c.name}" style="width: 18rem;">\n      <div class="card-body">\n        <h5 class="card-title">Card title</h5>\n        <p class="card-text">Bootstrap card with SDS motion layered on.</p>\n      </div>\n    </div>`;

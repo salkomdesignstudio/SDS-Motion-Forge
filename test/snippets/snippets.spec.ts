@@ -25,8 +25,10 @@ async function assertAnimates(page: Page, cls: string) {
   const c = byName[cls];
   const sel = `.${cls}`;
 
-  if (c.trigger === "focus") {
-    await page.focus(`${sel}, ${sel} input`);
+  if (c.trigger === "focus" || c.inputWrap) {
+    // focus the actual field: wrap classes put the effect on :focus-within
+    const inner = await page.locator(`${sel} input`).count();
+    await page.focus(inner ? `${sel} input` : sel);
   }
 
   if (!c.keyframes.length && !c.requiresJs) {

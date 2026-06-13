@@ -1,14 +1,14 @@
 [
   {
     "path": "dist/motion.min.css",
-    "limit": "135209 B",
+    "limit": "257336 B",
     "name": "dist/motion.min.css",
     "gzip": false,
     "brotli": false
   },
   {
     "path": "dist/motion.css",
-    "limit": "213437 B",
+    "limit": "388348 B",
     "name": "dist/motion.css",
     "gzip": false,
     "brotli": false
@@ -43,56 +43,56 @@
   },
   {
     "path": "dist/categories/buttons.min.css",
-    "limit": "20152 B",
+    "limit": "52294 B",
     "name": "dist/categories/buttons.min.css",
     "gzip": false,
     "brotli": false
   },
   {
     "path": "dist/categories/inputs.min.css",
-    "limit": "19855 B",
+    "limit": "50050 B",
     "name": "dist/categories/inputs.min.css",
     "gzip": false,
     "brotli": false
   },
   {
     "path": "dist/categories/cards.min.css",
-    "limit": "19434 B",
+    "limit": "42172 B",
     "name": "dist/categories/cards.min.css",
     "gzip": false,
     "brotli": false
   },
   {
     "path": "dist/categories/loaders.min.css",
-    "limit": "28002 B",
+    "limit": "52343 B",
     "name": "dist/categories/loaders.min.css",
     "gzip": false,
     "brotli": false
   },
   {
     "path": "dist/categories/scroll.min.css",
-    "limit": "22310 B",
+    "limit": "35791 B",
     "name": "dist/categories/scroll.min.css",
     "gzip": false,
     "brotli": false
   },
   {
     "path": "packages/react/dist/index.js",
-    "limit": "56585 B",
+    "limit": "91479 B",
     "name": "packages/react/dist/index.js",
     "gzip": false,
     "brotli": false
   },
   {
     "path": "packages/elements/dist/index.global.js",
-    "limit": "45134 B",
+    "limit": "73941 B",
     "name": "packages/elements/dist/index.global.js",
     "gzip": false,
     "brotli": false
   },
   {
     "path": "packages/tailwind/dist/sds-motion.css",
-    "limit": "318064 B",
+    "limit": "593464 B",
     "name": "packages/tailwind/dist/sds-motion.css",
     "gzip": false,
     "brotli": false

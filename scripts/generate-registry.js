@@ -151,7 +151,8 @@ function collectVars(value, set) {
         e.displayName = lastDisplayComment;
       }
       e.selectors.push(rule.selector.replace(/\s+/g, " ").trim());
-      if (/>\s*\*|:nth-child/.test(rule.selector)) e.targetsChildren = true;
+      const isChildSelector = />\s*\*|:nth-child|>\s*span/.test(rule.selector);
+      if (isChildSelector) e.targetsChildren = true;
       if (/\.sds-char\b/.test(rule.selector) && primary !== "sds-char") e.requiresCharSplit = true;
       if (/::before|::after|::placeholder/.test(rule.selector)) e.usesPseudoElements = true;
       if (/:hover/.test(rule.selector)) e.triggers.add("hover");
@@ -161,8 +162,10 @@ function collectVars(value, set) {
         collectVars(d.value, e.customPropsUsed);
         if (!inReduced && (d.prop === "animation" || d.prop === "-webkit-animation")) {
           e.animations.push(...parseAnimationShorthand(d.value));
+          if (!isChildSelector) e.hostAnimates = true;
         } else if (!inReduced && d.prop === "animation-name") {
           splitTopLevel(d.value, ",").forEach((n) => e.animations.push({ name: n.trim() }));
+          if (!isChildSelector) e.hostAnimates = true;
         }
       });
 
@@ -251,7 +254,15 @@ function collectVars(value, set) {
       animatedPaintProps: [...paint].sort(),
       animatedLayoutProps: [...layout].sort(),
       requiresCharSplit: e.requiresCharSplit,
-      requiresChildren: e.targetsChildren && !e.requiresCharSplit,
+      /* true only when child elements carry the ONLY animation — effects that
+         also animate the host (e.g. fill-wave) work without children */
+      requiresChildren: e.targetsChildren && !e.requiresCharSplit && !e.hostAnimates,
+      /* inputs whose effect lives on a wrapper (pseudo-element overlays,
+         :focus-within, or descendant input/label rules) — <input> elements
+         cannot render ::before/::after, so these classes wrap the field */
+      inputWrap: category === "inputs" && e.selectors.some((s) =>
+        /::(before|after)\b/.test(s) || /:focus-within/.test(s) ||
+        /\.sds-[a-z0-9-]+[^,]*\s(input|label)\b/.test(s)),
       requiresJs: !!INTERACTIVE[name],
       jsEngine: INTERACTIVE[name] ? "motion-interactive" : (category === "scroll" ? "sds-scroll (optional)" : null),
       trigger,
