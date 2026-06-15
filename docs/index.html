@@ -2029,12 +2029,27 @@
       .modal-stage h1 { font-size: 26px; }
       .card-stage h2, .modal-stage h2 { font-size: 18px; margin: 0; font-weight: 700; }
       .modal-stage h2 { font-size: 24px; }
+      /* Use background-color (not shorthand) so button animation background-image effects are not overridden */
       .card-stage button, .modal-stage button {
         padding: 10px 22px; border: none; border-radius: 10px;
-        background: var(--brand); color: #fff; font-weight: 700;
+        background-color: var(--brand); color: #fff; font-weight: 700;
         font-family: var(--f-disp); cursor: pointer;
       }
       .modal-stage button { padding: 12px 26px; border-radius: 12px; }
+      /* fill-* buttons: light bg so the ::before overlay fill is visible */
+      .card-stage button[class*="sds-btn-fill-"], .modal-stage button[class*="sds-btn-fill-"] {
+        background-color: rgba(0, 21, 209, 0.07); color: var(--brand);
+        border: 1.5px solid rgba(0, 21, 209, 0.22);
+      }
+      /* liquid: semi-transparent so blue sweep is visible filling across */
+      .card-stage button.sds-btn-liquid, .modal-stage button.sds-btn-liquid {
+        background-color: rgba(0, 21, 209, 0.06); color: var(--brand);
+        border: 1.5px solid rgba(0, 21, 209, 0.28);
+      }
+      /* edge: transparent so primary-colour traces are visible on stage bg */
+      .card-stage button.sds-btn-edge, .modal-stage button.sds-btn-edge {
+        background-color: transparent; color: var(--ink-2); border: none;
+      }
       .card-stage input, .modal-stage input {
         padding: 10px 14px; border: 1.5px solid var(--line-2);
         border-radius: 10px; font-family: var(--f-disp); font-size: 14px; width: 80%;
@@ -2047,8 +2062,9 @@
       .card-stage div[class*="sds-input-"] input, .modal-stage div[class*="sds-input-"] input {
         width: 100%;
       }
+      /* Use background-color (not shorthand) so card animation background-image effects are not overridden */
       .card-stage div[class*="sds-card-"], .modal-stage div[class*="sds-card-"] {
-        width: 90px; height: 60px; border-radius: 10px; background: var(--brand);
+        width: 90px; height: 60px; border-radius: 10px; background-color: var(--brand);
         box-shadow: var(--sh-1); color: transparent; padding: 6px;
       }
       .modal-stage div[class*="sds-card-"] { width: 130px; height: 86px; }
@@ -2056,9 +2072,18 @@
         height: 9px; margin: 4px 2px; background: rgba(255, 255, 255, 0.55);
         border-radius: 3px; color: transparent;
       }
+      /* glass card: semi-transparent so backdrop-filter blur shows through */
+      .card-stage div.sds-card-glass, .modal-stage div.sds-card-glass {
+        background-color: rgba(255, 255, 255, 0.15);
+      }
+      /* shimmer card: very light bg so gradient shimmer sweep is visible */
+      .card-stage div.sds-card-shimmer, .modal-stage div.sds-card-shimmer {
+        background-color: rgba(0, 21, 209, 0.08);
+      }
+      /* scroll previews: white card so entrance animations are clearly visible */
       .card-stage div[class*="sds-scroll-"], .modal-stage div[class*="sds-scroll-"] {
-        padding: 10px 16px; background: var(--brand-dim); border: 1px solid var(--line);
-        border-radius: 10px; font-weight: 600; font-size: 13px;
+        padding: 10px 16px; background-color: var(--bg-card); border: 1px solid var(--line-2);
+        border-radius: 10px; font-weight: 600; font-size: 13px; color: var(--ink);
       }
       .card-stage div[class*="sds-scroll-"] > div, .modal-stage div[class*="sds-scroll-"] > div {
         padding: 2px 0;
