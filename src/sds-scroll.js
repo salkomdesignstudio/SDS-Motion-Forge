@@ -1,6 +1,6 @@
 /**
  * SDS Motion Forge — Scroll Gate Engine
- * Version: 4.0.0
+ * Version: 5.0.0
  *
  * Adds "sds-js" to <html> immediately.
  * Elements with [data-sds] stay invisible until they enter

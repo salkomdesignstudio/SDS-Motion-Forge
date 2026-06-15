@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      SDS Motion Forge — 100 Text Animations + Interactive Physics Engine.
+      SDS Motion Forge — 600+ CSS Animations · Zero Required JavaScript
     </title>
 
     <!-- Primary Meta -->
@@ -25,9 +25,7 @@
     />
 
     <!-- Favicon -->
-    <link rel="icon" href="favicon.png" />
     <link rel="icon" type="image/png" href="favicon.png" />
-    <link rel="shortcut icon" href="favicon.png" />
     <link rel="apple-touch-icon" href="favicon.png" />
 
     <!-- Open Graph -->
@@ -991,7 +989,8 @@
         flex-direction: column;
         gap: 20px;
       }
-      .pg-field label {
+      .pg-field label,
+      .pg-out label {
         font-size: 11px;
         font-weight: 700;
         letter-spacing: 0.1em;
@@ -1897,18 +1896,8 @@
         .hero {
           padding-top: calc(var(--nav-h) + 48px);
         }
-        .hero-stats {
-          gap: 24px;
-        }
         .docs-card-grid {
           grid-template-columns: 1fr;
-        }
-        .cta-install {
-          flex-direction: column;
-          gap: 12px;
-          padding: 18px;
-          font-size: 12px;
-          text-align: center;
         }
       }
 
@@ -1965,7 +1954,7 @@
         }
       }
 
-      /* Small phones: tighten hero heading, card, and turn stats into 2×2 grid */
+      /* Small phones: tighten hero heading, card, stats, and nav */
       @media (max-width: 480px) {
         .hero-h1 {
           font-size: clamp(36px, 10vw, 48px);
@@ -1978,10 +1967,6 @@
           grid-template-columns: 1fr 1fr;
           gap: 16px 24px;
         }
-      }
-
-      /* Mobile nav: shrink logo text + tighten gap so it fits at ~375px */
-      @media (max-width: 480px) {
         .nav-in {
           gap: 10px;
         }
@@ -2208,7 +2193,7 @@
           <a
             href="https://github.com/salkomdesignstudio/SDS-Motion-Forge"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             class="icon-btn"
             aria-label="GitHub repository"
             ><i class="ri-github-fill"></i
@@ -2218,6 +2203,7 @@
           >
         </div>
         <button
+          type="button"
           class="icon-btn burger"
           onclick="toggleDrawer()"
           aria-label="Menu"
@@ -2233,7 +2219,7 @@
       <nav class="drawer-panel">
         <div class="drawer-head">
           <span>Menu</span
-          ><button class="icon-btn" onclick="toggleDrawer()" aria-label="Close menu">
+          ><button type="button" class="icon-btn" onclick="toggleDrawer()" aria-label="Close menu">
             <i class="ri-close-fill"></i>
           </button>
         </div>
@@ -2252,14 +2238,14 @@
         <a
           href="https://github.com/salkomdesignstudio/SDS-Motion-Forge"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
           onclick="toggleDrawer()"
           ><i class="ri-github-fill"></i> GitHub</a
         >
         <a
           href="https://www.npmjs.com/package/@salkomdesignstudio/sds-motion-forge"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
           onclick="toggleDrawer()"
           ><i class="ri-npmjs-fill"></i> npm Install</a
         >
@@ -2321,6 +2307,7 @@
           <div class="hero-card-code">
             <span>&lt;h1 class=<b>"sds-velvet-drop"</b>&gt;</span>
             <button
+              type="button"
               class="hero-card-replay"
               onclick="replayHero()"
               aria-label="Replay"
@@ -2467,26 +2454,15 @@
               <div class="pg-chips" id="pgChips"></div>
             </div>
             <div class="pg-out">
-              <label
-                style="
-                  font-size: 11px;
-                  font-weight: 700;
-                  letter-spacing: 0.1em;
-                  text-transform: uppercase;
-                  color: var(--stage-ink-2);
-                  display: block;
-                  margin-bottom: 9px;
-                "
-                >Output</label
-              >
+              <label>Output</label>
               <div class="pg-out-code" id="pgCode">
                 &lt;span class="sds-velvet-drop"&gt;
               </div>
               <div class="pg-actions">
-                <button class="pg-btn pg-btn-primary" onclick="pgReplay()">
+                <button type="button" class="pg-btn pg-btn-primary" onclick="pgReplay()">
                   <i class="ri-restart-line"></i> Replay
                 </button>
-                <button class="pg-btn pg-btn-ghost" onclick="pgCopy(this)">
+                <button type="button" class="pg-btn pg-btn-ghost" onclick="pgCopy(this)">
                   <i class="ri-file-copy-fill"></i> Copy
                 </button>
               </div>
@@ -2561,7 +2537,7 @@
           <a
             href="https://github.com/salkomdesignstudio/SDS-Motion-Forge"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             class="btn btn-ghost"
             ><i class="ri-github-fill"></i> View on GitHub</a
           >
@@ -2577,7 +2553,7 @@
           <p>Free and open-source. MIT licensed. No build step required.</p>
           <div class="cta-install">
             npm i @salkomdesignstudio/sds-motion-forge
-            <button onclick="copyInstall(this)" aria-label="Copy install command">
+            <button type="button" onclick="copyInstall(this)" aria-label="Copy install command">
               <i class="ri-file-copy-fill" id="installIcon"></i>
             </button>
           </div>
@@ -2605,7 +2581,7 @@
             <a
               href="https://salkomdesignstudio.com"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               class="foot-studio-link"
               >Salkom Design Studio</a
             >.
@@ -2622,27 +2598,27 @@
             <a
               href="https://github.com/salkomdesignstudio/SDS-Motion-Forge"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               >GitHub</a
             ><a
               href="https://www.npmjs.com/package/@salkomdesignstudio/sds-motion-forge"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               >npm</a
             ><a
               href="https://github.com/salkomdesignstudio/SDS-Motion-Forge/blob/main/CHANGELOG.md"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               >Changelog</a
             ><a
               href="https://github.com/salkomdesignstudio/SDS-Motion-Forge/issues"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               >Issues</a
             ><a
               href="https://github.com/salkomdesignstudio/SDS-Motion-Forge/blob/main/README.md#contributing"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               >Contributing</a
             >
           </div>
@@ -2651,12 +2627,12 @@
             <a
               href="https://salkomdesignstudio.com"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               >Salkom Design</a
             ><a
               href="https://github.com/salkomdesignstudio/SDS-Motion-Forge/blob/main/LICENSE"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               >MIT License</a
             >
           </div>
@@ -2669,7 +2645,7 @@
           <a
             href="https://salkomdesignstudio.com"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             class="foot-studio-link"
             >Salkom Design Studio</a
           ></span
@@ -2694,14 +2670,14 @@
               ><span id="modalClsText">.sds-velvet-drop</span></span
             >
           </div>
-          <button class="modal-x" onclick="closeModal()" aria-label="Close">
+          <button type="button" class="modal-x" onclick="closeModal()" aria-label="Close">
             <i class="ri-close-fill"></i>
           </button>
         </div>
 
         <div class="modal-stage" id="modalStage">
           <span class="modal-demo" id="modalDemo">Motion</span>
-          <button class="modal-replay" onclick="modalReplay()">
+          <button type="button" class="modal-replay" onclick="modalReplay()">
             <i class="ri-restart-line"></i> Replay
           </button>
         </div>
@@ -2746,42 +2722,42 @@
           <div class="ctrl-row seg-row">
             <span class="ctrl-label">Iteration</span>
             <div class="ctrl-seg" id="cIter">
-              <button class="on" data-v="1">Once</button>
-              <button data-v="2">2×</button>
-              <button data-v="3">3×</button>
-              <button data-v="infinite">Loop</button>
+              <button type="button" class="on" data-v="1">Once</button>
+              <button type="button" data-v="2">2×</button>
+              <button type="button" data-v="3">3×</button>
+              <button type="button" data-v="infinite">Loop</button>
             </div>
           </div>
           <div class="ctrl-row seg-row">
             <span class="ctrl-label">Direction</span>
             <div class="ctrl-seg" id="cDir">
-              <button class="on" data-v="normal">Normal</button>
-              <button data-v="reverse">Reverse</button>
-              <button data-v="alternate">Alternate</button>
+              <button type="button" class="on" data-v="normal">Normal</button>
+              <button type="button" data-v="reverse">Reverse</button>
+              <button type="button" data-v="alternate">Alternate</button>
             </div>
           </div>
           <div class="ctrl-row seg-row">
             <span class="ctrl-label">Easing</span>
             <div class="ctrl-seg" id="cEase">
-              <button class="on" data-v="default">Default</button>
-              <button data-v="ease-in-out">Ease</button>
-              <button data-v="linear">Linear</button>
-              <button data-v="cubic-bezier(0.34,1.56,0.64,1)">Spring</button>
+              <button type="button" class="on" data-v="default">Default</button>
+              <button type="button" data-v="ease-in-out">Ease</button>
+              <button type="button" data-v="linear">Linear</button>
+              <button type="button" data-v="cubic-bezier(0.34,1.56,0.64,1)">Spring</button>
             </div>
           </div>
         </div>
 
         <div class="modal-how" id="modalHow"></div>
         <div class="modal-tabs" id="modalTabs">
-          <button class="mtab on" data-tab="html">HTML + CSS</button>
-          <button class="mtab" data-tab="js">JS</button>
-          <button class="mtab" data-tab="react">React</button>
-          <button class="mtab" data-tab="angular">Angular</button>
-          <button class="mtab" data-tab="tailwind">Tailwind</button>
-          <button class="mtab" data-tab="bootstrap">Bootstrap</button>
+          <button type="button" class="mtab on" data-tab="html">HTML + CSS</button>
+          <button type="button" class="mtab" data-tab="js">JS</button>
+          <button type="button" class="mtab" data-tab="react">React</button>
+          <button type="button" class="mtab" data-tab="angular">Angular</button>
+          <button type="button" class="mtab" data-tab="tailwind">Tailwind</button>
+          <button type="button" class="mtab" data-tab="bootstrap">Bootstrap</button>
         </div>
         <div class="modal-code">
-          <button class="modal-code-copy" onclick="copyModalCode(this)">
+          <button type="button" class="modal-code-copy" onclick="copyModalCode(this)">
             Copy
           </button>
           <pre id="modalCode"></pre>
@@ -2944,13 +2920,9 @@
           });
         }
 
-        // generated from the registry (requiresCharSplit)
         var CHAR_SPLIT = window.SDS_DOCS.charSplit;
         var CHILD_DRIVEN = window.SDS_DOCS.childDriven;
-        var __unused_charsplit = [        ];
-        // generated from the registry (requiresJs)
         var INTERACTIVE = window.SDS_DOCS.interactive;
-        var __unused_interactive = [        ];
 
         function splitToChars(text) {
           return text
@@ -2972,10 +2944,6 @@
           // tab's body. Preview and snippet can never diverge.
           var m = window.SDS_DOCS && window.SDS_DOCS.markup;
           return (m && m[a.cls]) || '<span class="card-demo ' + a.cls + '">' + a.name + '</span>';
-        }
-        function __unusedPreviewMarkup(a) {
-          var cls = a.cls;
-          return '<span class="card-demo ' + cls + '">' + a.name + "</span>";
         }
 
         function renderGrid() {
@@ -3305,9 +3273,6 @@
 
         function previewMarkupModal(a) {
           return window.SDS_DOCS.markup[a.cls] || "";
-        }
-        function __unusedPreviewMarkupModal(a) {
-          return "";
         }
 
         window.openModal = function (cat, idx) {

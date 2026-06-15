@@ -390,7 +390,7 @@ if (cssVersion && cssVersion === pkgVersion) {
   pass("CSS header version not checked (comment may be stripped)");
 }
 if (docsHTML) {
-  const docsVersionMatch = docsHTML.match(/v([\d.]+)/);
+  const docsVersionMatch = docsHTML.match(/v(\d+\.\d+\.\d+)/);
   const docsVersion = docsVersionMatch ? docsVersionMatch[1] : null;
   if (docsVersion && docsVersion === pkgVersion) {
     pass(`docs/index.html version matches package.json (v${pkgVersion})`);

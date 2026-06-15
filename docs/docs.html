@@ -575,14 +575,14 @@
         <a
           href="https://github.com/salkomdesignstudio/SDS-Motion-Forge"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
         >
           <i class="ri-github-fill"></i> GitHub
         </a>
         <a
           href="https://www.npmjs.com/package/@salkomdesignstudio/sds-motion-forge"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
         >
           <i class="ri-npmjs-fill"></i> npm
         </a>
@@ -643,7 +643,7 @@
           <div class="codeblock">
             <div class="codeblock-head">
               <span class="codeblock-lang">HTML — &lt;head&gt;</span>
-              <button class="cb-copy" onclick="copyCB(this)">Copy</button>
+              <button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button>
             </div>
             <pre><span class="cm">&lt;!-- ① ALWAYS REQUIRED — core CSS (600+ animations, ~39 KB gzip) --&gt;</span>
 <span class="ct">&lt;link</span> <span class="ck">rel</span>=<span class="cs">"stylesheet"</span>
@@ -652,7 +652,7 @@
           <div class="codeblock">
             <div class="codeblock-head">
               <span class="codeblock-lang">HTML — before &lt;/body&gt;</span>
-              <button class="cb-copy" onclick="copyCB(this)">Copy</button>
+              <button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button>
             </div>
             <pre><span class="cm">&lt;!-- ② OPTIONAL — scroll engine (~0.6 KB gzip) --&gt;</span>
 <span class="cm">&lt;!--   Add this ONLY if you use data-sds scroll-triggered animations --&gt;</span>
@@ -669,14 +669,14 @@
           <div class="install-strip">
             <span class="prompt">$</span>
             <span class="cmd">npm install @salkomdesignstudio/sds-motion-forge</span>
-            <button class="install-copy" onclick="copyInstall(this,'npm i @salkomdesignstudio/sds-motion-forge')" aria-label="Copy">
+            <button type="button" class="install-copy" onclick="copyInstall(this,'npm i @salkomdesignstudio/sds-motion-forge')" aria-label="Copy">
               <i class="ri-file-copy-fill" id="npmIcon"></i>
             </button>
           </div>
           <div class="codeblock">
             <div class="codeblock-head">
               <span class="codeblock-lang">JS / TS — app entry file</span>
-              <button class="cb-copy" onclick="copyCB(this)">Copy</button>
+              <button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button>
             </div>
             <pre><span class="cm">// ① ALWAYS REQUIRED — import the core CSS</span>
 <span class="ck">import</span> <span class="cs">'@salkomdesignstudio/sds-motion-forge/dist/motion.min.css'</span>;
@@ -730,7 +730,7 @@
           <div class="codeblock">
             <div class="codeblock-head">
               <span class="codeblock-lang">HTML — &lt;head&gt;</span>
-              <button class="cb-copy" onclick="copyCB(this)">Copy</button>
+              <button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button>
             </div>
             <pre><span class="cm">&lt;!-- Step 1 · Core CSS — required for ALL animations --&gt;</span>
 <span class="ct">&lt;link</span> <span class="ck">rel</span>=<span class="cs">"stylesheet"</span>
@@ -739,7 +739,7 @@
           <div class="codeblock">
             <div class="codeblock-head">
               <span class="codeblock-lang">HTML — before &lt;/body&gt;</span>
-              <button class="cb-copy" onclick="copyCB(this)">Copy</button>
+              <button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button>
             </div>
             <pre><span class="cm">&lt;!-- Step 2 · Scroll engine — only if you use data-sds scroll animations --&gt;</span>
 <span class="ct">&lt;script</span> <span class="ck">src</span>=<span class="cs">"https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/sds-scroll.min.js"</span><span class="ct">&gt;&lt;/script&gt;</span>
@@ -761,7 +761,7 @@
           <div class="codeblock">
             <div class="codeblock-head">
               <span class="codeblock-lang">HTML — complete setup</span>
-              <button class="cb-copy" onclick="copyCB(this)">Copy</button>
+              <button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button>
             </div>
             <pre><span class="ct">&lt;!DOCTYPE html&gt;</span>
 <span class="ct">&lt;html</span> <span class="ck">lang</span>=<span class="cs">"en"</span><span class="ct">&gt;</span>
@@ -822,17 +822,17 @@
           <p class="doc-sec-sub">Import the CSS once in your entry file. No component, no wrapper, no setup beyond that.</p>
 
           <div class="fw-tabs" id="fwTabs">
-            <button class="fw-tab on" data-panel="fw-react">React / Next.js</button>
-            <button class="fw-tab" data-panel="fw-vue">Vue</button>
-            <button class="fw-tab" data-panel="fw-angular">Angular</button>
-            <button class="fw-tab" data-panel="fw-svelte">Svelte</button>
-            <button class="fw-tab" data-panel="fw-tailwind">Tailwind</button>
-            <button class="fw-tab" data-panel="fw-postcss">PostCSS</button>
+            <button type="button" class="fw-tab on" data-panel="fw-react">React / Next.js</button>
+            <button type="button" class="fw-tab" data-panel="fw-vue">Vue</button>
+            <button type="button" class="fw-tab" data-panel="fw-angular">Angular</button>
+            <button type="button" class="fw-tab" data-panel="fw-svelte">Svelte</button>
+            <button type="button" class="fw-tab" data-panel="fw-tailwind">Tailwind</button>
+            <button type="button" class="fw-tab" data-panel="fw-postcss">PostCSS</button>
           </div>
 
           <div class="fw-panel on" id="fw-react">
             <div class="codeblock">
-              <div class="codeblock-head"><span class="codeblock-lang">JSX — _app.js / layout.tsx</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+              <div class="codeblock-head"><span class="codeblock-lang">JSX — _app.js / layout.tsx</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
               <pre><span class="ck">import</span> <span class="cs">'@salkomdesignstudio/sds-motion-forge/dist/motion.min.css'</span>;
 
 <span class="cm">// Then use className anywhere:</span>
@@ -842,7 +842,7 @@
 
           <div class="fw-panel" id="fw-vue">
             <div class="codeblock">
-              <div class="codeblock-head"><span class="codeblock-lang">JS — main.js / main.ts</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+              <div class="codeblock-head"><span class="codeblock-lang">JS — main.js / main.ts</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
               <pre><span class="ck">import</span> <span class="cs">'@salkomdesignstudio/sds-motion-forge/dist/motion.min.css'</span>;
 
 <span class="cm">&lt;!-- template --&gt;</span>
@@ -852,7 +852,7 @@
 
           <div class="fw-panel" id="fw-angular">
             <div class="codeblock">
-              <div class="codeblock-head"><span class="codeblock-lang">SCSS — styles.scss</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+              <div class="codeblock-head"><span class="codeblock-lang">SCSS — styles.scss</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
               <pre><span class="ck">@import</span> <span class="cs">'@salkomdesignstudio/sds-motion-forge/dist/motion.min.css'</span>;
 
 <span class="cm">&lt;!-- or add to angular.json → architect.build.options.styles --&gt;</span>
@@ -863,7 +863,7 @@
 
           <div class="fw-panel" id="fw-svelte">
             <div class="codeblock">
-              <div class="codeblock-head"><span class="codeblock-lang">Svelte — +layout.svelte</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+              <div class="codeblock-head"><span class="codeblock-lang">Svelte — +layout.svelte</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
               <pre><span class="ct">&lt;script&gt;</span>
   <span class="ck">import</span> <span class="cs">'@salkomdesignstudio/sds-motion-forge/dist/motion.min.css'</span>;
 <span class="ct">&lt;/script&gt;</span>
@@ -874,7 +874,7 @@
 
           <div class="fw-panel" id="fw-tailwind">
             <div class="codeblock">
-              <div class="codeblock-head"><span class="codeblock-lang">HTML — Tailwind + Motion Forge</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+              <div class="codeblock-head"><span class="codeblock-lang">HTML — Tailwind + Motion Forge</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
               <pre><span class="cm">&lt;!-- Classes never conflict — all SDS classes are prefixed sds- --&gt;</span>
 <span class="ct">&lt;button</span> <span class="ck">class</span>=<span class="cs">"px-6 py-3 rounded-full bg-blue-600 text-white <span class="ccl">sds-btn-plasma</span>"</span><span class="ct">&gt;</span>
   Tailwind + Motion
@@ -888,7 +888,7 @@
 
           <div class="fw-panel" id="fw-postcss">
             <div class="codeblock">
-              <div class="codeblock-head"><span class="codeblock-lang">CSS — PostCSS source import</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+              <div class="codeblock-head"><span class="codeblock-lang">CSS — PostCSS source import</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
               <pre><span class="cm">/* Import the source into your PostCSS pipeline */</span>
 <span class="ck">@import</span> <span class="cs">'@salkomdesignstudio/sds-motion-forge/src/motion.css'</span>;</pre>
             </div>
@@ -901,7 +901,7 @@
           <p class="doc-sec-sub">Apply to any element containing text. Animations are CSS <code>@keyframes</code> — they fire once on load unless a loop modifier is added.</p>
 
           <div class="codeblock">
-            <div class="codeblock-head"><span class="codeblock-lang">HTML</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <div class="codeblock-head"><span class="codeblock-lang">HTML</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
             <pre><span class="ct">&lt;h1</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-velvet-drop</span>"</span><span class="ct">&gt;</span>Soft drop-in with blur<span class="ct">&lt;/h1&gt;</span>
 <span class="ct">&lt;p</span>  <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-liquid-rise</span>"</span><span class="ct">&gt;</span>Fluid upward reveal<span class="ct">&lt;/p&gt;</span>
 <span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-grand-entrance</span>"</span><span class="ct">&gt;</span>Combined combo entrance<span class="ct">&lt;/span&gt;</span>
@@ -917,7 +917,7 @@
             <strong>Auto-split:</strong> Load <code>motion-interactive.min.js</code> once and these classes will split text automatically — no manual span markup needed.
           </div>
           <div class="codeblock">
-            <div class="codeblock-head"><span class="codeblock-lang">HTML — manual char split</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <div class="codeblock-head"><span class="codeblock-lang">HTML — manual char split</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
             <pre><span class="ct">&lt;h1</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-drop-settle</span>"</span><span class="ct">&gt;</span>
   <span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"sds-char"</span> <span class="ck">style</span>=<span class="cs">"--i:0"</span><span class="ct">&gt;</span>H<span class="ct">&lt;/span&gt;</span>
   <span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"sds-char"</span> <span class="ck">style</span>=<span class="cs">"--i:1"</span><span class="ct">&gt;</span>e<span class="ct">&lt;/span&gt;</span>
@@ -929,7 +929,7 @@
 
           <p class="doc-p">For <code>sds-explode-formation</code>, add per-character displacement variables:</p>
           <div class="codeblock">
-            <div class="codeblock-head"><span class="codeblock-lang">HTML — explode-formation</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <div class="codeblock-head"><span class="codeblock-lang">HTML — explode-formation</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
             <pre><span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"sds-explode-formation"</span><span class="ct">&gt;</span>
   <span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"sds-char"</span> <span class="ck">style</span>=<span class="cs">"--i:0;--dx:-60px;--dy:-40px;--dr:-30deg"</span><span class="ct">&gt;</span>S<span class="ct">&lt;/span&gt;</span>
   <span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"sds-char"</span> <span class="ck">style</span>=<span class="cs">"--i:1;--dx:20px;--dy:-60px;--dr:45deg"</span><span class="ct">&gt;</span>D<span class="ct">&lt;/span&gt;</span>
@@ -944,7 +944,7 @@
           <p class="doc-sec-sub">Apply directly to <code>&lt;button&gt;</code> or <code>&lt;a&gt;</code> elements. Effects are ambient — no hover or click required.</p>
 
           <div class="codeblock">
-            <div class="codeblock-head"><span class="codeblock-lang">HTML</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <div class="codeblock-head"><span class="codeblock-lang">HTML</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
             <pre><span class="ct">&lt;button</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-btn-magnetic</span>"</span><span class="ct">&gt;</span>Magnetic pulse<span class="ct">&lt;/button&gt;</span>
 <span class="ct">&lt;button</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-btn-aurora</span>"</span><span class="ct">&gt;</span>Aurora border<span class="ct">&lt;/button&gt;</span>
 <span class="ct">&lt;button</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-btn-hologram</span>"</span><span class="ct">&gt;</span>Hologram flicker<span class="ct">&lt;/button&gt;</span></pre>
@@ -960,7 +960,7 @@
           <p class="doc-sec-sub">State-based effects for <code>&lt;input&gt;</code> and <code>&lt;textarea&gt;</code> elements. Some trigger on <code>:focus</code>, others run continuously as ambient loops.</p>
 
           <div class="codeblock">
-            <div class="codeblock-head"><span class="codeblock-lang">HTML</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <div class="codeblock-head"><span class="codeblock-lang">HTML</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
             <pre><span class="ct">&lt;input</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-input-focus</span>"</span>        <span class="ck">placeholder</span>=<span class="cs">"Focus glow"</span><span class="ct"> /&gt;</span>
 <span class="ct">&lt;input</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-input-voltage</span>"</span>     <span class="ck">placeholder</span>=<span class="cs">"Voltage pulse"</span><span class="ct"> /&gt;</span>
 <span class="ct">&lt;input</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-input-shake</span>"</span>       <span class="ck">placeholder</span>=<span class="cs">"Shake on error"</span><span class="ct"> /&gt;</span>
@@ -969,7 +969,7 @@
 
           <p class="doc-p"><strong>Floating label wrapper</strong> — <code>sds-input-elevate-wrap</code> requires a specific DOM structure:</p>
           <div class="codeblock">
-            <div class="codeblock-head"><span class="codeblock-lang">HTML — floating label</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <div class="codeblock-head"><span class="codeblock-lang">HTML — floating label</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
             <pre><span class="ct">&lt;div</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-input-elevate-wrap</span>"</span><span class="ct">&gt;</span>
   <span class="ct">&lt;label</span> <span class="ck">for</span>=<span class="cs">"email"</span><span class="ct">&gt;</span>Email address<span class="ct">&lt;/label&gt;</span>
   <span class="ct">&lt;input</span> <span class="ck">id</span>=<span class="cs">"email"</span> <span class="ck">type</span>=<span class="cs">"email"</span> <span class="ck">placeholder</span>=<span class="cs">" "</span><span class="ct"> /&gt;</span>
@@ -986,7 +986,7 @@
           <p class="doc-sec-sub">Entry and ambient effects for card and container elements.</p>
 
           <div class="codeblock">
-            <div class="codeblock-head"><span class="codeblock-lang">HTML</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <div class="codeblock-head"><span class="codeblock-lang">HTML</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
             <pre><span class="ct">&lt;div</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-card-float</span>"</span><span class="ct">&gt;</span>Ambient float<span class="ct">&lt;/div&gt;</span>
 <span class="ct">&lt;div</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-card-holo</span>"</span><span class="ct">&gt;</span>Holographic tilt<span class="ct">&lt;/div&gt;</span>
 <span class="ct">&lt;div</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-card-levitate</span>"</span><span class="ct">&gt;</span>Levitate with depth shadow<span class="ct">&lt;/div&gt;</span></pre>
@@ -994,7 +994,7 @@
 
           <p class="doc-p">Eight classes animate direct child elements and require children to be visible:</p>
           <div class="codeblock">
-            <div class="codeblock-head"><span class="codeblock-lang">HTML — stagger cards</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <div class="codeblock-head"><span class="codeblock-lang">HTML — stagger cards</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
             <pre><span class="ct">&lt;div</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-card-stagger</span>"</span><span class="ct">&gt;</span>
   <span class="ct">&lt;div&gt;</span>Item 1<span class="ct">&lt;/div&gt;</span>
   <span class="ct">&lt;div&gt;</span>Item 2<span class="ct">&lt;/div&gt;</span>
@@ -1014,7 +1014,7 @@
           <p class="doc-sec-sub">Add a class to an empty <code>&lt;span&gt;</code>. The animation is built entirely with CSS pseudo-elements — no child elements needed for most loaders.</p>
 
           <div class="codeblock">
-            <div class="codeblock-head"><span class="codeblock-lang">HTML — self-contained</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <div class="codeblock-head"><span class="codeblock-lang">HTML — self-contained</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
             <pre><span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-loader-orbital</span>"</span><span class="ct">&gt;&lt;/span&gt;</span>
 <span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-loader-fluid</span>"</span><span class="ct">&gt;&lt;/span&gt;</span>
 <span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-loader-arc</span>"</span><span class="ct">&gt;&lt;/span&gt;</span>
@@ -1023,7 +1023,7 @@
 
           <p class="doc-p">Sixteen loaders animate direct child elements and <strong>require children</strong>:</p>
           <div class="codeblock">
-            <div class="codeblock-head"><span class="codeblock-lang">HTML — loaders with children</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <div class="codeblock-head"><span class="codeblock-lang">HTML — loaders with children</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
             <pre><span class="cm">&lt;!-- Wave: 5 bars --&gt;</span>
 <span class="ct">&lt;div</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-loader-wave</span>"</span><span class="ct">&gt;</span>
   <span class="ct">&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;</span>
@@ -1054,7 +1054,7 @@
           <h2 class="doc-h3">Method 1 — JS scroll engine (recommended, works everywhere)</h2>
           <p class="doc-p">Load <code>sds-scroll.min.js</code> once. Add <code>data-sds</code> to any animated element. The engine adds <code>sds-play</code> on viewport entry.</p>
           <div class="codeblock">
-            <div class="codeblock-head"><span class="codeblock-lang">HTML</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <div class="codeblock-head"><span class="codeblock-lang">HTML</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
             <pre><span class="ct">&lt;script</span> <span class="ck">src</span>=<span class="cs">"dist/sds-scroll.min.js"</span> <span class="ck">defer</span><span class="ct">&gt;&lt;/script&gt;</span>
 
 <span class="cm">&lt;!-- Plays once on first entry --&gt;</span>
@@ -1078,7 +1078,7 @@
 
           <h2 class="doc-h3">Method 2 — Inline IntersectionObserver (paste-once, zero dependencies)</h2>
           <div class="codeblock">
-            <div class="codeblock-head"><span class="codeblock-lang">HTML</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <div class="codeblock-head"><span class="codeblock-lang">HTML</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
             <pre><span class="ct">&lt;div</span> <span class="ck">data-sds-scroll</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-scroll-rise</span>"</span><span class="ct">&gt;</span>Content<span class="ct">&lt;/div&gt;</span>
 
 <span class="ct">&lt;script&gt;</span>
@@ -1099,7 +1099,7 @@
 
           <h2 class="doc-h3">Method 3 — CSS scroll-driven (Chrome / Edge 115+, zero JS)</h2>
           <div class="codeblock">
-            <div class="codeblock-head"><span class="codeblock-lang">HTML</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <div class="codeblock-head"><span class="codeblock-lang">HTML</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
             <pre><span class="ct">&lt;div</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-scroll-auto</span> <span class="ccl">sds-scroll-rise</span>"</span><span class="ct">&gt;</span>Zero JS, animates via CSS scroll-driven API<span class="ct">&lt;/div&gt;</span></pre>
           </div>
           <div class="doc-warn">
@@ -1108,7 +1108,7 @@
 
           <h2 class="doc-h3">Stagger scroll animations (need children)</h2>
           <div class="codeblock">
-            <div class="codeblock-head"><span class="codeblock-lang">HTML</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <div class="codeblock-head"><span class="codeblock-lang">HTML</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
             <pre><span class="ct">&lt;div</span> <span class="ck">data-sds</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-scroll-stagger-pop</span>"</span><span class="ct">&gt;</span>
   <span class="ct">&lt;div&gt;</span>Item 1<span class="ct">&lt;/div&gt;</span>
   <span class="ct">&lt;div&gt;</span>Item 2<span class="ct">&lt;/div&gt;</span>
@@ -1127,7 +1127,7 @@
           <p class="doc-sec-sub">Load <code>motion-interactive.min.js</code> once. Add a class. Zero JavaScript from you — the engine auto-wires all listeners, physics loops, and cleanup.</p>
 
           <div class="codeblock">
-            <div class="codeblock-head"><span class="codeblock-lang">HTML — load engine</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <div class="codeblock-head"><span class="codeblock-lang">HTML — load engine</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
             <pre><span class="ct">&lt;script</span> <span class="ck">src</span>=<span class="cs">"dist/motion-interactive.min.js"</span> <span class="ck">defer</span><span class="ct">&gt;&lt;/script&gt;</span></pre>
           </div>
 
@@ -1145,7 +1145,7 @@
           </table>
 
           <div class="codeblock">
-            <div class="codeblock-head"><span class="codeblock-lang">HTML — examples</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <div class="codeblock-head"><span class="codeblock-lang">HTML — examples</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
             <pre><span class="ct">&lt;h2</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-word-morph</span>"</span> <span class="ck">data-words</span>=<span class="cs">"Fast,Beautiful,Precise"</span><span class="ct">&gt;</span>Fast<span class="ct">&lt;/h2&gt;</span>
 <span class="ct">&lt;h2</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-magnetic-pull</span>"</span> <span class="ck">data-sds-radius</span>=<span class="cs">"140"</span><span class="ct">&gt;</span>Magnetic<span class="ct">&lt;/h2&gt;</span>
 <span class="ct">&lt;h2</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-shockwave</span>"</span><span class="ct">&gt;</span>Click for shockwave<span class="ct">&lt;/h2&gt;</span>
@@ -1155,7 +1155,7 @@
           <h2 class="doc-h3">SPA / dynamic content API</h2>
           <p class="doc-p">After inserting new elements into the DOM, call these to initialize or clean up:</p>
           <div class="codeblock">
-            <div class="codeblock-head"><span class="codeblock-lang">JS</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <div class="codeblock-head"><span class="codeblock-lang">JS</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
             <pre><span class="cm">// Scan a container for new interactive elements</span>
 window.SDSInteractive.scan(containerElement);
 
@@ -1173,7 +1173,7 @@ window.SDSInteractive.cleanup(element);</pre>
           <p class="doc-sec-sub">Stack any modifier on any animation class. All SDS classes are <code>sds-</code> prefixed — they never conflict with your existing CSS.</p>
 
           <div class="codeblock">
-            <div class="codeblock-head"><span class="codeblock-lang">HTML — stacking examples</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <div class="codeblock-head"><span class="codeblock-lang">HTML — stacking examples</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
             <pre><span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-velvet-drop</span> sds-slow sds-delay-3"</span><span class="ct">&gt;</span>Slow, delayed<span class="ct">&lt;/span&gt;</span>
 <span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-refract</span> sds-loop sds-alt"</span><span class="ct">&gt;</span>Alternating loop<span class="ct">&lt;/span&gt;</span>
 <span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-neon-flare</span> sds-loop sds-xslow sds-pause-hover"</span><span class="ct">&gt;</span>Pauses on hover<span class="ct">&lt;/span&gt;</span></pre>
@@ -1226,7 +1226,7 @@ window.SDSInteractive.cleanup(element);</pre>
 
           <p class="doc-p">For char-split text animations (physics + wave), wrap each character in a span with <code>class="sds-char"</code> and a <code>--i</code> custom property:</p>
           <div class="codeblock">
-            <div class="codeblock-head"><span class="codeblock-lang">HTML</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <div class="codeblock-head"><span class="codeblock-lang">HTML</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
             <pre><span class="ct">&lt;h1</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-kinetic-wave</span>"</span><span class="ct">&gt;</span>
   <span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"sds-char"</span> <span class="ck">style</span>=<span class="cs">"--i:0"</span><span class="ct">&gt;</span>M<span class="ct">&lt;/span&gt;</span>
   <span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"sds-char"</span> <span class="ck">style</span>=<span class="cs">"--i:1"</span><span class="ct">&gt;</span>o<span class="ct">&lt;/span&gt;</span>
@@ -1248,7 +1248,7 @@ window.SDSInteractive.cleanup(element);</pre>
           <p class="doc-sec-sub">Override CSS custom properties to match your brand. Changes propagate to every animation that uses that variable.</p>
 
           <div class="codeblock">
-            <div class="codeblock-head"><span class="codeblock-lang">CSS — global override</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <div class="codeblock-head"><span class="codeblock-lang">CSS — global override</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
             <pre><span class="ccl">:root</span> {
   <span class="ck">--sds-primary</span>:      <span class="cv">#0015d1</span>;   <span class="cc">/* Brand colour — glows, gradients, text effects */</span>
   <span class="ck">--sds-primary-dim</span>:  <span class="cv">rgba(0, 21, 209, 0.08)</span>;
@@ -1262,7 +1262,7 @@ window.SDSInteractive.cleanup(element);</pre>
 
           <p class="doc-p">Scope to a specific section — changes only affect animations inside that container:</p>
           <div class="codeblock">
-            <div class="codeblock-head"><span class="codeblock-lang">CSS — scoped override</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <div class="codeblock-head"><span class="codeblock-lang">CSS — scoped override</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
             <pre><span class="ccl">.hero</span> {
   <span class="ck">--sds-primary</span>:      <span class="cv">#7c3aed</span>;
   <span class="ck">--sds-primary-glow</span>: <span class="cv">rgba(124, 58, 237, 0.35)</span>;
@@ -1293,7 +1293,7 @@ window.SDSInteractive.cleanup(element);</pre>
           </table>
 
           <div class="codeblock">
-            <div class="codeblock-head"><span class="codeblock-lang">TypeScript — utility function</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <div class="codeblock-head"><span class="codeblock-lang">TypeScript — utility function</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
             <pre><span class="ck">import</span> type { SdsTextAnimation, SdsModifier } <span class="ck">from</span> <span class="cs">'@salkomdesignstudio/sds-motion-forge'</span>;
 
 <span class="ck">function</span> anim(base: SdsTextAnimation, ...mods: SdsModifier[]): string {
@@ -1305,7 +1305,7 @@ window.SDSInteractive.cleanup(element);</pre>
           </div>
 
           <div class="codeblock">
-            <div class="codeblock-head"><span class="codeblock-lang">TypeScript — React component</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <div class="codeblock-head"><span class="codeblock-lang">TypeScript — React component</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
             <pre><span class="ck">import</span> type { SdsButtonAnimation } <span class="ck">from</span> <span class="cs">'@salkomdesignstudio/sds-motion-forge'</span>;
 
 <span class="ck">interface</span> ButtonProps {
@@ -1363,7 +1363,7 @@ window.SDSInteractive.cleanup(element);</pre>
 
           <h2 class="doc-h3">Reporting a bug</h2>
           <p class="doc-p">
-            <a href="https://github.com/salkomdesignstudio/SDS-Motion-Forge/issues/new" target="_blank" rel="noopener" style="color:var(--brand)">Open an issue</a>
+            <a href="https://github.com/salkomdesignstudio/SDS-Motion-Forge/issues/new" target="_blank" rel="noopener noreferrer" style="color:var(--brand)">Open an issue</a>
             and include: the affected class name(s), what you expected, what actually happened, your browser and version, and a minimal reproduction (HTML snippet or CodePen).
           </p>
 
@@ -1372,7 +1372,7 @@ window.SDSInteractive.cleanup(element);</pre>
 
           <h2 class="doc-h3">Local development setup</h2>
           <div class="codeblock">
-            <div class="codeblock-head"><span class="codeblock-lang">BASH</span><button class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <div class="codeblock-head"><span class="codeblock-lang">BASH</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
             <pre>git clone https://github.com/salkomdesignstudio/SDS-Motion-Forge.git
 cd SDS-Motion-Forge
 npm install</pre>
@@ -1423,7 +1423,7 @@ npm install</pre>
             <a
               href="https://github.com/salkomdesignstudio/SDS-Motion-Forge/blob/main/CHANGELOG.md"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               style="color:var(--brand);font-weight:600;display:inline-flex;align-items:center;gap:6px"
             ><i class="ri-external-link-line"></i> View CHANGELOG.md on GitHub</a>
           </p>
@@ -1448,7 +1448,7 @@ npm install</pre>
           </ul>
 
           <p class="doc-p" style="margin-top:8px">
-            <a href="https://github.com/salkomdesignstudio/SDS-Motion-Forge/blob/main/CHANGELOG.md" target="_blank" rel="noopener" style="color:var(--brand)">See the full changelog →</a>
+            <a href="https://github.com/salkomdesignstudio/SDS-Motion-Forge/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer" style="color:var(--brand)">See the full changelog →</a>
           </p>
         </section>
 

@@ -1,6 +1,6 @@
 /**
  * SDS Motion Forge — Interactive JS Engine
- * Version: 4.0.0
+ * Version: 5.0.0
  * Handles: word-morph, jelly-hover, scatter-return, shockwave,
  *          spring-kerning, magnetic-pull, repulsion-field
  *
