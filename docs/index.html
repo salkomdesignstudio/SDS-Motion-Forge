@@ -832,13 +832,12 @@
           var(--sh-1);
       }
       .card-stage {
-        height: 124px;
+        height: 140px;
         background: var(--bg-2);
         border-bottom: 1px solid var(--line);
         display: grid;
         place-items: center;
         overflow: hidden;
-        contain: paint;
       }
       .card-demo {
         font-size: 21px;
@@ -2039,10 +2038,18 @@
       .card-stage input, .modal-stage input {
         padding: 10px 14px; border: 1.5px solid var(--line-2);
         border-radius: 10px; font-family: var(--f-disp); font-size: 14px; width: 80%;
+        box-sizing: border-box;
+      }
+      /* wrapper-style input classes (inputWrap:true) use a div — give it the same width */
+      .card-stage div[class*="sds-input-"], .modal-stage div[class*="sds-input-"] {
+        width: 80%; box-sizing: border-box;
+      }
+      .card-stage div[class*="sds-input-"] input, .modal-stage div[class*="sds-input-"] input {
+        width: 100%;
       }
       .card-stage div[class*="sds-card-"], .modal-stage div[class*="sds-card-"] {
         width: 90px; height: 60px; border-radius: 10px; background: var(--brand);
-        box-shadow: var(--sh-1); color: transparent; overflow: hidden; padding: 6px;
+        box-shadow: var(--sh-1); color: transparent; padding: 6px;
       }
       .modal-stage div[class*="sds-card-"] { width: 130px; height: 86px; }
       .card-stage div[class*="sds-card-"] > div, .modal-stage div[class*="sds-card-"] > div {
