@@ -1,0 +1,12 @@
+# robots.txt — SDS Motion Forge
+# https://salkomdesignstudio.github.io/SDS-Motion-Forge/
+
+User-agent: *
+Allow: /
+
+# Crawl-budget: skip compiled assets and dev-only pages
+Disallow: /dist/
+Disallow: /batch-preview.html
+
+# Sitemap
+Sitemap: https://salkomdesignstudio.github.io/SDS-Motion-Forge/sitemap.xml

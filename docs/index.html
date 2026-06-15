@@ -33,7 +33,7 @@
     <meta property="og:site_name" content="SDS Motion Forge" />
     <meta
       property="og:title"
-      content="SDS Motion Forge — 600+ CSS Animations + Interactive Physics Engine."
+      content="SDS Motion Forge — 600+ CSS Animations · Zero Required JavaScript"
     />
     <meta
       property="og:description"
@@ -56,7 +56,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="SDS Motion Forge — 600+ CSS Animations + Interactive Physics Engine."
+      content="SDS Motion Forge — 600+ CSS Animations · Zero Required JavaScript"
     />
     <meta
       name="twitter:description"
@@ -67,6 +67,11 @@
       content="https://salkomdesignstudio.github.io/SDS-Motion-Forge/images/logo.png"
     />
     <meta name="twitter:creator" content="@salkomdesign" />
+    <meta name="twitter:site" content="@salkomdesign" />
+    <meta
+      name="twitter:image:alt"
+      content="SDS Motion Forge — 600+ CSS Animations by Salkom Design Studio"
+    />
 
     <link
       rel="stylesheet"
@@ -79,6 +84,8 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
     <link
       href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Syne:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
@@ -2164,6 +2171,71 @@
         flex-wrap: wrap;
       }
     </style>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://salkomdesignstudio.github.io/SDS-Motion-Forge/#software",
+          "name": "SDS Motion Forge",
+          "description": "600+ production-ready CSS animations across 6 categories. Drop a single class name on any element — no JavaScript, no build step, no config.",
+          "url": "https://salkomdesignstudio.github.io/SDS-Motion-Forge/",
+          "applicationCategory": "DeveloperApplication",
+          "applicationSubCategory": "CSS Animation Library",
+          "operatingSystem": "Any",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "softwareVersion": "5.0.0",
+          "license": "https://opensource.org/licenses/MIT",
+          "downloadUrl": "https://www.npmjs.com/package/@salkomdesignstudio/sds-motion-forge",
+          "author": {
+            "@id": "https://salkomdesignstudio.github.io/SDS-Motion-Forge/#organization"
+          },
+          "featureList": [
+            "600+ CSS animations across text, buttons, inputs, cards, loaders, scroll",
+            "Zero required JavaScript",
+            "Scroll-gate trigger system",
+            "Interactive physics engine",
+            "prefers-reduced-motion support",
+            "TypeScript type definitions",
+            "React, Angular, Tailwind, Web Components wrappers"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://salkomdesignstudio.github.io/SDS-Motion-Forge/#website",
+          "url": "https://salkomdesignstudio.github.io/SDS-Motion-Forge/",
+          "name": "SDS Motion Forge",
+          "description": "600+ production-ready CSS animations. One class name, zero required JavaScript.",
+          "publisher": {
+            "@id": "https://salkomdesignstudio.github.io/SDS-Motion-Forge/#organization"
+          },
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://salkomdesignstudio.github.io/SDS-Motion-Forge/#organization",
+          "name": "Salkom Design Studio",
+          "url": "https://salkomdesignstudio.github.io/SDS-Motion-Forge/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://salkomdesignstudio.github.io/SDS-Motion-Forge/images/logo.png"
+          },
+          "email": "salkomdesignstudio@gmail.com",
+          "sameAs": [
+            "https://www.npmjs.com/package/@salkomdesignstudio/sds-motion-forge",
+            "https://github.com/salkomdesignstudio/SDS-Motion-Forge"
+          ]
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <!-- NAV -->
@@ -2174,6 +2246,7 @@
             <img
               src="images/logo.png"
               alt="Salkom Design Studio — SDS Motion Forge"
+              fetchpriority="high"
             />
             <span class="logo-text"
               ><span class="logo-sans">SDS-</span
@@ -2569,6 +2642,7 @@
             <img
               src="images/logo.png"
               alt="Salkom Design Studio — SDS Motion Forge"
+              loading="lazy"
             />
             <span class="logo-text foot-logo-text"
               ><span class="logo-sans">SDS-</span

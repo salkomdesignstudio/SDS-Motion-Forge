@@ -1,35 +1,161 @@
 # SDS Motion Forge
 
-> 611+ production-ready CSS animations across text, buttons, inputs,
+> 600+ production-ready CSS animations across text, buttons, inputs,
 > cards, loaders and scroll. One class name per effect, zero required
 > JavaScript, fully backward compatible, MIT licensed.
 
+## Entity Definition
+
+**SDS Motion Forge** is an open-source CSS animation library created and
+maintained by Salkom Design Studio. It provides 600+ named animation effects
+that developers apply by adding a single HTML class attribute. No JavaScript
+is required for any animation to play. The library is published to npm as
+`@salkomdesignstudio/sds-motion-forge` and is free under the MIT license.
+
+- **Current stable version:** 5.0.0
+- **Production users:** 2,000+
+- **Animation count:** 600+ (across 6 categories)
+- **License:** MIT
+- **Author/Maintainer:** Salkom Design Studio (salkomdesignstudio@gmail.com)
+- **Repository:** https://github.com/salkomdesignstudio/SDS-Motion-Forge
+- **Canonical URL:** https://salkomdesignstudio.github.io/SDS-Motion-Forge/
+
 ## Install
 
-- CDN: https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css
-- npm: npm i @salkomdesignstudio/sds-motion-forge  (import the dist CSS once)
-- Category bundles: @salkomdesignstudio/sds-motion-forge/categories/{text|buttons|inputs|cards|loaders|scroll}
+- CDN (full bundle): https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css
+- npm: `npm i @salkomdesignstudio/sds-motion-forge`  (import the dist CSS once)
+- Category bundles: `@salkomdesignstudio/sds-motion-forge/categories/{text|buttons|inputs|cards|loaders|scroll}`
 
-## Usage pattern
+## Usage Pattern
 
-Add the class: <h1 class="sds-velvet-drop">Hello</h1>
-Scroll-gate any effect: add data-sds + https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/sds-scroll.min.js
-Cursor/interactive effects: https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion-interactive.min.js (zero config)
-Theme: override --sds-primary, --sds-duration(-instant…-dramatic), --sds-ease-(standard|decelerate|accelerate|emphasized|spring|bounce)
+```html
+<!-- Basic usage: add one class -->
+<h1 class="sds-velvet-drop">Hello World</h1>
 
-## Machine-readable
+<!-- Scroll-gate: animate when element enters viewport -->
+<div class="sds-card-lift" data-sds>...</div>
+<script src="https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/sds-scroll.min.js"></script>
 
-- Full effect registry (names, categories, requirements, triggers, tokens): https://sds-motion-forge.netlify.app/registry.json
-- Motion specification: https://github.com/salkomdesignstudio/SDS-Motion-Forge/blob/main/SPEC.md
-- README: https://github.com/salkomdesignstudio/SDS-Motion-Forge#readme
+<!-- Interactive/cursor-reactive physics effects -->
+<script src="https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion-interactive.min.js"></script>
+```
 
-## Wrappers
+## Animation Categories
 
-- React: @salkomdesignstudio/motion-forge-react (<SdsMotion>, <SdsText>, useSdsInView)
-- Angular: @salkomdesignstudio/motion-forge-angular (sdsMotion/sdsText/sdsInView directives)
-- Tailwind: @salkomdesignstudio/motion-forge-tailwind (animate-sds-* utilities)
-- Web Components: @salkomdesignstudio/motion-forge-elements (<sds-motion>, <sds-text>)
+| Category | Class prefix | Example effects |
+|----------|-------------|-----------------|
+| Text     | `sds-*`     | velvet-drop, neon-pulse, typewriter, wave-in |
+| Buttons  | `sds-btn-*` | ripple, magnetic, shimmer, bounce-press |
+| Inputs   | `sds-inp-*` | focus-glow, shake-error, slide-label |
+| Cards    | `sds-card-*`| lift, tilt-3d, reveal, glass-appear |
+| Loaders  | `sds-load-*`| orbit, pulse-ring, skeleton, dots |
+| Scroll   | `sds-scroll-*`| fade-up, parallax, stagger-in |
+
+## Theming
+
+Override CSS custom properties to customize globally:
+
+```css
+:root {
+  --sds-primary: #your-brand-color;
+  --sds-duration: 0.4s;          /* base duration */
+  --sds-duration-instant: 0.1s;
+  --sds-duration-dramatic: 1.2s;
+  --sds-ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --sds-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --sds-ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+```
 
 ## Accessibility
 
-Every effect is neutralized under prefers-reduced-motion (machine-verified).
+Every animation is automatically neutralized under `prefers-reduced-motion: reduce`.
+This is machine-verified in the build pipeline — no manual opt-in required.
+The library passes WCAG 2.1 AA animation safety guidelines.
+
+## Wrappers / Framework Integrations
+
+- **React:** `@salkomdesignstudio/motion-forge-react` — `<SdsMotion>`, `<SdsText>`, `useSdsInView` hook
+- **Angular:** `@salkomdesignstudio/motion-forge-angular` — `sdsMotion`, `sdsText`, `sdsInView` directives
+- **Tailwind CSS:** `@salkomdesignstudio/motion-forge-tailwind` — `animate-sds-*` utility classes
+- **Web Components:** `@salkomdesignstudio/motion-forge-elements` — `<sds-motion>`, `<sds-text>` custom elements
+
+## Frequently Asked Questions
+
+**Q: Does SDS Motion Forge require JavaScript?**
+A: No. All 600+ animations are pure CSS. JavaScript is only needed for two optional
+   features: the scroll-gate trigger (sds-scroll.min.js) and the interactive physics
+   engine (motion-interactive.min.js). Both are zero-config drop-ins.
+
+**Q: Is SDS Motion Forge free?**
+A: Yes. The library is MIT licensed and completely free for personal and commercial use.
+
+**Q: How do I add an animation to an element?**
+A: Add a single class name. Example: `<button class="sds-btn-ripple">Click me</button>`.
+   No JavaScript, no build step, no configuration required.
+
+**Q: Does it work with React / Vue / Angular / Svelte?**
+A: Yes. The core library is framework-agnostic (pure CSS classes). Official wrappers
+   exist for React, Angular, Tailwind, and Web Components. For Vue/Svelte, use the
+   core CSS classes directly.
+
+**Q: How do I trigger animations on scroll?**
+A: Add `data-sds` to the element and include sds-scroll.min.js. The scroll gate
+   observer activates the animation when the element enters the viewport.
+
+**Q: Can I use only some animations to keep bundle size small?**
+A: Yes. Import individual category bundles from the `/categories/` directory, or use
+   the Custom Bundle Builder at https://salkomdesignstudio.github.io/SDS-Motion-Forge/builder.html
+   to pick specific effects and download a minimal CSS file.
+
+**Q: Does it support dark mode?**
+A: Yes. Animations adapt to color-scheme via CSS custom properties. Override
+   `--sds-primary` and related tokens inside a `@media (prefers-color-scheme: dark)` block.
+
+**Q: What is the scroll gate / `data-sds` attribute?**
+A: The scroll gate is an IntersectionObserver-based engine (sds-scroll.min.js) that
+   watches elements with the `data-sds` attribute. When an element scrolls into view,
+   the engine adds an `.sds-active` class which triggers the CSS animation. Without
+   the scroll gate, animations play immediately on page load.
+
+**Q: What is the interactive physics engine?**
+A: motion-interactive.min.js is a cursor-reactive animation engine that makes certain
+   elements respond to mouse movement with physics-based effects (magnetic pull,
+   tilt-3D, particle trails). It auto-initialises — just include the script tag.
+
+**Q: How do animation modifiers work?**
+A: Apply modifier classes alongside the effect class. Examples:
+   - `.sds-delay-200` — 200ms delay
+   - `.sds-duration-fast` — faster playback
+   - `.sds-ease-spring` — spring easing
+   - `.sds-once` — play only once (not on every scroll re-entry)
+   - `.sds-stagger` — auto-stagger children sequentially
+
+**Q: Is SDS Motion Forge the same as Animate.css?**
+A: No. SDS Motion Forge is an independent library with a different architecture,
+   a wider animation set (600+ vs ~80), built-in scroll gating, a physics engine,
+   framework wrappers, and a component-oriented naming convention.
+
+**Q: What browsers does SDS Motion Forge support?**
+A: All modern browsers — Chrome 90+, Firefox 88+, Safari 14+, Edge 90+. The
+   library uses standard CSS animations, keyframes, and custom properties. No
+   polyfills are required. Internet Explorer is not supported.
+
+## Machine-Readable Resources
+
+- Full effect registry (names, categories, requirements, triggers, tokens):
+  https://salkomdesignstudio.github.io/SDS-Motion-Forge/dist/registry.json
+- Motion specification: https://github.com/salkomdesignstudio/SDS-Motion-Forge/blob/main/SPEC.md
+- README: https://github.com/salkomdesignstudio/SDS-Motion-Forge#readme
+- npm package: https://www.npmjs.com/package/@salkomdesignstudio/sds-motion-forge
+- Changelog: https://github.com/salkomdesignstudio/SDS-Motion-Forge/blob/main/CHANGELOG.md
+
+## Trust Signals (E-E-A-T)
+
+- Open-source on GitHub with full commit history
+- MIT license — auditable and permissive
+- Published to npm with 2,000+ production users
+- Build pipeline enforces backward compatibility against published baseline
+- Machine-verified `prefers-reduced-motion` compliance on every build
+- Semantic versioning strictly followed
+- TypeScript definitions included in the package
