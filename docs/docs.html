@@ -566,7 +566,7 @@
         <img src="images/logo.png" alt="Salkom Design Studio — SDS Motion Forge" />
         <span class="logo-text"><span class="logo-sans">SDS-</span><span class="logo-serif">Motion-Forge</span></span>
       </a>
-      <span class="nav-badge">v4.0.3</span>
+      <span class="nav-badge">v5.0.0</span>
       <div class="nav-sp"></div>
       <nav class="nav-links">
         <a href="index.html">
@@ -1428,13 +1428,21 @@ npm install</pre>
             ><i class="ri-external-link-line"></i> View CHANGELOG.md on GitHub</a>
           </p>
 
-          <h2 class="doc-h3">Current: v4.0.3</h2>
+          <h2 class="doc-h3">Current: v5.0.0</h2>
           <ul class="doc-ul">
-            <li>Fixed critical <code>rootMargin</code> crash in <code>sds-scroll.min.js</code> — scroll-gate was broken for all users</li>
-            <li>Replaced hand-authored min.js files with automated terser build — source maps generated</li>
-            <li>Fixed CSS path for Netlify deployment (FOUC eliminated)</li>
-            <li>Fixed broken scroll animation docs code example</li>
-            <li>Completed TypeScript types — all 177 animation classes now typed (v5.0.0: 600+ classes typed)</li>
+            <li><strong>245 new animation effects</strong> — every category now ships exactly 100 effects (Text: 104, Buttons: 100, Inputs: 100, Cards: 100, Loaders: 100, Scroll: 100)</li>
+            <li>v5 motion token scale — <code>--sds-duration-*</code> and <code>--sds-ease-*</code> design tokens (W3C format)</li>
+            <li>Lossless category split — import only the categories you use</li>
+            <li>600+ animation classes typed in <code>index.d.ts</code></li>
+            <li>100% <code>prefers-reduced-motion</code> coverage including child-driven animations</li>
+            <li>Interactive engine: cursor-reactive physics (magnetic, shockwave, scatter, repulsion)</li>
+            <li>New package exports for React, Web Components, and Tailwind</li>
+          </ul>
+
+          <h2 class="doc-h3">Previous: v4.0.3</h2>
+          <ul class="doc-ul">
+            <li>Fixed critical <code>rootMargin</code> crash in <code>sds-scroll.min.js</code></li>
+            <li>Completed TypeScript types — all 177 animation classes typed</li>
             <li>Fixed gallery accessibility (keyboard navigation, aria labels)</li>
             <li>JS engine sizes: sds-scroll −20%, motion-interactive −25%</li>
           </ul>
