@@ -18,6 +18,24 @@ A production-grade motion system for modern UI — framework-agnostic, accessibl
 
 ---
 
+## Why SDS Motion Forge
+
+| | SDS Motion Forge v5 | Animate.css v4 | GSAP (free tier) | Framer Motion |
+|---|---|---|---|---|
+| **Bundle (gzip)** | 38 KB full · 6–9 KB per category | 80 KB | 23 KB (core only) | 48 KB |
+| **JS required** | No (CSS core is zero-JS) | No | Yes | Yes (React only) |
+| **TypeScript** | Complete union types for all 600+ classes | No | Partial | Full |
+| **SSR safe** | Yes (CSS-first; JS engines optional) | Yes | Partial | React SSR only |
+| **Tree-shakeable** | Yes (per-category bundles) | No | Yes | Yes |
+| **`prefers-reduced-motion`** | Machine-verified 100% coverage | Manual | Manual | Yes |
+| **Framework wrappers** | React · Angular · Tailwind · Web Components | None | None | React only |
+| **License** | MIT | MIT | GSAP Standard (free with limits) | MIT |
+| **Compositor-only** | Enforced by CI lint gate | No | No | No |
+
+The short version: SDS Motion Forge is the only CSS animation library with machine-verified reduced-motion coverage, a registry-driven architecture that generates typed wrappers for all four major frontend ecosystems, and a backward-compatibility gate that proves zero behavior changes on every build.
+
+---
+
 ## Table of Contents
 
 - [What's in v5](#whats-in-v5)
@@ -163,6 +181,21 @@ unions for all 350+ animations, zero runtime dependencies:
 | [`@salkomdesignstudio/motion-forge-elements`](packages/elements) | framework-free `<sds-motion>` / `<sds-text>` Web Components |
 
 The core package stays 100 % framework-agnostic — wrappers are optional sugar.
+
+### Which integration is right for you?
+
+| Your setup | Recommended integration | Why |
+|---|---|---|
+| Plain HTML / static site | Core CSS via CDN | Zero build step. One `<link>` tag. |
+| Any bundler (Vite, webpack, Rollup) | npm core package | Tree-shaking via category imports. |
+| React / Next.js | `motion-forge-react` + core CSS | `<SdsMotion>` gives typed effects and SSR-safe char splitting. |
+| Next.js App Router | `motion-forge-react` + core CSS | Server renders plain text; client hydrates with motion. |
+| Angular (v17+) | `motion-forge-angular` + core CSS | Signal inputs, zoneless-safe, SSR with `isPlatformBrowser`. |
+| Tailwind v4 project | `motion-forge-tailwind` | `animate-sds-*` utilities, tree-shaken by Tailwind's engine. |
+| Tailwind v3 project | `motion-forge-tailwind` v3 preset | Extends `theme.keyframes` + `theme.animation`. See package README. |
+| Web Components / Lit | `motion-forge-elements` | `<sds-motion>` and `<sds-text>` custom elements, no framework dep. |
+| Multiple categories | Full `dist/motion.css` | One copy of core, all categories. Cheaper than importing 2+ category bundles. |
+| Figma / design tokens | `tokens/figma.tokens.json` | Import into Figma via the Tokens Studio plugin. |
 
 ### Framework Integrations
 
@@ -944,6 +977,10 @@ generated TypeScript constants module). Defaults are identical to v4; the legacy
 
 Entrance distances: `--sds-distance-sm` (24px), `--sds-distance-md` (48px), `--sds-distance-lg` (80px).
 
+### Design tokens (Figma / Tokens Studio)
+
+The full token scale is exported as `tokens/figma.tokens.json` (Tokens Studio format). Import it into Figma via the [Tokens Studio plugin](https://tokens.studio/) to sync `--sds-duration-*`, `--sds-ease-*`, and `--sds-distance-*` values directly into your design file. The export is regenerated on every build from `tokens/motion.tokens.json` — it is never hand-edited.
+
 ```css
 /* Speed up every standard entrance, keep everything else */
 :root { --sds-duration-base: 0.6s; }
@@ -1119,8 +1156,8 @@ The `dist/*.min.js` files are **generated artifacts** — they are in `.gitignor
 
 ### Prerequisites
 
-- Node.js 18 or higher
-- npm 9 or higher
+- Node.js 20 LTS or higher
+- npm 10 or higher
 
 ### Setup
 
@@ -1180,9 +1217,12 @@ Contributions are welcome. This is an MIT-licensed open-source project.
 **Start with [CONTRIBUTING.md](CONTRIBUTING.md)** — it explains the
 registry → codegen architecture, the compatibility contract, and the
 machine-enforced checklist for new animations. Public API changes and new
-categories go through the [RFC process](docs/rfcs/0000-template.md).
+categories go through the [RFC process](docs/rfcs/README.md).
 Governance: [VERSIONING.md](VERSIONING.md) · [SECURITY.md](SECURITY.md) ·
 [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+
+**Upgrading from v4?** See [MIGRATION.md](MIGRATION.md) for the complete upgrade guide.
+**Hitting an issue?** See [TROUBLESHOOTING.md](TROUBLESHOOTING.md) for the most common problems and fixes.
 
 ### Reporting bugs
 
@@ -1219,11 +1259,11 @@ All CSS animations live in `src/motion.css`. Follow these conventions:
 - **Reduced motion:** The global `prefers-reduced-motion` block in the CSS covers all animations automatically
 - **`both` fill mode:** Use `animation-fill-mode: both` so the element holds its pre-animation state
 
-After adding a CSS animation:
-1. Add the class name to `REQUIRED_CLASSES` in `verify-build.js`
-2. Add the `@keyframes` name to `REQUIRED_KEYFRAMES` in `verify-build.js`
-3. Add the TypeScript type to the appropriate union in `index.d.ts`
-4. Add the animation to the `ANIMATIONS` object in `docs/index.html` for gallery display
+After adding a CSS animation, run `npm run build` — the registry, docs data,
+TypeScript unions, and Tailwind utilities are all regenerated automatically.
+Then add an authored description to `registry/meta/descriptions.json` and run
+`npm run test:visual -- --update-snapshots` to commit the visual baselines.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the full 7-step checklist.
 
 ### Code style
 

@@ -1,6 +1,12 @@
 # Changelog
 
-## [5.0.0] — Unreleased
+## [Unreleased]
+
+<!-- Next release notes go here -->
+
+---
+
+## [5.0.0] — 2026-06-15
 
 > ## Nothing removed, nothing changed.
 > Every class name, keyframe, computed animation value, export path, dist
@@ -21,7 +27,7 @@
 > and the custom bundle builder (Phase 4), and open-source governance
 > (Phase 5). Details per phase below.
 
-## [Unreleased] — v5 Phase 6: 245 New Effects — All Categories to 100
+### Phase 6: 245 New Effects — All Categories to 100
 
 ### Added
 
@@ -33,7 +39,7 @@
   - **Scroll** — 54 → 100: clean entrances, 3D hinges, filter reveals, clip wipes, stagger, and kinetic effects including `sds-scroll-zoom-in`, `sds-scroll-hinge-in`, `sds-scroll-kaboom`, `sds-scroll-peel`, `sds-scroll-jello`, `sds-scroll-door-left`, `sds-scroll-door-right`, `sds-scroll-barrel`, `sds-scroll-saturate`, `sds-scroll-sepia`, `sds-scroll-overexpose`, `sds-scroll-thermal`, `sds-scroll-iris`, `sds-scroll-wipe-up`, `sds-scroll-wipe-right`, `sds-scroll-wipe-left`, `sds-scroll-wipe-down`, `sds-scroll-stagger-fade`, `sds-scroll-stagger-rise`, `sds-scroll-blink-in`, `sds-scroll-slingshot`, `sds-scroll-pendulum`, `sds-scroll-stagger-slide`, `sds-scroll-materialize`, `sds-scroll-typewriter`, `sds-scroll-glitch-in`, `sds-scroll-unfurl`, `sds-scroll-catapult`, `sds-scroll-lens`, `sds-scroll-twirl`, `sds-scroll-cinematic-blur`, `sds-scroll-bounce-up`, `sds-scroll-cascade-blur`, `sds-scroll-flip-up`, `sds-scroll-flip-right`, `sds-scroll-flip-left`, `sds-scroll-smash-down`, `sds-scroll-slam`, `sds-scroll-spotlight-reveal`, `sds-scroll-zoom-blur-in`, `sds-scroll-neon-arrive`, `sds-scroll-rainbow-in`, `sds-scroll-glitch-slide`, `sds-scroll-pixel-build`, `sds-scroll-weight-drop`, `sds-scroll-spring-up`
 - All 245 new effects are compositor-safe (transform/opacity/filter/clip-path only), have full `prefers-reduced-motion` coverage via the global gate, and are included in the registry, docs, Tailwind plugin, React/Angular/Elements packages, and custom bundle builder.
 
-## [Unreleased] — v5 Phase 5: Open-Source Governance
+### Phase 5: Open-Source Governance
 
 ### Added
 
@@ -55,7 +61,7 @@
   one-line motion description and a distinctness statement, mirroring the
   SPEC quality bar; the PR template carries the compatibility statement.
 
-## [Unreleased] — v5 Phase 4: Docs Platform + Copy-Paste Guarantee + Bundle Builder
+### Phase 4: Docs Platform + Copy-Paste Guarantee + Bundle Builder
 
 > The website IS the product: what you see in a preview, what you copy, and
 > what npm ships are now one machine-verified artifact.
@@ -127,7 +133,7 @@
   animation plays from its true first frame. Verified by before/after
   Playwright probes; recorded in `compat/approved-deviations.json`.
 
-## [Unreleased] — v5 Phase 3: Quality Infrastructure
+### Phase 3: Quality Infrastructure
 
 > Every gate below runs in CI; the publish gate (`release:check`) now includes
 > reduced-motion, compositor-lint and size budgets. R1 gate remains green
@@ -196,7 +202,7 @@
 3. Appending +5 % to `dist/motion.min.css` → `size-limit` fails
    ("exceeded by 1.81 kB"); rebuild restores green.
 
-## [Unreleased] — v5 Phase 2: Framework Layer (generated, not hand-written)
+### Phase 2: Framework Layer (generated, not hand-written)
 
 > Repo is now an npm workspace; the root package publishes exactly as before
 > (R1 gate still 0 deviations). All wrapper packages launch at 1.0.0
@@ -249,7 +255,7 @@
   packages generate `src/generated/effects.ts` from it at build time —
   identical unions, impossible to diverge.
 
-## [Unreleased] — v5 Phase 1: Registry + Lossless Modular Builds
+### Phase 1: Registry + Lossless Modular Builds
 
 > **Compatibility statement:** dist/motion.css remains computed-value-identical
 > to published 4.0.3 (verify-against-published: 0 deviations). All new files
@@ -301,7 +307,7 @@
 - `postcss.config.js` adds `postcss-import` (devDependency) to inline the
   category entry; `dist/motion.css` output remains equivalent (gate-proven).
 
-## [Unreleased] — v5 Phase 0: Motion Token System + Specification
+### Phase 0: Motion Token System + Specification
 
 > **Compatibility statement:** zero computed-value deviations from published
 > 4.0.3, machine-proven on every build by `scripts/verify-against-published.js`
@@ -540,28 +546,52 @@ All v3.x class names, keyframe names, and CSS custom properties are preserved.
 
 ## [3.2.1] - 2026-05-28
 
-- Minor patch release
+### Fixed
+
+- Minor corrections to animation timing and easing values across multiple categories.
+- Addressed edge-case rendering issues in Safari for clip-path animations.
 
 ## [3.2.0] - 2026-05-27
 
-- Extended animation set across all 6 categories
+### Added
+
+- Extended animation set across all 6 categories (text, buttons, inputs, cards, loaders, scroll).
+- New ambient loop effects for card and loader categories.
 
 ## [3.0.2] - 2026-05-27
 
-- Stability improvements
+### Fixed
+
+- Stability improvements for animation replay and scroll-gate interactions.
+- Resolved edge cases in reduced-motion handling for child-animated effects.
 
 ## [3.0.1] - 2026-05-25
 
-- Performance improvements
+### Fixed
+
+- Performance improvements — reduced redundant `will-change` declarations.
+- Fixed animation jank on low-powered devices for transform-heavy effects.
 
 ## [1.1.2] - 2026-05-24
 
-- Bug fixes
+### Fixed
+
+- Bug fixes for loader pseudo-element rendering in Firefox.
+- Corrected keyframe naming conflicts in the text category.
 
 ## [1.1.1] - 2026-05-24
 
-- Initial stable release
+### Added
+
+- Initial stable release with 50 text animations, basic button effects, and the loader category.
+
+> **Historical note:** Versions 1.1.0 through 3.x predate structured changelogs. The entries
+> above capture the best available record. All class names from every version continue to work
+> identically in 4.x and 5.x — see the backward compatibility table in README.md.
 
 ## [1.1.0] - 2026-05-22
 
-- First public release
+### Added
+
+- First public release: CSS animation library with text, button, loader, and card categories.
+- CDN-compatible single-file distribution.

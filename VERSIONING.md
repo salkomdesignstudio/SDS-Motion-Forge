@@ -46,6 +46,26 @@ semver lines starting at 1.0.0. A wrapper bug never forces a core release and
 vice versa. Wrappers declare the minimum core behavior they need through the
 registry version they were generated from (stamped in each generated file).
 
+### Wrapper ↔ Core compatibility matrix
+
+| Core (`sds-motion-forge`) | Tailwind | React | Angular | Elements |
+|---|---|---|---|---|
+| 5.0.x | 1.0.x | 1.0.x | 1.0.x | 1.0.x |
+| 4.0.x | — | — | — | — |
+
+**Reading the table:** a wrapper version in the same row as a core version is
+confirmed compatible. A `—` means the wrapper package did not exist for that
+core version.
+
+**Policy:** wrapper minors (1.1.0, 1.2.0 …) add features and remain
+backward-compatible with the core version they launched against. Wrapper
+patches (1.0.1 …) fix bugs and never require a core upgrade. A wrapper major
+(2.0.0) only happens when the underlying core major changes the registry schema
+that the wrapper generates from.
+
+This table is updated with every release. If you pin a wrapper version and
+upgrade core, check this table before upgrading.
+
 ## Release mechanics
 
 - Every release runs `release:check` (build, verify-build, token/registry/
