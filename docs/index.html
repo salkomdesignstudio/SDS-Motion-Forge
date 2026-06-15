@@ -2663,12 +2663,12 @@
         </div>
         <div class="foot-cols">
           <div class="foot-col">
-            <h5>Product</h5>
+            <h3>Product</h3>
             <a href="#why">Features</a><a href="#gallery">Gallery</a
             ><a href="#playground">Playground</a><a href="docs.html">Docs</a>
           </div>
           <div class="foot-col">
-            <h5>Resources</h5>
+            <h3>Resources</h3>
             <a
               href="https://github.com/salkomdesignstudio/SDS-Motion-Forge"
               target="_blank"
@@ -2697,7 +2697,7 @@
             >
           </div>
           <div class="foot-col">
-            <h5>Studio</h5>
+            <h3>Studio</h3>
             <a
               href="https://salkomdesignstudio.com"
               target="_blank"
@@ -3203,7 +3203,7 @@
           var box = document.getElementById("pgChips");
           box.innerHTML = MODS.map(function (m) {
             return (
-              '<button class="pg-chip" data-m="' +
+              '<button type="button" class="pg-chip" data-m="' +
               m +
               '">' +
               m.replace("sds-", "") +
@@ -3346,7 +3346,7 @@
         };
 
         function previewMarkupModal(a) {
-          return window.SDS_DOCS.markup[a.cls] || "";
+          return (window.SDS_DOCS && window.SDS_DOCS.markup && window.SDS_DOCS.markup[a.cls]) || "";
         }
 
         window.openModal = function (cat, idx) {
@@ -3399,11 +3399,20 @@
           document.getElementById("modal").classList.add("open");
           document.body.style.overflow = "hidden";
           modalApply();
+          /* Accessibility: save trigger element, move focus into modal */
+          modalState.lastFocus = document.activeElement;
+          var firstFocusable = document.querySelector(".modal-box .modal-x");
+          if (firstFocusable) firstFocusable.focus();
         };
 
         window.closeModal = function () {
           document.getElementById("modal").classList.remove("open");
           document.body.style.overflow = "";
+          /* Accessibility: restore focus to the element that opened the modal */
+          if (modalState.lastFocus && typeof modalState.lastFocus.focus === "function") {
+            modalState.lastFocus.focus();
+            modalState.lastFocus = null;
+          }
         };
 
         function resetSeg(id, val) {
@@ -3558,11 +3567,23 @@
         };
 
         document.addEventListener("keydown", function (e) {
-          if (
-            e.key === "Escape" &&
-            document.getElementById("modal").classList.contains("open")
-          )
-            closeModal();
+          if (!document.getElementById("modal").classList.contains("open")) return;
+          if (e.key === "Escape") { closeModal(); return; }
+          if (e.key !== "Tab") return;
+          /* Focus trap: cycle within .modal-box */
+          var focusable = Array.prototype.slice.call(
+            document.querySelector(".modal-box").querySelectorAll(
+              'button:not([disabled]),[href],input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])'
+            )
+          );
+          if (!focusable.length) return;
+          var first = focusable[0];
+          var last = focusable[focusable.length - 1];
+          if (e.shiftKey) {
+            if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+          } else {
+            if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+          }
         });
 
         /* ---------- Init ---------- */
