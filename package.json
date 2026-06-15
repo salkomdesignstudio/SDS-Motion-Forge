@@ -94,6 +94,7 @@
     "generate:docs": "node scripts/docs/generate-docs-data.js",
     "generate:samples": "node scripts/docs/generate-framework-samples.js",
     "build:docs-dist": "node -e \"const fs=require('fs'),p=require('path');const src='dist',dst='docs/dist';fs.rmSync(dst,{recursive:true,force:true});fs.cpSync(src,dst,{recursive:true});console.log('docs/dist synced')\"",
+    "generate:og": "node scripts/generate-og-image.js",
     "build": "npm run build:tokens && npm run build:css && npm run build:js && npm run build:categories && npm run generate:registry && npm run generate:docs && npm run build:docs-dist",
     "build:dev": "postcss src/motion.css -o dist/motion.css --map",
     "build:watch": "postcss src/motion.css -o dist/motion.css --watch",
