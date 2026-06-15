@@ -2256,7 +2256,7 @@
               ><i class="ri-rocket-2-fill"></i> Get Started</a
             >
             <a href="#gallery" class="btn btn-ghost"
-              ><i class="ri-gallery-fill"></i> Browse 600+ Animations</
+              ><i class="ri-gallery-fill"></i> Browse 600+ Animations</a
             >
           </div>
           <div class="hero-stats">
@@ -2771,7 +2771,15 @@
     <script>
       /* All animation data is generated from registry/motion.registry.json
          (window.SDS_DOCS) — nothing in the gallery is hand-maintained. */
-      const ANIMATIONS = window.SDS_DOCS.animations;
+      if (!window.SDS_DOCS) {
+        document.getElementById("galGrid").innerHTML =
+          '<div style="grid-column:1/-1;padding:64px;text-align:center;color:#888;font-size:15px">' +
+          '<strong>Gallery requires a local server.</strong><br><br>' +
+          'Run: <code style="background:#f0f0f0;padding:4px 10px;border-radius:4px">' +
+          'npx http-server docs -p 3000</code>' +
+          '</div>';
+      }
+      const ANIMATIONS = (window.SDS_DOCS || {}).animations || {};
       /* hand-maintained ANIMATIONS literal removed by the single-artifact policy — see SDS_DOCS */
 
       (function () {
@@ -2930,7 +2938,8 @@
         function previewMarkup(a) {
           // THE single registry-rendered template — identical to the HTML
           // tab's body. Preview and snippet can never diverge.
-          return window.SDS_DOCS.markup[a.cls] || "";
+          var m = window.SDS_DOCS && window.SDS_DOCS.markup;
+          return (m && m[a.cls]) || '<span class="card-demo ' + a.cls + '">' + a.name + '</span>';
         }
         function __unusedPreviewMarkup(a) {
           var cls = a.cls;
@@ -3492,9 +3501,6 @@
         buildPgChips();
         pgUpdate();
       })();
-    </script>
-    <!-- Interactive engine is loaded from the built package output above
-         (single-artifact policy) — the inline copy was removed by the single-artifact policy. -->
     </script>
   </body>
 </html>
