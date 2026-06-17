@@ -2091,8 +2091,9 @@
       .card-replay {
         position: absolute; top: 8px; right: 8px; width: 26px; height: 26px;
         border: 1px solid var(--line-2); border-radius: 8px; background: var(--bg-card);
-        color: var(--ink-2); cursor: pointer; font-size: 13px; line-height: 1;
-        opacity: 0; transition: opacity 0.15s;
+        color: var(--ink-2); cursor: pointer; font-size: 14px; line-height: 1;
+        display: flex; align-items: center; justify-content: center;
+        opacity: 0; transition: opacity 0.15s; z-index: 2;
       }
       .card:hover .card-replay, .card:focus-within .card-replay { opacity: 1; }
       .card-stage { position: relative; }
@@ -3052,7 +3053,7 @@
                 ' animation — click for details">' +
                 '<div class="card-stage">' +
                 previewMarkup(a) +
-                '<span class="card-replay" aria-hidden="true" title="Replay">⟳</span>' +
+                '<span class="card-replay" aria-hidden="true" title="Replay"><i class="ri-restart-line"></i></span>' +
                 "</div>" +
                 '<div class="card-meta">' +
                 '<div class="card-name">' +
