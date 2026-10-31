@@ -43,6 +43,20 @@ Decisions taken: canonical host is **Netlify** (`https://sds-motion-forge.netlif
 
 Stylesheets (library CSS, icon font) no longer block first paint; Geist is **self-hosted** (`docs/vendor/geist/`, OFL licence included), preloaded and inlined as `@font-face`; the icon font loads after `load`; gallery cards use `content-visibility:auto`; gallery first render is idle-deferred; hero blur filter removed; muted text colour `#8f8f8f → #666` (contrast); docs code-comment colour raised; logo got width/height. See `docs/GROWTH.md` for before/after.
 
+## Interactive layer: GSAP + Lenis (home page only)
+
+Self-hosted and pinned in `docs/vendor/` (gsap 3.15.0 + ScrollTrigger, lenis 1.3.27; licences included). Loaded after `load` + idle, so LCP/FCP/CLS are untouched (Lighthouse unchanged: 98/100/100/100); skipped completely for `prefers-reduced-motion` and Save-Data (the files are not even downloaded). Adds ~52 KB gzip for visitors who get it.
+
+- **Lenis smooth scroll** on desktop wheel only (touch keeps native momentum). Paused while the modal or drawer is open; modal/drawer/code panels keep native scrolling (`data-lenis-prevent`). Nav links glide to their section and land exactly at the page's 90px `scroll-padding-top`.
+- **GSAP**: scroll-progress hairline, nav state on scroll, hero-card parallax + cursor tilt, magnetic hero buttons, pointer spotlight on feature tiles, marquee that speeds up with scroll velocity.
+- Gallery cards' `contain-intrinsic-size` corrected to the measured 226px (230px estimate made anchor scrolling drift by ~140px).
+- Left out on purpose: `docs.html` and the 611 generated effect pages — reference pages that score 100 and need no smooth scrolling.
+- Verified in Chrome with 23 behavioural checks (anchors, modal lock, reduced motion, touch, no console errors) plus the repo's docs/builder Playwright suites.
+
+## CI
+
+CI was already red before this work (same jobs failed on the upstream commits `dd3250f`, `e100051`). Found and fixed one cause: `release:check` ran `npm run size`, which measures `packages/*/dist`, without building the packages first — it now runs `build:packages` before `size`. The `a11y` (needs the unbuilt `examples/vite-loaders` app) and `snippets` jobs fail for reasons not investigated yet.
+
 ## Docs
 
 `docs/GROWTH.md` (metrics, baselines, analytics + Search Console steps), `docs/LAUNCH.md` (manual launch checklist with paste-ready copy), `VERSIONING.md` (unsupported claim removed).

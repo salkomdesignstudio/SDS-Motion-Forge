@@ -2466,11 +2466,73 @@
       .docs-card-ico {
         color: var(--ink);
       }
+      /* ── Interactive layer: Lenis + GSAP (loaded after `load`, see the fx
+         script before </body>). Everything below is inert until it runs. ── */
+      html.lenis,
+      html.lenis body {
+        height: auto;
+      }
+      .lenis.lenis-smooth {
+        scroll-behavior: auto !important; /* the page sets smooth; Lenis owns it */
+      }
+      .lenis.lenis-smooth [data-lenis-prevent] {
+        overscroll-behavior: contain;
+      }
+      .lenis.lenis-stopped {
+        overflow: clip;
+      }
+      .lenis.lenis-smooth iframe {
+        pointer-events: none;
+      }
+      .fx-progress {
+        position: fixed;
+        inset: 0 0 auto 0;
+        height: 2px;
+        background: var(--ink);
+        transform: scaleX(0);
+        transform-origin: 0 50%;
+        z-index: 101;
+        pointer-events: none;
+      }
+      .nav.is-scrolled {
+        background: rgba(250, 250, 250, 0.97);
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+      }
+      .fx-magnet {
+        /* GSAP owns transform on these; keep the other transitions only */
+        transition:
+          background 0.15s,
+          border-color 0.15s,
+          box-shadow 0.15s !important;
+      }
+      .fx-on .tile::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.25s;
+        background: radial-gradient(
+          260px circle at var(--mx, 50%) var(--my, 50%),
+          rgba(0, 0, 0, 0.05),
+          transparent 60%
+        );
+      }
+      .fx-on .tile:hover::after {
+        opacity: 1;
+      }
       /* Gallery cards below the fold skip layout, paint and running animations
          until scrolled near; the DOM stays intact for tests and crawlers. */
       .gal-grid .card {
         content-visibility: auto;
-        contain-intrinsic-size: auto 230px;
+        /* Measured card height (226px; 232px when the title wraps on 1-column
+           mobile). An accurate estimate keeps anchor scrolling from drifting. */
+        contain-intrinsic-size: auto 226px;
+      }
+      @media (max-width: 480px) {
+        .gal-grid .card {
+          contain-intrinsic-size: auto 229px;
+        }
       }
       .faq {
         display: grid;
@@ -3995,6 +4057,166 @@
         buildPgSelect();
         buildPgChips();
         pgUpdate();
+      })();
+    </script>
+
+    <script>
+      /* Interactive layer — GSAP + ScrollTrigger + Lenis (self-hosted, pinned:
+         gsap 3.15.0, lenis 1.3.27 in vendor/).
+         Rules this layer follows so the page stays fast and accessible:
+           - starts only after `load` + idle, so it never touches LCP/FCP;
+           - skipped entirely for prefers-reduced-motion and Save-Data;
+           - never hides or moves anything above the fold before it runs;
+           - if a script fails to load, the page simply stays static. */
+      (function () {
+        "use strict";
+        var rm = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)");
+        var saveData = navigator.connection && navigator.connection.saveData;
+        if ((rm && rm.matches) || saveData) return;
+
+        function load(src) {
+          return new Promise(function (ok, fail) {
+            var s = document.createElement("script");
+            s.src = src;
+            s.onload = ok;
+            s.onerror = fail;
+            document.head.appendChild(s);
+          });
+        }
+        function boot() {
+          load("vendor/gsap/gsap.min.js")
+            .then(function () { return load("vendor/gsap/ScrollTrigger.min.js"); })
+            .then(function () { return load("vendor/lenis/lenis.min.js"); })
+            .then(init)
+            .catch(function () {});
+        }
+        function later() {
+          if (window.requestIdleCallback) requestIdleCallback(boot, { timeout: 3000 });
+          else setTimeout(boot, 1500);
+        }
+        if (document.readyState === "complete") later();
+        else window.addEventListener("load", later);
+
+        function init() {
+          var gsap = window.gsap, ScrollTrigger = window.ScrollTrigger, Lenis = window.Lenis;
+          if (!gsap || !ScrollTrigger) return;
+          gsap.registerPlugin(ScrollTrigger);
+          document.documentElement.classList.add("fx-on");
+          var fine = matchMedia("(hover: hover) and (pointer: fine)").matches;
+          var nav = document.querySelector(".nav");
+          var navH = nav ? nav.offsetHeight : 66;
+
+          /* 1 — Lenis smooth scroll: desktop wheel only; touch keeps native momentum. */
+          var lenis = null;
+          if (Lenis && fine) {
+            lenis = new Lenis({ lerp: 0.1, smoothWheel: true, autoRaf: false });
+            lenis.on("scroll", ScrollTrigger.update);
+            gsap.ticker.add(function (t) { lenis.raf(t * 1000); });
+            gsap.ticker.lagSmoothing(0);
+            // Scrollable panels and the modal must keep native wheel scrolling.
+            document.querySelectorAll(".modal-box, .drawer-panel, .pg-panel, .modal-code, pre")
+              .forEach(function (el) { el.setAttribute("data-lenis-prevent", ""); });
+            // The page locks body scroll for the modal and drawer — mirror that in Lenis.
+            new MutationObserver(function () {
+              if (document.body.style.overflow === "hidden") lenis.stop(); else lenis.start();
+            }).observe(document.body, { attributes: true, attributeFilter: ["style"] });
+            // In-page anchors glide to the section. Lenis already honors the page's
+            // `scroll-padding-top` (which clears the fixed nav) — adding our own
+            // offset would count it twice.
+            document.addEventListener("click", function (e) {
+              var a = e.target.closest && e.target.closest('a[href^="#"]');
+              if (!a || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey) return;
+              var id = a.getAttribute("href");
+              if (id.length < 2) return;
+              var target = document.querySelector(id);
+              if (!target) return;
+              e.preventDefault();
+              var pad = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || navH;
+              lenis.scrollTo(target, {
+                duration: 1.1,
+                // Layout can settle late (lazily sized cards); correct once if we missed.
+                onComplete: function () {
+                  var miss = target.getBoundingClientRect().top - pad;
+                  if (Math.abs(miss) > 4) lenis.scrollTo(window.scrollY + miss, { duration: 0.35 });
+                },
+              });
+              history.pushState(null, "", id);
+            });
+          }
+
+          /* 2 — Scroll progress hairline + nav state. */
+          var bar = document.createElement("div");
+          bar.className = "fx-progress";
+          bar.setAttribute("aria-hidden", "true");
+          document.body.appendChild(bar);
+          gsap.to(bar, { scaleX: 1, ease: "none", scrollTrigger: { start: 0, end: "max", scrub: 0.2 } });
+          ScrollTrigger.create({ start: 8, end: "max", toggleClass: { targets: ".nav", className: "is-scrolled" } });
+
+          /* 3 — Hero card: scroll parallax, plus cursor tilt on fine pointers. */
+          var hero = document.querySelector(".hero");
+          var card = document.querySelector(".hero-card");
+          if (hero && card) {
+            gsap.to(card, {
+              yPercent: -6, ease: "none",
+              scrollTrigger: { trigger: hero, start: "top top", end: "bottom top", scrub: true },
+            });
+            if (fine) {
+              gsap.set(card, { transformPerspective: 900 });
+              var rx = gsap.quickTo(card, "rotationX", { duration: 0.6, ease: "power3.out" });
+              var ry = gsap.quickTo(card, "rotationY", { duration: 0.6, ease: "power3.out" });
+              hero.addEventListener("pointermove", function (e) {
+                var r = hero.getBoundingClientRect();
+                ry(((e.clientX - r.left) / r.width - 0.5) * 8);
+                rx(-((e.clientY - r.top) / r.height - 0.5) * 6);
+              });
+              hero.addEventListener("pointerleave", function () { rx(0); ry(0); });
+            }
+          }
+
+          if (fine) {
+            /* 4 — Magnetic hero buttons. */
+            document.querySelectorAll(".hero-cta .btn").forEach(function (btn) {
+              btn.classList.add("fx-magnet");
+              var qx = gsap.quickTo(btn, "x", { duration: 0.4, ease: "power3.out" });
+              var qy = gsap.quickTo(btn, "y", { duration: 0.4, ease: "power3.out" });
+              btn.addEventListener("pointermove", function (e) {
+                var r = btn.getBoundingClientRect();
+                qx((e.clientX - (r.left + r.width / 2)) * 0.25);
+                qy((e.clientY - (r.top + r.height / 2)) * 0.35);
+              });
+              btn.addEventListener("pointerleave", function () { qx(0); qy(0); });
+            });
+            /* 5 — Pointer spotlight on the feature tiles. */
+            document.addEventListener("pointermove", function (e) {
+              var tile = e.target.closest && e.target.closest(".tile");
+              if (!tile) return;
+              var r = tile.getBoundingClientRect();
+              tile.style.setProperty("--mx", e.clientX - r.left + "px");
+              tile.style.setProperty("--my", e.clientY - r.top + "px");
+            }, { passive: true });
+          }
+
+          /* 6 — The marquee speeds up with scroll velocity and eases back. */
+          var track = document.getElementById("marquee");
+          if (track && track.getAnimations) {
+            var rate = 1, target = 1;
+            ScrollTrigger.create({
+              start: 0, end: "max",
+              onUpdate: function (self) {
+                target = Math.max(target, 1 + Math.min(Math.abs(self.getVelocity()) / 600, 5));
+              },
+            });
+            gsap.ticker.add(function () {
+              target += (1 - target) * 0.05;
+              rate += (target - rate) * 0.12;
+              var an = track.getAnimations()[0];
+              if (an && Math.abs(an.playbackRate - rate) > 0.01) an.playbackRate = rate;
+            });
+          }
+
+          // Layout settles after the idle-built gallery and late fonts/icons.
+          setTimeout(function () { ScrollTrigger.refresh(); }, 1200);
+        }
       })();
     </script>
   </body>

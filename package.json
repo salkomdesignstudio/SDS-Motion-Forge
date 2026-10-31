@@ -116,7 +116,7 @@
     "validate": "publint",
     "pack:check": "npm pack --dry-run",
     "size": "size-limit",
-    "release:check": "npm run build && npm run build:verify && npm run verify:tokens && npm run verify:registry && npm run verify:docs && npm run verify:split && npm run verify:published && npm run verify:reduced-motion && npm run lint:css && npm run size && npm run validate && npm run pack:check",
+    "release:check": "npm run build && npm run build:verify && npm run verify:tokens && npm run verify:registry && npm run verify:docs && npm run verify:split && npm run verify:published && npm run verify:reduced-motion && npm run lint:css && npm run build:packages && npm run size && npm run validate && npm run pack:check",
     "prepublishOnly": "npm run release:check",
     "generate:static": "node scripts/docs/generate-static-pages.js",
     "generate:ide": "node scripts/docs/generate-ide-files.js"
