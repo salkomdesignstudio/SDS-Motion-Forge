@@ -79,17 +79,17 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@400;600;700&family=Instrument+Serif:ital@0;1&family=Playfair+Display:ital,wght@1,700&family=Syne:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link href="vendor/remixicon/remixicon.css" rel="stylesheet" />
 
     <style>
       :root {
-        --brand: #0015d1;
-        --brand-mid: #0a1fff;
-        --brand-dim: rgba(0, 21, 209, 0.06);
-        --brand-glow: rgba(0, 21, 209, 0.25);
+        --brand: #171717;
+        --brand-mid: #000000;
+        --brand-dim: rgba(0, 0, 0, 0.06);
+        --brand-glow: rgba(0, 0, 0, 0.25);
         --accent: #d10028;
         --success: #00c48c;
 
@@ -217,7 +217,7 @@
         background: var(--brand-dim);
         padding: 3px 9px;
         border-radius: var(--r-full);
-        border: 1px solid rgba(0, 21, 209, 0.12);
+        border: 1px solid rgba(0, 0, 0, 0.12);
         font-weight: 500;
       }
       .nav-sp { flex: 1; }
@@ -319,7 +319,7 @@
         padding: 1px 6px;
         border-radius: 99px;
       }
-      .sb-link.active .sb-count { background: rgba(0, 21, 209, 0.1); color: var(--brand); }
+      .sb-link.active .sb-count { background: rgba(0, 0, 0, 0.1); color: var(--brand); }
 
       /* ── CONTENT ── */
       .content {
@@ -514,7 +514,7 @@
         background: var(--brand-dim);
         padding: 4px 10px;
         border-radius: var(--r-sm);
-        border: 1px solid rgba(0, 21, 209, 0.10);
+        border: 1px solid rgba(0, 0, 0, 0.10);
         white-space: nowrap;
       }
 
@@ -610,6 +610,50 @@
           animation-duration: 0.01ms !important;
           transition-duration: 0.01ms !important;
         }
+      }
+      /* ═════════ GEIST DESIGN SYSTEM (Vercel-style, no blue) ═════════ */
+      :root {
+        --ink: #171717;
+        --ink-2: #4d4d4d;
+        --ink-3: #8f8f8f;
+        --bg: #fafafa;
+        --bg-2: #f2f2f2;
+        --bg-card: #ffffff;
+        --line: #ebebeb;
+        --line-2: #ebebeb;
+        --brand-dim: #f2f2f2;
+        --accent: #ee0000;
+        --success: #171717;
+        --stage: #171717;
+        --stage-2: #1f1f1f;
+        --f-disp: "Geist", Arial, sans-serif;
+        --f-serif: "Geist", Arial, sans-serif;
+        --f-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+        --r-sm: 6px;
+        --r-md: 12px;
+        --r-lg: 12px;
+        --sh-1: 0 1px 1px rgba(0, 0, 0, 0.04);
+      }
+      body {
+        line-height: 1.5;
+      }
+      .logo-sans,
+      .logo-serif {
+        font-family: var(--f-disp);
+        font-style: normal;
+        font-weight: 600;
+        letter-spacing: -0.04em;
+        color: var(--ink);
+      }
+      .nav-btn {
+        border-radius: var(--r-sm);
+        font-weight: 500;
+      }
+      h1,
+      h2,
+      h3 {
+        font-weight: 600;
+        letter-spacing: -0.03em;
       }
     </style>
 
