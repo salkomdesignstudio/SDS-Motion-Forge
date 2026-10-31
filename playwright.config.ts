@@ -21,7 +21,11 @@ export default defineConfig({
     },
   },
   webServer: {
-    command: "npx http-server . -p 4173 -s -c-1",
+    // The readiness probe below is the generated visual fixture, which is
+    // gitignored. Generate it as part of starting the server so every project
+    // (a11y, snippets, docs, …) can start on a clean checkout — not only the
+    // jobs that happened to run generate-fixture.js first.
+    command: "node scripts/visual/generate-fixture.js && npx http-server . -p 4173 -s -c-1",
     url: "http://127.0.0.1:4173/test/visual/fixture.html",
     reuseExistingServer: !process.env.CI,
   },
