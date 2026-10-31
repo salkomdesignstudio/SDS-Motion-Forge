@@ -47,3 +47,8 @@ test/snippets-fixture/node_modules/
 test/snippets-fixture/package-lock.json
 test/.snippets-tmp/
 docs/batch-preview.html
+
+# Generated SEO/GEO pages (scripts/docs/generate-static-pages.js) — rebuilt by `npm run build`.
+docs/animations/
+docs/categories/
+docs/assets/

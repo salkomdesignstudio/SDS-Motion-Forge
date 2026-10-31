@@ -18,6 +18,7 @@
 const fs = require("fs");
 const path = require("path");
 const postcss = require("postcss");
+const { buildLlmsTxt } = require("./site-lib");
 
 const CHECK = process.argv.includes("--check");
 const ROOT = path.join(__dirname, "..", "..");
@@ -457,42 +458,9 @@ emit("builder-data.json", JSON.stringify({
 }));
 
 /* ── llms.txt ────────────────────────────────────────────────── */
-emit("llms.txt", `# SDS Motion Forge
-
-> ${effects.length}+ production-ready CSS animations across text, buttons, inputs,
-> cards, loaders and scroll. One class name per effect, zero required
-> JavaScript, fully backward compatible, MIT licensed.
-
-## Install
-
-- CDN: ${CDN}/motion.min.css
-- npm: npm i @salkomdesignstudio/sds-motion-forge  (import the dist CSS once)
-- Category bundles: @salkomdesignstudio/sds-motion-forge/categories/{text|buttons|inputs|cards|loaders|scroll}
-
-## Usage pattern
-
-Add the class: <h1 class="sds-velvet-drop">Hello</h1>
-Scroll-gate any effect: add data-sds + ${CDN}/sds-scroll.min.js
-Cursor/interactive effects: ${CDN}/motion-interactive.min.js (zero config)
-Theme: override --sds-primary, --sds-duration(-instant…-dramatic), --sds-ease-(standard|decelerate|accelerate|emphasized|spring|bounce)
-
-## Machine-readable
-
-- Full effect registry (names, categories, requirements, triggers, tokens): https://sds-motion-forge.netlify.app/registry.json
-- Motion specification: https://github.com/salkomdesignstudio/SDS-Motion-Forge/blob/main/SPEC.md
-- README: https://github.com/salkomdesignstudio/SDS-Motion-Forge#readme
-
-## Wrappers
-
-- React: @salkomdesignstudio/motion-forge-react (<SdsMotion>, <SdsText>, useSdsInView)
-- Angular: @salkomdesignstudio/motion-forge-angular (sdsMotion/sdsText/sdsInView directives)
-- Tailwind: @salkomdesignstudio/motion-forge-tailwind (animate-sds-* utilities)
-- Web Components: @salkomdesignstudio/motion-forge-elements (<sds-motion>, <sds-text>)
-
-## Accessibility
-
-Every effect is neutralized under prefers-reduced-motion (machine-verified).
-`);
+// Single canonical description lives in site-lib.js so llms.txt, llms-full.txt
+// and the static pages can never disagree.
+emit("llms.txt", buildLlmsTxt());
 
 if (CHECK && stale > 0) {
   console.error(`FAIL: ${stale} docs artifact(s) out of sync with the registry.`);

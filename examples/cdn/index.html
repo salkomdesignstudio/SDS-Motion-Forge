@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDS Motion Forge — zero-build CDN example</title>
+    <!-- One stylesheet. No npm, no bundler, no config. -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css"
+    />
+    <style>
+      body { font: 16px/1.5 system-ui, sans-serif; margin: 0 auto; max-width: 720px; padding: 48px 24px; }
+      section { margin: 48px 0; }
+      .spacer { height: 120vh; }
+    </style>
+  </head>
+  <body>
+    <!-- Text: one class on any element -->
+    <h1 id="text" class="sds-velvet-drop">Hello, Motion Forge</h1>
+
+    <!-- Button + modifier -->
+    <section>
+      <button id="button" class="sds-btn-aurora sds-fast">Deploy</button>
+    </section>
+
+    <!-- Loader -->
+    <section>
+      <span id="loader" class="sds-loader-orbital"></span>
+    </section>
+
+    <div class="spacer"></div>
+
+    <!-- Scroll: zero JavaScript (CSS scroll-driven animation, Chrome 115+) -->
+    <section>
+      <div id="scroll" class="sds-scroll-auto sds-scroll-rise">Rises into view as you scroll</div>
+    </section>
+  </body>
+</html>

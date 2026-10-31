@@ -1,12 +1,46 @@
 # robots.txt — SDS Motion Forge
-# https://salkomdesignstudio.github.io/SDS-Motion-Forge/
+# https://sds-motion-forge.netlify.app/
+#
+# /dist/ is deliberately NOT disallowed: every page loads its animation CSS
+# from there, and search engines need it to render the live demos.
 
 User-agent: *
 Allow: /
 
-# Crawl-budget: skip compiled assets and dev-only pages
-Disallow: /dist/
-Disallow: /batch-preview.html
+# AI answer engines and training crawlers — explicitly welcome.
+# The site is open source (MIT); we want it quoted accurately.
+User-agent: GPTBot
+Allow: /
 
-# Sitemap
-Sitemap: https://salkomdesignstudio.github.io/SDS-Motion-Forge/sitemap.xml
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Machine-readable summaries for LLMs
+# https://sds-motion-forge.netlify.app/llms.txt
+# https://sds-motion-forge.netlify.app/llms-full.txt
+
+Sitemap: https://sds-motion-forge.netlify.app/sitemap.xml

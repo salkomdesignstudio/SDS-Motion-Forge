@@ -21,7 +21,7 @@
     <meta name="theme-color" content="#fafafa" />
     <link
       rel="canonical"
-      href="https://salkomdesignstudio.github.io/SDS-Motion-Forge/"
+      href="https://sds-motion-forge.netlify.app/"
     />
 
     <!-- Favicon -->
@@ -41,14 +41,14 @@
     />
     <meta
       property="og:url"
-      content="https://salkomdesignstudio.github.io/SDS-Motion-Forge/"
+      content="https://sds-motion-forge.netlify.app/"
     />
     <meta
       property="og:image"
-      content="https://salkomdesignstudio.github.io/SDS-Motion-Forge/images/og-image.png"
+      content="https://sds-motion-forge.netlify.app/images/og-card.png"
     />
     <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="555" />
+    <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
       content="SDS Motion Forge — 600+ CSS Animations, Zero Required JavaScript"
@@ -66,7 +66,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://salkomdesignstudio.github.io/SDS-Motion-Forge/images/og-image.png"
+      content="https://sds-motion-forge.netlify.app/images/og-card.png"
     />
     <meta name="twitter:creator" content="@salkomdesign" />
     <meta name="twitter:site" content="@salkomdesign" />
@@ -75,26 +75,57 @@
       content="SDS Motion Forge — 600+ CSS Animations by Salkom Design Studio"
     />
 
+    <!-- Non-blocking stylesheets: the page's critical CSS is inline below, so
+         none of these may delay first paint (media=print → all on load). -->
     <link
       rel="stylesheet"
       href="dist/motion.min.css"
+      media="print"
+      onload="this.media = 'all'"
       onerror="
         this.onerror = null;
         this.href =
           'https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css';
       "
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link href="vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <!-- Self-hosted Geist (OFL): preloaded so the font swap lands before first paint. -->
+    <link rel="preload" href="vendor/geist/Geist-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="vendor/geist/GeistMono-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <!-- @font-face inlined (source: vendor/geist/geist.css) to keep it off the critical request chain.
+         font-display:swap. -->
+    <style>@font-face{font-family:"Geist";font-style:normal;font-weight:400 600;font-display:swap;src:url("vendor/geist/Geist-latin.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}@font-face{font-family:"Geist Mono";font-style:normal;font-weight:400 500;font-display:swap;src:url("vendor/geist/GeistMono-latin.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}</style>
+    <!-- Icon font (170 KB) is not needed for first paint: load it after the load
+         event. Space for the <i> glyphs is reserved in CSS so nothing shifts. -->
+    <script>
+      (function () {
+        function loadIcons() {
+          var l = document.createElement("link");
+          l.rel = "stylesheet";
+          l.href = "vendor/remixicon/remixicon.css";
+          document.head.appendChild(l);
+        }
+        function later() {
+          (window.requestIdleCallback || window.setTimeout)(loadIcons);
+        }
+        if (document.readyState === "complete") later();
+        else window.addEventListener("load", later);
+      })();
+    </script>
+    <noscript>
+      <link rel="stylesheet" href="dist/motion.min.css" />
+      <link rel="stylesheet" href="vendor/remixicon/remixicon.css" />
+    </noscript>
 
     <style>
+      /* reserve icon space until the late-loaded icon font arrives */
+      [class^="ri-"],
+      [class*=" ri-"] {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+      }
       :root {
         --brand: #171717;
         --brand-mid: #000000;
@@ -2177,7 +2208,7 @@
       :root {
         --ink: #171717;
         --ink-2: #4d4d4d;
-        --ink-3: #8f8f8f;
+        --ink-3: #666666;
         --bg: #fafafa;
         --bg-2: #f2f2f2;
         --bg-card: #ffffff;
@@ -2302,7 +2333,8 @@
         height: 80%;
         z-index: 0;
         pointer-events: none;
-        filter: blur(70px);
+        /* radial gradients are already soft; a blur() filter here cost ~1s of LCP
+           under CPU throttling, so none is applied. */
         opacity: 0.5;
         background:
           radial-gradient(40% 50% at 25% 30%, #50e3c2 0%, transparent 70%),
@@ -2434,6 +2466,52 @@
       .docs-card-ico {
         color: var(--ink);
       }
+      /* Gallery cards below the fold skip layout, paint and running animations
+         until scrolled near; the DOM stays intact for tests and crawlers. */
+      .gal-grid .card {
+        content-visibility: auto;
+        contain-intrinsic-size: auto 230px;
+      }
+      .faq {
+        display: grid;
+        gap: 8px;
+        max-width: 760px;
+      }
+      .faq-item {
+        background: var(--bg-card);
+        border: 1px solid var(--line);
+        border-radius: var(--r-md);
+        padding: 0 20px;
+      }
+      .faq-item summary {
+        cursor: pointer;
+        list-style: none;
+        padding: 16px 0;
+      }
+      .faq-item summary::-webkit-details-marker {
+        display: none;
+      }
+      .faq-item summary h3 {
+        display: inline;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        color: var(--ink);
+      }
+      .faq-item p {
+        padding: 0 0 18px;
+        color: var(--ink-2);
+        font-size: 15px;
+        line-height: 1.6;
+      }
+      .faq-item code {
+        font-family: var(--f-mono);
+        font-size: 0.9em;
+        background: var(--bg-2);
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 1px 6px;
+      }
     </style>
 
     <!-- Structured Data -->
@@ -2443,10 +2521,10 @@
       "@graph": [
         {
           "@type": "SoftwareApplication",
-          "@id": "https://salkomdesignstudio.github.io/SDS-Motion-Forge/#software",
+          "@id": "https://sds-motion-forge.netlify.app/#software",
           "name": "SDS Motion Forge",
           "description": "600+ production-ready CSS animations across 6 categories. Drop a single class name on any element — no JavaScript, no build step, no config.",
-          "url": "https://salkomdesignstudio.github.io/SDS-Motion-Forge/",
+          "url": "https://sds-motion-forge.netlify.app/",
           "applicationCategory": "DeveloperApplication",
           "applicationSubCategory": "CSS Animation Library",
           "operatingSystem": "Any",
@@ -2459,7 +2537,7 @@
           "license": "https://opensource.org/licenses/MIT",
           "downloadUrl": "https://www.npmjs.com/package/@salkomdesignstudio/sds-motion-forge",
           "author": {
-            "@id": "https://salkomdesignstudio.github.io/SDS-Motion-Forge/#organization"
+            "@id": "https://sds-motion-forge.netlify.app/#organization"
           },
           "featureList": [
             "600+ CSS animations across text, buttons, inputs, cards, loaders, scroll",
@@ -2468,30 +2546,29 @@
             "Interactive physics engine",
             "prefers-reduced-motion support",
             "TypeScript type definitions",
-            "React, Angular, Tailwind, Web Components wrappers"
+            "Per-category CSS bundles and a machine-readable effect registry"
           ]
         },
         {
           "@type": "WebSite",
-          "@id": "https://salkomdesignstudio.github.io/SDS-Motion-Forge/#website",
-          "url": "https://salkomdesignstudio.github.io/SDS-Motion-Forge/",
+          "@id": "https://sds-motion-forge.netlify.app/#website",
+          "url": "https://sds-motion-forge.netlify.app/",
           "name": "SDS Motion Forge",
           "description": "600+ production-ready CSS animations. One class name, zero required JavaScript.",
           "publisher": {
-            "@id": "https://salkomdesignstudio.github.io/SDS-Motion-Forge/#organization"
+            "@id": "https://sds-motion-forge.netlify.app/#organization"
           },
           "inLanguage": "en-US"
         },
         {
           "@type": "Organization",
-          "@id": "https://salkomdesignstudio.github.io/SDS-Motion-Forge/#organization",
+          "@id": "https://sds-motion-forge.netlify.app/#organization",
           "name": "Salkom Design Studio",
-          "url": "https://salkomdesignstudio.github.io/SDS-Motion-Forge/",
+          "url": "https://sds-motion-forge.netlify.app/",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://salkomdesignstudio.github.io/SDS-Motion-Forge/images/logo.png"
+            "url": "https://sds-motion-forge.netlify.app/images/logo.png"
           },
-          "email": "salkomdesignstudio@gmail.com",
           "sameAs": [
             "https://www.npmjs.com/package/@salkomdesignstudio/sds-motion-forge",
             "https://github.com/salkomdesignstudio/SDS-Motion-Forge"
@@ -2500,6 +2577,9 @@
       ]
     }
     </script>
+    <!-- FAQ-LD:START (generated: scripts/docs/generate-static-pages.js) -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the best CSS animation library for Angular?","acceptedAnswer":{"@type":"Answer","text":"There is no single best option, but a CSS-only library suits Angular because it needs no Angular-specific code. SDS Motion Forge provides 604 animations as plain CSS classes: add node_modules/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css to the styles array in angular.json, then put a class such as sds-velvet-drop on any template element. No module or directive is required."}},{"@type":"Question","name":"How do I add scroll animations without JavaScript?","acceptedAnswer":{"@type":"Answer","text":"Combine sds-scroll-auto with any sds-scroll-* class, for example class=\"sds-scroll-auto sds-scroll-rise\". It uses native CSS scroll-driven animation (animation-timeline: view()), so no script runs in browsers that support it, such as Chrome 115+. Where it is unsupported, the optional 1.3 KB sds-scroll.min.js triggers the same effects through a data-sds attribute."}},{"@type":"Question","name":"Is there an Animate.css alternative?","acceptedAnswer":{"@type":"Answer","text":"Yes. SDS Motion Forge is a CSS-only alternative that defines 606 @keyframes across 604 effects in six categories (text, buttons, inputs, cards, loaders, scroll), against 97 @keyframes in Animate.css 4.1.1. The trade-off is size: the full bundle is 38.4 KB gzip versus 5.2 KB, but you can import one 5.8–8.6 KB category instead."}},{"@type":"Question","name":"What is the best CSS-only text animation library?","acceptedAnswer":{"@type":"Answer","text":"SDS Motion Forge includes 104 text animations that run from a single CSS class, for example <h1 class=\"sds-velvet-drop\">. Five need the text split into per-character spans and a few others need child elements; each effect's page states what it needs. The text bundle can be loaded on its own at 8.4 KB gzip."}},{"@type":"Question","name":"Does it respect prefers-reduced-motion?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every animating selector is neutralized under prefers-reduced-motion: reduce, and the build fails if one is missed (npm run verify:reduced-motion). Scroll-gated elements stay visible instead of being hidden, so content is never lost for users who opt out of motion."}},{"@type":"Question","name":"How big is it, and can I import only part of it?","acceptedAnswer":{"@type":"Answer","text":"The full bundle is 38.4 KB gzip. Each category is 5.8–8.6 KB gzip and can be imported alone, with core already included: import \"@salkomdesignstudio/sds-motion-forge/categories/text\";. For two or more categories, use the full bundle. The two optional scripts are 1.3 KB (scroll) and 7.0 KB (cursor effects)."}},{"@type":"Question","name":"Does it work with React, Vue, Next.js and Tailwind?","acceptedAnswer":{"@type":"Answer","text":"Yes. Import dist/motion.min.css once and use the class names with className or class in React, Next.js, Vue, Angular or a Tailwind project. Typed wrappers for React, Angular, Tailwind and Web Components exist in the repository's packages/ folder but are not yet published to npm."}},{"@type":"Question","name":"Is it free to use commercially?","acceptedAnswer":{"@type":"Answer","text":"Yes. SDS Motion Forge is open source under the MIT license, which permits commercial use as long as the copyright and license notice stay with copies of the code. Install it with npm i @salkomdesignstudio/sds-motion-forge or load it from the jsDelivr CDN with no build step."}}]}</script>
+    <!-- FAQ-LD:END -->
   </head>
   <body>
     <!-- NAV -->
@@ -2599,7 +2679,7 @@
       <div class="wrap hero-in">
         <div>
           <div class="hero-badge">
-            <span class="dot"></span> 2,000+ developers · v5.0.0
+            <span class="dot"></span> v5.0.0 · MIT · 604 animations
           </div>
           <h1 class="hero-h1">
             <span class="kinetic" id="kinetic" role="img" aria-label="Motion"></span><br />
@@ -2628,7 +2708,7 @@
               <div class="hstat-l">Required JS</div>
             </div>
             <div>
-              <div class="hstat-v">~39kb</div>
+              <div class="hstat-v">~38kb</div>
               <div class="hstat-l">Gzip</div>
             </div>
             <div>
@@ -2885,6 +2965,52 @@
         </div>
       </div>
     </section>
+
+    <!-- FAQ:START (generated: scripts/docs/generate-static-pages.js — edit faqs() in scripts/docs/site-lib.js) -->
+    <section class="sec" id="answers">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="eyebrow">Answers</span>
+          <h2 class="sec-title">Quick answers</h2>
+          <p class="sec-desc">Short, self-contained answers to the questions developers ask most. Every number comes from the build.</p>
+        </div>
+        <div class="faq">
+<details class="faq-item">
+<summary><h3>What is the best CSS animation library for Angular?</h3></summary>
+<p>There is no single best option, but a CSS-only library suits Angular because it needs no Angular-specific code. SDS Motion Forge provides 604 animations as plain CSS classes: add <code>node_modules/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css</code> to the <code>styles</code> array in angular.json, then put a class such as <code>sds-velvet-drop</code> on any template element. No module or directive is required.</p>
+</details>
+<details class="faq-item">
+<summary><h3>How do I add scroll animations without JavaScript?</h3></summary>
+<p>Combine <code>sds-scroll-auto</code> with any <code>sds-scroll-*</code> class, for example <code>class=&quot;sds-scroll-auto sds-scroll-rise&quot;</code>. It uses native CSS scroll-driven animation (<code>animation-timeline: view()</code>), so no script runs in browsers that support it, such as Chrome 115+. Where it is unsupported, the optional 1.3 KB <code>sds-scroll.min.js</code> triggers the same effects through a <code>data-sds</code> attribute.</p>
+</details>
+<details class="faq-item">
+<summary><h3>Is there an Animate.css alternative?</h3></summary>
+<p>Yes. SDS Motion Forge is a CSS-only alternative that defines 606 @keyframes across 604 effects in six categories (text, buttons, inputs, cards, loaders, scroll), against 97 @keyframes in Animate.css 4.1.1. The trade-off is size: the full bundle is 38.4 KB gzip versus 5.2 KB, but you can import one 5.8–8.6 KB category instead.</p>
+</details>
+<details class="faq-item">
+<summary><h3>What is the best CSS-only text animation library?</h3></summary>
+<p>SDS Motion Forge includes 104 text animations that run from a single CSS class, for example <code>&lt;h1 class=&quot;sds-velvet-drop&quot;&gt;</code>. Five need the text split into per-character spans and a few others need child elements; each effect's page states what it needs. The text bundle can be loaded on its own at 8.4 KB gzip.</p>
+</details>
+<details class="faq-item">
+<summary><h3>Does it respect prefers-reduced-motion?</h3></summary>
+<p>Yes. Every animating selector is neutralized under <code>prefers-reduced-motion: reduce</code>, and the build fails if one is missed (<code>npm run verify:reduced-motion</code>). Scroll-gated elements stay visible instead of being hidden, so content is never lost for users who opt out of motion.</p>
+</details>
+<details class="faq-item">
+<summary><h3>How big is it, and can I import only part of it?</h3></summary>
+<p>The full bundle is 38.4 KB gzip. Each category is 5.8–8.6 KB gzip and can be imported alone, with core already included: <code>import &quot;@salkomdesignstudio/sds-motion-forge/categories/text&quot;;</code>. For two or more categories, use the full bundle. The two optional scripts are 1.3 KB (scroll) and 7.0 KB (cursor effects).</p>
+</details>
+<details class="faq-item">
+<summary><h3>Does it work with React, Vue, Next.js and Tailwind?</h3></summary>
+<p>Yes. Import <code>dist/motion.min.css</code> once and use the class names with <code>className</code> or <code>class</code> in React, Next.js, Vue, Angular or a Tailwind project. Typed wrappers for React, Angular, Tailwind and Web Components exist in the repository's <code>packages/</code> folder but are not yet published to npm.</p>
+</details>
+<details class="faq-item">
+<summary><h3>Is it free to use commercially?</h3></summary>
+<p>Yes. SDS Motion Forge is open source under the MIT license, which permits commercial use as long as the copyright and license notice stay with copies of the code. Install it with <code>npm i @salkomdesignstudio/sds-motion-forge</code> or load it from the jsDelivr CDN with no build step.</p>
+</details>
+        </div>
+      </div>
+    </section>
+    <!-- FAQ:END -->
 
     <!-- CTA -->
     <div class="cta-band">
@@ -3860,7 +3986,12 @@
 
         /* ---------- Init ---------- */
         buildTabs();
-        renderGrid();
+        /* The gallery sits below the fold: build its ~100 live cards once the
+           hero has painted (idle, max 1.2s) so they do not delay first paint /
+           LCP. Tab and search clicks still call renderGrid() directly. */
+        if ("requestIdleCallback" in window)
+          requestIdleCallback(renderGrid, { timeout: 1200 });
+        else setTimeout(renderGrid, 200);
         buildPgSelect();
         buildPgChips();
         pgUpdate();

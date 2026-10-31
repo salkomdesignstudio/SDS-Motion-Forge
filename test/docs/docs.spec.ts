@@ -27,7 +27,7 @@ test.describe("docs site", () => {
 
   test("category tabs show registry counts and switch grids", async ({ page }) => {
     const loadersTab = page.locator('#tabs .tab[data-cat="loaders"]');
-    await expect(loadersTab).toContainText("51");
+    await expect(loadersTab).toContainText("100");
     await loadersTab.click();
     await expect(page.locator("#galGrid .card[data-cls^='sds-loader-']").first()).toBeVisible();
   });

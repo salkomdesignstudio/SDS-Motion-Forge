@@ -1,8 +1,7 @@
 # Versioning Policy — SDS Motion Forge
 
-This package is infrastructure for 2,000+ production sites, many of which
-consume it through unversioned CDN URLs and can never be migrated. Versioning
-is therefore conservative by design.
+Sites consume this package through unversioned CDN URLs that can never be
+migrated, so versioning is conservative by design.
 
 ## Strict semver
 

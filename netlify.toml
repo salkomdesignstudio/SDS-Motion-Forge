@@ -1,9 +1,9 @@
 [build]
-  # 1. Build the library CSS + JS engines.
-  # 2. Copy dist into docs/ so docs/index.html and docs/docs.html can load
-  #    dist/motion.min.css without needing ../dist/ (which breaks when Netlify
-  #    serves docs/ as the web root).
-  command = "npm run build && cp -r dist docs/dist"
+  # `npm run build` builds the CSS + JS engines, regenerates the docs data, the
+  # static SEO pages (docs/animations, docs/categories, sitemap, llms-full.txt)
+  # and syncs dist/ into docs/dist so every page can load /dist/*.css from the
+  # site root (Netlify serves docs/ as the web root).
+  command = "npm run build"
   publish = "docs"
 
 [build.environment]
@@ -19,14 +19,70 @@
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'self'"
 
-# Long-lived immutable cache for versioned assets
+# dist/ file names are NOT content-hashed (motion.min.css keeps its name across
+# releases), so they must revalidate. "immutable" here would pin visitors to a
+# stale stylesheet after a deploy. ETag revalidation keeps repeat views cheap.
 [[headers]]
   for = "/dist/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=300, must-revalidate"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=300, must-revalidate"
 
 # HTML pages: always revalidate
 [[headers]]
   for = "/*.html"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
+
+# Markdown twins of every page (…/index.md) and the LLM summaries
+[[headers]]
+  for = "/*.md"
+  [headers.values]
+    Content-Type = "text/markdown; charset=utf-8"
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/llms.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+[[headers]]
+  for = "/llms-full.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+# One canonical URL per page: no /index.html duplicates, no extensionless docs.
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/docs"
+  to = "/docs.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/builder"
+  to = "/builder.html"
+  status = 301
+  force = true
+
+# Internal planning docs live in docs/ (the web root) — keep them out of search.
+[[headers]]
+  for = "/LAUNCH.md"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+[[headers]]
+  for = "/GROWTH.md"
+  [headers.values]
+    X-Robots-Tag = "noindex"

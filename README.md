@@ -1,38 +1,90 @@
 # SDS Motion Forge
 
-**Every class that worked in v3/v4 works identically in v5 — machine-verified against the published tarball on every build.**
-
-**600+ production-ready CSS animations. One class name. Zero required JavaScript.**
+**604 CSS animations. One class name each. No JavaScript required.**
+Text, buttons, inputs, cards, loaders and scroll effects as plain CSS — drop them into HTML, React, Next.js, Angular, Vue or a Tailwind project.
 
 [![npm version](https://img.shields.io/npm/v/@salkomdesignstudio/sds-motion-forge.svg?style=flat-square)](https://www.npmjs.com/package/@salkomdesignstudio/sds-motion-forge)
-[![Bundle size](https://img.shields.io/bundlephobia/minzip/@salkomdesignstudio/sds-motion-forge?style=flat-square)](https://bundlephobia.com/package/@salkomdesignstudio/sds-motion-forge)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
+[![npm downloads](https://img.shields.io/npm/dm/@salkomdesignstudio/sds-motion-forge.svg?style=flat-square)](https://www.npmjs.com/package/@salkomdesignstudio/sds-motion-forge)
+[![jsDelivr hits](https://img.shields.io/jsdelivr/npm/hm/@salkomdesignstudio/sds-motion-forge?style=flat-square)](https://www.jsdelivr.com/package/npm/@salkomdesignstudio/sds-motion-forge)
+[![License: MIT](https://img.shields.io/badge/License-MIT-171717.svg?style=flat-square)](LICENSE)
 [![CI](https://github.com/salkomdesignstudio/SDS-Motion-Forge/actions/workflows/ci.yml/badge.svg)](https://github.com/salkomdesignstudio/SDS-Motion-Forge/actions/workflows/ci.yml)
 
-A production-grade motion system for modern UI — framework-agnostic, accessible, and backward-compatible. Add a class and your element animates. That is the entire API.
+**[Live gallery](https://sds-motion-forge.netlify.app)** · **[Docs](https://sds-motion-forge.netlify.app/docs.html)** · **[Browse all 604](https://sds-motion-forge.netlify.app/animations/)** · **[Bundle builder](https://sds-motion-forge.netlify.app/builder.html)** · **[llms.txt](https://sds-motion-forge.netlify.app/llms.txt)**
 
-> **Live demo:** [sds-motion-forge.netlify.app](https://sds-motion-forge.netlify.app) — every effect with six copy-paste code tabs (HTML, JS, React, Angular, Tailwind, Bootstrap), each one machine-verified against the packed npm tarball before it can ship.
-> **Custom bundle builder:** [/builder.html](https://sds-motion-forge.netlify.app/builder.html) — pick effects, download exactly their CSS (+ tokens, reduced-motion, keyframes), live size estimate.
-> **Motion specification:** [SPEC.md](SPEC.md) — principles, token scale, duration/easing selection matrix, choreography rules.
-> **For AI tools:** [llms.txt](https://sds-motion-forge.netlify.app/llms.txt) · [registry.json](https://sds-motion-forge.netlify.app/registry.json) — the full machine-readable effect registry.
+Every class that worked in v3/v4 works identically in v5 — machine-verified against the published tarball on every build.
 
 ---
 
-## Why SDS Motion Forge
+## Start in 10 seconds
 
-| | SDS Motion Forge v5 | Animate.css v4 | GSAP (free tier) | Framer Motion |
-|---|---|---|---|---|
-| **Bundle (gzip)** | 38 KB full · 6–9 KB per category | 80 KB | 23 KB (core only) | 48 KB |
-| **JS required** | No (CSS core is zero-JS) | No | Yes | Yes (React only) |
-| **TypeScript** | Complete union types for all 600+ classes | No | Partial | Full |
-| **SSR safe** | Yes (CSS-first; JS engines optional) | Yes | Partial | React SSR only |
-| **Tree-shakeable** | Yes (per-category bundles) | No | Yes | Yes |
-| **`prefers-reduced-motion`** | Machine-verified 100% coverage | Manual | Manual | Yes |
-| **Framework wrappers** | React · Angular · Tailwind · Web Components | None | None | React only |
-| **License** | MIT | MIT | GSAP Standard (free with limits) | MIT |
-| **Compositor-only** | Enforced by CI lint gate | No | No | No |
+```html
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css" />
 
-The short version: SDS Motion Forge is the only CSS animation library with machine-verified reduced-motion coverage, a registry-driven architecture that generates typed wrappers for all four major frontend ecosystems, and a backward-compatibility gate that proves zero behavior changes on every build.
+<h1 class="sds-velvet-drop">Hello World</h1>
+```
+
+Or with npm: `npm i @salkomdesignstudio/sds-motion-forge`, then import `@salkomdesignstudio/sds-motion-forge/dist/motion.min.css` once.
+
+## Three examples
+
+```html
+<!-- 1. Text: one class on any heading -->
+<h1 class="sds-aurora-text">Aurora Text</h1>
+
+<!-- 2. Scroll, zero JavaScript (CSS scroll-driven animation, Chrome 115+) -->
+<div class="sds-scroll-auto sds-scroll-rise">Rises into view</div>
+
+<!-- 3. Buttons and loaders: same pattern, plus modifiers for speed and delay -->
+<button class="sds-btn-aurora sds-fast">Deploy</button>
+<span class="sds-loader-orbital"></span>
+```
+
+Prefer a live preview? Every effect has its own page with a demo and copy-paste code for HTML, React, Angular and Tailwind: **[sds-motion-forge.netlify.app/animations/](https://sds-motion-forge.netlify.app/animations/)**.
+
+## What's in the box
+
+| Category | Effects | Class pattern | Browse |
+|---|---|---|---|
+| Text | 104 | `sds-*` | [text animations](https://sds-motion-forge.netlify.app/categories/text/) |
+| Buttons | 100 | `sds-btn-*` | [button animations](https://sds-motion-forge.netlify.app/categories/buttons/) |
+| Inputs | 100 | `sds-input-*` | [input animations](https://sds-motion-forge.netlify.app/categories/inputs/) |
+| Cards | 100 | `sds-card-*` | [card animations](https://sds-motion-forge.netlify.app/categories/cards/) |
+| Loaders | 100 | `sds-loader-*` | [loader animations](https://sds-motion-forge.netlify.app/categories/loaders/) |
+| Scroll | 100 | `sds-scroll-*` | [scroll animations](https://sds-motion-forge.netlify.app/categories/scroll/) |
+
+Plus 7 cursor-reactive effects (need the optional 7.0 KB `motion-interactive.min.js`) and 18 modifier classes (`sds-fast`, `sds-slow`, `sds-delay-1…`, `sds-loop`, `sds-pause-hover`, …). Each category ships as its own bundle — see [Installation](#installation) for exact sizes.
+
+## How it compares
+
+Measured, not estimated. Animate.css 4.1.1 was downloaded from npm on 2026-11-01 and measured (`animate.min.css`).
+
+| | SDS Motion Forge 5.0.0 | Animate.css 4.1.1 |
+|---|---|---|
+| Animations | 604 effects (606 `@keyframes`) | 97 `@keyframes` |
+| Full bundle | 241.7 KB min · **38.4 KB gzip** | 70.1 KB min · **5.2 KB gzip** |
+| Smaller imports | Per-category bundles, 5.8–8.6 KB gzip each | Individual source files in the package's `source/` folder |
+| JavaScript required | None for the 604 CSS effects | None |
+| `prefers-reduced-motion` | Every animating selector neutralized; the build fails if one is missed | A reduced-motion media rule is included |
+| License | MIT | MIT |
+
+**Choose Animate.css** if you want the smallest possible file for a classic set of entrance, exit and attention effects.
+**Choose SDS Motion Forge** if you also need UI-component motion — inputs, cards, loaders, scroll reveals, per-character text — and prefer one class per effect with typed names ([`index.d.ts`](index.d.ts)).
+GSAP and Framer Motion are JavaScript animation engines rather than CSS class libraries, so they are not compared here.
+
+## Frameworks
+
+It is plain CSS, so it works anywhere a `class` attribute does — import the CSS once, then use `className` (React, Next.js), `class` (Angular, Vue, Svelte, Astro) or the class in a Tailwind project. Step-by-step snippets for every effect: [/animations/](https://sds-motion-forge.netlify.app/animations/).
+
+Typed wrappers for React, Angular, Tailwind and Web Components live in [`packages/`](packages) in this repository. They are **not yet published to npm**; use the CSS directly until they are.
+
+## Give your AI coding assistant the class names
+
+Paste [docs/AI-ASSISTANT.md](docs/AI-ASSISTANT.md) into `CLAUDE.md`, `.cursorrules` or your Copilot instructions so assistants recommend real classes instead of inventing them. Machine-readable references: [`llms.txt`](https://sds-motion-forge.netlify.app/llms.txt), [`llms-full.txt`](https://sds-motion-forge.netlify.app/llms-full.txt), [`registry.json`](https://sds-motion-forge.netlify.app/registry.json).
+
+## Contribute
+
+If SDS Motion Forge saves you time, a ⭐ on GitHub helps other developers find it. Bug reports, effect requests and pull requests are welcome — start with [CONTRIBUTING.md](CONTRIBUTING.md) and the [issue templates](.github/ISSUE_TEMPLATE).
 
 ---
 
@@ -168,17 +220,20 @@ broken styles when a pipeline strips `@import`. Core costs ~3 KB minified
   defer></script>
 ```
 
-### Framework packages (v5)
+### Framework packages (in this repo, not yet on npm)
 
-First-class wrappers, generated from the motion registry — typed effect
-unions for all 350+ animations, zero runtime dependencies:
+Wrappers generated from the motion registry — typed effect unions, zero runtime
+dependencies — live in [`packages/`](packages). They are **not published to npm
+yet**, so `npm i @salkomdesignstudio/motion-forge-*` will fail today. Until they
+are, use the core CSS directly (see [Frameworks](#frameworks)); every wrapper only
+adds typing and convenience on top of the same class names.
 
-| Package | What you get |
+| Package (in repo) | What you get |
 |---|---|
-| [`@salkomdesignstudio/motion-forge-tailwind`](packages/tailwind) | `animate-sds-*` utilities for Tailwind v4 (CSS-first, tree-shaken) + v3 preset |
-| [`@salkomdesignstudio/motion-forge-react`](packages/react) | `<SdsMotion>`, SSR-safe `<SdsText>`, `useSdsInView` |
-| [`@salkomdesignstudio/motion-forge-angular`](packages/angular) | standalone `sdsMotion` / `sdsText` / `sdsInView` directives (signal inputs, zoneless-ready) |
-| [`@salkomdesignstudio/motion-forge-elements`](packages/elements) | framework-free `<sds-motion>` / `<sds-text>` Web Components |
+| [`packages/tailwind`](packages/tailwind) | `animate-sds-*` utilities for Tailwind v4 (CSS-first, tree-shaken) + v3 preset |
+| [`packages/react`](packages/react) | `<SdsMotion>`, SSR-safe `<SdsText>`, `useSdsInView` |
+| [`packages/angular`](packages/angular) | standalone `sdsMotion` / `sdsText` / `sdsInView` directives (signal inputs, zoneless-ready) |
+| [`packages/elements`](packages/elements) | framework-free `<sds-motion>` / `<sds-text>` Web Components |
 
 The core package stays 100 % framework-agnostic — wrappers are optional sugar.
 
@@ -188,12 +243,12 @@ The core package stays 100 % framework-agnostic — wrappers are optional sugar.
 |---|---|---|
 | Plain HTML / static site | Core CSS via CDN | Zero build step. One `<link>` tag. |
 | Any bundler (Vite, webpack, Rollup) | npm core package | Tree-shaking via category imports. |
-| React / Next.js | `motion-forge-react` + core CSS | `<SdsMotion>` gives typed effects and SSR-safe char splitting. |
-| Next.js App Router | `motion-forge-react` + core CSS | Server renders plain text; client hydrates with motion. |
-| Angular (v17+) | `motion-forge-angular` + core CSS | Signal inputs, zoneless-safe, SSR with `isPlatformBrowser`. |
-| Tailwind v4 project | `motion-forge-tailwind` | `animate-sds-*` utilities, tree-shaken by Tailwind's engine. |
-| Tailwind v3 project | `motion-forge-tailwind` v3 preset | Extends `theme.keyframes` + `theme.animation`. See package README. |
-| Web Components / Lit | `motion-forge-elements` | `<sds-motion>` and `<sds-text>` custom elements, no framework dep. |
+| React / Next.js | Core CSS + `className` | Import the CSS once. Typed `<SdsMotion>` wrapper is in `packages/react` (not yet on npm). |
+| Next.js App Router | Core CSS + `className` | Import the CSS in `layout.tsx`; server components render the class as-is. |
+| Angular (v17+) | Core CSS in `angular.json` + `class` | Add `dist/motion.min.css` to `styles`. Directives are in `packages/angular` (not yet on npm). |
+| Tailwind v4 project | Core CSS via `@import` | Use the `sds-*` classes next to Tailwind utilities. `animate-sds-*` plugin is in `packages/tailwind` (not yet on npm). |
+| Tailwind v3 project | Core CSS in your entry stylesheet | Same classes; the v3 preset is in `packages/tailwind` (not yet on npm). |
+| Web Components / Lit | Core CSS + class on the element | The `<sds-motion>` elements are in `packages/elements` (not yet on npm). |
 | Multiple categories | Full `dist/motion.css` | One copy of core, all categories. Cheaper than importing 2+ category bundles. |
 | Figma / design tokens | `tokens/figma.tokens.json` | Import into Figma via the Tokens Studio plugin. |
 
@@ -1101,7 +1156,7 @@ IE11 is not supported.
 ```
 SDS-Motion-Forge/
 ├── src/
-│   ├── motion.css                    # Source — 300+ animations, 177 KB
+│   ├── motion.css                    # Source — 600+ animations
 │   ├── sds-scroll.js                 # Scroll gate engine source, 3.6 KB
 │   └── motion-interactive.js         # Interactive JS engine source, 15.2 KB
 │
