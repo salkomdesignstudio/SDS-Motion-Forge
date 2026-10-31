@@ -47,12 +47,12 @@ No analytics script is wired in, because every privacy-friendly option needs an 
 2. In `netlify.toml`, extend the Content-Security-Policy: add `https://gc.zgo.at` to `script-src` and `https://CODE.goatcounter.com` to `connect-src` and `img-src`. Without this the browser blocks the script.
 3. Plausible and Umami work the same way (different script URL and domains in the CSP).
 
-## Search Console and Bing verification (needs your tokens)
+## Search Console and Bing verification
 
-Do not commit guessed files. After you add each property it shows a token:
+The home page has a generated slot for the ownership tags (`<!-- SITE-VERIFY:START … END -->` in `docs/index.html`). To fill it, put the token in `config.verification.google` (and `.bing`) in `scripts/docs/site-lib.js` — either the bare `content="…"` value or the whole `<meta>` line — then `npm run build` and deploy. The build fails with a clear message if the value isn't a valid token. Leave the tags in place permanently; removing them un-verifies the property.
 
-- **Google**: choose *URL prefix* `https://sds-motion-forge.netlify.app/`, verify with the **HTML tag** method, paste the `<meta name="google-site-verification" …>` into `docs/index.html` `<head>` (or upload the HTML file Google gives you to `docs/`). Then *Sitemaps → add* `sitemap.xml`.
-- **Bing**: *Import from Google Search Console*, or add the `msvalidate.01` meta tag the same way.
+- **Google**: Search Console → Add property → **URL prefix** `https://sds-motion-forge.netlify.app/` → verification method **HTML tag** → then *Sitemaps* → `sitemap.xml`.
+- **Bing**: Webmaster Tools → import from Search Console, or add manually with the **HTML Meta Tag** method (`msvalidate.01`).
 
 ## What "good" looks like in 90 days (targets to confirm, not promises)
 

@@ -28,7 +28,36 @@ const config = {
      generated pages show class-only snippets (which work today) and say the
      wrappers are in-repo, instead of printing install commands that 404. */
   frameworkPackagesPublished: false,
+  /* Search-engine ownership tokens. Paste ONLY the content="…" value, then
+     `npm run build` and deploy. Empty string = no tag is emitted.
+       google → Search Console, URL-prefix property, "HTML tag" method
+       bing   → Bing Webmaster Tools, "meta tag" method (msvalidate.01)
+     The SDS_VERIFY_* env vars override these (useful on Netlify / in tests). */
+  verification: {
+    google: process.env.SDS_VERIFY_GOOGLE || "",
+    bing: process.env.SDS_VERIFY_BING || "",
+  },
 };
+
+/** Accepts the bare token or the whole <meta …> line Google shows; returns the token. */
+function verificationToken(raw, label) {
+  if (!raw) return "";
+  const m = String(raw).match(/content\s*=\s*["']([^"']+)["']/);
+  const token = (m ? m[1] : String(raw)).trim();
+  if (!/^[A-Za-z0-9_-]{16,128}$/.test(token)) {
+    throw new Error(`config.verification.${label} is not a valid token (got "${token.slice(0, 40)}"). Paste only the content="…" value.`);
+  }
+  return token;
+}
+
+function verificationMetaTags() {
+  const g = verificationToken(config.verification.google, "google");
+  const b = verificationToken(config.verification.bing, "bing");
+  return [
+    g && `<meta name="google-site-verification" content="${g}" />`,
+    b && `<meta name="msvalidate.01" content="${b}" />`,
+  ].filter(Boolean);
+}
 
 const CATEGORIES = [
   { id: "text", label: "Text", singular: "text", prefix: "sds-", blurb: "Headline, per-character and word-level text effects: entrances, loops, glows, reveals and physics-style motion." },
@@ -258,5 +287,5 @@ module.exports = {
   ROOT, pkg, registry, config, CATEGORIES, effects, interactive, modifiers,
   byCategory, sizes, kb, sizeSentence, slugOf, urlOf, animationPath, categoryPath,
   esc, canonicalFacts, frameworkLines, buildLlmsTxt, loadDocsData,
-  faqs, faqHtml, faqJsonLd, stripInline, animateCss, keyframeCount,
+  faqs, faqHtml, faqJsonLd, stripInline, animateCss, keyframeCount, verificationMetaTags,
 };

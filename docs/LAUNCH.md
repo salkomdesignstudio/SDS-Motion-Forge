@@ -19,28 +19,48 @@ If one is missing, open https://app.netlify.com → your site → **Deploys** an
 
 ## Step 2 — Fill in your GitHub page (10 minutes)
 
-This is the biggest win: right now the repo has no topics, so GitHub search can't find it.
+Right now the repo has **no topics**, the old description, and Discussions is off, so GitHub search can't find it. Sign in to GitHub as the account that owns `salkomdesignstudio` first.
 
-1. Go to https://github.com/salkomdesignstudio/SDS-Motion-Forge
-2. On the right side, next to **About**, click the **gear icon ⚙**.
-3. **Description** — paste:
+**A. About box (description + topics)**
+
+1. Open https://github.com/salkomdesignstudio/SDS-Motion-Forge
+2. On the right, in the **About** box, click the **⚙ gear** icon.
+3. **Description**: select everything in the box, delete it, and paste:
    `600+ CSS animations for text, buttons, inputs, cards, loaders and scroll. One class name each, no JavaScript required. MIT.`
-4. **Topics** — click the box and paste these one at a time (press Enter after each; GitHub allows 20):
+4. **Website**: already `https://sds-motion-forge.netlify.app/` — leave it.
+5. **Topics**: click the topics box and add these 20 (type one, press Space or Enter; GitHub shows a chip for each). If pasting the whole list makes one long chip, delete it and add them one at a time:
    `css-animations` `css-animation-library` `animate-css-alternative` `scroll-animation` `text-animation` `loader` `hover-effects` `css-only` `keyframes` `angular` `react` `nextjs` `tailwindcss` `typescript` `design-tokens` `accessibility` `prefers-reduced-motion` `frontend` `ui-components` `zero-dependencies`
-5. The **Website** box is already filled in with your Netlify address — leave it. Click **Save changes**.
-6. Go to **Settings → General**, scroll to **Social preview**, click **Edit → Upload an image**, and choose the file `docs/images/og-card.png` from your project folder. (This is the picture shown when someone shares your link.)
-7. Same Settings page, scroll to **Features**, tick **Discussions**.
+6. Leave the checkboxes under it as they are. Click **Save changes**.
+
+**B. Social preview image** (the picture shown when someone shares the link)
+
+1. Open https://github.com/salkomdesignstudio/SDS-Motion-Forge/settings (the **Settings** tab at the top of the repo).
+2. Scroll to **Social preview** and click **Edit → Upload an image…**
+3. Choose this file from your computer: `D:\Angular-projects\SDS-Motion-Forge\docs\images\og-card.png` (1200×630, 195 KB — within GitHub's limits).
+
+**C. Discussions**
+
+1. Same Settings page, scroll to **Features**.
+2. Tick **Discussions**. (A *Discussions* tab appears at the top of the repo.)
+
+**When you're done**, tell me "step 2 done" — I can check the topics, description and Discussions from here and confirm they saved. (The social preview image can't be checked from outside; look at the repo Settings page to see it.)
 
 ## Step 3 — Tell Google about the site (15 minutes)
 
-Google won't know about the 622 new pages until you tell it.
+Google doesn't know about the 622 new pages until you tell it. **Choose these options exactly:** property type **URL prefix** (not "Domain"), verification method **HTML tag**.
 
-1. Go to https://search.google.com/search-console and sign in with the Google account you want to own this.
-2. Click **Add property**, choose **URL prefix**, paste `https://sds-motion-forge.netlify.app/`, click **Continue**.
-3. Choose the **HTML tag** method. Google shows a line starting with `<meta name="google-site-verification"`. **Copy that whole line and send it to me.** I will add it to the site, you deploy, then come back and click **Verify**.
-4. After it verifies, click **Sitemaps** in the left menu, type `sitemap.xml`, click **Submit**.
+1. Open https://search.google.com/search-console and sign in with the Google account that should own the site.
+2. In the top-left property menu choose **Add property**. Pick the right-hand box, **URL prefix**, and enter exactly `https://sds-motion-forge.netlify.app/` → **Continue**.
+   - Why not "Domain"? That one needs DNS access on a domain you own; `netlify.app` is Netlify's domain, so only URL prefix works.
+3. Google shows several methods. Open **HTML tag**. It shows one line like
+   `<meta name="google-site-verification" content="AbC…long-value…xyZ" />`
+4. **Click Copy and paste that whole line to me here.** (Just the long value inside `content="…"` is fine too.) **Don't click Verify yet.** The slot for it is already in the site, so it takes me one edit, a rebuild and a deploy (about 2 minutes).
+5. When I tell you it's deployed, go back to the same Search Console screen and click **Verify**. It should say *Ownership verified*.
+   - Leave the tag in the site permanently — removing it later un-verifies you.
+6. In the left menu click **Sitemaps**. In *Add a new sitemap* type `sitemap.xml` (the full address is https://sds-motion-forge.netlify.app/sitemap.xml) and click **Submit**. Status should become **Success** and show 622 discovered pages (it can take a few minutes).
+7. Optional but worthwhile: in the left menu click **URL inspection**, paste `https://sds-motion-forge.netlify.app/` and click **Request indexing**.
 
-Then do the same at https://www.bing.com/webmasters — choose **Import from Google Search Console** and follow the prompts (it is two clicks).
+**Then Bing (5 minutes):** open https://www.bing.com/webmasters, sign in, choose **Import** → **Import from Google Search Console** and approve. If the import isn't offered, choose **Add a site manually**, enter the same address, pick the **HTML Meta Tag** method and send me the `msvalidate.01` value the same way.
 
 ## Step 4 — Decide about the framework packages (just a decision)
 

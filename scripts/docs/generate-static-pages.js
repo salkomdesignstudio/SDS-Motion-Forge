@@ -459,6 +459,8 @@ ${S.faqHtml()}
   };
   swap("FAQ", "    " + section);
   swap("FAQ-LD", `    <script type="application/ld+json">${S.faqJsonLd()}</script>`);
+  // Search Console / Bing ownership tags (empty until config.verification is set).
+  swap("SITE-VERIFY", S.verificationMetaTags().map((t) => "    " + t).join("\n"));
   fs.writeFileSync(f, html);
 }
 
