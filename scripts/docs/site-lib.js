@@ -34,7 +34,7 @@ const config = {
        bing   → Bing Webmaster Tools, "meta tag" method (msvalidate.01)
      The SDS_VERIFY_* env vars override these (useful on Netlify / in tests). */
   verification: {
-    google: process.env.SDS_VERIFY_GOOGLE || "",
+    google: process.env.SDS_VERIFY_GOOGLE || "dLkuv3w0rgYxECRH21mzV7NsRa3tOqtqBYsFz81xfFo",
     bing: process.env.SDS_VERIFY_BING || "",
   },
 };
