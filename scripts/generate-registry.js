@@ -268,7 +268,7 @@ function collectVars(value, set) {
       trigger,
       deprecated: false,
       aliasOf: ALIASES[name] || null,
-      sinceVersion: "4.0.3",
+      sinceVersion: (meta[name] && meta[name].sinceVersion) || "4.0.3",
     });
   }
 

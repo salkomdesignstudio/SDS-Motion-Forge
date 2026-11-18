@@ -43,6 +43,34 @@ Decisions taken: canonical host is **Netlify** (`https://sds-motion-forge.netlif
 
 Stylesheets (library CSS, icon font) no longer block first paint; Geist is **self-hosted** (`docs/vendor/geist/`, OFL licence included), preloaded and inlined as `@font-face`; the icon font loads after `load`; gallery cards use `content-visibility:auto`; gallery first render is idle-deferred; hero blur filter removed; muted text colour `#8f8f8f → #666` (contrast); docs code-comment colour raised; logo got width/height. See `docs/GROWTH.md` for before/after.
 
+## Physics text effects (13 new, unreleased — v5.1.0)
+
+Thirteen text effects driven by real equations: `sds-spring-drop`, `sds-orbit-decay`, `sds-chain-swing`,
+`sds-toss-in`, `sds-band-snap`, `sds-momentum-slide`, `sds-spring-slam`, `sds-jelly-wobble`,
+`sds-liquid-fill`, `sds-split-halves`, `sds-strike-swap`, `sds-count-roll`, `sds-extrude-rise`.
+
+- `scripts/generate-physics.js` holds the physics (mass-spring-damper, gravity + restitution, damped pendulum,
+  conserved-angular-momentum orbit, ballistic arcs, elastic collision, slosh modes), samples it into CSS
+  `linear()` easing and writes a marked block into `src/categories/text.css`. Its self-checks compare the sampled
+  curves to closed-form results (spring overshoot to 4 decimals, bounce energy e² per impact, orbit angle 4.2894 vs 4.2899
+  turns) and **refuse to generate if a keyframe or class name collides with an existing effect** — that guard was needed:
+  `sds-liquidFill` and `sds-momentumSlide` already existed and would have silently overridden existing animations.
+- Proof nothing existing changed: rule-by-rule diff of the built CSS — 0 existing rules or keyframes missing/changed
+  (1,095 rules, 606 keyframes), all 23 added rules scoped to new classes, all 31 added keyframes owned by new effects;
+  `verify:published` and `verify:reduced-motion` (100 %) pass.
+- Compositor-only (lint passes); measured 0 layout passes and ~1 style recalc per frame, identical to existing effects.
+- Verified in Chrome: 1,248 standalone snippet pages (HTML + Bootstrap), 611 Tailwind utilities, 13 visual baselines (win32;
+  Linux baselines come from the `update-visual-baselines` workflow), docs, builder and a11y suites.
+- Cost: text bundle +~18 KB minified / +~4.5 KB gzip; size budgets re-based (motion.css, motion.min.css, text.min.css,
+  the Tailwind plugin) per the repo's process.
+- New effects are marked "not published yet" automatically (pages, gallery modal, llms-full.txt) while
+  registry `sinceVersion` > package.json version, because the CDN snippets cannot work until the release. Bumping the version
+  removes the notes. **Not pushed to `main`** — a release is a separate, explicit step.
+- Fixed while testing: the gallery opened the *wrong effect* when a search filter was active (card index was the filtered
+  position, not the category index) — regression test added; the Bootstrap snippet tab ignored effects that need special markup.
+- Home performance kept at 98 / 100 / 100 / 100: the gallery now builds in chunks when it nears the viewport instead of
+  ~1 s after load, and the GSAP/Lenis layer starts on first interaction.
+
 ## Interactive layer: GSAP + Lenis (home page only)
 
 Self-hosted and pinned in `docs/vendor/` (gsap 3.15.0 + ScrollTrigger, lenis 1.3.27; licences included). Loaded after `load` + idle, so LCP/FCP/CLS are untouched (Lighthouse unchanged: 98/100/100/100); skipped completely for `prefers-reduced-motion` and Save-Data (the files are not even downloaded). Adds ~52 KB gzip for visitors who get it.

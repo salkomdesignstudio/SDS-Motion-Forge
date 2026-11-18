@@ -2644,7 +2644,7 @@
     }
     </script>
     <!-- FAQ-LD:START (generated: scripts/docs/generate-static-pages.js) -->
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the best CSS animation library for Angular?","acceptedAnswer":{"@type":"Answer","text":"There is no single best option, but a CSS-only library suits Angular because it needs no Angular-specific code. SDS Motion Forge provides 604 animations as plain CSS classes: add node_modules/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css to the styles array in angular.json, then put a class such as sds-velvet-drop on any template element. No module or directive is required."}},{"@type":"Question","name":"How do I add scroll animations without JavaScript?","acceptedAnswer":{"@type":"Answer","text":"Combine sds-scroll-auto with any sds-scroll-* class, for example class=\"sds-scroll-auto sds-scroll-rise\". It uses native CSS scroll-driven animation (animation-timeline: view()), so no script runs in browsers that support it, such as Chrome 115+. Where it is unsupported, the optional 1.3 KB sds-scroll.min.js triggers the same effects through a data-sds attribute."}},{"@type":"Question","name":"Is there an Animate.css alternative?","acceptedAnswer":{"@type":"Answer","text":"Yes. SDS Motion Forge is a CSS-only alternative that defines 606 @keyframes across 604 effects in six categories (text, buttons, inputs, cards, loaders, scroll), against 97 @keyframes in Animate.css 4.1.1. The trade-off is size: the full bundle is 38.4 KB gzip versus 5.2 KB, but you can import one 5.8–8.6 KB category instead."}},{"@type":"Question","name":"What is the best CSS-only text animation library?","acceptedAnswer":{"@type":"Answer","text":"SDS Motion Forge includes 104 text animations that run from a single CSS class, for example <h1 class=\"sds-velvet-drop\">. Five need the text split into per-character spans and a few others need child elements; each effect's page states what it needs. The text bundle can be loaded on its own at 8.4 KB gzip."}},{"@type":"Question","name":"Does it respect prefers-reduced-motion?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every animating selector is neutralized under prefers-reduced-motion: reduce, and the build fails if one is missed (npm run verify:reduced-motion). Scroll-gated elements stay visible instead of being hidden, so content is never lost for users who opt out of motion."}},{"@type":"Question","name":"How big is it, and can I import only part of it?","acceptedAnswer":{"@type":"Answer","text":"The full bundle is 38.4 KB gzip. Each category is 5.8–8.6 KB gzip and can be imported alone, with core already included: import \"@salkomdesignstudio/sds-motion-forge/categories/text\";. For two or more categories, use the full bundle. The two optional scripts are 1.3 KB (scroll) and 7.0 KB (cursor effects)."}},{"@type":"Question","name":"Does it work with React, Vue, Next.js and Tailwind?","acceptedAnswer":{"@type":"Answer","text":"Yes. Import dist/motion.min.css once and use the class names with className or class in React, Next.js, Vue, Angular or a Tailwind project. Typed wrappers for React, Angular, Tailwind and Web Components exist in the repository's packages/ folder but are not yet published to npm."}},{"@type":"Question","name":"Is it free to use commercially?","acceptedAnswer":{"@type":"Answer","text":"Yes. SDS Motion Forge is open source under the MIT license, which permits commercial use as long as the copyright and license notice stay with copies of the code. Install it with npm i @salkomdesignstudio/sds-motion-forge or load it from the jsDelivr CDN with no build step."}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the best CSS animation library for Angular?","acceptedAnswer":{"@type":"Answer","text":"There is no single best option, but a CSS-only library suits Angular because it needs no Angular-specific code. SDS Motion Forge provides 617 animations as plain CSS classes: add node_modules/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css to the styles array in angular.json, then put a class such as sds-velvet-drop on any template element. No module or directive is required."}},{"@type":"Question","name":"How do I add scroll animations without JavaScript?","acceptedAnswer":{"@type":"Answer","text":"Combine sds-scroll-auto with any sds-scroll-* class, for example class=\"sds-scroll-auto sds-scroll-rise\". It uses native CSS scroll-driven animation (animation-timeline: view()), so no script runs in browsers that support it, such as Chrome 115+. Where it is unsupported, the optional 1.3 KB sds-scroll.min.js triggers the same effects through a data-sds attribute."}},{"@type":"Question","name":"Is there an Animate.css alternative?","acceptedAnswer":{"@type":"Answer","text":"Yes. SDS Motion Forge is a CSS-only alternative that defines 637 @keyframes across 617 effects in six categories (text, buttons, inputs, cards, loaders, scroll), against 97 @keyframes in Animate.css 4.1.1. The trade-off is size: the full bundle is 43.1 KB gzip versus 5.2 KB, but you can import one 5.8–12.9 KB category instead."}},{"@type":"Question","name":"What is the best CSS-only text animation library?","acceptedAnswer":{"@type":"Answer","text":"SDS Motion Forge includes 117 text animations that run from a single CSS class, for example <h1 class=\"sds-velvet-drop\">. Five need the text split into per-character spans and a few others need child elements; each effect's page states what it needs. The text bundle can be loaded on its own at 12.9 KB gzip."}},{"@type":"Question","name":"Does it respect prefers-reduced-motion?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every animating selector is neutralized under prefers-reduced-motion: reduce, and the build fails if one is missed (npm run verify:reduced-motion). Scroll-gated elements stay visible instead of being hidden, so content is never lost for users who opt out of motion."}},{"@type":"Question","name":"How big is it, and can I import only part of it?","acceptedAnswer":{"@type":"Answer","text":"The full bundle is 43.1 KB gzip. Each category is 5.8–12.9 KB gzip and can be imported alone, with core already included: import \"@salkomdesignstudio/sds-motion-forge/categories/text\";. For two or more categories, use the full bundle. The two optional scripts are 1.3 KB (scroll) and 7.0 KB (cursor effects)."}},{"@type":"Question","name":"Does it work with React, Vue, Next.js and Tailwind?","acceptedAnswer":{"@type":"Answer","text":"Yes. Import dist/motion.min.css once and use the class names with className or class in React, Next.js, Vue, Angular or a Tailwind project. Typed wrappers for React, Angular, Tailwind and Web Components exist in the repository's packages/ folder but are not yet published to npm."}},{"@type":"Question","name":"Is it free to use commercially?","acceptedAnswer":{"@type":"Answer","text":"Yes. SDS Motion Forge is open source under the MIT license, which permits commercial use as long as the copyright and license notice stay with copies of the code. Install it with npm i @salkomdesignstudio/sds-motion-forge or load it from the jsDelivr CDN with no build step."}}]}</script>
     <!-- FAQ-LD:END -->
   </head>
   <body>
@@ -3043,7 +3043,7 @@
         <div class="faq">
 <details class="faq-item">
 <summary><h3>What is the best CSS animation library for Angular?</h3></summary>
-<p>There is no single best option, but a CSS-only library suits Angular because it needs no Angular-specific code. SDS Motion Forge provides 604 animations as plain CSS classes: add <code>node_modules/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css</code> to the <code>styles</code> array in angular.json, then put a class such as <code>sds-velvet-drop</code> on any template element. No module or directive is required.</p>
+<p>There is no single best option, but a CSS-only library suits Angular because it needs no Angular-specific code. SDS Motion Forge provides 617 animations as plain CSS classes: add <code>node_modules/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css</code> to the <code>styles</code> array in angular.json, then put a class such as <code>sds-velvet-drop</code> on any template element. No module or directive is required.</p>
 </details>
 <details class="faq-item">
 <summary><h3>How do I add scroll animations without JavaScript?</h3></summary>
@@ -3051,11 +3051,11 @@
 </details>
 <details class="faq-item">
 <summary><h3>Is there an Animate.css alternative?</h3></summary>
-<p>Yes. SDS Motion Forge is a CSS-only alternative that defines 606 @keyframes across 604 effects in six categories (text, buttons, inputs, cards, loaders, scroll), against 97 @keyframes in Animate.css 4.1.1. The trade-off is size: the full bundle is 38.4 KB gzip versus 5.2 KB, but you can import one 5.8–8.6 KB category instead.</p>
+<p>Yes. SDS Motion Forge is a CSS-only alternative that defines 637 @keyframes across 617 effects in six categories (text, buttons, inputs, cards, loaders, scroll), against 97 @keyframes in Animate.css 4.1.1. The trade-off is size: the full bundle is 43.1 KB gzip versus 5.2 KB, but you can import one 5.8–12.9 KB category instead.</p>
 </details>
 <details class="faq-item">
 <summary><h3>What is the best CSS-only text animation library?</h3></summary>
-<p>SDS Motion Forge includes 104 text animations that run from a single CSS class, for example <code>&lt;h1 class=&quot;sds-velvet-drop&quot;&gt;</code>. Five need the text split into per-character spans and a few others need child elements; each effect's page states what it needs. The text bundle can be loaded on its own at 8.4 KB gzip.</p>
+<p>SDS Motion Forge includes 117 text animations that run from a single CSS class, for example <code>&lt;h1 class=&quot;sds-velvet-drop&quot;&gt;</code>. Five need the text split into per-character spans and a few others need child elements; each effect's page states what it needs. The text bundle can be loaded on its own at 12.9 KB gzip.</p>
 </details>
 <details class="faq-item">
 <summary><h3>Does it respect prefers-reduced-motion?</h3></summary>
@@ -3063,7 +3063,7 @@
 </details>
 <details class="faq-item">
 <summary><h3>How big is it, and can I import only part of it?</h3></summary>
-<p>The full bundle is 38.4 KB gzip. Each category is 5.8–8.6 KB gzip and can be imported alone, with core already included: <code>import &quot;@salkomdesignstudio/sds-motion-forge/categories/text&quot;;</code>. For two or more categories, use the full bundle. The two optional scripts are 1.3 KB (scroll) and 7.0 KB (cursor effects).</p>
+<p>The full bundle is 43.1 KB gzip. Each category is 5.8–12.9 KB gzip and can be imported alone, with core already included: <code>import &quot;@salkomdesignstudio/sds-motion-forge/categories/text&quot;;</code>. For two or more categories, use the full bundle. The two optional scripts are 1.3 KB (scroll) and 7.0 KB (cursor effects).</p>
 </details>
 <details class="faq-item">
 <summary><h3>Does it work with React, Vue, Next.js and Tailwind?</h3></summary>
@@ -3220,6 +3220,11 @@
           </button>
         </div>
 
+        <div class="modal-notice" id="modalUnreleased">
+          <strong>New — not published yet</strong><br/>
+          This effect is in the repository, but npm and the CDN still serve the previous version, so the
+          CDN snippets below will not animate until <span id="modalUnreleasedV">the next version</span> is released.
+        </div>
         <div class="modal-notice" id="modalNotice">
           <strong><i class="ri-javascript-fill"></i> Requires the Interactive Engine</strong><br/>
           This animation responds to cursor/hover events — it cannot be replayed with a button.
@@ -3484,46 +3489,48 @@
           return (m && m[a.cls]) || '<span class="card-demo ' + a.cls + '">' + a.name + '</span>';
         }
 
-        function renderGrid() {
-          var grid = document.getElementById("galGrid");
-          var list = (ANIMATIONS[activeCat] || []).filter(function (a) {
-            if (!searchTerm) return true;
-            return (
-              (a.name + " " + a.cls).toLowerCase().indexOf(searchTerm) > -1
-            );
-          });
-          grid.innerHTML = list
-            .map(function (a, i) {
-              return (
-                '<div class="card" data-cls="' +
-                a.cls +
-                '" data-i="' +
-                i +
-                '" tabindex="0" role="button" aria-label="' +
-                a.name +
-                ' animation — click for details">' +
-                '<div class="card-stage">' +
-                previewMarkup(a) +
-                '<span class="card-replay" aria-hidden="true" title="Replay"><i class="ri-restart-line"></i></span>' +
-                "</div>" +
-                '<div class="card-meta">' +
-                '<div class="card-name">' +
-                a.name +
-                "</div>" +
-                '<div class="card-meta-row">' +
-                '<span class="card-cls"><i class="ri-code-s-slash-line"></i>' +
-                a.cls +
-                "</span>" +
-                (INTERACTIVE.indexOf(a.cls) > -1
-                  ? '<span class="badge-js">Needs JS</span>'
-                  : "") +
-                "</div>" +
-                "</div></div>"
-              );
-            })
-            .join("");
-          // click to copy + hover replay
-          grid.querySelectorAll(".card").forEach(function (card) {
+        /* The gallery builds its cards in small chunks (16 per idle slot) instead of
+           one task: ~120 live previews in a single task blocked the main thread for
+           ~200 ms and inflated Total Blocking Time. renderToken cancels a build that
+           is still running when the tab or search changes. */
+        var renderToken = 0;
+        var galBuilt = false;
+        var GAL_CHUNK = 16;
+
+        function cardHtml(a) {
+          return (
+            '<div class="card" data-cls="' +
+            a.cls +
+            '" data-i="' +
+            /* index in the FULL category list: openModal() indexes the unfiltered
+               list, so a search-filtered position would open the wrong effect */
+            ANIMATIONS[activeCat].indexOf(a) +
+            '" tabindex="0" role="button" aria-label="' +
+            a.name +
+            ' animation — click for details">' +
+            '<div class="card-stage">' +
+            previewMarkup(a) +
+            '<span class="card-replay" aria-hidden="true" title="Replay"><i class="ri-restart-line"></i></span>' +
+            "</div>" +
+            '<div class="card-meta">' +
+            '<div class="card-name">' +
+            a.name +
+            "</div>" +
+            '<div class="card-meta-row">' +
+            '<span class="card-cls"><i class="ri-code-s-slash-line"></i>' +
+            a.cls +
+            "</span>" +
+            (INTERACTIVE.indexOf(a.cls) > -1
+              ? '<span class="badge-js">Needs JS</span>'
+              : "") +
+            "</div>" +
+            "</div></div>"
+          );
+        }
+
+        // click to copy + hover replay, in-view trigger, interactive engines — for NEW cards only
+        function wireCards(cards, io) {
+          cards.forEach(function (card) {
             var cls = card.dataset.cls;
             var demo =
               card.querySelector("." + cls.split(" ")[0]) ||
@@ -3561,10 +3568,31 @@
                 openModal(activeCat, parseInt(card.dataset.i, 10));
               }
             });
+            if (io) io.observe(card);
+            // wire up interactive (magnetic, scatter, shockwave, word-morph) on the new cards
+            if (window.SDSInteractive && !reduce && window.SDSInteractive.initEl) {
+              card.querySelectorAll("[class*='sds-']").forEach(function (el) {
+                window.SDSInteractive.initEl(el);
+              });
+            }
           });
+        }
+
+        function renderGrid() {
+          var grid = document.getElementById("galGrid");
+          var list = (ANIMATIONS[activeCat] || []).filter(function (a) {
+            if (!searchTerm) return true;
+            return (
+              (a.name + " " + a.cls).toLowerCase().indexOf(searchTerm) > -1
+            );
+          });
+          galBuilt = true;
+          var token = ++renderToken;
+          grid.innerHTML = "";
           // trigger when in view
+          var io = null;
           if (!reduce) {
-            var io = new IntersectionObserver(
+            io = new IntersectionObserver(
               function (es) {
                 es.forEach(function (e) {
                   if (e.isIntersecting) {
@@ -3580,19 +3608,22 @@
               },
               { threshold: 0.2 },
             );
-            grid.querySelectorAll(".card").forEach(function (c) {
-              io.observe(c);
-            });
           }
-          // wire up interactive (magnetic, scatter, shockwave, word-morph) on the new cards
-          if (window.SDSInteractive && !reduce) {
-            grid
-              .querySelectorAll(".card [class*='sds-']")
-              .forEach(function (el) {
-                if (window.SDSInteractive.initEl)
-                  window.SDSInteractive.initEl(el);
-              });
+          var next = 0;
+          function buildChunk() {
+            if (token !== renderToken) return; // a newer render replaced this one
+            var end = Math.min(next + GAL_CHUNK, list.length);
+            var html = "";
+            for (; next < end; next++) html += cardHtml(list[next]);
+            var before = grid.children.length;
+            grid.insertAdjacentHTML("beforeend", html);
+            wireCards(Array.prototype.slice.call(grid.children, before), io);
+            if (next < list.length) {
+              if (window.requestIdleCallback) requestIdleCallback(buildChunk, { timeout: 150 });
+              else setTimeout(buildChunk, 16);
+            }
           }
+          buildChunk(); // first chunk now, so the grid is never empty after a tab or search change
           // Auto-replay all visible cards every 2.8s so entrance effects keep
           // demonstrating rather than settling to a static final state.
           if (!reduce) {
@@ -3849,6 +3880,11 @@
 
           // show/hide interactive notice
           var isInteractive = INTERACTIVE.indexOf(a.cls) > -1;
+          var unrel = document.getElementById("modalUnreleased");
+          var isNew = ((window.SDS_DOCS && window.SDS_DOCS.unreleased) || []).indexOf(a.cls) > -1;
+          unrel.classList.toggle("visible", isNew);
+          if (isNew && window.SDS_DOCS.unreleasedSince)
+            document.getElementById("modalUnreleasedV").textContent = "v" + window.SDS_DOCS.unreleasedSince;
           var notice = document.getElementById("modalNotice");
           notice.classList.toggle("visible", isInteractive);
           // hide replay button for interactive animations (JS engine drives them)
@@ -4052,12 +4088,30 @@
 
         /* ---------- Init ---------- */
         buildTabs();
-        /* The gallery sits below the fold: build its ~100 live cards once the
-           hero has painted (idle, max 1.2s) so they do not delay first paint /
-           LCP. Tab and search clicks still call renderGrid() directly. */
-        if ("requestIdleCallback" in window)
-          requestIdleCallback(renderGrid, { timeout: 1200 });
-        else setTimeout(renderGrid, 200);
+        /* The gallery sits far below the fold. Building ~120 live previews costs
+           main-thread time that a visitor who never scrolls there never benefits
+           from, so build it when it approaches the viewport (800px early). Tab and
+           search interaction call renderGrid() directly; a late timer is the
+           fallback for browsers without IntersectionObserver or tabs left idle. */
+        (function () {
+          var grid = document.getElementById("galGrid");
+          function build() {
+            if (!galBuilt) renderGrid();
+          }
+          if ("IntersectionObserver" in window && grid) {
+            var gio = new IntersectionObserver(
+              function (es) {
+                if (es.some(function (e) { return e.isIntersecting; })) {
+                  gio.disconnect();
+                  build();
+                }
+              },
+              { rootMargin: "800px 0px" },
+            );
+            gio.observe(grid);
+          } else build();
+          setTimeout(build, 12000);
+        })();
         buildPgSelect();
         buildPgChips();
         pgUpdate();
@@ -4094,12 +4148,25 @@
             .then(init)
             .catch(function () {});
         }
-        function later() {
-          if (window.requestIdleCallback) requestIdleCallback(boot, { timeout: 3000 });
-          else setTimeout(boot, 1500);
+        /* Start on the visitor's first sign of interaction, not on a guess about idle
+           time: the layer only enhances scrolling and pointer feel, so a visitor who
+           never interacts never pays for ~52 KB of JS. A late timer covers visitors
+           who read without touching anything. */
+        var armed = false;
+        var events = ["pointerdown", "pointermove", "wheel", "keydown", "touchstart", "scroll"];
+        function go() {
+          if (armed) return;
+          armed = true;
+          events.forEach(function (e) { window.removeEventListener(e, go); });
+          var start = function () {
+            if (window.requestIdleCallback) requestIdleCallback(boot, { timeout: 1500 });
+            else setTimeout(boot, 200);
+          };
+          if (document.readyState === "complete") start();
+          else window.addEventListener("load", start, { once: true });
         }
-        if (document.readyState === "complete") later();
-        else window.addEventListener("load", later);
+        events.forEach(function (e) { window.addEventListener(e, go, { passive: true }); });
+        setTimeout(go, 8000);
 
         function init() {
           var gsap = window.gsap, ScrollTrigger = window.ScrollTrigger, Lenis = window.Lenis;

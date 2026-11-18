@@ -9,6 +9,7 @@ const fs = require("fs");
 const path = require("path");
 
 const ROOT = path.join(__dirname, "..", "..");
+const { specialTextMarkup } = require("../lib/text-special");
 const registry = JSON.parse(fs.readFileSync(path.join(ROOT, "registry", "motion.registry.json"), "utf8"));
 
 const effects = registry.classes.filter((c) => c.kind === "effect");
@@ -51,9 +52,11 @@ const cards = effects.map((c) => {
   } else if (host.tag === "input") {
     el = `<input class="${c.name}" id="el-${c.name}" value="Input" />`;
   } else {
-    const content = kids ?? host.text ?? "";
+    const special = c.category === "text" ? specialTextMarkup(c.name) : null;
+    const content = special ? special.inner : (kids ?? host.text ?? "");
     const style = host.card ? ' style="width:140px;height:80px;background:#eef;border-radius:10px;display:flex;align-items:center;justify-content:center;"' : "";
-    el = `<${host.tag} class="${c.name}" id="el-${c.name}"${style}>${content}</${host.tag}>`;
+    const attrs = special && special.attrs ? " " + special.attrs : "";
+    el = `<${host.tag} class="${c.name}" id="el-${c.name}"${attrs}${style}>${content}</${host.tag}>`;
   }
   return `<div class="cell" id="cell-${c.name}" data-effect="${c.name}" data-category="${c.category}">${el}</div>`;
 });

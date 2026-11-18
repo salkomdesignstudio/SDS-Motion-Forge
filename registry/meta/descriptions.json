@@ -2952,5 +2952,83 @@
     "displayName": "Contrast In",
     "description": "Emerges from high-contrast darkness into natural color and brightness.",
     "source": "phase6-authored"
+  },
+  "sds-spring-drop": {
+    "description": "Letters fall under gravity and bounce off a floor, each landing squashing with its impact speed",
+    "displayName": "Spring Drop",
+    "sinceVersion": "5.1.0",
+    "source": "authored"
+  },
+  "sds-orbit-decay": {
+    "description": "Letters spiral inward under drag with conserved angular momentum, spinning faster as they close in",
+    "displayName": "Orbit Decay",
+    "sinceVersion": "5.1.0",
+    "source": "authored"
+  },
+  "sds-chain-swing": {
+    "description": "Letters swing as damped pendulums, released in sequence so a wave travels along the word",
+    "displayName": "Chain Swing",
+    "sinceVersion": "5.1.0",
+    "source": "authored"
+  },
+  "sds-toss-in": {
+    "description": "Letters are thrown in along ballistic arcs, land, bounce and settle",
+    "displayName": "Toss In",
+    "sinceVersion": "5.1.0",
+    "source": "authored"
+  },
+  "sds-band-snap": {
+    "description": "A stretched rubber-band word snaps back on a mass-spring, overshoots and rings down",
+    "displayName": "Band Snap",
+    "sinceVersion": "5.1.0",
+    "source": "authored"
+  },
+  "sds-momentum-slide": {
+    "description": "Slides in on a spring while skew and motion blur follow its velocity",
+    "displayName": "Momentum Slide",
+    "sinceVersion": "5.1.0",
+    "source": "authored"
+  },
+  "sds-spring-slam": {
+    "description": "Slams in from a large scale on a stiff spring with a decaying shake",
+    "displayName": "Spring Slam",
+    "sinceVersion": "5.1.0",
+    "source": "authored"
+  },
+  "sds-jelly-wobble": {
+    "description": "A dropped jelly oscillating in two coupled, volume-preserving modes",
+    "displayName": "Jelly Wobble",
+    "sinceVersion": "5.1.0",
+    "source": "authored"
+  },
+  "sds-liquid-fill": {
+    "description": "Outlined text fills like a glass, with the liquid surface sloshing as it settles",
+    "displayName": "Liquid Fill",
+    "sinceVersion": "5.1.0",
+    "source": "authored"
+  },
+  "sds-split-halves": {
+    "description": "Two halves collide at speed, rebound with restitution and lock together",
+    "displayName": "Split Halves",
+    "sinceVersion": "5.1.0",
+    "source": "authored"
+  },
+  "sds-strike-swap": {
+    "description": "A word is struck out and knocked off to fall under gravity while its replacement drops in on a spring",
+    "displayName": "Strike Swap",
+    "sinceVersion": "5.1.0",
+    "source": "authored"
+  },
+  "sds-count-roll": {
+    "description": "Odometer digits roll on springs, overshoot slightly and blur with speed",
+    "displayName": "Count Roll",
+    "sinceVersion": "5.1.0",
+    "source": "authored"
+  },
+  "sds-extrude-rise": {
+    "description": "Text tilts up on a spring while a 3D extrusion grows with the same overshoot",
+    "displayName": "Extrude Rise",
+    "sinceVersion": "5.1.0",
+    "source": "authored"
   }
 }

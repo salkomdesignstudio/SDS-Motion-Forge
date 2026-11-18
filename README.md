@@ -186,14 +186,14 @@ import '@salkomdesignstudio/sds-motion-forge/categories/loaders';
 <!-- @sds-size-table:start -->
 | Bundle | Import | Minified | Gzip |
 |---|---|---|---|
-| text | `@salkomdesignstudio/sds-motion-forge/categories/text` | 45.5 KB | 8.4 KB |
+| text | `@salkomdesignstudio/sds-motion-forge/categories/text` | 63.2 KB | 12.9 KB |
 | buttons | `@salkomdesignstudio/sds-motion-forge/categories/buttons` | 49.1 KB | 8.6 KB |
 | inputs | `@salkomdesignstudio/sds-motion-forge/categories/inputs` | 47.0 KB | 8.4 KB |
 | cards | `@salkomdesignstudio/sds-motion-forge/categories/cards` | 39.6 KB | 7.5 KB |
 | loaders | `@salkomdesignstudio/sds-motion-forge/categories/loaders` | 49.1 KB | 8.1 KB |
 | scroll | `@salkomdesignstudio/sds-motion-forge/categories/scroll` | 33.6 KB | 5.8 KB |
 | core only | `@salkomdesignstudio/sds-motion-forge/categories/core` | 3.3 KB | 1.0 KB |
-| **everything** | `@salkomdesignstudio/sds-motion-forge` | **241.7 KB** | **38.4 KB** |
+| **everything** | `@salkomdesignstudio/sds-motion-forge` | **259.3 KB** | **43.1 KB** |
 <!-- @sds-size-table:end -->
 
 Core is intentionally **inlined** into every category bundle so each one works
@@ -546,6 +546,58 @@ For `sds-explode-formation`, set per-character displacement variables:
 | `sds-strike-through` | `::after` strikeout line draws left→right | entrance |
 
 ---
+
+### Physics text effects (new in v5.1 — not yet released)
+
+Thirteen text effects driven by real equations instead of hand-tuned easing.
+Each one samples a physical system — a mass-spring-damper, a bouncing ball, a
+damped pendulum, an orbit with conserved angular momentum — into a CSS
+`linear()` easing curve that drives plain `from → to` keyframes. They animate
+only `translate` / `rotate` / `scale` / `transform` / `filter` / `opacity` /
+`clip-path` (compositor-only: **0 layout passes**, measured), keep working under
+`prefers-reduced-motion`, and fall back to a cubic-bezier spring in browsers
+without `linear()`. The equations live in [`scripts/generate-physics.js`](scripts/generate-physics.js),
+which also verifies them against their closed-form solutions on every run.
+
+| Class | The physics | Markup |
+|---|---|---|
+| `sds-spring-drop` | Gravity + restitution *e* = 0.52: each bounce keeps *e* of the impact speed (apex × *e*²); squash scales with impact speed | letters in `.sds-char` |
+| `sds-orbit-decay` | Drag shrinks the radius while angular momentum *L* = *r*²·ω is conserved — letters spiral in, faster and faster | letters in `.sds-char` |
+| `sds-chain-swing` | Damped pendulums (1.3 Hz, ζ = 0.12) released in sequence; a wave of swings travels along the word | letters in `.sds-char` |
+| `sds-toss-in` | Ballistic arcs (constant horizontal speed, *y* = *v*·*t* − ½·*g*·*t*²), landing bounces at *e* = 0.42 | letters in `.sds-char` |
+| `sds-band-snap` | A stretched rubber band released on a mass-spring (1.5 Hz, ζ = 0.30): snaps past home and rings down | letters in `.sds-char` |
+| `sds-momentum-slide` | Spring position; **skew and motion blur follow the spring's velocity** | none |
+| `sds-spring-slam` | Stiff spring (2.4 Hz, ζ = 0.34) with a decaying 7 Hz shake | none |
+| `sds-jelly-wobble` | Two coupled, area-preserving damped modes (stretch 3.1 Hz, sway 2.2 Hz) | none |
+| `sds-liquid-fill` | Critically damped level rise while the surface sloshes in its first two standing-wave modes | `data-text` |
+| `sds-split-halves` | Two bodies collide at constant speed and rebound with restitution *e* = 0.8 | `data-text` |
+| `sds-strike-swap` | The struck word falls with *y* = ½·*g*·*t*² and spins; the new word lands on a spring | two child `<span>`s |
+| `sds-count-roll` | Odometer wheels on springs (1 Hz, ζ = 0.78) with blur proportional to speed | one `<span class="sds-roll" style="--d:N">` per digit |
+| `sds-extrude-rise` | Spring tilt; the 3D extrusion depth rides the same spring and overshoots | none |
+
+```html
+<!-- letters: wrap each in .sds-char with its index -->
+<h1 class="sds-spring-drop">
+  <span class="sds-char" style="--i:0">D</span><span class="sds-char" style="--i:1">r</span>…
+</h1>
+
+<!-- data-text must repeat the text; the real text stays selectable -->
+<h1 class="sds-liquid-fill" data-text="Liquid">Liquid</h1>
+
+<!-- a struck word is knocked off, the new one drops in -->
+<span class="sds-strike-swap">
+  <span class="sds-swap-old">Cheap</span><span class="sds-swap-new">Premium</span>
+</span>
+
+<!-- one wheel per digit: --d is the target digit, --i the stagger -->
+<span class="sds-count-roll">
+  <span class="sds-roll" style="--d:2;--i:0">2</span><span class="sds-roll" style="--d:0;--i:1">0</span>
+</span>
+```
+
+These cost about 4.5 KB gzip in the text bundle (the equation-sampled easing
+curves are the bytes), and are marked "not published yet" on their pages until
+the next release.
 
 ### Buttons — 100 classes
 

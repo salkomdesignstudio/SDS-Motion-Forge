@@ -2,7 +2,24 @@
 
 ## [Unreleased]
 
-<!-- Next release notes go here -->
+### Added — physics text effects (13, text category)
+
+Purely additive: no existing class, keyframe or computed value changes
+(machine-checked by `verify:published`, plus a rule-by-rule diff of the built CSS).
+
+`sds-spring-drop`, `sds-orbit-decay`, `sds-chain-swing`, `sds-toss-in`, `sds-band-snap`,
+`sds-momentum-slide`, `sds-spring-slam`, `sds-jelly-wobble`, `sds-liquid-fill`,
+`sds-split-halves`, `sds-strike-swap`, `sds-count-roll`, `sds-extrude-rise`.
+
+- Driven by real equations (mass-spring-damper, restitution, damped pendulum, angular-momentum
+  orbit, ballistic arcs, elastic collision, slosh modes) sampled into CSS `linear()` easing by
+  `scripts/generate-physics.js`; compositor-only; cubic-bezier fallback without `linear()`.
+- `npm run generate:physics` regenerates the block in `src/categories/text.css`;
+  `npm run verify:physics` (in `release:check`) fails if it drifts, if any invariant breaks
+  (spring overshoot vs closed form, bounce energy, orbit angle), or if a keyframe/class name
+  collides with an existing effect.
+- Registry: `sinceVersion` now comes from `registry/meta/descriptions.json` (default `4.0.3`).
+- Text bundle: +~18 KB minified, +~4.5 KB gzip; size budgets re-based accordingly.
 
 ---
 

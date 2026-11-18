@@ -251,7 +251,7 @@ function effectPage(c) {
 <h1>${esc(c.displayName)}</h1>
 <p class="lead">${esc(d)}. Add the class <code>.${c.name}</code> to any element — it ${esc(loop)} ${esc(trig)}, with no JavaScript${c.kind === "interactive" ? " beyond the optional cursor engine" : c.category === "scroll" ? " beyond the optional 1.3 KB scroll gate (or native scroll-driven animation with <code>sds-scroll-auto</code>)" : ""}.</p>
 
-<section aria-labelledby="demo"><h2 id="demo">Live demo</h2>
+${S.isUnreleased(c) ? `<p class="note" role="note"><strong>New in v${esc(c.sinceVersion)} — not published yet.</strong> This effect is in the repository and runs on this page, but npm and the CDN still serve v${esc(facts.version)}, so the copy-paste snippets below will not animate until v${esc(c.sinceVersion)} is released.</p>\n` : ""}<section aria-labelledby="demo"><h2 id="demo">Live demo</h2>
 <div class="stage" id="stage">${demoMarkup(c)}</div>
 <p><button type="button" class="btn" id="replay">Replay</button> <span class="muted">Demo uses this site's neutral theme; override <code>--sds-primary</code> to match your brand.</span></p></section>
 
@@ -292,7 +292,7 @@ ${d}. ${cat.label} animation in ${facts.name} v${facts.version}. It ${loop} ${tr
 - Needs per-character spans: ${c.requiresCharSplit ? "yes" : "no"}
 - JavaScript: ${c.jsEngine && c.jsEngine !== "none" ? c.jsEngine : "none required"}
 ${aliases.length ? `- Also available as: ${aliases.map((a) => "`." + a + "`").join(", ")}\n` : ""}
-## Use it
+${S.isUnreleased(c) ? `> New in v${c.sinceVersion} — not published yet: npm and the CDN still serve v${facts.version}, so the snippets below will not animate until v${c.sinceVersion} is released.\n\n` : ""}## Use it
 
 \`\`\`html
 ${cdnCss.map((u) => `<link rel="stylesheet" href="${u}" />`).join("\n")}
@@ -399,6 +399,7 @@ details{background:var(--card);border:1px solid var(--line);border-radius:12px;m
 summary{cursor:pointer;padding:14px 0;font-weight:500;color:var(--ink)}
 .chips,.list{list-style:none;margin:0;padding:0}.chips{display:flex;flex-wrap:wrap;gap:8px}.chips a{display:inline-block;padding:6px 12px;border:1px solid var(--line);border-radius:9999px;background:var(--card);text-decoration:none;font-size:14px}.chips a:hover{border-color:var(--ink)}
 .list li{padding:10px 0;border-bottom:1px solid var(--line)}
+.note{background:#f2f2f2;border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:16px 0;font-size:14px;color:var(--ink)}
 .foot{border-top:1px solid var(--line);padding:32px 0;font-size:14px;color:var(--muted)}.foot a{color:var(--muted)}
 @media (prefers-reduced-motion:reduce){.stage *{animation-duration:.01ms!important;animation-iteration-count:1!important}}
 `;
@@ -414,7 +415,7 @@ function sitemap(pages) {
 function llmsFull() {
   const sec = [...CATEGORIES, catById.interactive].map((cat) => {
     const list = (cat.id === "interactive" ? interactive : byCategory[cat.id]).slice().sort((a, b) => a.name.localeCompare(b.name));
-    return `## ${cat.label} (${list.length})\n\n${cat.blurb}\n\n${list.map((c) => `- \`.${c.name}\` — ${c.displayName}: ${sentence(descOf(c))}. ${urlOf(S.animationPath(c.name))}`).join("\n")}\n`;
+    return `## ${cat.label} (${list.length})\n\n${cat.blurb}\n\n${list.map((c) => `- \`.${c.name}\` — ${c.displayName}: ${sentence(descOf(c))}. ${urlOf(S.animationPath(c.name))}${S.isUnreleased(c) ? ` (new in v${c.sinceVersion}, not yet published to npm/CDN)` : ""}`).join("\n")}\n`;
   });
   return `${S.buildLlmsTxt().replace(/\n## Machine-readable resources[\s\S]*$/, "")}
 ## Machine-readable resources
