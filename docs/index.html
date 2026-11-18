@@ -879,6 +879,9 @@
         display: grid;
         place-items: center;
         overflow: hidden;
+        /* effects that draw a pseudo-element at z-index:-1 (halos, stacked decks) must land
+           inside the stage, not behind its background */
+        isolation: isolate;
       }
       .card-demo {
         font-size: 21px;
@@ -1521,6 +1524,7 @@
         display: grid;
         place-items: center;
         position: relative;
+        isolation: isolate;
         overflow: hidden;
         padding: 30px;
       }
