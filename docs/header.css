@@ -1,0 +1,75 @@
+/* SDS Motion Forge — the one site header (markup: scripts/docs/site-header.js, behaviour: header.js).
+   Same bar, same menu, on every page. Dropdowns open on hover, focus and click. */
+:root { --nav-h: 78px; }
+.sh {
+  position: sticky; top: 0; z-index: 1000; height: var(--nav-h); margin-bottom: calc(var(--nav-h) * -1);
+  padding: 10px 12px 0; pointer-events: none; font-family: "Manrope", Arial, sans-serif;
+}
+.sh-bar {
+  pointer-events: auto; display: flex; align-items: center; gap: 14px; max-width: 1180px; height: 58px; margin: 0 auto; padding: 0 10px 0 24px;
+  background: rgba(255, 255, 255, 0.88); -webkit-backdrop-filter: blur(16px) saturate(160%); backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid #e4e7ec; border-radius: 999px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s;
+}
+.sh.is-scrolled .sh-bar { box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 14px 36px rgba(0, 0, 0, 0.1); }
+.sh-brand { font: 600 18px "Outfit", "Manrope", Arial, sans-serif; letter-spacing: -0.03em; color: #141414; text-decoration: none; white-space: nowrap; }
+.sh-nav { display: flex; align-items: center; gap: 2px; margin-left: 12px; flex: 1; }
+.sh-nav > a, .sh-btn {
+  display: inline-flex; align-items: center; gap: 6px; height: 38px; padding: 0 16px; border: 0; border-radius: 999px; background: transparent;
+  color: #44444a; font: 500 14.5px "Manrope", Arial, sans-serif; text-decoration: none; cursor: pointer; white-space: nowrap; transition: background 0.15s, color 0.15s;
+}
+.sh-nav > a:hover, .sh-btn:hover, .sh-dd:focus-within > .sh-btn, .sh-dd.open > .sh-btn { background: #f3f3f5; color: #141414; }
+.sh-nav a[aria-current], .sh-btn[aria-current] { background: #f3f3f5; color: #141414; }
+.sh-caret { transition: transform 0.2s; }
+.sh-dd.open .sh-caret, .sh-dd:hover .sh-caret { transform: rotate(180deg); }
+.sh-dd { position: relative; }
+.sh-menu {
+  position: absolute; top: calc(100% + 10px); left: 0; z-index: 10; width: 360px; padding: 10px; display: flex; flex-direction: column; gap: 2px;
+  background: #fff; border: 1px solid #e4e7ec; border-radius: 24px; box-shadow: 0 1px 2px rgba(11, 13, 24, 0.04), 0 28px 70px rgba(11, 13, 24, 0.16);
+  opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity 0.18s, transform 0.18s, visibility 0.18s;
+}
+.sh-menu-wide { width: 620px; display: grid; grid-template-columns: 1fr 1fr; gap: 2px 6px; }
+.sh-menu::before { content: ""; position: absolute; left: 0; right: 0; top: -12px; height: 12px; }
+.sh-dd:hover .sh-menu, .sh-dd.open .sh-menu, .sh-dd:focus-within .sh-menu { opacity: 1; visibility: visible; transform: none; }
+.sh-menu a { display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 16px; color: #141414; text-decoration: none; transition: background 0.15s; }
+.sh-menu a:hover, .sh-menu a:focus-visible { background: #f6f6f9; }
+.sh-menu a[aria-current] { background: rgba(92, 74, 225, 0.08); }
+.sh-ico { display: grid; place-items: center; flex: none; width: 42px; height: 42px; border-radius: 14px; background: #f3f3f5; color: #141414; transition: background 0.15s, color 0.15s; }
+.sh-menu a:hover .sh-ico, .sh-menu a:focus-visible .sh-ico { background: rgba(92, 74, 225, 0.12); color: #5c4ae1; }
+.sh-txt { display: flex; flex-direction: column; min-width: 0; }
+.sh-txt b { font: 600 15px "Outfit", "Manrope", Arial, sans-serif; letter-spacing: -0.02em; line-height: 1.25; }
+.sh-txt b em { margin-left: 4px; font: 500 12px "Geist Mono", ui-monospace, Menlo, monospace; font-style: normal; color: #6b6b70; }
+.sh-txt small { font: 400 13px/1.35 "Manrope", Arial, sans-serif; color: #6b6b70; }
+.sh-menu a.sh-all { grid-column: 1 / -1; justify-content: space-between; margin-bottom: 4px; padding: 14px 16px; background: #141414; color: #fff; }
+.sh-menu a.sh-all:hover { background: #000; }
+.sh-all span:first-child { display: flex; flex-direction: column; }
+.sh-all b { font: 600 15px "Outfit", "Manrope", Arial, sans-serif; letter-spacing: -0.02em; }
+.sh-all small { font: 400 13px "Manrope", Arial, sans-serif; color: rgba(255, 255, 255, 0.7); }
+.sh-n { padding: 4px 12px; border-radius: 999px; background: rgba(255, 255, 255, 0.14); font: 500 13px "Geist Mono", ui-monospace, Menlo, monospace; }
+.sh-actions { display: flex; align-items: center; gap: 8px; }
+.sh-icon { display: inline-grid; place-items: center; width: 40px; height: 40px; border: 1px solid #e4e7ec; border-radius: 50%; background: #fff; color: #141414; }
+.sh-icon:hover { background: #f3f3f5; }
+.sh-cta { display: inline-flex; align-items: center; height: 40px; padding: 0 20px; border-radius: 999px; background: #141414; color: #fff; font: 600 14.5px "Manrope", Arial, sans-serif; text-decoration: none; }
+.sh-cta:hover { background: #000; box-shadow: 0 8px 24px rgba(11, 13, 24, 0.2); }
+.sh a:focus-visible, .sh button:focus-visible { outline: 2px solid #5c4ae1; outline-offset: 2px; }
+.sh-burger { display: none; width: 40px; height: 40px; margin-left: auto; padding: 0; border: 1px solid #e4e7ec; border-radius: 50%; background: #fff; cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 4px; }
+.sh-burger span { display: block; width: 16px; height: 2px; border-radius: 2px; background: #141414; transition: transform 0.2s, opacity 0.2s; }
+.sh-burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.sh-burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.sh-burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+.sh-drawer {
+  pointer-events: auto; max-width: 1180px; max-height: calc(100vh - var(--nav-h) - 16px); margin: 8px auto 0; padding: 12px; overflow-y: auto;
+  background: #fff; border: 1px solid #e4e7ec; border-radius: 28px; box-shadow: 0 24px 60px rgba(11, 13, 24, 0.16);
+}
+.sh-drawer[hidden] { display: none; }
+.sh-drawer a { display: flex; align-items: center; justify-content: space-between; padding: 13px 14px; border-radius: 14px; color: #141414; font: 600 15.5px "Manrope", Arial, sans-serif; text-decoration: none; }
+.sh-drawer a:hover { background: #f3f3f5; }
+.sh-drawer a span { color: #6b6b70; font: 500 12.5px "Geist Mono", ui-monospace, Menlo, monospace; }
+.sh-dh { margin: 10px 14px 2px; font: 600 12px "Manrope", Arial, sans-serif; letter-spacing: 0.06em; text-transform: uppercase; color: #6b6b70; }
+@media (max-width: 960px) {
+  .sh-nav, .sh-actions { display: none; }
+  .sh-burger { display: flex; }
+  .sh-bar { padding-left: 18px; }
+}
+@media (hover: none) { .sh-dd:hover:not(.open) .sh-menu { opacity: 0; visibility: hidden; } }
+@media (prefers-reduced-motion: reduce) { .sh-bar, .sh-caret, .sh-burger span, .sh-nav > a, .sh-btn, .sh-menu, .sh-menu a, .sh-ico { transition: none; } .sh-menu { transform: none; } }

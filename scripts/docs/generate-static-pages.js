@@ -21,6 +21,7 @@
 const fs = require("fs");
 const path = require("path");
 const S = require("./site-lib");
+const { headerHtml } = require("./site-header");
 const { config, CATEGORIES, effects, interactive, byCategory, esc, slugOf, urlOf } = S;
 
 const DOCS = path.join(S.ROOT, "docs");
@@ -141,15 +142,14 @@ ${md ? `<link rel="alternate" type="text/markdown" href="${url}index.md" />\n` :
 <link rel="stylesheet" href="/vendor/geist/geist.css" />
 <link rel="stylesheet" href="/assets/pages.css" />
 <link rel="stylesheet" href="/theme.css" />
+<link rel="stylesheet" href="/header.css" />
+<script src="/header.js" defer></script>
 ${extraCss.map((h) => `<link rel="stylesheet" href="${h}" />`).join("\n")}
 <script type="application/ld+json">${JSON.stringify(jsonld)}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="bar"><div class="wrap bar-in">
-<a class="brand" href="/">SDS Motion Forge</a>
-<nav aria-label="Primary"><a href="/animations/">Animations</a><a href="/docs.html">Docs</a><a href="/builder.html">Builder</a><a href="${config.repoUrl}">GitHub</a></nav>
-</div></header>
+${headerHtml()}
 <main id="main" class="wrap">
 `;
 }

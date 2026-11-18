@@ -32,23 +32,11 @@ h1, h2, h3, .brand, .logo-sans, .logo-serif, .doc-sec-title, .doc-h3, .top h1 {
 a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
 ::selection { background: rgba(92, 74, 225, 0.2); }
 
-/* ---- floating pill header (docs.html .nav, generated pages .bar, builder .top) ---- */
-.nav, .bar, .top {
-  background: rgba(255, 255, 255, 0.86);
-  -webkit-backdrop-filter: blur(14px) saturate(160%); backdrop-filter: blur(14px) saturate(160%);
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.05);
-}
-.nav { position: fixed; top: 10px; left: 50%; right: auto; transform: translateX(-50%);
-  width: min(1120px, calc(100% - 24px)); height: 56px; padding: 0 12px 0 22px; }
-.bar { position: sticky; top: 10px; z-index: 20; max-width: 1120px; margin: 10px auto 0; padding: 0 12px 0 22px; width: calc(100% - 24px); }
-.bar-in { max-width: none; padding: 0; }
-.top { position: sticky; top: 10px; margin: 10px auto 0; max-width: 1280px; width: calc(100% - 24px); padding: 12px 22px; }
-.nav a, .bar nav a { border-radius: 999px; }
-.nav-links a:hover, .bar nav a:hover { background: var(--bg-2); }
+/* ---- header: see header.css (one header for every page) ---- */
+.sh ~ main { padding-top: calc(var(--nav-h) + 20px); }
+.sh ~ .layout { padding-top: calc(var(--nav-h) + 12px); }
+.sh ~ .layout .panel { top: calc(var(--nav-h) + 8px); }
 .nav-badge, .pill { color: var(--brand); background: var(--brand-dim); border: 1px solid rgba(92, 74, 225, 0.18); border-radius: 999px; }
-.sidebar { top: calc(var(--nav-h) + 8px); }
 
 /* ---- buttons ---- */
 .btn, .nav-btn, button.primary, .btn-primary {
@@ -111,3 +99,16 @@ main h1 { letter-spacing: -0.035em; }
   .sidebar { position: static; height: auto; border-radius: 999px; padding: 8px 10px; }
   .content { padding: 24px 4px 80px; }
 }
+
+/* ---- spacing rhythm: every block gets a real gap from the one above it ---- */
+.page { max-width: 1180px; padding-left: 0; padding-right: 0; }
+.doc-sec > * + *, .fw-panel > * + * { margin-top: 20px; }
+.doc-sec > .doc-sec-title + * { margin-top: 12px; }
+.doc-sec > .doc-h3 { margin-top: 40px; margin-bottom: 0; }
+.doc-sec > .doc-h3 + * { margin-top: 12px; }
+.codeblock { margin-bottom: 0; }
+.fw-tabs { margin-bottom: 0; }
+.fw-tabs + .fw-panel { margin-top: 16px; }
+.doc-p, .doc-sec p { margin-bottom: 0; }
+.doc-table { margin-top: 20px; margin-bottom: 0; }
+@media (max-width: 900px) { .page { padding-left: 12px; padding-right: 12px; } }
