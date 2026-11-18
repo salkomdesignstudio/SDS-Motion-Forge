@@ -135,10 +135,12 @@ ${md ? `<link rel="alternate" type="text/markdown" href="${url}index.md" />\n` :
 <meta name="twitter:title" content="${esc(title)}" />
 <meta name="twitter:description" content="${esc(description)}" />
 <meta name="twitter:image" content="${urlOf(config.ogImage)}" />
-<link rel="preload" href="/vendor/geist/Geist-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/vendor/outfit/Outfit-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/vendor/manrope/Manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/vendor/geist/GeistMono-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="/vendor/geist/geist.css" />
 <link rel="stylesheet" href="/assets/pages.css" />
+<link rel="stylesheet" href="/theme.css" />
 ${extraCss.map((h) => `<link rel="stylesheet" href="${h}" />`).join("\n")}
 <script type="application/ld+json">${JSON.stringify(jsonld)}</script>
 </head>
@@ -251,11 +253,11 @@ function effectPage(c) {
     `${breadcrumbNav(crumb)}
 <p class="eyebrow">${esc(cat.label)} animation · <code>.${c.name}</code></p>
 <h1>${esc(c.displayName)}</h1>
-<p class="lead">${esc(d)}. Add the class <code>.${c.name}</code> to any element — it ${esc(loop)} ${esc(trig)}, with no JavaScript${c.kind === "interactive" ? " beyond the optional cursor engine" : c.category === "scroll" ? " beyond the optional 1.3 KB scroll gate (or native scroll-driven animation with <code>sds-scroll-auto</code>)" : ""}.</p>
+<p class="lead">${esc(d)}. Add the class <code>.${c.name}</code> to any element — it ${c.kind === "interactive" ? "reacts to the cursor" : esc(loop) + " " + esc(trig)}${c.kind === "interactive" ? ". It needs the 7 KB <code>motion-interactive.min.js</code> engine, which also splits the text into letters for you; without the engine the element stays static" : c.category === "scroll" ? ", using native scroll-driven animation with <code>sds-scroll-auto</code> (Chrome 115+) or the 1.3 KB scroll script in other browsers" : ", with no JavaScript"}.${c.requiresCharSplit && c.kind !== "interactive" ? " Wrap each letter in <code>&lt;span class=&quot;sds-char&quot; style=&quot;--i:N&quot;&gt;</code> (N = 0, 1, 2…)." : ""}${c.requiresChildren ? " It animates the element's child elements, so it needs children to be visible." : ""}${c.inputWrap ? " It needs the documented wrapper element around the input." : ""}</p>
 
 ${S.isUnreleased(c) ? `<p class="note" role="note"><strong>New in v${esc(c.sinceVersion)} — not published yet.</strong> This effect is in the repository and runs on this page, but npm and the CDN still serve v${esc(facts.version)}, so the copy-paste snippets below will not animate until v${esc(c.sinceVersion)} is released.</p>\n` : ""}<section aria-labelledby="demo"><h2 id="demo">Live demo</h2>
 <div class="stage" id="stage">${demoMarkup(c)}</div>
-<p><button type="button" class="btn" id="replay">Replay</button> <span class="muted">Demo uses this site's neutral theme; override <code>--sds-primary</code> to match your brand.</span></p></section>
+<p><button type="button" class="btn" id="replay">Replay</button> <span class="muted">Demo uses this site's default colours; override <code>--sds-primary</code> to match your brand.</span></p></section>
 
 <section aria-labelledby="use"><h2 id="use">Quick start</h2>
 <pre><code>${cdnCss.map((u) => `&lt;link rel="stylesheet" href="${u}" /&gt;`).join("\n")}
