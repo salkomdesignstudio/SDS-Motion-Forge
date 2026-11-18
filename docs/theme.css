@@ -85,7 +85,7 @@ main h1 { letter-spacing: -0.035em; }
 .sb-link.active .sb-count { background: rgba(255, 255, 255, 0.18); color: #fff; }
 .sb-count { border-radius: 999px; }
 .content { max-width: 900px; padding: 40px 12px 120px; }
-.doc-sec { padding: 40px 0 28px; }
+.doc-sec { padding: 28px 0 16px; }
 .doc-sec-title { font-size: clamp(30px, 3.4vw, 44px); line-height: 1.05; margin-bottom: 12px; }
 .doc-sec-sub { font-size: 18px; line-height: 1.6; color: var(--ink-2); max-width: 720px; }
 .doc-h3 { font-size: 20px; margin: 32px 0 10px; }

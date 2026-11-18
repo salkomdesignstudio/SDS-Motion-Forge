@@ -222,12 +222,15 @@
       .hero-proof code { font-size: 12px; }
 
       /* ---------- generic sections ---------- */
-      .sec { padding: 104px 0; }
+      .sec { padding: 64px 0; }
+      /* two plain sections in a row share one gap instead of stacking two */
+      .sec:not(.band) + .sec:not(.band) { padding-top: 0; }
+      #how { padding-top: 40px; }
       .band { margin: 0 14px; background: var(--panel); border-radius: var(--r-2xl); }
-      .sec-head { max-width: 760px; margin: 0 auto 56px; text-align: center; }
+      .sec-head { max-width: 760px; margin: 0 auto 36px; text-align: center; }
       .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: var(--r-full); background: var(--brand-dim); color: var(--brand); font: 600 13px var(--f-disp); }
       .eyebrow::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--brand-2); }
-      .sec-title { margin: 18px 0 16px; font-size: clamp(32px, 4.6vw, 56px); line-height: 1.04; letter-spacing: -0.035em; }
+      .sec-title { margin: 14px 0 12px; font-size: clamp(32px, 4.6vw, 56px); line-height: 1.04; letter-spacing: -0.035em; }
       .sec-desc { max-width: 640px; margin: 0 auto; color: var(--ink-2); font-size: 18px; line-height: 1.6; }
       .logos { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 0; padding: 18px 0 8px; list-style: none; }
       .logos li { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border: 1px solid var(--line); border-radius: var(--r-full); background: #fff; font: 600 14px var(--f-disp); color: var(--ink-2); }
@@ -286,7 +289,13 @@
       .physics-copy h2 { font-size: clamp(30px, 3.6vw, 44px); }
       .physics-copy p { color: var(--ink-2); font-size: 16.5px; }
       .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
-      .chips li { padding: 7px 14px; border-radius: var(--r-full); background: var(--bg-2); font: 500 13.5px var(--f-disp); color: var(--ink-2); }
+      .chip { padding: 8px 16px; border: 1px solid transparent; border-radius: var(--r-full); background: var(--bg-2); font: 500 14px var(--f-disp); color: var(--ink-2); cursor: pointer; transition: background 0.15s, color 0.15s, border-color 0.15s; }
+      .chip:hover { background: #fff; border-color: var(--line-2); color: var(--ink); }
+      .chip[aria-pressed="true"] { background: var(--ink); color: #fff; }
+      .physics-desc { min-height: 3.2em; margin-top: 2px; font-size: 15px; line-height: 1.6; color: var(--ink-2); }
+      .physics-desc b { color: var(--ink); font-weight: 700; }
+      .physics-demo { position: relative; text-align: center; padding: 0 24px; }
+      .physics-demo h1, .physics-demo h2 { margin: 0; font: 600 clamp(44px, 6.4vw, 76px) var(--f-head); letter-spacing: -0.04em; color: var(--ink); }
       .physics-stage { position: relative; min-height: 360px; display: grid; place-items: center; background: linear-gradient(180deg, #fff, #f3f3f8); border: 1px solid var(--line); border-radius: var(--r-xl); overflow: hidden; --sds-primary: var(--brand); }
       .physics-stage::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(20, 20, 20, 0.08) 1px, transparent 1px); background-size: 22px 22px; -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 20%, transparent 75%); mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 20%, transparent 75%); }
       .physics-word { position: relative; font: 600 clamp(48px, 7vw, 84px) var(--f-head); letter-spacing: -0.04em; color: var(--ink); }
@@ -369,7 +378,7 @@
       .faq-item code { padding: 2px 7px; border-radius: 8px; background: var(--bg-2); font-size: 13px; }
 
       /* closing call to action */
-      .cta-band { padding: 24px 0 104px; }
+      .cta-band { padding: 16px 0 64px; }
       .cta-box { position: relative; overflow: hidden; padding: 72px 32px; text-align: center; background: #141414; color: #fff; border-radius: var(--r-2xl); }
       .cta-box::before { content: ""; position: absolute; inset: 0; background: radial-gradient(60% 80% at 50% 0%, rgba(135, 79, 255, 0.35), transparent 70%); pointer-events: none; }
       .cta-box > * { position: relative; }
@@ -384,7 +393,7 @@
 
       /* footer */
       .foot { padding: 0 0 36px; border-top: 1px solid var(--line); }
-      .foot-in { display: grid; grid-template-columns: 1.3fr 2fr; gap: 48px; padding-top: 56px; padding-bottom: 40px; }
+      .foot-in { display: grid; grid-template-columns: 1.3fr 2fr; gap: 40px; padding-top: 44px; padding-bottom: 28px; }
       .foot-brand p { max-width: 380px; margin-top: 16px; font-size: 14.5px; color: var(--ink-2); }
       .foot-logo-text { font: 600 18px var(--f-head); }
       .foot-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
@@ -453,7 +462,7 @@
         .pg { grid-template-columns: 1fr; }
         .pg-canvas { min-height: 260px; border-right: 0; border-bottom: 1px solid var(--line); }
         .foot-in { grid-template-columns: 1fr; }
-        .sec { padding: 72px 0; }
+        .sec { padding: 44px 0; }
       }
       @media (max-width: 640px) {
         .specimens { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -668,7 +677,7 @@
     </section>
 
     <!-- WORKS IN -->
-    <section class="sec" style="padding-top:56px;padding-bottom:24px" aria-label="Where it works">
+    <section class="sec" style="padding-top:32px;padding-bottom:8px" aria-label="Where it works">
       <div class="wrap">
         <ul class="logos">
           <li><i class="ri-html5-fill"></i> Plain HTML</li>
@@ -799,20 +808,33 @@
     </section>
 
     <!-- PHYSICS -->
-    <section class="sec" id="physics" style="padding-top:24px">
+    <section class="sec" id="physics" style="padding-top:8px">
       <div class="wrap">
         <div class="physics">
           <div class="physics-copy" data-reveal="up">
             <span class="eyebrow" style="align-self:flex-start">New in 5.1</span>
             <h2>Thirteen physics text effects</h2>
             <p>Driven by real equations, not hand-tuned curves: a spring, a bouncing ball, a pendulum, buoyancy against drag, a drag-limited gust, an infall in an inverse-square field. Each equation is sampled into a CSS <code>linear()</code> easing and checked against its closed-form solution on every build.</p>
-            <ul class="chips">
-              <li>Spring Drop</li><li>Orbit Decay</li><li>Chain Swing</li><li>Toss In</li><li>Band Snap</li><li>Bubble Rise</li><li>Wind Drift</li><li>Gravity Collapse</li><li>Liquid Slosh</li><li>Split Halves</li><li>Strike Swap</li><li>Count Roll</li><li>Extrude Rise</li>
-            </ul>
+            <div class="chips" id="physicsChips" role="group" aria-label="Choose a physics effect to preview">
+              <button type="button" class="chip" data-cls="sds-spring-drop" data-name="Spring Drop" aria-pressed="true">Spring Drop</button>
+              <button type="button" class="chip" data-cls="sds-orbit-decay" data-name="Orbit Decay" aria-pressed="false">Orbit Decay</button>
+              <button type="button" class="chip" data-cls="sds-chain-swing" data-name="Chain Swing" aria-pressed="false">Chain Swing</button>
+              <button type="button" class="chip" data-cls="sds-toss-in" data-name="Toss In" aria-pressed="false">Toss In</button>
+              <button type="button" class="chip" data-cls="sds-band-snap" data-name="Band Snap" aria-pressed="false">Band Snap</button>
+              <button type="button" class="chip" data-cls="sds-bubble-rise" data-name="Bubble Rise" aria-pressed="false">Bubble Rise</button>
+              <button type="button" class="chip" data-cls="sds-wind-drift" data-name="Wind Drift" aria-pressed="false">Wind Drift</button>
+              <button type="button" class="chip" data-cls="sds-gravity-collapse" data-name="Gravity Collapse" aria-pressed="false">Gravity Collapse</button>
+              <button type="button" class="chip" data-cls="sds-liquid-slosh" data-name="Liquid Slosh" aria-pressed="false">Liquid Slosh</button>
+              <button type="button" class="chip" data-cls="sds-split-halves" data-name="Split Halves" aria-pressed="false">Split Halves</button>
+              <button type="button" class="chip" data-cls="sds-strike-swap" data-name="Strike Swap" aria-pressed="false">Strike Swap</button>
+              <button type="button" class="chip" data-cls="sds-count-roll" data-name="Count Roll" aria-pressed="false">Count Roll</button>
+              <button type="button" class="chip" data-cls="sds-extrude-rise" data-name="Extrude Rise" aria-pressed="false">Extrude Rise</button>
+            </div>
+            <p class="physics-desc" id="physicsDesc" aria-live="polite"><b>Spring Drop.</b> Letters fall under gravity and bounce off a floor, each landing squashing with its impact speed.</p>
           </div>
           <div class="physics-stage" id="physicsStage" data-reveal="scale">
-            <span class="physics-word sds-spring-drop" id="physicsWord" role="img" aria-label="Spring Drop"><span class="sds-char" aria-hidden="true" style="--i:0">S</span><span class="sds-char" aria-hidden="true" style="--i:1">p</span><span class="sds-char" aria-hidden="true" style="--i:2">r</span><span class="sds-char" aria-hidden="true" style="--i:3">i</span><span class="sds-char" aria-hidden="true" style="--i:4">n</span><span class="sds-char" aria-hidden="true" style="--i:5">g</span></span>
-            <code class="physics-cls">.sds-spring-drop</code>
+            <div class="physics-demo" id="physicsDemo" role="img" aria-label="Spring Drop"><h1 class="sds-spring-drop"><span class="sds-char" aria-hidden="true" style="--i:0">S</span><span class="sds-char" aria-hidden="true" style="--i:1">p</span><span class="sds-char" aria-hidden="true" style="--i:2">r</span><span class="sds-char" aria-hidden="true" style="--i:3">i</span><span class="sds-char" aria-hidden="true" style="--i:4">n</span><span class="sds-char" aria-hidden="true" style="--i:5">g</span></h1></div>
+            <code class="physics-cls" id="physicsCls">.sds-spring-drop</code>
             <button type="button" class="physics-replay" id="physicsReplay"><i class="ri-restart-line" aria-hidden="true"></i> Replay</button>
           </div>
         </div>
@@ -1240,6 +1262,32 @@
         (function () {
           var stage = document.getElementById("physicsStage");
           var rb = document.getElementById("physicsReplay");
+          var chips = document.getElementById("physicsChips");
+          if (chips && stage) {
+            var data = window.SDS_DOCS || {};
+            var all = (data.animations && data.animations.text) || [];
+            chips.addEventListener("click", function (e) {
+              var btn = e.target.closest(".chip");
+              if (!btn) return;
+              var cls = btn.getAttribute("data-cls");
+              var name = btn.getAttribute("data-name");
+              var html = data.markup && data.markup[cls];
+              if (!html) return;
+              chips.querySelectorAll(".chip").forEach(function (c) {
+                c.setAttribute("aria-pressed", c === btn ? "true" : "false");
+              });
+              var demo = document.getElementById("physicsDemo");
+              demo.innerHTML = html;
+              demo.setAttribute("aria-label", name);
+              document.getElementById("physicsCls").textContent = "." + cls;
+              var meta = all.filter(function (a) { return a.cls === cls; })[0];
+              var d = document.getElementById("physicsDesc");
+              d.innerHTML = "<b></b> ";
+              d.firstChild.textContent = name + ".";
+              d.appendChild(document.createTextNode(meta && meta.desc ? meta.desc + "." : ""));
+              window.sdsRestart(stage);
+            });
+          }
           if (stage && rb) {
             rb.addEventListener("click", function () {
               window.sdsRestart(stage);
