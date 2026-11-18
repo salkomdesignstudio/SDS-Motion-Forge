@@ -483,6 +483,13 @@
         .spec:hover, .card:hover, .tile:hover, .step:hover, .need:hover, .docs-card:hover { transform: none; }
         .hero-grid { transform: none !important; }
       }
+
+      /* The library animates an element; it does not draw one. Preview boxes give card and scroll
+         effects something to animate. :where() keeps this at the lowest specificity, so a library
+         rule (its own background, border, size) always wins over these defaults. */
+      :where(.card-stage, .modal-stage) [class*="sds-card-"] { display: grid; align-content: center; gap: 4px; width: min(176px, 82%); min-height: 96px; padding: 16px; border: 1px solid #e4e7ec; border-radius: 16px; background-color: #fff; box-shadow: 0 1px 2px rgba(11, 13, 24, 0.06); color: #141414; font: 600 15px "Manrope", Arial, sans-serif; letter-spacing: 0; text-align: left; }
+      :where(.card-stage, .modal-stage) [class*="sds-scroll-"] { display: block; padding: 14px 20px; border: 1px solid #e4e7ec; border-radius: 14px; background-color: #fff; box-shadow: 0 1px 2px rgba(11, 13, 24, 0.06); color: #141414; font: 600 15px "Manrope", Arial, sans-serif; letter-spacing: 0; }
+
       /* effect restart helper used by the replay buttons */
       .sds-restart, .sds-restart *, .sds-restart *::before, .sds-restart *::after { animation: none !important; }
       body.rm-sim #galGrid [class*="sds-"], body.rm-sim #galGrid [class*="sds-"] > *, body.rm-sim #galGrid [class*="sds-"]::before, body.rm-sim #galGrid [class*="sds-"]::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }

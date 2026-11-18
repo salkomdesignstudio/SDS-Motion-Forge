@@ -108,7 +108,7 @@ function snippetsFor(c) {
 
 /* ── page chrome ─────────────────────────────────────────────── */
 
-function head({ title, description, path: p, jsonld, extraCss = [], md = true }) {
+function head({ title, description, path: p, jsonld, extraCss = [], md = true, wide = false, extraJs = [] }) {
   const url = urlOf(p);
   return `<!doctype html>
 <html lang="en">
@@ -142,15 +142,18 @@ ${md ? `<link rel="alternate" type="text/markdown" href="${url}index.md" />\n` :
 <link rel="stylesheet" href="/vendor/geist/geist.css" />
 <link rel="stylesheet" href="/assets/pages.css" />
 <link rel="stylesheet" href="/theme.css" />
+<link rel="stylesheet" href="/cards.css" />
 <link rel="stylesheet" href="/header.css" />
 <script src="/header.js" defer></script>
+<script src="/pages.js" defer></script>
 ${extraCss.map((h) => `<link rel="stylesheet" href="${h}" />`).join("\n")}
 <script type="application/ld+json">${JSON.stringify(jsonld)}</script>
+${extraJs.map((h) => `<script src="${h}" defer></script>`).join("\n")}
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 ${headerHtml()}
-<main id="main" class="wrap">
+<main id="main" class="wrap${wide ? " wide" : ""}">
 `;
 }
 
@@ -181,6 +184,41 @@ function clip(s, n) {
   const cut = s.slice(0, n - 1);
   return cut.slice(0, cut.lastIndexOf(" ")) + "…";
 }
+
+/* ── live effect cards (shared by category, index and effect pages) ── */
+const ICON_REPLAY = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 0 2.6-5.9M4 4v4.5h4.5"/></svg>';
+const ICON_SEARCH = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg>';
+function tagLabel(c) {
+  if (c.kind === "interactive") return "Cursor-reactive";
+  if (c.trigger === "scroll") return "On scroll";
+  if (c.trigger === "focus") return "On focus";
+  return c.loop ? "Loops" : "Plays once";
+}
+function badgesFor(c) {
+  const out = [];
+  if (c.kind === "interactive") out.push('<span class="fx-badge" title="Needs the optional 7 KB interactive script">Needs JS</span>');
+  else if (c.requiresCharSplit) out.push('<span class="fx-badge soft" title="Each letter must be wrapped in a span with a --i index">Needs letter spans</span>');
+  else if (c.requiresChildren) out.push('<span class="fx-badge soft" title="Animates the element\'s child elements">Needs child elements</span>');
+  else if (c.inputWrap) out.push('<span class="fx-badge soft" title="Needs the documented wrapper around the input">Needs wrapper</span>');
+  return out.join("");
+}
+function fxCard(c, level) {
+  const h = level || 3;
+  const interactiveDemo = c.kind === "interactive";
+  return `<li class="fx-card" data-fx data-s="${esc((c.displayName + " " + c.name + " " + sentence(descOf(c))).toLowerCase())}">
+<div class="fx-stage"${interactiveDemo ? "" : ' aria-hidden="true" inert'}>${demoMarkup(c)}</div>
+<button type="button" class="fx-replay" data-replay aria-label="Replay ${esc(c.displayName)}">${ICON_REPLAY}</button>
+<div class="fx-meta"><div class="fx-top"><h${h} class="fx-name"><a href="${S.animationPath(c.name)}">${esc(c.displayName)}</a></h${h}><span class="fx-tag">${tagLabel(c)}</span></div>
+<p class="fx-desc">${esc(sentence(descOf(c)))}.</p>
+<div class="fx-foot"><button type="button" class="fx-cls" data-copy=".${c.name}" title="Copy class name">.${c.name}</button>${badgesFor(c)}</div></div>
+</li>`;
+}
+const cssLinksFor = (list) => {
+  const ids = new Set(list.map((c) => (c.kind === "interactive" ? "__full" : c.category)));
+  if (ids.size !== 1 || ids.has("__full")) return ["/dist/motion.min.css"];
+  return [`/dist/categories/${[...ids][0]}.min.css`];
+};
+const sortByName = (l) => l.slice().sort((a, b) => a.name.localeCompare(b.name));
 
 /* ── related ─────────────────────────────────────────────────── */
 function relatedFor(c) {
@@ -248,40 +286,54 @@ function effectPage(c) {
     ],
   };
 
+  const needsList = [];
+  if (c.kind === "interactive") needsList.push(["Needs the interactive engine", "Add the 7 KB <code>motion-interactive.min.js</code> before <code>&lt;/body&gt;</code>. Without it the element stays static."]);
+  if (c.category === "scroll") needsList.push(["Scroll trigger", "CSS-only in Chrome 115+ with <code>sds-scroll-auto</code>. Other browsers use the 1.3 KB <code>sds-scroll.min.js</code> and <code>data-sds</code>; without either it plays on load."]);
+  if (c.requiresCharSplit && c.kind !== "interactive") needsList.push(["Letter spans", "Wrap each letter in <code>&lt;span class=&quot;sds-char&quot; style=&quot;--i:N&quot;&gt;</code> (N = 0, 1, 2…)."]);
+  if (c.requiresChildren) needsList.push(["Child elements", "It animates the element\u2019s children, so it needs children to be visible."]);
+  if (c.inputWrap) needsList.push(["Input wrapper", "It needs the documented wrapper element around the input."]);
+  if (!needsList.length) needsList.push(["No setup", "No JavaScript and no special markup: add the class and it plays."]);
+  const factItems = specs.map(([k, v]) => `<li><b>${k}</b><span>${v}</span></li>`).join("\n");
+  const tabIds = snippets.map((x, i) => "tab-" + x.id);
   const html =
-    head({ title, description, path: p, jsonld, extraCss: css }) +
+    head({ title, description, path: p, jsonld, extraCss: css, wide: true, extraJs: c.kind === "interactive" ? ["/dist/motion-interactive.min.js"] : [] }) +
     `${breadcrumbNav(crumb)}
-<p class="eyebrow">${esc(cat.label)} animation · <code>.${c.name}</code></p>
+<section class="fx-hero" data-fx>
+<div>
+<p class="chipline"><span class="pill">${esc(cat.label)} animation</span><span class="pill plain mono">.${c.name}</span></p>
 <h1>${esc(c.displayName)}</h1>
 <p class="lead">${esc(d)}. Add the class <code>.${c.name}</code> to any element — it ${c.kind === "interactive" ? "reacts to the cursor" : esc(loop) + " " + esc(trig)}${c.kind === "interactive" ? ". It needs the 7 KB <code>motion-interactive.min.js</code> engine, which also splits the text into letters for you; without the engine the element stays static" : c.category === "scroll" ? ", using native scroll-driven animation with <code>sds-scroll-auto</code> (Chrome 115+) or the 1.3 KB scroll script in other browsers" : ", with no JavaScript"}.${c.requiresCharSplit && c.kind !== "interactive" ? " Wrap each letter in <code>&lt;span class=&quot;sds-char&quot; style=&quot;--i:N&quot;&gt;</code> (N = 0, 1, 2…)." : ""}${c.requiresChildren ? " It animates the element's child elements, so it needs children to be visible." : ""}${c.inputWrap ? " It needs the documented wrapper element around the input." : ""}</p>
+<div class="fx-badges"><span class="pill plain">${esc(tagLabel(c))}</span>${c.compositorSafe ? '<span class="pill plain">Compositor-only</span>' : ""}${S.isUnreleased(c) ? '<span class="pill">New, not published yet</span>' : ""}${badgesFor(c)}</div>
+<div class="fx-actions"><button type="button" class="btn2 primary" data-copy=".${c.name}">Copy class name</button><a class="btn2" href="#code">Copy-paste code</a><button type="button" class="btn2" data-replay>Replay</button></div>
+</div>
+<div class="fx-demo"><div class="fx-stage" id="stage">${demoMarkup(c)}</div>
+<div class="fx-demo-bar"><code>.${c.name}</code><span class="muted">Demo colours are this site\u2019s; override <code>--sds-primary</code> to match your brand.</span></div></div>
+</section>
+${S.isUnreleased(c) ? `<p class="note" role="note"><strong>New in v${esc(c.sinceVersion)} — not published yet.</strong> This effect is in the repository and runs on this page, but npm and the CDN still serve v${esc(facts.version)}, so the copy-paste snippets below will not animate until v${esc(c.sinceVersion)} is released.</p>` : ""}
+<section class="sec2" aria-labelledby="needs"><h2 id="needs">What it needs</h2>
+<div class="needs2">${needsList.map(([t, d]) => `<div class="need2"><b>${t}</b>${d}</div>`).join("")}</div></section>
 
-${S.isUnreleased(c) ? `<p class="note" role="note"><strong>New in v${esc(c.sinceVersion)} — not published yet.</strong> This effect is in the repository and runs on this page, but npm and the CDN still serve v${esc(facts.version)}, so the copy-paste snippets below will not animate until v${esc(c.sinceVersion)} is released.</p>\n` : ""}<section aria-labelledby="demo"><h2 id="demo">Live demo</h2>
-<div class="stage" id="stage">${demoMarkup(c)}</div>
-<p><button type="button" class="btn" id="replay">Replay</button> <span class="muted">Demo uses this site's default colours; override <code>--sds-primary</code> to match your brand.</span></p></section>
+<section class="sec2" aria-labelledby="use"><h2 id="use">Quick start</h2>
+<div class="import-card"><div class="code-row"><code id="qs">${esc(cdnCss.map((u) => `<link rel="stylesheet" href="${u}" />`).join("\n"))}</code><button type="button" class="copy-btn" data-copy-from="qs">Copy</button></div>
+<div class="code-row"><code id="qs2">${esc(docs.markup[c.name] || `<div class="${c.name}">…</div>`)}</code><button type="button" class="copy-btn" data-copy-from="qs2">Copy</button></div>
+<p class="muted">${files ? `Loads only the ${esc(cat.label.toLowerCase())} bundle (core is included). ` : ""}Prefer one file? Use <code>${config.cdn}/motion.min.css</code> (all ${S.effects.length} effects).</p></div></section>
 
-<section aria-labelledby="use"><h2 id="use">Quick start</h2>
-<pre><code>${cdnCss.map((u) => `&lt;link rel="stylesheet" href="${u}" /&gt;`).join("\n")}
-
-${esc(docs.markup[c.name] || `<div class="${c.name}">…</div>`)}</code></pre>
-<p class="muted">${files ? `Loads only the ${esc(cat.label.toLowerCase())} bundle (core is included).` : ""}Prefer one file? Use <code>${config.cdn}/motion.min.css</code> (all ${S.effects.length} effects).</p></section>
-
-${how ? `<section aria-labelledby="how"><h2 id="how">How it works</h2><p>${esc(how)}</p></section>\n` : ""}<section aria-labelledby="spec"><h2 id="spec">Technical details</h2>
-<table class="spec"><tbody>
-${specs.map(([k, v]) => `<tr><th scope="row">${k}</th><td>${v}</td></tr>`).join("\n")}
-</tbody></table></section>
-
-<section aria-labelledby="code"><h2 id="code">Copy-paste code</h2>
-${snippets.map((s, i) => `<details${i === 0 ? " open" : ""}><summary>${esc(s.label)}</summary><pre><code class="language-${s.lang}">${esc(s.code)}</code></pre></details>`).join("\n")}
+${how ? `<section class="sec2" aria-labelledby="how"><h2 id="how">How it works</h2><p>${esc(how)}</p></section>\n` : ""}<section class="sec2" aria-labelledby="code"><h2 id="code">Copy-paste code</h2>
+<div class="code-tabs" data-tabs><div class="tabbar" role="tablist" aria-label="Code for each framework">${snippets.map((x, i) => `<button type="button" role="tab" id="${tabIds[i]}" aria-selected="${i === 0}" aria-controls="panel-${x.id}">${esc(x.label)}</button>`).join("")}</div>
+${snippets.map((x) => `<div class="code-panel" id="panel-${x.id}" role="tabpanel" aria-labelledby="tab-${x.id}"><h3>${esc(x.label)}</h3><button type="button" class="copy-btn" data-copy-from="code-${x.id}">Copy</button><pre><code id="code-${x.id}" class="language-${x.lang}">${esc(x.code)}</code></pre></div>`).join("\n")}</div>
 ${config.frameworkPackagesPublished ? "" : `<p class="muted">Typed React, Angular, Tailwind and Web Components wrappers live in <a href="${config.repoUrl}/tree/main/packages">packages/</a> in the repository and are not yet published to npm; the snippets above need only the CSS.</p>`}
 </section>
 
-<section aria-labelledby="rel"><h2 id="rel">Related animations</h2>
-<ul class="chips">
-${related.map((r) => `<li><a href="${S.animationPath(r.name)}">${esc(r.displayName)}</a></li>`).join("\n")}
+<section class="sec2" aria-labelledby="spec"><h2 id="spec">Technical details</h2><ul class="facts">
+${factItems}
+</ul></section>
+
+<section class="sec2" aria-labelledby="rel"><h2 id="rel">Related animations</h2>
+<ul class="fx-grid">
+${related.map((r) => fxCard(r, 3)).join("\n")}
 </ul>
-<p><a href="${S.categoryPath(c.category)}">All ${byCategory[c.category] ? byCategory[c.category].length : ""} ${esc(cat.label.toLowerCase())} animations</a> · <a href="/docs.html">Installation &amp; usage docs</a> · <a href="/builder.html">Custom bundle builder</a></p></section>
-<script>document.getElementById("replay").addEventListener("click",function(){var s=document.getElementById("stage"),n=s.firstElementChild;if(n)s.replaceChild(n.cloneNode(true),n)});</script>
-${c.category === "scroll" || c.kind === "interactive" ? "" : ""}${c.kind === "interactive" ? `<script src="/dist/motion-interactive.min.js" defer></script>\n` : ""}` +
+<p style="margin-top:20px"><a href="${S.categoryPath(c.category)}">All ${byCategory[c.category] ? byCategory[c.category].length : ""} ${esc(cat.label.toLowerCase())} animations</a> · <a href="/docs.html">Installation &amp; usage docs</a> · <a href="/builder.html">Custom bundle builder</a></p></section>
+` +
     foot;
 
   const md = `# ${c.displayName} (\`.${c.name}\`)
@@ -313,7 +365,7 @@ ${related.map((r) => `- [${r.displayName}](${urlOf(S.animationPath(r.name))})`).
 
 /* ── category + index pages ──────────────────────────────────── */
 function categoryPage(cat) {
-  const list = (cat.id === "interactive" ? interactive : byCategory[cat.id]).slice().sort((a, b) => a.name.localeCompare(b.name));
+  const list = sortByName(cat.id === "interactive" ? interactive : byCategory[cat.id]);
   const p = S.categoryPath(cat.id);
   const gz = S.sizes && S.sizes[cat.id] ? `${S.kb(S.sizes[cat.id].gzip)} KB gzip (${S.kb(S.sizes[cat.id].min)} KB minified)` : null;
   const title = `${list.length} ${cat.label} CSS animations — copy-paste classes | SDS Motion Forge`;
@@ -334,19 +386,35 @@ function categoryPage(cat) {
       },
     ],
   };
-  const importLine = cat.id === "interactive" ? "" : `import "${facts.package}/categories/${cat.id}";`;
+  const importLine = cat.id === "interactive" ? `import "${facts.package}/dist/motion-interactive.min.js";` : `import "${facts.package}/categories/${cat.id}";`;
+  const cdnLine = cat.id === "interactive" ? `${config.cdn}/motion-interactive.min.js` : `${config.cdn}/categories/${cat.id}.min.css`;
+  const groups = [...CATEGORIES, catById.interactive];
+  const nav = groups.map((g) => { const n = (g.id === "interactive" ? interactive : byCategory[g.id]).length; return `<li><a href="${S.categoryPath(g.id)}"${g.id === cat.id ? ' aria-current="page"' : ""}>${esc(g.label)} <em>${n}</em></a></li>`; }).join("");
   const html =
-    head({ title, description, path: p, jsonld }) +
+    head({ title, description, path: p, jsonld, extraCss: cssLinksFor(list), wide: true, extraJs: cat.id === "interactive" ? ["/dist/motion-interactive.min.js"] : [] }) +
     `${breadcrumbNav(crumb)}
-<p class="eyebrow">Category · <code>${cat.id === "interactive" ? "sds-*" : cat.prefix + "*"}</code></p>
+<section class="cat-hero">
+<div>
+<p class="chipline"><span class="pill">Category</span><span class="pill plain mono">${cat.id === "interactive" ? "sds-*" : cat.prefix + "*"}</span></p>
 <h1>${list.length} ${esc(cat.label)} CSS animations</h1>
-<p class="lead">${esc(cat.blurb)}${gz ? ` The ${esc(cat.label.toLowerCase())} bundle is ${gz}.` : ""}</p>
-${importLine ? `<h2>Import only this category</h2>\n<pre><code>${esc(importLine)}</code></pre>\n<p class="muted">Or use the CDN: <code>${config.cdn}/categories/${cat.id}.min.css</code>. Core (tokens, modifiers, reduced-motion) is already inside each category bundle; to use two or more categories, load the full <code>${config.cdn}/motion.min.css</code> instead.</p>\n` : `<p>These effects need <code>${config.cdn}/motion-interactive.min.js</code>.</p>\n`}
-<h2>All ${list.length} ${esc(cat.label.toLowerCase())} animations</h2>
-<ul class="list">
-${list.map((c) => `<li><a href="${S.animationPath(c.name)}">${esc(c.displayName)}</a> <code>.${c.name}</code><span class="muted"> — ${esc(sentence(descOf(c)))}</span></li>`).join("\n")}
+<p class="lead">${esc(cat.blurb)}</p>
+<ul class="stats"><li class="pill plain">${list.length} effects</li>${gz ? `<li class="pill plain">${esc(gz.split(" (")[0])}</li>` : ""}<li class="pill plain">MIT licensed</li><li class="pill plain">Reduced motion handled</li></ul>
+</div>
+<div class="import-card"><h2>Import only this category</h2>
+<div class="code-row"><code id="imp">${esc(importLine)}</code><button type="button" class="copy-btn" data-copy-from="imp">Copy</button></div>
+<div class="code-row"><code id="cdn">${esc(cdnLine)}</code><button type="button" class="copy-btn" data-copy-from="cdn">Copy</button></div>
+<p class="muted">Core (tokens, modifiers, reduced motion) is already inside each category bundle. To use two or more categories, load the full <code>motion.min.css</code>.</p></div>
+</section>
+<div class="toolbar2">
+<ul class="catnav" aria-label="Categories">${nav}</ul>
+<label class="search2"><span class="sr-only">Search ${esc(cat.label.toLowerCase())} animations</span>${ICON_SEARCH}<input id="fxSearch" type="search" placeholder="Search ${list.length} ${esc(cat.label.toLowerCase())} animations" autocomplete="off" /><kbd aria-hidden="true">/</kbd></label>
+</div>
+<p class="count2"><span id="fxCount" aria-live="polite">${list.length} animations</span> · every card plays live. Hover one to replay it, click it for code.</p>
+<ul class="fx-grid" id="fxGrid">
+${list.map((c) => fxCard(c, 2)).join("\n")}
 </ul>
-<p><a href="/animations/">Browse all categories</a> · <a href="/docs.html">Installation &amp; usage docs</a></p>
+<p class="empty2" id="fxEmpty" hidden>No animation matches your search. Try a shorter word.</p>
+<p style="margin-top:28px"><a href="/animations/">Browse all categories</a> · <a href="/docs.html">Installation &amp; usage docs</a></p>
 ` + foot;
   const md = `# ${list.length} ${cat.label} CSS animations\n\n${cat.blurb}${gz ? ` Bundle: ${gz}.` : ""}\n\n${importLine ? "```js\n" + importLine + "\n```\n\n" : ""}${list.map((c) => `- [${c.displayName}](${urlOf(S.animationPath(c.name))}) — \`.${c.name}\` — ${sentence(descOf(c))}`).join("\n")}\n`;
   return { html, md, p };
@@ -359,17 +427,43 @@ function indexPage() {
   const crumb = [["Home", "/"], ["Animations", p]];
   const jsonld = { "@context": "https://schema.org", "@graph": [crumbs(crumb), { "@type": "CollectionPage", "@id": urlOf(p) + "#collection", name: title, description, url: urlOf(p), isPartOf: { "@id": urlOf("/#website") } }] };
   const groups = [...CATEGORIES, catById.interactive];
+  // one live example per category, chosen to be visible and self-contained
+  const SAMPLE = { text: "sds-aurora-text", buttons: "sds-btn-surge-charge", inputs: "sds-input-gradient-border", cards: "sds-card-stack-pop", loaders: "sds-loader-glow-pulse", scroll: "sds-scroll-rise", interactive: "sds-magnetic-pull" };
+  const sampleOf = (id) => all.find((c) => c.name === SAMPLE[id]) || (id === "interactive" ? interactive[0] : byCategory[id][0]);
+  const tiles = groups.map((cat) => {
+    const list = cat.id === "interactive" ? interactive : byCategory[cat.id];
+    const ex = sampleOf(cat.id);
+    const gz = S.sizes && S.sizes[cat.id] ? `${S.kb(S.sizes[cat.id].gzip)} KB gzip` : "";
+    return `<li class="cat-tile"><div class="fx-stage" aria-hidden="true" inert>${demoMarkup(ex)}</div>
+<div class="fx-meta"><h3><a href="${S.categoryPath(cat.id)}">${esc(cat.label)}</a></h3><p>${esc(cat.blurb)}</p>
+<div class="fx-foot"><span class="pill plain">${list.length} effects</span>${gz ? `<span class="pill plain">${gz}</span>` : ""}</div></div></li>`;
+  }).join("\n");
+  const fresh = sortByName(S.effects.filter((c) => c.sinceVersion === facts.version));
   const html =
-    head({ title, description, path: p, jsonld }) +
+    head({ title, description, path: p, jsonld, extraCss: ["/dist/motion.min.css"], wide: true }) +
     `${breadcrumbNav(crumb)}
+<section class="cat-hero">
+<div>
+<p class="chipline"><span class="pill">Animations</span><span class="pill plain mono">v${facts.version}</span></p>
 <h1>All ${all.length} CSS animations</h1>
-<p class="lead">${S.effects.length} CSS-only effects in six categories, plus ${interactive.length} cursor-reactive effects. Each one is a single class name; open any page for a live demo and copy-paste code.</p>
-${groups.map((cat) => {
-  const list = (cat.id === "interactive" ? interactive : byCategory[cat.id]).slice().sort((a, b) => a.name.localeCompare(b.name));
-  return `<section><h2><a href="${S.categoryPath(cat.id)}">${esc(cat.label)}</a> <span class="muted">(${list.length})</span></h2>\n<ul class="chips">\n${list.map((c) => `<li><a href="${S.animationPath(c.name)}">${esc(c.displayName)}</a></li>`).join("\n")}\n</ul></section>`;
-}).join("\n")}
+<p class="lead">${S.effects.length} CSS-only effects in six categories, plus ${interactive.length} cursor-reactive effects. Each one is a single class name. Open any category to see every effect playing live.</p>
+<ul class="stats"><li class="pill plain">${S.effects.length} CSS effects</li><li class="pill plain">${interactive.length} cursor-reactive</li><li class="pill plain">MIT licensed</li></ul>
+</div>
+<div class="import-card"><h2>Search every animation</h2>
+<label class="search2"><span class="sr-only">Search all animations</span>${ICON_SEARCH}<input id="allSearch" type="search" placeholder="Try &quot;bounce&quot;, &quot;glow&quot; or &quot;loader&quot;" autocomplete="off" /><kbd aria-hidden="true">/</kbd></label>
+<p class="muted">Results open the effect's own page, with live demo and copy-paste code.</p></div>
+</section>
+<ul class="results" id="allResults" aria-live="polite"></ul>
+<h2 class="sec2" style="margin:8px 0 16px">Browse by category</h2>
+<ul class="tile-grid">
+${tiles}
+</ul>
+${fresh.length ? `<div class="sec-title2"><h2>New in v${facts.version}</h2><a href="${S.categoryPath("text")}">See all text effects →</a></div>
+<ul class="fx-grid">
+${fresh.map((c) => fxCard(c, 3)).join("\n")}
+</ul>` : ""}
 ` + foot;
-  const md = `# All ${all.length} CSS animations\n\n${groups.map((cat) => { const list = (cat.id === "interactive" ? interactive : byCategory[cat.id]).slice().sort((a, b) => a.name.localeCompare(b.name)); return `## ${cat.label} (${list.length})\n\n${list.map((c) => `- [${c.displayName}](${urlOf(S.animationPath(c.name))}) \`.${c.name}\``).join("\n")}\n`; }).join("\n")}`;
+  const md = `# All ${all.length} CSS animations\n\n${groups.map((cat) => { const list = sortByName(cat.id === "interactive" ? interactive : byCategory[cat.id]); return `## ${cat.label} (${list.length})\n\n${list.map((c) => `- [${c.displayName}](${urlOf(S.animationPath(c.name))}) \`.${c.name}\``).join("\n")}\n`; }).join("\n")}`;
   return { html, md, p };
 }
 
@@ -488,6 +582,7 @@ for (const cat of [...CATEGORIES, catById.interactive]) emitPage(categoryPage(ca
 for (const c of all) emitPage(effectPage(c));
 patchIndex();
 write("assets/pages.css", PAGES_CSS);
+write("assets/search-index.json", JSON.stringify(all.map((c) => ({ n: c.displayName, c: c.name, k: catById[c.category] ? catById[c.category].label : "Interactive", u: S.animationPath(c.name), d: sentence(descOf(c)) }))));
 write("sitemap.xml", sitemap(sitemapPaths));
 write("llms-full.txt", llmsFull());
 
