@@ -444,6 +444,10 @@
      "description": "Wink — buttons · A corner highlight blinks twice every few seconds, then keeps a straight face. https://sds-motion-forge.netlify.app/animations/btn-wink/"
     },
     {
+     "name": "sds-bubble-rise",
+     "description": "Bubble Rise — text · Letters rise like bubbles: buoyancy against drag, a surface overshoot and a growing-then-decaying sway. https://sds-motion-forge.netlify.app/animations/bubble-rise/"
+    },
+    {
      "name": "sds-card-accordion-in",
      "description": "Accordion In — cards · Children unfold sequentially from scaleY(0) at the top — like opening accordion panels. https://sds-motion-forge.netlify.app/animations/card-accordion-in/"
     },
@@ -1020,6 +1024,10 @@
      "description": "Gravity Bounce — text · Falls under gravity, inelastic floor bounce. https://sds-motion-forge.netlify.app/animations/gravity-bounce/"
     },
     {
+     "name": "sds-gravity-collapse",
+     "description": "Gravity Collapse — text · Letters fall in from every direction through an inverse-square field, then flash and ring on arrival. https://sds-motion-forge.netlify.app/animations/gravity-collapse/"
+    },
+    {
      "name": "sds-gravity-drop",
      "description": "Gravity Drop — text · Falls from above with overshoot bounce. https://sds-motion-forge.netlify.app/animations/gravity-drop/"
     },
@@ -1456,10 +1464,6 @@
      "description": "Jelly Hover — interactive · Squash + stretch spring on hover. https://sds-motion-forge.netlify.app/animations/jelly-hover/"
     },
     {
-     "name": "sds-jelly-wobble",
-     "description": "Jelly Wobble — text · A dropped jelly oscillating in two coupled, volume-preserving modes. https://sds-motion-forge.netlify.app/animations/jelly-wobble/"
-    },
-    {
      "name": "sds-kinetic-wave",
      "description": "Kinetic Wave — text · Each child bounces up/down in a wave. https://sds-motion-forge.netlify.app/animations/kinetic-wave/"
     },
@@ -1472,12 +1476,12 @@
      "description": "Light Speed — text · Streaks in with a skewed light-speed motion. https://sds-motion-forge.netlify.app/animations/light-speed/"
     },
     {
-     "name": "sds-liquid-fill",
-     "description": "Liquid Fill — text · Outlined text fills like a glass, with the liquid surface sloshing as it settles. https://sds-motion-forge.netlify.app/animations/liquid-fill/"
-    },
-    {
      "name": "sds-liquid-rise",
      "description": "Liquid Rise — text · Rises up with skew and blur in one fluid arc. https://sds-motion-forge.netlify.app/animations/liquid-rise/"
+    },
+    {
+     "name": "sds-liquid-slosh",
+     "description": "Liquid Slosh — text · Outlined text fills like a glass, with the liquid surface sloshing as it settles. https://sds-motion-forge.netlify.app/animations/liquid-slosh/"
     },
     {
      "name": "sds-loader-arc",
@@ -1890,10 +1894,6 @@
     {
      "name": "sds-magnetic-pull",
      "description": "Magnetic Pull — interactive · Cursor attracts chars toward it. https://sds-motion-forge.netlify.app/animations/magnetic-pull/"
-    },
-    {
-     "name": "sds-momentum-slide",
-     "description": "Momentum Slide — text · Slides in on a spring while skew and motion blur follow its velocity. https://sds-motion-forge.netlify.app/animations/momentum-slide/"
     },
     {
      "name": "sds-morph-word",
@@ -2460,10 +2460,6 @@
      "description": "Spring Kerning — interactive · Mouse X expands/compresses spacing. https://sds-motion-forge.netlify.app/animations/spring-kerning/"
     },
     {
-     "name": "sds-spring-slam",
-     "description": "Spring Slam — text · Slams in from a large scale on a stiff spring with a decaying shake. https://sds-motion-forge.netlify.app/animations/spring-slam/"
-    },
-    {
      "name": "sds-squash-stretch",
      "description": "Squash Stretch — text · Squashes then stretches into place. https://sds-motion-forge.netlify.app/animations/squash-stretch/"
     },
@@ -2546,6 +2542,10 @@
     {
      "name": "sds-weight-drop",
      "description": "Weight Drop — text · Overshoot gravity with extreme easing. https://sds-motion-forge.netlify.app/animations/weight-drop/"
+    },
+    {
+     "name": "sds-wind-drift",
+     "description": "Wind Drift — text · Letters are blown in by a gust: drag eases them to rest while damped flutter and tilt die out. https://sds-motion-forge.netlify.app/animations/wind-drift/"
     },
     {
      "name": "sds-wipe-left",

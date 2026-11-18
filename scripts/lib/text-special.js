@@ -16,7 +16,7 @@ const digits = (n) =>
     .join("");
 
 const SPECIAL = {
-  "sds-liquid-fill": { attrs: 'data-text="Liquid"', inner: "Liquid" },
+  "sds-liquid-slosh": { attrs: 'data-text="Liquid"', inner: "Liquid" },
   "sds-split-halves": { attrs: 'data-text="Split"', inner: "Split" },
   "sds-strike-swap": {
     attrs: "",

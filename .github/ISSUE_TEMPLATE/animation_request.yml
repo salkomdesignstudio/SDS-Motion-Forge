@@ -41,5 +41,6 @@ body:
     id: distinctness
     attributes:
       label: Why it's distinct
+      description: Name the physical law or choreography that differs, not just colour, duration or direction. Maintainers measure it with `npm run audit:motion` and decline near-duplicates.
     validations:
       required: true

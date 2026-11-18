@@ -2983,30 +2983,6 @@
     "sinceVersion": "5.1.0",
     "source": "authored"
   },
-  "sds-momentum-slide": {
-    "description": "Slides in on a spring while skew and motion blur follow its velocity",
-    "displayName": "Momentum Slide",
-    "sinceVersion": "5.1.0",
-    "source": "authored"
-  },
-  "sds-spring-slam": {
-    "description": "Slams in from a large scale on a stiff spring with a decaying shake",
-    "displayName": "Spring Slam",
-    "sinceVersion": "5.1.0",
-    "source": "authored"
-  },
-  "sds-jelly-wobble": {
-    "description": "A dropped jelly oscillating in two coupled, volume-preserving modes",
-    "displayName": "Jelly Wobble",
-    "sinceVersion": "5.1.0",
-    "source": "authored"
-  },
-  "sds-liquid-fill": {
-    "description": "Outlined text fills like a glass, with the liquid surface sloshing as it settles",
-    "displayName": "Liquid Fill",
-    "sinceVersion": "5.1.0",
-    "source": "authored"
-  },
   "sds-split-halves": {
     "description": "Two halves collide at speed, rebound with restitution and lock together",
     "displayName": "Split Halves",
@@ -3028,6 +3004,30 @@
   "sds-extrude-rise": {
     "description": "Text tilts up on a spring while a 3D extrusion grows with the same overshoot",
     "displayName": "Extrude Rise",
+    "sinceVersion": "5.1.0",
+    "source": "authored"
+  },
+  "sds-bubble-rise": {
+    "description": "Letters rise like bubbles: buoyancy against drag, a surface overshoot and a growing-then-decaying sway",
+    "displayName": "Bubble Rise",
+    "sinceVersion": "5.1.0",
+    "source": "authored"
+  },
+  "sds-wind-drift": {
+    "description": "Letters are blown in by a gust: drag eases them to rest while damped flutter and tilt die out",
+    "displayName": "Wind Drift",
+    "sinceVersion": "5.1.0",
+    "source": "authored"
+  },
+  "sds-liquid-slosh": {
+    "description": "Outlined text fills like a glass, with the liquid surface sloshing as it settles",
+    "displayName": "Liquid Slosh",
+    "sinceVersion": "5.1.0",
+    "source": "authored"
+  },
+  "sds-gravity-collapse": {
+    "description": "Letters fall in from every direction through an inverse-square field, then flash and ring on arrival",
+    "displayName": "Gravity Collapse",
     "sinceVersion": "5.1.0",
     "source": "authored"
   }

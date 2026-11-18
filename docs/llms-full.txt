@@ -13,7 +13,7 @@
 - Website: https://sds-motion-forge.netlify.app/
 - Repository: https://github.com/salkomdesignstudio/SDS-Motion-Forge
 - npm: https://www.npmjs.com/package/@salkomdesignstudio/sds-motion-forge
-- Size: Full bundle 43.0 KB gzip (259.3 KB minified); each category bundle 5.8–12.9 KB gzip (each already includes core).
+- Size: Full bundle 43.7 KB gzip (260.8 KB minified); each category bundle 5.8–13.5 KB gzip (each already includes core).
 
 ## Install
 
@@ -23,7 +23,7 @@
 
 ## Class naming contract
 
-- Text: 117 effects, class pattern sds-*, bundle @salkomdesignstudio/sds-motion-forge/categories/text (12.9 KB gzip)
+- Text: 117 effects, class pattern sds-*, bundle @salkomdesignstudio/sds-motion-forge/categories/text (13.5 KB gzip)
 - Buttons: 100 effects, class pattern sds-btn-*, bundle @salkomdesignstudio/sds-motion-forge/categories/buttons (8.6 KB gzip)
 - Inputs: 100 effects, class pattern sds-input-*, bundle @salkomdesignstudio/sds-motion-forge/categories/inputs (8.4 KB gzip)
 - Cards: 100 effects, class pattern sds-card-*, bundle @salkomdesignstudio/sds-motion-forge/categories/cards (7.5 KB gzip)
@@ -67,11 +67,11 @@ Combine sds-scroll-auto with any sds-scroll-* class, for example class="sds-scro
 
 ### Is there an Animate.css alternative?
 
-Yes. SDS Motion Forge is a CSS-only alternative that defines 637 @keyframes across 617 effects in six categories (text, buttons, inputs, cards, loaders, scroll), against 97 @keyframes in Animate.css 4.1.1. The trade-off is size: the full bundle is 43.0 KB gzip versus 5.2 KB, but you can import one 5.8–12.9 KB category instead.
+Yes. SDS Motion Forge is a CSS-only alternative that defines 636 @keyframes across 617 effects in six categories (text, buttons, inputs, cards, loaders, scroll), against 97 @keyframes in Animate.css 4.1.1. The trade-off is size: the full bundle is 43.7 KB gzip versus 5.2 KB, but you can import one 5.8–13.5 KB category instead.
 
 ### What is the best CSS-only text animation library?
 
-SDS Motion Forge includes 117 text animations that run from a single CSS class, for example <h1 class="sds-velvet-drop">. Five need the text split into per-character spans and a few others need child elements; each effect's page states what it needs. The text bundle can be loaded on its own at 12.9 KB gzip.
+SDS Motion Forge includes 117 text animations that run from a single CSS class, for example <h1 class="sds-velvet-drop">. Five need the text split into per-character spans and a few others need child elements; each effect's page states what it needs. The text bundle can be loaded on its own at 13.5 KB gzip.
 
 ### Does it respect prefers-reduced-motion?
 
@@ -79,7 +79,7 @@ Yes. Every animating selector is neutralized under prefers-reduced-motion: reduc
 
 ### How big is it, and can I import only part of it?
 
-The full bundle is 43.0 KB gzip. Each category is 5.8–12.9 KB gzip and can be imported alone, with core already included: import "@salkomdesignstudio/sds-motion-forge/categories/text";. For two or more categories, use the full bundle. The two optional scripts are 1.3 KB (scroll) and 7.0 KB (cursor effects).
+The full bundle is 43.7 KB gzip. Each category is 5.8–13.5 KB gzip and can be imported alone, with core already included: import "@salkomdesignstudio/sds-motion-forge/categories/text";. For two or more categories, use the full bundle. The two optional scripts are 1.3 KB (scroll) and 7.0 KB (cursor effects).
 
 ### Does it work with React, Vue, Next.js and Tailwind?
 
@@ -102,6 +102,7 @@ Headline, per-character and word-level text effects: entrances, loops, glows, re
 - `.sds-bounce-drop-in` — Bounce Drop In: Drops in with a squashy bounce. https://sds-motion-forge.netlify.app/animations/bounce-drop-in/
 - `.sds-bounce-in-up` — Bounce In Up: Multi-step elastic Y-axis bounce entrance. https://sds-motion-forge.netlify.app/animations/bounce-in-up/
 - `.sds-bounce-loop` — Bounce Loop: Bounces continuously (loop). https://sds-motion-forge.netlify.app/animations/bounce-loop/
+- `.sds-bubble-rise` — Bubble Rise: Letters rise like bubbles: buoyancy against drag, a surface overshoot and a growing-then-decaying sway. https://sds-motion-forge.netlify.app/animations/bubble-rise/
 - `.sds-center-burst` — Center Burst: Chars start at center, fan out. https://sds-motion-forge.netlify.app/animations/center-burst/
 - `.sds-chain-swing` — Chain Swing: Letters swing as damped pendulums, released in sequence so a wave travels along the word. https://sds-motion-forge.netlify.app/animations/chain-swing/
 - `.sds-char-orbit` — Char Orbit: Orbits in from above with rotation. https://sds-motion-forge.netlify.app/animations/char-orbit/
@@ -135,6 +136,7 @@ Headline, per-character and word-level text effects: entrances, loops, glows, re
 - `.sds-gradient-sweep` — Gradient Sweep: Moving gradient mask over the text. https://sds-motion-forge.netlify.app/animations/gradient-sweep/
 - `.sds-grand-entrance` — Grand Entrance: Big orchestrated scale-blur entrance. https://sds-motion-forge.netlify.app/animations/grand-entrance/
 - `.sds-gravity-bounce` — Gravity Bounce: Falls under gravity, inelastic floor bounce. https://sds-motion-forge.netlify.app/animations/gravity-bounce/
+- `.sds-gravity-collapse` — Gravity Collapse: Letters fall in from every direction through an inverse-square field, then flash and ring on arrival. https://sds-motion-forge.netlify.app/animations/gravity-collapse/
 - `.sds-gravity-drop` — Gravity Drop: Falls from above with overshoot bounce. https://sds-motion-forge.netlify.app/animations/gravity-drop/
 - `.sds-heartbeat-text` — Heartbeat: Beats like a heartbeat (loop). https://sds-motion-forge.netlify.app/animations/heartbeat-text/
 - `.sds-heat-shimmer` — Heat Shimmer: Subtle heat-distortion skewX + scaleY loop. https://sds-motion-forge.netlify.app/animations/heat-shimmer/
@@ -143,14 +145,12 @@ Headline, per-character and word-level text effects: entrances, loops, glows, re
 - `.sds-ink-bleed` — Ink Bleed: Letter-spacing collapses as blur resolves. https://sds-motion-forge.netlify.app/animations/ink-bleed/
 - `.sds-iris-open` — Iris Open: Opens from a circular iris. https://sds-motion-forge.netlify.app/animations/iris-open/
 - `.sds-jello` — Jello: Jiggles with a jello skew. https://sds-motion-forge.netlify.app/animations/jello/
-- `.sds-jelly-wobble` — Jelly Wobble: A dropped jelly oscillating in two coupled, volume-preserving modes. https://sds-motion-forge.netlify.app/animations/jelly-wobble/
 - `.sds-kinetic-wave` — Kinetic Wave: Each child bounces up/down in a wave. https://sds-motion-forge.netlify.app/animations/kinetic-wave/
 - `.sds-levitate` — Levitate: Gentle float with subtle rotation. https://sds-motion-forge.netlify.app/animations/levitate/
 - `.sds-light-speed` — Light Speed: Streaks in with a skewed light-speed motion. https://sds-motion-forge.netlify.app/animations/light-speed/
-- `.sds-liquid-fill` — Liquid Fill: Outlined text fills like a glass, with the liquid surface sloshing as it settles. https://sds-motion-forge.netlify.app/animations/liquid-fill/
 - `.sds-liquid-rise` — Liquid Rise: Rises up with skew and blur in one fluid arc. https://sds-motion-forge.netlify.app/animations/liquid-rise/
+- `.sds-liquid-slosh` — Liquid Slosh: Outlined text fills like a glass, with the liquid surface sloshing as it settles. https://sds-motion-forge.netlify.app/animations/liquid-slosh/
 - `.sds-magnetic-drift` — Magnetic Drift: Circular XY drift like magnetic field pull. https://sds-motion-forge.netlify.app/animations/magnetic-drift/
-- `.sds-momentum-slide` — Momentum Slide: Slides in on a spring while skew and motion blur follow its velocity. https://sds-motion-forge.netlify.app/animations/momentum-slide/
 - `.sds-morph-word` — Morph Word: ScaleX + skewX + letter-spacing morphing loop. https://sds-motion-forge.netlify.app/animations/morph-word/
 - `.sds-neon-flare` — Neon Flare: Pulsing neon glow with colour shift. https://sds-motion-forge.netlify.app/animations/neon-flare/
 - `.sds-neon-flicker-in` — Neon Flicker In: Flickers on like a neon sign. https://sds-motion-forge.netlify.app/animations/neon-flicker-in/
@@ -184,7 +184,6 @@ Headline, per-character and word-level text effects: entrances, loops, glows, re
 - `.sds-split-reveal` — Split Reveal: Polygon clip-path splits open from center. https://sds-motion-forge.netlify.app/animations/split-reveal/
 - `.sds-spotlight` — Spotlight: Brightens in under a spotlight. https://sds-motion-forge.netlify.app/animations/spotlight/
 - `.sds-spring-drop` — Spring Drop: Letters fall under gravity and bounce off a floor, each landing squashing with its impact speed. https://sds-motion-forge.netlify.app/animations/spring-drop/
-- `.sds-spring-slam` — Spring Slam: Slams in from a large scale on a stiff spring with a decaying shake. https://sds-motion-forge.netlify.app/animations/spring-slam/
 - `.sds-squash-stretch` — Squash Stretch: Squashes then stretches into place. https://sds-motion-forge.netlify.app/animations/squash-stretch/
 - `.sds-stagger-chars` — Stagger Chars: Up to 12 children stagger in with skewY. https://sds-motion-forge.netlify.app/animations/stagger-chars/
 - `.sds-static-burst` — Static Burst: Glitchy signal-noise corruption loop. https://sds-motion-forge.netlify.app/animations/static-burst/
@@ -206,6 +205,7 @@ Headline, per-character and word-level text effects: entrances, loops, glows, re
 - `.sds-vibrate` — Vibrate: Rapid vibrate buzz (loop). https://sds-motion-forge.netlify.app/animations/vibrate/
 - `.sds-wave-cascade` — Wave Cascade: Disturbance propagates char-to-char (loop). https://sds-motion-forge.netlify.app/animations/wave-cascade/
 - `.sds-weight-drop` — Weight Drop: Overshoot gravity with extreme easing. https://sds-motion-forge.netlify.app/animations/weight-drop/
+- `.sds-wind-drift` — Wind Drift: Letters are blown in by a gust: drag eases them to rest while damped flutter and tilt die out. https://sds-motion-forge.netlify.app/animations/wind-drift/
 - `.sds-wipe-left` — Wipe Left: Clip-wipes in to the left. https://sds-motion-forge.netlify.app/animations/wipe-left/
 - `.sds-wipe-right` — Wipe Right: Clip-wipes in to the right. https://sds-motion-forge.netlify.app/animations/wipe-right/
 - `.sds-wobble` — Wobble: Wobbles side to side on entry. https://sds-motion-forge.netlify.app/animations/wobble/

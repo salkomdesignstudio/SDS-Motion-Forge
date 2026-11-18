@@ -31,6 +31,8 @@ assignees: ''
 **Most similar existing class:** `sds-`  
 **What makes this different:**
 
+*Distinctness is measured, not argued: maintainers run `npm run audit:motion -- --vs=sds-yours:sds-nearest` and a request whose motion is within the library's nearest-neighbour distance of an existing effect is declined. Name the physical law or choreography that sets it apart (not just colour, duration or direction).*
+
 ## Visual reference
 
 *Link to a gif, video, CodePen, or written multi-stage description of the keyframe choreography. A reference is not required but significantly speeds up review.*

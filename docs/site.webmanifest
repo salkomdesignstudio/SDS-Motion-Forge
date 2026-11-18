@@ -1,0 +1,14 @@
+{
+  "name": "SDS Motion Forge",
+  "short_name": "Motion Forge",
+  "description": "600+ CSS animations, one class name each. MIT licensed.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#fafafa",
+  "theme_color": "#fafafa",
+  "icons": [
+    { "src": "/favicon.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "/images/logo.png", "sizes": "800x800", "type": "image/png" }
+  ]
+}

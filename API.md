@@ -214,6 +214,20 @@ Interactive effects that need per-character control (`sds-scatter-return`, `sds-
 
 The `aria-label` on the container preserves the readable text for screen readers. Each `<span>` is `aria-hidden`. Splitting happens once per element and is idempotent.
 
+### Markup contracts for the physics text effects
+
+The v5.1 physics effects are pure CSS and do not need either engine, but they need the right markup:
+
+| Effect | Markup |
+|---|---|
+| `sds-spring-drop`, `sds-orbit-decay`, `sds-chain-swing`, `sds-toss-in`, `sds-band-snap`, `sds-bubble-rise`, `sds-wind-drift`, `sds-gravity-collapse` | Wrap each letter in `<span class="sds-char" style="--i:N">` (N = 0, 1, 2…). The stagger and per-letter direction come from `--i`. |
+| `sds-liquid-slosh`, `sds-split-halves` | Repeat the text in `data-text="…"`; the real text stays selectable. |
+| `sds-strike-swap` | Two children: `<span class="sds-swap-old">` (struck, falls away) and `<span class="sds-swap-new">` (lands). |
+| `sds-count-roll` | One `<span class="sds-roll" style="--d:DIGIT;--i:N">` per digit. |
+| `sds-extrude-rise` | None. |
+
+Add `aria-label` with the full text on the container when you split manually, and `aria-hidden="true"` on the letter spans, as the engine does.
+
 ### `prefers-reduced-motion` behavior
 
 When `window.matchMedia('(prefers-reduced-motion: reduce)').matches` is true at script load time:

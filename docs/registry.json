@@ -3855,6 +3855,43 @@
       "sinceVersion": "4.0.3"
     },
     {
+      "name": "sds-bubble-rise",
+      "displayName": "Bubble Rise",
+      "category": "text",
+      "kind": "effect",
+      "description": "Letters rise like bubbles: buoyancy against drag, a surface overshoot and a growing-then-decaying sway",
+      "selectors": [
+        ".sds-bubble-rise .sds-char"
+      ],
+      "keyframes": [
+        "sds-bubbleRiseY",
+        "sds-bubbleRiseSway",
+        "sds-bubbleRiseScale",
+        "sds-physFadeIn"
+      ],
+      "tokensUsed": [],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "opacity",
+        "scale",
+        "transform",
+        "translate"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": true,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "load",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "5.1.0"
+    },
+    {
       "name": "sds-card-accordion-in",
       "displayName": "Accordion In",
       "category": "cards",
@@ -8671,6 +8708,43 @@
       "sinceVersion": "4.0.3"
     },
     {
+      "name": "sds-gravity-collapse",
+      "displayName": "Gravity Collapse",
+      "category": "text",
+      "kind": "effect",
+      "description": "Letters fall in from every direction through an inverse-square field, then flash and ring on arrival",
+      "selectors": [
+        ".sds-gravity-collapse .sds-char"
+      ],
+      "keyframes": [
+        "sds-gravityCollapseFall",
+        "sds-gravityCollapseFlash",
+        "sds-gravityCollapseShock",
+        "sds-physFadeIn"
+      ],
+      "tokensUsed": [],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "filter",
+        "opacity",
+        "scale",
+        "translate"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": true,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "load",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "5.1.0"
+    },
+    {
       "name": "sds-gravity-drop",
       "displayName": "Gravity Drop",
       "category": "text",
@@ -12585,41 +12659,6 @@
       "sinceVersion": "4.0.3"
     },
     {
-      "name": "sds-jelly-wobble",
-      "displayName": "Jelly Wobble",
-      "category": "text",
-      "kind": "effect",
-      "description": "A dropped jelly oscillating in two coupled, volume-preserving modes",
-      "selectors": [
-        ".sds-jelly-wobble"
-      ],
-      "keyframes": [
-        "sds-jellyScale",
-        "sds-jellyTilt",
-        "sds-physFadeIn"
-      ],
-      "tokensUsed": [],
-      "customProperties": [],
-      "compositorSafe": true,
-      "loop": false,
-      "animatedProps": [
-        "opacity",
-        "rotate",
-        "scale"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "5.1.0"
-    },
-    {
       "name": "sds-js",
       "displayName": "Js",
       "category": "infrastructure",
@@ -12753,38 +12792,6 @@
       "sinceVersion": "4.0.3"
     },
     {
-      "name": "sds-liquid-fill",
-      "displayName": "Liquid Fill",
-      "category": "text",
-      "kind": "effect",
-      "description": "Outlined text fills like a glass, with the liquid surface sloshing as it settles",
-      "selectors": [
-        ".sds-liquid-fill",
-        ".sds-liquid-fill::after"
-      ],
-      "keyframes": [
-        "sds-liquidSlosh"
-      ],
-      "tokensUsed": [],
-      "customProperties": [],
-      "compositorSafe": true,
-      "loop": false,
-      "animatedProps": [
-        "clip-path"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "5.1.0"
-    },
-    {
       "name": "sds-liquid-rise",
       "displayName": "Liquid Rise",
       "category": "text",
@@ -12819,6 +12826,38 @@
       "deprecated": false,
       "aliasOf": null,
       "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-liquid-slosh",
+      "displayName": "Liquid Slosh",
+      "category": "text",
+      "kind": "effect",
+      "description": "Outlined text fills like a glass, with the liquid surface sloshing as it settles",
+      "selectors": [
+        ".sds-liquid-slosh",
+        ".sds-liquid-slosh::after"
+      ],
+      "keyframes": [
+        "sds-liquidSlosh"
+      ],
+      "tokensUsed": [],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "clip-path"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "load",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "5.1.0"
     },
     {
       "name": "sds-loader-arc",
@@ -16524,43 +16563,6 @@
       "deprecated": false,
       "aliasOf": null,
       "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-momentum-slide",
-      "displayName": "Momentum Slide",
-      "category": "text",
-      "kind": "effect",
-      "description": "Slides in on a spring while skew and motion blur follow its velocity",
-      "selectors": [
-        ".sds-momentum-slide"
-      ],
-      "keyframes": [
-        "sds-momentumTravel",
-        "sds-momentumSkew",
-        "sds-momentumBlur",
-        "sds-physFadeIn"
-      ],
-      "tokensUsed": [],
-      "customProperties": [],
-      "compositorSafe": true,
-      "loop": false,
-      "animatedProps": [
-        "filter",
-        "opacity",
-        "transform",
-        "translate"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "5.1.0"
     },
     {
       "name": "sds-morph-word",
@@ -21507,43 +21509,6 @@
       "sinceVersion": "4.0.3"
     },
     {
-      "name": "sds-spring-slam",
-      "displayName": "Spring Slam",
-      "category": "text",
-      "kind": "effect",
-      "description": "Slams in from a large scale on a stiff spring with a decaying shake",
-      "selectors": [
-        ".sds-spring-slam"
-      ],
-      "keyframes": [
-        "sds-slamScale",
-        "sds-slamDrop",
-        "sds-slamShake",
-        "sds-physFadeIn"
-      ],
-      "tokensUsed": [],
-      "customProperties": [],
-      "compositorSafe": true,
-      "loop": false,
-      "animatedProps": [
-        "opacity",
-        "rotate",
-        "scale",
-        "translate"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "5.1.0"
-    },
-    {
       "name": "sds-squash-stretch",
       "displayName": "Squash Stretch",
       "category": "text",
@@ -21710,7 +21675,7 @@
         "sds-swapDrift",
         "sds-swapSpin",
         "sds-physFadeOut",
-        "sds-swapStrike",
+        "sds-strikeThrough",
         "sds-swapLand",
         "sds-physFadeIn"
       ],
@@ -21852,7 +21817,7 @@
         ".sds-toss-in .sds-char"
       ],
       "keyframes": [
-        "sds-tossInX",
+        "sds-physSlideX",
         "sds-tossInY",
         "sds-tossInSquash",
         "sds-physFadeIn"
@@ -22313,6 +22278,43 @@
       "deprecated": false,
       "aliasOf": null,
       "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-wind-drift",
+      "displayName": "Wind Drift",
+      "category": "text",
+      "kind": "effect",
+      "description": "Letters are blown in by a gust: drag eases them to rest while damped flutter and tilt die out",
+      "selectors": [
+        ".sds-wind-drift .sds-char"
+      ],
+      "keyframes": [
+        "sds-physSlideX",
+        "sds-windDriftBob",
+        "sds-windDriftTilt",
+        "sds-physFadeIn"
+      ],
+      "tokensUsed": [],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "opacity",
+        "rotate",
+        "transform",
+        "translate"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": true,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "load",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "5.1.0"
     },
     {
       "name": "sds-wipe-left",

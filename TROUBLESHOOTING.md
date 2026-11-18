@@ -198,6 +198,17 @@ Requires `postcss-import` in your PostCSS config.
 
 ---
 
+## 8. Physics text effects look wrong or do nothing
+
+- **Letters don't move.** `sds-spring-drop`, `sds-orbit-decay`, `sds-chain-swing`, `sds-toss-in`, `sds-band-snap`, `sds-bubble-rise`, `sds-wind-drift` and `sds-gravity-collapse` animate `.sds-char` children, not the element itself. Wrap each letter in `<span class="sds-char" style="--i:N">` (see [API.md](API.md#markup-contracts-for-the-physics-text-effects)).
+- **`sds-liquid-slosh` / `sds-split-halves` show plain text.** The text must be repeated in `data-text="…"`.
+- **Motion is a plain ease, not a spring.** The curves use CSS `linear()` (Chrome 113+, Safari 17.2+, Firefox 112+). Older browsers get a cubic-bezier approximation by design.
+- **A modifier class changes only part of the motion.** `sds-duration-*` / `sds-delay-*` / `sds-ease-*` scale every layer of the effect together, so the physics keeps its proportions.
+- **The class is unknown on the CDN.** These effects ship in 5.1.0. Pin a version that contains them; `@latest` only has them after the release is published to npm.
+- **Reduced motion.** They are neutralised like every other effect when `prefers-reduced-motion: reduce` is set.
+
+---
+
 ## Still stuck?
 
 1. Check that the effect works in the [live demo](https://sds-motion-forge.netlify.app) — if not, it may be a library bug.

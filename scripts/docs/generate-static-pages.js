@@ -120,6 +120,8 @@ function head({ title, description, path: p, jsonld, extraCss = [], md = true })
 <meta name="description" content="${esc(description)}" />
 <link rel="canonical" href="${url}" />
 ${md ? `<link rel="alternate" type="text/markdown" href="${url}index.md" />\n` : ""}<link rel="icon" href="/favicon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<link rel="alternate" type="text/plain" href="/llms.txt" title="LLM summary" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="SDS Motion Forge" />
 <meta property="og:title" content="${esc(title)}" />
@@ -198,8 +200,8 @@ function effectPage(c) {
   const d = sentence(descOf(c));
   const loop = c.loop ? "loops continuously" : "plays once";
   const trig = c.trigger === "scroll" ? "when scrolled into view" : c.kind === "interactive" ? "in response to the cursor" : "as soon as the class is applied";
-  const title = `${c.displayName} — ${cat.singular} CSS animation (.${c.name})`;
-  const description = fit([`${d}.`, `Use .${c.name} — ${loop}, ${trig}.`, "CSS-only, copy-paste for HTML, React, Angular and Tailwind."], 158);
+  const title = [`${c.displayName} — ${cat.singular} CSS animation (.${c.name})`, `${c.displayName} ${cat.singular} CSS animation (.${c.name})`, `${c.displayName} CSS animation (.${c.name})`, `${c.displayName} CSS animation`].find((t) => t.length <= 60) || `${c.displayName} CSS animation`;
+  const description = fit([`${d}.`, `Use .${c.name} — ${loop}, ${trig}.`, "CSS-only, copy-paste for HTML, React, Angular and Tailwind.", "Free and MIT licensed."], 158);
   seenDesc.set(description, (seenDesc.get(description) || 0) + 1);
   const files = cssFor(c);
   if (!files) fallbackCss++;
@@ -350,7 +352,7 @@ ${list.map((c) => `<li><a href="${S.animationPath(c.name)}">${esc(c.displayName)
 
 function indexPage() {
   const p = "/animations/";
-  const title = `All ${all.length} CSS animations — text, buttons, inputs, cards, loaders, scroll | SDS Motion Forge`;
+  const title = `All ${all.length} CSS Animations | SDS Motion Forge`;
   const description = `Every ${facts.name} animation on one page: ${S.effects.length} CSS-only effects in six categories plus ${interactive.length} cursor-reactive effects. One class name each.`;
   const crumb = [["Home", "/"], ["Animations", p]];
   const jsonld = { "@context": "https://schema.org", "@graph": [crumbs(crumb), { "@type": "CollectionPage", "@id": urlOf(p) + "#collection", name: title, description, url: urlOf(p), isPartOf: { "@id": urlOf("/#website") } }] };

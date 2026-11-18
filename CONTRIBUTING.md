@@ -122,6 +122,10 @@ npm run release:check
 | `npm run build:dev` | Build CSS with source maps (dev mode) |
 | `npm run build:watch` | Watch CSS and rebuild on changes |
 | `npm run build:verify` | Run the 8-stage pre-publish artifact check |
+| `npm run generate:physics` | Re-sample the physics text effects (equations → `linear()` easing) into `src/categories/text.css` |
+| `npm run generate:static` | Regenerate the static per-effect/category pages, sitemap and llms files |
+| `npm run generate:ide` | Regenerate the VS Code snippets and HTML custom data |
+| `npm run generate:og` | Regenerate the social card image |
 
 ### Verification scripts
 
@@ -132,6 +136,9 @@ npm run release:check
 | `npm run verify:split` | Category bundles are self-sufficient |
 | `npm run verify:published` | New build ↔ 4.0.3 baseline (R1 gate) |
 | `npm run verify:reduced-motion` | 100% coverage of animating selectors |
+| `npm run verify:physics` | Physics equations match their closed-form solutions; generated CSS is current |
+| `npm run verify:unique` | A new effect repeats no class name, display name, keyframe body or keyframe set |
+| `npm run audit:motion` | Browser audit: a new effect's motion is not a near-copy of an existing one (`-- --check` fails CI) |
 | `npm run lint:css` | Compositor-only rule (no layout properties in @keyframes) |
 | `npm run validate` | publint — package.json exports validity |
 | `npm run pack:check` | Dry-run npm pack (shows what will be published) |
@@ -152,7 +159,7 @@ npm run release:check   # all fast gates (run this before opening a PR)
 # Install Chromium if you haven't already
 npx playwright install chromium
 
-# Visual regression: 359 effects × 3 deterministic frames vs committed baselines
+# Visual regression: every effect × 3 deterministic frames vs committed baselines
 npm run test:visual
 
 # Performance gate: CDP fps + zero-layout on heaviest effect per category
@@ -209,7 +216,13 @@ New animations are a craft product, not a quota. Before writing CSS, read [SPEC.
 
 6. **Check budgets:** `npx size-limit`. If a category file would exceed its budget meaningfully, surface this in your PR description with justification. Silent budget bumps are rejected in review.
 
-7. **Run the full suite:** `npm run release:check` and `npm run verify:snippets`. Both green = ready to open a PR.
+7. **Prove it is not a repeat.** `npm run verify:unique` (names, display names, keyframes) and `npm run audit:motion -- --check` (the motion itself, measured in Chrome) must pass. A new effect that is a re-skin of an existing one is rejected; change the physics or the choreography, not the colour. Compare against a specific neighbour with `npm run audit:motion -- --vs=sds-new:sds-existing`.
+
+8. **Run the full suite:** `npm run release:check` and `npm run verify:snippets`. Both green = ready to open a PR.
+
+### Physics text effects
+
+The `sds-spring-drop` family (text.css sections 101–113) is **generated**, not hand-written. Edit [`scripts/generate-physics.js`](scripts/generate-physics.js) and run `npm run generate:physics`; never edit the block between `@sds-physics:start` and `@sds-physics:end`. Each effect must (a) sample a stated physical law into `linear()`, (b) add an invariant to `verify()` that checks it against the closed form, (c) animate only compositor properties and (d) not reuse another effect's keyframes. The generator refuses to emit a keyframe or class name that already exists elsewhere in `src/categories/`. Letter effects use `.sds-char` children with `--i`; `data-text` effects need the text repeated in the attribute (see [API.md](API.md)).
 
 ### Do NOT manually edit these files
 
@@ -290,6 +303,7 @@ Before requesting review, confirm:
 - [ ] `registry/meta/descriptions.json` updated with displayName + description for new effects
 - [ ] PR description explains the motion family and links any related issue or RFC
 - [ ] Bundle budgets checked (`npx size-limit`)
+- [ ] `npm run verify:unique` and `npm run audit:motion -- --check` pass (no duplicate or near-duplicate effects)
 
 For new animations specifically:
 - [ ] SPEC.md §1 (principles) reviewed — animation tells the user something

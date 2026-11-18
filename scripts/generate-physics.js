@@ -185,6 +185,39 @@ function verify() {
   const tCap = Math.log(og.omegaMax / og.omega0) / (2 * og.gamma);
   const exact = ((og.omegaMax - og.omega0) / (2 * og.gamma) + og.omegaMax * (og.T - tCap)) / TAU;
   check("orbit swept angle (turns) vs closed form", o.turns, exact, 2e-3);
+  // bubble rise: with drag, s(t) = vt·(t − (1 − e^(−k·t))/k) reaches 1 exactly at t1, its slope at t1 equals
+  // v(t1) = vt·(1 − e^(−k·t1)), and the surface spring continues from that same position and velocity (no jump)
+  {
+    const k = 3, t1 = 1.1, vt = 1 / (t1 - (1 - Math.exp(-k * t1)) / k), v0 = vt * (1 - Math.exp(-k * t1));
+    const s = (t) => vt * (t - (1 - Math.exp(-k * t)) / k);
+    check("bubble reaches the surface at t1", s(t1), 1, 1e-12);
+    check("bubble arrival speed (numerical slope vs drag law)", (s(t1) - s(t1 - 1e-6)) / 1e-6, v0, 1e-4);
+    check("bubble starts from rest", (s(1e-6) - s(0)) / 1e-6, 0, 1e-4);
+    const z = 0.35, w0 = TAU * 3, wd = w0 * Math.sqrt(1 - z * z), a = z * w0;
+    const after = (tp) => 1 + (v0 / wd) * Math.exp(-a * tp) * Math.sin(wd * tp);
+    check("bubble surface spring continues at the same position", after(0), s(t1), 1e-12);
+    check("bubble surface spring continues at the same speed", (after(1e-6) - after(0)) / 1e-6, v0, 1e-3);
+  }
+  // gravity collapse: radial infall r = r0·cos²η with t/t_fall = (η + sinη·cosη)/(π/2); progress p = sin²η
+  {
+    const eta = (t) => { const g = t * Math.PI / 2; let lo = 0, hi = Math.PI / 2; for (let i = 0; i < 80; i++) { const m = (lo + hi) / 2; (m + Math.sin(m) * Math.cos(m) < g) ? (lo = m) : (hi = m); } return (lo + hi) / 2; };
+    const p = (t) => Math.sin(eta(t)) ** 2;
+    check("infall starts at rest and ends at the attractor", p(0) + p(1), 1, 1e-9);
+    // at η = π/4 the body is at half its starting radius (cos²(π/4) = ½), which happens at t/t_fall = (π/4 + ½)/(π/2)
+    check("infall halfway point: η=π/4 ⇒ t/t_fall = (π/4 + ½)/(π/2)", p((Math.PI / 4 + 0.5) / (Math.PI / 2)), 0.5, 1e-9);
+    // speed grows monotonically toward the attractor (inverse-square field: it accelerates, never decelerates)
+    let prev = -1, mono = true;
+    for (let i = 1; i < 400; i++) { const v = (p((i + 1) / 401) - p((i - 1) / 401)) / (2 / 401); if (v + 1e-9 < prev) mono = false; prev = v; }
+    if (!mono) fail("infall speed must increase monotonically");
+    out.push("  ok  infall accelerates monotonically (speed never drops before arrival)");
+  }
+  // wind drift: drag-only approach has no overshoot and arrives at 1
+  {
+    const tau = 0.45, T = 2.1, norm = 1 - Math.exp(-T / tau);
+    let peak = 0;
+    for (let i = 0; i <= 2000; i++) peak = Math.max(peak, (1 - Math.exp(-((i / 2000) * T) / tau)) / norm);
+    check("wind drift never overshoots its target", peak, 1, 1e-12);
+  }
   // pendulum envelope decays monotonically
   const p = pendulum({ hz: 1.3, zeta: 0.12 });
   if (!(Math.abs(p.f(p.T)) < 0.02)) fail("pendulum must be at rest after T");
@@ -221,6 +254,16 @@ add(`
   }
   to {
     opacity: 0;
+  }
+}
+
+/* shared by toss-in and wind-drift: slide in from --x along the baseline */
+@keyframes sds-physSlideX {
+  from {
+    translate: var(--x) 0;
+  }
+  to {
+    translate: 0 0;
   }
 }`);
 
@@ -360,21 +403,12 @@ add(`
   --x: calc(sin(var(--i, 0) * 2.4) * 3em);
   display: inline-block;
   transform-origin: 50% 100%;
-  animation-name: sds-tossInX, sds-tossInY, sds-tossInSquash, sds-physFadeIn;
+  animation-name: sds-physSlideX, sds-tossInY, sds-tossInSquash, sds-physFadeIn;
   animation-duration: ${num(t.T, 2)}s, ${num(t.T, 2)}s, ${num(t.T, 2)}s, 0.1s;
   animation-timing-function: ease-out, ease-in-out, ease-out, ${fadeIn};
   animation-timing-function: ${x}, ${arc}, ${squash}, ${fadeIn};
   animation-fill-mode: both, backwards, backwards, both;
   animation-delay: calc(var(--i, 0) * 0.06s);
-}
-
-@keyframes sds-tossInX {
-  from {
-    translate: var(--x) 0;
-  }
-  to {
-    translate: 0 0;
-  }
 }
 
 @keyframes sds-tossInY {
@@ -427,151 +461,197 @@ add(`
 }`);
 }
 
-/* 106 · Momentum Slide — spring position, skew and blur follow velocity */
+/* 106 · Bubble Rise — buoyancy with drag, a surface overshoot, and a sway that grows then decays */
 {
-  const s = springHz(1.7, 0.42);
-  let vmax = 0;
-  for (let i = 0; i <= 4000; i++) vmax = Math.max(vmax, Math.abs(s.v((i / 4000) * s.T)));
-  const pos = lin(s.x, s.T, 0.003);
-  const vel = lin((t) => s.v(t) / vmax, s.T, 0.01);
-  const speed = lin((t) => Math.abs(s.v(t)) / vmax, s.T, 0.01);
+  // Rise: buoyant force vs linear drag gives v(t) = vt·(1 − e^(−k·t)) and s(t) = vt·(t − (1 − e^(−k·t))/k).
+  // vt is chosen so the bubble reaches the surface (s = 1) at t1. Past the surface it behaves as a
+  // damped spring (surface tension) that keeps the arrival velocity v(t1): x = 1 + (v0/ωd)·e^(−ζω·t')·sin(ωd·t').
+  const k = 3, t1 = 1.1;
+  const vt = 1 / (t1 - (1 - Math.exp(-k * t1)) / k);
+  const v0 = vt * (1 - Math.exp(-k * t1));
+  const z = 0.35, w0 = TAU * 3, wd = w0 * Math.sqrt(1 - z * z), a = z * w0;
+  const Tsurf = Math.log(1 / 0.0015) / a;
+  const T = t1 + Tsurf;
+  const rise = (t) => (t <= t1 ? vt * (t - (1 - Math.exp(-k * t)) / k) : 1 + (v0 / wd) * Math.exp(-a * (t - t1)) * Math.sin(wd * (t - t1)));
+  const sway = (t) => (1 - Math.exp(-t / 0.25)) * Math.exp(-t / 0.9) * Math.sin(TAU * 2.2 * t);
+  let sMax = 0;
+  for (let i = 0; i <= 4000; i++) sMax = Math.max(sMax, Math.abs(sway((i / 4000) * T)));
+  const grow = springHz(2, 0.4);
+  const riseC = lin(rise, T, 0.003);
+  const swayC = lin((t) => sway(t) / sMax, T, 0.005);
+  const scaleC = lin(grow.x, T, 0.003);
   add(`
-/* 106 · Momentum Slide ------------------------------------- */
-/* The text slides in on a spring (1.7 Hz, ζ = 0.42). Its lean (skew) and motion
-   blur are driven by the spring's velocity, so it leans into the move, blurs at
-   peak speed, sharpens at the turnaround and leans back as it overshoots.
-   <h1 class="sds-momentum-slide">Momentum</h1> */
+/* 106 · Bubble Rise ---------------------------------------- */
+/* Letters are bubbles released below the line. Buoyancy against linear drag gives
+   v(t) = vt·(1 − e^(−k·t)): they accelerate to a terminal speed, then meet the surface and
+   overshoot it by ${num((v0 / wd) * 100, 0)} % of the rise on a damped spring (surface tension) before settling.
+   A lateral sway grows then decays (2.2 Hz), and each bubble inflates on a spring.
+   <h1 class="sds-bubble-rise"><span class="sds-char" style="--i:0">B</span> ...</h1> */
 
-.sds-momentum-slide {
+.sds-bubble-rise .sds-char {
+  --d: calc(1.7em + 0.5em * sin(var(--i, 0) * 1.7));
+  --w: calc(0.16em + 0.07em * sin(var(--i, 0) * 2.1));
   display: inline-block;
-  animation-name: sds-momentumTravel, sds-momentumSkew, sds-momentumBlur, sds-physFadeIn;
-  animation-duration: ${num(s.T, 2)}s, ${num(s.T, 2)}s, ${num(s.T, 2)}s, 0.12s;
-  animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1), ease-out, ease-out, ${fadeIn};
-  animation-timing-function: ${pos}, ${vel}, ${speed}, ${fadeIn};
-  animation-fill-mode: both, backwards, backwards, both;
+  animation-name: sds-bubbleRiseY, sds-bubbleRiseSway, sds-bubbleRiseScale, sds-physFadeIn;
+  animation-duration: ${num(T, 2)}s, ${num(T, 2)}s, ${num(T, 2)}s, 0.2s;
+  animation-timing-function: cubic-bezier(0.3, 0, 0.2, 1), ease-in-out, cubic-bezier(0.34, 1.56, 0.64, 1), ${fadeIn};
+  animation-timing-function: ${riseC}, ${swayC}, ${scaleC}, ${fadeIn};
+  animation-fill-mode: both, backwards, both, both;
+  animation-delay: calc(var(--i, 0) * 0.09s);
 }
 
-@keyframes sds-momentumTravel {
+@keyframes sds-bubbleRiseY {
   from {
-    translate: -1.5em 0;
+    translate: 0 var(--d);
   }
   to {
     translate: 0 0;
   }
 }
 
-@keyframes sds-momentumSkew {
+@keyframes sds-bubbleRiseSway {
   from {
-    transform: skewX(0deg);
+    transform: translateX(0);
   }
   to {
-    transform: skewX(-18deg);
+    transform: translateX(var(--w));
   }
 }
 
-@keyframes sds-momentumBlur {
+@keyframes sds-bubbleRiseScale {
   from {
-    filter: blur(0);
-  }
-  to {
-    filter: blur(6px);
-  }
-}`);
-}
-
-/* 107 · Spring Slam — heavy impact, ringing scale and a decaying shake */
-{
-  const s = springHz(2.4, 0.34);
-  const sp = lin(s.x, s.T, 0.003);
-  const shake = pendulum({ hz: 7, zeta: 0.2 });
-  const shk = lin((t) => Math.exp(-shake.a * t) * Math.sin(shake.wd * t), s.T, 0.005);
-  add(`
-/* 107 · Spring Slam ---------------------------------------- */
-/* Text slams down from a large scale on a stiff spring (2.4 Hz, ζ = 0.34): it
-   overshoots to ${num((1 - s.overshoot * 0.7) , 2)}× before ringing back to 1×. A 7 Hz shake decays alongside it.
-   <h1 class="sds-spring-slam">Slam</h1> */
-
-.sds-spring-slam {
-  display: inline-block;
-  animation-name: sds-slamScale, sds-slamDrop, sds-slamShake, sds-physFadeIn;
-  animation-duration: ${num(s.T, 2)}s, ${num(s.T, 2)}s, ${num(s.T, 2)}s, 0.08s;
-  animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1), cubic-bezier(0.34, 1.56, 0.64, 1), ease-out, ${fadeIn};
-  animation-timing-function: ${sp}, ${sp}, ${shk}, ${fadeIn};
-  animation-fill-mode: both, both, backwards, both;
-}
-
-@keyframes sds-slamScale {
-  from {
-    scale: 1.7;
+    scale: 0.35;
   }
   to {
     scale: 1;
   }
+}`);
 }
 
-@keyframes sds-slamDrop {
+/* 107 · Gravity Collapse — radial infall in an inverse-square field, energy released on arrival */
+{
+  // Radial fall from rest at r0 under GM/r²: r = r0·cos²η and t = t_fall·(η + sinη·cosη)/(π/2).
+  // The fall is slow at first and violent at the end (speed grows without bound as r → 0), unlike a
+  // spring or an ease. We normalise to progress p = 1 − r/r0 = sin²η, solve η(t) by bisection, and
+  // soften the singular final speed with a cap so the flash and shock stay finite.
+  const tFall = 0.95, T = tFall + 0.65;
+  const etaOf = (t) => {
+    const target = ((Math.min(t, tFall) / tFall) * Math.PI) / 2;
+    let lo = 0, hi = Math.PI / 2;
+    for (let i = 0; i < 60; i++) { const mid = (lo + hi) / 2; (mid + Math.sin(mid) * Math.cos(mid) < target) ? (lo = mid) : (hi = mid); }
+    return (lo + hi) / 2;
+  };
+  const fall = (t) => Math.sin(etaOf(t)) ** 2;
+  // arrival speed (finite cap) drives the flash and the shock; both decay after impact
+  const speed = (t) => { const h = 1e-4; return Math.max(0, (fall(Math.min(t + h, tFall)) - fall(Math.max(t - h, 0))) / (2 * h)); };
+  let vCap = 0;
+  for (let i = 0; i < 4000; i++) vCap = Math.max(vCap, Math.min(speed((i / 4000) * tFall * 0.985), 14));
+  const flash = (t) => (t <= tFall ? Math.min(speed(t), 14) ** 2 / vCap ** 2 * 0.35 : Math.exp(-(t - tFall) / 0.11));
+  const fMax = Math.max(...Array.from({ length: 2000 }, (_, i) => flash((i / 2000) * T)));
+  const sh = springHz(3.2, 0.3);
+  const shock = (t) => (t < tFall ? 0 : sh.x(t - tFall) - 1) * -1; // starts at 1 (compressed), rings to 0
+  const fallC = lin(fall, T, 0.003);
+  const flashC = lin((t) => flash(t) / fMax, T, 0.01);
+  const shockC = lin(shock, T, 0.006);
+  add(`
+/* 107 · Gravity Collapse ----------------------------------- */
+/* Each letter falls toward its place from a different direction through an inverse-square
+   field: r = r0·cos²η, t ∝ η + sinη·cosη. It starts slowly and accelerates violently, which no
+   spring or ease does. On arrival it releases its energy: a glow flash scaled by the impact
+   speed and a shock pulse on a damped spring (3.2 Hz, ζ = 0.30).
+   <h1 class="sds-gravity-collapse"><span class="sds-char" style="--i:0">G</span> ...</h1> */
+
+.sds-gravity-collapse .sds-char {
+  --dx: calc(sin(var(--i, 0) * 2.7) * 3.2em);
+  --dy: calc(cos(var(--i, 0) * 1.9) * 2.2em);
+  display: inline-block;
+  animation-name: sds-gravityCollapseFall, sds-gravityCollapseFlash, sds-gravityCollapseShock, sds-physFadeIn;
+  animation-duration: ${num(T, 2)}s, ${num(T, 2)}s, ${num(T, 2)}s, 0.2s;
+  animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45), ease-out, ease-out, ${fadeIn};
+  animation-timing-function: ${fallC}, ${flashC}, ${shockC}, ${fadeIn};
+  animation-fill-mode: both, backwards, backwards, both;
+  animation-delay: calc(var(--i, 0) * 0.04s);
+}
+
+@keyframes sds-gravityCollapseFall {
   from {
-    translate: 0 -0.5em;
+    translate: var(--dx) var(--dy);
   }
   to {
     translate: 0 0;
   }
 }
 
-@keyframes sds-slamShake {
+@keyframes sds-gravityCollapseFlash {
   from {
-    rotate: 0deg;
+    filter: drop-shadow(0 0 0 transparent);
   }
   to {
-    rotate: 6deg;
+    filter: drop-shadow(0 0 0.35em var(--sds-primary, #0015d1));
+  }
+}
+
+@keyframes sds-gravityCollapseShock {
+  from {
+    scale: 1;
+  }
+  to {
+    scale: 1.45;
   }
 }`);
 }
 
-/* 108 · Jelly Wobble — volume-preserving oscillation in two coupled modes */
+/* 108 · Wind Drift — drag-decelerated gust with decaying turbulence */
 {
-  const m1 = pendulum({ hz: 3.1, zeta: 0.16 });
-  const m2 = pendulum({ hz: 2.2, zeta: 0.2 });
-  const stretch = lin(m1.f, m1.T, 0.004);
-  const tilt = lin((t) => Math.exp(-m2.a * t) * Math.sin(m2.wd * t), m1.T, 0.005);
+  // Gust: a light body in moving air decelerates by drag, x(t) = 1 − e^(−t/τ) (normalised to arrive at T).
+  // Turbulence: vertical flutter and tilt are damped oscillations with different frequencies and decay times.
+  const tau = 0.45, T = 2.1;
+  const norm = 1 - Math.exp(-T / tau);
+  const gust = (t) => (1 - Math.exp(-t / tau)) / norm;
+  const bob = (t) => Math.exp(-t / 0.8) * Math.sin(TAU * 1.7 * t);
+  const tilt = (t) => Math.exp(-t / 0.7) * Math.sin(TAU * 2.4 * t + 0.8);
+  const gustC = lin(gust, T, 0.003);
+  const bobC = lin(bob, T, 0.005);
+  const tiltC = lin(tilt, T, 0.005);
   add(`
-/* 108 · Jelly Wobble --------------------------------------- */
-/* A jelly that has just been dropped: it starts flattened and oscillates in two
-   coupled modes, stretch/squash at 3.1 Hz and a sway at 2.2 Hz, each decaying
-   exponentially. Width and height trade off so its area stays near-constant
-   (1.38 × 0.70 ≈ 0.97).
-   <h1 class="sds-jelly-wobble">Jelly</h1> */
+/* 108 · Wind Drift ----------------------------------------- */
+/* Letters are blown in by a gust. A light body in moving air decelerates by drag,
+   x(t) = 1 − e^(−t/τ) with τ = ${tau}s, so it arrives fast and eases to rest with no
+   overshoot. Vertical flutter (1.7 Hz) and tilt (2.4 Hz) are damped oscillations that die
+   out at different rates, like turbulence behind a gust.
+   <h1 class="sds-wind-drift"><span class="sds-char" style="--i:0">W</span> ...</h1> */
 
-.sds-jelly-wobble {
+.sds-wind-drift .sds-char {
+  --x: calc(3.4em + 1.5em * sin(var(--i, 0) * 2.3));
   display: inline-block;
-  transform-origin: 50% 100%;
-  animation-name: sds-jellyScale, sds-jellyTilt, sds-physFadeIn;
-  animation-duration: ${num(m1.T, 2)}s, ${num(m1.T, 2)}s, 0.1s;
-  animation-timing-function: ease-out, ease-out, ${fadeIn};
-  animation-timing-function: ${stretch}, ${tilt}, ${fadeIn};
-  animation-fill-mode: backwards, backwards, both;
+  animation-name: sds-physSlideX, sds-windDriftBob, sds-windDriftTilt, sds-physFadeIn;
+  animation-duration: ${num(T, 2)}s, ${num(T, 2)}s, ${num(T, 2)}s, 0.25s;
+  animation-timing-function: cubic-bezier(0.1, 0.8, 0.2, 1), ease-in-out, ease-in-out, ${fadeIn};
+  animation-timing-function: ${gustC}, ${bobC}, ${tiltC}, ${fadeIn};
+  animation-fill-mode: both, backwards, backwards, both;
+  animation-delay: calc(var(--i, 0) * 0.05s);
 }
 
-@keyframes sds-jellyScale {
+@keyframes sds-windDriftBob {
   from {
-    scale: 1 1;
+    transform: translateY(0);
   }
   to {
-    scale: 1.38 0.7;
+    transform: translateY(0.6em);
   }
 }
 
-@keyframes sds-jellyTilt {
+@keyframes sds-windDriftTilt {
   from {
     rotate: 0deg;
   }
   to {
-    rotate: -7deg;
+    rotate: 30deg;
   }
 }`);
 }
 
-/* 109 · Liquid Fill — a glass filling with a sloshing surface */
+/* 109 · Liquid Slosh — a glass filling with a sloshing surface */
 {
   const T = 3.4, N = 28;
   const rise = (t) => 1 - (1 + 1.9 * t) * Math.exp(-1.9 * t); // critically damped fill, smooth start and stop
@@ -586,21 +666,21 @@ add(`
     frames.push(`  ${num((i / N) * 100, 1)}% {\n    clip-path: ${poly};\n  }`);
   }
   add(`
-/* 109 · Liquid Fill ---------------------------------------- */
+/* 109 · Liquid Slosh -------------------------------------- */
 /* Outlined text fills like a glass. The level rises critically damped (no
    overshoot) while the surface sloshes in its first two standing-wave modes
    (1.05 Hz and 2.1 Hz), each decaying, so the liquid settles flat.
-   <h1 class="sds-liquid-fill" data-text="Liquid">Liquid</h1>
+   <h1 class="sds-liquid-slosh" data-text="Liquid">Liquid</h1>
    data-text must repeat the text; the real text stays selectable. */
 
-.sds-liquid-fill {
+.sds-liquid-slosh {
   position: relative;
   display: inline-block;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1.5px currentColor;
 }
 
-.sds-liquid-fill::after {
+.sds-liquid-slosh::after {
   content: attr(data-text);
   position: absolute;
   left: 0;
@@ -727,7 +807,7 @@ ${frames.join("\n")}
   background: currentColor;
   transform-origin: left center;
   transform: scaleX(0);
-  animation: sds-swapStrike 0.3s var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) 0.15s both;
+  animation: sds-strikeThrough 0.3s var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) 0.15s both;
 }
 
 .sds-strike-swap > span.sds-swap-new {
@@ -737,15 +817,6 @@ ${frames.join("\n")}
   animation-timing-function: ${land}, ${fadeIn};
   animation-fill-mode: both;
   animation-delay: 0.95s;
-}
-
-@keyframes sds-swapStrike {
-  from {
-    transform: scaleX(0);
-  }
-  to {
-    transform: scaleX(1);
-  }
 }
 
 @keyframes sds-swapFall {

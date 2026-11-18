@@ -29,6 +29,9 @@ All 7 steps are machine-enforced. The build fails on each miss.
 - [ ] 5. Authored description added to `registry/meta/descriptions.json` (`displayName` + one sentence)
 - [ ] 6. `npm run build` run — registry, docs data, typed unions all regenerated (no hand-edits)
 - [ ] 7. Visual baselines created/updated: `npm run test:visual -- --update-snapshots` · 3 PNGs committed
+- [ ] 8. Not a repeat: `npm run verify:unique` and `npm run audit:motion -- --check` pass (nearest existing effect named below)
+
+**Nearest existing effect and why this one is different:**
 
 ---
 
@@ -38,6 +41,7 @@ All 7 steps are machine-enforced. The build fails on each miss.
 - [ ] `npm run verify:published` — R1 gate: 0 unapproved deviations vs 4.0.3 baseline
 - [ ] `npm run verify:reduced-motion` — 100% reduced-motion coverage maintained
 - [ ] `npm run lint:css` — no compositor violations
+- [ ] `npm run verify:unique` + `npm run audit:motion -- --check` — no duplicate or near-duplicate effects
 - [ ] `npx size-limit` — budgets respected (or see note below)
 
 **Size budget note (if exceeded):**

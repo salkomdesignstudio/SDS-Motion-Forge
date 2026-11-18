@@ -98,6 +98,8 @@ jobs:
       # HTML + Bootstrap tabs: each snippet loads standalone against the
       # npm-packed tarball; JS engine attach / animation-name asserted.
       - run: npm run verify:snippets
+      # no new effect may duplicate an existing one: measures the actual motion in Chrome
+      - run: npm run audit:motion -- --check
       # docs gallery / six-tab modal / bundle-builder acceptance
       - run: npm run test:docs
       # React/Angular rotating samples type-check in the real apps

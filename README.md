@@ -62,8 +62,8 @@ Measured, not estimated. Animate.css 4.1.1 was downloaded from npm on 2026-11-01
 | | SDS Motion Forge 5.1.0 | Animate.css 4.1.1 |
 |---|---|---|
 | Animations | 617 effects (637 `@keyframes`) | 97 `@keyframes` |
-| Full bundle | 259.3 KB min · **43.1 KB gzip** | 70.1 KB min · **5.2 KB gzip** |
-| Smaller imports | Per-category bundles, 5.8–12.9 KB gzip each | Individual source files in the package's `source/` folder |
+| Full bundle | 260.8 KB min · **43.7 KB gzip** | 70.1 KB min · **5.2 KB gzip** |
+| Smaller imports | Per-category bundles, 5.8–13.5 KB gzip each | Individual source files in the package's `source/` folder |
 | JavaScript required | None for the 617 CSS effects | None |
 | `prefers-reduced-motion` | Every animating selector neutralized; the build fails if one is missed | A reduced-motion media rule is included |
 | License | MIT | MIT |
@@ -186,14 +186,14 @@ import '@salkomdesignstudio/sds-motion-forge/categories/loaders';
 <!-- @sds-size-table:start -->
 | Bundle | Import | Minified | Gzip |
 |---|---|---|---|
-| text | `@salkomdesignstudio/sds-motion-forge/categories/text` | 63.1 KB | 12.9 KB |
+| text | `@salkomdesignstudio/sds-motion-forge/categories/text` | 64.7 KB | 13.5 KB |
 | buttons | `@salkomdesignstudio/sds-motion-forge/categories/buttons` | 49.1 KB | 8.6 KB |
 | inputs | `@salkomdesignstudio/sds-motion-forge/categories/inputs` | 47.0 KB | 8.4 KB |
 | cards | `@salkomdesignstudio/sds-motion-forge/categories/cards` | 39.6 KB | 7.5 KB |
 | loaders | `@salkomdesignstudio/sds-motion-forge/categories/loaders` | 49.1 KB | 8.1 KB |
 | scroll | `@salkomdesignstudio/sds-motion-forge/categories/scroll` | 33.6 KB | 5.8 KB |
 | core only | `@salkomdesignstudio/sds-motion-forge/categories/core` | 3.3 KB | 1.0 KB |
-| **everything** | `@salkomdesignstudio/sds-motion-forge` | **259.3 KB** | **43.0 KB** |
+| **everything** | `@salkomdesignstudio/sds-motion-forge` | **260.8 KB** | **43.7 KB** |
 <!-- @sds-size-table:end -->
 
 Core is intentionally **inlined** into every category bundle so each one works
@@ -566,10 +566,10 @@ which also verifies them against their closed-form solutions on every run.
 | `sds-chain-swing` | Damped pendulums (1.3 Hz, ζ = 0.12) released in sequence; a wave of swings travels along the word | letters in `.sds-char` |
 | `sds-toss-in` | Ballistic arcs (constant horizontal speed, *y* = *v*·*t* − ½·*g*·*t*²), landing bounces at *e* = 0.42 | letters in `.sds-char` |
 | `sds-band-snap` | A stretched rubber band released on a mass-spring (1.5 Hz, ζ = 0.30): snaps past home and rings down | letters in `.sds-char` |
-| `sds-momentum-slide` | Spring position; **skew and motion blur follow the spring's velocity** | none |
-| `sds-spring-slam` | Stiff spring (2.4 Hz, ζ = 0.34) with a decaying 7 Hz shake | none |
-| `sds-jelly-wobble` | Two coupled, area-preserving damped modes (stretch 3.1 Hz, sway 2.2 Hz) | none |
-| `sds-liquid-fill` | Critically damped level rise while the surface sloshes in its first two standing-wave modes | `data-text` |
+| `sds-bubble-rise` | Buoyancy against linear drag, *v* = *v*ₜ(1 − e^(−*k·t*)): accelerates to terminal speed, overshoots the surface on a damped spring, sways sideways | letters in `.sds-char` |
+| `sds-wind-drift` | A gust decelerated by drag, *x* = 1 − e^(−*t*/τ), plus decaying turbulence (flutter 1.7 Hz, tilt 2.4 Hz) | letters in `.sds-char` |
+| `sds-gravity-collapse` | Radial infall in an inverse-square field, *r* = *r*₀·cos²η; slow start, violent arrival, then a flash and a spring shock pulse | letters in `.sds-char` |
+| `sds-liquid-slosh` | Critically damped level rise while the surface sloshes in its first two standing-wave modes | `data-text` |
 | `sds-split-halves` | Two bodies collide at constant speed and rebound with restitution *e* = 0.8 | `data-text` |
 | `sds-strike-swap` | The struck word falls with *y* = ½·*g*·*t*² and spins; the new word lands on a spring | two child `<span>`s |
 | `sds-count-roll` | Odometer wheels on springs (1 Hz, ζ = 0.78) with blur proportional to speed | one `<span class="sds-roll" style="--d:N">` per digit |
@@ -582,7 +582,7 @@ which also verifies them against their closed-form solutions on every run.
 </h1>
 
 <!-- data-text must repeat the text; the real text stays selectable -->
-<h1 class="sds-liquid-fill" data-text="Liquid">Liquid</h1>
+<h1 class="sds-liquid-slosh" data-text="Liquid">Liquid</h1>
 
 <!-- a struck word is knocked off, the new one drops in -->
 <span class="sds-strike-swap">
@@ -595,7 +595,7 @@ which also verifies them against their closed-form solutions on every run.
 </span>
 ```
 
-These cost about 4.5 KB gzip in the text bundle (the equation-sampled easing
+These cost about 5 KB gzip in the text bundle (the equation-sampled easing
 curves are the bytes).
 
 ### Buttons — 100 classes
@@ -1224,10 +1224,10 @@ SDS-Motion-Forge/
 │
 ├── .github/
 │   └── workflows/
-│       ├── ci.yml                    # Tests on Node 18/20/22 × Ubuntu/macOS/Windows
+│       ├── ci.yml                    # Tests on Node 20/22 × Ubuntu/macOS/Windows
 │       └── publish.yml               # npm publish with OIDC provenance on release
 │
-├── index.d.ts                        # TypeScript declarations — all 376+ classes typed
+├── index.d.ts                        # TypeScript declarations — all 617 classes typed
 ├── verify-build.js                   # Pre-publish verification (8-stage gate)
 ├── postcss.config.js                 # PostCSS config (autoprefixer)
 ├── package.json
@@ -1237,8 +1237,8 @@ SDS-Motion-Forge/
 ### Build pipeline
 
 ```
-src/motion.css
-    → postcss (autoprefixer)
+src/motion.css  (@import entry → src/categories/*.css)
+    → postcss (import + autoprefixer)
     → dist/motion.css
     → cleancss
     → dist/motion.min.css
@@ -1302,6 +1302,35 @@ npm run validate
 
 # Preview what will be published to npm
 npm run pack:check
+
+# Physics text effects: regenerate from the equations, or just verify them
+npm run generate:physics
+npm run verify:physics
+
+# Duplicate guards: names, display names, keyframes (static) and real motion (browser)
+npm run verify:unique
+npm run audit:motion -- --check
+
+# Regenerate the static docs pages / IDE data / OG card
+npm run generate:static
+npm run generate:ide
+npm run generate:og
+```
+
+### New effects must be unique
+
+A new animation may not repeat an existing one. Two gates enforce it and run in
+`release:check` and CI:
+
+- `verify:unique` fails when a new effect shares a class name, a display name, a
+  keyframe body or a whole keyframe set with another effect.
+- `audit:motion` plays every effect in Chrome, samples 28 frames of translate,
+  scale, rotate, skew, opacity, blur, shadow, hue, clip, colour, text-shadow and
+  letter-spacing, and fails when a new effect's motion is closer to an existing
+  one than the library's own nearest-neighbour distance.
+
+```bash
+npm run audit:motion -- --vs=sds-my-effect:sds-existing-a,sds-existing-b
 ```
 
 ### Local preview of the demo page
@@ -1356,7 +1385,7 @@ Open an issue with the label **`animation-request`**. Include a description of t
 
 ### Adding a new animation
 
-All CSS animations live in `src/motion.css`. Follow these conventions:
+CSS animations live in `src/categories/<category>.css` (`src/motion.css` only `@import`s them). Follow these conventions:
 
 - **Naming:** `sds-[descriptive-name]` — lowercase, hyphenated, `sds-` prefix required
 - **Keyframe naming:** `sds-camelCaseName` matching the class (e.g., `.sds-velvet-drop` → `@keyframes sds-velvetDrop`)
