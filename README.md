@@ -59,7 +59,7 @@ Plus 7 cursor-reactive effects (need the optional 7.0 KB `motion-interactive.min
 
 Measured, not estimated. Animate.css 4.1.1 was downloaded from npm on 2026-11-01 and measured (`animate.min.css`).
 
-| | SDS Motion Forge 5.1.0 | Animate.css 4.1.1 |
+| | SDS Motion Forge 5.1.1 | Animate.css 4.1.1 |
 |---|---|---|
 | Animations | 617 effects (637 `@keyframes`) | 97 `@keyframes` |
 | Full bundle | 260.8 KB min · **43.7 KB gzip** | 70.1 KB min · **5.2 KB gzip** |

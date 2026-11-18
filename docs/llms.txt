@@ -6,7 +6,7 @@
 
 - Name: SDS Motion Forge
 - npm package: @salkomdesignstudio/sds-motion-forge
-- Version: 5.1.0
+- Version: 5.1.1
 - License: MIT
 - Effects: 617 CSS-only effects across 6 categories, 7 interactive effects (need the optional cursor engine), 18 modifier classes
 - Maintainer: Salkom Design Studio (https://salkomdesignstudio.com)

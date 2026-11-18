@@ -12,6 +12,10 @@ The rest of this guide explains the new features available to you in v5 and how 
 
 ---
 
+## v5.1.0 → v5.1.1
+
+**Nothing to change.** Documentation and metadata only.
+
 ## v5.0.x → v5.1.0
 
 **Nothing to change.** 5.1.0 only adds 13 new text effects (the physics effects). No existing class, keyframe or
