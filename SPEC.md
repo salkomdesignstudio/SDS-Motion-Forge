@@ -226,3 +226,41 @@ strip or fail to load the `:root` block (e.g. aggressive CSS extraction).
 - New motion families are proposed name-first (one-line motion description),
   approved, then implemented in batches with visual baselines (Phase 6
   protocol).
+- **No repeats.** A new effect may not repeat an existing one. It is checked
+  twice: `npm run verify:unique` rejects a shared class name, display name,
+  keyframe body or keyframe set; `npm run audit:motion -- --check` plays each
+  effect in Chrome, samples 28 frames across translate / scale / rotate / skew /
+  opacity / blur / shadow / hue / clip / colour / text-shadow / letter-spacing,
+  and rejects an effect whose motion is closer to an existing one than the
+  library's own nearest-neighbour distance. Both run in `release:check` and CI.
+  Pre-existing duplicate groups are public API (R1) and are reported, not removed.
+
+---
+
+## 9. Physics-Driven Effects
+
+Effects introduced in 5.1.0 (`sds-spring-drop`, `sds-orbit-decay`,
+`sds-chain-swing`, `sds-toss-in`, `sds-band-snap`, `sds-bubble-rise`,
+`sds-wind-drift`, `sds-gravity-collapse`, `sds-liquid-slosh`,
+`sds-split-halves`, `sds-strike-swap`, `sds-count-roll`,
+`sds-extrude-rise`) are derived from stated physical laws rather than
+hand-tuned easing:
+
+- The generator `scripts/generate-physics.js` integrates or evaluates the
+  closed-form system (mass-spring-damper, gravity with restitution, damped
+  pendulum, conserved angular momentum, ballistic arc, elastic collision,
+  buoyancy with drag, drag-limited gust, inverse-square infall, standing-wave
+  slosh) and samples it into a CSS `linear()` easing function simplified with
+  Ramer–Douglas–Peucker.
+- Keyframes are plain `from → to` on a single property; the physics lives in the
+  easing, so each independent layer (position, squash, flash, shake) has its own
+  curve and duration.
+- `verify()` in the generator checks each law against its analytic solution
+  (overshoot, restitution apex, orbit angle, drag law, monotonic infall) and
+  fails the build on drift. `npm run verify:physics` runs it plus a freshness check.
+- Only compositor properties are animated (§5). A cubic-bezier fallback is
+  declared before every `linear()` for browsers without support.
+- Reduced motion (§4) applies unchanged.
+- Markup contracts: letter effects wrap each character in `.sds-char` with
+  `--i`; `data-text` effects repeat their text in the attribute; `sds-strike-swap`
+  and `sds-count-roll` have documented child structures (see API.md).

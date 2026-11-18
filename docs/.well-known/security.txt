@@ -1,0 +1,6 @@
+Contact: https://github.com/salkomdesignstudio/SDS-Motion-Forge/security/advisories/new
+Contact: mailto:hello@salkomdesignstudio.com
+Expires: 2027-11-18T00:00:00.000Z
+Preferred-Languages: en
+Policy: https://github.com/salkomdesignstudio/SDS-Motion-Forge/blob/main/SECURITY.md
+Canonical: https://sds-motion-forge.netlify.app/.well-known/security.txt

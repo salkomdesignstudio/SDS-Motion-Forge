@@ -2,7 +2,7 @@
   "$schema": "./motion.registry.schema.json",
   "name": "@salkomdesignstudio/sds-motion-forge",
   "generatedFrom": "src/motion.css (postcss-import inlined)",
-  "version": "5.0.0",
+  "version": "5.1.0",
   "tokens": {
     "duration": [
       "instant",
@@ -136,6 +136,39 @@
       "deprecated": false,
       "aliasOf": null,
       "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-band-snap",
+      "displayName": "Band Snap",
+      "category": "text",
+      "kind": "effect",
+      "description": "A stretched rubber-band word snaps back on a mass-spring, overshoots and rings down",
+      "selectors": [
+        ".sds-band-snap .sds-char"
+      ],
+      "keyframes": [
+        "sds-bandSnap",
+        "sds-physFadeIn"
+      ],
+      "tokensUsed": [],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "opacity",
+        "translate"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": true,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "load",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "5.1.0"
     },
     {
       "name": "sds-blur-focus",
@@ -3822,6 +3855,43 @@
       "sinceVersion": "4.0.3"
     },
     {
+      "name": "sds-bubble-rise",
+      "displayName": "Bubble Rise",
+      "category": "text",
+      "kind": "effect",
+      "description": "Letters rise like bubbles: buoyancy against drag, a surface overshoot and a growing-then-decaying sway",
+      "selectors": [
+        ".sds-bubble-rise .sds-char"
+      ],
+      "keyframes": [
+        "sds-bubbleRiseY",
+        "sds-bubbleRiseSway",
+        "sds-bubbleRiseScale",
+        "sds-physFadeIn"
+      ],
+      "tokensUsed": [],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "opacity",
+        "scale",
+        "transform",
+        "translate"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": true,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "load",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "5.1.0"
+    },
+    {
       "name": "sds-card-accordion-in",
       "displayName": "Accordion In",
       "category": "cards",
@@ -7213,6 +7283,39 @@
       "sinceVersion": "4.0.3"
     },
     {
+      "name": "sds-chain-swing",
+      "displayName": "Chain Swing",
+      "category": "text",
+      "kind": "effect",
+      "description": "Letters swing as damped pendulums, released in sequence so a wave travels along the word",
+      "selectors": [
+        ".sds-chain-swing .sds-char"
+      ],
+      "keyframes": [
+        "sds-chainSwing",
+        "sds-physFadeIn"
+      ],
+      "tokensUsed": [],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "opacity",
+        "rotate"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": true,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "load",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "5.1.0"
+    },
+    {
       "name": "sds-char-orbit",
       "displayName": "Char Orbit",
       "category": "text",
@@ -7395,6 +7498,43 @@
       "deprecated": false,
       "aliasOf": null,
       "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-count-roll",
+      "displayName": "Count Roll",
+      "category": "text",
+      "kind": "effect",
+      "description": "Odometer digits roll on springs, overshoot slightly and blur with speed",
+      "selectors": [
+        ".sds-count-roll",
+        ".sds-count-roll > span",
+        ".sds-count-roll > span::before"
+      ],
+      "keyframes": [
+        "sds-countRoll",
+        "sds-countRollBlur"
+      ],
+      "tokensUsed": [],
+      "customProperties": [
+        "--d"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "filter",
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": true,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "load",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "5.1.0"
     },
     {
       "name": "sds-data-stream",
@@ -7964,6 +8104,41 @@
       "sinceVersion": "4.0.3"
     },
     {
+      "name": "sds-extrude-rise",
+      "displayName": "Extrude Rise",
+      "category": "text",
+      "kind": "effect",
+      "description": "Text tilts up on a spring while a 3D extrusion grows with the same overshoot",
+      "selectors": [
+        ".sds-extrude-rise"
+      ],
+      "keyframes": [
+        "sds-extrudeTilt",
+        "sds-extrudeDepth",
+        "sds-physFadeIn"
+      ],
+      "tokensUsed": [],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "filter",
+        "opacity",
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "load",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "5.1.0"
+    },
+    {
       "name": "sds-fast",
       "displayName": "Fast",
       "category": "modifiers",
@@ -8531,6 +8706,43 @@
       "deprecated": false,
       "aliasOf": null,
       "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-gravity-collapse",
+      "displayName": "Gravity Collapse",
+      "category": "text",
+      "kind": "effect",
+      "description": "Letters fall in from every direction through an inverse-square field, then flash and ring on arrival",
+      "selectors": [
+        ".sds-gravity-collapse .sds-char"
+      ],
+      "keyframes": [
+        "sds-gravityCollapseFall",
+        "sds-gravityCollapseFlash",
+        "sds-gravityCollapseShock",
+        "sds-physFadeIn"
+      ],
+      "tokensUsed": [],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "filter",
+        "opacity",
+        "scale",
+        "translate"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": true,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "load",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "5.1.0"
     },
     {
       "name": "sds-gravity-drop",
@@ -12616,6 +12828,38 @@
       "sinceVersion": "4.0.3"
     },
     {
+      "name": "sds-liquid-slosh",
+      "displayName": "Liquid Slosh",
+      "category": "text",
+      "kind": "effect",
+      "description": "Outlined text fills like a glass, with the liquid surface sloshing as it settles",
+      "selectors": [
+        ".sds-liquid-slosh",
+        ".sds-liquid-slosh::after"
+      ],
+      "keyframes": [
+        "sds-liquidSlosh"
+      ],
+      "tokensUsed": [],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "clip-path"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "load",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "5.1.0"
+    },
+    {
       "name": "sds-loader-arc",
       "displayName": "Arc",
       "category": "loaders",
@@ -16520,6 +16764,41 @@
       "deprecated": false,
       "aliasOf": null,
       "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-orbit-decay",
+      "displayName": "Orbit Decay",
+      "category": "text",
+      "kind": "effect",
+      "description": "Letters spiral inward under drag with conserved angular momentum, spinning faster as they close in",
+      "selectors": [
+        ".sds-orbit-decay .sds-char"
+      ],
+      "keyframes": [
+        "sds-orbitDecayX",
+        "sds-orbitDecayY",
+        "sds-physFadeIn"
+      ],
+      "tokensUsed": [],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "opacity",
+        "transform",
+        "translate"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": true,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "load",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "5.1.0"
     },
     {
       "name": "sds-oscillate",
@@ -21064,6 +21343,43 @@
       "sinceVersion": "4.0.3"
     },
     {
+      "name": "sds-split-halves",
+      "displayName": "Split Halves",
+      "category": "text",
+      "kind": "effect",
+      "description": "Two halves collide at speed, rebound with restitution and lock together",
+      "selectors": [
+        ".sds-split-halves",
+        ".sds-split-halves::before, .sds-split-halves::after",
+        ".sds-split-halves::before",
+        ".sds-split-halves::after"
+      ],
+      "keyframes": [
+        "sds-splitHalvesA",
+        "sds-physFadeIn",
+        "sds-splitHalvesB"
+      ],
+      "tokensUsed": [],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "opacity",
+        "translate"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "load",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "5.1.0"
+    },
+    {
       "name": "sds-split-reveal",
       "displayName": "Split Reveal",
       "category": "text",
@@ -21129,6 +21445,41 @@
       "deprecated": false,
       "aliasOf": null,
       "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-spring-drop",
+      "displayName": "Spring Drop",
+      "category": "text",
+      "kind": "effect",
+      "description": "Letters fall under gravity and bounce off a floor, each landing squashing with its impact speed",
+      "selectors": [
+        ".sds-spring-drop .sds-char"
+      ],
+      "keyframes": [
+        "sds-springDropFall",
+        "sds-springDropSquash",
+        "sds-physFadeIn"
+      ],
+      "tokensUsed": [],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "opacity",
+        "scale",
+        "translate"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": true,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "load",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "5.1.0"
     },
     {
       "name": "sds-spring-kerning",
@@ -21307,6 +21658,52 @@
       "sinceVersion": "4.0.3"
     },
     {
+      "name": "sds-strike-swap",
+      "displayName": "Strike Swap",
+      "category": "text",
+      "kind": "effect",
+      "description": "A word is struck out and knocked off to fall under gravity while its replacement drops in on a spring",
+      "selectors": [
+        ".sds-strike-swap",
+        ".sds-strike-swap > span",
+        ".sds-strike-swap > span.sds-swap-old",
+        ".sds-strike-swap > span.sds-swap-old::after",
+        ".sds-strike-swap > span.sds-swap-new"
+      ],
+      "keyframes": [
+        "sds-swapFall",
+        "sds-swapDrift",
+        "sds-swapSpin",
+        "sds-physFadeOut",
+        "sds-strikeThrough",
+        "sds-swapLand",
+        "sds-physFadeIn"
+      ],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "opacity",
+        "rotate",
+        "transform",
+        "translate"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": true,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "load",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "5.1.0"
+    },
+    {
       "name": "sds-strike-through",
       "displayName": "Strike Through",
       "category": "text",
@@ -21409,6 +21806,43 @@
       "deprecated": false,
       "aliasOf": null,
       "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-toss-in",
+      "displayName": "Toss In",
+      "category": "text",
+      "kind": "effect",
+      "description": "Letters are thrown in along ballistic arcs, land, bounce and settle",
+      "selectors": [
+        ".sds-toss-in .sds-char"
+      ],
+      "keyframes": [
+        "sds-physSlideX",
+        "sds-tossInY",
+        "sds-tossInSquash",
+        "sds-physFadeIn"
+      ],
+      "tokensUsed": [],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "opacity",
+        "scale",
+        "transform",
+        "translate"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": true,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "load",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "5.1.0"
     },
     {
       "name": "sds-tracking-contract",
@@ -21844,6 +22278,43 @@
       "deprecated": false,
       "aliasOf": null,
       "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-wind-drift",
+      "displayName": "Wind Drift",
+      "category": "text",
+      "kind": "effect",
+      "description": "Letters are blown in by a gust: drag eases them to rest while damped flutter and tilt die out",
+      "selectors": [
+        ".sds-wind-drift .sds-char"
+      ],
+      "keyframes": [
+        "sds-physSlideX",
+        "sds-windDriftBob",
+        "sds-windDriftTilt",
+        "sds-physFadeIn"
+      ],
+      "tokensUsed": [],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "opacity",
+        "rotate",
+        "transform",
+        "translate"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": true,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "load",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "5.1.0"
     },
     {
       "name": "sds-wipe-left",

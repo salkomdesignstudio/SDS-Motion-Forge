@@ -12,6 +12,13 @@ The rest of this guide explains the new features available to you in v5 and how 
 
 ---
 
+## v5.0.x → v5.1.0
+
+**Nothing to change.** 5.1.0 only adds 13 new text effects (the physics effects). No existing class, keyframe or
+computed value changes — machine-checked by `npm run verify:published` and a rule-by-rule diff of the built CSS.
+
+---
+
 ## v4.0.x → v5.0.0
 
 ### What you do not need to change

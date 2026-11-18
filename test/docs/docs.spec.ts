@@ -7,20 +7,26 @@ import { test, expect } from "@playwright/test";
 test.describe("docs site", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("/docs/index.html", { waitUntil: "domcontentloaded" });
+    // the gallery is built when it approaches the viewport (it sits far below the fold)
+    await page.locator("#gallery").scrollIntoViewIfNeeded();
   });
 
   test("gallery renders registry-driven cards with replay buttons", async ({ page }) => {
     const cards = page.locator("#galGrid .card");
     await expect(cards.first()).toBeVisible();
-    const count = await cards.count();
-    expect(count).toBeGreaterThan(50); // text category alone has 100+
+    // the grid is built in chunks: wait for EVERY text effect in the registry, not just the first chunk
+    const expected = await page.evaluate(() => (window as any).SDS_DOCS.animations.text.length);
+    expect(expected).toBeGreaterThan(100); // text category alone has 100+
+    await expect(cards).toHaveCount(expected);
     await expect(cards.first().locator(".card-replay")).toHaveCount(1);
     // preview markup comes from the registry template
     const markupOk = await page.evaluate(() => {
       const w = window as any;
       const first = document.querySelector("#galGrid .card") as HTMLElement;
       const cls = first.dataset.cls!;
-      return first.querySelector(".card-stage")!.innerHTML.includes(w.SDS_DOCS.markup[cls].split("\n")[0].slice(0, 30));
+      // the in-view trigger toggles `animation` inline and can leave an empty style="" behind; it is not part of the template
+      const rendered = first.querySelector(".card-stage")!.innerHTML.replace(/ style=""/g, "");
+      return rendered.includes(w.SDS_DOCS.markup[cls].split("\n")[0].slice(0, 30));
     });
     expect(markupOk).toBe(true);
   });
@@ -57,6 +63,15 @@ test.describe("docs site", () => {
     await page.fill("#search", "velvet");
     await expect(page.locator("#galGrid .card")).toHaveCount(1);
     await expect(page.locator("#galGrid .card").first()).toHaveAttribute("data-cls", "sds-velvet-drop");
+  });
+
+  test("a search-filtered card opens its own effect in the modal", async ({ page }) => {
+    // regression: data-i was the position in the FILTERED list while openModal()
+    // indexes the full category list, so filtering opened the wrong effect
+    await page.fill("#search", "velvet");
+    await expect(page.locator("#galGrid .card")).toHaveCount(1);
+    await page.locator("#galGrid .card").first().click();
+    await expect(page.locator("#modalClsText")).toHaveText(".sds-velvet-drop");
   });
 
   test("reduced-motion preview toggle simulates the fallback", async ({ page }) => {

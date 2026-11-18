@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SDS Motion Forge — Documentation</title>
+    <title>SDS Motion Forge Docs — Install, Usage, Frameworks</title>
     <meta
       name="description"
-      content="Complete developer documentation for SDS Motion Forge. Installation, animation reference, scroll gate, interactive engine, TypeScript, modifiers, theming, and contributing guide."
+      content="Install SDS Motion Forge and use every animation: CDN and npm setup, framework guides, scroll and interactive engines, TypeScript, theming."
     />
     <meta name="author" content="Salkom Design Studio" />
     <meta name="robots" content="index, follow" />
@@ -16,6 +16,7 @@
       href="https://sds-motion-forge.netlify.app/docs.html"
     />
     <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <link rel="apple-touch-icon" href="favicon.png" />
 
     <!-- Open Graph -->
@@ -23,11 +24,11 @@
     <meta property="og:site_name" content="SDS Motion Forge" />
     <meta
       property="og:title"
-      content="SDS Motion Forge — Documentation"
+      content="SDS Motion Forge Docs — Install, Usage, Frameworks"
     />
     <meta
       property="og:description"
-      content="Complete developer documentation for SDS Motion Forge. Installation, animation reference, scroll gate, interactive engine, TypeScript, modifiers, theming, and contributing guide."
+      content="Install SDS Motion Forge and use every animation: CDN and npm setup, framework guides, scroll and interactive engines, TypeScript, theming."
     />
     <meta
       property="og:url"
@@ -48,11 +49,11 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="SDS Motion Forge — Documentation"
+      content="SDS Motion Forge Docs — Install, Usage, Frameworks"
     />
     <meta
       name="twitter:description"
-      content="Complete developer documentation for SDS Motion Forge. Installation, animation reference, scroll gate, interactive engine, TypeScript, modifiers, theming, and contributing guide."
+      content="Install SDS Motion Forge and use every animation: CDN and npm setup, framework guides, scroll and interactive engines, TypeScript, theming."
     />
     <meta
       name="twitter:image"
@@ -696,7 +697,7 @@
           "@type": "TechArticle",
           "@id": "https://sds-motion-forge.netlify.app/docs.html#article",
           "headline": "SDS Motion Forge — Documentation",
-          "description": "Complete developer documentation for SDS Motion Forge. Installation, animation reference, scroll gate, interactive engine, TypeScript, modifiers, theming, and contributing guide.",
+          "description": "Install SDS Motion Forge and use every animation: CDN and npm setup, framework guides, scroll and interactive engines, TypeScript, theming.",
           "url": "https://sds-motion-forge.netlify.app/docs.html",
           "publisher": {
             "@type": "Organization",
@@ -747,7 +748,7 @@
         <img src="images/logo.png" alt="Salkom Design Studio — SDS Motion Forge" width="800" height="800" />
         <span class="logo-text"><span class="logo-sans">SDS-</span><span class="logo-serif">Motion-Forge</span></span>
       </a>
-      <span class="nav-badge">v5.0.0</span>
+      <span class="nav-badge">v5.1.0</span>
       <div class="nav-sp"></div>
       <nav class="nav-links">
         <a href="index.html">
@@ -781,7 +782,7 @@
         </div>
         <div class="sb-group">
           <span class="sb-label">Animation Reference</span>
-          <a href="#text" class="sb-link">Text <span class="sb-count">104</span></a>
+          <a href="#text" class="sb-link">Text <span class="sb-count">117</span></a>
           <a href="#buttons" class="sb-link">Buttons <span class="sb-count">100</span></a>
           <a href="#inputs" class="sb-link">Inputs <span class="sb-count">100</span></a>
           <a href="#cards" class="sb-link">Cards <span class="sb-count">100</span></a>
@@ -826,7 +827,7 @@
               <span class="codeblock-lang">HTML — &lt;head&gt;</span>
               <button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button>
             </div>
-            <pre><span class="cm">&lt;!-- ① ALWAYS REQUIRED — core CSS (600+ animations, ~38 KB gzip) --&gt;</span>
+            <pre><span class="cm">&lt;!-- ① ALWAYS REQUIRED — core CSS (600+ animations, ~43 KB gzip) --&gt;</span>
 <span class="ct">&lt;link</span> <span class="ck">rel</span>=<span class="cs">"stylesheet"</span>
       <span class="ck">href</span>=<span class="cs">"https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css"</span><span class="ct"> /&gt;</span></pre>
           </div>
@@ -873,7 +874,7 @@
           <table class="doc-table">
             <thead><tr><th>File</th><th>Size (gzip)</th><th>When you need it</th></tr></thead>
             <tbody>
-              <tr><td><code>dist/motion.min.css</code></td><td>~38 KB gzip</td><td><strong>Always</strong> — core library, 600+ animations</td></tr>
+              <tr><td><code>dist/motion.min.css</code></td><td>~43 KB gzip</td><td><strong>Always</strong> — core library, 600+ animations</td></tr>
               <tr><td><code>dist/sds-scroll.min.js</code></td><td>~0.6 KB</td><td>When using <code>data-sds</code> scroll-gated animations</td></tr>
               <tr><td><code>dist/motion-interactive.min.js</code></td><td>~2.4 KB</td><td>When using cursor-reactive animations (word-morph, magnetic-pull, shockwave…)</td></tr>
               <tr><td><code>src/motion.css</code></td><td>~366 KB raw</td><td>Custom PostCSS builds only</td></tr>
@@ -933,7 +934,7 @@
 
         <!-- ═══════════════ QUICK START ═══════════════ -->
         <section class="doc-sec" id="quickstart">
-          <h1 class="doc-sec-title">Quick Start</h1>
+          <h2 class="doc-sec-title">Quick Start</h2>
           <p class="doc-sec-sub">
             Copy this complete template into any HTML file — it includes the CSS and both optional JS engines.
             Delete the script tags you don't need.
@@ -947,7 +948,7 @@
             <pre><span class="ct">&lt;!DOCTYPE html&gt;</span>
 <span class="ct">&lt;html</span> <span class="ck">lang</span>=<span class="cs">"en"</span><span class="ct">&gt;</span>
 <span class="ct">&lt;head&gt;</span>
-  <span class="cm">&lt;!-- ① REQUIRED — core CSS (600+ animations, ~38 KB gzip) --&gt;</span>
+  <span class="cm">&lt;!-- ① REQUIRED — core CSS (600+ animations, ~43 KB gzip) --&gt;</span>
   <span class="ct">&lt;link</span> <span class="ck">rel</span>=<span class="cs">"stylesheet"</span>
         <span class="ck">href</span>=<span class="cs">"https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css"</span><span class="ct"> /&gt;</span>
 <span class="ct">&lt;/head&gt;</span>
@@ -973,7 +974,7 @@
 <span class="ct">&lt;/html&gt;</span></pre>
           </div>
 
-          <h2 class="doc-h3">npm import (JS / TS projects)</h2>
+          <h3 class="doc-h3">npm import (JS / TS projects)</h3>
           <div class="codeblock">
             <div class="codeblock-head">
               <span class="codeblock-lang">JS / TS — app entry file</span>
@@ -999,7 +1000,7 @@
 
         <!-- ═══════════════ FRAMEWORK INTEGRATION ═══════════════ -->
         <section class="doc-sec" id="frameworks">
-          <h1 class="doc-sec-title">Framework Integration</h1>
+          <h2 class="doc-sec-title">Framework Integration</h2>
           <p class="doc-sec-sub">Import the CSS once in your entry file. No component, no wrapper, no setup beyond that.</p>
 
           <div class="fw-tabs" id="fwTabs">
@@ -1078,7 +1079,7 @@
 
         <!-- ═══════════════ TEXT ═══════════════ -->
         <section class="doc-sec" id="text">
-          <h1 class="doc-sec-title">Text Animations <span class="nav-badge" style="font-size:13px;vertical-align:middle">104</span></h1>
+          <h2 class="doc-sec-title">Text Animations <span class="nav-badge" style="font-size:13px;vertical-align:middle">117</span></h2>
           <p class="doc-sec-sub">Apply to any element containing text. Animations are CSS <code>@keyframes</code> — they fire once on load unless a loop modifier is added.</p>
 
           <div class="codeblock">
@@ -1089,10 +1090,10 @@
 <span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-refract</span> sds-loop</span>"</span><span class="ct">&gt;</span>RGB split loop<span class="ct">&lt;/span&gt;</span></pre>
           </div>
 
-          <h2 class="doc-h3">All 104 text animation classes</h2>
+          <h3 class="doc-h3">All 117 text animation classes</h3>
           <div class="cls-grid" id="textClassGrid"></div>
 
-          <h2 class="doc-h3">Physics per-character animations</h2>
+          <h3 class="doc-h3">Physics per-character animations</h3>
           <p class="doc-p">These 9 classes animate each character individually using the <code>--i</code> CSS variable as a stagger index. Each character must be wrapped in a <code>&lt;span class="sds-char" style="--i:N"&gt;</code>.</p>
           <div class="doc-note">
             <strong>Auto-split:</strong> Load <code>motion-interactive.min.js</code> once and these classes will split text automatically — no manual span markup needed.
@@ -1121,7 +1122,7 @@
 
         <!-- ═══════════════ BUTTONS ═══════════════ -->
         <section class="doc-sec" id="buttons">
-          <h1 class="doc-sec-title">Button Animations <span class="nav-badge" style="font-size:13px;vertical-align:middle">100</span></h1>
+          <h2 class="doc-sec-title">Button Animations <span class="nav-badge" style="font-size:13px;vertical-align:middle">100</span></h2>
           <p class="doc-sec-sub">Apply directly to <code>&lt;button&gt;</code> or <code>&lt;a&gt;</code> elements. Effects are ambient — no hover or click required.</p>
 
           <div class="codeblock">
@@ -1131,13 +1132,13 @@
 <span class="ct">&lt;button</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-btn-hologram</span>"</span><span class="ct">&gt;</span>Hologram flicker<span class="ct">&lt;/button&gt;</span></pre>
           </div>
 
-          <h2 class="doc-h3">All 100 button classes</h2>
+          <h3 class="doc-h3">All 100 button classes</h3>
           <div class="cls-grid" id="btnClassGrid"></div>
         </section>
 
         <!-- ═══════════════ INPUTS ═══════════════ -->
         <section class="doc-sec" id="inputs">
-          <h1 class="doc-sec-title">Input Animations <span class="nav-badge" style="font-size:13px;vertical-align:middle">100</span></h1>
+          <h2 class="doc-sec-title">Input Animations <span class="nav-badge" style="font-size:13px;vertical-align:middle">100</span></h2>
           <p class="doc-sec-sub">State-based effects for <code>&lt;input&gt;</code> and <code>&lt;textarea&gt;</code> elements. Some trigger on <code>:focus</code>, others run continuously as ambient loops.</p>
 
           <div class="codeblock">
@@ -1157,13 +1158,13 @@
 <span class="ct">&lt;/div&gt;</span></pre>
           </div>
 
-          <h2 class="doc-h3">All 100 input classes</h2>
+          <h3 class="doc-h3">All 100 input classes</h3>
           <div class="cls-grid" id="inputClassGrid"></div>
         </section>
 
         <!-- ═══════════════ CARDS ═══════════════ -->
         <section class="doc-sec" id="cards">
-          <h1 class="doc-sec-title">Card Animations <span class="nav-badge" style="font-size:13px;vertical-align:middle">100</span></h1>
+          <h2 class="doc-sec-title">Card Animations <span class="nav-badge" style="font-size:13px;vertical-align:middle">100</span></h2>
           <p class="doc-sec-sub">Entry and ambient effects for card and container elements.</p>
 
           <div class="codeblock">
@@ -1185,13 +1186,13 @@
 <span class="cm">     sds-card-checker, sds-card-fan-spread, sds-card-layers, sds-card-reveal-stack --&gt;</span></pre>
           </div>
 
-          <h2 class="doc-h3">All 100 card classes</h2>
+          <h3 class="doc-h3">All 100 card classes</h3>
           <div class="cls-grid" id="cardClassGrid"></div>
         </section>
 
         <!-- ═══════════════ LOADERS ═══════════════ -->
         <section class="doc-sec" id="loaders">
-          <h1 class="doc-sec-title">Loader Animations <span class="nav-badge" style="font-size:13px;vertical-align:middle">100</span></h1>
+          <h2 class="doc-sec-title">Loader Animations <span class="nav-badge" style="font-size:13px;vertical-align:middle">100</span></h2>
           <p class="doc-sec-sub">Add a class to an empty <code>&lt;span&gt;</code>. The animation is built entirely with CSS pseudo-elements — no child elements needed for most loaders.</p>
 
           <div class="codeblock">
@@ -1223,16 +1224,16 @@
 <span class="cm">&lt;!-- sds-loader-cascade and sds-loader-signal: variable children --&gt;</span></pre>
           </div>
 
-          <h2 class="doc-h3">All 100 loader classes</h2>
+          <h3 class="doc-h3">All 100 loader classes</h3>
           <div class="cls-grid" id="loaderClassGrid"></div>
         </section>
 
         <!-- ═══════════════ SCROLL ═══════════════ -->
         <section class="doc-sec" id="scroll">
-          <h1 class="doc-sec-title">Scroll Animations <span class="nav-badge" style="font-size:13px;vertical-align:middle">100</span></h1>
+          <h2 class="doc-sec-title">Scroll Animations <span class="nav-badge" style="font-size:13px;vertical-align:middle">100</span></h2>
           <p class="doc-sec-sub">Scroll animation classes fire immediately when applied. Gate them on viewport entry using one of three methods.</p>
 
-          <h2 class="doc-h3">Method 1 — JS scroll engine (recommended, works everywhere)</h2>
+          <h3 class="doc-h3">Method 1 — JS scroll engine (recommended, works everywhere)</h3>
           <p class="doc-p">Load <code>sds-scroll.min.js</code> once. Add <code>data-sds</code> to any animated element. The engine adds <code>sds-play</code> on viewport entry.</p>
           <div class="codeblock">
             <div class="codeblock-head"><span class="codeblock-lang">HTML</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
@@ -1257,7 +1258,7 @@
             </tbody>
           </table>
 
-          <h2 class="doc-h3">Method 2 — Inline IntersectionObserver (paste-once, zero dependencies)</h2>
+          <h3 class="doc-h3">Method 2 — Inline IntersectionObserver (paste-once, zero dependencies)</h3>
           <div class="codeblock">
             <div class="codeblock-head"><span class="codeblock-lang">HTML</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
             <pre><span class="ct">&lt;div</span> <span class="ck">data-sds-scroll</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-scroll-rise</span>"</span><span class="ct">&gt;</span>Content<span class="ct">&lt;/div&gt;</span>
@@ -1278,7 +1279,7 @@
 <span class="ct">&lt;/script&gt;</span></pre>
           </div>
 
-          <h2 class="doc-h3">Method 3 — CSS scroll-driven (Chrome / Edge 115+, zero JS)</h2>
+          <h3 class="doc-h3">Method 3 — CSS scroll-driven (Chrome / Edge 115+, zero JS)</h3>
           <div class="codeblock">
             <div class="codeblock-head"><span class="codeblock-lang">HTML</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
             <pre><span class="ct">&lt;div</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-scroll-auto</span> <span class="ccl">sds-scroll-rise</span>"</span><span class="ct">&gt;</span>Zero JS, animates via CSS scroll-driven API<span class="ct">&lt;/div&gt;</span></pre>
@@ -1287,7 +1288,7 @@
             <strong>Browser support:</strong> Chrome / Edge 115+ only. Other browsers see the element in its final visible state — graceful degradation, no JS error.
           </div>
 
-          <h2 class="doc-h3">Stagger scroll animations (need children)</h2>
+          <h3 class="doc-h3">Stagger scroll animations (need children)</h3>
           <div class="codeblock">
             <div class="codeblock-head"><span class="codeblock-lang">HTML</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
             <pre><span class="ct">&lt;div</span> <span class="ck">data-sds</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-scroll-stagger-pop</span>"</span><span class="ct">&gt;</span>
@@ -1298,13 +1299,13 @@
 <span class="cm">&lt;!-- also: sds-scroll-stagger-grid, sds-scroll-cascade --&gt;</span></pre>
           </div>
 
-          <h2 class="doc-h3">All 100 scroll classes</h2>
+          <h3 class="doc-h3">All 100 scroll classes</h3>
           <div class="cls-grid" id="scrollClassGrid"></div>
         </section>
 
         <!-- ═══════════════ INTERACTIVE ═══════════════ -->
         <section class="doc-sec" id="interactive">
-          <h1 class="doc-sec-title">Interactive Animations</h1>
+          <h2 class="doc-sec-title">Interactive Animations</h2>
           <p class="doc-sec-sub">Load <code>motion-interactive.min.js</code> once. Add a class. Zero JavaScript from you — the engine auto-wires all listeners, physics loops, and cleanup.</p>
 
           <div class="codeblock">
@@ -1333,7 +1334,7 @@
 <span class="ct">&lt;span</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-scatter-return</span>"</span><span class="ct">&gt;</span>Hover to scatter<span class="ct">&lt;/span&gt;</span></pre>
           </div>
 
-          <h2 class="doc-h3">SPA / dynamic content API</h2>
+          <h3 class="doc-h3">SPA / dynamic content API</h3>
           <p class="doc-p">After inserting new elements into the DOM, call these to initialize or clean up:</p>
           <div class="codeblock">
             <div class="codeblock-head"><span class="codeblock-lang">JS</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
@@ -1350,7 +1351,7 @@ window.SDSInteractive.cleanup(element);</pre>
 
         <!-- ═══════════════ MODIFIERS ═══════════════ -->
         <section class="doc-sec" id="modifiers">
-          <h1 class="doc-sec-title">Modifiers</h1>
+          <h2 class="doc-sec-title">Modifiers</h2>
           <p class="doc-sec-sub">Stack any modifier on any animation class. All SDS classes are <code>sds-</code> prefixed — they never conflict with your existing CSS.</p>
 
           <div class="codeblock">
@@ -1391,7 +1392,7 @@ window.SDSInteractive.cleanup(element);</pre>
 
         <!-- ═══════════════ STAGGER ═══════════════ -->
         <section class="doc-sec" id="stagger">
-          <h1 class="doc-sec-title">Stagger &amp; Children Animations</h1>
+          <h2 class="doc-sec-title">Stagger &amp; Children Animations</h2>
           <p class="doc-sec-sub">Some animation classes target direct child elements (<code>&gt; *</code>) rather than the element itself. These produce no visible effect without children.</p>
 
           <table class="doc-table">
@@ -1425,7 +1426,7 @@ window.SDSInteractive.cleanup(element);</pre>
 
         <!-- ═══════════════ THEMING ═══════════════ -->
         <section class="doc-sec" id="theming">
-          <h1 class="doc-sec-title">Theming</h1>
+          <h2 class="doc-sec-title">Theming</h2>
           <p class="doc-sec-sub">Override CSS custom properties to match your brand. Changes propagate to every animation that uses that variable.</p>
 
           <div class="codeblock">
@@ -1454,13 +1455,13 @@ window.SDSInteractive.cleanup(element);</pre>
 
         <!-- ═══════════════ TYPESCRIPT ═══════════════ -->
         <section class="doc-sec" id="typescript">
-          <h1 class="doc-sec-title">TypeScript &amp; Autocomplete</h1>
+          <h2 class="doc-sec-title">TypeScript &amp; Autocomplete</h2>
           <p class="doc-sec-sub">The package ships a complete <code>index.d.ts</code> with typed unions for every class. Full autocomplete in VS Code, WebStorm, and any TypeScript-aware editor.</p>
 
           <table class="doc-table">
             <thead><tr><th>Exported type</th><th>Classes</th></tr></thead>
             <tbody>
-              <tr><td><code>SdsTextAnimation</code></td><td>104 text animation classes</td></tr>
+              <tr><td><code>SdsTextAnimation</code></td><td>117 text animation classes</td></tr>
               <tr><td><code>SdsButtonAnimation</code></td><td>100 button animation classes</td></tr>
               <tr><td><code>SdsInputAnimation</code></td><td>100 input animation classes</td></tr>
               <tr><td><code>SdsCardAnimation</code></td><td>100 card animation classes</td></tr>
@@ -1502,7 +1503,7 @@ window.SDSInteractive.cleanup(element);</pre>
 
         <!-- ═══════════════ ACCESSIBILITY ═══════════════ -->
         <section class="doc-sec" id="a11y">
-          <h1 class="doc-sec-title">Accessibility</h1>
+          <h2 class="doc-sec-title">Accessibility</h2>
           <p class="doc-sec-sub">Motion Forge respects <code>prefers-reduced-motion</code> automatically across all three layers. No configuration required.</p>
 
           <table class="doc-table">
@@ -1520,7 +1521,7 @@ window.SDSInteractive.cleanup(element);</pre>
 
         <!-- ═══════════════ BROWSER SUPPORT ═══════════════ -->
         <section class="doc-sec" id="browsers">
-          <h1 class="doc-sec-title">Browser Support</h1>
+          <h2 class="doc-sec-title">Browser Support</h2>
           <p class="doc-sec-sub">The core library targets all modern browsers. IE 11 is not supported.</p>
 
           <table class="doc-table">
@@ -1539,19 +1540,19 @@ window.SDSInteractive.cleanup(element);</pre>
 
         <!-- ═══════════════ CONTRIBUTING ═══════════════ -->
         <section class="doc-sec" id="contributing">
-          <h1 class="doc-sec-title">Contributing</h1>
+          <h2 class="doc-sec-title">Contributing</h2>
           <p class="doc-sec-sub">SDS Motion Forge is MIT-licensed and open to contributions. Here is how to get involved.</p>
 
-          <h2 class="doc-h3">Reporting a bug</h2>
+          <h3 class="doc-h3">Reporting a bug</h3>
           <p class="doc-p">
-            <a href="https://github.com/salkomdesignstudio/SDS-Motion-Forge/issues/new" target="_blank" rel="noopener noreferrer" style="color:var(--brand)">Open an issue</a>
+            <a href="https://github.com/salkomdesignstudio/SDS-Motion-Forge/issues/new" target="_blank" rel="noopener noreferrer" style="color:var(--brand);text-decoration:underline">Open an issue</a>
             and include: the affected class name(s), what you expected, what actually happened, your browser and version, and a minimal reproduction (HTML snippet or CodePen).
           </p>
 
-          <h2 class="doc-h3">Requesting an animation</h2>
+          <h3 class="doc-h3">Requesting an animation</h3>
           <p class="doc-p">Open an issue with the label <strong>animation-request</strong> and describe the motion effect with a reference (gif, video, or live demo link).</p>
 
-          <h2 class="doc-h3">Local development setup</h2>
+          <h3 class="doc-h3">Local development setup</h3>
           <div class="codeblock">
             <div class="codeblock-head"><span class="codeblock-lang">BASH</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
             <pre>git clone https://github.com/salkomdesignstudio/SDS-Motion-Forge.git
@@ -1559,7 +1560,7 @@ cd SDS-Motion-Forge
 npm install</pre>
           </div>
 
-          <h2 class="doc-h3">Available scripts</h2>
+          <h3 class="doc-h3">Available scripts</h3>
           <table class="doc-table">
             <thead><tr><th>Command</th><th>What it does</th></tr></thead>
             <tbody>
@@ -1573,7 +1574,7 @@ npm install</pre>
             </tbody>
           </table>
 
-          <h2 class="doc-h3">Adding a new animation</h2>
+          <h3 class="doc-h3">Adding a new animation</h3>
           <ul class="doc-ul">
             <li>All CSS animations live in <code>src/motion.css</code></li>
             <li>Class naming: <code>sds-[descriptive-name]</code> — lowercase, hyphenated</li>
@@ -1586,7 +1587,7 @@ npm install</pre>
 
           <p class="doc-p">After adding a CSS animation: add the class to <code>REQUIRED_CLASSES</code> and the <code>@keyframes</code> name to <code>REQUIRED_KEYFRAMES</code> in <code>verify-build.js</code>, and add the TypeScript type to the appropriate union in <code>index.d.ts</code>.</p>
 
-          <h2 class="doc-h3">Submitting a PR</h2>
+          <h3 class="doc-h3">Submitting a PR</h3>
           <ul class="doc-ul">
             <li>Fork the repo and create a branch: <code>git checkout -b feat/my-animation</code></li>
             <li>Make changes in <code>src/</code> — never edit files in <code>dist/</code> directly</li>
@@ -1598,7 +1599,7 @@ npm install</pre>
 
         <!-- ═══════════════ CHANGELOG ═══════════════ -->
         <section class="doc-sec" id="changelog">
-          <h1 class="doc-sec-title">Changelog</h1>
+          <h2 class="doc-sec-title">Changelog</h2>
           <p class="doc-sec-sub">A detailed changelog is maintained in the repository.</p>
           <p class="doc-p">
             <a
@@ -1609,7 +1610,14 @@ npm install</pre>
             ><i class="ri-external-link-line"></i> View CHANGELOG.md on GitHub</a>
           </p>
 
-          <h2 class="doc-h3">Current: v5.0.0</h2>
+          <h3 class="doc-h3">Current: v5.1.0</h3>
+          <ul class="doc-ul">
+            <li><strong>13 new physics text effects</strong> — spring-drop, orbit-decay, chain-swing, toss-in, band-snap, bubble-rise, wind-drift, gravity-collapse, liquid-slosh, split-halves, strike-swap, count-roll, extrude-rise</li>
+            <li>Driven by real equations (mass-spring-damper, restitution, pendulum, orbital decay, collisions), compositor-only</li>
+            <li>Nothing removed, nothing changed: every existing class works identically</li>
+          </ul>
+
+          <h3 class="doc-h3">Previous: v5.0.0</h3>
           <ul class="doc-ul">
             <li><strong>245 new animation effects</strong> — every category now ships exactly 100 effects (Text: 104, Buttons: 100, Inputs: 100, Cards: 100, Loaders: 100, Scroll: 100)</li>
             <li>v5 motion token scale — <code>--sds-duration-*</code> and <code>--sds-ease-*</code> design tokens (W3C format)</li>
@@ -1620,7 +1628,7 @@ npm install</pre>
             <li>New package exports for React, Web Components, and Tailwind</li>
           </ul>
 
-          <h2 class="doc-h3">Previous: v4.0.3</h2>
+          <h3 class="doc-h3">Previous: v4.0.3</h3>
           <ul class="doc-ul">
             <li>Fixed critical <code>rootMargin</code> crash in <code>sds-scroll.min.js</code></li>
             <li>Completed TypeScript types — all 177 animation classes typed</li>
@@ -1659,7 +1667,8 @@ npm install</pre>
           'sds-strike-through','sds-swing-in','sds-tada','sds-tracking-contract','sds-tracking-expand',
           'sds-typewriter-pro','sds-typing-caret','sds-underline-grow','sds-unfurl','sds-vapor-rise',
           'sds-velocity-blur-text','sds-velvet-drop','sds-wave-cascade','sds-weight-drop','sds-wipe-left',
-          'sds-wipe-right','sds-wobble','sds-word-blur-in','sds-zoom-far','sds-zoom-punch'
+          'sds-wipe-right','sds-wobble','sds-word-blur-in','sds-zoom-far','sds-zoom-punch',
+          'sds-band-snap','sds-bubble-rise','sds-chain-swing','sds-count-roll','sds-extrude-rise','sds-gravity-collapse','sds-liquid-slosh','sds-orbit-decay','sds-spring-drop','sds-split-halves','sds-strike-swap','sds-toss-in','sds-wind-drift'
         ],
         btn: [
           'sds-btn-amp','sds-btn-aurora','sds-btn-border-flow','sds-btn-bounce','sds-btn-burst',

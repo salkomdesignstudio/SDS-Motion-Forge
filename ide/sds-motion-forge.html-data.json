@@ -24,6 +24,10 @@
      "description": "Aurora Text — text · Six-colour gradient clip sweeps through text. https://sds-motion-forge.netlify.app/animations/aurora-text/"
     },
     {
+     "name": "sds-band-snap",
+     "description": "Band Snap — text · A stretched rubber-band word snaps back on a mass-spring, overshoots and rings down. https://sds-motion-forge.netlify.app/animations/band-snap/"
+    },
+    {
      "name": "sds-blur-focus",
      "description": "Blur Focus — text · Sharpens from heavy blur with tracking. https://sds-motion-forge.netlify.app/animations/blur-focus/"
     },
@@ -440,6 +444,10 @@
      "description": "Wink — buttons · A corner highlight blinks twice every few seconds, then keeps a straight face. https://sds-motion-forge.netlify.app/animations/btn-wink/"
     },
     {
+     "name": "sds-bubble-rise",
+     "description": "Bubble Rise — text · Letters rise like bubbles: buoyancy against drag, a surface overshoot and a growing-then-decaying sway. https://sds-motion-forge.netlify.app/animations/bubble-rise/"
+    },
+    {
      "name": "sds-card-accordion-in",
      "description": "Accordion In — cards · Children unfold sequentially from scaleY(0) at the top — like opening accordion panels. https://sds-motion-forge.netlify.app/animations/card-accordion-in/"
     },
@@ -844,6 +852,10 @@
      "description": "Center Burst — text · Chars start at center, fan out. https://sds-motion-forge.netlify.app/animations/center-burst/"
     },
     {
+     "name": "sds-chain-swing",
+     "description": "Chain Swing — text · Letters swing as damped pendulums, released in sequence so a wave travels along the word. https://sds-motion-forge.netlify.app/animations/chain-swing/"
+    },
+    {
      "name": "sds-char-orbit",
      "description": "Char Orbit — text · Orbits in from above with rotation. https://sds-motion-forge.netlify.app/animations/char-orbit/"
     },
@@ -862,6 +874,10 @@
     {
      "name": "sds-color-cycle",
      "description": "Color Cycle — text · Cycles through a flowing gradient (loop). https://sds-motion-forge.netlify.app/animations/color-cycle/"
+    },
+    {
+     "name": "sds-count-roll",
+     "description": "Count Roll — text · Odometer digits roll on springs, overshoot slightly and blur with speed. https://sds-motion-forge.netlify.app/animations/count-roll/"
     },
     {
      "name": "sds-data-stream",
@@ -936,6 +952,10 @@
      "description": "Explode Formation — text · Scattered start, spring to position. https://sds-motion-forge.netlify.app/animations/explode-formation/"
     },
     {
+     "name": "sds-extrude-rise",
+     "description": "Extrude Rise — text · Text tilts up on a spring while a 3D extrusion grows with the same overshoot. https://sds-motion-forge.netlify.app/animations/extrude-rise/"
+    },
+    {
      "name": "sds-fast",
      "description": "Fast — modifier · Fast — playback modifier. https://sds-motion-forge.netlify.app/docs.html"
     },
@@ -1002,6 +1022,10 @@
     {
      "name": "sds-gravity-bounce",
      "description": "Gravity Bounce — text · Falls under gravity, inelastic floor bounce. https://sds-motion-forge.netlify.app/animations/gravity-bounce/"
+    },
+    {
+     "name": "sds-gravity-collapse",
+     "description": "Gravity Collapse — text · Letters fall in from every direction through an inverse-square field, then flash and ring on arrival. https://sds-motion-forge.netlify.app/animations/gravity-collapse/"
     },
     {
      "name": "sds-gravity-drop",
@@ -1456,6 +1480,10 @@
      "description": "Liquid Rise — text · Rises up with skew and blur in one fluid arc. https://sds-motion-forge.netlify.app/animations/liquid-rise/"
     },
     {
+     "name": "sds-liquid-slosh",
+     "description": "Liquid Slosh — text · Outlined text fills like a glass, with the liquid surface sloshing as it settles. https://sds-motion-forge.netlify.app/animations/liquid-slosh/"
+    },
+    {
      "name": "sds-loader-arc",
      "description": "Arc — loaders · Arc — loader animation. https://sds-motion-forge.netlify.app/animations/loader-arc/"
     },
@@ -1890,6 +1918,10 @@
     {
      "name": "sds-once",
      "description": "Once — modifier · Once — playback modifier. https://sds-motion-forge.netlify.app/docs.html"
+    },
+    {
+     "name": "sds-orbit-decay",
+     "description": "Orbit Decay — text · Letters spiral inward under drag with conserved angular momentum, spinning faster as they close in. https://sds-motion-forge.netlify.app/animations/orbit-decay/"
     },
     {
      "name": "sds-oscillate",
@@ -2408,12 +2440,20 @@
      "description": "Smoke Reveal — text · Resolves from a smoke-like blur field. https://sds-motion-forge.netlify.app/animations/smoke-reveal/"
     },
     {
+     "name": "sds-split-halves",
+     "description": "Split Halves — text · Two halves collide at speed, rebound with restitution and lock together. https://sds-motion-forge.netlify.app/animations/split-halves/"
+    },
+    {
      "name": "sds-split-reveal",
      "description": "Split Reveal — text · Polygon clip-path splits open from center. https://sds-motion-forge.netlify.app/animations/split-reveal/"
     },
     {
      "name": "sds-spotlight",
      "description": "Spotlight — text · Brightens in under a spotlight. https://sds-motion-forge.netlify.app/animations/spotlight/"
+    },
+    {
+     "name": "sds-spring-drop",
+     "description": "Spring Drop — text · Letters fall under gravity and bounce off a floor, each landing squashing with its impact speed. https://sds-motion-forge.netlify.app/animations/spring-drop/"
     },
     {
      "name": "sds-spring-kerning",
@@ -2436,6 +2476,10 @@
      "description": "Streak In — text · High-speed streak entrance from the left. https://sds-motion-forge.netlify.app/animations/streak-in/"
     },
     {
+     "name": "sds-strike-swap",
+     "description": "Strike Swap — text · A word is struck out and knocked off to fall under gravity while its replacement drops in on a spring. https://sds-motion-forge.netlify.app/animations/strike-swap/"
+    },
+    {
      "name": "sds-strike-through",
      "description": "Strike Through — text · Strike line draws across. https://sds-motion-forge.netlify.app/animations/strike-through/"
     },
@@ -2446,6 +2490,10 @@
     {
      "name": "sds-tada",
      "description": "Tada — text · Celebratory scale-and-rotate tada. https://sds-motion-forge.netlify.app/animations/tada/"
+    },
+    {
+     "name": "sds-toss-in",
+     "description": "Toss In — text · Letters are thrown in along ballistic arcs, land, bounce and settle. https://sds-motion-forge.netlify.app/animations/toss-in/"
     },
     {
      "name": "sds-tracking-contract",
@@ -2494,6 +2542,10 @@
     {
      "name": "sds-weight-drop",
      "description": "Weight Drop — text · Overshoot gravity with extreme easing. https://sds-motion-forge.netlify.app/animations/weight-drop/"
+    },
+    {
+     "name": "sds-wind-drift",
+     "description": "Wind Drift — text · Letters are blown in by a gust: drag eases them to rest while damped flutter and tilt die out. https://sds-motion-forge.netlify.app/animations/wind-drift/"
     },
     {
      "name": "sds-wipe-left",

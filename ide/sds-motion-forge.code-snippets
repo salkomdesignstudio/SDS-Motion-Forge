@@ -19,6 +19,16 @@
   "description": "Aurora Text — text animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the text bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
+ "SDS Band Snap (sds-band-snap)": {
+  "prefix": [
+   "sds-band-snap"
+  ],
+  "body": [
+   "<h1 class=\"sds-band-snap\"><span class=\"sds-char\" style=\"--i:0\">B</span><span class=\"sds-char\" style=\"--i:1\">a</span><span class=\"sds-char\" style=\"--i:2\">n</span><span class=\"sds-char\" style=\"--i:3\">d</span><span class=\"sds-char\" style=\"--i:4\">&nbsp;</span><span class=\"sds-char\" style=\"--i:5\">S</span><span class=\"sds-char\" style=\"--i:6\">n</span><span class=\"sds-char\" style=\"--i:7\">a</span><span class=\"sds-char\" style=\"--i:8\">p</span></h1>"
+  ],
+  "description": "Band Snap — text animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the text bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
  "SDS Blur Focus (sds-blur-focus)": {
   "prefix": [
    "sds-blur-focus"
@@ -1057,6 +1067,16 @@
    "<button class=\"sds-btn-wink\">Button</button>"
   ],
   "description": "Wink — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Bubble Rise (sds-bubble-rise)": {
+  "prefix": [
+   "sds-bubble-rise"
+  ],
+  "body": [
+   "<h1 class=\"sds-bubble-rise\"><span class=\"sds-char\" style=\"--i:0\">B</span><span class=\"sds-char\" style=\"--i:1\">u</span><span class=\"sds-char\" style=\"--i:2\">b</span><span class=\"sds-char\" style=\"--i:3\">b</span><span class=\"sds-char\" style=\"--i:4\">l</span><span class=\"sds-char\" style=\"--i:5\">e</span><span class=\"sds-char\" style=\"--i:6\">&nbsp;</span><span class=\"sds-char\" style=\"--i:7\">R</span><span class=\"sds-char\" style=\"--i:8\">i</span><span class=\"sds-char\" style=\"--i:9\">s</span><span class=\"sds-char\" style=\"--i:10\">e</span></h1>"
+  ],
+  "description": "Bubble Rise — text animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the text bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
  "SDS Accordion In (sds-card-accordion-in)": {
@@ -2101,6 +2121,16 @@
   "description": "Center Burst — text animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the text bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
+ "SDS Chain Swing (sds-chain-swing)": {
+  "prefix": [
+   "sds-chain-swing"
+  ],
+  "body": [
+   "<h1 class=\"sds-chain-swing\"><span class=\"sds-char\" style=\"--i:0\">C</span><span class=\"sds-char\" style=\"--i:1\">h</span><span class=\"sds-char\" style=\"--i:2\">a</span><span class=\"sds-char\" style=\"--i:3\">i</span><span class=\"sds-char\" style=\"--i:4\">n</span><span class=\"sds-char\" style=\"--i:5\">&nbsp;</span><span class=\"sds-char\" style=\"--i:6\">S</span><span class=\"sds-char\" style=\"--i:7\">w</span><span class=\"sds-char\" style=\"--i:8\">i</span><span class=\"sds-char\" style=\"--i:9\">n</span><span class=\"sds-char\" style=\"--i:10\">g</span></h1>"
+  ],
+  "description": "Chain Swing — text animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the text bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
  "SDS Char Orbit (sds-char-orbit)": {
   "prefix": [
    "sds-char-orbit"
@@ -2149,6 +2179,16 @@
    "<h1 class=\"sds-color-cycle\">Color Cycle</h1>"
   ],
   "description": "Color Cycle — text animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the text bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Count Roll (sds-count-roll)": {
+  "prefix": [
+   "sds-count-roll"
+  ],
+  "body": [
+   "<h1 class=\"sds-count-roll\"><span class=\"sds-roll\" style=\"--d:2;--i:0\">2</span><span class=\"sds-roll\" style=\"--d:0;--i:1\">0</span><span class=\"sds-roll\" style=\"--d:4;--i:2\">4</span><span class=\"sds-roll\" style=\"--d:8;--i:3\">8</span></h1>"
+  ],
+  "description": "Count Roll — text animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the text bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
  "SDS Data Stream (sds-data-stream)": {
@@ -2249,6 +2289,16 @@
    "<h1 class=\"sds-explode-formation\"><span class=\"sds-char\" style=\"--i:0\">E</span><span class=\"sds-char\" style=\"--i:1\">x</span><span class=\"sds-char\" style=\"--i:2\">p</span><span class=\"sds-char\" style=\"--i:3\">l</span><span class=\"sds-char\" style=\"--i:4\">o</span><span class=\"sds-char\" style=\"--i:5\">d</span><span class=\"sds-char\" style=\"--i:6\">e</span><span class=\"sds-char\" style=\"--i:7\">&nbsp;</span><span class=\"sds-char\" style=\"--i:8\">F</span><span class=\"sds-char\" style=\"--i:9\">o</span><span class=\"sds-char\" style=\"--i:10\">r</span><span class=\"sds-char\" style=\"--i:11\">m</span><span class=\"sds-char\" style=\"--i:12\">a</span><span class=\"sds-char\" style=\"--i:13\">t</span><span class=\"sds-char\" style=\"--i:14\">i</span><span class=\"sds-char\" style=\"--i:15\">o</span><span class=\"sds-char\" style=\"--i:16\">n</span></h1>"
   ],
   "description": "Explode Formation — text animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the text bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Extrude Rise (sds-extrude-rise)": {
+  "prefix": [
+   "sds-extrude-rise"
+  ],
+  "body": [
+   "<h1 class=\"sds-extrude-rise\">Extrude Rise</h1>"
+  ],
+  "description": "Extrude Rise — text animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the text bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
  "SDS Film Burn (sds-film-burn)": {
@@ -2389,6 +2439,16 @@
    "<h1 class=\"sds-gravity-bounce\">Gravity Bounce</h1>"
   ],
   "description": "Gravity Bounce — text animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the text bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Gravity Collapse (sds-gravity-collapse)": {
+  "prefix": [
+   "sds-gravity-collapse"
+  ],
+  "body": [
+   "<h1 class=\"sds-gravity-collapse\"><span class=\"sds-char\" style=\"--i:0\">G</span><span class=\"sds-char\" style=\"--i:1\">r</span><span class=\"sds-char\" style=\"--i:2\">a</span><span class=\"sds-char\" style=\"--i:3\">v</span><span class=\"sds-char\" style=\"--i:4\">i</span><span class=\"sds-char\" style=\"--i:5\">t</span><span class=\"sds-char\" style=\"--i:6\">y</span><span class=\"sds-char\" style=\"--i:7\">&nbsp;</span><span class=\"sds-char\" style=\"--i:8\">C</span><span class=\"sds-char\" style=\"--i:9\">o</span><span class=\"sds-char\" style=\"--i:10\">l</span><span class=\"sds-char\" style=\"--i:11\">l</span><span class=\"sds-char\" style=\"--i:12\">a</span><span class=\"sds-char\" style=\"--i:13\">p</span><span class=\"sds-char\" style=\"--i:14\">s</span><span class=\"sds-char\" style=\"--i:15\">e</span></h1>"
+  ],
+  "description": "Gravity Collapse — text animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the text bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
  "SDS Gravity Drop (sds-gravity-drop)": {
@@ -3582,6 +3642,16 @@
   "description": "Liquid Rise — text animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the text bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
+ "SDS Liquid Slosh (sds-liquid-slosh)": {
+  "prefix": [
+   "sds-liquid-slosh"
+  ],
+  "body": [
+   "<h1 class=\"sds-liquid-slosh\" data-text=\"Liquid\">Liquid</h1>"
+  ],
+  "description": "Liquid Slosh — text animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the text bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
  "SDS Arc (sds-loader-arc)": {
   "prefix": [
    "sds-loader-arc"
@@ -4640,6 +4710,16 @@
    "<h1 class=\"sds-neon-pulse-text\">Neon Pulse Text</h1>"
   ],
   "description": "Neon Pulse Text — text animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the text bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Orbit Decay (sds-orbit-decay)": {
+  "prefix": [
+   "sds-orbit-decay"
+  ],
+  "body": [
+   "<h1 class=\"sds-orbit-decay\"><span class=\"sds-char\" style=\"--i:0\">O</span><span class=\"sds-char\" style=\"--i:1\">r</span><span class=\"sds-char\" style=\"--i:2\">b</span><span class=\"sds-char\" style=\"--i:3\">i</span><span class=\"sds-char\" style=\"--i:4\">t</span><span class=\"sds-char\" style=\"--i:5\">&nbsp;</span><span class=\"sds-char\" style=\"--i:6\">D</span><span class=\"sds-char\" style=\"--i:7\">e</span><span class=\"sds-char\" style=\"--i:8\">c</span><span class=\"sds-char\" style=\"--i:9\">a</span><span class=\"sds-char\" style=\"--i:10\">y</span></h1>"
+  ],
+  "description": "Orbit Decay — text animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the text bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
  "SDS Oscillate (sds-oscillate)": {
@@ -5940,6 +6020,16 @@
   "description": "Smoke Reveal — text animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the text bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
+ "SDS Split Halves (sds-split-halves)": {
+  "prefix": [
+   "sds-split-halves"
+  ],
+  "body": [
+   "<h1 class=\"sds-split-halves\" data-text=\"Split\">Split</h1>"
+  ],
+  "description": "Split Halves — text animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the text bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
  "SDS Split Reveal (sds-split-reveal)": {
   "prefix": [
    "sds-split-reveal"
@@ -5958,6 +6048,16 @@
    "<h1 class=\"sds-spotlight\">Spotlight</h1>"
   ],
   "description": "Spotlight — text animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the text bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Spring Drop (sds-spring-drop)": {
+  "prefix": [
+   "sds-spring-drop"
+  ],
+  "body": [
+   "<h1 class=\"sds-spring-drop\"><span class=\"sds-char\" style=\"--i:0\">S</span><span class=\"sds-char\" style=\"--i:1\">p</span><span class=\"sds-char\" style=\"--i:2\">r</span><span class=\"sds-char\" style=\"--i:3\">i</span><span class=\"sds-char\" style=\"--i:4\">n</span><span class=\"sds-char\" style=\"--i:5\">g</span><span class=\"sds-char\" style=\"--i:6\">&nbsp;</span><span class=\"sds-char\" style=\"--i:7\">D</span><span class=\"sds-char\" style=\"--i:8\">r</span><span class=\"sds-char\" style=\"--i:9\">o</span><span class=\"sds-char\" style=\"--i:10\">p</span></h1>"
+  ],
+  "description": "Spring Drop — text animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the text bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
  "SDS Spring Kerning (sds-spring-kerning)": {
@@ -6010,6 +6110,16 @@
   "description": "Streak In — text animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the text bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
+ "SDS Strike Swap (sds-strike-swap)": {
+  "prefix": [
+   "sds-strike-swap"
+  ],
+  "body": [
+   "<h1 class=\"sds-strike-swap\"><span class=\"sds-swap-old\">Cheap</span><span class=\"sds-swap-new\">Premium</span></h1>"
+  ],
+  "description": "Strike Swap — text animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the text bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
  "SDS Strike Through (sds-strike-through)": {
   "prefix": [
    "sds-strike-through"
@@ -6038,6 +6148,16 @@
    "<h1 class=\"sds-tada\">Tada</h1>"
   ],
   "description": "Tada — text animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the text bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Toss In (sds-toss-in)": {
+  "prefix": [
+   "sds-toss-in"
+  ],
+  "body": [
+   "<h1 class=\"sds-toss-in\"><span class=\"sds-char\" style=\"--i:0\">T</span><span class=\"sds-char\" style=\"--i:1\">o</span><span class=\"sds-char\" style=\"--i:2\">s</span><span class=\"sds-char\" style=\"--i:3\">s</span><span class=\"sds-char\" style=\"--i:4\">&nbsp;</span><span class=\"sds-char\" style=\"--i:5\">I</span><span class=\"sds-char\" style=\"--i:6\">n</span></h1>"
+  ],
+  "description": "Toss In — text animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the text bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
  "SDS Tracking Contract (sds-tracking-contract)": {
@@ -6158,6 +6278,16 @@
    "<h1 class=\"sds-weight-drop\">Weight Drop</h1>"
   ],
   "description": "Weight Drop — text animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the text bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Wind Drift (sds-wind-drift)": {
+  "prefix": [
+   "sds-wind-drift"
+  ],
+  "body": [
+   "<h1 class=\"sds-wind-drift\"><span class=\"sds-char\" style=\"--i:0\">W</span><span class=\"sds-char\" style=\"--i:1\">i</span><span class=\"sds-char\" style=\"--i:2\">n</span><span class=\"sds-char\" style=\"--i:3\">d</span><span class=\"sds-char\" style=\"--i:4\">&nbsp;</span><span class=\"sds-char\" style=\"--i:5\">D</span><span class=\"sds-char\" style=\"--i:6\">r</span><span class=\"sds-char\" style=\"--i:7\">i</span><span class=\"sds-char\" style=\"--i:8\">f</span><span class=\"sds-char\" style=\"--i:9\">t</span></h1>"
+  ],
+  "description": "Wind Drift — text animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the text bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
  "SDS Wipe Left (sds-wipe-left)": {

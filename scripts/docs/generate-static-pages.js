@@ -120,6 +120,8 @@ function head({ title, description, path: p, jsonld, extraCss = [], md = true })
 <meta name="description" content="${esc(description)}" />
 <link rel="canonical" href="${url}" />
 ${md ? `<link rel="alternate" type="text/markdown" href="${url}index.md" />\n` : ""}<link rel="icon" href="/favicon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<link rel="alternate" type="text/plain" href="/llms.txt" title="LLM summary" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="SDS Motion Forge" />
 <meta property="og:title" content="${esc(title)}" />
@@ -198,8 +200,8 @@ function effectPage(c) {
   const d = sentence(descOf(c));
   const loop = c.loop ? "loops continuously" : "plays once";
   const trig = c.trigger === "scroll" ? "when scrolled into view" : c.kind === "interactive" ? "in response to the cursor" : "as soon as the class is applied";
-  const title = `${c.displayName} — ${cat.singular} CSS animation (.${c.name})`;
-  const description = fit([`${d}.`, `Use .${c.name} — ${loop}, ${trig}.`, "CSS-only, copy-paste for HTML, React, Angular and Tailwind."], 158);
+  const title = [`${c.displayName} — ${cat.singular} CSS animation (.${c.name})`, `${c.displayName} ${cat.singular} CSS animation (.${c.name})`, `${c.displayName} CSS animation (.${c.name})`, `${c.displayName} CSS animation`].find((t) => t.length <= 60) || `${c.displayName} CSS animation`;
+  const description = fit([`${d}.`, `Use .${c.name} — ${loop}, ${trig}.`, "CSS-only, copy-paste for HTML, React, Angular and Tailwind.", "Free and MIT licensed."], 158);
   seenDesc.set(description, (seenDesc.get(description) || 0) + 1);
   const files = cssFor(c);
   if (!files) fallbackCss++;
@@ -251,7 +253,7 @@ function effectPage(c) {
 <h1>${esc(c.displayName)}</h1>
 <p class="lead">${esc(d)}. Add the class <code>.${c.name}</code> to any element — it ${esc(loop)} ${esc(trig)}, with no JavaScript${c.kind === "interactive" ? " beyond the optional cursor engine" : c.category === "scroll" ? " beyond the optional 1.3 KB scroll gate (or native scroll-driven animation with <code>sds-scroll-auto</code>)" : ""}.</p>
 
-<section aria-labelledby="demo"><h2 id="demo">Live demo</h2>
+${S.isUnreleased(c) ? `<p class="note" role="note"><strong>New in v${esc(c.sinceVersion)} — not published yet.</strong> This effect is in the repository and runs on this page, but npm and the CDN still serve v${esc(facts.version)}, so the copy-paste snippets below will not animate until v${esc(c.sinceVersion)} is released.</p>\n` : ""}<section aria-labelledby="demo"><h2 id="demo">Live demo</h2>
 <div class="stage" id="stage">${demoMarkup(c)}</div>
 <p><button type="button" class="btn" id="replay">Replay</button> <span class="muted">Demo uses this site's neutral theme; override <code>--sds-primary</code> to match your brand.</span></p></section>
 
@@ -292,7 +294,7 @@ ${d}. ${cat.label} animation in ${facts.name} v${facts.version}. It ${loop} ${tr
 - Needs per-character spans: ${c.requiresCharSplit ? "yes" : "no"}
 - JavaScript: ${c.jsEngine && c.jsEngine !== "none" ? c.jsEngine : "none required"}
 ${aliases.length ? `- Also available as: ${aliases.map((a) => "`." + a + "`").join(", ")}\n` : ""}
-## Use it
+${S.isUnreleased(c) ? `> New in v${c.sinceVersion} — not published yet: npm and the CDN still serve v${facts.version}, so the snippets below will not animate until v${c.sinceVersion} is released.\n\n` : ""}## Use it
 
 \`\`\`html
 ${cdnCss.map((u) => `<link rel="stylesheet" href="${u}" />`).join("\n")}
@@ -350,7 +352,7 @@ ${list.map((c) => `<li><a href="${S.animationPath(c.name)}">${esc(c.displayName)
 
 function indexPage() {
   const p = "/animations/";
-  const title = `All ${all.length} CSS animations — text, buttons, inputs, cards, loaders, scroll | SDS Motion Forge`;
+  const title = `All ${all.length} CSS Animations | SDS Motion Forge`;
   const description = `Every ${facts.name} animation on one page: ${S.effects.length} CSS-only effects in six categories plus ${interactive.length} cursor-reactive effects. One class name each.`;
   const crumb = [["Home", "/"], ["Animations", p]];
   const jsonld = { "@context": "https://schema.org", "@graph": [crumbs(crumb), { "@type": "CollectionPage", "@id": urlOf(p) + "#collection", name: title, description, url: urlOf(p), isPartOf: { "@id": urlOf("/#website") } }] };
@@ -399,6 +401,7 @@ details{background:var(--card);border:1px solid var(--line);border-radius:12px;m
 summary{cursor:pointer;padding:14px 0;font-weight:500;color:var(--ink)}
 .chips,.list{list-style:none;margin:0;padding:0}.chips{display:flex;flex-wrap:wrap;gap:8px}.chips a{display:inline-block;padding:6px 12px;border:1px solid var(--line);border-radius:9999px;background:var(--card);text-decoration:none;font-size:14px}.chips a:hover{border-color:var(--ink)}
 .list li{padding:10px 0;border-bottom:1px solid var(--line)}
+.note{background:#f2f2f2;border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:16px 0;font-size:14px;color:var(--ink)}
 .foot{border-top:1px solid var(--line);padding:32px 0;font-size:14px;color:var(--muted)}.foot a{color:var(--muted)}
 @media (prefers-reduced-motion:reduce){.stage *{animation-duration:.01ms!important;animation-iteration-count:1!important}}
 `;
@@ -414,7 +417,7 @@ function sitemap(pages) {
 function llmsFull() {
   const sec = [...CATEGORIES, catById.interactive].map((cat) => {
     const list = (cat.id === "interactive" ? interactive : byCategory[cat.id]).slice().sort((a, b) => a.name.localeCompare(b.name));
-    return `## ${cat.label} (${list.length})\n\n${cat.blurb}\n\n${list.map((c) => `- \`.${c.name}\` — ${c.displayName}: ${sentence(descOf(c))}. ${urlOf(S.animationPath(c.name))}`).join("\n")}\n`;
+    return `## ${cat.label} (${list.length})\n\n${cat.blurb}\n\n${list.map((c) => `- \`.${c.name}\` — ${c.displayName}: ${sentence(descOf(c))}. ${urlOf(S.animationPath(c.name))}${S.isUnreleased(c) ? ` (new in v${c.sinceVersion}, not yet published to npm/CDN)` : ""}`).join("\n")}\n`;
   });
   return `${S.buildLlmsTxt().replace(/\n## Machine-readable resources[\s\S]*$/, "")}
 ## Machine-readable resources

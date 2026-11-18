@@ -13,6 +13,7 @@
   <url><loc>https://sds-motion-forge.netlify.app/categories/interactive/</loc><priority>0.8</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/arc-orbit/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/aurora-text/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/band-snap/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/blur-focus/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/bounce-drop-in/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/bounce-in-up/</loc><priority>0.6</priority></url>
@@ -117,6 +118,7 @@
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-volt/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-warp/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-wink/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/bubble-rise/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/card-accordion-in/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/card-aurora/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/card-bloom/</loc><priority>0.6</priority></url>
@@ -218,11 +220,13 @@
   <url><loc>https://sds-motion-forge.netlify.app/animations/card-warp/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/card-wave/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/center-burst/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/chain-swing/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/char-orbit/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/chromatic-shift/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/cinema-title/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/cipher-reveal/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/color-cycle/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/count-roll/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/data-stream/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/depth-charge/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/depth-warp/</loc><priority>0.6</priority></url>
@@ -233,6 +237,7 @@
   <url><loc>https://sds-motion-forge.netlify.app/animations/elastic-bounce/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/elastic-stamp/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/explode-formation/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/extrude-rise/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/film-burn/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/flicker-on/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/flip-x/</loc><priority>0.6</priority></url>
@@ -247,6 +252,7 @@
   <url><loc>https://sds-motion-forge.netlify.app/animations/gradient-sweep/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/grand-entrance/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/gravity-bounce/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/gravity-collapse/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/gravity-drop/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/heartbeat-text/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/heat-shimmer/</loc><priority>0.6</priority></url>
@@ -360,6 +366,7 @@
   <url><loc>https://sds-motion-forge.netlify.app/animations/levitate/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/light-speed/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/liquid-rise/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/liquid-slosh/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/loader-arc/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/loader-bar/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/loader-bar-pulse/</loc><priority>0.6</priority></url>
@@ -466,6 +473,7 @@
   <url><loc>https://sds-motion-forge.netlify.app/animations/neon-flare/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/neon-flicker-in/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/neon-pulse-text/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/orbit-decay/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/oscillate/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/pendulum/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/perspective-swing/</loc><priority>0.6</priority></url>
@@ -593,16 +601,20 @@
   <url><loc>https://sds-motion-forge.netlify.app/animations/slide-blur-left/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/slide-blur-right/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/smoke-reveal/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/split-halves/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/split-reveal/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/spotlight/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/spring-drop/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/spring-kerning/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/squash-stretch/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/stagger-chars/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/static-burst/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/streak-in/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/strike-swap/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/strike-through/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/swing-in/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/tada/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/toss-in/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/tracking-contract/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/tracking-expand/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/typewriter-pro/</loc><priority>0.6</priority></url>
@@ -615,6 +627,7 @@
   <url><loc>https://sds-motion-forge.netlify.app/animations/vibrate/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/wave-cascade/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/weight-drop/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/wind-drift/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/wipe-left/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/wipe-right/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/wobble/</loc><priority>0.6</priority></url>

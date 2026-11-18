@@ -278,6 +278,16 @@ function faqJsonLd() {
   });
 }
 
+/** semver compare for plain x.y.z strings: >0 when a is newer than b */
+function cmpVer(a, b) {
+  const pa = String(a || "0").split(".").map(Number), pb = String(b || "0").split(".").map(Number);
+  for (let i = 0; i < 3; i++) if ((pa[i] || 0) !== (pb[i] || 0)) return (pa[i] || 0) - (pb[i] || 0);
+  return 0;
+}
+/** In the repo (registry sinceVersion) but newer than the published package.json version:
+    CDN / npm snippets for it cannot work yet. Disappears automatically when the version is bumped. */
+const isUnreleased = (c) => cmpVer(c.sinceVersion, pkg.version) > 0;
+
 function loadDocsData() {
   const t = fs.readFileSync(path.join(ROOT, "docs", "docs-data.js"), "utf8");
   return JSON.parse(t.slice(t.indexOf("{"), t.lastIndexOf("}") + 1));
@@ -287,5 +297,5 @@ module.exports = {
   ROOT, pkg, registry, config, CATEGORIES, effects, interactive, modifiers,
   byCategory, sizes, kb, sizeSentence, slugOf, urlOf, animationPath, categoryPath,
   esc, canonicalFacts, frameworkLines, buildLlmsTxt, loadDocsData,
-  faqs, faqHtml, faqJsonLd, stripInline, animateCss, keyframeCount, verificationMetaTags,
+  faqs, faqHtml, faqJsonLd, stripInline, animateCss, keyframeCount, verificationMetaTags, cmpVer, isUnreleased,
 };

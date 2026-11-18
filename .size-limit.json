@@ -1,14 +1,14 @@
 [
   {
     "path": "dist/motion.min.css",
-    "limit": "257336 B",
+    "limit": "276141 B",
     "name": "dist/motion.min.css",
     "gzip": false,
     "brotli": false
   },
   {
     "path": "dist/motion.css",
-    "limit": "388348 B",
+    "limit": "420846 B",
     "name": "dist/motion.css",
     "gzip": false,
     "brotli": false
@@ -36,7 +36,7 @@
   },
   {
     "path": "dist/categories/text.min.css",
-    "limit": "48311 B",
+    "limit": "67272 B",
     "name": "dist/categories/text.min.css",
     "gzip": false,
     "brotli": false
@@ -92,7 +92,7 @@
   },
   {
     "path": "packages/tailwind/dist/sds-motion.css",
-    "limit": "593464 B",
+    "limit": "631460 B",
     "name": "packages/tailwind/dist/sds-motion.css",
     "gzip": false,
     "brotli": false

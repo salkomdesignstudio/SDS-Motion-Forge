@@ -18,7 +18,8 @@
 const fs = require("fs");
 const path = require("path");
 const postcss = require("postcss");
-const { buildLlmsTxt } = require("./site-lib");
+const { buildLlmsTxt, isUnreleased } = require("./site-lib");
+const { specialTextMarkup } = require("../lib/text-special");
 
 const CHECK = process.argv.includes("--check");
 const ROOT = path.join(__dirname, "..", "..");
@@ -85,6 +86,9 @@ function markupFor(c) {
         return `<h2 class="${cls}" data-sds-radius="120">Move your cursor</h2>`;
       return `<h2 class="${cls}">${c.displayName}</h2>`;
     default: { // text
+      const special = specialTextMarkup(cls);
+      if (special)
+        return `<h1 class="${cls}"${special.attrs ? " " + special.attrs : ""}>${special.inner}</h1>`;
       if (c.requiresCharSplit)
         return `<h1 class="${cls}">${charSpans(c.displayName)}</h1>`;
       if (c.requiresChildren)
@@ -275,12 +279,17 @@ function bootstrapTab(c) {
     case "scroll":
       body = `<div class="card ${c.name}" data-sds>\n      <div class="card-body">Animates when scrolled into view.</div>\n    </div>`;
       break;
-    default:
-      body = c.requiresCharSplit
+    default: {
+      // text effects that need data-text / specific children share one markup table
+      const special = specialTextMarkup(c.name);
+      body = special
+        ? `<h1 class="display-5 ${c.name}"${special.attrs ? " " + special.attrs : ""}>${special.inner}</h1>`
+        : c.requiresCharSplit
         ? `<h1 class="display-5 ${c.name}">${charSpans(c.displayName)}</h1>`
         : c.requiresChildren
           ? `<h1 class="display-5 ${c.name}"><span>${c.displayName.split(" ").join("</span> <span>")}</span></h1>`
           : `<h1 class="display-5 ${c.name}">${c.displayName}</h1>`;
+    }
   }
   const scripts = scriptsFor(c);
   return `<!-- SDS layers on top of Bootstrap — it never replaces Bootstrap's
@@ -396,6 +405,9 @@ for (const c of effects) {
 
 const docsData = {
   version: pkg.version,
+  // in the repo but newer than the published version: CDN snippets cannot work yet
+  unreleased: effects.filter(isUnreleased).map((c) => c.name),
+  unreleasedSince: effects.filter(isUnreleased).map((c) => c.sinceVersion).sort().pop() || null,
   animations,
   charSplit: effects.filter((c) => c.requiresCharSplit && c.category === "text").map((c) => c.name),
   childDriven: effects.filter((c) => c.requiresChildren).map((c) => c.name),

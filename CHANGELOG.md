@@ -6,6 +6,37 @@
 
 ---
 
+## [5.1.0] — 2026-11-18
+
+> Purely additive. No existing class, keyframe or computed value changes.
+
+### Added — physics text effects (13, text category)
+
+Purely additive: no existing class, keyframe or computed value changes
+(machine-checked by `verify:published`, plus a rule-by-rule diff of the built CSS).
+
+`sds-spring-drop`, `sds-orbit-decay`, `sds-chain-swing`, `sds-toss-in`, `sds-band-snap`,
+`sds-bubble-rise`, `sds-wind-drift`, `sds-gravity-collapse`, `sds-liquid-slosh`,
+`sds-split-halves`, `sds-strike-swap`, `sds-count-roll`, `sds-extrude-rise`.
+
+- Driven by real equations (mass-spring-damper, restitution, damped pendulum, angular-momentum
+  orbit, ballistic arcs, elastic collision, buoyancy with drag, drag-limited gust, inverse-square infall, slosh modes) sampled into CSS `linear()` easing by
+  `scripts/generate-physics.js`; compositor-only; cubic-bezier fallback without `linear()`.
+- `npm run generate:physics` regenerates the block in `src/categories/text.css`;
+  `npm run verify:physics` (in `release:check`) fails if it drifts, if any invariant breaks
+  (spring overshoot vs closed form, bounce energy, orbit angle), or if a keyframe/class name
+  collides with an existing effect.
+- **No repeats, enforced.** `npm run verify:unique` (class names, display names, keyframe bodies and sets) and
+  `npm run audit:motion -- --check` (28-frame motion fingerprint of every effect, played in Chrome) run in
+  `release:check` and CI. While building this set, four candidates that were too close to existing effects
+  (momentum-slide, spring-slam, jelly-wobble, liquid-fill) were replaced by bubble-rise, wind-drift,
+  gravity-collapse and liquid-slosh. Nearest existing effect to every new one is now at least 0.95 away in
+  the fingerprint space; the closest pair among the new effects is 0.56.
+- Registry: `sinceVersion` now comes from `registry/meta/descriptions.json` (default `4.0.3`).
+- Text bundle: +~20 KB minified, +~5 KB gzip; size budgets re-based accordingly.
+
+---
+
 ## [5.0.0] — 2026-06-15
 
 > ## Nothing removed, nothing changed.

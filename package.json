@@ -1,6 +1,6 @@
 {
   "name": "@salkomdesignstudio/sds-motion-forge",
-  "version": "5.0.0",
+  "version": "5.1.0",
   "description": "600+ CSS animations for text, buttons, inputs, cards, loaders and scroll. One class name each, zero required JavaScript, per-category bundles, TypeScript types and prefers-reduced-motion support. An Animate.css alternative.",
   "main": "./dist/motion.css",
   "style": "./dist/motion.css",
@@ -116,10 +116,14 @@
     "validate": "publint",
     "pack:check": "npm pack --dry-run",
     "size": "size-limit",
-    "release:check": "npm run build && npm run build:verify && npm run verify:tokens && npm run verify:registry && npm run verify:docs && npm run verify:split && npm run verify:published && npm run verify:reduced-motion && npm run lint:css && npm run build:packages && npm run size && npm run validate && npm run pack:check",
+    "release:check": "npm run build && npm run build:verify && npm run verify:tokens && npm run verify:registry && npm run verify:docs && npm run verify:split && npm run verify:published && npm run verify:reduced-motion && npm run verify:physics && npm run verify:unique && npm run lint:css && npm run build:packages && npm run size && npm run validate && npm run pack:check",
     "prepublishOnly": "npm run release:check",
     "generate:static": "node scripts/docs/generate-static-pages.js",
-    "generate:ide": "node scripts/docs/generate-ide-files.js"
+    "generate:ide": "node scripts/docs/generate-ide-files.js",
+    "generate:physics": "node scripts/generate-physics.js",
+    "verify:physics": "node scripts/generate-physics.js --check",
+    "verify:unique": "node scripts/verify-uniqueness.js",
+    "audit:motion": "node scripts/audit-motion-similarity.js"
   },
   "keywords": [
     "css-animation-library",
