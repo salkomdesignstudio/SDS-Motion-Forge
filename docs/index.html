@@ -2079,6 +2079,14 @@
         --sds-primary-glow: rgba(209, 0, 40, 0.6);
         --sds-primary-dim: rgba(209, 0, 40, 0.28);
       }
+      /* Loaders that define no size of their own (their CSS only animates) need
+         one to be visible in a preview. */
+      .card-stage .sds-loader-skeleton, .modal-stage .sds-loader-skeleton { display: block; width: 160px; height: 14px; }
+      .card-stage .sds-loader-progress-glow, .modal-stage .sds-loader-progress-glow {
+        display: block; width: 160px; height: 6px; border-radius: 99px;
+        background: var(--sds-primary); transform-origin: left center;
+      }
+      .sds-restart, .sds-restart *, .sds-restart *::before, .sds-restart *::after { animation: none !important; }
       .card-stage h1, .modal-stage h1 { font-size: 20px; margin: 0; font-weight: 700; }
       .modal-stage h1 { font-size: 26px; }
       .card-stage h2, .modal-stage h2 { font-size: 18px; margin: 0; font-weight: 700; }
@@ -3437,21 +3445,26 @@
           }
         })();
 
-        /* Restart every running CSS animation under root. Going through the Web
-           Animations API also restarts animations on ::before/::after and on
-           child elements (rings, beams, borders, char spans), which resetting
-           an inline animation on the element itself never reached. Returns the
-           number of animations restarted (0 -> caller falls back). */
+        /* Restart every CSS animation under root, including ones that already
+           finished and ones on ::before/::after or child elements. Adding
+           .sds-restart (animation:none on the subtree and its pseudo-elements),
+           flushing style, then removing it makes the browser start them all again
+           from zero. Resetting an inline animation on the element alone never
+           reached pseudo-elements or finished fill-mode:backwards animations.
+           Focus-driven effects (inputs) have nothing running, so they get focus. */
         window.sdsRestart = function (root) {
-          if (!root || !root.getAnimations || typeof CSSAnimation === "undefined") return 0;
-          var list = root.getAnimations({ subtree: true }).filter(function (a) {
-            return a instanceof CSSAnimation;
-          });
-          list.forEach(function (a) {
-            a.cancel();
-            a.play();
-          });
-          return list.length;
+          if (!root) return 0;
+          root.classList.add("sds-restart");
+          void root.offsetWidth;
+          root.classList.remove("sds-restart");
+          var f = root.matches("input, textarea, select") ? root : root.querySelector("input, textarea, select");
+          if (f && !(root.getAnimations && root.getAnimations({ subtree: true }).length)) {
+            try {
+              f.blur();
+              f.focus({ preventScroll: true });
+            } catch (e) {}
+          }
+          return 1;
         };
 
         /* ---------- Hero demo replay ---------- */
@@ -3966,6 +3979,11 @@
           document.getElementById("modal").classList.add("open");
           document.body.style.overflow = "hidden";
           modalApply();
+          /* focus-driven input effects only run once the field is focused */
+          setTimeout(function () {
+            var d = document.getElementById("modalDemo");
+            if (d) window.sdsRestart(d);
+          }, 60);
           /* Accessibility: save trigger element, move focus into modal */
           modalState.lastFocus = document.activeElement;
           var firstFocusable = document.querySelector(".modal-box .modal-x");
