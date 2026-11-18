@@ -34,40 +34,40 @@
     "source": "docs-import"
   },
   "sds-btn-amp": {
-    "description": "Amp — button animation.",
-    "seeded": true
+    "description": "Button animates, on a loop (0.6s).",
+    "source": "derived-from-css"
   },
   "sds-btn-aurora": {
-    "description": "Aurora — button animation.",
-    "seeded": true
+    "description": "Button animates its shadow, on a loop (4s).",
+    "source": "derived-from-css"
   },
   "sds-btn-border-flow": {
-    "description": "Border Flow — button animation.",
-    "seeded": true
+    "description": "Button animates its shadow, on a loop (3s).",
+    "source": "derived-from-css"
   },
   "sds-btn-bounce": {
-    "description": "Bounce — button animation.",
-    "seeded": true
+    "description": "Button animates, on a loop (1.4s).",
+    "source": "derived-from-css"
   },
   "sds-btn-burst": {
-    "description": "Burst — button animation.",
-    "seeded": true
+    "description": "Button animates, on a loop (2.2s).",
+    "source": "derived-from-css"
   },
   "sds-btn-charge": {
-    "description": "Charge — button animation.",
-    "seeded": true
+    "description": "Button animates its glow and shadow, on a loop (2.4s).",
+    "source": "derived-from-css"
   },
   "sds-btn-crystal": {
-    "description": "Crystal — button animation.",
-    "seeded": true
+    "description": "Button animates its glow and shadow, on a loop (2.4s).",
+    "source": "derived-from-css"
   },
   "sds-btn-depth-press": {
-    "description": "Depth Press — button animation.",
-    "seeded": true
+    "description": "Button animates its shadow, on a loop (2s).",
+    "source": "derived-from-css"
   },
   "sds-btn-dissolve": {
-    "description": "Dissolve — button animation.",
-    "seeded": true
+    "description": "Button animates its opacity, blur and glow, on a loop (3s).",
+    "source": "derived-from-css"
   },
   "sds-btn-edge": {
     "description": "Border traces the perimeter sequentially",
@@ -80,24 +80,24 @@
     "source": "docs-import"
   },
   "sds-btn-fire": {
-    "description": "Fire — button animation.",
-    "seeded": true
+    "description": "Button animates its glow and shadow, on a loop (2s).",
+    "source": "derived-from-css"
   },
   "sds-btn-flare": {
-    "description": "Flare — button animation.",
-    "seeded": true
+    "description": "Button animates its shadow, on a loop (2.5s).",
+    "source": "derived-from-css"
   },
   "sds-btn-float": {
-    "description": "Float — button animation.",
-    "seeded": true
+    "description": "Button animates its position and shadow, on a loop (2.6s).",
+    "source": "derived-from-css"
   },
   "sds-btn-flux": {
-    "description": "Flux — button animation.",
-    "seeded": true
+    "description": "Button animates its glow, on a loop (1.6s).",
+    "source": "derived-from-css"
   },
   "sds-btn-glow-core": {
-    "description": "Glow Core — button animation.",
-    "seeded": true
+    "description": "Button animates its shadow, on a loop (2.2s).",
+    "source": "derived-from-css"
   },
   "sds-btn-glow-surge": {
     "description": "Subtle outer glow that breathes",
@@ -105,32 +105,32 @@
     "source": "docs-import"
   },
   "sds-btn-gradient-shift": {
-    "description": "Gradient Shift — button animation.",
-    "seeded": true
+    "description": "Button animates its gradient position, on a loop (4s).",
+    "source": "derived-from-css"
   },
   "sds-btn-gravity": {
-    "description": "Gravity — button animation.",
-    "seeded": true
+    "description": "Button animates its position and shadow, on a loop (1.8s).",
+    "source": "derived-from-css"
   },
   "sds-btn-gravity-pull": {
-    "description": "Gravity Pull — button animation.",
-    "seeded": true
+    "description": "Button animates its position and shadow, on a loop (2.4s).",
+    "source": "derived-from-css"
   },
   "sds-btn-heartbeat": {
-    "description": "Heartbeat — button animation.",
-    "seeded": true
+    "description": "Button animates, on a loop (1.2s).",
+    "source": "derived-from-css"
   },
   "sds-btn-hologram": {
-    "description": "Hologram — button animation.",
-    "seeded": true
+    "description": "Button animates its colour hue and glow, on a loop (4s).",
+    "source": "derived-from-css"
   },
   "sds-btn-ice": {
-    "description": "Ice — button animation.",
-    "seeded": true
+    "description": "Button animates its glow and shadow, on a loop (3s).",
+    "source": "derived-from-css"
   },
   "sds-btn-kinetic": {
-    "description": "Kinetic — button animation.",
-    "seeded": true
+    "description": "Button animates its rotation, on a loop (0.8s).",
+    "source": "derived-from-css"
   },
   "sds-btn-lift": {
     "description": "Lifts with a growing depth shadow",
@@ -148,12 +148,12 @@
     "source": "docs-import"
   },
   "sds-btn-magnetic-trail": {
-    "description": "Magnetic Trail — button animation.",
-    "seeded": true
+    "description": "Button animates its shadow, on a loop (2s).",
+    "source": "derived-from-css"
   },
   "sds-btn-momentum": {
-    "description": "Momentum — button animation.",
-    "seeded": true
+    "description": "Button animates its position, opacity and blur, once on load (2s).",
+    "source": "derived-from-css"
   },
   "sds-btn-morph": {
     "description": "Border-radius morphs between rect/pill",
@@ -166,12 +166,12 @@
     "source": "docs-import"
   },
   "sds-btn-neon-trace": {
-    "description": "Neon Trace — button animation.",
-    "seeded": true
+    "description": "Button animates its shadow, on a loop (3s).",
+    "source": "derived-from-css"
   },
   "sds-btn-outline-grow": {
-    "description": "Outline Grow — button animation.",
-    "seeded": true
+    "description": "Button animates, on a loop (2s).",
+    "source": "derived-from-css"
   },
   "sds-btn-plasma": {
     "description": "Plasma-like glow shifts through colours",
@@ -184,8 +184,8 @@
     "source": "docs-import"
   },
   "sds-btn-pulse-border": {
-    "description": "Pulse Border — button animation.",
-    "seeded": true
+    "description": "Button animates its shadow and border colour, on a loop (2s).",
+    "source": "derived-from-css"
   },
   "sds-btn-quantum": {
     "description": "Scale-in with elastic overshoot",
@@ -193,28 +193,28 @@
     "source": "docs-import"
   },
   "sds-btn-radar": {
-    "description": "Radar — button animation.",
-    "seeded": true
+    "description": "Button animates its shadow, on a loop (2s).",
+    "source": "derived-from-css"
   },
   "sds-btn-recoil": {
-    "description": "Recoil — button animation.",
-    "seeded": true
+    "description": "Button animates, on a loop (2.4s).",
+    "source": "derived-from-css"
   },
   "sds-btn-ripple": {
-    "description": "Ripple — button animation.",
-    "seeded": true
+    "description": "Button animates its shadow, on a loop (2s).",
+    "source": "derived-from-css"
   },
   "sds-btn-rotate": {
-    "description": "Rotate — button animation.",
-    "seeded": true
+    "description": "Button animates its 3D rotation, on a loop (4s).",
+    "source": "derived-from-css"
   },
   "sds-btn-scan": {
-    "description": "Scan — button animation.",
-    "seeded": true
+    "description": "Button animates its gradient position, on a loop (2s).",
+    "source": "derived-from-css"
   },
   "sds-btn-shimmer": {
-    "description": "Shimmer — button animation.",
-    "seeded": true
+    "description": "Button animates its gradient position, on a loop (1.8s).",
+    "source": "derived-from-css"
   },
   "sds-btn-shock": {
     "description": "Outline rings expand outward in a pulse",
@@ -222,20 +222,20 @@
     "source": "docs-import"
   },
   "sds-btn-split": {
-    "description": "Split — button animation.",
-    "seeded": true
+    "description": "Button animates its shadow, on a loop (2.8s).",
+    "source": "derived-from-css"
   },
   "sds-btn-stretch": {
-    "description": "Stretch — button animation.",
-    "seeded": true
+    "description": "Button animates, on a loop (2s).",
+    "source": "derived-from-css"
   },
   "sds-btn-swipe": {
-    "description": "Swipe — button animation.",
-    "seeded": true
+    "description": "Button animates its gradient position, on a loop (2.4s).",
+    "source": "derived-from-css"
   },
   "sds-btn-tilt": {
-    "description": "Tilt — button animation.",
-    "seeded": true
+    "description": "Button animates its 3D rotation, on a loop (3s).",
+    "source": "derived-from-css"
   },
   "sds-btn-volt": {
     "description": "High-voltage border pulse",
@@ -243,28 +243,28 @@
     "source": "docs-import"
   },
   "sds-btn-warp": {
-    "description": "Warp — button animation.",
-    "seeded": true
+    "description": "Button animates its skew, on a loop (2.6s).",
+    "source": "derived-from-css"
   },
   "sds-card-aurora": {
-    "description": "Aurora — card animation.",
-    "seeded": true
+    "description": "Card animates its shadow, on a loop (5s).",
+    "source": "derived-from-css"
   },
   "sds-card-bloom": {
-    "description": "Bloom — card animation.",
-    "seeded": true
+    "description": "Card animates its glow and shadow, on a loop (3s).",
+    "source": "derived-from-css"
   },
   "sds-card-breath": {
-    "description": "Breath — card animation.",
-    "seeded": true
+    "description": "Card animates its shadow, on a loop (3s).",
+    "source": "derived-from-css"
   },
   "sds-card-burst": {
-    "description": "Burst — card animation.",
-    "seeded": true
+    "description": "Card animates its size, opacity and blur, once on load (0.7s).",
+    "source": "derived-from-css"
   },
   "sds-card-cascade": {
-    "description": "Cascade — card animation.",
-    "seeded": true
+    "description": "Card animates its position, opacity and blur, once on load (0.6s).",
+    "source": "derived-from-css"
   },
   "sds-card-cinematic": {
     "description": "Wipes open from center via clip-path",
@@ -272,32 +272,32 @@
     "source": "docs-import"
   },
   "sds-card-deep-float": {
-    "description": "Deep Float — card animation.",
-    "seeded": true
+    "description": "Card animates its position and shadow, on a loop (4s).",
+    "source": "derived-from-css"
   },
   "sds-card-depth": {
-    "description": "Depth — card animation.",
-    "seeded": true
+    "description": "Card animates its 3D rotation, on a loop (4s).",
+    "source": "derived-from-css"
   },
   "sds-card-drift": {
-    "description": "Drift — card animation.",
-    "seeded": true
+    "description": "Card animates its rotation, on a loop (5s).",
+    "source": "derived-from-css"
   },
   "sds-card-electric": {
-    "description": "Electric — card animation.",
-    "seeded": true
+    "description": "Card animates its shadow, on a loop (2.4s).",
+    "source": "derived-from-css"
   },
   "sds-card-expand": {
-    "description": "Expand — card animation.",
-    "seeded": true
+    "description": "Card animates its position, size and opacity, once on load (0.9s).",
+    "source": "derived-from-css"
   },
   "sds-card-flip": {
-    "description": "Flip — card animation.",
-    "seeded": true
+    "description": "Card animates its position and opacity, once on load (0.6s).",
+    "source": "derived-from-css"
   },
   "sds-card-flip-reveal": {
-    "description": "Flip Reveal — card animation.",
-    "seeded": true
+    "description": "Card animates its 3D rotation and opacity, once on load (0.8s).",
+    "source": "derived-from-css"
   },
   "sds-card-float": {
     "description": "Gentle floating with shadow growth",
@@ -305,20 +305,20 @@
     "source": "docs-import"
   },
   "sds-card-fold": {
-    "description": "Fold — card animation.",
-    "seeded": true
+    "description": "Card animates its 3D rotation and opacity, once on load (0.8s).",
+    "source": "derived-from-css"
   },
   "sds-card-force": {
-    "description": "Force — card animation.",
-    "seeded": true
+    "description": "Card animates its shadow, on a loop (2s).",
+    "source": "derived-from-css"
   },
   "sds-card-glass": {
-    "description": "Glass — card animation.",
-    "seeded": true
+    "description": "Card animates its opacity and backdrop blur, once on load (0.7s).",
+    "source": "derived-from-css"
   },
   "sds-card-glitch": {
-    "description": "Glitch — card animation.",
-    "seeded": true
+    "description": "Card animates its skew, colour hue and glow, on a loop (4s).",
+    "source": "derived-from-css"
   },
   "sds-card-glow": {
     "description": "Breathing outer glow on a card",
@@ -326,8 +326,8 @@
     "source": "docs-import"
   },
   "sds-card-gravity": {
-    "description": "Gravity — card animation.",
-    "seeded": true
+    "description": "Card animates its position and opacity, once on load (0.8s).",
+    "source": "derived-from-css"
   },
   "sds-card-holo": {
     "description": "Rotates on X/Y with hue shift effect",
@@ -335,20 +335,20 @@
     "source": "docs-import"
   },
   "sds-card-ink": {
-    "description": "Ink — card animation.",
-    "seeded": true
+    "description": "Card animates its opacity and clip-path reveal, once on load (1s).",
+    "source": "derived-from-css"
   },
   "sds-card-iris": {
-    "description": "Iris — card animation.",
-    "seeded": true
+    "description": "Card animates its opacity and clip-path reveal, once on load (0.8s).",
+    "source": "derived-from-css"
   },
   "sds-card-levitate": {
-    "description": "Levitate — card animation.",
-    "seeded": true
+    "description": "Card animates its position, 3D rotation and shadow, on a loop (3.5s).",
+    "source": "derived-from-css"
   },
   "sds-card-liquid-border": {
-    "description": "Liquid Border — card animation.",
-    "seeded": true
+    "description": "Card animates its shadow, on a loop (4s).",
+    "source": "derived-from-css"
   },
   "sds-card-magnetic": {
     "description": "Lifts and rotates slightly in a float",
@@ -356,20 +356,20 @@
     "source": "docs-import"
   },
   "sds-card-momentum": {
-    "description": "Momentum — card animation.",
-    "seeded": true
+    "description": "Card animates its position, skew and opacity, once on load (0.9s).",
+    "source": "derived-from-css"
   },
   "sds-card-morph": {
-    "description": "Morph — card animation.",
-    "seeded": true
+    "description": "Card animates, on a loop (3s).",
+    "source": "derived-from-css"
   },
   "sds-card-neon": {
-    "description": "Neon — card animation.",
-    "seeded": true
+    "description": "Card animates its shadow, on a loop (2.5s).",
+    "source": "derived-from-css"
   },
   "sds-card-neon-border": {
-    "description": "Neon Border — card animation.",
-    "seeded": true
+    "description": "Card animates its shadow, on a loop (3s).",
+    "source": "derived-from-css"
   },
   "sds-card-parallax": {
     "description": "Perspective rotateX with Z push",
@@ -382,24 +382,24 @@
     "source": "docs-import"
   },
   "sds-card-prism": {
-    "description": "Prism — card animation.",
-    "seeded": true
+    "description": "Card animates its colour hue and glow, on a loop (5s).",
+    "source": "derived-from-css"
   },
   "sds-card-rise": {
-    "description": "Rise — card animation.",
-    "seeded": true
+    "description": "Card animates its position, opacity and blur, once on load (0.8s).",
+    "source": "derived-from-css"
   },
   "sds-card-rotate": {
-    "description": "Rotate — card animation.",
-    "seeded": true
+    "description": "Card animates its position, 3D rotation and opacity, once on load (0.8s).",
+    "source": "derived-from-css"
   },
   "sds-card-scan": {
-    "description": "Scan — card animation.",
-    "seeded": true
+    "description": "Card animates its clip-path reveal, once on load (0.9s).",
+    "source": "derived-from-css"
   },
   "sds-card-shadow-lift": {
-    "description": "Shadow Lift — card animation.",
-    "seeded": true
+    "description": "Card animates its position and shadow, on a loop (2.8s).",
+    "source": "derived-from-css"
   },
   "sds-card-shimmer": {
     "description": "Diagonal shimmer background cycles",
@@ -412,36 +412,36 @@
     "source": "docs-import"
   },
   "sds-card-smoke": {
-    "description": "Smoke — card animation.",
-    "seeded": true
+    "description": "Card animates its size, opacity and blur, once on load (1.1s).",
+    "source": "derived-from-css"
   },
   "sds-card-snap": {
-    "description": "Snap — card animation.",
-    "seeded": true
+    "description": "Card animates its size, rotation and opacity, once on load (0.5s).",
+    "source": "derived-from-css"
   },
   "sds-card-spotlight": {
-    "description": "Spotlight — card animation.",
-    "seeded": true
+    "description": "Card animates its gradient position, on a loop (4s).",
+    "source": "derived-from-css"
   },
   "sds-card-spring": {
-    "description": "Spring — card animation.",
-    "seeded": true
+    "description": "Card animates its size, rotation and opacity, once on load (0.9s).",
+    "source": "derived-from-css"
   },
   "sds-card-stagger": {
-    "description": "Stagger — card animation.",
-    "seeded": true
+    "description": "Card animates its position and opacity, once on load (0.5s).",
+    "source": "derived-from-css"
   },
   "sds-card-tilt": {
-    "description": "Tilt — card animation.",
-    "seeded": true
+    "description": "Card animates its 3D rotation, on a loop (4s).",
+    "source": "derived-from-css"
   },
   "sds-card-unfold": {
-    "description": "Unfold — card animation.",
-    "seeded": true
+    "description": "Card animates its 3D rotation and opacity, once on load (0.8s).",
+    "source": "derived-from-css"
   },
   "sds-card-vortex": {
-    "description": "Vortex — card animation.",
-    "seeded": true
+    "description": "Card animates its size, 3D rotation and opacity, once on load (0.7s).",
+    "source": "derived-from-css"
   },
   "sds-card-warp": {
     "description": "Rotates in from -90° on the Y axis",
@@ -449,8 +449,8 @@
     "source": "docs-import"
   },
   "sds-card-wave": {
-    "description": "Wave — card animation.",
-    "seeded": true
+    "description": "Card animates its 3D rotation, opacity and blur, once on load (0.9s).",
+    "source": "derived-from-css"
   },
   "sds-center-burst": {
     "description": "Chars start at center, fan out",
@@ -681,24 +681,24 @@
     "source": "docs-import"
   },
   "sds-input-active-line": {
-    "description": "Active Line — input animation.",
-    "seeded": true
+    "description": "Field animates its shadow, on a loop (1.8s).",
+    "source": "derived-from-css"
   },
   "sds-input-aurora": {
-    "description": "Aurora — input animation.",
-    "seeded": true
+    "description": "Field animates its shadow, on a loop (4s).",
+    "source": "derived-from-css"
   },
   "sds-input-bloom": {
-    "description": "Bloom — input animation.",
-    "seeded": true
+    "description": "Field animates its glow and shadow, on a loop (2.4s).",
+    "source": "derived-from-css"
   },
   "sds-input-border-beam": {
-    "description": "Border Beam — input animation.",
-    "seeded": true
+    "description": "Field animates, on a loop (2s).",
+    "source": "derived-from-css"
   },
   "sds-input-burst": {
-    "description": "Burst — input animation.",
-    "seeded": true
+    "description": "Field animates its opacity and shadow, once on load (1.8s).",
+    "source": "derived-from-css"
   },
   "sds-input-caret": {
     "description": "Pulsing inner ring emulates caret activity",
@@ -706,28 +706,28 @@
     "source": "docs-import"
   },
   "sds-input-charge": {
-    "description": "Charge — input animation.",
-    "seeded": true
+    "description": "Field animates its shadow and border colour, on a loop (2.2s).",
+    "source": "derived-from-css"
   },
   "sds-input-comet": {
-    "description": "Comet — input animation.",
-    "seeded": true
+    "description": "Field animates its shadow, on a loop (3s).",
+    "source": "derived-from-css"
   },
   "sds-input-crystal": {
-    "description": "Crystal — input animation.",
-    "seeded": true
+    "description": "Field animates its glow, shadow and border colour, on a loop (2.4s).",
+    "source": "derived-from-css"
   },
   "sds-input-depth": {
-    "description": "Depth — input animation.",
-    "seeded": true
+    "description": "Field animates its shadow, on a loop (2.4s).",
+    "source": "derived-from-css"
   },
   "sds-input-echo": {
-    "description": "Echo — input animation.",
-    "seeded": true
+    "description": "Field animates, on a loop (2.4s).",
+    "source": "derived-from-css"
   },
   "sds-input-electric": {
-    "description": "Electric — input animation.",
-    "seeded": true
+    "description": "Field animates its shadow and border colour, on a loop (2s).",
+    "source": "derived-from-css"
   },
   "sds-input-elevate-wrap": {
     "description": "Label floats up on focus/fill",
@@ -735,20 +735,20 @@
     "source": "docs-import"
   },
   "sds-input-expand": {
-    "description": "Expand — input animation.",
-    "seeded": true
+    "description": "Field animates its opacity, once on load (0.6s).",
+    "source": "derived-from-css"
   },
   "sds-input-fire": {
-    "description": "Fire — input animation.",
-    "seeded": true
+    "description": "Field animates its shadow and border colour, on a loop (2s).",
+    "source": "derived-from-css"
   },
   "sds-input-flicker": {
-    "description": "Flicker — input animation.",
-    "seeded": true
+    "description": "Field animates, on a loop (4s).",
+    "source": "derived-from-css"
   },
   "sds-input-flow": {
-    "description": "Flow — input animation.",
-    "seeded": true
+    "description": "Field animates its gradient position, on a loop (3s).",
+    "source": "derived-from-css"
   },
   "sds-input-focus": {
     "description": "Glow ring appears on :focus",
@@ -756,32 +756,32 @@
     "source": "docs-import"
   },
   "sds-input-focus-glow": {
-    "description": "Focus Glow — input animation.",
-    "seeded": true
+    "description": "Field animates its shadow, when focused (0.5s).",
+    "source": "derived-from-css"
   },
   "sds-input-frost": {
-    "description": "Frost — input animation.",
-    "seeded": true
+    "description": "Field animates its opacity, blur and glow, once on load (2s).",
+    "source": "derived-from-css"
   },
   "sds-input-ghost": {
-    "description": "Ghost — input animation.",
-    "seeded": true
+    "description": "Field animates its gradient position, on a loop (3s).",
+    "source": "derived-from-css"
   },
   "sds-input-glitch-valid": {
-    "description": "Glitch Valid — input animation.",
-    "seeded": true
+    "description": "Field animates its position and border colour, once on load (0.4s).",
+    "source": "derived-from-css"
   },
   "sds-input-glow-border": {
-    "description": "Glow Border — input animation.",
-    "seeded": true
+    "description": "Field animates its shadow, on a loop (2s).",
+    "source": "derived-from-css"
   },
   "sds-input-gradient-border": {
-    "description": "Gradient Border — input animation.",
-    "seeded": true
+    "description": "Field animates its colour hue, on a loop (3s).",
+    "source": "derived-from-css"
   },
   "sds-input-gravity": {
-    "description": "Gravity — input animation.",
-    "seeded": true
+    "description": "Field animates its position and opacity, once on load (0.8s).",
+    "source": "derived-from-css"
   },
   "sds-input-ink": {
     "description": "Outline expands with ink-stroke feel",
@@ -789,16 +789,16 @@
     "source": "docs-import"
   },
   "sds-input-kinetic": {
-    "description": "Kinetic — input animation.",
-    "seeded": true
+    "description": "Field animates, on a loop (3s).",
+    "source": "derived-from-css"
   },
   "sds-input-laser": {
-    "description": "Laser — input animation.",
-    "seeded": true
+    "description": "Field animates its gradient position, on a loop (1.5s).",
+    "source": "derived-from-css"
   },
   "sds-input-momentum": {
-    "description": "Momentum — input animation.",
-    "seeded": true
+    "description": "Field animates its position, opacity and blur, once on load (0.7s).",
+    "source": "derived-from-css"
   },
   "sds-input-morph": {
     "description": "Border-radius morphs between shapes",
@@ -816,12 +816,12 @@
     "source": "docs-import"
   },
   "sds-input-neural": {
-    "description": "Neural — input animation.",
-    "seeded": true
+    "description": "Field animates its shadow, on a loop (3s).",
+    "source": "derived-from-css"
   },
   "sds-input-orbit": {
-    "description": "Orbit — input animation.",
-    "seeded": true
+    "description": "Field animates, on a loop (2s).",
+    "source": "derived-from-css"
   },
   "sds-input-plasma": {
     "description": "Plasma glow cycles around the field",
@@ -829,20 +829,20 @@
     "source": "docs-import"
   },
   "sds-input-prism": {
-    "description": "Prism — input animation.",
-    "seeded": true
+    "description": "Field animates its shadow and border colour, on a loop (4s).",
+    "source": "derived-from-css"
   },
   "sds-input-pulse-dot": {
-    "description": "Pulse Dot — input animation.",
-    "seeded": true
+    "description": "Field animates its shadow, on a loop (1.4s).",
+    "source": "derived-from-css"
   },
   "sds-input-quantum": {
-    "description": "Quantum — input animation.",
-    "seeded": true
+    "description": "Field animates its border colour, on a loop (3s).",
+    "source": "derived-from-css"
   },
   "sds-input-radar": {
-    "description": "Radar — input animation.",
-    "seeded": true
+    "description": "Field animates its shadow, on a loop (2s).",
+    "source": "derived-from-css"
   },
   "sds-input-ring": {
     "description": "Magnetic ring pulse on the border",
@@ -850,12 +850,12 @@
     "source": "docs-import"
   },
   "sds-input-ripple": {
-    "description": "Ripple — input animation.",
-    "seeded": true
+    "description": "Field animates its shadow, on a loop (2.4s).",
+    "source": "derived-from-css"
   },
   "sds-input-scan": {
-    "description": "Scan — input animation.",
-    "seeded": true
+    "description": "Field animates its gradient position, on a loop (2s).",
+    "source": "derived-from-css"
   },
   "sds-input-shake": {
     "description": "Horizontal shake for invalid state",
@@ -868,8 +868,8 @@
     "source": "docs-import"
   },
   "sds-input-solar": {
-    "description": "Solar — input animation.",
-    "seeded": true
+    "description": "Field animates its shadow, on a loop (2.8s).",
+    "source": "derived-from-css"
   },
   "sds-input-success": {
     "description": "Green glow for a validated field",
@@ -877,12 +877,12 @@
     "source": "docs-import"
   },
   "sds-input-unlock": {
-    "description": "Unlock — input animation.",
-    "seeded": true
+    "description": "Field animates its rotation and opacity, once on load (0.8s).",
+    "source": "derived-from-css"
   },
   "sds-input-void": {
-    "description": "Void — input animation.",
-    "seeded": true
+    "description": "Field animates its shadow, on a loop (2.6s).",
+    "source": "derived-from-css"
   },
   "sds-input-voltage": {
     "description": "Border brightens like voltage spikes",
@@ -890,12 +890,12 @@
     "source": "docs-import"
   },
   "sds-input-waveform": {
-    "description": "Waveform — input animation.",
-    "seeded": true
+    "description": "Field animates its border colour, on a loop (1.6s).",
+    "source": "derived-from-css"
   },
   "sds-input-zap": {
-    "description": "Zap — input animation.",
-    "seeded": true
+    "description": "Field animates its skew, shadow and border colour, on a loop (3s).",
+    "source": "derived-from-css"
   },
   "sds-iris-open": {
     "description": "Opens from a circular iris",
@@ -937,28 +937,28 @@
     "source": "docs-import"
   },
   "sds-loader-arc": {
-    "description": "Arc — loader animation.",
-    "seeded": true
+    "description": "An overlay on the loader animates its rotation, on a loop (0.9s).",
+    "source": "derived-from-css"
   },
   "sds-loader-bar": {
-    "description": "Bar — loader animation.",
-    "seeded": true
+    "description": "Loader animates, on a loop (1.8s).",
+    "source": "derived-from-css"
   },
   "sds-loader-bounce": {
-    "description": "Bounce — loader animation.",
-    "seeded": true
+    "description": "Loader animates its position, on a loop (0.8s).",
+    "source": "derived-from-css"
   },
   "sds-loader-breath": {
-    "description": "Breath — loader animation.",
-    "seeded": true
+    "description": "Loader animates its size and opacity, on a loop (2s).",
+    "source": "derived-from-css"
   },
   "sds-loader-cascade": {
-    "description": "Cascade Bars — loader animation.",
-    "seeded": true
+    "description": "Loader animates its opacity and height, on a loop (1s).",
+    "source": "derived-from-css"
   },
   "sds-loader-clock": {
-    "description": "Clock — loader animation.",
-    "seeded": true
+    "description": "An overlay on the loader animates its rotation, on a loop (2s).",
+    "source": "derived-from-css"
   },
   "sds-loader-comet": {
     "description": "Spinning arc on a track ring",
@@ -966,20 +966,20 @@
     "source": "docs-import"
   },
   "sds-loader-crystal": {
-    "description": "Crystal — loader animation.",
-    "seeded": true
+    "description": "Loader animates its rotation and glow, on a loop (3s).",
+    "source": "derived-from-css"
   },
   "sds-loader-cube": {
-    "description": "Cube — loader animation.",
-    "seeded": true
+    "description": "Loader animates its 3D rotation, on a loop (2s).",
+    "source": "derived-from-css"
   },
   "sds-loader-data": {
-    "description": "Data — loader animation.",
-    "seeded": true
+    "description": "An overlay on the loader animates its position and opacity, on a loop (1.4s).",
+    "source": "derived-from-css"
   },
   "sds-loader-dna": {
-    "description": "DNA Helix — loader animation.",
-    "seeded": true
+    "description": "An overlay on the loader animates its opacity, on a loop (1.4s).",
+    "source": "derived-from-css"
   },
   "sds-loader-dots": {
     "description": "3 dots scale to zero in staggered sync",
@@ -987,12 +987,12 @@
     "source": "docs-import"
   },
   "sds-loader-electric": {
-    "description": "Electric Arc — loader animation.",
-    "seeded": true
+    "description": "Loader animates its shadow and border colour, on a loop (1.5s).",
+    "source": "derived-from-css"
   },
   "sds-loader-expand": {
-    "description": "Expand — loader animation.",
-    "seeded": true
+    "description": "Loader animates its size, on a loop (1.6s).",
+    "source": "derived-from-css"
   },
   "sds-loader-fluid": {
     "description": "Blob morphs continuously with rotation",
@@ -1000,56 +1000,56 @@
     "source": "docs-import"
   },
   "sds-loader-glitch": {
-    "description": "Glitch — loader animation.",
-    "seeded": true
+    "description": "Loader animates its opacity and colour hue, on a loop (2s).",
+    "source": "derived-from-css"
   },
   "sds-loader-grid": {
-    "description": "Dot Grid — loader animation.",
-    "seeded": true
+    "description": "Loader animates its opacity, on a loop (1.6s).",
+    "source": "derived-from-css"
   },
   "sds-loader-helix": {
-    "description": "Helix Dots — loader animation.",
-    "seeded": true
+    "description": "Loader animates its position and opacity, on a loop (1.2s).",
+    "source": "derived-from-css"
   },
   "sds-loader-hex": {
-    "description": "Hex — loader animation.",
-    "seeded": true
+    "description": "Loader animates its rotation, opacity and glow, on a loop (2s).",
+    "source": "derived-from-css"
   },
   "sds-loader-hourglass": {
-    "description": "Hourglass — loader animation.",
-    "seeded": true
+    "description": "Loader animates its rotation, on a loop (1.8s).",
+    "source": "derived-from-css"
   },
   "sds-loader-infinity": {
-    "description": "Infinity — loader animation.",
-    "seeded": true
+    "description": "An overlay on the loader animates its rotation, on a loop (1.2s).",
+    "source": "derived-from-css"
   },
   "sds-loader-liquid-ring": {
-    "description": "Liquid Ring — loader animation.",
-    "seeded": true
+    "description": "Loader animates its rotation, blur and glow, on a loop (1s).",
+    "source": "derived-from-css"
   },
   "sds-loader-matrix": {
-    "description": "Matrix Bars — loader animation.",
-    "seeded": true
+    "description": "Loader animates its opacity and height, on a loop (1.2s).",
+    "source": "derived-from-css"
   },
   "sds-loader-morph": {
-    "description": "Morph — loader animation.",
-    "seeded": true
+    "description": "Loader animates its size and rotation, on a loop (2.2s).",
+    "source": "derived-from-css"
   },
   "sds-loader-mosaic": {
-    "description": "Mosaic — loader animation.",
-    "seeded": true
+    "description": "Loader animates its opacity, on a loop (1.8s).",
+    "source": "derived-from-css"
   },
   "sds-loader-neon-ring": {
-    "description": "Neon Ring — loader animation.",
-    "seeded": true
+    "description": "Loader animates its rotation and shadow, on a loop (1s).",
+    "source": "derived-from-css"
   },
   "sds-loader-neural": {
-    "description": "Neural — loader animation.",
-    "seeded": true
+    "description": "Loader animates its shadow, on a loop (3s).",
+    "source": "derived-from-css"
   },
   "sds-loader-orbit-3": {
-    "description": "Triple Orbit — loader animation.",
-    "seeded": true
+    "description": "An overlay on the loader animates its position and rotation, on a loop (1s).",
+    "source": "derived-from-css"
   },
   "sds-loader-orbital": {
     "description": "Two particles orbit at different radii",
@@ -1057,8 +1057,8 @@
     "source": "docs-import"
   },
   "sds-loader-pendulum": {
-    "description": "Pendulum — loader animation.",
-    "seeded": true
+    "description": "Loader animates its rotation, on a loop (1.2s).",
+    "source": "derived-from-css"
   },
   "sds-loader-ping": {
     "description": "3 rings expand and fade in cascade",
@@ -1066,12 +1066,12 @@
     "source": "docs-import"
   },
   "sds-loader-plasma-ring": {
-    "description": "Plasma Ring — loader animation.",
-    "seeded": true
+    "description": "Loader animates its rotation, colour hue and shadow, on a loop (1.6s).",
+    "source": "derived-from-css"
   },
   "sds-loader-prism": {
-    "description": "Prism — loader animation.",
-    "seeded": true
+    "description": "Loader animates its rotation, on a loop (2s).",
+    "source": "derived-from-css"
   },
   "sds-loader-progress": {
     "description": "Progress bar fills with glowing head",
@@ -1079,32 +1079,32 @@
     "source": "docs-import"
   },
   "sds-loader-progress-glow": {
-    "description": "Progress Glow — loader animation.",
-    "seeded": true
+    "description": "Loader animates its shadow, on a loop (2.4s).",
+    "source": "derived-from-css"
   },
   "sds-loader-pulse": {
-    "description": "Pulse — loader animation.",
-    "seeded": true
+    "description": "Loader animates its size and opacity, on a loop (1s).",
+    "source": "derived-from-css"
   },
   "sds-loader-quantum": {
-    "description": "Quantum — loader animation.",
-    "seeded": true
+    "description": "Loader animates its size and opacity, on a loop (1.6s).",
+    "source": "derived-from-css"
   },
   "sds-loader-radar": {
-    "description": "Radar — loader animation.",
-    "seeded": true
+    "description": "An overlay on the loader animates its rotation, on a loop (2s).",
+    "source": "derived-from-css"
   },
   "sds-loader-ring": {
-    "description": "Ring System — loader animation.",
-    "seeded": true
+    "description": "An overlay on the loader animates its rotation, on a loop (1s).",
+    "source": "derived-from-css"
   },
   "sds-loader-ripple": {
-    "description": "Ripple Rings — loader animation.",
-    "seeded": true
+    "description": "An overlay on the loader animates its size and opacity, on a loop (2s).",
+    "source": "derived-from-css"
   },
   "sds-loader-signal": {
-    "description": "Signal Bars — loader animation.",
-    "seeded": true
+    "description": "Loader animates its opacity, on a loop (1.2s).",
+    "source": "derived-from-css"
   },
   "sds-loader-skeleton": {
     "description": "Shimmer scan for loading placeholders",
@@ -1112,20 +1112,20 @@
     "source": "docs-import"
   },
   "sds-loader-snake": {
-    "description": "Snake — loader animation.",
-    "seeded": true
+    "description": "An overlay on the loader animates its rotation, on a loop (1.2s).",
+    "source": "derived-from-css"
   },
   "sds-loader-solar": {
-    "description": "Solar — loader animation.",
-    "seeded": true
+    "description": "An overlay on the loader animates its size and rotation, on a loop (2s).",
+    "source": "derived-from-css"
   },
   "sds-loader-spark": {
-    "description": "Spark — loader animation.",
-    "seeded": true
+    "description": "Loader animates its shadow, plus an overlay (size and opacity), on a loop (1.8s).",
+    "source": "derived-from-css"
   },
   "sds-loader-star": {
-    "description": "Star — loader animation.",
-    "seeded": true
+    "description": "Loader animates its rotation and opacity, on a loop (2s).",
+    "source": "derived-from-css"
   },
   "sds-loader-target": {
     "description": "Dashed ring rotates slowly",
@@ -1143,8 +1143,8 @@
     "source": "docs-import"
   },
   "sds-loader-warp": {
-    "description": "Warp — loader animation.",
-    "seeded": true
+    "description": "Loader animates its rotation, on a loop (1.2s).",
+    "source": "derived-from-css"
   },
   "sds-loader-wave": {
     "description": "5 bars scale vertically as a wave",
@@ -1291,32 +1291,32 @@
     "source": "docs-import"
   },
   "sds-scroll-bounce": {
-    "description": "Bounce — scroll animation.",
-    "seeded": true
+    "description": "Element animates its position and opacity, as it scrolls into view (0.9s).",
+    "source": "derived-from-css"
   },
   "sds-scroll-cascade": {
-    "description": "Cascade — scroll animation.",
-    "seeded": true
+    "description": "Element animates its position, opacity and blur, as it scrolls into view (0.6s).",
+    "source": "derived-from-css"
   },
   "sds-scroll-charge": {
-    "description": "Charge Reveal — scroll animation.",
-    "seeded": true
+    "description": "Element animates its position, opacity and blur, as it scrolls into view (0.8s).",
+    "source": "derived-from-css"
   },
   "sds-scroll-cinema": {
-    "description": "Cinema — scroll animation.",
-    "seeded": true
+    "description": "Element animates its size, opacity and blur, as it scrolls into view (1.2s).",
+    "source": "derived-from-css"
   },
   "sds-scroll-clip-left": {
-    "description": "Clip Left — scroll animation.",
-    "seeded": true
+    "description": "Element animates its opacity and clip-path reveal, as it scrolls into view (0.8s).",
+    "source": "derived-from-css"
   },
   "sds-scroll-clip-right": {
-    "description": "Clip Right — scroll animation.",
-    "seeded": true
+    "description": "Element animates its opacity and clip-path reveal, as it scrolls into view (0.8s).",
+    "source": "derived-from-css"
   },
   "sds-scroll-crystallize": {
-    "description": "Crystallize — scroll animation.",
-    "seeded": true
+    "description": "Element animates its opacity, blur and glow, as it scrolls into view (1s).",
+    "source": "derived-from-css"
   },
   "sds-scroll-curtain": {
     "description": "Clips up from bottom like a curtain",
@@ -1329,36 +1329,36 @@
     "source": "docs-import"
   },
   "sds-scroll-dissolve": {
-    "description": "Dissolve — scroll animation.",
-    "seeded": true
+    "description": "Element animates its opacity and blur, as it scrolls into view (1s).",
+    "source": "derived-from-css"
   },
   "sds-scroll-drift": {
-    "description": "Drift — scroll animation.",
-    "seeded": true
+    "description": "Element animates its rotation, opacity and blur, as it scrolls into view (1.2s).",
+    "source": "derived-from-css"
   },
   "sds-scroll-elastic": {
-    "description": "Elastic — scroll animation.",
-    "seeded": true
+    "description": "Element animates its position and opacity, as it scrolls into view (1s).",
+    "source": "derived-from-css"
   },
   "sds-scroll-elastic-pop": {
-    "description": "Elastic Pop — scroll animation.",
-    "seeded": true
+    "description": "Element animates its size, rotation and opacity, as it scrolls into view (0.7s).",
+    "source": "derived-from-css"
   },
   "sds-scroll-fade-up": {
-    "description": "Fade Up — scroll animation.",
-    "seeded": true
+    "description": "Element animates its position and opacity, as it scrolls into view (0.8s).",
+    "source": "derived-from-css"
   },
   "sds-scroll-flash": {
-    "description": "Bright Flash — scroll animation.",
-    "seeded": true
+    "description": "Element animates its opacity, blur and glow, as it scrolls into view (0.7s).",
+    "source": "derived-from-css"
   },
   "sds-scroll-flip": {
-    "description": "Flip Reveal — scroll animation.",
-    "seeded": true
+    "description": "Element animates its position, 3D rotation and opacity, as it scrolls into view (0.8s).",
+    "source": "derived-from-css"
   },
   "sds-scroll-fog": {
-    "description": "Fog — scroll animation.",
-    "seeded": true
+    "description": "Element animates its size, opacity and blur, as it scrolls into view (1.2s).",
+    "source": "derived-from-css"
   },
   "sds-scroll-glitch": {
     "description": "Glitch burst + viewport rise combo",
@@ -1371,12 +1371,12 @@
     "source": "docs-import"
   },
   "sds-scroll-hologram": {
-    "description": "Hologram — scroll animation.",
-    "seeded": true
+    "description": "Element animates its position, opacity and blur, as it scrolls into view (1s).",
+    "source": "derived-from-css"
   },
   "sds-scroll-ink": {
-    "description": "Ink — scroll animation.",
-    "seeded": true
+    "description": "Element animates its opacity and clip-path reveal, as it scrolls into view (1s).",
+    "source": "derived-from-css"
   },
   "sds-scroll-liquid": {
     "description": "Liquid skew-rise on viewport enter",
@@ -1384,16 +1384,16 @@
     "source": "docs-import"
   },
   "sds-scroll-magnetic": {
-    "description": "Magnetic Pull — scroll animation.",
-    "seeded": true
+    "description": "Element animates its position, size and opacity, as it scrolls into view (0.9s).",
+    "source": "derived-from-css"
   },
   "sds-scroll-morph": {
-    "description": "Morph Rise — scroll animation.",
-    "seeded": true
+    "description": "Element animates its position, skew and opacity, as it scrolls into view (0.9s).",
+    "source": "derived-from-css"
   },
   "sds-scroll-neon": {
-    "description": "Neon Reveal — scroll animation.",
-    "seeded": true
+    "description": "Element animates its position, opacity and shadow, as it scrolls into view (1s).",
+    "source": "derived-from-css"
   },
   "sds-scroll-orbit": {
     "description": "Perspective swing from the left",
@@ -1401,8 +1401,8 @@
     "source": "docs-import"
   },
   "sds-scroll-perspective-left": {
-    "description": "Perspective Left — scroll animation.",
-    "seeded": true
+    "description": "Element animates its position, 3D rotation and opacity, as it scrolls into view (0.8s).",
+    "source": "derived-from-css"
   },
   "sds-scroll-phantom": {
     "description": "Crystallises from a bright blur",
@@ -1410,12 +1410,12 @@
     "source": "docs-import"
   },
   "sds-scroll-prism": {
-    "description": "Prism Reveal — scroll animation.",
-    "seeded": true
+    "description": "Element animates its opacity, blur and colour hue, as it scrolls into view (1s).",
+    "source": "derived-from-css"
   },
   "sds-scroll-punch": {
-    "description": "Punch — scroll animation.",
-    "seeded": true
+    "description": "Element animates its size, opacity and blur, as it scrolls into view (0.6s).",
+    "source": "derived-from-css"
   },
   "sds-scroll-radial": {
     "description": "Circle expands from the bottom center",
@@ -1443,8 +1443,8 @@
     "source": "docs-import"
   },
   "sds-scroll-skew": {
-    "description": "Skew — scroll animation.",
-    "seeded": true
+    "description": "Element animates its position, skew and opacity, as it scrolls into view (0.8s).",
+    "source": "derived-from-css"
   },
   "sds-scroll-slide": {
     "description": "Slides in from the left with overshoot",
@@ -1452,24 +1452,24 @@
     "source": "docs-import"
   },
   "sds-scroll-slide-right": {
-    "description": "Slide Right — scroll animation.",
-    "seeded": true
+    "description": "Element animates its position and opacity, as it scrolls into view (0.8s).",
+    "source": "derived-from-css"
   },
   "sds-scroll-snap": {
-    "description": "Snap — scroll animation.",
-    "seeded": true
+    "description": "Element animates its size, rotation and opacity, as it scrolls into view (0.5s).",
+    "source": "derived-from-css"
   },
   "sds-scroll-spiral": {
-    "description": "Spiral — scroll animation.",
-    "seeded": true
+    "description": "Element animates its size, rotation and opacity, as it scrolls into view (0.9s).",
+    "source": "derived-from-css"
   },
   "sds-scroll-split": {
-    "description": "Split Reveal — scroll animation.",
-    "seeded": true
+    "description": "Element animates its opacity and clip-path reveal, as it scrolls into view (0.9s).",
+    "source": "derived-from-css"
   },
   "sds-scroll-spring": {
-    "description": "Spring — scroll animation.",
-    "seeded": true
+    "description": "Element animates its position, size and opacity, as it scrolls into view (0.9s).",
+    "source": "derived-from-css"
   },
   "sds-scroll-stagger-grid": {
     "description": "Grid children rise in sequence",
@@ -1482,8 +1482,8 @@
     "source": "docs-import"
   },
   "sds-scroll-streak": {
-    "description": "Streak — scroll animation.",
-    "seeded": true
+    "description": "Element animates its position, opacity and blur, as it scrolls into view (0.7s).",
+    "source": "derived-from-css"
   },
   "sds-scroll-tilt": {
     "description": "Folds down from a 50° X-axis rotation",
@@ -1491,8 +1491,8 @@
     "source": "docs-import"
   },
   "sds-scroll-unfold": {
-    "description": "Unfold — scroll animation.",
-    "seeded": true
+    "description": "Element animates its 3D rotation and opacity, as it scrolls into view (0.8s).",
+    "source": "derived-from-css"
   },
   "sds-scroll-velvet": {
     "description": "Velvet drop on viewport enter",
@@ -1500,8 +1500,8 @@
     "source": "docs-import"
   },
   "sds-scroll-vortex": {
-    "description": "Vortex — scroll animation.",
-    "seeded": true
+    "description": "Element animates its size, 3D rotation and opacity, as it scrolls into view (0.8s).",
+    "source": "derived-from-css"
   },
   "sds-scroll-warp": {
     "description": "Perspective-warp entrance from below",
@@ -1509,16 +1509,16 @@
     "source": "docs-import"
   },
   "sds-scroll-warp-in": {
-    "description": "Warp Enter — scroll animation.",
-    "seeded": true
+    "description": "Element animates its position, 3D rotation and opacity, as it scrolls into view (0.9s).",
+    "source": "derived-from-css"
   },
   "sds-scroll-wave-rise": {
-    "description": "Wave Rise — scroll animation.",
-    "seeded": true
+    "description": "Element animates its position and opacity, as it scrolls into view (0.7s).",
+    "source": "derived-from-css"
   },
   "sds-scroll-zoom-blur": {
-    "description": "Zoom Blur — scroll animation.",
-    "seeded": true
+    "description": "Element animates its size, opacity and blur, as it scrolls into view (0.9s).",
+    "source": "derived-from-css"
   },
   "sds-shadow-lift": {
     "description": "Lifts up casting a soft shadow",

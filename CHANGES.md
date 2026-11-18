@@ -80,6 +80,14 @@ Thirteen text effects driven by real equations: `sds-spring-drop`, `sds-orbit-de
 - Home performance kept at 98 / 100 / 100 / 100: the gallery now builds in chunks when it nears the viewport instead of
   ~1 s after load, and the GSAP/Lenis layer starts on first interaction.
 
+## Site redesign: one design system everywhere (2026-11-18)
+
+- New shared theme `docs/theme.css` (light, rounded, violet accent; Outfit headings, Manrope body, Geist Mono code; self-hosted, OFL) linked from `docs.html`, `builder.html`, `404.html` and every generated effect/category page. The home page carries the same tokens inline.
+- Floating pill header on every page, 20 px card radius, one hover (lift, soft shadow, violet border).
+- Home: calm white hero with a dotted grid, wider content, six live example cards with a cursor spotlight.
+- Fixed while doing it: `docs.html` scrolled sideways on phones (grid column and wide tables).
+- Generated effect pages now say the truth per effect: interactive effects need the 7 KB engine, scroll effects use `sds-scroll-auto` (Chrome 115+) or the 1.3 KB script, letter-split and child-element effects say so.
+
 ## No duplicate or repeated animations (guards added)
 
 - `scripts/verify-uniqueness.js` (`npm run verify:unique`): every effect of the current release must have a unique class name,

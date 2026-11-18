@@ -1,0 +1,3 @@
+Manrope (latin subset, variable weight 400-700), copyright The Manrope Project Authors.
+Licensed under the SIL Open Font License 1.1: https://openfontlicense.org/ (same licence text as vendor/geist/OFL.txt).
+Source: https://fonts.google.com/specimen/Manrope

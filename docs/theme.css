@@ -1,0 +1,114 @@
+/* SDS Motion Forge — site theme (shared by docs, builder, 404 and the generated pages).
+   Light, rounded, violet accent. Headings in Outfit, body in Manrope, code in Geist Mono.
+   Fonts are self-hosted (SIL OFL 1.1, see vendor/outfit/NOTICE.txt and vendor/manrope/NOTICE.txt).
+   The home page carries the same tokens inline. Change them in both places. */
+@font-face{font-family:"Outfit";font-style:normal;font-weight:400 700;font-display:swap;src:url("/vendor/outfit/Outfit-latin.woff2") format("woff2")}
+@font-face{font-family:"Manrope";font-style:normal;font-weight:400 700;font-display:swap;src:url("/vendor/manrope/Manrope-latin.woff2") format("woff2")}
+
+html:root {
+  /* docs.html + home tokens */
+  --ink: #141414; --ink-2: #44444a; --ink-3: #6b6b70;
+  --bg: #ffffff; --bg-2: #f3f3f5; --bg-card: #ffffff;
+  --line: #e4e7ec; --line-2: #d9dde4;
+  --brand: #5c4ae1; --brand-mid: #4a39c9; --brand-dim: rgba(92, 74, 225, 0.08); --brand-glow: rgba(92, 74, 225, 0.25);
+  --link: #5c4ae1; --accent: #874fff;
+  --sds-primary: #141414; --sds-primary-glow: rgba(92, 74, 225, 0.28); --sds-primary-dim: rgba(92, 74, 225, 0.1);
+  --r-sm: 10px; --r-md: 14px; --r-lg: 20px; --r-xl: 28px;
+  --sh-1: 0 1px 2px rgba(11, 13, 24, 0.04);
+  --sh-2: 0 24px 60px rgba(11, 13, 24, 0.12);
+  --f-disp: "Manrope", Arial, sans-serif;
+  --f-head: "Outfit", "Manrope", Arial, sans-serif;
+  --f-serif: "Outfit", "Manrope", Arial, sans-serif;
+  --nav-h: 78px;
+  /* generated pages (pages.css) */
+  --body: #44444a; --muted: #6b6b70; --canvas: #ffffff; --card: #ffffff;
+}
+
+html { background: var(--bg, #fff); }
+body { font-family: var(--f-disp); background: var(--bg, #fff); }
+h1, h2, h3, .brand, .logo-sans, .logo-serif, .doc-sec-title, .doc-h3, .top h1 {
+  font-family: var(--f-head); font-weight: 600; letter-spacing: -0.025em;
+}
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+::selection { background: rgba(92, 74, 225, 0.2); }
+
+/* ---- header: see header.css (one header for every page) ---- */
+.sh ~ main { padding-top: calc(var(--nav-h) + 20px); }
+.sh ~ .layout { padding-top: calc(var(--nav-h) + 12px); }
+.sh ~ .layout .panel { top: calc(var(--nav-h) + 8px); }
+.nav-badge, .pill { color: var(--brand); background: var(--brand-dim); border: 1px solid rgba(92, 74, 225, 0.18); border-radius: 999px; }
+
+/* ---- buttons ---- */
+.btn, .nav-btn, button.primary, .btn-primary {
+  border-radius: 999px; font-weight: 600;
+}
+.btn-primary, button.primary { background: #141414; color: #fff; border-color: #141414; }
+.btn-primary:hover, button.primary:hover { background: #000; }
+.btn-ghost { background: #fff; border: 1px solid var(--line); color: var(--ink); }
+
+/* ---- cards, tables, code, details ---- */
+.cat, .panel, .doc-card, .tile, .stage, details, .spec-table, .note, pre, .doc-table {
+  border-radius: var(--r-lg, 20px);
+}
+.cat, .panel, .doc-card, .stage, details { border: 1px solid var(--line); box-shadow: var(--sh-1); }
+.doc-card, .cat { transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s, border-color 0.3s; }
+.doc-card:hover { transform: translateY(-3px); box-shadow: var(--sh-2); border-color: rgba(92, 74, 225, 0.3); }
+pre { border-radius: 14px; }
+.chips a, .chip { border-radius: 999px; }
+:not(pre) > code { background: var(--bg-2); border: 1px solid var(--line); border-radius: 8px; }
+.note { background: var(--brand-dim); border-color: rgba(92, 74, 225, 0.18); }
+a { text-underline-offset: 3px; }
+.cat-head { background: var(--brand-dim); }
+
+/* ---- generated effect pages ---- */
+main h1 { letter-spacing: -0.035em; }
+.stage { background: linear-gradient(180deg, #f8f8fa, #f1f1f5); }
+
+@media (max-width: 900px) {
+  .nav { width: calc(100% - 20px); padding: 0 10px 0 16px; }
+  /* the sidebar becomes a horizontal strip on small screens: scroll inside it, not the page */
+  .page { grid-template-columns: minmax(0, 1fr); }
+  .sidebar { width: 100%; max-width: 100%; overflow-x: auto; }
+  /* wide tables scroll inside themselves instead of widening the page */
+  .doc-table { display: block; max-width: 100%; overflow-x: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .doc-card, .cat { transition: none; }
+  .doc-card:hover { transform: none; }
+}
+
+/* ---- docs.html layout: rounded sidebar panel + readable content column ---- */
+.page { max-width: 1360px; margin: 0 auto; gap: 28px; padding: calc(var(--nav-h) + 8px) 20px 0; grid-template-columns: 272px minmax(0, 1fr); }
+.sidebar { position: sticky; top: calc(var(--nav-h) + 8px); height: calc(100vh - var(--nav-h) - 28px); padding: 16px 12px; background: var(--panel, #f7f7f9); border: 1px solid var(--line); border-right: 1px solid var(--line); border-radius: var(--r-xl, 28px); }
+.sb-link { border-radius: 999px; }
+.sb-link.active { background: #141414; color: #fff; }
+.sb-link.active .sb-count { background: rgba(255, 255, 255, 0.18); color: #fff; }
+.sb-count { border-radius: 999px; }
+.content { max-width: 900px; padding: 40px 12px 120px; }
+.doc-sec { padding: 28px 0 16px; }
+.doc-sec-title { font-size: clamp(30px, 3.4vw, 44px); line-height: 1.05; margin-bottom: 12px; }
+.doc-sec-sub { font-size: 18px; line-height: 1.6; color: var(--ink-2); max-width: 720px; }
+.doc-h3 { font-size: 20px; margin: 32px 0 10px; }
+.codeblock { border-radius: 20px; overflow: hidden; }
+.fw-tabs { border-radius: 999px; }
+.fw-tab { border-radius: 999px; }
+.doc-table { border: 1px solid var(--line); border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden; }
+.doc-table th { background: var(--panel, #f7f7f9); }
+@media (max-width: 900px) {
+  .page { padding: calc(var(--nav-h) + 4px) 12px 0; grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .sidebar { position: static; height: auto; border-radius: 999px; padding: 8px 10px; }
+  .content { padding: 24px 4px 80px; }
+}
+
+/* ---- spacing rhythm: every block gets a real gap from the one above it ---- */
+.page { max-width: 1180px; padding-left: 0; padding-right: 0; }
+.doc-sec > * + *, .fw-panel > * + * { margin-top: 20px; }
+.doc-sec > .doc-sec-title + * { margin-top: 12px; }
+.doc-sec > .doc-h3 { margin-top: 40px; margin-bottom: 0; }
+.doc-sec > .doc-h3 + * { margin-top: 12px; }
+.codeblock { margin-bottom: 0; }
+.fw-tabs { margin-bottom: 0; }
+.fw-tabs + .fw-panel { margin-top: 16px; }
+.doc-p, .doc-sec p { margin-bottom: 0; }
+.doc-table { margin-top: 20px; margin-bottom: 0; }
+@media (max-width: 900px) { .page { padding-left: 12px; padding-right: 12px; } }
