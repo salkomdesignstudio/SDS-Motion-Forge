@@ -2053,6 +2053,32 @@
          exact built package output (CDN fallback below). Preview = npm. */
 
       /* Preview presentation for registry-generated markup */
+      /* Colour-dependent effects. The docs theme is neutral, and a hue-rotate or a
+         glow built from a grey does nothing visible, so these demos (preview only,
+         the library CSS is untouched) get a vivid base colour to act on. */
+      .card-stage .sds-chromatic-shift, .modal-stage .sds-chromatic-shift { color: var(--sds-accent); }
+      .card-stage .sds-card-hue-shift, .modal-stage .sds-card-hue-shift,
+      .card-stage .sds-card-prism, .modal-stage .sds-card-prism,
+      .card-stage .sds-card-glitch, .modal-stage .sds-card-glitch,
+      .card-stage .sds-input-gradient-border, .modal-stage .sds-input-gradient-border {
+        background: linear-gradient(135deg, #d10028, #ff9f1c);
+        color: #fff;
+      }
+      .card-stage .sds-btn-neon, .modal-stage .sds-btn-neon,
+      .card-stage .sds-btn-neon-trace, .modal-stage .sds-btn-neon-trace,
+      .card-stage .sds-btn-aurora, .modal-stage .sds-btn-aurora,
+      .card-stage .sds-btn-plasma, .modal-stage .sds-btn-plasma,
+      .card-stage .sds-input-neon, .modal-stage .sds-input-neon,
+      .card-stage .sds-input-aurora, .modal-stage .sds-input-aurora,
+      .card-stage .sds-input-plasma, .modal-stage .sds-input-plasma,
+      .card-stage .sds-card-neon-border, .modal-stage .sds-card-neon-border,
+      .card-stage .sds-card-aurora, .modal-stage .sds-card-aurora,
+      .card-stage .sds-loader-neon-flicker, .modal-stage .sds-loader-neon-flicker,
+      .card-stage .sds-loader-progress-glow, .modal-stage .sds-loader-progress-glow {
+        --sds-primary: var(--sds-accent);
+        --sds-primary-glow: rgba(209, 0, 40, 0.6);
+        --sds-primary-dim: rgba(209, 0, 40, 0.28);
+      }
       .card-stage h1, .modal-stage h1 { font-size: 20px; margin: 0; font-weight: 700; }
       .modal-stage h1 { font-size: 26px; }
       .card-stage h2, .modal-stage h2 { font-size: 18px; margin: 0; font-weight: 700; }
@@ -3411,6 +3437,23 @@
           }
         })();
 
+        /* Restart every running CSS animation under root. Going through the Web
+           Animations API also restarts animations on ::before/::after and on
+           child elements (rings, beams, borders, char spans), which resetting
+           an inline animation on the element itself never reached. Returns the
+           number of animations restarted (0 -> caller falls back). */
+        window.sdsRestart = function (root) {
+          if (!root || !root.getAnimations || typeof CSSAnimation === "undefined") return 0;
+          var list = root.getAnimations({ subtree: true }).filter(function (a) {
+            return a instanceof CSSAnimation;
+          });
+          list.forEach(function (a) {
+            a.cancel();
+            a.play();
+          });
+          return list.length;
+        };
+
         /* ---------- Hero demo replay ---------- */
         window.replayHero = function () {
           var el = document.getElementById("heroDemo");
@@ -3559,6 +3602,7 @@
               card.querySelector("[class*='sds-']");
             function play() {
               if (!demo || reduce) return;
+              if (window.sdsRestart(card.querySelector(".card-stage"))) return;
               // char-split and child-driven effects animate descendants
               var charSpans = demo.querySelectorAll(".sds-char");
               var targets = charSpans.length
@@ -3753,6 +3797,7 @@
         };
         window.pgReplay = function () {
           var t = document.getElementById("pgTarget");
+          if (window.sdsRestart(t)) return;
           t.style.animation = "none";
           void t.offsetWidth;
           t.style.animation = "";
@@ -4018,6 +4063,7 @@
         window.modalReplay = function () {
           var targets = modalAnimTargets();
           if (!targets.length || reduce) return;
+          if (window.sdsRestart(document.getElementById("modalDemo"))) return;
           targets.forEach(function (el) {
             el.style.animationName = "none";
           });
