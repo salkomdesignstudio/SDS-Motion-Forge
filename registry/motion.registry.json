@@ -2,7 +2,7 @@
   "$schema": "./motion.registry.schema.json",
   "name": "@salkomdesignstudio/sds-motion-forge",
   "generatedFrom": "src/motion.css (postcss-import inlined)",
-  "version": "5.1.0",
+  "version": "5.1.1",
   "tokens": {
     "duration": [
       "instant",

@@ -6,6 +6,18 @@
 
 ---
 
+## [5.1.1] — 2026-11-19
+
+> Patch release. No CSS, class name, keyframe or computed value changes.
+
+### Changed
+- 189 effects that only had a placeholder description now have a sentence derived from their own CSS (registry, IDE snippets and html-data, llms files).
+- README, package description and docs say plainly what needs JavaScript (7 cursor-reactive effects need the 7 KB engine; scroll effects use `sds-scroll-auto` in Chrome 115+ or the 1.3 KB script) and no longer claim zero JavaScript, GPU-only animation or Flutter/email support.
+- New docs site design: one header on every page, live card grids on category and index pages, redesigned effect pages.
+
+
+---
+
 ## [5.1.0] — 2026-11-18
 
 > Purely additive. No existing class, keyframe or computed value changes.
