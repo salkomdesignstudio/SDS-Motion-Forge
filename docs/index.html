@@ -260,8 +260,8 @@
       .logos-note { text-align: center; margin-top: 14px; font-size: 13px; color: var(--ink-3); }
 
       /* cards: one language everywhere */
-      .tile, .step, .need, .card, .docs-card, .compare, .faq-item, .pg, .spec { }
-      .tile, .step, .need, .docs-card, .compare, .faq-item, .pg { background: #fff; border: 1px solid var(--line); border-radius: var(--r-xl); box-shadow: var(--sh-1); }
+      .tile, .step, .need, .card, .docs-card, .faq-item, .pg, .spec { }
+      .tile, .step, .need, .docs-card, .faq-item, .pg { background: #fff; border: 1px solid var(--line); border-radius: var(--r-xl); box-shadow: var(--sh-1); }
       .tile, .step, .need, .docs-card { transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s; }
       .tile:hover, .step:hover, .need:hover, .docs-card:hover { transform: translateY(-3px); box-shadow: var(--sh-2); border-color: rgba(92, 74, 225, 0.3); }
 
@@ -374,16 +374,6 @@
       .pg-btn { display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 20px; border: 1px solid var(--line); border-radius: var(--r-full); background: #fff; font: 600 14px var(--f-disp); cursor: pointer; }
       .pg-btn-primary { background: var(--ink); border-color: var(--ink); color: #fff; }
 
-      /* compare */
-      .compare { overflow: hidden; }
-      .compare table { width: 100%; border-collapse: collapse; font-size: 15px; }
-      .compare th, .compare td { padding: 18px 24px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
-      .compare tr:last-child td { border-bottom: 0; }
-      .compare th { font: 600 14px var(--f-disp); color: var(--ink-3); background: var(--panel); }
-      .compare th:nth-child(2), .compare td:nth-child(2) { background: rgba(92, 74, 225, 0.04); }
-      .compare td:first-child { font-weight: 600; width: 26%; }
-      .compare-note { margin-top: 16px; text-align: center; font-size: 13.5px; color: var(--ink-3); }
-
       /* docs teaser */
       .docs-card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
       .docs-card { display: flex; flex-direction: column; gap: 10px; padding: 28px; text-decoration: none; }
@@ -469,7 +459,7 @@
       .ctrl-seg button.on { background: #fff; color: var(--ink); box-shadow: var(--sh-1); }
 
       /* below-the-fold sections are laid out only when they get near the viewport */
-      #how, #js, #why, #physics, #playground, #compare, #docs, #answers, .cta-band, .foot { content-visibility: auto; contain-intrinsic-size: auto 720px; }
+      #how, #js, #why, #physics, #playground, #docs, #answers, .cta-band, .foot { content-visibility: auto; contain-intrinsic-size: auto 720px; }
 
       /* reveal on scroll */
       [data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
@@ -500,9 +490,7 @@
         .hero-install-label { display: none; }
         .tabs { width: 100%; overflow-x: auto; flex-wrap: nowrap; }
         .foot-cols { grid-template-columns: 1fr 1fr; }
-        .compare { overflow-x: auto; }
-        .compare table { min-width: 560px; }
-        .modal-copy-primary span { display: none; }
+                .modal-copy-primary span { display: none; }
         .modal-copy-primary { width: 42px; padding: 0; justify-content: center; }
         .ctrl-row { grid-template-columns: 70px 1fr 56px; }
         .cta-box { padding: 48px 20px; }
@@ -932,30 +920,6 @@
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- COMPARE -->
-    <section class="sec band" id="compare">
-      <div class="wrap">
-        <div class="sec-head" data-reveal="up">
-          <span class="eyebrow">Honest comparison</span>
-          <h2 class="sec-title">Motion Forge vs Animate.css</h2>
-          <p class="sec-desc">Animate.css is smaller and covers the classic entrances and exits. Motion Forge is larger and covers six categories.</p>
-        </div>
-        <div class="compare" data-reveal="up">
-          <table>
-            <thead><tr><th></th><th>SDS Motion Forge 5.1</th><th>Animate.css 4.1.1</th></tr></thead>
-            <tbody>
-              <tr><td>Effects</td><td>617 CSS + 7 cursor-reactive</td><td>97 @keyframes (measured)</td></tr>
-              <tr><td>Full bundle, minified</td><td>260.8 KB</td><td>70.1 KB</td></tr>
-              <tr><td>Full bundle, gzip</td><td>43.8 KB</td><td>5.2 KB</td></tr>
-              <tr><td>Import part of it</td><td>Six category bundles, 5.8–13.5 KB gzip each</td><td>Individual source files</td></tr>
-              <tr><td>Reduced motion</td><td>Every animating selector switched off, checked by the build</td><td>Handled</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="compare-note">Animate.css 4.1.1 was downloaded from npm and measured on 2026-11-01. Choose Animate.css if you only need classic entrances and exits and every kilobyte counts.</p>
       </div>
     </section>
 
