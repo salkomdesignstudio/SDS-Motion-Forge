@@ -88,3 +88,26 @@ main h1 { letter-spacing: -0.035em; }
   .doc-card, .cat { transition: none; }
   .doc-card:hover { transform: none; }
 }
+
+/* ---- docs.html layout: rounded sidebar panel + readable content column ---- */
+.page { max-width: 1360px; margin: 0 auto; gap: 28px; padding: calc(var(--nav-h) + 8px) 20px 0; grid-template-columns: 272px minmax(0, 1fr); }
+.sidebar { position: sticky; top: calc(var(--nav-h) + 8px); height: calc(100vh - var(--nav-h) - 28px); padding: 16px 12px; background: var(--panel, #f7f7f9); border: 1px solid var(--line); border-right: 1px solid var(--line); border-radius: var(--r-xl, 28px); }
+.sb-link { border-radius: 999px; }
+.sb-link.active { background: #141414; color: #fff; }
+.sb-link.active .sb-count { background: rgba(255, 255, 255, 0.18); color: #fff; }
+.sb-count { border-radius: 999px; }
+.content { max-width: 900px; padding: 40px 12px 120px; }
+.doc-sec { padding: 40px 0 28px; }
+.doc-sec-title { font-size: clamp(30px, 3.4vw, 44px); line-height: 1.05; margin-bottom: 12px; }
+.doc-sec-sub { font-size: 18px; line-height: 1.6; color: var(--ink-2); max-width: 720px; }
+.doc-h3 { font-size: 20px; margin: 32px 0 10px; }
+.codeblock { border-radius: 20px; overflow: hidden; }
+.fw-tabs { border-radius: 999px; }
+.fw-tab { border-radius: 999px; }
+.doc-table { border: 1px solid var(--line); border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden; }
+.doc-table th { background: var(--panel, #f7f7f9); }
+@media (max-width: 900px) {
+  .page { padding: calc(var(--nav-h) + 4px) 12px 0; grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .sidebar { position: static; height: auto; border-radius: 999px; padding: 8px 10px; }
+  .content { padding: 24px 4px 80px; }
+}

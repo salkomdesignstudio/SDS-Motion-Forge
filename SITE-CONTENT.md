@@ -166,7 +166,6 @@ Rule: only card 1 is highlighted. One accent per viewport.
 | Full bundle | 261.0 KB min · 43.8 KB gzip | 70.1 KB min · 5.2 KB gzip |
 | Import part of it | Six category bundles, 5.8–13.5 KB gzip | Individual source files |
 | Reduced motion | Every selector neutralised, build-checked | Handled |
-| Licence | MIT | MIT |
 
 - **Footnote (must stay):** Animate.css 4.1.1 was downloaded from npm on 2026-11-01 and measured. Numbers are re-measured when either library changes.
 - **Choose Animate.css when:** you only need classic entrances and exits and every kilobyte counts.
