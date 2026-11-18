@@ -85,22 +85,22 @@ Copy-paste posts are below. Post **one place at a time**, a few days apart, and 
 `600+ CSS animations. One class name each. No JavaScript required.`
 
 **Short post (X / Bluesky / Mastodon / LinkedIn)**
-> SDS Motion Forge 5: 604 CSS animations for text, buttons, inputs, cards, loaders and scroll. One class per effect, no JavaScript needed, MIT.
-> Import just one category (5.8–8.6 KB gzip) or the full 38.4 KB bundle.
+> SDS Motion Forge 5: 617 CSS animations for text, buttons, inputs, cards, loaders and scroll. One class per effect, no JavaScript needed, MIT.
+> Import just one category (5.8–12.9 KB gzip) or the full 43.1 KB bundle.
 > https://sds-motion-forge.netlify.app
 
 **Hacker News — title**
-`Show HN: SDS Motion Forge – 604 CSS animations, one class each, no JS required`
+`Show HN: SDS Motion Forge – 617 CSS animations, one class each, no JS required`
 
 **Hacker News — first comment (post it yourself right after submitting)**
-> I built this as a CSS-only option for UI motion beyond entrance/exit effects: text, inputs, cards, loaders and scroll reveals, each a single class. Every effect honors prefers-reduced-motion and the build fails if one doesn't. Per-category bundles are 5.8–8.6 KB gzip; the full bundle is 38.4 KB (Animate.css 4.1.1 is 5.2 KB gzip with 97 keyframes — smaller, but a smaller set). Each effect has a page with a live demo and snippets: https://sds-motion-forge.netlify.app/animations/. Feedback on the class naming and docs is very welcome.
+> I built this as a CSS-only option for UI motion beyond entrance/exit effects: text, inputs, cards, loaders and scroll reveals, each a single class. Every effect honors prefers-reduced-motion and the build fails if one doesn't. Per-category bundles are 5.8–12.9 KB gzip; the full bundle is 43.1 KB (Animate.css 4.1.1 is 5.2 KB gzip with 97 keyframes — smaller, but a smaller set). Each effect has a page with a live demo and snippets: https://sds-motion-forge.netlify.app/animations/. Feedback on the class naming and docs is very welcome.
 
 **Reddit (r/css, r/webdev, r/angular)**
-> Title: I made 604 CSS-only animations (text, buttons, inputs, cards, loaders, scroll) — one class each
+> Title: I made 617 CSS-only animations (text, buttons, inputs, cards, loaders, scroll) — one class each
 > Body: Open source (MIT). No JS needed for the CSS effects; scroll reveals can use native scroll-driven animation (Chrome 115+) or a 1.3 KB script. Live demos and copy-paste code per effect: https://sds-motion-forge.netlify.app/animations/ — happy to hear what's missing.
 
 **Product Hunt tagline**
-`604 CSS animations, one class each, zero JS required`
+`617 CSS animations, one class each, zero JS required`
 
 ---
 

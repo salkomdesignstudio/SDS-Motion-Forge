@@ -1,6 +1,6 @@
 # SDS Motion Forge
 
-**604 CSS animations. One class name each. No JavaScript required.**
+**617 CSS animations. One class name each. No JavaScript required.**
 Text, buttons, inputs, cards, loaders and scroll effects as plain CSS — drop them into HTML, React, Next.js, Angular, Vue or a Tailwind project.
 
 [![npm version](https://img.shields.io/npm/v/@salkomdesignstudio/sds-motion-forge.svg?style=flat-square)](https://www.npmjs.com/package/@salkomdesignstudio/sds-motion-forge)
@@ -9,7 +9,7 @@ Text, buttons, inputs, cards, loaders and scroll effects as plain CSS — drop t
 [![License: MIT](https://img.shields.io/badge/License-MIT-171717.svg?style=flat-square)](LICENSE)
 [![CI](https://github.com/salkomdesignstudio/SDS-Motion-Forge/actions/workflows/ci.yml/badge.svg)](https://github.com/salkomdesignstudio/SDS-Motion-Forge/actions/workflows/ci.yml)
 
-**[Live gallery](https://sds-motion-forge.netlify.app)** · **[Docs](https://sds-motion-forge.netlify.app/docs.html)** · **[Browse all 604](https://sds-motion-forge.netlify.app/animations/)** · **[Bundle builder](https://sds-motion-forge.netlify.app/builder.html)** · **[llms.txt](https://sds-motion-forge.netlify.app/llms.txt)**
+**[Live gallery](https://sds-motion-forge.netlify.app)** · **[Docs](https://sds-motion-forge.netlify.app/docs.html)** · **[Browse all 617](https://sds-motion-forge.netlify.app/animations/)** · **[Bundle builder](https://sds-motion-forge.netlify.app/builder.html)** · **[llms.txt](https://sds-motion-forge.netlify.app/llms.txt)**
 
 Every class that worked in v3/v4 works identically in v5 — machine-verified against the published tarball on every build.
 
@@ -46,7 +46,7 @@ Prefer a live preview? Every effect has its own page with a demo and copy-paste 
 
 | Category | Effects | Class pattern | Browse |
 |---|---|---|---|
-| Text | 104 | `sds-*` | [text animations](https://sds-motion-forge.netlify.app/categories/text/) |
+| Text | 117 | `sds-*` | [text animations](https://sds-motion-forge.netlify.app/categories/text/) |
 | Buttons | 100 | `sds-btn-*` | [button animations](https://sds-motion-forge.netlify.app/categories/buttons/) |
 | Inputs | 100 | `sds-input-*` | [input animations](https://sds-motion-forge.netlify.app/categories/inputs/) |
 | Cards | 100 | `sds-card-*` | [card animations](https://sds-motion-forge.netlify.app/categories/cards/) |
@@ -59,12 +59,12 @@ Plus 7 cursor-reactive effects (need the optional 7.0 KB `motion-interactive.min
 
 Measured, not estimated. Animate.css 4.1.1 was downloaded from npm on 2026-11-01 and measured (`animate.min.css`).
 
-| | SDS Motion Forge 5.0.0 | Animate.css 4.1.1 |
+| | SDS Motion Forge 5.1.0 | Animate.css 4.1.1 |
 |---|---|---|
-| Animations | 604 effects (606 `@keyframes`) | 97 `@keyframes` |
-| Full bundle | 241.7 KB min · **38.4 KB gzip** | 70.1 KB min · **5.2 KB gzip** |
-| Smaller imports | Per-category bundles, 5.8–8.6 KB gzip each | Individual source files in the package's `source/` folder |
-| JavaScript required | None for the 604 CSS effects | None |
+| Animations | 617 effects (637 `@keyframes`) | 97 `@keyframes` |
+| Full bundle | 259.3 KB min · **43.1 KB gzip** | 70.1 KB min · **5.2 KB gzip** |
+| Smaller imports | Per-category bundles, 5.8–12.9 KB gzip each | Individual source files in the package's `source/` folder |
+| JavaScript required | None for the 617 CSS effects | None |
 | `prefers-reduced-motion` | Every animating selector neutralized; the build fails if one is missed | A reduced-motion media rule is included |
 | License | MIT | MIT |
 
@@ -98,7 +98,7 @@ If SDS Motion Forge saves you time, a ⭐ on GitHub helps other developers find 
   - [Framework Integrations](#framework-integrations)
 - [How It Works](#how-it-works)
 - [Animation Reference](#animation-reference)
-  - [Text — 104 classes](#text--104-classes)
+  - [Text — 117 classes](#text--117-classes)
   - [Buttons — 100 classes](#buttons--100-classes)
   - [Inputs — 100 classes](#inputs--100-classes)
   - [Cards — 100 classes](#cards--100-classes)
@@ -121,7 +121,7 @@ If SDS Motion Forge saves you time, a ⭐ on GitHub helps other developers find 
 
 ## What's in v5
 
-- **104 text animations** — 50 originals + 5 physics per-character animations + 49 new motion families
+- **117 text animations** — 50 originals + 5 physics per-character animations + 49 new motion families + 13 equation-driven physics effects (new in 5.1)
 - **100 button animations** — ambient, hover, entrance, and kinetic effects for interactive elements
 - **100 input animations** — focus, validation, ambient, and reveal states for form fields
 - **100 card animations** — entry, ambient, hover, 3D, and choreography effects for containers
@@ -186,14 +186,14 @@ import '@salkomdesignstudio/sds-motion-forge/categories/loaders';
 <!-- @sds-size-table:start -->
 | Bundle | Import | Minified | Gzip |
 |---|---|---|---|
-| text | `@salkomdesignstudio/sds-motion-forge/categories/text` | 63.2 KB | 12.9 KB |
+| text | `@salkomdesignstudio/sds-motion-forge/categories/text` | 63.1 KB | 12.9 KB |
 | buttons | `@salkomdesignstudio/sds-motion-forge/categories/buttons` | 49.1 KB | 8.6 KB |
 | inputs | `@salkomdesignstudio/sds-motion-forge/categories/inputs` | 47.0 KB | 8.4 KB |
 | cards | `@salkomdesignstudio/sds-motion-forge/categories/cards` | 39.6 KB | 7.5 KB |
 | loaders | `@salkomdesignstudio/sds-motion-forge/categories/loaders` | 49.1 KB | 8.1 KB |
 | scroll | `@salkomdesignstudio/sds-motion-forge/categories/scroll` | 33.6 KB | 5.8 KB |
 | core only | `@salkomdesignstudio/sds-motion-forge/categories/core` | 3.3 KB | 1.0 KB |
-| **everything** | `@salkomdesignstudio/sds-motion-forge` | **259.3 KB** | **43.1 KB** |
+| **everything** | `@salkomdesignstudio/sds-motion-forge` | **259.3 KB** | **43.0 KB** |
 <!-- @sds-size-table:end -->
 
 Core is intentionally **inlined** into every category bundle so each one works
@@ -402,7 +402,7 @@ Load once. Zero JavaScript from you — just add a class. The engine auto-wires 
 
 ## Animation Reference
 
-### Text — 104 classes
+### Text — 117 classes
 
 Apply to any element containing text.
 
@@ -547,7 +547,7 @@ For `sds-explode-formation`, set per-character displacement variables:
 
 ---
 
-### Physics text effects (new in v5.1 — not yet released)
+### Physics text effects (new in v5.1)
 
 Thirteen text effects driven by real equations instead of hand-tuned easing.
 Each one samples a physical system — a mass-spring-damper, a bouncing ball, a
@@ -596,8 +596,7 @@ which also verifies them against their closed-form solutions on every run.
 ```
 
 These cost about 4.5 KB gzip in the text bundle (the equation-sampled easing
-curves are the bytes), and are marked "not published yet" on their pages until
-the next release.
+curves are the bytes).
 
 ### Buttons — 100 classes
 
@@ -1122,7 +1121,7 @@ Available exported types:
 
 | Type | Classes |
 |---|---|
-| `SdsTextAnimation` | All 104 text animation classes |
+| `SdsTextAnimation` | All 117 text animation classes |
 | `SdsButtonAnimation` | All 100 button animation classes |
 | `SdsInputAnimation` | All 100 input animation classes |
 | `SdsCardAnimation` | All 100 card animation classes |

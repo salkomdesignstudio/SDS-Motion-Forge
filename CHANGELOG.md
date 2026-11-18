@@ -2,6 +2,14 @@
 
 ## [Unreleased]
 
+<!-- Next release notes go here -->
+
+---
+
+## [5.1.0] — 2026-11-18
+
+> Purely additive. No existing class, keyframe or computed value changes.
+
 ### Added — physics text effects (13, text category)
 
 Purely additive: no existing class, keyframe or computed value changes

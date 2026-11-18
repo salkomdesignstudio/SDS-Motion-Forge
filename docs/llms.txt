@@ -6,14 +6,14 @@
 
 - Name: SDS Motion Forge
 - npm package: @salkomdesignstudio/sds-motion-forge
-- Version: 5.0.0
+- Version: 5.1.0
 - License: MIT
 - Effects: 617 CSS-only effects across 6 categories, 7 interactive effects (need the optional cursor engine), 18 modifier classes
 - Maintainer: Salkom Design Studio (https://salkomdesignstudio.com)
 - Website: https://sds-motion-forge.netlify.app/
 - Repository: https://github.com/salkomdesignstudio/SDS-Motion-Forge
 - npm: https://www.npmjs.com/package/@salkomdesignstudio/sds-motion-forge
-- Size: Full bundle 43.1 KB gzip (259.3 KB minified); each category bundle 5.8–12.9 KB gzip (each already includes core).
+- Size: Full bundle 43.0 KB gzip (259.3 KB minified); each category bundle 5.8–12.9 KB gzip (each already includes core).
 
 ## Install
 

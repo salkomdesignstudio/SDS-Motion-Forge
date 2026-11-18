@@ -71,6 +71,19 @@ Thirteen text effects driven by real equations: `sds-spring-drop`, `sds-orbit-de
 - Home performance kept at 98 / 100 / 100 / 100: the gallery now builds in chunks when it nears the viewport instead of
   ~1 s after load, and the GSAP/Lenis layer starts on first interaction.
 
+## Release 5.1.0 prepared (not published)
+
+- `package.json` / lockfile → 5.1.0; the CSS header (`src/categories/core.css`) is bumped too — `build:verify` caught it.
+- Counts and sizes updated everywhere they are hand-written: 617 effects, 117 text, 637 keyframes, full bundle 259.3 KB min /
+  43.1 KB gzip, categories 5.8–12.9 KB gzip (README, home page, `docs.html` incl. the 13 new classes in its class grid,
+  launch copy). The "not published yet" notes disappear on their own because `sinceVersion` now equals the package version.
+- CHANGELOG `[5.1.0] — 2026-11-18`, MIGRATION note ("nothing to change"), OG card regenerated.
+- Gates on the release build: lint, build:verify ("safe to publish"), tokens, registry, docs, split, published, reduced-motion (100 %),
+  physics, size, publint, pack dry-run, **pack smoke test** (installs the tarball into fresh projects); 24 browser tests, 611 Tailwind
+  utilities, 13 visual checks; console audit of 635 pages + gallery/modal/playground (desktop, mobile, reduced-motion) under the
+  production CSP: **0 errors, 0 warnings, 0 failed requests, 0 CSP violations**.
+- Nothing was pushed, tagged or published.
+
 ## Interactive layer: GSAP + Lenis (home page only)
 
 Self-hosted and pinned in `docs/vendor/` (gsap 3.15.0 + ScrollTrigger, lenis 1.3.27; licences included). Loaded after `load` + idle, so LCP/FCP/CLS are untouched (Lighthouse unchanged: 98/100/100/100); skipped completely for `prefers-reduced-motion` and Save-Data (the files are not even downloaded). Adds ~52 KB gzip for visitors who get it.

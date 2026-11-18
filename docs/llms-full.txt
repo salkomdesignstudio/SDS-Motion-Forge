@@ -6,14 +6,14 @@
 
 - Name: SDS Motion Forge
 - npm package: @salkomdesignstudio/sds-motion-forge
-- Version: 5.0.0
+- Version: 5.1.0
 - License: MIT
 - Effects: 617 CSS-only effects across 6 categories, 7 interactive effects (need the optional cursor engine), 18 modifier classes
 - Maintainer: Salkom Design Studio (https://salkomdesignstudio.com)
 - Website: https://sds-motion-forge.netlify.app/
 - Repository: https://github.com/salkomdesignstudio/SDS-Motion-Forge
 - npm: https://www.npmjs.com/package/@salkomdesignstudio/sds-motion-forge
-- Size: Full bundle 43.1 KB gzip (259.3 KB minified); each category bundle 5.8–12.9 KB gzip (each already includes core).
+- Size: Full bundle 43.0 KB gzip (259.3 KB minified); each category bundle 5.8–12.9 KB gzip (each already includes core).
 
 ## Install
 
@@ -67,7 +67,7 @@ Combine sds-scroll-auto with any sds-scroll-* class, for example class="sds-scro
 
 ### Is there an Animate.css alternative?
 
-Yes. SDS Motion Forge is a CSS-only alternative that defines 637 @keyframes across 617 effects in six categories (text, buttons, inputs, cards, loaders, scroll), against 97 @keyframes in Animate.css 4.1.1. The trade-off is size: the full bundle is 43.1 KB gzip versus 5.2 KB, but you can import one 5.8–12.9 KB category instead.
+Yes. SDS Motion Forge is a CSS-only alternative that defines 637 @keyframes across 617 effects in six categories (text, buttons, inputs, cards, loaders, scroll), against 97 @keyframes in Animate.css 4.1.1. The trade-off is size: the full bundle is 43.0 KB gzip versus 5.2 KB, but you can import one 5.8–12.9 KB category instead.
 
 ### What is the best CSS-only text animation library?
 
@@ -79,7 +79,7 @@ Yes. Every animating selector is neutralized under prefers-reduced-motion: reduc
 
 ### How big is it, and can I import only part of it?
 
-The full bundle is 43.1 KB gzip. Each category is 5.8–12.9 KB gzip and can be imported alone, with core already included: import "@salkomdesignstudio/sds-motion-forge/categories/text";. For two or more categories, use the full bundle. The two optional scripts are 1.3 KB (scroll) and 7.0 KB (cursor effects).
+The full bundle is 43.0 KB gzip. Each category is 5.8–12.9 KB gzip and can be imported alone, with core already included: import "@salkomdesignstudio/sds-motion-forge/categories/text";. For two or more categories, use the full bundle. The two optional scripts are 1.3 KB (scroll) and 7.0 KB (cursor effects).
 
 ### Does it work with React, Vue, Next.js and Tailwind?
 
@@ -97,19 +97,19 @@ Headline, per-character and word-level text effects: entrances, loops, glows, re
 
 - `.sds-arc-orbit` — Arc Orbit: Each child orbits in with stagger delay. https://sds-motion-forge.netlify.app/animations/arc-orbit/
 - `.sds-aurora-text` — Aurora Text: Six-colour gradient clip sweeps through text. https://sds-motion-forge.netlify.app/animations/aurora-text/
-- `.sds-band-snap` — Band Snap: A stretched rubber-band word snaps back on a mass-spring, overshoots and rings down. https://sds-motion-forge.netlify.app/animations/band-snap/ (new in v5.1.0, not yet published to npm/CDN)
+- `.sds-band-snap` — Band Snap: A stretched rubber-band word snaps back on a mass-spring, overshoots and rings down. https://sds-motion-forge.netlify.app/animations/band-snap/
 - `.sds-blur-focus` — Blur Focus: Sharpens from heavy blur with tracking. https://sds-motion-forge.netlify.app/animations/blur-focus/
 - `.sds-bounce-drop-in` — Bounce Drop In: Drops in with a squashy bounce. https://sds-motion-forge.netlify.app/animations/bounce-drop-in/
 - `.sds-bounce-in-up` — Bounce In Up: Multi-step elastic Y-axis bounce entrance. https://sds-motion-forge.netlify.app/animations/bounce-in-up/
 - `.sds-bounce-loop` — Bounce Loop: Bounces continuously (loop). https://sds-motion-forge.netlify.app/animations/bounce-loop/
 - `.sds-center-burst` — Center Burst: Chars start at center, fan out. https://sds-motion-forge.netlify.app/animations/center-burst/
-- `.sds-chain-swing` — Chain Swing: Letters swing as damped pendulums, released in sequence so a wave travels along the word. https://sds-motion-forge.netlify.app/animations/chain-swing/ (new in v5.1.0, not yet published to npm/CDN)
+- `.sds-chain-swing` — Chain Swing: Letters swing as damped pendulums, released in sequence so a wave travels along the word. https://sds-motion-forge.netlify.app/animations/chain-swing/
 - `.sds-char-orbit` — Char Orbit: Orbits in from above with rotation. https://sds-motion-forge.netlify.app/animations/char-orbit/
 - `.sds-chromatic-shift` — Chromatic Shift: Slow hue-rotate + saturate colour cycle. https://sds-motion-forge.netlify.app/animations/chromatic-shift/
 - `.sds-cinema-title` — Cinema Title: Letter-spacing collapses with blur in cinematic style. https://sds-motion-forge.netlify.app/animations/cinema-title/
 - `.sds-cipher-reveal` — Cipher Reveal: Brightness and blur resolve like decryption. https://sds-motion-forge.netlify.app/animations/cipher-reveal/
 - `.sds-color-cycle` — Color Cycle: Cycles through a flowing gradient (loop). https://sds-motion-forge.netlify.app/animations/color-cycle/
-- `.sds-count-roll` — Count Roll: Odometer digits roll on springs, overshoot slightly and blur with speed. https://sds-motion-forge.netlify.app/animations/count-roll/ (new in v5.1.0, not yet published to npm/CDN)
+- `.sds-count-roll` — Count Roll: Odometer digits roll on springs, overshoot slightly and blur with speed. https://sds-motion-forge.netlify.app/animations/count-roll/
 - `.sds-data-stream` — Data Stream: Clip-path + brightness data-decode entrance. https://sds-motion-forge.netlify.app/animations/data-stream/
 - `.sds-depth-charge` — Depth Charge: Deep warp from Z-space with delay. https://sds-motion-forge.netlify.app/animations/depth-charge/
 - `.sds-depth-warp` — Depth Warp: Flies in from deep Z-space. https://sds-motion-forge.netlify.app/animations/depth-warp/
@@ -120,7 +120,7 @@ Headline, per-character and word-level text effects: entrances, loops, glows, re
 - `.sds-elastic-bounce` — Elastic Bounce: Spring overshoot with cubic-bezier(0.34,1.56,0.64,1). https://sds-motion-forge.netlify.app/animations/elastic-bounce/
 - `.sds-elastic-stamp` — Elastic Stamp: Scales in from zero with elastic rotation. https://sds-motion-forge.netlify.app/animations/elastic-stamp/
 - `.sds-explode-formation` — Explode Formation: Scattered start, spring to position. https://sds-motion-forge.netlify.app/animations/explode-formation/
-- `.sds-extrude-rise` — Extrude Rise: Text tilts up on a spring while a 3D extrusion grows with the same overshoot. https://sds-motion-forge.netlify.app/animations/extrude-rise/ (new in v5.1.0, not yet published to npm/CDN)
+- `.sds-extrude-rise` — Extrude Rise: Text tilts up on a spring while a 3D extrusion grows with the same overshoot. https://sds-motion-forge.netlify.app/animations/extrude-rise/
 - `.sds-film-burn` — Film Burn: Sepia-tinted focus-pull entrance. https://sds-motion-forge.netlify.app/animations/film-burn/
 - `.sds-flicker-on` — Flicker On: Light-bulb turn-on with stepped opacity flicker. https://sds-motion-forge.netlify.app/animations/flicker-on/
 - `.sds-flip-x` — Flip X: Flips in on the X axis. https://sds-motion-forge.netlify.app/animations/flip-x/
@@ -143,19 +143,19 @@ Headline, per-character and word-level text effects: entrances, loops, glows, re
 - `.sds-ink-bleed` — Ink Bleed: Letter-spacing collapses as blur resolves. https://sds-motion-forge.netlify.app/animations/ink-bleed/
 - `.sds-iris-open` — Iris Open: Opens from a circular iris. https://sds-motion-forge.netlify.app/animations/iris-open/
 - `.sds-jello` — Jello: Jiggles with a jello skew. https://sds-motion-forge.netlify.app/animations/jello/
-- `.sds-jelly-wobble` — Jelly Wobble: A dropped jelly oscillating in two coupled, volume-preserving modes. https://sds-motion-forge.netlify.app/animations/jelly-wobble/ (new in v5.1.0, not yet published to npm/CDN)
+- `.sds-jelly-wobble` — Jelly Wobble: A dropped jelly oscillating in two coupled, volume-preserving modes. https://sds-motion-forge.netlify.app/animations/jelly-wobble/
 - `.sds-kinetic-wave` — Kinetic Wave: Each child bounces up/down in a wave. https://sds-motion-forge.netlify.app/animations/kinetic-wave/
 - `.sds-levitate` — Levitate: Gentle float with subtle rotation. https://sds-motion-forge.netlify.app/animations/levitate/
 - `.sds-light-speed` — Light Speed: Streaks in with a skewed light-speed motion. https://sds-motion-forge.netlify.app/animations/light-speed/
-- `.sds-liquid-fill` — Liquid Fill: Outlined text fills like a glass, with the liquid surface sloshing as it settles. https://sds-motion-forge.netlify.app/animations/liquid-fill/ (new in v5.1.0, not yet published to npm/CDN)
+- `.sds-liquid-fill` — Liquid Fill: Outlined text fills like a glass, with the liquid surface sloshing as it settles. https://sds-motion-forge.netlify.app/animations/liquid-fill/
 - `.sds-liquid-rise` — Liquid Rise: Rises up with skew and blur in one fluid arc. https://sds-motion-forge.netlify.app/animations/liquid-rise/
 - `.sds-magnetic-drift` — Magnetic Drift: Circular XY drift like magnetic field pull. https://sds-motion-forge.netlify.app/animations/magnetic-drift/
-- `.sds-momentum-slide` — Momentum Slide: Slides in on a spring while skew and motion blur follow its velocity. https://sds-motion-forge.netlify.app/animations/momentum-slide/ (new in v5.1.0, not yet published to npm/CDN)
+- `.sds-momentum-slide` — Momentum Slide: Slides in on a spring while skew and motion blur follow its velocity. https://sds-motion-forge.netlify.app/animations/momentum-slide/
 - `.sds-morph-word` — Morph Word: ScaleX + skewX + letter-spacing morphing loop. https://sds-motion-forge.netlify.app/animations/morph-word/
 - `.sds-neon-flare` — Neon Flare: Pulsing neon glow with colour shift. https://sds-motion-forge.netlify.app/animations/neon-flare/
 - `.sds-neon-flicker-in` — Neon Flicker In: Flickers on like a neon sign. https://sds-motion-forge.netlify.app/animations/neon-flicker-in/
 - `.sds-neon-pulse-text` — Neon Pulse Text: Neon text glow that breathes on a loop. https://sds-motion-forge.netlify.app/animations/neon-pulse-text/
-- `.sds-orbit-decay` — Orbit Decay: Letters spiral inward under drag with conserved angular momentum, spinning faster as they close in. https://sds-motion-forge.netlify.app/animations/orbit-decay/ (new in v5.1.0, not yet published to npm/CDN)
+- `.sds-orbit-decay` — Orbit Decay: Letters spiral inward under drag with conserved angular momentum, spinning faster as they close in. https://sds-motion-forge.netlify.app/animations/orbit-decay/
 - `.sds-oscillate` — Oscillate: Sine-wave Y + rotate + scaleX oscillation. https://sds-motion-forge.netlify.app/animations/oscillate/
 - `.sds-pendulum` — Pendulum: Swings like a pendulum (loop). https://sds-motion-forge.netlify.app/animations/pendulum/
 - `.sds-perspective-swing` — Perspective Swing: Swings in on the Y-axis with perspective. https://sds-motion-forge.netlify.app/animations/perspective-swing/
@@ -180,20 +180,20 @@ Headline, per-character and word-level text effects: entrances, loops, glows, re
 - `.sds-slide-blur-left` — Slide Blur Left: Slides from left through a blur. https://sds-motion-forge.netlify.app/animations/slide-blur-left/
 - `.sds-slide-blur-right` — Slide Blur Right: Slides from right through a blur. https://sds-motion-forge.netlify.app/animations/slide-blur-right/
 - `.sds-smoke-reveal` — Smoke Reveal: Resolves from a smoke-like blur field. https://sds-motion-forge.netlify.app/animations/smoke-reveal/
-- `.sds-split-halves` — Split Halves: Two halves collide at speed, rebound with restitution and lock together. https://sds-motion-forge.netlify.app/animations/split-halves/ (new in v5.1.0, not yet published to npm/CDN)
+- `.sds-split-halves` — Split Halves: Two halves collide at speed, rebound with restitution and lock together. https://sds-motion-forge.netlify.app/animations/split-halves/
 - `.sds-split-reveal` — Split Reveal: Polygon clip-path splits open from center. https://sds-motion-forge.netlify.app/animations/split-reveal/
 - `.sds-spotlight` — Spotlight: Brightens in under a spotlight. https://sds-motion-forge.netlify.app/animations/spotlight/
-- `.sds-spring-drop` — Spring Drop: Letters fall under gravity and bounce off a floor, each landing squashing with its impact speed. https://sds-motion-forge.netlify.app/animations/spring-drop/ (new in v5.1.0, not yet published to npm/CDN)
-- `.sds-spring-slam` — Spring Slam: Slams in from a large scale on a stiff spring with a decaying shake. https://sds-motion-forge.netlify.app/animations/spring-slam/ (new in v5.1.0, not yet published to npm/CDN)
+- `.sds-spring-drop` — Spring Drop: Letters fall under gravity and bounce off a floor, each landing squashing with its impact speed. https://sds-motion-forge.netlify.app/animations/spring-drop/
+- `.sds-spring-slam` — Spring Slam: Slams in from a large scale on a stiff spring with a decaying shake. https://sds-motion-forge.netlify.app/animations/spring-slam/
 - `.sds-squash-stretch` — Squash Stretch: Squashes then stretches into place. https://sds-motion-forge.netlify.app/animations/squash-stretch/
 - `.sds-stagger-chars` — Stagger Chars: Up to 12 children stagger in with skewY. https://sds-motion-forge.netlify.app/animations/stagger-chars/
 - `.sds-static-burst` — Static Burst: Glitchy signal-noise corruption loop. https://sds-motion-forge.netlify.app/animations/static-burst/
 - `.sds-streak-in` — Streak In: High-speed streak entrance from the left. https://sds-motion-forge.netlify.app/animations/streak-in/
-- `.sds-strike-swap` — Strike Swap: A word is struck out and knocked off to fall under gravity while its replacement drops in on a spring. https://sds-motion-forge.netlify.app/animations/strike-swap/ (new in v5.1.0, not yet published to npm/CDN)
+- `.sds-strike-swap` — Strike Swap: A word is struck out and knocked off to fall under gravity while its replacement drops in on a spring. https://sds-motion-forge.netlify.app/animations/strike-swap/
 - `.sds-strike-through` — Strike Through: Strike line draws across. https://sds-motion-forge.netlify.app/animations/strike-through/
 - `.sds-swing-in` — Swing In: Swings in with a pendulum overshoot. https://sds-motion-forge.netlify.app/animations/swing-in/
 - `.sds-tada` — Tada: Celebratory scale-and-rotate tada. https://sds-motion-forge.netlify.app/animations/tada/
-- `.sds-toss-in` — Toss In: Letters are thrown in along ballistic arcs, land, bounce and settle. https://sds-motion-forge.netlify.app/animations/toss-in/ (new in v5.1.0, not yet published to npm/CDN)
+- `.sds-toss-in` — Toss In: Letters are thrown in along ballistic arcs, land, bounce and settle. https://sds-motion-forge.netlify.app/animations/toss-in/
 - `.sds-tracking-contract` — Tracking Contract: Letters contract into place. https://sds-motion-forge.netlify.app/animations/tracking-contract/
 - `.sds-tracking-expand` — Tracking Expand: Letters expand out into place. https://sds-motion-forge.netlify.app/animations/tracking-expand/
 - `.sds-typewriter-pro` — Typewriter Pro: Classic typewriter with blinking cursor. https://sds-motion-forge.netlify.app/animations/typewriter-pro/

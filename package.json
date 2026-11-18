@@ -1,6 +1,6 @@
 {
   "name": "@salkomdesignstudio/sds-motion-forge",
-  "version": "5.0.0",
+  "version": "5.1.0",
   "description": "600+ CSS animations for text, buttons, inputs, cards, loaders and scroll. One class name each, zero required JavaScript, per-category bundles, TypeScript types and prefers-reduced-motion support. An Animate.css alternative.",
   "main": "./dist/motion.css",
   "style": "./dist/motion.css",
