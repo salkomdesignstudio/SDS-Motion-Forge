@@ -8,7 +8,7 @@
     <!-- Primary Meta -->
     <meta
       name="description"
-      content="600+ production-ready CSS animations in 6 categories. Add one class name to any element — no JavaScript, no build step, no config. Free and open source."
+      content="600+ production-ready CSS animations in 6 categories. Add one class name to any element. The CSS effects need no JavaScript or build step. Free and open source."
     />
     <meta
       name="keywords"
@@ -43,7 +43,7 @@
     />
     <meta
       property="og:description"
-      content="600+ production-ready CSS animations across 6 categories. Drop a single class name on any element — no JavaScript, no build step, no config. Free & open-source."
+      content="600+ production-ready CSS animations across 6 categories. Add one class name to any element. The CSS effects need no JavaScript or build step. Free and open source."
     />
     <meta
       property="og:url"
@@ -57,7 +57,7 @@
     <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
-      content="SDS Motion Forge — 600+ CSS Animations, Zero Required JavaScript"
+      content="SDS Motion Forge — 600+ CSS Animations, No JavaScript needed for the CSS effects"
     />
 
     <!-- Twitter Card -->
@@ -2090,6 +2090,102 @@
         display: block; width: 160px; height: 6px; border-radius: 99px;
         background: var(--sds-primary); transform-origin: left center;
       }
+      /* ---------- new site header: a floating bar that shows where you are ---------- */
+      :root { --nav-h: 78px; }
+      .site-header { position: fixed; inset: 0 0 auto 0; z-index: 100; pointer-events: none; }
+      .nav {
+        position: static; height: auto; display: block; padding-top: 10px;
+        background: transparent; border: 0; box-shadow: none;
+        backdrop-filter: none; -webkit-backdrop-filter: none;
+      }
+      .nav.is-scrolled { background: transparent; box-shadow: none; }
+      .nav .nav-in {
+        pointer-events: auto; max-width: 1120px; height: 56px; margin: 0 auto;
+        padding: 0 10px 0 16px; gap: 14px;
+        background: rgba(255, 255, 255, 0.86);
+        -webkit-backdrop-filter: blur(14px) saturate(160%); backdrop-filter: blur(14px) saturate(160%);
+        border: 1px solid var(--line); border-radius: 18px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.05);
+        transition: box-shadow 0.2s;
+      }
+      .nav.is-scrolled .nav-in { box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 12px 32px rgba(0, 0, 0, 0.1); }
+      .nav .logo-link img { width: 30px; height: 30px; }
+      .nav .nav-links { margin-left: 6px; gap: 2px; }
+      .nav .nav-links a { padding: 8px 14px; border-radius: 10px; font-size: 14px; font-weight: 500; }
+      .nav .nav-links a[aria-current="location"] { color: var(--ink); background: var(--bg-2); }
+      .nav a:focus-visible, .nav button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+      .nav .btn { height: 36px; padding: 0 14px; border-radius: 12px; }
+      @media (max-width: 900px) { .nav .nav-in { margin: 0 10px; } }
+
+      /* ---------- new hero: say it, let people try it, then show the range ---------- */
+      .hero { padding: calc(var(--nav-h) + 56px) 0 72px; }
+      .hero > .wrap { position: relative; z-index: 1; }
+      .hero-center { display: flex; flex-direction: column; align-items: center; text-align: center; }
+      .hero-badge { margin: 0 0 22px; }
+      .hero-h1 { max-width: 12em; margin: 0 auto 22px; font-size: clamp(40px, 7vw, 84px); line-height: 1.02; text-wrap: balance; }
+      .hero-sub { max-width: 560px; margin: 0 auto 26px; }
+      .hero-cta { justify-content: center; margin-bottom: 18px; }
+      .hero-install { margin: 0 auto 16px; width: 100%; max-width: 470px; text-align: left; }
+      .hero-fine { max-width: 560px; margin: 0 auto 44px; font-size: 12.5px; line-height: 1.55; color: var(--ink-3); }
+      .hero-fine a { color: var(--ink-2); text-decoration: underline; text-underline-offset: 3px; }
+      .specimens { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; margin: 0 0 26px; padding: 0; list-style: none; }
+      @media (max-width: 1100px) { .specimens { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+      @media (max-width: 640px) { .specimens { grid-template-columns: repeat(2, minmax(0, 1fr)); } .hero { padding-top: calc(var(--nav-h) + 28px); } }
+      .spec { display: flex; flex-direction: column; overflow: hidden; background: var(--bg-card); border: 1px solid var(--line); border-radius: 16px; }
+      .spec-stage {
+        position: relative; isolation: isolate; overflow: hidden; height: 112px;
+        display: grid; place-items: center; background: var(--bg-2);
+        --sds-primary: var(--sds-accent); --sds-primary-glow: rgba(209, 0, 40, 0.45); --sds-primary-dim: rgba(209, 0, 40, 0.16);
+      }
+      .spec-meta { display: flex; flex-direction: column; gap: 4px; padding: 10px 12px 12px; }
+      .spec-link { display: inline-flex; align-items: center; min-height: 24px; font-size: 13px; font-weight: 600; color: var(--ink); text-decoration: none; }
+      .spec-link::after { content: "\00a0→"; }
+      .spec-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+      .spec-link:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; border-radius: 4px; }
+      .spec-cls { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font: 11px var(--f-mono); color: var(--ink-3); }
+      .spec-text { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; color: var(--ink); }
+      .spec-btn { display: inline-block; padding: 9px 16px; border-radius: 10px; background: var(--ink); color: #fff; font: 600 13px var(--f-disp); }
+      .spec-input { width: 150px; height: 36px; padding: 0 10px; border: 1px solid var(--line-2); border-radius: 8px; background: #fff; font: 13px var(--f-disp); }
+      .spec-card { display: grid; gap: 4px; width: 118px; padding: 12px; border: 1px solid var(--line-2); border-radius: 12px; background: #fff; font-size: 12px; color: var(--ink-2); }
+      .spec-card b { font-size: 13px; color: var(--ink); }
+      .spec-loader { display: block; width: 26px; height: 26px; border-radius: 50%; background: var(--sds-primary); }
+      .hero-proof { justify-content: center; }
+      .hero-proof code { font: 12px var(--f-mono); }
+
+      /* gallery cards, toolbar and detail view */
+      .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+      .gal-meta { min-height: 20px; margin: -16px 0 14px; font-size: 13px; color: var(--ink-3); }
+      .gal-empty { grid-column: 1 / -1; padding: 48px 16px; text-align: center; color: var(--ink-2); font-size: 15px; }
+      .card-name-row { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-bottom: 6px; }
+      .card-name-row .card-name { margin-bottom: 0; }
+      .badge-markup { background: transparent; border: 1px solid var(--line-2); color: var(--ink-2); }
+      .card-tag { font-size: 11px; font-weight: 600; color: var(--ink-3); white-space: nowrap; }
+      .card-desc { margin: 0 0 10px; font-size: 12.5px; line-height: 1.5; color: var(--ink-2); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+      .card-cls { cursor: copy; }
+      .card-cls:hover { background: var(--line); }
+      .card-cls.copied { color: var(--ink); font-weight: 600; }
+      .card { transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s; }
+      .card:hover { transform: translateY(-2px); }
+      @media (hover: none) {
+        .card-replay { opacity: 1; width: 36px; height: 36px; }
+        .card:hover { transform: none; }
+      }
+      @media (prefers-reduced-motion: reduce) { .card, .card:hover { transform: none; transition: none; } }
+      .rm-toggle { white-space: nowrap; }
+      .modal-head-actions { display: flex; align-items: center; gap: 8px; }
+      .modal-copy-primary {
+        display: inline-flex; align-items: center; gap: 6px; height: 40px; padding: 0 16px;
+        border: 0; border-radius: 10px; background: var(--ink); color: #fff;
+        font: 600 13px var(--f-disp); cursor: pointer;
+      }
+      .modal-copy-primary:hover { background: #000; }
+      .modal-copy-primary.copied { background: #0a7f3f; }
+      .modal-customize { margin: 4px 0 0; border-top: 1px solid var(--line); padding-top: 4px; }
+      .modal-customize > summary { cursor: pointer; padding: 12px 0; font-size: 13px; font-weight: 600; color: var(--ink-2); }
+      @media (max-width: 480px) {
+        .modal-copy-primary span { display: none; }
+        .modal-copy-primary { width: 40px; padding: 0; justify-content: center; }
+      }
       .sds-restart, .sds-restart *, .sds-restart *::before, .sds-restart *::after { animation: none !important; }
       .card-stage h1, .modal-stage h1 { font-size: 20px; margin: 0; font-weight: 700; }
       .modal-stage h1 { font-size: 26px; }
@@ -2427,6 +2523,62 @@
         border: 1px solid var(--line);
         box-shadow: var(--sh-2);
       }
+      /* hero redesign: one primary action, a copyable install line, honest proof,
+         and a preview the visitor can steer */
+      .hero-cta { margin-bottom: 18px; }
+      .hero-sub { margin-bottom: 28px; max-width: 460px; }
+      .hero-install {
+        display: flex; align-items: center; gap: 10px; max-width: 470px;
+        padding: 6px 6px 6px 14px; margin-bottom: 26px;
+        background: var(--bg-card); border: 1px solid var(--line-2); border-radius: 12px;
+        font-family: var(--f-mono); font-size: 13px;
+      }
+      .hero-install-label {
+        font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+        color: var(--ink-3);
+      }
+      .hero-install code { flex: 1; min-width: 0; overflow-x: auto; white-space: nowrap; color: var(--ink); }
+      .hero-install-copy {
+        display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 12px;
+        border: 0; border-radius: 8px; background: var(--ink); color: #fff;
+        font: 600 12.5px var(--f-disp); cursor: pointer; flex-shrink: 0;
+      }
+      .hero-install-copy:hover { background: #000; }
+      .hero-install-copy.copied { background: #0a7f3f; }
+      .hero-proof {
+        display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 0; padding: 0; list-style: none;
+        font-size: 13px; color: var(--ink-2);
+      }
+      .hero-proof strong { color: var(--ink); font-weight: 600; }
+      .hero-word { display: inline-block; }
+      .hero-card-top { align-items: center; }
+      .hero-card-label {
+        margin-left: auto; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase;
+        color: var(--stage-ink-2);
+      }
+      .hero-pills {
+        position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 6px;
+        justify-content: center; margin-bottom: 14px;
+      }
+      .hero-pill {
+        min-height: 32px; padding: 6px 12px; border-radius: 999px; cursor: pointer;
+        border: 1px solid var(--stage-line); background: transparent; color: var(--stage-ink-2);
+        font: 500 12px var(--f-disp); transition: background 0.15s, color 0.15s, border-color 0.15s;
+      }
+      .hero-pill:hover { color: #fff; border-color: rgba(255, 255, 255, 0.4); }
+      .hero-pill[aria-pressed="true"] { background: #fff; color: #111; border-color: #fff; }
+      .hero-card-actions { display: inline-flex; gap: 6px; }
+      .hero-in > * { min-width: 0; }
+      @media (max-width: 900px) { .hero-in { grid-template-columns: minmax(0, 1fr); } .hero-install { max-width: none; } }
+      @media (hover: none) {
+        .hero-pill { min-height: 40px; }
+        .hero-install-copy { height: 44px; }
+        .hero-card-replay { width: 40px; height: 40px; }
+      }
+      @media (max-width: 640px) {
+        .hero-install-label { display: none; }
+        .hero-proof { gap: 6px 16px; }
+      }
 
       /* sections: mono eyebrow, tight-tracked headings */
       .sec {
@@ -2629,7 +2781,7 @@
       "@type": "SoftwareApplication",
       "@id": "https://sds-motion-forge.netlify.app/#software",
       "name": "SDS Motion Forge",
-      "description": "600+ production-ready CSS animations across 6 categories. Drop a single class name on any element — no JavaScript, no build step, no config.",
+      "description": "600+ production-ready CSS animations across 6 categories. Add one class name to any element. The CSS effects need no JavaScript or build step.",
       "url": "https://sds-motion-forge.netlify.app/",
       "applicationCategory": "DeveloperApplication",
       "applicationSubCategory": "CSS Animation Library",
@@ -2647,7 +2799,7 @@
       },
       "featureList": [
         "600+ CSS animations across text, buttons, inputs, cards, loaders, scroll",
-        "Zero required JavaScript",
+        "No JavaScript needed for the CSS effects",
         "Scroll-gate trigger system",
         "Interactive physics engine",
         "prefers-reduced-motion support",
@@ -2660,7 +2812,7 @@
       "@id": "https://sds-motion-forge.netlify.app/#website",
       "url": "https://sds-motion-forge.netlify.app/",
       "name": "SDS Motion Forge",
-      "description": "600+ production-ready CSS animations. One class name, zero required JavaScript.",
+      "description": "600+ production-ready CSS animations. One class name, No JavaScript needed for the CSS effects.",
       "publisher": {
         "@id": "https://sds-motion-forge.netlify.app/#organization"
       },
@@ -2708,8 +2860,9 @@
     <!-- FAQ-LD:END -->
   </head>
   <body>
-    <!-- NAV -->
-    <nav class="nav">
+    <!-- SITE HEADER -->
+    <header class="site-header">
+    <nav class="nav" aria-label="Primary">
       <div class="wrap nav-in">
         <div class="logo">
           <a href="#home" class="logo-link">
@@ -2727,8 +2880,8 @@
           </a>
         </div>
         <div class="nav-links">
-          <a href="#why">Why</a>
-          <a href="#gallery">Gallery</a>
+          <a href="#why">Why Motion Forge</a>
+          <a href="#gallery">Animations</a>
           <a href="#playground">Playground</a>
           <a href="docs.html">Docs</a>
         </div>
@@ -2744,19 +2897,22 @@
             ><i class="ri-github-fill"></i
           ></a>
           <a href="docs.html" class="btn btn-primary"
-            ><i class="ri-book-2-fill"></i> Get Started</a
+            ><i class="ri-book-2-fill"></i> Get started</a
           >
         </div>
         <button
           type="button"
           class="icon-btn burger"
           onclick="toggleDrawer()"
-          aria-label="Menu"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="drawer"
         >
           <i class="ri-menu-3-fill" id="burgerIcon"></i>
         </button>
       </div>
     </nav>
+    </header>
 
     <!-- DRAWER -->
     <div class="drawer" id="drawer">
@@ -2800,71 +2956,107 @@
     <main id="content">
 
     <!-- HERO -->
-    <header class="hero" id="home">
-      <div class="hero-grid" id="heroGrid"></div>
-      <div class="wrap hero-in">
-        <div>
-          <div class="hero-badge">
-            <span class="dot"></span> v5.1.0 · MIT · 617 animations
-          </div>
-          <h1 class="hero-h1">
-            <span class="kinetic" id="kinetic" role="img" aria-label="Motion"></span><br />
-            at the <span class="serif">speed</span><br />of class
-          </h1>
-          <p class="hero-sub">
-            600+ production-ready CSS animations across 6 categories. One class
-            name. Zero required JavaScript. The motion library that proves
-            itself on its own page.
-          </p>
-          <div class="hero-cta">
-            <a href="docs.html" class="btn btn-primary"
-              ><i class="ri-rocket-2-fill"></i> Get Started</a
-            >
-            <a href="#gallery" class="btn btn-ghost"
-              ><i class="ri-gallery-fill"></i> Browse 600+ Animations</a
-            >
-          </div>
-          <div class="hero-stats">
-            <div>
-              <div class="hstat-v">600+</div>
-              <div class="hstat-l">Animations</div>
-            </div>
-            <div>
-              <div class="hstat-v">0kb</div>
-              <div class="hstat-l">Required JS</div>
-            </div>
-            <div>
-              <div class="hstat-v">~43kb</div>
-              <div class="hstat-l">Gzip</div>
-            </div>
-            <div>
-              <div class="hstat-v">6</div>
-              <div class="hstat-l">Categories</div>
-            </div>
-          </div>
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero-grid" id="heroGrid" aria-hidden="true"></div>
+      <div class="wrap hero-center">
+        <p class="hero-badge">
+          <span class="dot" aria-hidden="true"></span> v5.1.0 · MIT · 617 CSS animations
+        </p>
+        <h1 class="hero-h1" id="hero-title">
+          <span class="hero-word sds-velvet-drop">Motion</span> at the
+          <span class="serif">speed</span> of class
+        </h1>
+        <p class="hero-sub">
+          617 CSS animations in six categories. Add one class name and the
+          element moves. The CSS effects need no JavaScript.
+        </p>
+        <div class="hero-cta">
+          <a href="#gallery" class="btn btn-primary"
+            ><i class="ri-gallery-fill" aria-hidden="true"></i> Browse the animations</a
+          >
+          <a href="docs.html" class="btn btn-ghost"
+            ><i class="ri-book-open-line" aria-hidden="true"></i> Read the docs</a
+          >
         </div>
-        <div class="hero-card">
-          <div class="hero-card-top">
-            <span class="d"></span><span class="d"></span
-            ><span class="d"></span>
-          </div>
-          <div class="hero-card-stage">
-            <span class="hero-card-demo" id="heroDemo">Velvet Drop</span>
-          </div>
-          <div class="hero-card-code">
-            <span>&lt;h1 class=<b>"sds-velvet-drop"</b>&gt;</span>
-            <button
-              type="button"
-              class="hero-card-replay"
-              onclick="replayHero()"
-              aria-label="Replay"
-            >
-              <i class="ri-restart-line"></i>
-            </button>
-          </div>
+        <div class="hero-install" role="group" aria-label="Install command">
+          <span class="hero-install-label">npm</span>
+          <code id="heroInstallCmd">npm i @salkomdesignstudio/sds-motion-forge</code>
+          <button type="button" class="hero-install-copy" id="heroInstallCopy" aria-label="Copy install command">
+            <i class="ri-file-copy-line" aria-hidden="true"></i><span>Copy</span>
+          </button>
         </div>
+        <p class="hero-fine">
+          JavaScript is optional: 7 cursor-reactive effects need a 7 KB script, and scroll
+          triggers use a 1.3 KB script in browsers without CSS scroll-driven animation.
+          <a href="docs.html#js-needs">What needs JavaScript</a>
+        </p>
       </div>
-    </header>
+      <div class="wrap">
+        <h2 class="sr-only">Six live examples</h2>
+        <ul class="specimens">
+          <li class="spec">
+            <div class="spec-stage" aria-hidden="true" inert>
+              <span class="spec-text sds-aurora-text">Aurora</span>
+            </div>
+            <div class="spec-meta">
+              <a href="#gallery" class="spec-link" data-tab="Text">Text · 117</a>
+              <code class="spec-cls">.sds-aurora-text</code>
+            </div>
+          </li>
+          <li class="spec">
+            <div class="spec-stage" aria-hidden="true" inert>
+              <span class="spec-text sds-spring-drop"><span class="sds-char" style="--i:0">S</span><span class="sds-char" style="--i:1">p</span><span class="sds-char" style="--i:2">r</span><span class="sds-char" style="--i:3">i</span><span class="sds-char" style="--i:4">n</span><span class="sds-char" style="--i:5">g</span></span>
+            </div>
+            <div class="spec-meta">
+              <a href="#gallery" class="spec-link" data-tab="Text">New physics text</a>
+              <code class="spec-cls">.sds-spring-drop</code>
+            </div>
+          </li>
+          <li class="spec">
+            <div class="spec-stage" aria-hidden="true" inert>
+              <span class="spec-btn sds-btn-surge-charge">Deploy</span>
+            </div>
+            <div class="spec-meta">
+              <a href="#gallery" class="spec-link" data-tab="Buttons">Buttons · 100</a>
+              <code class="spec-cls">.sds-btn-surge-charge</code>
+            </div>
+          </li>
+          <li class="spec">
+            <div class="spec-stage" aria-hidden="true" inert>
+              <input class="spec-input sds-input-gradient-border" placeholder="you@example.com" tabindex="-1" readonly />
+            </div>
+            <div class="spec-meta">
+              <a href="#gallery" class="spec-link" data-tab="Inputs">Inputs · 100</a>
+              <code class="spec-cls">.sds-input-gradient-border</code>
+            </div>
+          </li>
+          <li class="spec">
+            <div class="spec-stage" aria-hidden="true" inert>
+              <div class="spec-card sds-card-stack-pop"><b>Card</b><span>Stack pop</span></div>
+            </div>
+            <div class="spec-meta">
+              <a href="#gallery" class="spec-link" data-tab="Cards">Cards · 100</a>
+              <code class="spec-cls">.sds-card-stack-pop</code>
+            </div>
+          </li>
+          <li class="spec">
+            <div class="spec-stage" aria-hidden="true" inert>
+              <span class="spec-loader sds-loader-glow-pulse"></span>
+            </div>
+            <div class="spec-meta">
+              <a href="#gallery" class="spec-link" data-tab="Loaders">Loaders · 100</a>
+              <code class="spec-cls">.sds-loader-glow-pulse</code>
+            </div>
+          </li>
+        </ul>
+        <ul class="hero-proof">
+          <li><strong>617</strong> animations</li>
+          <li><strong>43.8 KB</strong> gzip, full bundle (one category: 5.8–13.5 KB)</li>
+          <li>Honors <code>prefers-reduced-motion</code></li>
+          <li>MIT licensed</li>
+        </ul>
+      </div>
+    </section>
 
     <!-- MARQUEE -->
     <div class="marquee">
@@ -2886,19 +3078,20 @@
           <div class="tile md tile-dark" data-reveal="scale">
             <div class="tile-ico"><i class="ri-flashlight-fill"></i></div>
             <div>
-              <div class="tile-t">Zero Required JS</div>
+              <div class="tile-t">No JavaScript for the CSS effects</div>
               <div class="tile-d">
-                Pure @keyframes and CSS classes. No required JavaScript. Two
-                optional engines (scroll gate, interactive) add progressive
-                enhancement when you need it.
+                All 617 effects are plain @keyframes and classes. Two optional
+                scripts add what CSS cannot: scroll triggering where CSS
+                scroll-driven animation is missing (1.3 KB) and 7 cursor-reactive
+                effects (7 KB).
               </div>
             </div>
           </div>
           <div class="tile md" data-reveal="up" data-delay="1">
             <div class="tile-ico"><i class="ri-sparkling-2-fill"></i></div>
             <div>
-              <div class="tile-t">600+ Animations</div>
-              <div class="tile-d">Text (117) · Buttons (100) · Inputs (100) · Cards (100) · Loaders (100) · Scroll (100).</div>
+              <div class="tile-t">617 animations</div>
+              <div class="tile-d">Text 117 · Buttons 100 · Inputs 100 · Cards 100 · Loaders 100 · Scroll 100, plus 7 cursor-reactive effects.</div>
             </div>
           </div>
           <div class="tile md" data-reveal="up" data-delay="2">
@@ -2906,7 +3099,7 @@
             <div>
               <div class="tile-t">Framework-agnostic</div>
               <div class="tile-d">
-                Angular, React, Vue, Next, Flutter, Bootstrap, Tailwind —
+                Angular, React, Vue, Next, Bootstrap, Tailwind —
                 anywhere a class works.
               </div>
             </div>
@@ -2924,9 +3117,9 @@
           <div class="tile md" data-reveal="up" data-delay="2">
             <div class="tile-ico"><i class="ri-speed-up-fill"></i></div>
             <div>
-              <div class="tile-t">GPU-accelerated</div>
+              <div class="tile-t">Mostly compositor-only</div>
               <div class="tile-d">
-                Transform &amp; opacity only. Buttery on mobile, no layout thrash.
+                468 of 617 effects animate only transform, opacity, filter or clip-path. The other 149 also animate shadows, gradients or sizes and can cost more on slow devices.
               </div>
             </div>
           </div>
@@ -2951,8 +3144,7 @@
           <div class="eyebrow">Live Gallery</div>
           <h2 class="sec-title">Every animation, playing live</h2>
           <p class="sec-desc">
-            Hover any card to replay. Click to open the detail view and copy
-            code. These are the real animations, running right here.
+            Hover a card, or tap its replay icon, to play it again. Click a card for the code and timing controls. These are the real animations, not recordings.
           </p>
         </div>
         <div class="gal-bar" data-reveal="up">
@@ -2967,6 +3159,7 @@
             />
           </div>
         </div>
+        <div class="gal-meta"><span id="galCount" aria-hidden="true"></span><span id="galLive" class="sr-only" role="status" aria-live="polite"></span></div>
         <div class="gal-grid" id="galGrid"></div>
       </div>
     </section>
@@ -3174,8 +3367,8 @@
             >
           </a>
           <p>
-            600+ production-ready CSS animations. One class name. Zero required
-            JavaScript. Open-source · MIT · Designed and developed by
+            617 CSS animations. One class name each. The CSS effects need
+            no JavaScript. Open-source · MIT · Designed and developed by
             <a
               href="https://salkomdesignstudio.com"
               target="_blank"
@@ -3268,9 +3461,14 @@
               ><span id="modalClsText">.sds-velvet-drop</span></span
             >
           </div>
-          <button type="button" class="modal-x" onclick="closeModal()" aria-label="Close">
-            <i class="ri-close-fill"></i>
-          </button>
+          <div class="modal-head-actions">
+            <button type="button" class="modal-copy-primary" id="modalCopyHead" onclick="copyModalCode(this)">
+              <i class="ri-file-copy-line"></i> <span>Copy code</span>
+            </button>
+            <button type="button" class="modal-x" onclick="closeModal()" aria-label="Close">
+              <i class="ri-close-fill"></i>
+            </button>
+          </div>
         </div>
 
         <div class="modal-stage" id="modalStage">
@@ -3286,13 +3484,28 @@
           CDN snippets below will not animate until <span id="modalUnreleasedV">the next version</span> is released.
         </div>
         <div class="modal-notice" id="modalNotice">
-          <strong><i class="ri-javascript-fill"></i> Requires the Interactive Engine</strong><br/>
-          This animation responds to cursor/hover events — it cannot be replayed with a button.
-          Add one of these before <code>&lt;/body&gt;</code>:<br/>
-          <code>&lt;script src="dist/motion-interactive.min.js"&gt;&lt;/script&gt;</code><br/>
-          <code>&lt;script src="cdn.jsdelivr.net/…/motion-interactive.min.js"&gt;&lt;/script&gt;</code>
+          <strong><i class="ri-cursor-fill"></i> Move your cursor over the preview</strong><br/>
+          This effect reacts to the pointer, so there is nothing to replay and no timing to set. To use it on your site, add the optional engine before <code>&lt;/body&gt;</code>:<br/>
+          <code>&lt;script src="https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion-interactive.min.js" defer&gt;&lt;/script&gt;</code>
         </div>
 
+        <div class="modal-how" id="modalHow"></div>
+        <div class="modal-tabs" id="modalTabs">
+          <button type="button" class="mtab on" data-tab="html">HTML + CSS</button>
+          <button type="button" class="mtab" data-tab="js">JS</button>
+          <button type="button" class="mtab" data-tab="react">React</button>
+          <button type="button" class="mtab" data-tab="angular">Angular</button>
+          <button type="button" class="mtab" data-tab="tailwind">Tailwind</button>
+          <button type="button" class="mtab" data-tab="bootstrap">Bootstrap</button>
+        </div>
+        <div class="modal-code">
+          <button type="button" class="modal-code-copy" onclick="copyModalCode(this)">
+            Copy
+          </button>
+          <pre id="modalCode"></pre>
+        </div>
+        <details class="modal-customize" id="modalCustomize">
+          <summary>Customize timing and easing</summary>
         <div class="modal-controls">
           <div class="ctrl-row">
             <span class="ctrl-label">Duration</span>
@@ -3350,21 +3563,7 @@
           </div>
         </div>
 
-        <div class="modal-how" id="modalHow"></div>
-        <div class="modal-tabs" id="modalTabs">
-          <button type="button" class="mtab on" data-tab="html">HTML + CSS</button>
-          <button type="button" class="mtab" data-tab="js">JS</button>
-          <button type="button" class="mtab" data-tab="react">React</button>
-          <button type="button" class="mtab" data-tab="angular">Angular</button>
-          <button type="button" class="mtab" data-tab="tailwind">Tailwind</button>
-          <button type="button" class="mtab" data-tab="bootstrap">Bootstrap</button>
-        </div>
-        <div class="modal-code">
-          <button type="button" class="modal-code-copy" onclick="copyModalCode(this)">
-            Copy
-          </button>
-          <pre id="modalCode"></pre>
-        </div>
+        </details>
       </div>
     </div>
 
@@ -3449,6 +3648,17 @@
           }
         })();
 
+        /* Polite live-region message for screen readers. */
+        window.announce = function (msg) {
+          var r = document.getElementById("galLive");
+          if (r) {
+            r.textContent = "";
+            setTimeout(function () {
+              r.textContent = msg;
+            }, 30);
+          }
+        };
+
         /* Restart every CSS animation under root, including ones that already
            finished and ones on ::before/::after or child elements. Adding
            .sds-restart (animation:none on the subtree and its pseudo-elements),
@@ -3472,13 +3682,64 @@
         };
 
         /* ---------- Hero demo replay ---------- */
-        window.replayHero = function () {
-          var el = document.getElementById("heroDemo");
-          el.classList.remove("sds-velvet-drop");
-          void el.offsetWidth;
-          el.classList.add("sds-velvet-drop");
-        };
-        setTimeout(window.replayHero, 400);
+        window.replayHero = function () {};
+
+        /* Hero: copy the install command, and jump from an example to its gallery tab. */
+        (function () {
+          var ic = document.getElementById("heroInstallCopy");
+          if (ic)
+            ic.addEventListener("click", function () {
+              var label = ic.querySelector("span");
+              navigator.clipboard
+                .writeText(document.getElementById("heroInstallCmd").textContent)
+                .then(function () {
+                  label.textContent = "Copied";
+                  ic.classList.add("copied");
+                  window.announce("Install command copied");
+                  setTimeout(function () {
+                    label.textContent = "Copy";
+                    ic.classList.remove("copied");
+                  }, 1400);
+                })
+                .catch(function () {
+                  label.textContent = "Select and copy";
+                  setTimeout(function () {
+                    label.textContent = "Copy";
+                  }, 2000);
+                });
+            });
+          document.querySelectorAll(".spec-link").forEach(function (a) {
+            a.addEventListener("click", function () {
+              var want = a.getAttribute("data-tab");
+              document.querySelectorAll("#tabs button").forEach(function (t) {
+                if (t.textContent.trim().indexOf(want) === 0) t.click();
+              });
+            });
+          });
+          /* nav: mark the section in view */
+          var links = {};
+          document.querySelectorAll(".nav-links a[href^='#']").forEach(function (l) {
+            links[l.getAttribute("href").slice(1)] = l;
+          });
+          if ("IntersectionObserver" in window) {
+            var spy = new IntersectionObserver(
+              function (es) {
+                es.forEach(function (e) {
+                  if (!e.isIntersecting || !links[e.target.id]) return;
+                  Object.keys(links).forEach(function (k) {
+                    if (k === e.target.id) links[k].setAttribute("aria-current", "location");
+                    else links[k].removeAttribute("aria-current");
+                  });
+                });
+              },
+              { rootMargin: "-45% 0px -50% 0px" }
+            );
+            Object.keys(links).forEach(function (id) {
+              var el = document.getElementById(id);
+              if (el) spy.observe(el);
+            });
+          }
+        })();
 
         /* ---------- Marquee ---------- */
         (function () {
@@ -3489,7 +3750,7 @@
             ["ri-reactjs-fill", "React"],
             ["ri-vuejs-fill", "Vue"],
             ["ri-nextjs-fill", "Next.js"],
-            ["ri-flutter-fill", "Flutter"],
+            ["ri-flutter-fill"],
             ["ri-bootstrap-fill", "Bootstrap"],
             ["ri-tailwind-css-fill", "Tailwind"],
             ["ri-html5-fill", "Plain HTML"],
@@ -3579,6 +3840,14 @@
         var galBuilt = false;
         var GAL_CHUNK = 16;
 
+        var TAG_LABEL = {
+          once: "Plays once",
+          loop: "Loops",
+          scroll: "On scroll (script or Chrome 115+)",
+          js: "Cursor-reactive",
+          focus: "On focus",
+        };
+
         function cardHtml(a) {
           return (
             '<div class="card" data-cls="' +
@@ -3595,16 +3864,27 @@
             '<span class="card-replay" aria-hidden="true" title="Replay"><i class="ri-restart-line"></i></span>' +
             "</div>" +
             '<div class="card-meta">' +
-            '<div class="card-name">' +
+            '<div class="card-name-row"><div class="card-name">' +
             a.name +
             "</div>" +
+            '<span class="card-tag">' +
+            (TAG_LABEL[a.tag] || "") +
+            "</span></div>" +
+            (a.desc ? '<p class="card-desc">' + a.desc + "</p>" : "") +
             '<div class="card-meta-row">' +
-            '<span class="card-cls"><i class="ri-code-s-slash-line"></i>' +
+            '<span class="card-cls" data-copy="' +
+            a.cls +
+            '" title="Copy class name"><i class="ri-code-s-slash-line"></i>' +
             a.cls +
             "</span>" +
             (INTERACTIVE.indexOf(a.cls) > -1
-              ? '<span class="badge-js">Needs JS</span>'
+              ? '<span class="badge-js" title="Needs the optional 7 KB interactive script">Needs JS</span>'
               : "") +
+            (window.SDS_DOCS.charSplit.indexOf(a.cls) > -1
+              ? '<span class="badge-js badge-markup" title="Each letter must be wrapped in a span with a --i index">Needs letter spans</span>'
+              : window.SDS_DOCS.childDriven.indexOf(a.cls) > -1
+                ? '<span class="badge-js badge-markup" title="Animates the element\'s child elements">Needs child elements</span>'
+                : "") +
             "</div>" +
             "</div></div>"
           );
@@ -3636,6 +3916,25 @@
               });
             }
             card.addEventListener("mouseenter", play);
+            var chip = card.querySelector(".card-cls");
+            if (chip)
+              chip.addEventListener("click", function (e) {
+                e.stopPropagation();
+                var cls = chip.getAttribute("data-copy");
+                var old = chip.innerHTML;
+                navigator.clipboard
+                  .writeText(cls)
+                  .then(function () {
+                    chip.classList.add("copied");
+                    chip.textContent = "Copied";
+                    window.announce(cls + " copied");
+                    setTimeout(function () {
+                      chip.classList.remove("copied");
+                      chip.innerHTML = old;
+                    }, 1200);
+                  })
+                  .catch(function () {});
+              });
             var rp = card.querySelector(".card-replay");
             if (rp)
               rp.addEventListener("click", function (e) {
@@ -3672,6 +3971,19 @@
           galBuilt = true;
           var token = ++renderToken;
           grid.innerHTML = "";
+          var countEl = document.getElementById("galCount");
+          if (countEl) {
+            countEl.textContent = list.length
+              ? list.length + (list.length === 1 ? " animation" : " animations") + (searchTerm ? ' matching "' + searchTerm + '"' : "")
+              : "";
+          }
+          if (!list.length) {
+            grid.innerHTML =
+              '<p class="gal-empty">No animation matches "' +
+              searchTerm.replace(/[<>&"]/g, "") +
+              '". Try a shorter word, or pick another category.</p>';
+            return;
+          }
           // trigger when in view
           var io = null;
           if (!reduce) {
@@ -3707,28 +4019,21 @@
             }
           }
           buildChunk(); // first chunk now, so the grid is never empty after a tab or search change
-          // Auto-replay all visible cards every 2.8s so entrance effects keep
-          // demonstrating rather than settling to a static final state.
+          // Cards in view replay on their own, but only once nothing in them is still
+          // running, so an effect is never cut off mid-way. Looping effects just loop.
           if (!reduce) {
             if (window._galReplayTimer) clearInterval(window._galReplayTimer);
             window._galReplayTimer = setInterval(function () {
+              if (document.hidden) return;
               grid.querySelectorAll(".card").forEach(function (card) {
                 var rect = card.getBoundingClientRect();
                 if (rect.top > window.innerHeight || rect.bottom < 0) return;
-                var cls = card.dataset.cls;
-                var demo =
-                  card.querySelector("." + cls.split(" ")[0]) ||
-                  card.querySelector("[class*='sds-']");
-                if (!demo) return;
-                var charSpans = demo.querySelectorAll(".sds-char");
-                var targets = charSpans.length
-                  ? Array.prototype.slice.call(charSpans)
-                  : CHILD_DRIVEN.indexOf(cls) > -1 && demo.children.length
-                    ? Array.prototype.slice.call(demo.children)
-                    : [demo];
-                targets.forEach(function (el) { el.style.animation = "none"; });
-                void demo.offsetWidth;
-                targets.forEach(function (el) { el.style.animation = ""; });
+                var stage = card.querySelector(".card-stage");
+                if (!stage || card.matches(":hover, :focus-within")) return;
+                var running = stage.getAnimations({ subtree: true }).some(function (a) {
+                  return a.playState === "running";
+                });
+                if (!running) window.sdsRestart(stage);
               });
             }, 2800);
           }
@@ -3741,7 +4046,7 @@
           var label = document.createElement("label");
           label.className = "rm-toggle";
           label.innerHTML =
-            '<input type="checkbox" id="rmToggle" /> Reduced-motion preview';
+            '<input type="checkbox" id="rmToggle" /> <span>Preview reduced motion</span>';
           search.parentNode.insertBefore(label, search.nextSibling);
           label.querySelector("input").addEventListener("change", function (e) {
             document.body.classList.toggle("rm-sim", e.target.checked);
@@ -3973,6 +4278,11 @@
           notice.classList.toggle("visible", isInteractive);
           // hide replay button for interactive animations (JS engine drives them)
           replay.style.display = isInteractive ? "none" : "";
+          var cust = document.getElementById("modalCustomize");
+          if (cust) {
+            cust.style.display = isInteractive ? "none" : "";
+            cust.open = false;
+          }
 
           // wire up interactive engine on the modal demo element if available
           if (isInteractive && window.SDSInteractive && window.SDSInteractive.initEl) {
@@ -4138,21 +4448,25 @@
             });
         };
         window.copyModalCode = function (btn) {
+          var label = btn.querySelector("span") || btn;
+          if (!btn.dataset.label) btn.dataset.label = label.textContent;
+          var orig = btn.dataset.label;
           navigator.clipboard
             .writeText(document.getElementById("modalCode").textContent)
             .then(function () {
-              btn.textContent = "Copied";
+              label.textContent = "Copied";
               btn.classList.add("copied");
+              window.announce("Code copied to clipboard");
               setTimeout(function () {
-                btn.textContent = "Copy";
+                label.textContent = orig;
                 btn.classList.remove("copied");
               }, 1400);
             })
             .catch(function () {
-              btn.textContent = "Failed";
+              label.textContent = "Could not copy";
               setTimeout(function () {
-                btn.textContent = "Copy";
-              }, 1500);
+                label.textContent = orig;
+              }, 2200);
             });
         };
 

@@ -45,11 +45,11 @@
     },
     {
      "name": "sds-btn-amp",
-     "description": "Amp — buttons · Amp — button animation. https://sds-motion-forge.netlify.app/animations/btn-amp/"
+     "description": "Amp — buttons · Button animates, on a loop (0.6s). https://sds-motion-forge.netlify.app/animations/btn-amp/"
     },
     {
      "name": "sds-btn-aurora",
-     "description": "Aurora — buttons · Aurora — button animation. https://sds-motion-forge.netlify.app/animations/btn-aurora/"
+     "description": "Aurora — buttons · Button animates its shadow, on a loop (4s). https://sds-motion-forge.netlify.app/animations/btn-aurora/"
     },
     {
      "name": "sds-btn-beacon",
@@ -61,11 +61,11 @@
     },
     {
      "name": "sds-btn-border-flow",
-     "description": "Border Flow — buttons · Border Flow — button animation. https://sds-motion-forge.netlify.app/animations/btn-border-flow/"
+     "description": "Border Flow — buttons · Button animates its shadow, on a loop (3s). https://sds-motion-forge.netlify.app/animations/btn-border-flow/"
     },
     {
      "name": "sds-btn-bounce",
-     "description": "Bounce — buttons · Bounce — button animation. https://sds-motion-forge.netlify.app/animations/btn-bounce/"
+     "description": "Bounce — buttons · Button animates, on a loop (1.4s). https://sds-motion-forge.netlify.app/animations/btn-bounce/"
     },
     {
      "name": "sds-btn-breath-hold",
@@ -73,23 +73,23 @@
     },
     {
      "name": "sds-btn-burst",
-     "description": "Burst — buttons · Burst — button animation. https://sds-motion-forge.netlify.app/animations/btn-burst/"
+     "description": "Burst — buttons · Button animates, on a loop (2.2s). https://sds-motion-forge.netlify.app/animations/btn-burst/"
     },
     {
      "name": "sds-btn-charge",
-     "description": "Charge — buttons · Charge — button animation. https://sds-motion-forge.netlify.app/animations/btn-charge/"
+     "description": "Charge — buttons · Button animates its glow and shadow, on a loop (2.4s). https://sds-motion-forge.netlify.app/animations/btn-charge/"
     },
     {
      "name": "sds-btn-crystal",
-     "description": "Crystal — buttons · Crystal — button animation. https://sds-motion-forge.netlify.app/animations/btn-crystal/"
+     "description": "Crystal — buttons · Button animates its glow and shadow, on a loop (2.4s). https://sds-motion-forge.netlify.app/animations/btn-crystal/"
     },
     {
      "name": "sds-btn-depth-press",
-     "description": "Depth Press — buttons · Depth Press — button animation. https://sds-motion-forge.netlify.app/animations/btn-depth-press/"
+     "description": "Depth Press — buttons · Button animates its shadow, on a loop (2s). https://sds-motion-forge.netlify.app/animations/btn-depth-press/"
     },
     {
      "name": "sds-btn-dissolve",
-     "description": "Dissolve — buttons · Dissolve — button animation. https://sds-motion-forge.netlify.app/animations/btn-dissolve/"
+     "description": "Dissolve — buttons · Button animates its opacity, blur and glow, on a loop (3s). https://sds-motion-forge.netlify.app/animations/btn-dissolve/"
     },
     {
      "name": "sds-btn-draw-corners",
@@ -157,23 +157,23 @@
     },
     {
      "name": "sds-btn-fire",
-     "description": "Fire — buttons · Fire — button animation. https://sds-motion-forge.netlify.app/animations/btn-fire/"
+     "description": "Fire — buttons · Button animates its glow and shadow, on a loop (2s). https://sds-motion-forge.netlify.app/animations/btn-fire/"
     },
     {
      "name": "sds-btn-flare",
-     "description": "Flare — buttons · Flare — button animation. https://sds-motion-forge.netlify.app/animations/btn-flare/"
+     "description": "Flare — buttons · Button animates its shadow, on a loop (2.5s). https://sds-motion-forge.netlify.app/animations/btn-flare/"
     },
     {
      "name": "sds-btn-float",
-     "description": "Float — buttons · Float — button animation. https://sds-motion-forge.netlify.app/animations/btn-float/"
+     "description": "Float — buttons · Button animates its position and shadow, on a loop (2.6s). https://sds-motion-forge.netlify.app/animations/btn-float/"
     },
     {
      "name": "sds-btn-flux",
-     "description": "Flux — buttons · Flux — button animation. https://sds-motion-forge.netlify.app/animations/btn-flux/"
+     "description": "Flux — buttons · Button animates its glow, on a loop (1.6s). https://sds-motion-forge.netlify.app/animations/btn-flux/"
     },
     {
      "name": "sds-btn-glow-core",
-     "description": "Glow Core — buttons · Glow Core — button animation. https://sds-motion-forge.netlify.app/animations/btn-glow-core/"
+     "description": "Glow Core — buttons · Button animates its shadow, on a loop (2.2s). https://sds-motion-forge.netlify.app/animations/btn-glow-core/"
     },
     {
      "name": "sds-btn-glow-surge",
@@ -181,15 +181,15 @@
     },
     {
      "name": "sds-btn-gradient-shift",
-     "description": "Gradient Shift — buttons · Gradient Shift — button animation. https://sds-motion-forge.netlify.app/animations/btn-gradient-shift/"
+     "description": "Gradient Shift — buttons · Button animates its gradient position, on a loop (4s). https://sds-motion-forge.netlify.app/animations/btn-gradient-shift/"
     },
     {
      "name": "sds-btn-gravity",
-     "description": "Gravity — buttons · Gravity — button animation. https://sds-motion-forge.netlify.app/animations/btn-gravity/"
+     "description": "Gravity — buttons · Button animates its position and shadow, on a loop (1.8s). https://sds-motion-forge.netlify.app/animations/btn-gravity/"
     },
     {
      "name": "sds-btn-gravity-pull",
-     "description": "Gravity Pull — buttons · Gravity Pull — button animation. https://sds-motion-forge.netlify.app/animations/btn-gravity-pull/"
+     "description": "Gravity Pull — buttons · Button animates its position and shadow, on a loop (2.4s). https://sds-motion-forge.netlify.app/animations/btn-gravity-pull/"
     },
     {
      "name": "sds-btn-guillotine",
@@ -209,15 +209,15 @@
     },
     {
      "name": "sds-btn-heartbeat",
-     "description": "Heartbeat — buttons · Heartbeat — button animation. https://sds-motion-forge.netlify.app/animations/btn-heartbeat/"
+     "description": "Heartbeat — buttons · Button animates, on a loop (1.2s). https://sds-motion-forge.netlify.app/animations/btn-heartbeat/"
     },
     {
      "name": "sds-btn-hologram",
-     "description": "Hologram — buttons · Hologram — button animation. https://sds-motion-forge.netlify.app/animations/btn-hologram/"
+     "description": "Hologram — buttons · Button animates its colour hue and glow, on a loop (4s). https://sds-motion-forge.netlify.app/animations/btn-hologram/"
     },
     {
      "name": "sds-btn-ice",
-     "description": "Ice — buttons · Ice — button animation. https://sds-motion-forge.netlify.app/animations/btn-ice/"
+     "description": "Ice — buttons · Button animates its glow and shadow, on a loop (3s). https://sds-motion-forge.netlify.app/animations/btn-ice/"
     },
     {
      "name": "sds-btn-icon-launch",
@@ -229,7 +229,7 @@
     },
     {
      "name": "sds-btn-kinetic",
-     "description": "Kinetic — buttons · Kinetic — button animation. https://sds-motion-forge.netlify.app/animations/btn-kinetic/"
+     "description": "Kinetic — buttons · Button animates its rotation, on a loop (0.8s). https://sds-motion-forge.netlify.app/animations/btn-kinetic/"
     },
     {
      "name": "sds-btn-label-slide",
@@ -257,11 +257,11 @@
     },
     {
      "name": "sds-btn-magnetic-trail",
-     "description": "Magnetic Trail — buttons · Magnetic Trail — button animation. https://sds-motion-forge.netlify.app/animations/btn-magnetic-trail/"
+     "description": "Magnetic Trail — buttons · Button animates its shadow, on a loop (2s). https://sds-motion-forge.netlify.app/animations/btn-magnetic-trail/"
     },
     {
      "name": "sds-btn-momentum",
-     "description": "Momentum — buttons · Momentum — button animation. https://sds-motion-forge.netlify.app/animations/btn-momentum/"
+     "description": "Momentum — buttons · Button animates its position, opacity and blur, once on load (2s). https://sds-motion-forge.netlify.app/animations/btn-momentum/"
     },
     {
      "name": "sds-btn-morph",
@@ -273,7 +273,7 @@
     },
     {
      "name": "sds-btn-neon-trace",
-     "description": "Neon Trace — buttons · Neon Trace — button animation. https://sds-motion-forge.netlify.app/animations/btn-neon-trace/"
+     "description": "Neon Trace — buttons · Button animates its shadow, on a loop (3s). https://sds-motion-forge.netlify.app/animations/btn-neon-trace/"
     },
     {
      "name": "sds-btn-night-sweep",
@@ -285,7 +285,7 @@
     },
     {
      "name": "sds-btn-outline-grow",
-     "description": "Outline Grow — buttons · Outline Grow — button animation. https://sds-motion-forge.netlify.app/animations/btn-outline-grow/"
+     "description": "Outline Grow — buttons · Button animates, on a loop (2s). https://sds-motion-forge.netlify.app/animations/btn-outline-grow/"
     },
     {
      "name": "sds-btn-plasma",
@@ -325,7 +325,7 @@
     },
     {
      "name": "sds-btn-pulse-border",
-     "description": "Pulse Border — buttons · Pulse Border — button animation. https://sds-motion-forge.netlify.app/animations/btn-pulse-border/"
+     "description": "Pulse Border — buttons · Button animates its shadow and border colour, on a loop (2s). https://sds-motion-forge.netlify.app/animations/btn-pulse-border/"
     },
     {
      "name": "sds-btn-quantum",
@@ -333,23 +333,23 @@
     },
     {
      "name": "sds-btn-radar",
-     "description": "Radar — buttons · Radar — button animation. https://sds-motion-forge.netlify.app/animations/btn-radar/"
+     "description": "Radar — buttons · Button animates its shadow, on a loop (2s). https://sds-motion-forge.netlify.app/animations/btn-radar/"
     },
     {
      "name": "sds-btn-recoil",
-     "description": "Recoil — buttons · Recoil — button animation. https://sds-motion-forge.netlify.app/animations/btn-recoil/"
+     "description": "Recoil — buttons · Button animates, on a loop (2.4s). https://sds-motion-forge.netlify.app/animations/btn-recoil/"
     },
     {
      "name": "sds-btn-ripple",
-     "description": "Ripple — buttons · Ripple — button animation. https://sds-motion-forge.netlify.app/animations/btn-ripple/"
+     "description": "Ripple — buttons · Button animates its shadow, on a loop (2s). https://sds-motion-forge.netlify.app/animations/btn-ripple/"
     },
     {
      "name": "sds-btn-rotate",
-     "description": "Rotate — buttons · Rotate — button animation. https://sds-motion-forge.netlify.app/animations/btn-rotate/"
+     "description": "Rotate — buttons · Button animates its 3D rotation, on a loop (4s). https://sds-motion-forge.netlify.app/animations/btn-rotate/"
     },
     {
      "name": "sds-btn-scan",
-     "description": "Scan — buttons · Scan — button animation. https://sds-motion-forge.netlify.app/animations/btn-scan/"
+     "description": "Scan — buttons · Button animates its gradient position, on a loop (2s). https://sds-motion-forge.netlify.app/animations/btn-scan/"
     },
     {
      "name": "sds-btn-sheen-double",
@@ -361,7 +361,7 @@
     },
     {
      "name": "sds-btn-shimmer",
-     "description": "Shimmer — buttons · Shimmer — button animation. https://sds-motion-forge.netlify.app/animations/btn-shimmer/"
+     "description": "Shimmer — buttons · Button animates its gradient position, on a loop (1.8s). https://sds-motion-forge.netlify.app/animations/btn-shimmer/"
     },
     {
      "name": "sds-btn-shock",
@@ -385,7 +385,7 @@
     },
     {
      "name": "sds-btn-split",
-     "description": "Split — buttons · Split — button animation. https://sds-motion-forge.netlify.app/animations/btn-split/"
+     "description": "Split — buttons · Button animates its shadow, on a loop (2.8s). https://sds-motion-forge.netlify.app/animations/btn-split/"
     },
     {
      "name": "sds-btn-spotlight-pan",
@@ -393,7 +393,7 @@
     },
     {
      "name": "sds-btn-stretch",
-     "description": "Stretch — buttons · Stretch — button animation. https://sds-motion-forge.netlify.app/animations/btn-stretch/"
+     "description": "Stretch — buttons · Button animates, on a loop (2s). https://sds-motion-forge.netlify.app/animations/btn-stretch/"
     },
     {
      "name": "sds-btn-surge-charge",
@@ -405,7 +405,7 @@
     },
     {
      "name": "sds-btn-swipe",
-     "description": "Swipe — buttons · Swipe — button animation. https://sds-motion-forge.netlify.app/animations/btn-swipe/"
+     "description": "Swipe — buttons · Button animates its gradient position, on a loop (2.4s). https://sds-motion-forge.netlify.app/animations/btn-swipe/"
     },
     {
      "name": "sds-btn-tick-tock",
@@ -413,7 +413,7 @@
     },
     {
      "name": "sds-btn-tilt",
-     "description": "Tilt — buttons · Tilt — button animation. https://sds-motion-forge.netlify.app/animations/btn-tilt/"
+     "description": "Tilt — buttons · Button animates its 3D rotation, on a loop (3s). https://sds-motion-forge.netlify.app/animations/btn-tilt/"
     },
     {
      "name": "sds-btn-tilt-float",
@@ -437,7 +437,7 @@
     },
     {
      "name": "sds-btn-warp",
-     "description": "Warp — buttons · Warp — button animation. https://sds-motion-forge.netlify.app/animations/btn-warp/"
+     "description": "Warp — buttons · Button animates its skew, on a loop (2.6s). https://sds-motion-forge.netlify.app/animations/btn-warp/"
     },
     {
      "name": "sds-btn-wink",
@@ -453,11 +453,11 @@
     },
     {
      "name": "sds-card-aurora",
-     "description": "Aurora — cards · Aurora — card animation. https://sds-motion-forge.netlify.app/animations/card-aurora/"
+     "description": "Aurora — cards · Card animates its shadow, on a loop (5s). https://sds-motion-forge.netlify.app/animations/card-aurora/"
     },
     {
      "name": "sds-card-bloom",
-     "description": "Bloom — cards · Bloom — card animation. https://sds-motion-forge.netlify.app/animations/card-bloom/"
+     "description": "Bloom — cards · Card animates its glow and shadow, on a loop (3s). https://sds-motion-forge.netlify.app/animations/card-bloom/"
     },
     {
      "name": "sds-card-border-beam",
@@ -473,11 +473,11 @@
     },
     {
      "name": "sds-card-breath",
-     "description": "Breath — cards · Breath — card animation. https://sds-motion-forge.netlify.app/animations/card-breath/"
+     "description": "Breath — cards · Card animates its shadow, on a loop (3s). https://sds-motion-forge.netlify.app/animations/card-breath/"
     },
     {
      "name": "sds-card-burst",
-     "description": "Burst — cards · Burst — card animation. https://sds-motion-forge.netlify.app/animations/card-burst/"
+     "description": "Burst — cards · Card animates its size, opacity and blur, once on load (0.7s). https://sds-motion-forge.netlify.app/animations/card-burst/"
     },
     {
      "name": "sds-card-carousel-step",
@@ -485,7 +485,7 @@
     },
     {
      "name": "sds-card-cascade",
-     "description": "Cascade — cards · Cascade — card animation. https://sds-motion-forge.netlify.app/animations/card-cascade/"
+     "description": "Cascade — cards · Card animates its position, opacity and blur, once on load (0.6s). https://sds-motion-forge.netlify.app/animations/card-cascade/"
     },
     {
      "name": "sds-card-checker",
@@ -525,11 +525,11 @@
     },
     {
      "name": "sds-card-deep-float",
-     "description": "Deep Float — cards · Deep Float — card animation. https://sds-motion-forge.netlify.app/animations/card-deep-float/"
+     "description": "Deep Float — cards · Card animates its position and shadow, on a loop (4s). https://sds-motion-forge.netlify.app/animations/card-deep-float/"
     },
     {
      "name": "sds-card-depth",
-     "description": "Depth — cards · Depth — card animation. https://sds-motion-forge.netlify.app/animations/card-depth/"
+     "description": "Depth — cards · Card animates its 3D rotation, on a loop (4s). https://sds-motion-forge.netlify.app/animations/card-depth/"
     },
     {
      "name": "sds-card-diagonal-wipe",
@@ -545,7 +545,7 @@
     },
     {
      "name": "sds-card-drift",
-     "description": "Drift — cards · Drift — card animation. https://sds-motion-forge.netlify.app/animations/card-drift/"
+     "description": "Drift — cards · Card animates its rotation, on a loop (5s). https://sds-motion-forge.netlify.app/animations/card-drift/"
     },
     {
      "name": "sds-card-edge-scan",
@@ -557,11 +557,11 @@
     },
     {
      "name": "sds-card-electric",
-     "description": "Electric — cards · Electric — card animation. https://sds-motion-forge.netlify.app/animations/card-electric/"
+     "description": "Electric — cards · Card animates its shadow, on a loop (2.4s). https://sds-motion-forge.netlify.app/animations/card-electric/"
     },
     {
      "name": "sds-card-expand",
-     "description": "Expand — cards · Expand — card animation. https://sds-motion-forge.netlify.app/animations/card-expand/"
+     "description": "Expand — cards · Card animates its position, size and opacity, once on load (0.9s). https://sds-motion-forge.netlify.app/animations/card-expand/"
     },
     {
      "name": "sds-card-fan-spread",
@@ -569,7 +569,7 @@
     },
     {
      "name": "sds-card-flip",
-     "description": "Flip — cards · Flip — card animation. https://sds-motion-forge.netlify.app/animations/card-flip/"
+     "description": "Flip — cards · Card animates its position and opacity, once on load (0.6s). https://sds-motion-forge.netlify.app/animations/card-flip/"
     },
     {
      "name": "sds-card-flip-loop",
@@ -577,7 +577,7 @@
     },
     {
      "name": "sds-card-flip-reveal",
-     "description": "Flip Reveal — cards · Flip Reveal — card animation. https://sds-motion-forge.netlify.app/animations/card-flip-reveal/"
+     "description": "Flip Reveal — cards · Card animates its 3D rotation and opacity, once on load (0.8s). https://sds-motion-forge.netlify.app/animations/card-flip-reveal/"
     },
     {
      "name": "sds-card-float",
@@ -589,11 +589,11 @@
     },
     {
      "name": "sds-card-fold",
-     "description": "Fold — cards · Fold — card animation. https://sds-motion-forge.netlify.app/animations/card-fold/"
+     "description": "Fold — cards · Card animates its 3D rotation and opacity, once on load (0.8s). https://sds-motion-forge.netlify.app/animations/card-fold/"
     },
     {
      "name": "sds-card-force",
-     "description": "Force — cards · Force — card animation. https://sds-motion-forge.netlify.app/animations/card-force/"
+     "description": "Force — cards · Card animates its shadow, on a loop (2s). https://sds-motion-forge.netlify.app/animations/card-force/"
     },
     {
      "name": "sds-card-frame-breathe",
@@ -609,7 +609,7 @@
     },
     {
      "name": "sds-card-glass",
-     "description": "Glass — cards · Glass — card animation. https://sds-motion-forge.netlify.app/animations/card-glass/"
+     "description": "Glass — cards · Card animates its opacity and backdrop blur, once on load (0.7s). https://sds-motion-forge.netlify.app/animations/card-glass/"
     },
     {
      "name": "sds-card-glass-frost",
@@ -621,7 +621,7 @@
     },
     {
      "name": "sds-card-glitch",
-     "description": "Glitch — cards · Glitch — card animation. https://sds-motion-forge.netlify.app/animations/card-glitch/"
+     "description": "Glitch — cards · Card animates its skew, colour hue and glow, on a loop (4s). https://sds-motion-forge.netlify.app/animations/card-glitch/"
     },
     {
      "name": "sds-card-glow",
@@ -629,7 +629,7 @@
     },
     {
      "name": "sds-card-gravity",
-     "description": "Gravity — cards · Gravity — card animation. https://sds-motion-forge.netlify.app/animations/card-gravity/"
+     "description": "Gravity — cards · Card animates its position and opacity, once on load (0.8s). https://sds-motion-forge.netlify.app/animations/card-gravity/"
     },
     {
      "name": "sds-card-holo",
@@ -665,11 +665,11 @@
     },
     {
      "name": "sds-card-ink",
-     "description": "Ink — cards · Ink — card animation. https://sds-motion-forge.netlify.app/animations/card-ink/"
+     "description": "Ink — cards · Card animates its opacity and clip-path reveal, once on load (1s). https://sds-motion-forge.netlify.app/animations/card-ink/"
     },
     {
      "name": "sds-card-iris",
-     "description": "Iris — cards · Iris — card animation. https://sds-motion-forge.netlify.app/animations/card-iris/"
+     "description": "Iris — cards · Card animates its opacity and clip-path reveal, once on load (0.8s). https://sds-motion-forge.netlify.app/animations/card-iris/"
     },
     {
      "name": "sds-card-iris-bloom",
@@ -689,11 +689,11 @@
     },
     {
      "name": "sds-card-levitate",
-     "description": "Levitate — cards · Levitate — card animation. https://sds-motion-forge.netlify.app/animations/card-levitate/"
+     "description": "Levitate — cards · Card animates its position, 3D rotation and shadow, on a loop (3.5s). https://sds-motion-forge.netlify.app/animations/card-levitate/"
     },
     {
      "name": "sds-card-liquid-border",
-     "description": "Liquid Border — cards · Liquid Border — card animation. https://sds-motion-forge.netlify.app/animations/card-liquid-border/"
+     "description": "Liquid Border — cards · Card animates its shadow, on a loop (4s). https://sds-motion-forge.netlify.app/animations/card-liquid-border/"
     },
     {
      "name": "sds-card-magnetic",
@@ -701,19 +701,19 @@
     },
     {
      "name": "sds-card-momentum",
-     "description": "Momentum — cards · Momentum — card animation. https://sds-motion-forge.netlify.app/animations/card-momentum/"
+     "description": "Momentum — cards · Card animates its position, skew and opacity, once on load (0.9s). https://sds-motion-forge.netlify.app/animations/card-momentum/"
     },
     {
      "name": "sds-card-morph",
-     "description": "Morph — cards · Morph — card animation. https://sds-motion-forge.netlify.app/animations/card-morph/"
+     "description": "Morph — cards · Card animates, on a loop (3s). https://sds-motion-forge.netlify.app/animations/card-morph/"
     },
     {
      "name": "sds-card-neon",
-     "description": "Neon — cards · Neon — card animation. https://sds-motion-forge.netlify.app/animations/card-neon/"
+     "description": "Neon — cards · Card animates its shadow, on a loop (2.5s). https://sds-motion-forge.netlify.app/animations/card-neon/"
     },
     {
      "name": "sds-card-neon-border",
-     "description": "Neon Border — cards · Neon Border — card animation. https://sds-motion-forge.netlify.app/animations/card-neon-border/"
+     "description": "Neon Border — cards · Card animates its shadow, on a loop (3s). https://sds-motion-forge.netlify.app/animations/card-neon-border/"
     },
     {
      "name": "sds-card-parallax",
@@ -729,7 +729,7 @@
     },
     {
      "name": "sds-card-prism",
-     "description": "Prism — cards · Prism — card animation. https://sds-motion-forge.netlify.app/animations/card-prism/"
+     "description": "Prism — cards · Card animates its colour hue and glow, on a loop (5s). https://sds-motion-forge.netlify.app/animations/card-prism/"
     },
     {
      "name": "sds-card-refract-slide",
@@ -741,11 +741,11 @@
     },
     {
      "name": "sds-card-rise",
-     "description": "Rise — cards · Rise — card animation. https://sds-motion-forge.netlify.app/animations/card-rise/"
+     "description": "Rise — cards · Card animates its position, opacity and blur, once on load (0.8s). https://sds-motion-forge.netlify.app/animations/card-rise/"
     },
     {
      "name": "sds-card-rotate",
-     "description": "Rotate — cards · Rotate — card animation. https://sds-motion-forge.netlify.app/animations/card-rotate/"
+     "description": "Rotate — cards · Card animates its position, 3D rotation and opacity, once on load (0.8s). https://sds-motion-forge.netlify.app/animations/card-rotate/"
     },
     {
      "name": "sds-card-rubber-band",
@@ -753,11 +753,11 @@
     },
     {
      "name": "sds-card-scan",
-     "description": "Scan — cards · Scan — card animation. https://sds-motion-forge.netlify.app/animations/card-scan/"
+     "description": "Scan — cards · Card animates its clip-path reveal, once on load (0.9s). https://sds-motion-forge.netlify.app/animations/card-scan/"
     },
     {
      "name": "sds-card-shadow-lift",
-     "description": "Shadow Lift — cards · Shadow Lift — card animation. https://sds-motion-forge.netlify.app/animations/card-shadow-lift/"
+     "description": "Shadow Lift — cards · Card animates its position and shadow, on a loop (2.8s). https://sds-motion-forge.netlify.app/animations/card-shadow-lift/"
     },
     {
      "name": "sds-card-shimmer",
@@ -781,11 +781,11 @@
     },
     {
      "name": "sds-card-smoke",
-     "description": "Smoke — cards · Smoke — card animation. https://sds-motion-forge.netlify.app/animations/card-smoke/"
+     "description": "Smoke — cards · Card animates its size, opacity and blur, once on load (1.1s). https://sds-motion-forge.netlify.app/animations/card-smoke/"
     },
     {
      "name": "sds-card-snap",
-     "description": "Snap — cards · Snap — card animation. https://sds-motion-forge.netlify.app/animations/card-snap/"
+     "description": "Snap — cards · Card animates its size, rotation and opacity, once on load (0.5s). https://sds-motion-forge.netlify.app/animations/card-snap/"
     },
     {
      "name": "sds-card-snap-back",
@@ -797,11 +797,11 @@
     },
     {
      "name": "sds-card-spotlight",
-     "description": "Spotlight — cards · Spotlight — card animation. https://sds-motion-forge.netlify.app/animations/card-spotlight/"
+     "description": "Spotlight — cards · Card animates its gradient position, on a loop (4s). https://sds-motion-forge.netlify.app/animations/card-spotlight/"
     },
     {
      "name": "sds-card-spring",
-     "description": "Spring — cards · Spring — card animation. https://sds-motion-forge.netlify.app/animations/card-spring/"
+     "description": "Spring — cards · Card animates its size, rotation and opacity, once on load (0.9s). https://sds-motion-forge.netlify.app/animations/card-spring/"
     },
     {
      "name": "sds-card-stack-drop",
@@ -813,7 +813,7 @@
     },
     {
      "name": "sds-card-stagger",
-     "description": "Stagger — cards · Stagger — card animation. https://sds-motion-forge.netlify.app/animations/card-stagger/"
+     "description": "Stagger — cards · Card animates its position and opacity, once on load (0.5s). https://sds-motion-forge.netlify.app/animations/card-stagger/"
     },
     {
      "name": "sds-card-tear",
@@ -821,7 +821,7 @@
     },
     {
      "name": "sds-card-tilt",
-     "description": "Tilt — cards · Tilt — card animation. https://sds-motion-forge.netlify.app/animations/card-tilt/"
+     "description": "Tilt — cards · Card animates its 3D rotation, on a loop (4s). https://sds-motion-forge.netlify.app/animations/card-tilt/"
     },
     {
      "name": "sds-card-tilt-orbit",
@@ -829,7 +829,7 @@
     },
     {
      "name": "sds-card-unfold",
-     "description": "Unfold — cards · Unfold — card animation. https://sds-motion-forge.netlify.app/animations/card-unfold/"
+     "description": "Unfold — cards · Card animates its 3D rotation and opacity, once on load (0.8s). https://sds-motion-forge.netlify.app/animations/card-unfold/"
     },
     {
      "name": "sds-card-unpack",
@@ -837,7 +837,7 @@
     },
     {
      "name": "sds-card-vortex",
-     "description": "Vortex — cards · Vortex — card animation. https://sds-motion-forge.netlify.app/animations/card-vortex/"
+     "description": "Vortex — cards · Card animates its size, 3D rotation and opacity, once on load (0.7s). https://sds-motion-forge.netlify.app/animations/card-vortex/"
     },
     {
      "name": "sds-card-warp",
@@ -845,7 +845,7 @@
     },
     {
      "name": "sds-card-wave",
-     "description": "Wave — cards · Wave — card animation. https://sds-motion-forge.netlify.app/animations/card-wave/"
+     "description": "Wave — cards · Card animates its 3D rotation, opacity and blur, once on load (0.9s). https://sds-motion-forge.netlify.app/animations/card-wave/"
     },
     {
      "name": "sds-center-burst",
@@ -1053,7 +1053,7 @@
     },
     {
      "name": "sds-input-active-line",
-     "description": "Active Line — inputs · Active Line — input animation. https://sds-motion-forge.netlify.app/animations/input-active-line/"
+     "description": "Active Line — inputs · Field animates its shadow, on a loop (1.8s). https://sds-motion-forge.netlify.app/animations/input-active-line/"
     },
     {
      "name": "sds-input-arrive-drop",
@@ -1089,15 +1089,15 @@
     },
     {
      "name": "sds-input-aurora",
-     "description": "Aurora — inputs · Aurora — input animation. https://sds-motion-forge.netlify.app/animations/input-aurora/"
+     "description": "Aurora — inputs · Field animates its shadow, on a loop (4s). https://sds-motion-forge.netlify.app/animations/input-aurora/"
     },
     {
      "name": "sds-input-bloom",
-     "description": "Bloom — inputs · Bloom — input animation. https://sds-motion-forge.netlify.app/animations/input-bloom/"
+     "description": "Bloom — inputs · Field animates its glow and shadow, on a loop (2.4s). https://sds-motion-forge.netlify.app/animations/input-bloom/"
     },
     {
      "name": "sds-input-border-beam",
-     "description": "Border Beam — inputs · Border Beam — input animation. https://sds-motion-forge.netlify.app/animations/input-border-beam/"
+     "description": "Border Beam — inputs · Field animates, on a loop (2s). https://sds-motion-forge.netlify.app/animations/input-border-beam/"
     },
     {
      "name": "sds-input-border-comet-loop",
@@ -1129,7 +1129,7 @@
     },
     {
      "name": "sds-input-burst",
-     "description": "Burst — inputs · Burst — input animation. https://sds-motion-forge.netlify.app/animations/input-burst/"
+     "description": "Burst — inputs · Field animates its opacity and shadow, once on load (1.8s). https://sds-motion-forge.netlify.app/animations/input-burst/"
     },
     {
      "name": "sds-input-caret",
@@ -1141,27 +1141,27 @@
     },
     {
      "name": "sds-input-charge",
-     "description": "Charge — inputs · Charge — input animation. https://sds-motion-forge.netlify.app/animations/input-charge/"
+     "description": "Charge — inputs · Field animates its shadow and border colour, on a loop (2.2s). https://sds-motion-forge.netlify.app/animations/input-charge/"
     },
     {
      "name": "sds-input-comet",
-     "description": "Comet — inputs · Comet — input animation. https://sds-motion-forge.netlify.app/animations/input-comet/"
+     "description": "Comet — inputs · Field animates its shadow, on a loop (3s). https://sds-motion-forge.netlify.app/animations/input-comet/"
     },
     {
      "name": "sds-input-crystal",
-     "description": "Crystal — inputs · Crystal — input animation. https://sds-motion-forge.netlify.app/animations/input-crystal/"
+     "description": "Crystal — inputs · Field animates its glow, shadow and border colour, on a loop (2.4s). https://sds-motion-forge.netlify.app/animations/input-crystal/"
     },
     {
      "name": "sds-input-depth",
-     "description": "Depth — inputs · Depth — input animation. https://sds-motion-forge.netlify.app/animations/input-depth/"
+     "description": "Depth — inputs · Field animates its shadow, on a loop (2.4s). https://sds-motion-forge.netlify.app/animations/input-depth/"
     },
     {
      "name": "sds-input-echo",
-     "description": "Echo — inputs · Echo — input animation. https://sds-motion-forge.netlify.app/animations/input-echo/"
+     "description": "Echo — inputs · Field animates, on a loop (2.4s). https://sds-motion-forge.netlify.app/animations/input-echo/"
     },
     {
      "name": "sds-input-electric",
-     "description": "Electric — inputs · Electric — input animation. https://sds-motion-forge.netlify.app/animations/input-electric/"
+     "description": "Electric — inputs · Field animates its shadow and border colour, on a loop (2s). https://sds-motion-forge.netlify.app/animations/input-electric/"
     },
     {
      "name": "sds-input-elevate-wrap",
@@ -1181,7 +1181,7 @@
     },
     {
      "name": "sds-input-expand",
-     "description": "Expand — inputs · Expand — input animation. https://sds-motion-forge.netlify.app/animations/input-expand/"
+     "description": "Expand — inputs · Field animates its opacity, once on load (0.6s). https://sds-motion-forge.netlify.app/animations/input-expand/"
     },
     {
      "name": "sds-input-fill-corner-shade",
@@ -1209,15 +1209,15 @@
     },
     {
      "name": "sds-input-fire",
-     "description": "Fire — inputs · Fire — input animation. https://sds-motion-forge.netlify.app/animations/input-fire/"
+     "description": "Fire — inputs · Field animates its shadow and border colour, on a loop (2s). https://sds-motion-forge.netlify.app/animations/input-fire/"
     },
     {
      "name": "sds-input-flicker",
-     "description": "Flicker — inputs · Flicker — input animation. https://sds-motion-forge.netlify.app/animations/input-flicker/"
+     "description": "Flicker — inputs · Field animates, on a loop (4s). https://sds-motion-forge.netlify.app/animations/input-flicker/"
     },
     {
      "name": "sds-input-flow",
-     "description": "Flow — inputs · Flow — input animation. https://sds-motion-forge.netlify.app/animations/input-flow/"
+     "description": "Flow — inputs · Field animates its gradient position, on a loop (3s). https://sds-motion-forge.netlify.app/animations/input-flow/"
     },
     {
      "name": "sds-input-focus",
@@ -1225,7 +1225,7 @@
     },
     {
      "name": "sds-input-focus-glow",
-     "description": "Focus Glow — inputs · Focus Glow — input animation. https://sds-motion-forge.netlify.app/animations/input-focus-glow/"
+     "description": "Focus Glow — inputs · Field animates its shadow, when focused (0.5s). https://sds-motion-forge.netlify.app/animations/input-focus-glow/"
     },
     {
      "name": "sds-input-frame-bloom",
@@ -1233,7 +1233,7 @@
     },
     {
      "name": "sds-input-frost",
-     "description": "Frost — inputs · Frost — input animation. https://sds-motion-forge.netlify.app/animations/input-frost/"
+     "description": "Frost — inputs · Field animates its opacity, blur and glow, once on load (2s). https://sds-motion-forge.netlify.app/animations/input-frost/"
     },
     {
      "name": "sds-input-gate-open",
@@ -1241,23 +1241,23 @@
     },
     {
      "name": "sds-input-ghost",
-     "description": "Ghost — inputs · Ghost — input animation. https://sds-motion-forge.netlify.app/animations/input-ghost/"
+     "description": "Ghost — inputs · Field animates its gradient position, on a loop (3s). https://sds-motion-forge.netlify.app/animations/input-ghost/"
     },
     {
      "name": "sds-input-glitch-valid",
-     "description": "Glitch Valid — inputs · Glitch Valid — input animation. https://sds-motion-forge.netlify.app/animations/input-glitch-valid/"
+     "description": "Glitch Valid — inputs · Field animates its position and border colour, once on load (0.4s). https://sds-motion-forge.netlify.app/animations/input-glitch-valid/"
     },
     {
      "name": "sds-input-glow-border",
-     "description": "Glow Border — inputs · Glow Border — input animation. https://sds-motion-forge.netlify.app/animations/input-glow-border/"
+     "description": "Glow Border — inputs · Field animates its shadow, on a loop (2s). https://sds-motion-forge.netlify.app/animations/input-glow-border/"
     },
     {
      "name": "sds-input-gradient-border",
-     "description": "Gradient Border — inputs · Gradient Border — input animation. https://sds-motion-forge.netlify.app/animations/input-gradient-border/"
+     "description": "Gradient Border — inputs · Field animates its colour hue, on a loop (3s). https://sds-motion-forge.netlify.app/animations/input-gradient-border/"
     },
     {
      "name": "sds-input-gravity",
-     "description": "Gravity — inputs · Gravity — input animation. https://sds-motion-forge.netlify.app/animations/input-gravity/"
+     "description": "Gravity — inputs · Field animates its position and opacity, once on load (0.8s). https://sds-motion-forge.netlify.app/animations/input-gravity/"
     },
     {
      "name": "sds-input-idle-depth",
@@ -1293,7 +1293,7 @@
     },
     {
      "name": "sds-input-kinetic",
-     "description": "Kinetic — inputs · Kinetic — input animation. https://sds-motion-forge.netlify.app/animations/input-kinetic/"
+     "description": "Kinetic — inputs · Field animates, on a loop (3s). https://sds-motion-forge.netlify.app/animations/input-kinetic/"
     },
     {
      "name": "sds-input-label-spring",
@@ -1301,11 +1301,11 @@
     },
     {
      "name": "sds-input-laser",
-     "description": "Laser — inputs · Laser — input animation. https://sds-motion-forge.netlify.app/animations/input-laser/"
+     "description": "Laser — inputs · Field animates its gradient position, on a loop (1.5s). https://sds-motion-forge.netlify.app/animations/input-laser/"
     },
     {
      "name": "sds-input-momentum",
-     "description": "Momentum — inputs · Momentum — input animation. https://sds-motion-forge.netlify.app/animations/input-momentum/"
+     "description": "Momentum — inputs · Field animates its position, opacity and blur, once on load (0.7s). https://sds-motion-forge.netlify.app/animations/input-momentum/"
     },
     {
      "name": "sds-input-morph",
@@ -1321,11 +1321,11 @@
     },
     {
      "name": "sds-input-neural",
-     "description": "Neural — inputs · Neural — input animation. https://sds-motion-forge.netlify.app/animations/input-neural/"
+     "description": "Neural — inputs · Field animates its shadow, on a loop (3s). https://sds-motion-forge.netlify.app/animations/input-neural/"
     },
     {
      "name": "sds-input-orbit",
-     "description": "Orbit — inputs · Orbit — input animation. https://sds-motion-forge.netlify.app/animations/input-orbit/"
+     "description": "Orbit — inputs · Field animates, on a loop (2s). https://sds-motion-forge.netlify.app/animations/input-orbit/"
     },
     {
      "name": "sds-input-ph-blink",
@@ -1357,19 +1357,19 @@
     },
     {
      "name": "sds-input-prism",
-     "description": "Prism — inputs · Prism — input animation. https://sds-motion-forge.netlify.app/animations/input-prism/"
+     "description": "Prism — inputs · Field animates its shadow and border colour, on a loop (4s). https://sds-motion-forge.netlify.app/animations/input-prism/"
     },
     {
      "name": "sds-input-pulse-dot",
-     "description": "Pulse Dot — inputs · Pulse Dot — input animation. https://sds-motion-forge.netlify.app/animations/input-pulse-dot/"
+     "description": "Pulse Dot — inputs · Field animates its shadow, on a loop (1.4s). https://sds-motion-forge.netlify.app/animations/input-pulse-dot/"
     },
     {
      "name": "sds-input-quantum",
-     "description": "Quantum — inputs · Quantum — input animation. https://sds-motion-forge.netlify.app/animations/input-quantum/"
+     "description": "Quantum — inputs · Field animates its border colour, on a loop (3s). https://sds-motion-forge.netlify.app/animations/input-quantum/"
     },
     {
      "name": "sds-input-radar",
-     "description": "Radar — inputs · Radar — input animation. https://sds-motion-forge.netlify.app/animations/input-radar/"
+     "description": "Radar — inputs · Field animates its shadow, on a loop (2s). https://sds-motion-forge.netlify.app/animations/input-radar/"
     },
     {
      "name": "sds-input-ring",
@@ -1377,7 +1377,7 @@
     },
     {
      "name": "sds-input-ripple",
-     "description": "Ripple — inputs · Ripple — input animation. https://sds-motion-forge.netlify.app/animations/input-ripple/"
+     "description": "Ripple — inputs · Field animates its shadow, on a loop (2.4s). https://sds-motion-forge.netlify.app/animations/input-ripple/"
     },
     {
      "name": "sds-input-saved-flash",
@@ -1385,7 +1385,7 @@
     },
     {
      "name": "sds-input-scan",
-     "description": "Scan — inputs · Scan — input animation. https://sds-motion-forge.netlify.app/animations/input-scan/"
+     "description": "Scan — inputs · Field animates its gradient position, on a loop (2s). https://sds-motion-forge.netlify.app/animations/input-scan/"
     },
     {
      "name": "sds-input-shake",
@@ -1397,7 +1397,7 @@
     },
     {
      "name": "sds-input-solar",
-     "description": "Solar — inputs · Solar — input animation. https://sds-motion-forge.netlify.app/animations/input-solar/"
+     "description": "Solar — inputs · Field animates its shadow, on a loop (2.8s). https://sds-motion-forge.netlify.app/animations/input-solar/"
     },
     {
      "name": "sds-input-success",
@@ -1425,11 +1425,11 @@
     },
     {
      "name": "sds-input-unlock",
-     "description": "Unlock — inputs · Unlock — input animation. https://sds-motion-forge.netlify.app/animations/input-unlock/"
+     "description": "Unlock — inputs · Field animates its rotation and opacity, once on load (0.8s). https://sds-motion-forge.netlify.app/animations/input-unlock/"
     },
     {
      "name": "sds-input-void",
-     "description": "Void — inputs · Void — input animation. https://sds-motion-forge.netlify.app/animations/input-void/"
+     "description": "Void — inputs · Field animates its shadow, on a loop (2.6s). https://sds-motion-forge.netlify.app/animations/input-void/"
     },
     {
      "name": "sds-input-voltage",
@@ -1441,11 +1441,11 @@
     },
     {
      "name": "sds-input-waveform",
-     "description": "Waveform — inputs · Waveform — input animation. https://sds-motion-forge.netlify.app/animations/input-waveform/"
+     "description": "Waveform — inputs · Field animates its border colour, on a loop (1.6s). https://sds-motion-forge.netlify.app/animations/input-waveform/"
     },
     {
      "name": "sds-input-zap",
-     "description": "Zap — inputs · Zap — input animation. https://sds-motion-forge.netlify.app/animations/input-zap/"
+     "description": "Zap — inputs · Field animates its skew, shadow and border colour, on a loop (3s). https://sds-motion-forge.netlify.app/animations/input-zap/"
     },
     {
      "name": "sds-input-zoom-focus",
@@ -1485,11 +1485,11 @@
     },
     {
      "name": "sds-loader-arc",
-     "description": "Arc — loaders · Arc — loader animation. https://sds-motion-forge.netlify.app/animations/loader-arc/"
+     "description": "Arc — loaders · An overlay on the loader animates its rotation, on a loop (0.9s). https://sds-motion-forge.netlify.app/animations/loader-arc/"
     },
     {
      "name": "sds-loader-bar",
-     "description": "Bar — loaders · Bar — loader animation. https://sds-motion-forge.netlify.app/animations/loader-bar/"
+     "description": "Bar — loaders · Loader animates, on a loop (1.8s). https://sds-motion-forge.netlify.app/animations/loader-bar/"
     },
     {
      "name": "sds-loader-bar-pulse",
@@ -1513,7 +1513,7 @@
     },
     {
      "name": "sds-loader-bounce",
-     "description": "Bounce — loaders · Bounce — loader animation. https://sds-motion-forge.netlify.app/animations/loader-bounce/"
+     "description": "Bounce — loaders · Loader animates its position, on a loop (0.8s). https://sds-motion-forge.netlify.app/animations/loader-bounce/"
     },
     {
      "name": "sds-loader-bounce-bar",
@@ -1521,7 +1521,7 @@
     },
     {
      "name": "sds-loader-breath",
-     "description": "Breath — loaders · Breath — loader animation. https://sds-motion-forge.netlify.app/animations/loader-breath/"
+     "description": "Breath — loaders · Loader animates its size and opacity, on a loop (2s). https://sds-motion-forge.netlify.app/animations/loader-breath/"
     },
     {
      "name": "sds-loader-bubble",
@@ -1529,7 +1529,7 @@
     },
     {
      "name": "sds-loader-cascade",
-     "description": "Cascade Bars — loaders · Cascade Bars — loader animation. https://sds-motion-forge.netlify.app/animations/loader-cascade/"
+     "description": "Cascade Bars — loaders · Loader animates its opacity and height, on a loop (1s). https://sds-motion-forge.netlify.app/animations/loader-cascade/"
     },
     {
      "name": "sds-loader-chase-box",
@@ -1537,7 +1537,7 @@
     },
     {
      "name": "sds-loader-clock",
-     "description": "Clock — loaders · Clock — loader animation. https://sds-motion-forge.netlify.app/animations/loader-clock/"
+     "description": "Clock — loaders · An overlay on the loader animates its rotation, on a loop (2s). https://sds-motion-forge.netlify.app/animations/loader-clock/"
     },
     {
      "name": "sds-loader-coil",
@@ -1549,11 +1549,11 @@
     },
     {
      "name": "sds-loader-crystal",
-     "description": "Crystal — loaders · Crystal — loader animation. https://sds-motion-forge.netlify.app/animations/loader-crystal/"
+     "description": "Crystal — loaders · Loader animates its rotation and glow, on a loop (3s). https://sds-motion-forge.netlify.app/animations/loader-crystal/"
     },
     {
      "name": "sds-loader-cube",
-     "description": "Cube — loaders · Cube — loader animation. https://sds-motion-forge.netlify.app/animations/loader-cube/"
+     "description": "Cube — loaders · Loader animates its 3D rotation, on a loop (2s). https://sds-motion-forge.netlify.app/animations/loader-cube/"
     },
     {
      "name": "sds-loader-cursor",
@@ -1561,7 +1561,7 @@
     },
     {
      "name": "sds-loader-data",
-     "description": "Data — loaders · Data — loader animation. https://sds-motion-forge.netlify.app/animations/loader-data/"
+     "description": "Data — loaders · An overlay on the loader animates its position and opacity, on a loop (1.4s). https://sds-motion-forge.netlify.app/animations/loader-data/"
     },
     {
      "name": "sds-loader-diamond",
@@ -1569,7 +1569,7 @@
     },
     {
      "name": "sds-loader-dna",
-     "description": "DNA Helix — loaders · DNA Helix — loader animation. https://sds-motion-forge.netlify.app/animations/loader-dna/"
+     "description": "DNA Helix — loaders · An overlay on the loader animates its opacity, on a loop (1.4s). https://sds-motion-forge.netlify.app/animations/loader-dna/"
     },
     {
      "name": "sds-loader-dots",
@@ -1609,7 +1609,7 @@
     },
     {
      "name": "sds-loader-electric",
-     "description": "Electric Arc — loaders · Electric Arc — loader animation. https://sds-motion-forge.netlify.app/animations/loader-electric/"
+     "description": "Electric Arc — loaders · Loader animates its shadow and border colour, on a loop (1.5s). https://sds-motion-forge.netlify.app/animations/loader-electric/"
     },
     {
      "name": "sds-loader-equalizer",
@@ -1617,7 +1617,7 @@
     },
     {
      "name": "sds-loader-expand",
-     "description": "Expand — loaders · Expand — loader animation. https://sds-motion-forge.netlify.app/animations/loader-expand/"
+     "description": "Expand — loaders · Loader animates its size, on a loop (1.6s). https://sds-motion-forge.netlify.app/animations/loader-expand/"
     },
     {
      "name": "sds-loader-expand-ring",
@@ -1645,7 +1645,7 @@
     },
     {
      "name": "sds-loader-glitch",
-     "description": "Glitch — loaders · Glitch — loader animation. https://sds-motion-forge.netlify.app/animations/loader-glitch/"
+     "description": "Glitch — loaders · Loader animates its opacity and colour hue, on a loop (2s). https://sds-motion-forge.netlify.app/animations/loader-glitch/"
     },
     {
      "name": "sds-loader-glow-pulse",
@@ -1653,7 +1653,7 @@
     },
     {
      "name": "sds-loader-grid",
-     "description": "Dot Grid — loaders · Dot Grid — loader animation. https://sds-motion-forge.netlify.app/animations/loader-grid/"
+     "description": "Dot Grid — loaders · Loader animates its opacity, on a loop (1.6s). https://sds-motion-forge.netlify.app/animations/loader-grid/"
     },
     {
      "name": "sds-loader-halo",
@@ -1661,19 +1661,19 @@
     },
     {
      "name": "sds-loader-helix",
-     "description": "Helix Dots — loaders · Helix Dots — loader animation. https://sds-motion-forge.netlify.app/animations/loader-helix/"
+     "description": "Helix Dots — loaders · Loader animates its position and opacity, on a loop (1.2s). https://sds-motion-forge.netlify.app/animations/loader-helix/"
     },
     {
      "name": "sds-loader-hex",
-     "description": "Hex — loaders · Hex — loader animation. https://sds-motion-forge.netlify.app/animations/loader-hex/"
+     "description": "Hex — loaders · Loader animates its rotation, opacity and glow, on a loop (2s). https://sds-motion-forge.netlify.app/animations/loader-hex/"
     },
     {
      "name": "sds-loader-hourglass",
-     "description": "Hourglass — loaders · Hourglass — loader animation. https://sds-motion-forge.netlify.app/animations/loader-hourglass/"
+     "description": "Hourglass — loaders · Loader animates its rotation, on a loop (1.8s). https://sds-motion-forge.netlify.app/animations/loader-hourglass/"
     },
     {
      "name": "sds-loader-infinity",
-     "description": "Infinity — loaders · Infinity — loader animation. https://sds-motion-forge.netlify.app/animations/loader-infinity/"
+     "description": "Infinity — loaders · An overlay on the loader animates its rotation, on a loop (1.2s). https://sds-motion-forge.netlify.app/animations/loader-infinity/"
     },
     {
      "name": "sds-loader-isocube",
@@ -1681,11 +1681,11 @@
     },
     {
      "name": "sds-loader-liquid-ring",
-     "description": "Liquid Ring — loaders · Liquid Ring — loader animation. https://sds-motion-forge.netlify.app/animations/loader-liquid-ring/"
+     "description": "Liquid Ring — loaders · Loader animates its rotation, blur and glow, on a loop (1s). https://sds-motion-forge.netlify.app/animations/loader-liquid-ring/"
     },
     {
      "name": "sds-loader-matrix",
-     "description": "Matrix Bars — loaders · Matrix Bars — loader animation. https://sds-motion-forge.netlify.app/animations/loader-matrix/"
+     "description": "Matrix Bars — loaders · Loader animates its opacity and height, on a loop (1.2s). https://sds-motion-forge.netlify.app/animations/loader-matrix/"
     },
     {
      "name": "sds-loader-metronome",
@@ -1693,7 +1693,7 @@
     },
     {
      "name": "sds-loader-morph",
-     "description": "Morph — loaders · Morph — loader animation. https://sds-motion-forge.netlify.app/animations/loader-morph/"
+     "description": "Morph — loaders · Loader animates its size and rotation, on a loop (2.2s). https://sds-motion-forge.netlify.app/animations/loader-morph/"
     },
     {
      "name": "sds-loader-morph-geo",
@@ -1701,7 +1701,7 @@
     },
     {
      "name": "sds-loader-mosaic",
-     "description": "Mosaic — loaders · Mosaic — loader animation. https://sds-motion-forge.netlify.app/animations/loader-mosaic/"
+     "description": "Mosaic — loaders · Loader animates its opacity, on a loop (1.8s). https://sds-motion-forge.netlify.app/animations/loader-mosaic/"
     },
     {
      "name": "sds-loader-neon-flicker",
@@ -1709,15 +1709,15 @@
     },
     {
      "name": "sds-loader-neon-ring",
-     "description": "Neon Ring — loaders · Neon Ring — loader animation. https://sds-motion-forge.netlify.app/animations/loader-neon-ring/"
+     "description": "Neon Ring — loaders · Loader animates its rotation and shadow, on a loop (1s). https://sds-motion-forge.netlify.app/animations/loader-neon-ring/"
     },
     {
      "name": "sds-loader-neural",
-     "description": "Neural — loaders · Neural — loader animation. https://sds-motion-forge.netlify.app/animations/loader-neural/"
+     "description": "Neural — loaders · Loader animates its shadow, on a loop (3s). https://sds-motion-forge.netlify.app/animations/loader-neural/"
     },
     {
      "name": "sds-loader-orbit-3",
-     "description": "Triple Orbit — loaders · Triple Orbit — loader animation. https://sds-motion-forge.netlify.app/animations/loader-orbit-3/"
+     "description": "Triple Orbit — loaders · An overlay on the loader animates its position and rotation, on a loop (1s). https://sds-motion-forge.netlify.app/animations/loader-orbit-3/"
     },
     {
      "name": "sds-loader-orbital",
@@ -1725,7 +1725,7 @@
     },
     {
      "name": "sds-loader-pendulum",
-     "description": "Pendulum — loaders · Pendulum — loader animation. https://sds-motion-forge.netlify.app/animations/loader-pendulum/"
+     "description": "Pendulum — loaders · Loader animates its rotation, on a loop (1.2s). https://sds-motion-forge.netlify.app/animations/loader-pendulum/"
     },
     {
      "name": "sds-loader-ping",
@@ -1737,11 +1737,11 @@
     },
     {
      "name": "sds-loader-plasma-ring",
-     "description": "Plasma Ring — loaders · Plasma Ring — loader animation. https://sds-motion-forge.netlify.app/animations/loader-plasma-ring/"
+     "description": "Plasma Ring — loaders · Loader animates its rotation, colour hue and shadow, on a loop (1.6s). https://sds-motion-forge.netlify.app/animations/loader-plasma-ring/"
     },
     {
      "name": "sds-loader-prism",
-     "description": "Prism — loaders · Prism — loader animation. https://sds-motion-forge.netlify.app/animations/loader-prism/"
+     "description": "Prism — loaders · Loader animates its rotation, on a loop (2s). https://sds-motion-forge.netlify.app/animations/loader-prism/"
     },
     {
      "name": "sds-loader-progress",
@@ -1749,23 +1749,23 @@
     },
     {
      "name": "sds-loader-progress-glow",
-     "description": "Progress Glow — loaders · Progress Glow — loader animation. https://sds-motion-forge.netlify.app/animations/loader-progress-glow/"
+     "description": "Progress Glow — loaders · Loader animates its shadow, on a loop (2.4s). https://sds-motion-forge.netlify.app/animations/loader-progress-glow/"
     },
     {
      "name": "sds-loader-pulse",
-     "description": "Pulse — loaders · Pulse — loader animation. https://sds-motion-forge.netlify.app/animations/loader-pulse/"
+     "description": "Pulse — loaders · Loader animates its size and opacity, on a loop (1s). https://sds-motion-forge.netlify.app/animations/loader-pulse/"
     },
     {
      "name": "sds-loader-quantum",
-     "description": "Quantum — loaders · Quantum — loader animation. https://sds-motion-forge.netlify.app/animations/loader-quantum/"
+     "description": "Quantum — loaders · Loader animates its size and opacity, on a loop (1.6s). https://sds-motion-forge.netlify.app/animations/loader-quantum/"
     },
     {
      "name": "sds-loader-radar",
-     "description": "Radar — loaders · Radar — loader animation. https://sds-motion-forge.netlify.app/animations/loader-radar/"
+     "description": "Radar — loaders · An overlay on the loader animates its rotation, on a loop (2s). https://sds-motion-forge.netlify.app/animations/loader-radar/"
     },
     {
      "name": "sds-loader-ring",
-     "description": "Ring System — loaders · Ring System — loader animation. https://sds-motion-forge.netlify.app/animations/loader-ring/"
+     "description": "Ring System — loaders · An overlay on the loader animates its rotation, on a loop (1s). https://sds-motion-forge.netlify.app/animations/loader-ring/"
     },
     {
      "name": "sds-loader-ring-chase",
@@ -1777,7 +1777,7 @@
     },
     {
      "name": "sds-loader-ripple",
-     "description": "Ripple Rings — loaders · Ripple Rings — loader animation. https://sds-motion-forge.netlify.app/animations/loader-ripple/"
+     "description": "Ripple Rings — loaders · An overlay on the loader animates its size and opacity, on a loop (2s). https://sds-motion-forge.netlify.app/animations/loader-ripple/"
     },
     {
      "name": "sds-loader-ripple-dot",
@@ -1789,7 +1789,7 @@
     },
     {
      "name": "sds-loader-signal",
-     "description": "Signal Bars — loaders · Signal Bars — loader animation. https://sds-motion-forge.netlify.app/animations/loader-signal/"
+     "description": "Signal Bars — loaders · Loader animates its opacity, on a loop (1.2s). https://sds-motion-forge.netlify.app/animations/loader-signal/"
     },
     {
      "name": "sds-loader-skeleton",
@@ -1797,15 +1797,15 @@
     },
     {
      "name": "sds-loader-snake",
-     "description": "Snake — loaders · Snake — loader animation. https://sds-motion-forge.netlify.app/animations/loader-snake/"
+     "description": "Snake — loaders · An overlay on the loader animates its rotation, on a loop (1.2s). https://sds-motion-forge.netlify.app/animations/loader-snake/"
     },
     {
      "name": "sds-loader-solar",
-     "description": "Solar — loaders · Solar — loader animation. https://sds-motion-forge.netlify.app/animations/loader-solar/"
+     "description": "Solar — loaders · An overlay on the loader animates its size and rotation, on a loop (2s). https://sds-motion-forge.netlify.app/animations/loader-solar/"
     },
     {
      "name": "sds-loader-spark",
-     "description": "Spark — loaders · Spark — loader animation. https://sds-motion-forge.netlify.app/animations/loader-spark/"
+     "description": "Spark — loaders · Loader animates its shadow, plus an overlay (size and opacity), on a loop (1.8s). https://sds-motion-forge.netlify.app/animations/loader-spark/"
     },
     {
      "name": "sds-loader-spin-dot",
@@ -1825,7 +1825,7 @@
     },
     {
      "name": "sds-loader-star",
-     "description": "Star — loaders · Star — loader animation. https://sds-motion-forge.netlify.app/animations/loader-star/"
+     "description": "Star — loaders · Loader animates its rotation and opacity, on a loop (2s). https://sds-motion-forge.netlify.app/animations/loader-star/"
     },
     {
      "name": "sds-loader-stripes",
@@ -1869,7 +1869,7 @@
     },
     {
      "name": "sds-loader-warp",
-     "description": "Warp — loaders · Warp — loader animation. https://sds-motion-forge.netlify.app/animations/loader-warp/"
+     "description": "Warp — loaders · Loader animates its rotation, on a loop (1.2s). https://sds-motion-forge.netlify.app/animations/loader-warp/"
     },
     {
      "name": "sds-loader-wave",
@@ -2005,19 +2005,19 @@
     },
     {
      "name": "sds-scroll-bounce",
-     "description": "Bounce — scroll · Bounce — scroll animation. https://sds-motion-forge.netlify.app/animations/scroll-bounce/"
+     "description": "Bounce — scroll · Element animates its position and opacity, as it scrolls into view (0.9s). https://sds-motion-forge.netlify.app/animations/scroll-bounce/"
     },
     {
      "name": "sds-scroll-cascade",
-     "description": "Cascade — scroll · Cascade — scroll animation. https://sds-motion-forge.netlify.app/animations/scroll-cascade/"
+     "description": "Cascade — scroll · Element animates its position, opacity and blur, as it scrolls into view (0.6s). https://sds-motion-forge.netlify.app/animations/scroll-cascade/"
     },
     {
      "name": "sds-scroll-charge",
-     "description": "Charge Reveal — scroll · Charge Reveal — scroll animation. https://sds-motion-forge.netlify.app/animations/scroll-charge/"
+     "description": "Charge Reveal — scroll · Element animates its position, opacity and blur, as it scrolls into view (0.8s). https://sds-motion-forge.netlify.app/animations/scroll-charge/"
     },
     {
      "name": "sds-scroll-cinema",
-     "description": "Cinema — scroll · Cinema — scroll animation. https://sds-motion-forge.netlify.app/animations/scroll-cinema/"
+     "description": "Cinema — scroll · Element animates its size, opacity and blur, as it scrolls into view (1.2s). https://sds-motion-forge.netlify.app/animations/scroll-cinema/"
     },
     {
      "name": "sds-scroll-cinematic",
@@ -2025,11 +2025,11 @@
     },
     {
      "name": "sds-scroll-clip-left",
-     "description": "Clip Left — scroll · Clip Left — scroll animation. https://sds-motion-forge.netlify.app/animations/scroll-clip-left/"
+     "description": "Clip Left — scroll · Element animates its opacity and clip-path reveal, as it scrolls into view (0.8s). https://sds-motion-forge.netlify.app/animations/scroll-clip-left/"
     },
     {
      "name": "sds-scroll-clip-right",
-     "description": "Clip Right — scroll · Clip Right — scroll animation. https://sds-motion-forge.netlify.app/animations/scroll-clip-right/"
+     "description": "Clip Right — scroll · Element animates its opacity and clip-path reveal, as it scrolls into view (0.8s). https://sds-motion-forge.netlify.app/animations/scroll-clip-right/"
     },
     {
      "name": "sds-scroll-contrast-in",
@@ -2037,7 +2037,7 @@
     },
     {
      "name": "sds-scroll-crystallize",
-     "description": "Crystallize — scroll · Crystallize — scroll animation. https://sds-motion-forge.netlify.app/animations/scroll-crystallize/"
+     "description": "Crystallize — scroll · Element animates its opacity, blur and glow, as it scrolls into view (1s). https://sds-motion-forge.netlify.app/animations/scroll-crystallize/"
     },
     {
      "name": "sds-scroll-curtain",
@@ -2049,7 +2049,7 @@
     },
     {
      "name": "sds-scroll-dissolve",
-     "description": "Dissolve — scroll · Dissolve — scroll animation. https://sds-motion-forge.netlify.app/animations/scroll-dissolve/"
+     "description": "Dissolve — scroll · Element animates its opacity and blur, as it scrolls into view (1s). https://sds-motion-forge.netlify.app/animations/scroll-dissolve/"
     },
     {
      "name": "sds-scroll-door-left",
@@ -2061,7 +2061,7 @@
     },
     {
      "name": "sds-scroll-drift",
-     "description": "Drift — scroll · Drift — scroll animation. https://sds-motion-forge.netlify.app/animations/scroll-drift/"
+     "description": "Drift — scroll · Element animates its rotation, opacity and blur, as it scrolls into view (1.2s). https://sds-motion-forge.netlify.app/animations/scroll-drift/"
     },
     {
      "name": "sds-scroll-drop-in",
@@ -2069,11 +2069,11 @@
     },
     {
      "name": "sds-scroll-elastic",
-     "description": "Elastic — scroll · Elastic — scroll animation. https://sds-motion-forge.netlify.app/animations/scroll-elastic/"
+     "description": "Elastic — scroll · Element animates its position and opacity, as it scrolls into view (1s). https://sds-motion-forge.netlify.app/animations/scroll-elastic/"
     },
     {
      "name": "sds-scroll-elastic-pop",
-     "description": "Elastic Pop — scroll · Elastic Pop — scroll animation. https://sds-motion-forge.netlify.app/animations/scroll-elastic-pop/"
+     "description": "Elastic Pop — scroll · Element animates its size, rotation and opacity, as it scrolls into view (0.7s). https://sds-motion-forge.netlify.app/animations/scroll-elastic-pop/"
     },
     {
      "name": "sds-scroll-exhale",
@@ -2081,15 +2081,15 @@
     },
     {
      "name": "sds-scroll-fade-up",
-     "description": "Fade Up — scroll · Fade Up — scroll animation. https://sds-motion-forge.netlify.app/animations/scroll-fade-up/"
+     "description": "Fade Up — scroll · Element animates its position and opacity, as it scrolls into view (0.8s). https://sds-motion-forge.netlify.app/animations/scroll-fade-up/"
     },
     {
      "name": "sds-scroll-flash",
-     "description": "Bright Flash — scroll · Bright Flash — scroll animation. https://sds-motion-forge.netlify.app/animations/scroll-flash/"
+     "description": "Bright Flash — scroll · Element animates its opacity, blur and glow, as it scrolls into view (0.7s). https://sds-motion-forge.netlify.app/animations/scroll-flash/"
     },
     {
      "name": "sds-scroll-flip",
-     "description": "Flip Reveal — scroll · Flip Reveal — scroll animation. https://sds-motion-forge.netlify.app/animations/scroll-flip/"
+     "description": "Flip Reveal — scroll · Element animates its position, 3D rotation and opacity, as it scrolls into view (0.8s). https://sds-motion-forge.netlify.app/animations/scroll-flip/"
     },
     {
      "name": "sds-scroll-flip-up",
@@ -2101,7 +2101,7 @@
     },
     {
      "name": "sds-scroll-fog",
-     "description": "Fog — scroll · Fog — scroll animation. https://sds-motion-forge.netlify.app/animations/scroll-fog/"
+     "description": "Fog — scroll · Element animates its size, opacity and blur, as it scrolls into view (1.2s). https://sds-motion-forge.netlify.app/animations/scroll-fog/"
     },
     {
      "name": "sds-scroll-glare",
@@ -2125,11 +2125,11 @@
     },
     {
      "name": "sds-scroll-hologram",
-     "description": "Hologram — scroll · Hologram — scroll animation. https://sds-motion-forge.netlify.app/animations/scroll-hologram/"
+     "description": "Hologram — scroll · Element animates its position, opacity and blur, as it scrolls into view (1s). https://sds-motion-forge.netlify.app/animations/scroll-hologram/"
     },
     {
      "name": "sds-scroll-ink",
-     "description": "Ink — scroll · Ink — scroll animation. https://sds-motion-forge.netlify.app/animations/scroll-ink/"
+     "description": "Ink — scroll · Element animates its opacity and clip-path reveal, as it scrolls into view (1s). https://sds-motion-forge.netlify.app/animations/scroll-ink/"
     },
     {
      "name": "sds-scroll-iris",
@@ -2153,7 +2153,7 @@
     },
     {
      "name": "sds-scroll-magnetic",
-     "description": "Magnetic Pull — scroll · Magnetic Pull — scroll animation. https://sds-motion-forge.netlify.app/animations/scroll-magnetic/"
+     "description": "Magnetic Pull — scroll · Element animates its position, size and opacity, as it scrolls into view (0.9s). https://sds-motion-forge.netlify.app/animations/scroll-magnetic/"
     },
     {
      "name": "sds-scroll-materialize",
@@ -2161,11 +2161,11 @@
     },
     {
      "name": "sds-scroll-morph",
-     "description": "Morph Rise — scroll · Morph Rise — scroll animation. https://sds-motion-forge.netlify.app/animations/scroll-morph/"
+     "description": "Morph Rise — scroll · Element animates its position, skew and opacity, as it scrolls into view (0.9s). https://sds-motion-forge.netlify.app/animations/scroll-morph/"
     },
     {
      "name": "sds-scroll-neon",
-     "description": "Neon Reveal — scroll · Neon Reveal — scroll animation. https://sds-motion-forge.netlify.app/animations/scroll-neon/"
+     "description": "Neon Reveal — scroll · Element animates its position, opacity and shadow, as it scrolls into view (1s). https://sds-motion-forge.netlify.app/animations/scroll-neon/"
     },
     {
      "name": "sds-scroll-neon-pop",
@@ -2185,7 +2185,7 @@
     },
     {
      "name": "sds-scroll-perspective-left",
-     "description": "Perspective Left — scroll · Perspective Left — scroll animation. https://sds-motion-forge.netlify.app/animations/scroll-perspective-left/"
+     "description": "Perspective Left — scroll · Element animates its position, 3D rotation and opacity, as it scrolls into view (0.8s). https://sds-motion-forge.netlify.app/animations/scroll-perspective-left/"
     },
     {
      "name": "sds-scroll-phantom",
@@ -2201,11 +2201,11 @@
     },
     {
      "name": "sds-scroll-prism",
-     "description": "Prism Reveal — scroll · Prism Reveal — scroll animation. https://sds-motion-forge.netlify.app/animations/scroll-prism/"
+     "description": "Prism Reveal — scroll · Element animates its opacity, blur and colour hue, as it scrolls into view (1s). https://sds-motion-forge.netlify.app/animations/scroll-prism/"
     },
     {
      "name": "sds-scroll-punch",
-     "description": "Punch — scroll · Punch — scroll animation. https://sds-motion-forge.netlify.app/animations/scroll-punch/"
+     "description": "Punch — scroll · Element animates its size, opacity and blur, as it scrolls into view (0.6s). https://sds-motion-forge.netlify.app/animations/scroll-punch/"
     },
     {
      "name": "sds-scroll-radial",
@@ -2261,7 +2261,7 @@
     },
     {
      "name": "sds-scroll-skew",
-     "description": "Skew — scroll · Skew — scroll animation. https://sds-motion-forge.netlify.app/animations/scroll-skew/"
+     "description": "Skew — scroll · Element animates its position, skew and opacity, as it scrolls into view (0.8s). https://sds-motion-forge.netlify.app/animations/scroll-skew/"
     },
     {
      "name": "sds-scroll-skid-in",
@@ -2273,7 +2273,7 @@
     },
     {
      "name": "sds-scroll-slide-right",
-     "description": "Slide Right — scroll · Slide Right — scroll animation. https://sds-motion-forge.netlify.app/animations/scroll-slide-right/"
+     "description": "Slide Right — scroll · Element animates its position and opacity, as it scrolls into view (0.8s). https://sds-motion-forge.netlify.app/animations/scroll-slide-right/"
     },
     {
      "name": "sds-scroll-slingshot",
@@ -2281,7 +2281,7 @@
     },
     {
      "name": "sds-scroll-snap",
-     "description": "Snap — scroll · Snap — scroll animation. https://sds-motion-forge.netlify.app/animations/scroll-snap/"
+     "description": "Snap — scroll · Element animates its size, rotation and opacity, as it scrolls into view (0.5s). https://sds-motion-forge.netlify.app/animations/scroll-snap/"
     },
     {
      "name": "sds-scroll-spin-y",
@@ -2289,15 +2289,15 @@
     },
     {
      "name": "sds-scroll-spiral",
-     "description": "Spiral — scroll · Spiral — scroll animation. https://sds-motion-forge.netlify.app/animations/scroll-spiral/"
+     "description": "Spiral — scroll · Element animates its size, rotation and opacity, as it scrolls into view (0.9s). https://sds-motion-forge.netlify.app/animations/scroll-spiral/"
     },
     {
      "name": "sds-scroll-split",
-     "description": "Split Reveal — scroll · Split Reveal — scroll animation. https://sds-motion-forge.netlify.app/animations/scroll-split/"
+     "description": "Split Reveal — scroll · Element animates its opacity and clip-path reveal, as it scrolls into view (0.9s). https://sds-motion-forge.netlify.app/animations/scroll-split/"
     },
     {
      "name": "sds-scroll-spring",
-     "description": "Spring — scroll · Spring — scroll animation. https://sds-motion-forge.netlify.app/animations/scroll-spring/"
+     "description": "Spring — scroll · Element animates its position, size and opacity, as it scrolls into view (0.9s). https://sds-motion-forge.netlify.app/animations/scroll-spring/"
     },
     {
      "name": "sds-scroll-stagger-fade",
@@ -2321,7 +2321,7 @@
     },
     {
      "name": "sds-scroll-streak",
-     "description": "Streak — scroll · Streak — scroll animation. https://sds-motion-forge.netlify.app/animations/scroll-streak/"
+     "description": "Streak — scroll · Element animates its position, opacity and blur, as it scrolls into view (0.7s). https://sds-motion-forge.netlify.app/animations/scroll-streak/"
     },
     {
      "name": "sds-scroll-stretch",
@@ -2345,7 +2345,7 @@
     },
     {
      "name": "sds-scroll-unfold",
-     "description": "Unfold — scroll · Unfold — scroll animation. https://sds-motion-forge.netlify.app/animations/scroll-unfold/"
+     "description": "Unfold — scroll · Element animates its 3D rotation and opacity, as it scrolls into view (0.8s). https://sds-motion-forge.netlify.app/animations/scroll-unfold/"
     },
     {
      "name": "sds-scroll-unfurl",
@@ -2357,7 +2357,7 @@
     },
     {
      "name": "sds-scroll-vortex",
-     "description": "Vortex — scroll · Vortex — scroll animation. https://sds-motion-forge.netlify.app/animations/scroll-vortex/"
+     "description": "Vortex — scroll · Element animates its size, 3D rotation and opacity, as it scrolls into view (0.8s). https://sds-motion-forge.netlify.app/animations/scroll-vortex/"
     },
     {
      "name": "sds-scroll-warp",
@@ -2365,11 +2365,11 @@
     },
     {
      "name": "sds-scroll-warp-in",
-     "description": "Warp Enter — scroll · Warp Enter — scroll animation. https://sds-motion-forge.netlify.app/animations/scroll-warp-in/"
+     "description": "Warp Enter — scroll · Element animates its position, 3D rotation and opacity, as it scrolls into view (0.9s). https://sds-motion-forge.netlify.app/animations/scroll-warp-in/"
     },
     {
      "name": "sds-scroll-wave-rise",
-     "description": "Wave Rise — scroll · Wave Rise — scroll animation. https://sds-motion-forge.netlify.app/animations/scroll-wave-rise/"
+     "description": "Wave Rise — scroll · Element animates its position and opacity, as it scrolls into view (0.7s). https://sds-motion-forge.netlify.app/animations/scroll-wave-rise/"
     },
     {
      "name": "sds-scroll-wipe-right",
@@ -2381,7 +2381,7 @@
     },
     {
      "name": "sds-scroll-zoom-blur",
-     "description": "Zoom Blur — scroll · Zoom Blur — scroll animation. https://sds-motion-forge.netlify.app/animations/scroll-zoom-blur/"
+     "description": "Zoom Blur — scroll · Element animates its size, opacity and blur, as it scrolls into view (0.9s). https://sds-motion-forge.netlify.app/animations/scroll-zoom-blur/"
     },
     {
      "name": "sds-scroll-zoom-in",

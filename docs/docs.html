@@ -42,7 +42,7 @@
     <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
-      content="SDS Motion Forge — 600+ CSS Animations, Zero Required JavaScript"
+      content="SDS Motion Forge — 600+ CSS Animations, No JavaScript for the CSS Effects"
     />
 
     <!-- Twitter Card -->
@@ -779,6 +779,7 @@
           <a href="#install" class="sb-link active">Installation</a>
           <a href="#quickstart" class="sb-link">Quick Start</a>
           <a href="#frameworks" class="sb-link">Framework Integration</a>
+          <a href="#js-needs" class="sb-link">What Needs JavaScript</a>
         </div>
         <div class="sb-group">
           <span class="sb-label">Animation Reference</span>
@@ -996,6 +997,22 @@
             Add <code>motion-interactive.min.js</code> only when you use cursor-reactive
             classes (they show a <strong>Needs JS</strong> badge in the live gallery).
           </div>
+        </section>
+
+        <!-- ═══════════════ WHAT NEEDS JAVASCRIPT ═══════════════ -->
+        <section class="doc-sec" id="js-needs">
+          <h2 class="doc-sec-title">What needs JavaScript</h2>
+          <p class="doc-sec-sub">The CSS effects need none. Three things are different, and each is optional.</p>
+          <table class="doc-table">
+            <thead><tr><th>What</th><th>JavaScript?</th><th>Notes</th></tr></thead>
+            <tbody>
+              <tr><td>617 CSS effects</td><td>No</td><td>Add the class. Some need markup: 13 text effects need each letter in a <code>.sds-char</code> span, 48 animate child elements, 29 input effects need a wrapper.</td></tr>
+              <tr><td>100 scroll effects</td><td>Only to trigger on scroll in some browsers</td><td><code>sds-scroll-auto</code> plus <code>sds-scroll-*</code> is CSS-only in Chrome 115+. Elsewhere load the 1.3 KB <code>sds-scroll.min.js</code> and use <code>data-sds</code>. Without either, the effect plays on load.</td></tr>
+              <tr><td>7 cursor-reactive effects</td><td>Yes</td><td>Need the 7 KB <code>motion-interactive.min.js</code>: Jelly Hover, Magnetic Pull, Repulsion Field, Scatter Return, Shockwave, Spring Kerning, Word Morph.</td></tr>
+              <tr><td>Physics easing</td><td>No</td><td>Uses CSS <code>linear()</code> (Chrome 113+, Safari 17.2+, Firefox 112+). Older browsers get a cubic-bezier approximation.</td></tr>
+            </tbody>
+          </table>
+          <p class="doc-p">Not supported: email clients and native or canvas-based apps (for example Flutter), because they do not render HTML and CSS classes.</p>
         </section>
 
         <!-- ═══════════════ FRAMEWORK INTEGRATION ═══════════════ -->

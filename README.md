@@ -1,6 +1,6 @@
 # SDS Motion Forge
 
-**617 CSS animations. One class name each. No JavaScript required.**
+**617 CSS animations. One class name each. The CSS effects need no JavaScript.**
 Text, buttons, inputs, cards, loaders and scroll effects as plain CSS — drop them into HTML, React, Next.js, Angular, Vue or a Tailwind project.
 
 [![npm version](https://img.shields.io/npm/v/@salkomdesignstudio/sds-motion-forge.svg?style=flat-square)](https://www.npmjs.com/package/@salkomdesignstudio/sds-motion-forge)
@@ -150,7 +150,7 @@ If SDS Motion Forge saves you time, a ⭐ on GitHub helps other developers find 
 </html>
 ```
 
-That's it. No JavaScript. No configuration. No build step.
+That's it. No JavaScript, no configuration and no build step for the CSS effects. [What needs JavaScript](#what-needs-javascript).
 
 ---
 
@@ -346,13 +346,16 @@ module.exports = {
 @import '@salkomdesignstudio/sds-motion-forge/src/motion.css';
 ```
 
-#### Flutter Web
+---
 
-```html
-<!-- web/index.html -->
-<link rel="stylesheet"
-  href="packages/sds_motion_forge/dist/motion.min.css" />
-```
+## What needs JavaScript
+
+| What | Needs JavaScript? | Notes |
+|---|---|---|
+| 617 CSS effects (text, buttons, inputs, cards, loaders) | No | Add the class. Some need markup: 13 text effects need each letter in a `.sds-char` span, 48 animate child elements, 29 input effects need a wrapper. |
+| 100 scroll effects | Only to trigger on scroll in some browsers | `sds-scroll-auto` + `sds-scroll-*` is CSS-only in Chrome 115+. Elsewhere load the 1.3 KB `sds-scroll.min.js` and use `data-sds`; without it the effect plays on load instead of on scroll. |
+| 7 cursor-reactive effects | Yes | Need the 7 KB `motion-interactive.min.js`: Jelly Hover, Magnetic Pull, Repulsion Field, Scatter Return, Shockwave, Spring Kerning, Word Morph. |
+| Physics easing (`linear()`) | No | Chrome 113+, Safari 17.2+, Firefox 112+; older browsers get a cubic-bezier approximation. |
 
 ---
 
@@ -362,7 +365,7 @@ The library has three independent layers. Use only what you need.
 
 ### Layer 1 — CSS Core (always, no JS)
 
-The entire `motion.min.css` file. Add a class → animation plays. Works in any environment, including static HTML, SSR, and email-safe HTML.
+The entire `motion.min.css` file. Add a class and the animation plays. It works anywhere a browser renders HTML and CSS, including static HTML and server-rendered pages. Email clients and native apps are not supported.
 
 ```html
 <span class="sds-velvet-drop">Animates immediately on load</span>

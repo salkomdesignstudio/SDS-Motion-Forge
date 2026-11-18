@@ -312,7 +312,7 @@
       "displayName": "Amp",
       "category": "buttons",
       "kind": "effect",
-      "description": "Amp — button animation.",
+      "description": "Button animates, on a loop (0.6s).",
       "selectors": [
         ".sds-btn-amp"
       ],
@@ -343,7 +343,7 @@
       "displayName": "Aurora",
       "category": "buttons",
       "kind": "effect",
-      "description": "Aurora — button animation.",
+      "description": "Button animates its shadow, on a loop (4s).",
       "selectors": [
         ".sds-btn-aurora"
       ],
@@ -454,7 +454,7 @@
       "displayName": "Border Flow",
       "category": "buttons",
       "kind": "effect",
-      "description": "Border Flow — button animation.",
+      "description": "Button animates its shadow, on a loop (3s).",
       "selectors": [
         ".sds-btn-border-flow"
       ],
@@ -489,7 +489,7 @@
       "displayName": "Bounce",
       "category": "buttons",
       "kind": "effect",
-      "description": "Bounce — button animation.",
+      "description": "Button animates, on a loop (1.4s).",
       "selectors": [
         ".sds-btn-bounce"
       ],
@@ -558,7 +558,7 @@
       "displayName": "Burst",
       "category": "buttons",
       "kind": "effect",
-      "description": "Burst — button animation.",
+      "description": "Button animates, on a loop (2.2s).",
       "selectors": [
         ".sds-btn-burst"
       ],
@@ -599,7 +599,7 @@
       "displayName": "Charge",
       "category": "buttons",
       "kind": "effect",
-      "description": "Charge — button animation.",
+      "description": "Button animates its glow and shadow, on a loop (2.4s).",
       "selectors": [
         ".sds-btn-charge"
       ],
@@ -634,7 +634,7 @@
       "displayName": "Crystal",
       "category": "buttons",
       "kind": "effect",
-      "description": "Crystal — button animation.",
+      "description": "Button animates its glow and shadow, on a loop (2.4s).",
       "selectors": [
         ".sds-btn-crystal"
       ],
@@ -668,7 +668,7 @@
       "displayName": "Depth Press",
       "category": "buttons",
       "kind": "effect",
-      "description": "Depth Press — button animation.",
+      "description": "Button animates its shadow, on a loop (2s).",
       "selectors": [
         ".sds-btn-depth-press"
       ],
@@ -702,7 +702,7 @@
       "displayName": "Dissolve",
       "category": "buttons",
       "kind": "effect",
-      "description": "Dissolve — button animation.",
+      "description": "Button animates its opacity, blur and glow, on a loop (3s).",
       "selectors": [
         ".sds-btn-dissolve"
       ],
@@ -1350,7 +1350,7 @@
       "displayName": "Fire",
       "category": "buttons",
       "kind": "effect",
-      "description": "Fire — button animation.",
+      "description": "Button animates its glow and shadow, on a loop (2s).",
       "selectors": [
         ".sds-btn-fire"
       ],
@@ -1384,7 +1384,7 @@
       "displayName": "Flare",
       "category": "buttons",
       "kind": "effect",
-      "description": "Flare — button animation.",
+      "description": "Button animates its shadow, on a loop (2.5s).",
       "selectors": [
         ".sds-btn-flare"
       ],
@@ -1418,7 +1418,7 @@
       "displayName": "Float",
       "category": "buttons",
       "kind": "effect",
-      "description": "Float — button animation.",
+      "description": "Button animates its position and shadow, on a loop (2.6s).",
       "selectors": [
         ".sds-btn-float"
       ],
@@ -1452,7 +1452,7 @@
       "displayName": "Flux",
       "category": "buttons",
       "kind": "effect",
-      "description": "Flux — button animation.",
+      "description": "Button animates its glow, on a loop (1.6s).",
       "selectors": [
         ".sds-btn-flux"
       ],
@@ -1484,7 +1484,7 @@
       "displayName": "Glow Core",
       "category": "buttons",
       "kind": "effect",
-      "description": "Glow Core — button animation.",
+      "description": "Button animates its shadow, on a loop (2.2s).",
       "selectors": [
         ".sds-btn-glow-core"
       ],
@@ -1552,7 +1552,7 @@
       "displayName": "Gradient Shift",
       "category": "buttons",
       "kind": "effect",
-      "description": "Gradient Shift — button animation.",
+      "description": "Button animates its gradient position, on a loop (4s).",
       "selectors": [
         ".sds-btn-gradient-shift"
       ],
@@ -1588,7 +1588,7 @@
       "displayName": "Gravity",
       "category": "buttons",
       "kind": "effect",
-      "description": "Gravity — button animation.",
+      "description": "Button animates its position and shadow, on a loop (1.8s).",
       "selectors": [
         ".sds-btn-gravity"
       ],
@@ -1624,7 +1624,7 @@
       "displayName": "Gravity Pull",
       "category": "buttons",
       "kind": "effect",
-      "description": "Gravity Pull — button animation.",
+      "description": "Button animates its position and shadow, on a loop (2.4s).",
       "selectors": [
         ".sds-btn-gravity-pull"
       ],
@@ -1801,7 +1801,7 @@
       "displayName": "Heartbeat",
       "category": "buttons",
       "kind": "effect",
-      "description": "Heartbeat — button animation.",
+      "description": "Button animates, on a loop (1.2s).",
       "selectors": [
         ".sds-btn-heartbeat"
       ],
@@ -1832,7 +1832,7 @@
       "displayName": "Hologram",
       "category": "buttons",
       "kind": "effect",
-      "description": "Hologram — button animation.",
+      "description": "Button animates its colour hue and glow, on a loop (4s).",
       "selectors": [
         ".sds-btn-hologram"
       ],
@@ -1863,7 +1863,7 @@
       "displayName": "Ice",
       "category": "buttons",
       "kind": "effect",
-      "description": "Ice — button animation.",
+      "description": "Button animates its glow and shadow, on a loop (3s).",
       "selectors": [
         ".sds-btn-ice"
       ],
@@ -1973,7 +1973,7 @@
       "displayName": "Kinetic",
       "category": "buttons",
       "kind": "effect",
-      "description": "Kinetic — button animation.",
+      "description": "Button animates its rotation, on a loop (0.8s).",
       "selectors": [
         ".sds-btn-kinetic"
       ],
@@ -2224,7 +2224,7 @@
       "displayName": "Magnetic Trail",
       "category": "buttons",
       "kind": "effect",
-      "description": "Magnetic Trail — button animation.",
+      "description": "Button animates its shadow, on a loop (2s).",
       "selectors": [
         ".sds-btn-magnetic-trail"
       ],
@@ -2258,7 +2258,7 @@
       "displayName": "Momentum",
       "category": "buttons",
       "kind": "effect",
-      "description": "Momentum — button animation.",
+      "description": "Button animates its position, opacity and blur, once on load (2s).",
       "selectors": [
         ".sds-btn-momentum"
       ],
@@ -2361,7 +2361,7 @@
       "displayName": "Neon Trace",
       "category": "buttons",
       "kind": "effect",
-      "description": "Neon Trace — button animation.",
+      "description": "Button animates its shadow, on a loop (3s).",
       "selectors": [
         ".sds-btn-neon-trace"
       ],
@@ -2466,7 +2466,7 @@
       "displayName": "Outline Grow",
       "category": "buttons",
       "kind": "effect",
-      "description": "Outline Grow — button animation.",
+      "description": "Button animates, on a loop (2s).",
       "selectors": [
         ".sds-btn-outline-grow"
       ],
@@ -2824,7 +2824,7 @@
       "displayName": "Pulse Border",
       "category": "buttons",
       "kind": "effect",
-      "description": "Pulse Border — button animation.",
+      "description": "Button animates its shadow and border colour, on a loop (2s).",
       "selectors": [
         ".sds-btn-pulse-border"
       ],
@@ -2897,7 +2897,7 @@
       "displayName": "Radar",
       "category": "buttons",
       "kind": "effect",
-      "description": "Radar — button animation.",
+      "description": "Button animates its shadow, on a loop (2s).",
       "selectors": [
         ".sds-btn-radar"
       ],
@@ -2930,7 +2930,7 @@
       "displayName": "Recoil",
       "category": "buttons",
       "kind": "effect",
-      "description": "Recoil — button animation.",
+      "description": "Button animates, on a loop (2.4s).",
       "selectors": [
         ".sds-btn-recoil"
       ],
@@ -2961,7 +2961,7 @@
       "displayName": "Ripple",
       "category": "buttons",
       "kind": "effect",
-      "description": "Ripple — button animation.",
+      "description": "Button animates its shadow, on a loop (2s).",
       "selectors": [
         ".sds-btn-ripple"
       ],
@@ -2994,7 +2994,7 @@
       "displayName": "Rotate",
       "category": "buttons",
       "kind": "effect",
-      "description": "Rotate — button animation.",
+      "description": "Button animates its 3D rotation, on a loop (4s).",
       "selectors": [
         ".sds-btn-rotate"
       ],
@@ -3025,7 +3025,7 @@
       "displayName": "Scan",
       "category": "buttons",
       "kind": "effect",
-      "description": "Scan — button animation.",
+      "description": "Button animates its gradient position, on a loop (2s).",
       "selectors": [
         ".sds-btn-scan"
       ],
@@ -3133,7 +3133,7 @@
       "displayName": "Shimmer",
       "category": "buttons",
       "kind": "effect",
-      "description": "Shimmer — button animation.",
+      "description": "Button animates its gradient position, on a loop (1.8s).",
       "selectors": [
         ".sds-btn-shimmer"
       ],
@@ -3350,7 +3350,7 @@
       "displayName": "Split",
       "category": "buttons",
       "kind": "effect",
-      "description": "Split — button animation.",
+      "description": "Button animates its shadow, on a loop (2.8s).",
       "selectors": [
         ".sds-btn-split"
       ],
@@ -3419,7 +3419,7 @@
       "displayName": "Stretch",
       "category": "buttons",
       "kind": "effect",
-      "description": "Stretch — button animation.",
+      "description": "Button animates, on a loop (2s).",
       "selectors": [
         ".sds-btn-stretch"
       ],
@@ -3524,7 +3524,7 @@
       "displayName": "Swipe",
       "category": "buttons",
       "kind": "effect",
-      "description": "Swipe — button animation.",
+      "description": "Button animates its gradient position, on a loop (2.4s).",
       "selectors": [
         ".sds-btn-swipe"
       ],
@@ -3591,7 +3591,7 @@
       "displayName": "Tilt",
       "category": "buttons",
       "kind": "effect",
-      "description": "Tilt — button animation.",
+      "description": "Button animates its 3D rotation, on a loop (3s).",
       "selectors": [
         ".sds-btn-tilt"
       ],
@@ -3793,7 +3793,7 @@
       "displayName": "Warp",
       "category": "buttons",
       "kind": "effect",
-      "description": "Warp — button animation.",
+      "description": "Button animates its skew, on a loop (2.6s).",
       "selectors": [
         ".sds-btn-warp"
       ],
@@ -3933,7 +3933,7 @@
       "displayName": "Aurora",
       "category": "cards",
       "kind": "effect",
-      "description": "Aurora — card animation.",
+      "description": "Card animates its shadow, on a loop (5s).",
       "selectors": [
         ".sds-card-aurora"
       ],
@@ -3966,7 +3966,7 @@
       "displayName": "Bloom",
       "category": "cards",
       "kind": "effect",
-      "description": "Bloom — card animation.",
+      "description": "Card animates its glow and shadow, on a loop (3s).",
       "selectors": [
         ".sds-card-bloom"
       ],
@@ -4103,7 +4103,7 @@
       "displayName": "Breath",
       "category": "cards",
       "kind": "effect",
-      "description": "Breath — card animation.",
+      "description": "Card animates its shadow, on a loop (3s).",
       "selectors": [
         ".sds-card-breath"
       ],
@@ -4139,7 +4139,7 @@
       "displayName": "Burst",
       "category": "cards",
       "kind": "effect",
-      "description": "Burst — card animation.",
+      "description": "Card animates its size, opacity and blur, once on load (0.7s).",
       "selectors": [
         ".sds-card-burst"
       ],
@@ -4205,7 +4205,7 @@
       "displayName": "Cascade",
       "category": "cards",
       "kind": "effect",
-      "description": "Cascade — card animation.",
+      "description": "Card animates its position, opacity and blur, once on load (0.6s).",
       "selectors": [
         ".sds-card-cascade > *",
         ".sds-card-cascade > *:nth-child(1)",
@@ -4544,7 +4544,7 @@
       "displayName": "Deep Float",
       "category": "cards",
       "kind": "effect",
-      "description": "Deep Float — card animation.",
+      "description": "Card animates its position and shadow, on a loop (4s).",
       "selectors": [
         ".sds-card-deep-float"
       ],
@@ -4578,7 +4578,7 @@
       "displayName": "Depth",
       "category": "cards",
       "kind": "effect",
-      "description": "Depth — card animation.",
+      "description": "Card animates its 3D rotation, on a loop (4s).",
       "selectors": [
         ".sds-card-depth"
       ],
@@ -4705,7 +4705,7 @@
       "displayName": "Drift",
       "category": "cards",
       "kind": "effect",
-      "description": "Drift — card animation.",
+      "description": "Card animates its rotation, on a loop (5s).",
       "selectors": [
         ".sds-card-drift"
       ],
@@ -4803,7 +4803,7 @@
       "displayName": "Electric",
       "category": "cards",
       "kind": "effect",
-      "description": "Electric — card animation.",
+      "description": "Card animates its shadow, on a loop (2.4s).",
       "selectors": [
         ".sds-card-electric"
       ],
@@ -4836,7 +4836,7 @@
       "displayName": "Expand",
       "category": "cards",
       "kind": "effect",
-      "description": "Expand — card animation.",
+      "description": "Card animates its position, size and opacity, once on load (0.9s).",
       "selectors": [
         ".sds-card-expand"
       ],
@@ -4910,7 +4910,7 @@
       "displayName": "Flip",
       "category": "cards",
       "kind": "effect",
-      "description": "Flip — card animation.",
+      "description": "Card animates its position and opacity, once on load (0.6s).",
       "selectors": [
         ".sds-card-flip"
       ],
@@ -4976,7 +4976,7 @@
       "displayName": "Flip Reveal",
       "category": "cards",
       "kind": "effect",
-      "description": "Flip Reveal — card animation.",
+      "description": "Card animates its 3D rotation and opacity, once on load (0.8s).",
       "selectors": [
         ".sds-card-flip-reveal"
       ],
@@ -5079,7 +5079,7 @@
       "displayName": "Fold",
       "category": "cards",
       "kind": "effect",
-      "description": "Fold — card animation.",
+      "description": "Card animates its 3D rotation and opacity, once on load (0.8s).",
       "selectors": [
         ".sds-card-fold"
       ],
@@ -5114,7 +5114,7 @@
       "displayName": "Force",
       "category": "cards",
       "kind": "effect",
-      "description": "Force — card animation.",
+      "description": "Card animates its shadow, on a loop (2s).",
       "selectors": [
         ".sds-card-force"
       ],
@@ -5247,7 +5247,7 @@
       "displayName": "Glass",
       "category": "cards",
       "kind": "effect",
-      "description": "Glass — card animation.",
+      "description": "Card animates its opacity and backdrop blur, once on load (0.7s).",
       "selectors": [
         ".sds-card-glass"
       ],
@@ -5346,7 +5346,7 @@
       "displayName": "Glitch",
       "category": "cards",
       "kind": "effect",
-      "description": "Glitch — card animation.",
+      "description": "Card animates its skew, colour hue and glow, on a loop (4s).",
       "selectors": [
         ".sds-card-glitch"
       ],
@@ -5411,7 +5411,7 @@
       "displayName": "Gravity",
       "category": "cards",
       "kind": "effect",
-      "description": "Gravity — card animation.",
+      "description": "Card animates its position and opacity, once on load (0.8s).",
       "selectors": [
         ".sds-card-gravity"
       ],
@@ -5696,7 +5696,7 @@
       "displayName": "Ink",
       "category": "cards",
       "kind": "effect",
-      "description": "Ink — card animation.",
+      "description": "Card animates its opacity and clip-path reveal, once on load (1s).",
       "selectors": [
         ".sds-card-ink"
       ],
@@ -5730,7 +5730,7 @@
       "displayName": "Iris",
       "category": "cards",
       "kind": "effect",
-      "description": "Iris — card animation.",
+      "description": "Card animates its opacity and clip-path reveal, once on load (0.8s).",
       "selectors": [
         ".sds-card-iris"
       ],
@@ -5897,7 +5897,7 @@
       "displayName": "Levitate",
       "category": "cards",
       "kind": "effect",
-      "description": "Levitate — card animation.",
+      "description": "Card animates its position, 3D rotation and shadow, on a loop (3.5s).",
       "selectors": [
         ".sds-card-levitate"
       ],
@@ -5931,7 +5931,7 @@
       "displayName": "Liquid Border",
       "category": "cards",
       "kind": "effect",
-      "description": "Liquid Border — card animation.",
+      "description": "Card animates its shadow, on a loop (4s).",
       "selectors": [
         ".sds-card-liquid-border"
       ],
@@ -6003,7 +6003,7 @@
       "displayName": "Momentum",
       "category": "cards",
       "kind": "effect",
-      "description": "Momentum — card animation.",
+      "description": "Card animates its position, skew and opacity, once on load (0.9s).",
       "selectors": [
         ".sds-card-momentum"
       ],
@@ -6038,7 +6038,7 @@
       "displayName": "Morph",
       "category": "cards",
       "kind": "effect",
-      "description": "Morph — card animation.",
+      "description": "Card animates, on a loop (3s).",
       "selectors": [
         ".sds-card-morph"
       ],
@@ -6073,7 +6073,7 @@
       "displayName": "Neon",
       "category": "cards",
       "kind": "effect",
-      "description": "Neon — card animation.",
+      "description": "Card animates its shadow, on a loop (2.5s).",
       "selectors": [
         ".sds-card-neon"
       ],
@@ -6106,7 +6106,7 @@
       "displayName": "Neon Border",
       "category": "cards",
       "kind": "effect",
-      "description": "Neon Border — card animation.",
+      "description": "Card animates its shadow, on a loop (3s).",
       "selectors": [
         ".sds-card-neon-border"
       ],
@@ -6240,7 +6240,7 @@
       "displayName": "Prism",
       "category": "cards",
       "kind": "effect",
-      "description": "Prism — card animation.",
+      "description": "Card animates its colour hue and glow, on a loop (5s).",
       "selectors": [
         ".sds-card-prism"
       ],
@@ -6339,7 +6339,7 @@
       "displayName": "Rise",
       "category": "cards",
       "kind": "effect",
-      "description": "Rise — card animation.",
+      "description": "Card animates its position, opacity and blur, once on load (0.8s).",
       "selectors": [
         ".sds-card-rise"
       ],
@@ -6375,7 +6375,7 @@
       "displayName": "Rotate",
       "category": "cards",
       "kind": "effect",
-      "description": "Rotate — card animation.",
+      "description": "Card animates its position, 3D rotation and opacity, once on load (0.8s).",
       "selectors": [
         ".sds-card-rotate"
       ],
@@ -6443,7 +6443,7 @@
       "displayName": "Scan",
       "category": "cards",
       "kind": "effect",
-      "description": "Scan — card animation.",
+      "description": "Card animates its clip-path reveal, once on load (0.9s).",
       "selectors": [
         ".sds-card-scan"
       ],
@@ -6476,7 +6476,7 @@
       "displayName": "Shadow Lift",
       "category": "cards",
       "kind": "effect",
-      "description": "Shadow Lift — card animation.",
+      "description": "Card animates its position and shadow, on a loop (2.8s).",
       "selectors": [
         ".sds-card-shadow-lift"
       ],
@@ -6678,7 +6678,7 @@
       "displayName": "Smoke",
       "category": "cards",
       "kind": "effect",
-      "description": "Smoke — card animation.",
+      "description": "Card animates its size, opacity and blur, once on load (1.1s).",
       "selectors": [
         ".sds-card-smoke"
       ],
@@ -6711,7 +6711,7 @@
       "displayName": "Snap",
       "category": "cards",
       "kind": "effect",
-      "description": "Snap — card animation.",
+      "description": "Card animates its size, rotation and opacity, once on load (0.5s).",
       "selectors": [
         ".sds-card-snap"
       ],
@@ -6809,7 +6809,7 @@
       "displayName": "Spotlight",
       "category": "cards",
       "kind": "effect",
-      "description": "Spotlight — card animation.",
+      "description": "Card animates its gradient position, on a loop (4s).",
       "selectors": [
         ".sds-card-spotlight"
       ],
@@ -6842,7 +6842,7 @@
       "displayName": "Spring",
       "category": "cards",
       "kind": "effect",
-      "description": "Spring — card animation.",
+      "description": "Card animates its size, rotation and opacity, once on load (0.9s).",
       "selectors": [
         ".sds-card-spring"
       ],
@@ -6941,7 +6941,7 @@
       "displayName": "Stagger",
       "category": "cards",
       "kind": "effect",
-      "description": "Stagger — card animation.",
+      "description": "Card animates its position and opacity, once on load (0.5s).",
       "selectors": [
         ".sds-card-stagger",
         ".sds-card-stagger > *",
@@ -7015,7 +7015,7 @@
       "displayName": "Tilt",
       "category": "cards",
       "kind": "effect",
-      "description": "Tilt — card animation.",
+      "description": "Card animates its 3D rotation, on a loop (4s).",
       "selectors": [
         ".sds-card-tilt"
       ],
@@ -7079,7 +7079,7 @@
       "displayName": "Unfold",
       "category": "cards",
       "kind": "effect",
-      "description": "Unfold — card animation.",
+      "description": "Card animates its 3D rotation and opacity, once on load (0.8s).",
       "selectors": [
         ".sds-card-unfold"
       ],
@@ -7147,7 +7147,7 @@
       "displayName": "Vortex",
       "category": "cards",
       "kind": "effect",
-      "description": "Vortex — card animation.",
+      "description": "Card animates its size, 3D rotation and opacity, once on load (0.7s).",
       "selectors": [
         ".sds-card-vortex"
       ],
@@ -7217,7 +7217,7 @@
       "displayName": "Wave",
       "category": "cards",
       "kind": "effect",
-      "description": "Wave — card animation.",
+      "description": "Card animates its 3D rotation, opacity and blur, once on load (0.9s).",
       "selectors": [
         ".sds-card-wave"
       ],
@@ -8987,7 +8987,7 @@
       "displayName": "Active Line",
       "category": "inputs",
       "kind": "effect",
-      "description": "Active Line — input animation.",
+      "description": "Field animates its shadow, on a loop (1.8s).",
       "selectors": [
         ".sds-input-active-line"
       ],
@@ -9321,7 +9321,7 @@
       "displayName": "Aurora",
       "category": "inputs",
       "kind": "effect",
-      "description": "Aurora — input animation.",
+      "description": "Field animates its shadow, on a loop (4s).",
       "selectors": [
         ".sds-input-aurora"
       ],
@@ -9354,7 +9354,7 @@
       "displayName": "Bloom",
       "category": "inputs",
       "kind": "effect",
-      "description": "Bloom — input animation.",
+      "description": "Field animates its glow and shadow, on a loop (2.4s).",
       "selectors": [
         ".sds-input-bloom"
       ],
@@ -9388,7 +9388,7 @@
       "displayName": "Border Beam",
       "category": "inputs",
       "kind": "effect",
-      "description": "Border Beam — input animation.",
+      "description": "Field animates, on a loop (2s).",
       "selectors": [
         ".sds-input-border-beam"
       ],
@@ -9701,7 +9701,7 @@
       "displayName": "Burst",
       "category": "inputs",
       "kind": "effect",
-      "description": "Burst — input animation.",
+      "description": "Field animates its opacity and shadow, once on load (1.8s).",
       "selectors": [
         ".sds-input-burst"
       ],
@@ -9810,7 +9810,7 @@
       "displayName": "Charge",
       "category": "inputs",
       "kind": "effect",
-      "description": "Charge — input animation.",
+      "description": "Field animates its shadow and border colour, on a loop (2.2s).",
       "selectors": [
         ".sds-input-charge"
       ],
@@ -9847,7 +9847,7 @@
       "displayName": "Comet",
       "category": "inputs",
       "kind": "effect",
-      "description": "Comet — input animation.",
+      "description": "Field animates its shadow, on a loop (3s).",
       "selectors": [
         ".sds-input-comet"
       ],
@@ -9882,7 +9882,7 @@
       "displayName": "Crystal",
       "category": "inputs",
       "kind": "effect",
-      "description": "Crystal — input animation.",
+      "description": "Field animates its glow, shadow and border colour, on a loop (2.4s).",
       "selectors": [
         ".sds-input-crystal"
       ],
@@ -9918,7 +9918,7 @@
       "displayName": "Depth",
       "category": "inputs",
       "kind": "effect",
-      "description": "Depth — input animation.",
+      "description": "Field animates its shadow, on a loop (2.4s).",
       "selectors": [
         ".sds-input-depth"
       ],
@@ -9952,7 +9952,7 @@
       "displayName": "Echo",
       "category": "inputs",
       "kind": "effect",
-      "description": "Echo — input animation.",
+      "description": "Field animates, on a loop (2.4s).",
       "selectors": [
         ".sds-input-echo"
       ],
@@ -9990,7 +9990,7 @@
       "displayName": "Electric",
       "category": "inputs",
       "kind": "effect",
-      "description": "Electric — input animation.",
+      "description": "Field animates its shadow and border colour, on a loop (2s).",
       "selectors": [
         ".sds-input-electric"
       ],
@@ -10162,7 +10162,7 @@
       "displayName": "Expand",
       "category": "inputs",
       "kind": "effect",
-      "description": "Expand — input animation.",
+      "description": "Field animates its opacity, once on load (0.6s).",
       "selectors": [
         ".sds-input-expand"
       ],
@@ -10431,7 +10431,7 @@
       "displayName": "Fire",
       "category": "inputs",
       "kind": "effect",
-      "description": "Fire — input animation.",
+      "description": "Field animates its shadow and border colour, on a loop (2s).",
       "selectors": [
         ".sds-input-fire"
       ],
@@ -10466,7 +10466,7 @@
       "displayName": "Flicker",
       "category": "inputs",
       "kind": "effect",
-      "description": "Flicker — input animation.",
+      "description": "Field animates, on a loop (4s).",
       "selectors": [
         ".sds-input-flicker"
       ],
@@ -10497,7 +10497,7 @@
       "displayName": "Flow",
       "category": "inputs",
       "kind": "effect",
-      "description": "Flow — input animation.",
+      "description": "Field animates its gradient position, on a loop (3s).",
       "selectors": [
         ".sds-input-flow"
       ],
@@ -10567,7 +10567,7 @@
       "displayName": "Focus Glow",
       "category": "inputs",
       "kind": "effect",
-      "description": "Focus Glow — input animation.",
+      "description": "Field animates its shadow, when focused (0.5s).",
       "selectors": [
         ".sds-input-focus-glow:focus"
       ],
@@ -10642,7 +10642,7 @@
       "displayName": "Frost",
       "category": "inputs",
       "kind": "effect",
-      "description": "Frost — input animation.",
+      "description": "Field animates its opacity, blur and glow, once on load (2s).",
       "selectors": [
         ".sds-input-frost"
       ],
@@ -10718,7 +10718,7 @@
       "displayName": "Ghost",
       "category": "inputs",
       "kind": "effect",
-      "description": "Ghost — input animation.",
+      "description": "Field animates its gradient position, on a loop (3s).",
       "selectors": [
         ".sds-input-ghost"
       ],
@@ -10754,7 +10754,7 @@
       "displayName": "Glitch Valid",
       "category": "inputs",
       "kind": "effect",
-      "description": "Glitch Valid — input animation.",
+      "description": "Field animates its position and border colour, once on load (0.4s).",
       "selectors": [
         ".sds-input-glitch-valid"
       ],
@@ -10790,7 +10790,7 @@
       "displayName": "Glow Border",
       "category": "inputs",
       "kind": "effect",
-      "description": "Glow Border — input animation.",
+      "description": "Field animates its shadow, on a loop (2s).",
       "selectors": [
         ".sds-input-glow-border"
       ],
@@ -10823,7 +10823,7 @@
       "displayName": "Gradient Border",
       "category": "inputs",
       "kind": "effect",
-      "description": "Gradient Border — input animation.",
+      "description": "Field animates its colour hue, on a loop (3s).",
       "selectors": [
         ".sds-input-gradient-border"
       ],
@@ -10859,7 +10859,7 @@
       "displayName": "Gravity",
       "category": "inputs",
       "kind": "effect",
-      "description": "Gravity — input animation.",
+      "description": "Field animates its position and opacity, once on load (0.8s).",
       "selectors": [
         ".sds-input-gravity"
       ],
@@ -11180,7 +11180,7 @@
       "displayName": "Kinetic",
       "category": "inputs",
       "kind": "effect",
-      "description": "Kinetic — input animation.",
+      "description": "Field animates, on a loop (3s).",
       "selectors": [
         ".sds-input-kinetic"
       ],
@@ -11253,7 +11253,7 @@
       "displayName": "Laser",
       "category": "inputs",
       "kind": "effect",
-      "description": "Laser — input animation.",
+      "description": "Field animates its gradient position, on a loop (1.5s).",
       "selectors": [
         ".sds-input-laser"
       ],
@@ -11286,7 +11286,7 @@
       "displayName": "Momentum",
       "category": "inputs",
       "kind": "effect",
-      "description": "Momentum — input animation.",
+      "description": "Field animates its position, opacity and blur, once on load (0.7s).",
       "selectors": [
         ".sds-input-momentum"
       ],
@@ -11422,7 +11422,7 @@
       "displayName": "Neural",
       "category": "inputs",
       "kind": "effect",
-      "description": "Neural — input animation.",
+      "description": "Field animates its shadow, on a loop (3s).",
       "selectors": [
         ".sds-input-neural"
       ],
@@ -11457,7 +11457,7 @@
       "displayName": "Orbit",
       "category": "inputs",
       "kind": "effect",
-      "description": "Orbit — input animation.",
+      "description": "Field animates, on a loop (2s).",
       "selectors": [
         ".sds-input-orbit"
       ],
@@ -11727,7 +11727,7 @@
       "displayName": "Prism",
       "category": "inputs",
       "kind": "effect",
-      "description": "Prism — input animation.",
+      "description": "Field animates its shadow and border colour, on a loop (4s).",
       "selectors": [
         ".sds-input-prism"
       ],
@@ -11762,7 +11762,7 @@
       "displayName": "Pulse Dot",
       "category": "inputs",
       "kind": "effect",
-      "description": "Pulse Dot — input animation.",
+      "description": "Field animates its shadow, on a loop (1.4s).",
       "selectors": [
         ".sds-input-pulse-dot"
       ],
@@ -11801,7 +11801,7 @@
       "displayName": "Quantum",
       "category": "inputs",
       "kind": "effect",
-      "description": "Quantum — input animation.",
+      "description": "Field animates its border colour, on a loop (3s).",
       "selectors": [
         ".sds-input-quantum"
       ],
@@ -11836,7 +11836,7 @@
       "displayName": "Radar",
       "category": "inputs",
       "kind": "effect",
-      "description": "Radar — input animation.",
+      "description": "Field animates its shadow, on a loop (2s).",
       "selectors": [
         ".sds-input-radar"
       ],
@@ -11903,7 +11903,7 @@
       "displayName": "Ripple",
       "category": "inputs",
       "kind": "effect",
-      "description": "Ripple — input animation.",
+      "description": "Field animates its shadow, on a loop (2.4s).",
       "selectors": [
         ".sds-input-ripple"
       ],
@@ -11971,7 +11971,7 @@
       "displayName": "Scan",
       "category": "inputs",
       "kind": "effect",
-      "description": "Scan — input animation.",
+      "description": "Field animates its gradient position, on a loop (2s).",
       "selectors": [
         ".sds-input-scan"
       ],
@@ -12068,7 +12068,7 @@
       "displayName": "Solar",
       "category": "inputs",
       "kind": "effect",
-      "description": "Solar — input animation.",
+      "description": "Field animates its shadow, on a loop (2.8s).",
       "selectors": [
         ".sds-input-solar"
       ],
@@ -12325,7 +12325,7 @@
       "displayName": "Unlock",
       "category": "inputs",
       "kind": "effect",
-      "description": "Unlock — input animation.",
+      "description": "Field animates its rotation and opacity, once on load (0.8s).",
       "selectors": [
         ".sds-input-unlock"
       ],
@@ -12360,7 +12360,7 @@
       "displayName": "Void",
       "category": "inputs",
       "kind": "effect",
-      "description": "Void — input animation.",
+      "description": "Field animates its shadow, on a loop (2.6s).",
       "selectors": [
         ".sds-input-void"
       ],
@@ -12463,7 +12463,7 @@
       "displayName": "Waveform",
       "category": "inputs",
       "kind": "effect",
-      "description": "Waveform — input animation.",
+      "description": "Field animates its border colour, on a loop (1.6s).",
       "selectors": [
         ".sds-input-waveform"
       ],
@@ -12497,7 +12497,7 @@
       "displayName": "Zap",
       "category": "inputs",
       "kind": "effect",
-      "description": "Zap — input animation.",
+      "description": "Field animates its skew, shadow and border colour, on a loop (3s).",
       "selectors": [
         ".sds-input-zap"
       ],
@@ -12864,7 +12864,7 @@
       "displayName": "Arc",
       "category": "loaders",
       "kind": "effect",
-      "description": "Arc — loader animation.",
+      "description": "An overlay on the loader animates its rotation, on a loop (0.9s).",
       "selectors": [
         ".sds-loader-arc",
         ".sds-loader-arc::before, .sds-loader-arc::after",
@@ -12903,7 +12903,7 @@
       "displayName": "Bar",
       "category": "loaders",
       "kind": "effect",
-      "description": "Bar — loader animation.",
+      "description": "Loader animates, on a loop (1.8s).",
       "selectors": [
         ".sds-loader-bar",
         ".sds-loader-bar::after"
@@ -13111,7 +13111,7 @@
       "displayName": "Bounce",
       "category": "loaders",
       "kind": "effect",
-      "description": "Bounce — loader animation.",
+      "description": "Loader animates its position, on a loop (0.8s).",
       "selectors": [
         ".sds-loader-bounce"
       ],
@@ -13185,7 +13185,7 @@
       "displayName": "Breath",
       "category": "loaders",
       "kind": "effect",
-      "description": "Breath — loader animation.",
+      "description": "Loader animates its size and opacity, on a loop (2s).",
       "selectors": [
         ".sds-loader-breath"
       ],
@@ -13253,7 +13253,7 @@
       "displayName": "Cascade Bars",
       "category": "loaders",
       "kind": "effect",
-      "description": "Cascade Bars — loader animation.",
+      "description": "Loader animates its opacity and height, on a loop (1s).",
       "selectors": [
         ".sds-loader-cascade",
         ".sds-loader-cascade > *",
@@ -13331,7 +13331,7 @@
       "displayName": "Clock",
       "category": "loaders",
       "kind": "effect",
-      "description": "Clock — loader animation.",
+      "description": "An overlay on the loader animates its rotation, on a loop (2s).",
       "selectors": [
         ".sds-loader-clock",
         ".sds-loader-clock::before",
@@ -13438,7 +13438,7 @@
       "displayName": "Crystal",
       "category": "loaders",
       "kind": "effect",
-      "description": "Crystal — loader animation.",
+      "description": "Loader animates its rotation and glow, on a loop (3s).",
       "selectors": [
         ".sds-loader-crystal"
       ],
@@ -13475,7 +13475,7 @@
       "displayName": "Cube",
       "category": "loaders",
       "kind": "effect",
-      "description": "Cube — loader animation.",
+      "description": "Loader animates its 3D rotation, on a loop (2s).",
       "selectors": [
         ".sds-loader-cube"
       ],
@@ -13544,7 +13544,7 @@
       "displayName": "Data",
       "category": "loaders",
       "kind": "effect",
-      "description": "Data — loader animation.",
+      "description": "An overlay on the loader animates its position and opacity, on a loop (1.4s).",
       "selectors": [
         ".sds-loader-data",
         ".sds-loader-data::before"
@@ -13616,7 +13616,7 @@
       "displayName": "DNA Helix",
       "category": "loaders",
       "kind": "effect",
-      "description": "DNA Helix — loader animation.",
+      "description": "An overlay on the loader animates its opacity, on a loop (1.4s).",
       "selectors": [
         ".sds-loader-dna",
         ".sds-loader-dna::before, .sds-loader-dna::after",
@@ -13987,7 +13987,7 @@
       "displayName": "Electric Arc",
       "category": "loaders",
       "kind": "effect",
-      "description": "Electric Arc — loader animation.",
+      "description": "Loader animates its shadow and border colour, on a loop (1.5s).",
       "selectors": [
         ".sds-loader-electric"
       ],
@@ -14063,7 +14063,7 @@
       "displayName": "Expand",
       "category": "loaders",
       "kind": "effect",
-      "description": "Expand — loader animation.",
+      "description": "Loader animates its size, on a loop (1.6s).",
       "selectors": [
         ".sds-loader-expand"
       ],
@@ -14308,7 +14308,7 @@
       "displayName": "Glitch",
       "category": "loaders",
       "kind": "effect",
-      "description": "Glitch — loader animation.",
+      "description": "Loader animates its opacity and colour hue, on a loop (2s).",
       "selectors": [
         ".sds-loader-glitch"
       ],
@@ -14378,7 +14378,7 @@
       "displayName": "Dot Grid",
       "category": "loaders",
       "kind": "effect",
-      "description": "Dot Grid — loader animation.",
+      "description": "Loader animates its opacity, on a loop (1.6s).",
       "selectors": [
         ".sds-loader-grid",
         ".sds-loader-grid > *",
@@ -14457,7 +14457,7 @@
       "displayName": "Helix Dots",
       "category": "loaders",
       "kind": "effect",
-      "description": "Helix Dots — loader animation.",
+      "description": "Loader animates its position and opacity, on a loop (1.2s).",
       "selectors": [
         ".sds-loader-helix",
         ".sds-loader-helix > *",
@@ -14498,7 +14498,7 @@
       "displayName": "Hex",
       "category": "loaders",
       "kind": "effect",
-      "description": "Hex — loader animation.",
+      "description": "Loader animates its rotation, opacity and glow, on a loop (2s).",
       "selectors": [
         ".sds-loader-hex"
       ],
@@ -14534,7 +14534,7 @@
       "displayName": "Hourglass",
       "category": "loaders",
       "kind": "effect",
-      "description": "Hourglass — loader animation.",
+      "description": "Loader animates its rotation, on a loop (1.8s).",
       "selectors": [
         ".sds-loader-hourglass"
       ],
@@ -14567,7 +14567,7 @@
       "displayName": "Infinity",
       "category": "loaders",
       "kind": "effect",
-      "description": "Infinity — loader animation.",
+      "description": "An overlay on the loader animates its rotation, on a loop (1.2s).",
       "selectors": [
         ".sds-loader-infinity",
         ".sds-loader-infinity::before, .sds-loader-infinity::after",
@@ -14636,7 +14636,7 @@
       "displayName": "Liquid Ring",
       "category": "loaders",
       "kind": "effect",
-      "description": "Liquid Ring — loader animation.",
+      "description": "Loader animates its rotation, blur and glow, on a loop (1s).",
       "selectors": [
         ".sds-loader-liquid-ring"
       ],
@@ -14674,7 +14674,7 @@
       "displayName": "Matrix Bars",
       "category": "loaders",
       "kind": "effect",
-      "description": "Matrix Bars — loader animation.",
+      "description": "Loader animates its opacity and height, on a loop (1.2s).",
       "selectors": [
         ".sds-loader-matrix",
         ".sds-loader-matrix > *",
@@ -14749,7 +14749,7 @@
       "displayName": "Morph",
       "category": "loaders",
       "kind": "effect",
-      "description": "Morph — loader animation.",
+      "description": "Loader animates its size and rotation, on a loop (2.2s).",
       "selectors": [
         ".sds-loader-morph"
       ],
@@ -14821,7 +14821,7 @@
       "displayName": "Mosaic",
       "category": "loaders",
       "kind": "effect",
-      "description": "Mosaic — loader animation.",
+      "description": "Loader animates its opacity, on a loop (1.8s).",
       "selectors": [
         ".sds-loader-mosaic",
         ".sds-loader-mosaic > *",
@@ -14900,7 +14900,7 @@
       "displayName": "Neon Ring",
       "category": "loaders",
       "kind": "effect",
-      "description": "Neon Ring — loader animation.",
+      "description": "Loader animates its rotation and shadow, on a loop (1s).",
       "selectors": [
         ".sds-loader-neon-ring"
       ],
@@ -14937,7 +14937,7 @@
       "displayName": "Neural",
       "category": "loaders",
       "kind": "effect",
-      "description": "Neural — loader animation.",
+      "description": "Loader animates its shadow, on a loop (3s).",
       "selectors": [
         ".sds-loader-neural"
       ],
@@ -14972,7 +14972,7 @@
       "displayName": "Triple Orbit",
       "category": "loaders",
       "kind": "effect",
-      "description": "Triple Orbit — loader animation.",
+      "description": "An overlay on the loader animates its position and rotation, on a loop (1s).",
       "selectors": [
         ".sds-loader-orbit-3",
         ".sds-loader-orbit-3::before, .sds-loader-orbit-3::after",
@@ -15049,7 +15049,7 @@
       "displayName": "Pendulum",
       "category": "loaders",
       "kind": "effect",
-      "description": "Pendulum — loader animation.",
+      "description": "Loader animates its rotation, on a loop (1.2s).",
       "selectors": [
         ".sds-loader-pendulum"
       ],
@@ -15158,7 +15158,7 @@
       "displayName": "Plasma Ring",
       "category": "loaders",
       "kind": "effect",
-      "description": "Plasma Ring — loader animation.",
+      "description": "Loader animates its rotation, colour hue and shadow, on a loop (1.6s).",
       "selectors": [
         ".sds-loader-plasma-ring"
       ],
@@ -15196,7 +15196,7 @@
       "displayName": "Prism",
       "category": "loaders",
       "kind": "effect",
-      "description": "Prism — loader animation.",
+      "description": "Loader animates its rotation, on a loop (2s).",
       "selectors": [
         ".sds-loader-prism"
       ],
@@ -15268,7 +15268,7 @@
       "displayName": "Progress Glow",
       "category": "loaders",
       "kind": "effect",
-      "description": "Progress Glow — loader animation.",
+      "description": "Loader animates its shadow, on a loop (2.4s).",
       "selectors": [
         ".sds-loader-progress-glow"
       ],
@@ -15302,7 +15302,7 @@
       "displayName": "Pulse",
       "category": "loaders",
       "kind": "effect",
-      "description": "Pulse — loader animation.",
+      "description": "Loader animates its size and opacity, on a loop (1s).",
       "selectors": [
         ".sds-loader-pulse"
       ],
@@ -15336,7 +15336,7 @@
       "displayName": "Quantum",
       "category": "loaders",
       "kind": "effect",
-      "description": "Quantum — loader animation.",
+      "description": "Loader animates its size and opacity, on a loop (1.6s).",
       "selectors": [
         ".sds-loader-quantum"
       ],
@@ -15370,7 +15370,7 @@
       "displayName": "Radar",
       "category": "loaders",
       "kind": "effect",
-      "description": "Radar — loader animation.",
+      "description": "An overlay on the loader animates its rotation, on a loop (2s).",
       "selectors": [
         ".sds-loader-radar",
         ".sds-loader-radar::before",
@@ -15405,7 +15405,7 @@
       "displayName": "Ring System",
       "category": "loaders",
       "kind": "effect",
-      "description": "Ring System — loader animation.",
+      "description": "An overlay on the loader animates its rotation, on a loop (1s).",
       "selectors": [
         ".sds-loader-ring",
         ".sds-loader-ring::before, .sds-loader-ring::after",
@@ -15514,7 +15514,7 @@
       "displayName": "Ripple Rings",
       "category": "loaders",
       "kind": "effect",
-      "description": "Ripple Rings — loader animation.",
+      "description": "An overlay on the loader animates its size and opacity, on a loop (2s).",
       "selectors": [
         ".sds-loader-ripple",
         ".sds-loader-ripple::before, .sds-loader-ripple::after",
@@ -15621,7 +15621,7 @@
       "displayName": "Signal Bars",
       "category": "loaders",
       "kind": "effect",
-      "description": "Signal Bars — loader animation.",
+      "description": "Loader animates its opacity, on a loop (1.2s).",
       "selectors": [
         ".sds-loader-signal",
         ".sds-loader-signal > *",
@@ -15694,7 +15694,7 @@
       "displayName": "Snake",
       "category": "loaders",
       "kind": "effect",
-      "description": "Snake — loader animation.",
+      "description": "An overlay on the loader animates its rotation, on a loop (1.2s).",
       "selectors": [
         ".sds-loader-snake",
         ".sds-loader-snake::before"
@@ -15731,7 +15731,7 @@
       "displayName": "Solar",
       "category": "loaders",
       "kind": "effect",
-      "description": "Solar — loader animation.",
+      "description": "An overlay on the loader animates its size and rotation, on a loop (2s).",
       "selectors": [
         ".sds-loader-solar",
         ".sds-loader-solar::before",
@@ -15772,7 +15772,7 @@
       "displayName": "Spark",
       "category": "loaders",
       "kind": "effect",
-      "description": "Spark — loader animation.",
+      "description": "Loader animates its shadow, plus an overlay (size and opacity), on a loop (1.8s).",
       "selectors": [
         ".sds-loader-spark",
         ".sds-loader-spark::before"
@@ -15960,7 +15960,7 @@
       "displayName": "Star",
       "category": "loaders",
       "kind": "effect",
-      "description": "Star — loader animation.",
+      "description": "Loader animates its rotation and opacity, on a loop (2s).",
       "selectors": [
         ".sds-loader-star"
       ],
@@ -16338,7 +16338,7 @@
       "displayName": "Warp",
       "category": "loaders",
       "kind": "effect",
-      "description": "Warp — loader animation.",
+      "description": "Loader animates its rotation, on a loop (1.2s).",
       "selectors": [
         ".sds-loader-warp"
       ],
@@ -17534,7 +17534,7 @@
       "displayName": "Bounce",
       "category": "scroll",
       "kind": "effect",
-      "description": "Bounce — scroll animation.",
+      "description": "Element animates its position and opacity, as it scrolls into view (0.9s).",
       "selectors": [
         ".sds-scroll-bounce"
       ],
@@ -17568,7 +17568,7 @@
       "displayName": "Cascade",
       "category": "scroll",
       "kind": "effect",
-      "description": "Cascade — scroll animation.",
+      "description": "Element animates its position, opacity and blur, as it scrolls into view (0.6s).",
       "selectors": [
         ".sds-scroll-cascade > *",
         ".sds-scroll-cascade > *:nth-child(1)",
@@ -17615,7 +17615,7 @@
       "displayName": "Charge Reveal",
       "category": "scroll",
       "kind": "effect",
-      "description": "Charge Reveal — scroll animation.",
+      "description": "Element animates its position, opacity and blur, as it scrolls into view (0.8s).",
       "selectors": [
         ".sds-scroll-charge"
       ],
@@ -17651,7 +17651,7 @@
       "displayName": "Cinema",
       "category": "scroll",
       "kind": "effect",
-      "description": "Cinema — scroll animation.",
+      "description": "Element animates its size, opacity and blur, as it scrolls into view (1.2s).",
       "selectors": [
         ".sds-scroll-cinema"
       ],
@@ -17725,7 +17725,7 @@
       "displayName": "Clip Left",
       "category": "scroll",
       "kind": "effect",
-      "description": "Clip Left — scroll animation.",
+      "description": "Element animates its opacity and clip-path reveal, as it scrolls into view (0.8s).",
       "selectors": [
         ".sds-scroll-clip-left"
       ],
@@ -17760,7 +17760,7 @@
       "displayName": "Clip Right",
       "category": "scroll",
       "kind": "effect",
-      "description": "Clip Right — scroll animation.",
+      "description": "Element animates its opacity and clip-path reveal, as it scrolls into view (0.8s).",
       "selectors": [
         ".sds-scroll-clip-right"
       ],
@@ -17828,7 +17828,7 @@
       "displayName": "Crystallize",
       "category": "scroll",
       "kind": "effect",
-      "description": "Crystallize — scroll animation.",
+      "description": "Element animates its opacity, blur and glow, as it scrolls into view (1s).",
       "selectors": [
         ".sds-scroll-crystallize"
       ],
@@ -17931,7 +17931,7 @@
       "displayName": "Dissolve",
       "category": "scroll",
       "kind": "effect",
-      "description": "Dissolve — scroll animation.",
+      "description": "Element animates its opacity and blur, as it scrolls into view (1s).",
       "selectors": [
         ".sds-scroll-dissolve"
       ],
@@ -18034,7 +18034,7 @@
       "displayName": "Drift",
       "category": "scroll",
       "kind": "effect",
-      "description": "Drift — scroll animation.",
+      "description": "Element animates its rotation, opacity and blur, as it scrolls into view (1.2s).",
       "selectors": [
         ".sds-scroll-drift"
       ],
@@ -18104,7 +18104,7 @@
       "displayName": "Elastic",
       "category": "scroll",
       "kind": "effect",
-      "description": "Elastic — scroll animation.",
+      "description": "Element animates its position and opacity, as it scrolls into view (1s).",
       "selectors": [
         ".sds-scroll-elastic"
       ],
@@ -18138,7 +18138,7 @@
       "displayName": "Elastic Pop",
       "category": "scroll",
       "kind": "effect",
-      "description": "Elastic Pop — scroll animation.",
+      "description": "Element animates its size, rotation and opacity, as it scrolls into view (0.7s).",
       "selectors": [
         ".sds-scroll-elastic-pop"
       ],
@@ -18204,7 +18204,7 @@
       "displayName": "Fade Up",
       "category": "scroll",
       "kind": "effect",
-      "description": "Fade Up — scroll animation.",
+      "description": "Element animates its position and opacity, as it scrolls into view (0.8s).",
       "selectors": [
         ".sds-scroll-fade-up"
       ],
@@ -18239,7 +18239,7 @@
       "displayName": "Bright Flash",
       "category": "scroll",
       "kind": "effect",
-      "description": "Bright Flash — scroll animation.",
+      "description": "Element animates its opacity, blur and glow, as it scrolls into view (0.7s).",
       "selectors": [
         ".sds-scroll-flash"
       ],
@@ -18272,7 +18272,7 @@
       "displayName": "Flip Reveal",
       "category": "scroll",
       "kind": "effect",
-      "description": "Flip Reveal — scroll animation.",
+      "description": "Element animates its position, 3D rotation and opacity, as it scrolls into view (0.8s).",
       "selectors": [
         ".sds-scroll-flip"
       ],
@@ -18376,7 +18376,7 @@
       "displayName": "Fog",
       "category": "scroll",
       "kind": "effect",
-      "description": "Fog — scroll animation.",
+      "description": "Element animates its size, opacity and blur, as it scrolls into view (1.2s).",
       "selectors": [
         ".sds-scroll-fog"
       ],
@@ -18583,7 +18583,7 @@
       "displayName": "Hologram",
       "category": "scroll",
       "kind": "effect",
-      "description": "Hologram — scroll animation.",
+      "description": "Element animates its position, opacity and blur, as it scrolls into view (1s).",
       "selectors": [
         ".sds-scroll-hologram"
       ],
@@ -18618,7 +18618,7 @@
       "displayName": "Ink",
       "category": "scroll",
       "kind": "effect",
-      "description": "Ink — scroll animation.",
+      "description": "Element animates its opacity and clip-path reveal, as it scrolls into view (1s).",
       "selectors": [
         ".sds-scroll-ink"
       ],
@@ -18822,7 +18822,7 @@
       "displayName": "Magnetic Pull",
       "category": "scroll",
       "kind": "effect",
-      "description": "Magnetic Pull — scroll animation.",
+      "description": "Element animates its position, size and opacity, as it scrolls into view (0.9s).",
       "selectors": [
         ".sds-scroll-magnetic"
       ],
@@ -18890,7 +18890,7 @@
       "displayName": "Morph Rise",
       "category": "scroll",
       "kind": "effect",
-      "description": "Morph Rise — scroll animation.",
+      "description": "Element animates its position, skew and opacity, as it scrolls into view (0.9s).",
       "selectors": [
         ".sds-scroll-morph"
       ],
@@ -18924,7 +18924,7 @@
       "displayName": "Neon Reveal",
       "category": "scroll",
       "kind": "effect",
-      "description": "Neon Reveal — scroll animation.",
+      "description": "Element animates its position, opacity and shadow, as it scrolls into view (1s).",
       "selectors": [
         ".sds-scroll-neon"
       ],
@@ -19098,7 +19098,7 @@
       "displayName": "Perspective Left",
       "category": "scroll",
       "kind": "effect",
-      "description": "Perspective Left — scroll animation.",
+      "description": "Element animates its position, 3D rotation and opacity, as it scrolls into view (0.8s).",
       "selectors": [
         ".sds-scroll-perspective-left"
       ],
@@ -19233,7 +19233,7 @@
       "displayName": "Prism Reveal",
       "category": "scroll",
       "kind": "effect",
-      "description": "Prism Reveal — scroll animation.",
+      "description": "Element animates its opacity, blur and colour hue, as it scrolls into view (1s).",
       "selectors": [
         ".sds-scroll-prism"
       ],
@@ -19268,7 +19268,7 @@
       "displayName": "Punch",
       "category": "scroll",
       "kind": "effect",
-      "description": "Punch — scroll animation.",
+      "description": "Element animates its size, opacity and blur, as it scrolls into view (0.6s).",
       "selectors": [
         ".sds-scroll-punch"
       ],
@@ -19750,7 +19750,7 @@
       "displayName": "Skew",
       "category": "scroll",
       "kind": "effect",
-      "description": "Skew — scroll animation.",
+      "description": "Element animates its position, skew and opacity, as it scrolls into view (0.8s).",
       "selectors": [
         ".sds-scroll-skew"
       ],
@@ -19852,7 +19852,7 @@
       "displayName": "Slide Right",
       "category": "scroll",
       "kind": "effect",
-      "description": "Slide Right — scroll animation.",
+      "description": "Element animates its position and opacity, as it scrolls into view (0.8s).",
       "selectors": [
         ".sds-scroll-slide-right"
       ],
@@ -19919,7 +19919,7 @@
       "displayName": "Snap",
       "category": "scroll",
       "kind": "effect",
-      "description": "Snap — scroll animation.",
+      "description": "Element animates its size, rotation and opacity, as it scrolls into view (0.5s).",
       "selectors": [
         ".sds-scroll-snap"
       ],
@@ -19987,7 +19987,7 @@
       "displayName": "Spiral",
       "category": "scroll",
       "kind": "effect",
-      "description": "Spiral — scroll animation.",
+      "description": "Element animates its size, rotation and opacity, as it scrolls into view (0.9s).",
       "selectors": [
         ".sds-scroll-spiral"
       ],
@@ -20022,7 +20022,7 @@
       "displayName": "Split Reveal",
       "category": "scroll",
       "kind": "effect",
-      "description": "Split Reveal — scroll animation.",
+      "description": "Element animates its opacity and clip-path reveal, as it scrolls into view (0.9s).",
       "selectors": [
         ".sds-scroll-split"
       ],
@@ -20056,7 +20056,7 @@
       "displayName": "Spring",
       "category": "scroll",
       "kind": "effect",
-      "description": "Spring — scroll animation.",
+      "description": "Element animates its position, size and opacity, as it scrolls into view (0.9s).",
       "selectors": [
         ".sds-scroll-spring"
       ],
@@ -20296,7 +20296,7 @@
       "displayName": "Streak",
       "category": "scroll",
       "kind": "effect",
-      "description": "Streak — scroll animation.",
+      "description": "Element animates its position, opacity and blur, as it scrolls into view (0.7s).",
       "selectors": [
         ".sds-scroll-streak"
       ],
@@ -20498,7 +20498,7 @@
       "displayName": "Unfold",
       "category": "scroll",
       "kind": "effect",
-      "description": "Unfold — scroll animation.",
+      "description": "Element animates its 3D rotation and opacity, as it scrolls into view (0.8s).",
       "selectors": [
         ".sds-scroll-unfold"
       ],
@@ -20604,7 +20604,7 @@
       "displayName": "Vortex",
       "category": "scroll",
       "kind": "effect",
-      "description": "Vortex — scroll animation.",
+      "description": "Element animates its size, 3D rotation and opacity, as it scrolls into view (0.8s).",
       "selectors": [
         ".sds-scroll-vortex"
       ],
@@ -20675,7 +20675,7 @@
       "displayName": "Warp Enter",
       "category": "scroll",
       "kind": "effect",
-      "description": "Warp Enter — scroll animation.",
+      "description": "Element animates its position, 3D rotation and opacity, as it scrolls into view (0.9s).",
       "selectors": [
         ".sds-scroll-warp-in"
       ],
@@ -20710,7 +20710,7 @@
       "displayName": "Wave Rise",
       "category": "scroll",
       "kind": "effect",
-      "description": "Wave Rise — scroll animation.",
+      "description": "Element animates its position and opacity, as it scrolls into view (0.7s).",
       "selectors": [
         ".sds-scroll-wave-rise > *",
         ".sds-scroll-wave-rise > *:nth-child(1)",
@@ -20826,7 +20826,7 @@
       "displayName": "Zoom Blur",
       "category": "scroll",
       "kind": "effect",
-      "description": "Zoom Blur — scroll animation.",
+      "description": "Element animates its size, opacity and blur, as it scrolls into view (0.9s).",
       "selectors": [
         ".sds-scroll-zoom-blur"
       ],
