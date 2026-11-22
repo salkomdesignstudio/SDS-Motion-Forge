@@ -45,13 +45,15 @@ export class SdsTextElement extends HTMLElement {
     this.style.display = this.style.display || "inline-block";
 
     const frag = document.createDocumentFragment();
-    for (let i = 0; i < text.length; i++) {
+    // Split by whole characters, not UTF-16 units, so an emoji is not cut in half.
+    const chars = Array.from(text);
+    for (let i = 0; i < chars.length; i++) {
       const s = document.createElement("span");
       s.className = "sds-char";
       s.setAttribute("aria-hidden", "true");
       s.style.display = "inline-block";
       s.style.setProperty("--i", String(i));
-      s.textContent = text[i] === " " ? " " : text[i];
+      s.textContent = chars[i] === " " ? " " : chars[i];
       frag.appendChild(s);
     }
     this.appendChild(frag);

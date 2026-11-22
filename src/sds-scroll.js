@@ -84,12 +84,11 @@
       });
       m.removedNodes.forEach(function (node) {
         if (node.nodeType !== 1) return;
-        observer.unobserve(node);
-        var pending = timers.get(node);
-        if (pending !== undefined) {
-          clearTimeout(pending);
-          timers.delete(node);
-        }
+        /* The node and every gated element inside it, or the observer keeps them alive. */
+        [node].concat([].slice.call(node.querySelectorAll('[data-sds]'))).forEach(function (el) {
+          observer.unobserve(el);
+          clearTimeout(timers.get(el));
+        });
       });
     });
   });

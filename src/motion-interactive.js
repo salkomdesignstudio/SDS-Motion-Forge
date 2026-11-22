@@ -32,12 +32,14 @@
     el.setAttribute('aria-label', text);
     el.textContent = '';
     var spans = [];
-    for (var i = 0; i < text.length; i++) {
+    /* Split by whole characters, not UTF-16 units, so an emoji is not cut in half. */
+    var chars = Array.from(text);
+    for (var i = 0; i < chars.length; i++) {
       var s = document.createElement('span');
       s.className = 'sds-char';
       s.setAttribute('aria-hidden', 'true');
       s.style.cssText = 'display:inline-block;will-change:transform;--i:' + i;
-      s.textContent = text[i] === ' ' ? ' ' : text[i];
+      s.textContent = chars[i] === ' ' ? ' ' : chars[i];
       el.appendChild(s);
       spans.push(s);
     }
@@ -438,7 +440,14 @@
       });
     });
   });
-  mutObs.observe(document.body, { childList: true, subtree: true });
+  /* document.body does not exist yet when the script runs in <head> without defer. */
+  if (document.body) {
+    mutObs.observe(document.body, { childList: true, subtree: true });
+  } else {
+    document.addEventListener('DOMContentLoaded', function () {
+      mutObs.observe(document.body, { childList: true, subtree: true });
+    });
+  }
 
   /* ── Public API ─────────────────────────────────────────── */
   global.SDSInteractive = { scan: scan, initEl: initEl, cleanup: cleanup };

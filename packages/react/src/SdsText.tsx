@@ -52,13 +52,15 @@ function SdsTextRender(
     el.setAttribute("aria-label", children);
     el.textContent = "";
     const frag = document.createDocumentFragment();
-    for (let i = 0; i < children.length; i++) {
+    // Split by whole characters, not UTF-16 units, so an emoji is not cut in half.
+    const chars = Array.from(children);
+    for (let i = 0; i < chars.length; i++) {
       const s = document.createElement("span");
       s.className = "sds-char";
       s.setAttribute("aria-hidden", "true");
       s.style.display = "inline-block";
       s.style.setProperty("--i", String(i));
-      s.textContent = children[i] === " " ? " " : children[i];
+      s.textContent = chars[i] === " " ? " " : chars[i];
       frag.appendChild(s);
     }
     el.appendChild(frag);

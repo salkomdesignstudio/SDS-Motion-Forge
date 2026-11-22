@@ -51,13 +51,15 @@ export class SdsTextDirective implements OnDestroy {
     this.renderer.addClass(native, this.sdsText());
     native.textContent = "";
 
-    for (let i = 0; i < text.length; i++) {
+    // Split by whole characters, not UTF-16 units, so an emoji is not cut in half.
+    const chars: string[] = Array.from(String(text));
+    for (let i = 0; i < chars.length; i++) {
       const span = this.renderer.createElement("span") as HTMLElement;
       this.renderer.addClass(span, "sds-char");
       this.renderer.setAttribute(span, "aria-hidden", "true");
       this.renderer.setStyle(span, "display", "inline-block");
       span.style.setProperty("--i", String(i));
-      this.renderer.appendChild(span, this.renderer.createText(text[i] === " " ? " " : text[i]));
+      this.renderer.appendChild(span, this.renderer.createText(chars[i] === " " ? " " : chars[i]));
       this.renderer.appendChild(native, span);
     }
   }
