@@ -1210,7 +1210,7 @@ IE11 is not supported.
 ```
 SDS-Motion-Forge/
 ├── src/
-│   ├── motion.css                    # Source — 600+ animations
+│   ├── motion.css                    # Source — 617 animations
 │   ├── sds-scroll.js                 # Scroll gate engine source, 3.6 KB
 │   └── motion-interactive.js         # Interactive JS engine source, 15.2 KB
 │

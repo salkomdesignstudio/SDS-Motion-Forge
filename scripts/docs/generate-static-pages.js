@@ -163,6 +163,7 @@ ${headerHtml()}
 const foot = `</main>
 <footer class="foot"><div class="wrap">
 <p><a href="/">SDS Motion Forge</a> v${facts.version} · ${facts.license} licensed · ${S.effects.length} CSS animations · by <a href="${config.orgUrl}">${esc(config.orgName)}</a></p>
+<p class="tm">Tool names and logos belong to their owners and are shown only to say what works with Motion Forge.</p>
 <p><a href="/animations/">All animations</a> · <a href="/docs.html">Documentation</a> · <a href="/mcp/">MCP for AI tools</a> · <a href="/llms.txt">llms.txt</a> · <a href="${config.npmUrl}">npm</a> · <a href="${config.repoUrl}">GitHub</a></p>
 </div></footer>
 </body>

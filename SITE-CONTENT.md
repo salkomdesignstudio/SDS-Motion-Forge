@@ -26,8 +26,8 @@ Voice: plain, specific, active. One idea per sentence. No hype words ("revolutio
 ## 1. Home page
 
 ### 1.1 Meta
-- **Title (53):** 600+ CSS Animations, One Class Each — SDS Motion Forge
-- **Description (152):** 600+ production-ready CSS animations in 6 categories. Add one class name to any element — no JavaScript, no build step, no config. Free and open source.
+- **Title (52):** 617 CSS Animations, One Class Each — SDS Motion Forge
+- **Description (151):** 617 production-ready CSS animations in 6 categories. Add one class name to any element — no JavaScript, no build step, no config. Free and open source.
 - **H1:** Motion at the speed of class
 
 ### 1.2 Hero
@@ -253,7 +253,7 @@ Rule: only card 1 is highlighted. One accent per viewport.
 
 | URL | Title | Description | H1 | Primary keyword |
 |---|---|---|---|---|
-| `/` | 600+ CSS Animations, One Class Each — SDS Motion Forge | 600+ production-ready CSS animations in 6 categories. Add one class name to any element — no JavaScript, no build step, no config. Free and open source. | Motion at the speed of class | css animation library |
+| `/` | 617 CSS Animations, One Class Each — SDS Motion Forge | 617 production-ready CSS animations in 6 categories. Add one class name to any element — no JavaScript, no build step, no config. Free and open source. | Motion at the speed of class | css animation library |
 | `/docs.html` | SDS Motion Forge Docs — Install, Usage, Frameworks | Install SDS Motion Forge and use every animation: CDN and npm setup, framework guides, scroll and interactive engines, TypeScript, theming. | Installation | css animation library documentation |
 | `/animations/` | All 617 CSS Animations \| SDS Motion Forge | Every SDS Motion Forge animation on one page: CSS-only effects in six categories plus cursor-reactive effects. One class name each. | All animations | css animations list |
 | `/categories/text/` | 117 Text CSS animations — copy-paste classes \| SDS Motion Forge | Text animations: 117 ready-made effects, each one class name, CSS-only, MIT licensed. | Text animations | css text animations |

@@ -33,6 +33,7 @@ const ICON_GH = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="tr
 const ICON_CARET = '<svg class="sh-caret" viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
 const { icon: ico } = require("./icons");
+const { tool } = require("./tool-icons");
 const item = (href, k, title, desc, badge) => `<a href="${href}">${ico(k)}<span class="sh-txt"><b>${title}${badge ? ` <span class="sh-new">${badge}</span>` : ""}</b><small>${desc}</small></span></a>`;
 
 function headerHtml() {
@@ -59,7 +60,7 @@ function headerHtml() {
     item("/docs.html#theming", "theme", "Theming", "Colour and speed with CSS variables"),
     item("/docs.html#a11y", "a11y", "Accessibility", "Reduced motion, checked on every build"),
   ].join("");
-  const feat = `<a class="sh-feat" href="/mcp/">${ico("mcp")}<span class="sh-txt"><b>Motion Forge MCP <span class="sh-new">New</span></b><small>Connect your AI tools</small></span><span class="sh-avs" aria-hidden="true"><i>Cl</i><i>Cu</i><i>VS</i><i>Ws</i><i>Zd</i><i>Cx</i><i>+6</i></span></a>`;
+  const feat = `<a class="sh-feat" href="/mcp/">${ico("mcp")}<span class="sh-txt"><b>Motion Forge MCP <span class="sh-new">New</span></b><small>Connect your AI tools</small></span><span class="sh-avs" aria-hidden="true">${["claude", "cursor", "vscode", "windsurf", "codex", "gemini"].map((k) => `<i>${tool(k)}</i>`).join("")}<i class="sh-more">+6</i></span></a>`;
   const resItems =
     feat +
     [

@@ -26,7 +26,7 @@ Right now the repo has **no topics**, the old description, and Discussions is of
 1. Open https://github.com/salkomdesignstudio/SDS-Motion-Forge
 2. On the right, in the **About** box, click the **⚙ gear** icon.
 3. **Description**: select everything in the box, delete it, and paste:
-   `600+ CSS animations for text, buttons, inputs, cards, loaders and scroll. One class name each, no JavaScript for the CSS effects. MIT.`
+   `617 CSS animations for text, buttons, inputs, cards, loaders and scroll. One class name each, no JavaScript for the CSS effects. MIT.`
 4. **Website**: already `https://sds-motion-forge.netlify.app/` — leave it.
 5. **Topics**: click the topics box and add these 20 (type one, press Space or Enter; GitHub shows a chip for each). If pasting the whole list makes one long chip, delete it and add them one at a time:
    `css-animations` `css-animation-library` `animate-css-alternative` `scroll-animation` `text-animation` `loader` `hover-effects` `css-only` `keyframes` `angular` `react` `nextjs` `tailwindcss` `typescript` `design-tokens` `accessibility` `prefers-reduced-motion` `frontend` `ui-components` `zero-dependencies`
@@ -82,7 +82,7 @@ Copy-paste posts are below. Post **one place at a time**, a few days apart, and 
 ## Copy to paste
 
 **One-liner**
-`600+ CSS animations. One class name each. No JavaScript for the CSS effects.`
+`617 CSS animations. One class name each. No JavaScript for the CSS effects.`
 
 **Short post (X / Bluesky / Mastodon / LinkedIn)**
 > SDS Motion Forge 5: 617 CSS animations for text, buttons, inputs, cards, loaders and scroll. One class per effect, no JavaScript needed for the CSS effects, MIT.

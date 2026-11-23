@@ -11,6 +11,10 @@
 "use strict";
 
 const { icon, sbIcon } = require("./icons");
+const { tool, toolFor } = require("./tool-icons");
+/** tile with the real logo of a guide (generic glyph when there is no logo, e.g. Zed or web apps) */
+const toolTile = (c, extra = "") => (toolFor(c.slug) ? `<span class="ic ic-tool${extra ? " " + extra : ""}">${toolFor(c.slug)}</span>` : icon(GROUP_ICON[c.group] || "mcp", extra));
+const toolBare = (c) => (toolFor(c.slug) ? `<span class="sbi sbi-tool">${toolFor(c.slug)}</span>` : sbIcon(GROUP_ICON[c.group] || "mcp"));
 const GROUP_ICON = { Terminal: "terminal", Editors: "clients", "Desktop and web": "globe", Other: "mcp" };
 
 const MCP_PKG = "@salkomdesignstudio/motion-forge-mcp";
@@ -223,7 +227,7 @@ module.exports = function buildMcpPages({ head, foot, S, config, esc, crumbs, br
   };
   const stepsHtml = (steps) => `<ol class="m-steps">${steps.map((s) => `<li><b>${s.t}</b>${s.p ? `<p>${s.p}</p>` : ""}${s.code ? codeBlock(s.code, s.lang) : ""}</li>`).join("")}</ol>`;
   const arrow = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>';
-  const clientCard = (c) => `<a class="m-client m-spot" href="${clientPath(c)}">${icon(GROUP_ICON[c.group] || "mcp")}<span><b>${esc(c.name)}</b><small>${esc(c.blurb)}</small></span><span class="m-arrow">${arrow}</span></a>`;
+  const clientCard = (c) => `<a class="m-client m-spot" href="${clientPath(c)}">${toolTile(c)}<span><b>${esc(c.name)}</b><small>${esc(c.blurb)}</small></span><span class="m-arrow">${arrow}</span></a>`;
   const faqHtml = (items) => items.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${a}</p></details>`).join("\n");
   const faqLd = (items) => ({ "@type": "FAQPage", mainEntity: items.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a.replace(/<[^>]+>/g, "") } })) });
   const waysHtml = (items) => `<div class="m-ways">${items.map(([t, d, h, b, k, c]) => `<a class="m-way m-spot${b ? " is-new" : ""}" href="${h}"><span class="m-way-head">${icon(k)}<span class="m-way-go"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></span><b>${esc(t)}${b ? `<em>${b}</em>` : ""}</b><small>${esc(d)}</small><code class="m-way-chip">${esc(c)}</code></a>`).join("")}</div>`;
@@ -271,7 +275,7 @@ ${cmdChip(NPX)}
 </div>
 </div>
 </section>
-<div class="h-works"><span>Works with</span>${["claude-code", "claude-desktop", "cursor", "vscode", "windsurf", "zed", "codex", "gemini-cli", "antigravity", "devin-desktop"].map((sl) => CLIENTS.find((x) => x.slug === sl)).map((x) => `<a href="${clientPath(x)}">${esc(x.name)}</a>`).join("")}</div>
+<div class="h-works"><span>Works with</span>${["claude-code", "claude-desktop", "cursor", "vscode", "windsurf", "zed", "codex", "gemini-cli", "antigravity", "devin-desktop"].map((sl) => CLIENTS.find((x) => x.slug === sl)).map((x) => `<a href="${clientPath(x)}">${toolFor(x.slug) ? `<span class="h-wlogo">${toolFor(x.slug)}</span>` : ""}${esc(x.name)}</a>`).join("")}</div>
 
 <section class="m-sec" id="setup"><h2>Set up in under a minute</h2><p class="m-lead">Three steps. Your AI tool does most of them for you.</p>
 <ol class="m-stepper">
@@ -356,7 +360,7 @@ ${GROUPS.map((g) => `<section class="m-sec"><h2>${g}</h2><div class="m-clients">
       return `<div class="g-code"><pre><code id="${id}"${lang ? ` class="language-${lang}"` : ""}>${esc(code)}</code></pre><button type="button" class="g-copy" data-gcopy="${id}" aria-label="Copy to clipboard">${copyIcon}</button></div>`;
     };
     const timeline = (steps) => `<ol class="g-steps">${steps.map((s, k) => `<li><span class="g-n">${k + 1}</span><div class="g-body"><p class="g-t">${s.t}</p>${s.p ? `<p class="g-p">${s.p}</p>` : ""}${s.code ? gcode(s.code, s.lang) : ""}</div></li>`).join("")}</ol>`;
-    const sidebar = GROUPS.map((g) => `<p class="m-sbh">${g}</p>${byGroup(g).map((x) => `<a href="${clientPath(x)}"${x.slug === c.slug ? ' aria-current="page"' : ""}>${sbIcon(GROUP_ICON[x.group] || "mcp")}<span>${esc(x.name)}</span></a>`).join("")}`).join("");
+    const sidebar = GROUPS.map((g) => `<p class="m-sbh">${g}</p>${byGroup(g).map((x) => `<a href="${clientPath(x)}"${x.slug === c.slug ? ' aria-current="page"' : ""}>${toolBare(x)}<span>${esc(x.name)}</span></a>`).join("")}`).join("");
     const html =
       head({ title, description, path: p, jsonld, extraJs: ["/mcp.js"], wide: true }) +
       `<div class="m-page g-page">
@@ -364,7 +368,7 @@ ${GROUPS.map((g) => `<section class="m-sec"><h2>${g}</h2><div class="m-clients">
 <aside class="m-side" aria-label="MCP guides"><a class="m-sidehome" href="/mcp/clients/">All tools</a>${sidebar}</aside>
 <article class="m-main g-main">
 ${breadcrumbNav(crumb)}
-<header class="g-head">${icon(GROUP_ICON[c.group] || "mcp", "g-big")}<h1>${esc(c.name)}</h1></header>
+<header class="g-head">${toolTile(c, "g-big")}<h1>${esc(c.name)}</h1></header>
 <p class="g-lede">${esc(c.lede)}</p>
 <ul class="g-meta"><li>${metaIcons.node}Node 20 or newer</li><li>${metaIcons.time}About a minute</li><li>${metaIcons.key}No account, no API key</li></ul>
 ${c.note ? `<p class="note" role="note">${esc(c.note)}</p>` : ""}
@@ -399,7 +403,7 @@ module.exports.fragments = function fragments({ S, esc }) {
   const ways = (items) => `<div class="m-ways">${items.map(([t, d, h, b, k, c]) => `<a class="m-way m-spot${b ? " is-new" : ""}" href="${h}"><span class="m-way-head">${icon(k)}<span class="m-way-go"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></span><b>${esc(t)}${b ? `<em>${b}</em>` : ""}</b><small>${esc(d)}</small><code class="m-way-chip">${esc(c)}</code></a>`).join("")}</div>`;
   const tools = ["claude-code", "cursor", "vscode", "claude-desktop", "windsurf", "zed", "codex", "antigravity", "devin-desktop"]
     .map((s) => CLIENTS.find((c) => c.slug === s)).map((c) => `<a href="/mcp/clients/${c.slug}/">${esc(c.name)}</a>`).join("");
-  const toolTiles = ["claude-code", "cursor", "vscode", "claude-desktop", "windsurf", "zed", "codex", "antigravity", "devin-desktop"].map((sl) => CLIENTS.find((c) => c.slug === sl)).map((c) => `<a class="m-tool" href="/mcp/clients/${c.slug}/">${icon(GROUP_ICON[c.group] || "mcp")}<span>${esc(c.name)}</span></a>`).join("");
+  const toolTiles = ["claude-code", "cursor", "vscode", "claude-desktop", "windsurf", "zed", "codex", "antigravity", "devin-desktop"].map((sl) => CLIENTS.find((c) => c.slug === sl)).map((c) => `<a class="m-tool" href="/mcp/clients/${c.slug}/">${toolTile(c)}<span>${esc(c.name)}</span></a>`).join("");
   const home = `<section class="sec" id="ways">
       <link rel="stylesheet" href="/mcp.css" />
       <div class="wrap">
@@ -563,24 +567,24 @@ module.exports.fragments = function fragments({ S, esc }) {
   /* x = offset from the centre in px, y = top in px, s = size, r = tilt, d = bob seconds, l = bob delay, k = parallax depth (spec: .reanimate/motvin-hero/spec.md) */
   const FLOATS = [
     { x: -594, y: 184, s: 51, kind: "spark", d: 4.6, l: -1.2, k: 0.6, tone: "brand" },
-    { x: -499, y: 144, s: 72, kind: "tile", g: ["text", "quick", "theme"], r: -12, d: 6.0, l: -2.4, k: 1.1, tone: "white" },
-    { x: -585, y: 244, s: 97, kind: "tile", g: ["cards", "inputs", "buttons"], r: -12, d: 5.2, l: -0.6, k: 1.5, tone: "brand" },
+    { x: -499, y: 144, s: 72, kind: "tile", g: ["claude", "chatgpt", "gemini"], r: -12, d: 6.0, l: -2.4, k: 1.1, tone: "white" },
+    { x: -585, y: 244, s: 97, kind: "tile", g: ["cursor", "vscode", "windsurf"], r: -12, d: 5.2, l: -0.6, k: 1.5, tone: "brand" },
     { x: -503, y: 248, s: 56, kind: "line", g: "target", d: 5.4, l: -3.0, k: 0.8, tone: "brand" },
-    { x: 447, y: 140, s: 81, kind: "tile", g: ["loaders", "scroll", "interactive"], r: 15, d: 5.4, l: -0.8, k: 1.3, tone: "ink" },
-    { x: 548, y: 281, s: 58, kind: "tile", g: ["a11y", "frameworks", "js"], r: -10, d: 4.8, l: -1.9, k: 1.0, tone: "white" },
+    { x: 447, y: 140, s: 81, kind: "tile", g: ["codex", "copilot", "figma"], r: 15, d: 5.4, l: -0.8, k: 1.3, tone: "ink" },
+    { x: 548, y: 281, s: 58, kind: "tile", g: ["replit", "antigravity", "claude"], r: -10, d: 4.8, l: -1.9, k: 1.0, tone: "white" },
     { x: 548, y: 195, s: 42, kind: "spark", d: 6.2, l: -3.4, k: 0.6, tone: "deep" },
     { x: 472, y: 281, s: 38, kind: "line", g: "sliders", d: 5.8, l: -2.6, k: 0.8, tone: "brand" },
   ];
   const heroFloats = FLOATS.map((f) => {
     const inner = f.kind === "tile"
-      ? f.g.map((g, i) => `<span class="hf-g${i === 0 ? " is-on" : ""}">${glyph(g, "f")}</span>`).join("")
+      ? f.g.map((g, i) => `<span class="hf-g${i === 0 ? " is-on" : ""}">${tool(g)}</span>`).join("")
       : f.kind === "spark" ? sparkle("hf-spark") : glyph(f.g, "s", "hf-line");
     return `<span class="hf hf-${f.kind} tone-${f.tone}" data-depth="${f.k}" style="--x:${f.x}px;--y:${f.y}px;--s:${f.s}px;--r:${f.r || 0}deg;--d:${f.d}s;--l:${f.l}s"><span class="hf-d"><span class="hf-e"><span class="hf-in">${inner}</span></span></span></span>`;
   }).join("");
 
-  const CTA_GLYPHS = ["text", "buttons", "inputs", "cards", "loaders", "scroll", "interactive"];
+  const CTA_GLYPHS = ["claude", "chatgpt", "cursor", "vscode", "codex", "gemini", "copilot"];
   const CTA = [[59, -9, 0, "white"], [57, -6, -0.7, "brand"], [55, -3, -1.4, "white"], [52, 0, -2.1, "ink"], [55, 3, -2.8, "white"], [57, 6, -3.5, "brand"], [59, 9, -4.2, "white"]];
-  const ctaTiles = CTA.map(([sz, r, dl, tone], i) => `<span class="cta2-tile tone-${tone}" style="--s:${sz}px;--r:${r}deg;--l:${dl}s">${glyph(CTA_GLYPHS[i], "f")}</span>`).join("");
+  const ctaTiles = CTA.map(([sz, r, dl, tone], i) => `<span class="cta2-tile tone-${tone}" style="--s:${sz}px;--r:${r}deg;--l:${dl}s">${tool(CTA_GLYPHS[i])}</span>`).join("");
   const arrowR = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>';
   const cta = `<section class="cta2" id="start" aria-labelledby="cta2-title">
       <div class="cta2-tiles" aria-hidden="true">${ctaTiles}</div>
