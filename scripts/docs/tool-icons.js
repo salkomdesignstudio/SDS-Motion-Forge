@@ -103,4 +103,28 @@ function toolFor(slug, cls = "") {
   return tool(FOR[slug] || "", cls);
 }
 
-module.exports = { TOOLS, FOR, tool, toolFor };
+
+/** Hidden sprite: every logo defined once (ids are stable), so a tile can show any logo with a tiny <use>. */
+function sprite(keys = Object.keys(TOOLS)) {
+  const grad = '<linearGradient id="tl-gemini-grad" x1="3" y1="21" x2="21" y2="3" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4796E3"/><stop offset="0.55" stop-color="#9168C0"/><stop offset="1" stop-color="#D96570"/></linearGradient>';
+  const sym = keys.map((k) => {
+    const t = TOOLS[k];
+    let inner = t.inner.replace(/id="ti-([a-z]+-[gmx])"/g, 'id="tl-$1"').replace(/url\(#ti-([a-z]+-[gmx])\)/g, "url(#tl-$1)");
+    if (k === "figma") {
+      const colours = ["#1ABCFE", "#0ACF83", "#FF7262", "#F24E1E", "#A259FF"];
+      let i = 0;
+      inner = inner.replace(/fill="currentColor"/g, () => 'fill="' + colours[i++ % colours.length] + '"');
+    }
+    return '<symbol id="tl-' + k + '" viewBox="' + t.viewBox + '">' + inner + "</symbol>";
+  }).join("");
+  return '<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>' + grad + "</defs>" + sym + "</svg>";
+}
+
+/** a logo that points at the sprite (no repeated paths) */
+function use(key, cls = "") {
+  const t = TOOLS[key];
+  if (!t) return "";
+  return '<svg class="ti ti-' + key + (cls ? " " + cls : "") + '" viewBox="' + t.viewBox + '" fill="' + (key === "gemini" ? "url(#tl-gemini-grad)" : "currentColor") + '" aria-hidden="true" focusable="false"><use href="#tl-' + key + '"/></svg>';
+}
+
+module.exports = { TOOLS, FOR, tool, toolFor, sprite, use };

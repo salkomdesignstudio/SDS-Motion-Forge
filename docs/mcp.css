@@ -567,9 +567,9 @@ a:hover > .sbi .ic-f, a[aria-current] > .sbi .ic-f, .sb-link:hover .sbi .ic-f, .
 .hero-stat span { font-size: 13px; line-height: 1.4; color: var(--m-ink3); }
 
 .hero-floats { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
-.hf { position: absolute; left: calc(50% + var(--x)); top: var(--y); width: var(--s); height: var(--s); will-change: transform; }
+.hf { position: absolute; left: var(--xp); top: var(--yp); width: var(--s); height: var(--s); margin: calc(var(--s) / -2) 0 0 calc(var(--s) / -2); will-change: transform; }
 .hf-d, .hf-e, .hf-in { display: block; width: 100%; height: 100%; }
-.hf-e { animation: hf-in 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.45s backwards; }
+.hf-e { animation: hf-in 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) calc(0.35s + var(--ei, 0) * 70ms) backwards; }
 .hf-in { position: relative; rotate: var(--r); animation: hf-bob var(--d) ease-in-out var(--l) infinite; }
 @keyframes hf-in { from { opacity: 0; scale: 0.7; } }
 @keyframes hf-bob { 0%, 100% { translate: 0 0; } 50% { translate: 0 -14px; } }
@@ -691,3 +691,10 @@ a:hover > .sbi, a[aria-current] > .sbi, .sb-link:hover .sbi, .sb-link.active .sb
 @media (prefers-reduced-motion: reduce) { .ab { animation: none; } .hero-spot { display: none; } }
 /* small secondary text sits on the moving aurora, so it uses the darker ink (worst case measured 3.55:1 with the lighter one, about 6:1 now) */
 .hero-stat span, .hero-fine, .hero-fine a { color: var(--m-ink2); }
+
+.hf-g svg.ti { width: 100%; height: 100%; }
+.hf-tile .hf-in { border-radius: 26%; }
+
+/* the tile field stops where the hero text ends, so tiles never sit on the example cards below */
+.hero-floats { bottom: auto; height: 690px; }
+@media (max-width: 1279px) { .hero-floats { height: 640px; } }
