@@ -337,20 +337,6 @@
       @media (hover: none) { .card-replay { opacity: 1; width: 36px; height: 36px; } .card:hover, .spec:hover, .tile:hover { transform: none; } }
 
       /* playground */
-      .pg { display: grid; grid-template-columns: 1.1fr 0.9fr; overflow: hidden; }
-      .pg-canvas { position: relative; min-height: 380px; display: grid; place-items: center; background: linear-gradient(180deg, #f7f7fb, #efecfd); border-right: 1px solid var(--line); }
-      .pg-canvas-label { position: absolute; top: 18px; left: 20px; font: 12px var(--f-mono); color: var(--ink-3); }
-      .pg-target { font: 700 clamp(32px, 4.5vw, 52px) var(--f-head); letter-spacing: -0.035em; }
-      .pg-panel { padding: 28px; display: flex; flex-direction: column; gap: 20px; }
-      .pg-field label, .pg-out label { display: block; margin-bottom: 8px; font: 600 13px var(--f-disp); color: var(--ink-2); }
-      .pg-select { width: 100%; height: 48px; padding: 0 14px; border: 1px solid var(--line); border-radius: var(--r-md); background: #fff; font: 600 14.5px var(--f-disp); color: var(--ink); }
-      .pg-chips { display: flex; flex-wrap: wrap; gap: 8px; }
-      .pg-chip { padding: 8px 14px; border: 1px solid var(--line); border-radius: var(--r-full); background: #fff; font: 600 13px var(--f-mono); color: var(--ink-2); cursor: pointer; }
-      .pg-chip.on { background: #5c4ae1; border-color: transparent; color: #fff; }
-      .pg-out-code { padding: 14px 16px; border-radius: var(--r-md); background: #1e1b4b; color: #eceaff; font: 13px/1.6 var(--f-mono); word-break: break-all; }
-      .pg-actions { display: flex; gap: 8px; margin-top: 12px; }
-      .pg-btn { color: var(--brand-mid); display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 20px; border: 1px solid var(--line); border-radius: var(--r-full); background: #fff; font: 600 14px var(--f-disp); cursor: pointer; }
-      .pg-btn-primary { background: #5c4ae1; border-color: transparent; color: #fff; }
 
       /* docs teaser */
       .docs-card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
@@ -452,8 +438,6 @@
         .docs-card-grid, .steps, .needs { grid-template-columns: minmax(0, 1fr); }
       }
       @media (max-width: 900px) {
-        .pg { grid-template-columns: 1fr; }
-        .pg-canvas { min-height: 260px; border-right: 0; border-bottom: 1px solid var(--line); }
         .foot-in { grid-template-columns: 1fr; }
         .sec { padding: 44px 0; }
       }
@@ -892,29 +876,28 @@
         <div class="sec-head" data-reveal="up">
           <span class="eyebrow">Playground</span>
           <h2 class="sec-title">Build it, see it, copy it</h2>
-          <p class="sec-desc">Pick an effect, add modifiers for speed and delay, and copy markup that is ready to paste.</p>
+          <p class="sec-desc">Pick any of the 617 effects. Each one is shown with the markup it needs. Add speed, delay or loop, then copy code that is ready to paste.</p>
         </div>
-        <div class="pg" data-reveal="scale">
-          <div class="pg-canvas">
-            <span class="pg-canvas-label">// live preview</span>
-            <span class="pg-target" id="pgTarget">Motion Forge</span>
+        <div class="pgx" data-reveal="up" data-delay="1">
+          <div class="pgx-side">
+            <label class="pgx-search"><i class="ri-search-line" aria-hidden="true"></i><span class="sr-only">Search animations</span><input type="search" id="pgSearch" placeholder="Search 617 animations" autocomplete="off" /></label>
+            <div class="pgx-cats" id="pgCats" role="tablist" aria-label="Animation category"></div>
+            <div class="pgx-list" id="pgList" role="listbox" aria-label="Animations"></div>
           </div>
-          <div class="pg-panel">
-            <div class="pg-field">
-              <label for="pgSelect">Animation</label>
-              <select class="pg-select" id="pgSelect" onchange="pgUpdate()"></select>
+          <div class="pgx-main">
+            <div class="pgx-stage" id="pgStage">
+              <div class="pgx-demo" id="pgDemo" role="img" aria-label="Live preview"></div>
+              <p class="pgx-motion-note" id="pgMotionNote" hidden>Your system is set to reduce motion, so animations are switched off here. This is the library working as intended.</p>
             </div>
-            <div class="pg-field">
-              <label>Modifiers</label>
-              <div class="pg-chips" id="pgChips"></div>
+            <div class="pgx-info">
+              <div><b id="pgName">Velvet Drop</b><p id="pgDesc"></p></div>
+              <button type="button" class="pgx-replay" id="pgReplayBtn"><i class="ri-restart-line" aria-hidden="true"></i> Replay</button>
             </div>
-            <div class="pg-out">
-              <label>Output</label>
-              <div class="pg-out-code" id="pgCode">&lt;span class="sds-velvet-drop"&gt;</div>
-              <div class="pg-actions">
-                <button type="button" class="pg-btn pg-btn-primary" onclick="pgReplay()"><i class="ri-restart-line"></i> Replay</button>
-                <button type="button" class="pg-btn pg-btn-ghost" onclick="pgCopy(this)"><i class="ri-file-copy-fill"></i> Copy</button>
-              </div>
+            <div class="pgx-mods" id="pgChips" role="group" aria-label="Modifiers"></div>
+            <p class="pgx-hint" id="pgHint" aria-live="polite"></p>
+            <div class="pgx-code">
+              <pre><code id="pgCode"></code></pre>
+              <button type="button" class="pgx-copy" id="pgCopyBtn">Copy</button>
             </div>
           </div>
         </div>
@@ -1729,87 +1712,196 @@
           });
 
         /* ---------- Playground ---------- */
-        var pgMods = [];
-        var MODS = [
-          "sds-slow",
-          "sds-fast",
-          "sds-delay-2",
-          "sds-delay-4",
-          "sds-loop",
+        /* Every effect is shown with the demo markup it actually needs (letter spans, children, wrappers),
+           and a modifier chip is only live when it changes this effect. */
+        var PG = { cat: "text", cls: "", query: "", mods: [] };
+        var PG_MODS = [
+          { cls: "sds-slow", label: "Slow", prop: "animationDuration", group: "speed", why: "This effect has a fixed speed, so the speed classes do not change it." },
+          { cls: "sds-fast", label: "Fast", prop: "animationDuration", group: "speed", why: "This effect has a fixed speed, so the speed classes do not change it." },
+          { cls: "sds-delay-2", label: "Delay 0.2s", prop: "animationDelay", group: "delay", why: "Delay does not apply to this effect." },
+          { cls: "sds-delay-4", label: "Delay 0.4s", prop: "animationDelay", group: "delay", why: "Delay does not apply to this effect." },
+          { cls: "sds-loop", label: "Loop", prop: "animationIterationCount", group: "loop", why: "This effect already loops." },
         ];
+        var PG_CDN = "https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css";
 
-        function buildPgSelect() {
-          var sel = document.getElementById("pgSelect");
-          var opts = "";
+        function pgEffect(cls) {
+          var found = null;
           CATS.forEach(function (c) {
-            opts += '<optgroup label="' + c[1] + '">';
             (ANIMATIONS[c[0]] || []).forEach(function (a) {
-              opts += '<option value="' + a.cls + '">' + a.name + "</option>";
+              if (a.cls === cls) found = { cat: c[0], data: a };
             });
-            opts += "</optgroup>";
           });
-          sel.innerHTML = opts;
+          return found;
         }
-        function buildPgChips() {
+        /* demo markup, with the scroll gate removed so it plays at once and the root heading demoted */
+        function pgMarkup(cls) {
+          var m = (window.SDS_DOCS && window.SDS_DOCS.markup && window.SDS_DOCS.markup[cls]) || '<div class="' + cls + '">Motion Forge</div>';
+          return m.replace(/\sdata-sds(?=[\s>])/g, "").replace(/^<h[1-6]\b([\s\S]*)<\/h[1-6]>$/, "<div$1</div>");
+        }
+        function pgWithMods(markup, mods) {
+          if (!mods.length) return markup;
+          return markup.replace(/<([a-zA-Z][\w-]*)([^>]*)>/, function (m, tag, attrs) {
+            if (/class\s*=\s*"/.test(attrs)) return "<" + tag + attrs.replace(/class\s*=\s*"([^"]*)"/, function (x, c) { return 'class="' + c + " " + mods.join(" ") + '"'; }) + ">";
+            return "<" + tag + attrs + ' class="' + mods.join(" ") + '">';
+          });
+        }
+        function pgAnimEl(root) {
+          var els = [root].concat([].slice.call(root.querySelectorAll("*")));
+          for (var i = 0; i < els.length; i++) if (getComputedStyle(els[i]).animationName !== "none") return els[i];
+          return root;
+        }
+        /* does this modifier change the effect? measure it on the live element */
+        function pgProbe() {
+          var demo = document.getElementById("pgDemo");
+          var root = demo.firstElementChild;
+          var result = {};
+          if (!root) return result;
+          var saved = root.className;
+          var el = pgAnimEl(root);
+          PG_MODS.forEach(function (m) {
+            root.className = saved.replace(/\bsds-(slow|fast|loop|delay-\d+)\b/g, "").trim();
+            var before = getComputedStyle(el)[m.prop];
+            root.classList.add(m.cls);
+            var el2 = pgAnimEl(root);
+            var after = getComputedStyle(el2)[m.prop];
+            result[m.cls] = before !== after;
+          });
+          root.className = saved;
+          return result;
+        }
+        function pgRenderChips(live) {
           var box = document.getElementById("pgChips");
-          box.innerHTML = MODS.map(function (m) {
-            return (
-              '<button type="button" class="pg-chip" data-m="' +
-              m +
-              '">' +
-              m.replace("sds-", "") +
-              "</button>"
-            );
+          box.innerHTML = PG_MODS.map(function (m) {
+            var on = PG.mods.indexOf(m.cls) > -1;
+            var inert = live && live[m.cls] === false;
+            return '<button type="button" class="pgx-mod' + (on ? " on" : "") + (inert ? " inert" : "") + '" data-m="' + m.cls + '" aria-pressed="' + on + '"' + (inert ? ' aria-disabled="true"' : "") + ' title="' + (inert ? m.why : m.cls) + '">' + m.label + "</button>";
           }).join("");
-          box.querySelectorAll(".pg-chip").forEach(function (c) {
-            c.onclick = function () {
-              var m = c.dataset.m;
-              var idx = pgMods.indexOf(m);
-              if (idx > -1) {
-                pgMods.splice(idx, 1);
-                c.classList.remove("on");
-              } else {
-                pgMods.push(m);
-                c.classList.add("on");
-              }
-              pgUpdate();
-            };
-          });
         }
-        window.pgUpdate = function () {
-          var base = document.getElementById("pgSelect").value;
-          var full = (base + " " + pgMods.join(" ")).trim();
-          var t = document.getElementById("pgTarget");
-          t.className = "pg-target " + full;
-          document.getElementById("pgCode").textContent =
-            '<span class="' + full + '">';
-          pgReplay();
+        window.pgRender = function (replay) {
+          var eff = pgEffect(PG.cls);
+          if (!eff) return;
+          var demo = document.getElementById("pgDemo");
+          demo.innerHTML = pgWithMods(pgMarkup(PG.cls), PG.mods);
+          demo.setAttribute("aria-label", eff.data.name + " preview");
+          document.getElementById("pgName").textContent = eff.data.name;
+          document.getElementById("pgDesc").textContent = (eff.data.desc || "") + (eff.data.desc ? "." : "");
+          document.getElementById("pgCode").textContent = '<link rel="stylesheet" href="' + PG_CDN + '" />\n\n' + pgWithMods(pgMarkup(PG.cls), PG.mods).replace(/\n\s*/g, "\n");
+          var live = pgProbe();
+          pgRenderChips(live);
+          var inert = PG_MODS.filter(function (m) { return live[m.cls] === false; });
+          var hint = document.getElementById("pgHint");
+          var demoEl = document.getElementById("pgDemo");
+          var plays = [demoEl.firstElementChild].concat([].slice.call(demoEl.querySelectorAll("*"))).some(function (e) { return e && getComputedStyle(e).animationName !== "none"; });
+          var isCursor = ((window.SDS_DOCS && window.SDS_DOCS.interactive) || []).indexOf(PG.cls) > -1;
+          if (isCursor) hint.textContent = "Move your cursor over the preview. This effect reacts to the pointer and needs the optional 7 KB motion-interactive script.";
+          else if (!plays) hint.textContent = "This effect plays on hover or focus, not on load. Hover or click the preview to see it.";
+          else if (inert.length >= 4) hint.textContent = "This effect has a fixed timing, so most modifiers are greyed out. They only change effects built on the speed variable.";
+          else hint.textContent = "";
+          document.getElementById("pgMotionNote").hidden = !reduce;
+          if (replay !== false) window.sdsRestart(document.getElementById("pgStage"));
         };
-        window.pgReplay = function () {
-          var t = document.getElementById("pgTarget");
-          if (window.sdsRestart(t)) return;
-          t.style.animation = "none";
-          void t.offsetWidth;
-          t.style.animation = "";
-        };
-        window.pgCopy = function (btn) {
-          var code = document.getElementById("pgCode").textContent;
-          var orig = btn.innerHTML;
-          navigator.clipboard
-            .writeText(code)
-            .then(function () {
-              btn.innerHTML = '<i class="ri-check-line"></i> Copied';
-              setTimeout(function () {
-                btn.innerHTML = orig;
-              }, 1200);
-            })
-            .catch(function () {
-              btn.innerHTML = '<i class="ri-error-warning-line"></i> Failed';
-              setTimeout(function () {
-                btn.innerHTML = orig;
-              }, 1500);
+        function pgList() {
+          var q = PG.query.toLowerCase().trim();
+          var pool = [];
+          CATS.forEach(function (c) {
+            if (!q && c[0] !== PG.cat) return;
+            (ANIMATIONS[c[0]] || []).forEach(function (a) {
+              if (!q || (a.name + " " + a.cls).toLowerCase().indexOf(q) > -1) pool.push({ cat: c, a: a });
             });
+          });
+          var list = document.getElementById("pgList");
+          if (!pool.length) {
+            list.innerHTML = '<p class="pgx-empty">No animation matches "' + q.replace(/[<>&"]/g, "") + '".</p>';
+            return;
+          }
+          list.innerHTML = pool.map(function (p) {
+            var sel = p.a.cls === PG.cls;
+            return '<button type="button" role="option" class="pgx-item" data-cls="' + p.a.cls + '" aria-selected="' + sel + '"><span>' + p.a.name + "</span>" + (q ? "<em>" + p.cat[1] + "</em>" : "") + "</button>";
+          }).join("");
+          var cur = list.querySelector('[aria-selected="true"]');
+          if (cur && cur.scrollIntoView) list.scrollTop = Math.max(0, cur.offsetTop - 80);
+        }
+        function pgCats() {
+          document.getElementById("pgCats").innerHTML = CATS.map(function (c) {
+            return '<button type="button" role="tab" class="pgx-cat" data-cat="' + c[0] + '" aria-selected="' + (c[0] === PG.cat && !PG.query) + '">' + c[1] + "</button>";
+          }).join("");
+        }
+        function pgSelect(cls, keepFocus) {
+          var eff = pgEffect(cls);
+          if (!eff) return;
+          PG.cls = cls;
+          PG.cat = eff.cat;
+          PG.mods = [];
+          pgCats();
+          pgList();
+          pgRender(true);
+          if (keepFocus) { var b = document.querySelector('#pgList [data-cls="' + cls + '"]'); if (b) b.focus(); }
+        }
+        window.pgReplay = function () { window.sdsRestart(document.getElementById("pgStage")); };
+        window.pgCopy = function (btn) {
+          var text = document.getElementById("pgCode").textContent;
+          var orig = btn.textContent;
+          var done = function (msg) { btn.textContent = msg; btn.classList.add("copied"); setTimeout(function () { btn.textContent = orig; btn.classList.remove("copied"); }, 1300); };
+          if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(function () { done("Copied"); }, function () { done("Press Ctrl+C"); });
+          else done("Press Ctrl+C");
         };
+        function pgInit() {
+          var first = (ANIMATIONS.text || [])[0];
+          PG.cls = (ANIMATIONS.text || []).filter(function (a) { return a.cls === "sds-velvet-drop"; }).length ? "sds-velvet-drop" : first && first.cls;
+          pgCats();
+          pgList();
+          pgRender(false);
+          document.getElementById("pgCats").addEventListener("click", function (e) {
+            var b = e.target.closest(".pgx-cat");
+            if (!b) return;
+            PG.cat = b.getAttribute("data-cat");
+            PG.query = "";
+            document.getElementById("pgSearch").value = "";
+            pgCats();
+            pgList();
+            var first = (ANIMATIONS[PG.cat] || [])[0];
+            if (first) pgSelect(first.cls);
+          });
+          document.getElementById("pgList").addEventListener("click", function (e) {
+            var b = e.target.closest(".pgx-item");
+            if (b) pgSelect(b.getAttribute("data-cls"));
+          });
+          document.getElementById("pgList").addEventListener("keydown", function (e) {
+            if (e.key !== "ArrowDown" && e.key !== "ArrowUp") return;
+            var items = [].slice.call(document.querySelectorAll("#pgList .pgx-item"));
+            var i = items.indexOf(document.activeElement);
+            if (i < 0) return;
+            e.preventDefault();
+            var n = items[Math.max(0, Math.min(items.length - 1, i + (e.key === "ArrowDown" ? 1 : -1)))];
+            if (n) pgSelect(n.getAttribute("data-cls"), true);
+          });
+          var timer;
+          document.getElementById("pgSearch").addEventListener("input", function (e) {
+            clearTimeout(timer);
+            var v = e.target.value;
+            timer = setTimeout(function () { PG.query = v; pgCats(); pgList(); }, 120);
+          });
+          document.getElementById("pgChips").addEventListener("click", function (e) {
+            var b = e.target.closest(".pgx-mod");
+            if (!b || b.classList.contains("inert")) return;
+            var m = b.getAttribute("data-m");
+            var def = PG_MODS.filter(function (x) { return x.cls === m; })[0];
+            var i = PG.mods.indexOf(m);
+            if (i > -1) PG.mods.splice(i, 1);
+            else {
+              /* one speed and one delay at a time */
+              PG.mods = PG.mods.filter(function (x) { var d = PG_MODS.filter(function (y) { return y.cls === x; })[0]; return !(d && def && d.group === def.group && def.group !== "loop"); });
+              PG.mods.push(m);
+            }
+            pgRender(true);
+          });
+          document.getElementById("pgReplayBtn").addEventListener("click", window.pgReplay);
+          document.getElementById("pgCopyBtn").addEventListener("click", function () { window.pgCopy(this); });
+          if ("IntersectionObserver" in window && !reduce) {
+            var po = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { window.sdsRestart(document.getElementById("pgStage")); po.unobserve(e.target); } }); }, { threshold: 0.4 });
+            po.observe(document.getElementById("pgStage"));
+          }
+        }
 
         /* ---------- Doc code copy ---------- */
         window.copyCB = function (btn) {
@@ -2168,9 +2260,7 @@
           } else build();
           setTimeout(build, 12000);
         })();
-        buildPgSelect();
-        buildPgChips();
-        pgUpdate();
+        pgInit();
       })();
     </script>
 
