@@ -199,13 +199,13 @@ const FAQ = [
 ];
 
 const WAYS = [
-  ["MCP server", "Let your AI tool search and place animations for you.", "/mcp/", "New", "mcp"],
-  ["CDN", "One stylesheet link. Nothing to install.", "/docs.html#install", "", "install"],
-  ["npm", "Import the whole library or one category.", "/docs.html#install", "", "frameworks"],
-  ["Framework guides", "React, Angular, Vue, Svelte and Tailwind.", "/docs.html#frameworks", "", "js"],
-  ["Editor autocomplete", "Class-name completion and hover docs in VS Code.", "https://github.com/salkomdesignstudio/SDS-Motion-Forge/tree/main/ide", "", "clients"],
-  ["Builder", "Pick an effect, tune it and copy the code.", "/builder.html", "", "quick"],
-  ["llms.txt", "A plain summary for AI assistants and crawlers.", "/llms.txt", "", "llms"],
+  ["MCP server", "Let your AI tool search and place animations for you.", "/mcp/", "New", "mcp", "npx -y @salkomdesignstudio/motion-forge-mcp"],
+  ["CDN", "One stylesheet link. Nothing to install.", "/docs.html#install", "", "install", "No install, no build step"],
+  ["npm", "Import the whole library or one category.", "/docs.html#install", "", "frameworks", "npm i @salkomdesignstudio/sds-motion-forge"],
+  ["Framework guides", "React, Angular, Vue, Svelte and Tailwind.", "/docs.html#frameworks", "", "js", "Angular · React · Vue · Svelte"],
+  ["Editor autocomplete", "Class-name completion and hover docs in VS Code.", "https://github.com/salkomdesignstudio/SDS-Motion-Forge/tree/main/ide", "", "clients", "Class names and hover docs"],
+  ["Builder", "Pick an effect, tune it and copy the code.", "/builder.html", "", "quick", "Download only what you use"],
+  ["llms.txt", "A plain summary for AI assistants and crawlers.", "/llms.txt", "", "llms", "/llms.txt"],
 ];
 
 module.exports = function buildMcpPages({ head, foot, S, config, esc, crumbs, breadcrumbNav }) {
@@ -226,7 +226,7 @@ module.exports = function buildMcpPages({ head, foot, S, config, esc, crumbs, br
   const clientCard = (c) => `<a class="m-client m-spot" href="${clientPath(c)}">${icon(GROUP_ICON[c.group] || "mcp")}<span><b>${esc(c.name)}</b><small>${esc(c.blurb)}</small></span><span class="m-arrow">${arrow}</span></a>`;
   const faqHtml = (items) => items.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${a}</p></details>`).join("\n");
   const faqLd = (items) => ({ "@type": "FAQPage", mainEntity: items.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a.replace(/<[^>]+>/g, "") } })) });
-  const waysHtml = (items) => `<div class="m-ways">${items.map(([t, d, h, b, k]) => `<a class="m-way m-spot${b ? " is-new" : ""}" href="${h}">${icon(k)}<span class="m-way-t"><b>${esc(t)}${b ? `<em>${b}</em>` : ""}</b><small>${esc(d)}</small></span></a>`).join("")}</div>`;
+  const waysHtml = (items) => `<div class="m-ways">${items.map(([t, d, h, b, k, c]) => `<a class="m-way m-spot${b ? " is-new" : ""}" href="${h}"><span class="m-way-head">${icon(k)}<span class="m-way-go"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></span><b>${esc(t)}${b ? `<em>${b}</em>` : ""}</b><small>${esc(d)}</small><code class="m-way-chip">${esc(c)}</code></a>`).join("")}</div>`;
 
   const pages = [];
   const emit = (p, html, md) => pages.push({ p, html, md });
@@ -274,7 +274,7 @@ ${GROUPS.slice(0, 3).map((g) => `<h3 class="m-gh">${g}</h3><div class="m-clients
 </ol>
 <p class="note">Scores rank similarity, they never claim an exact match, and a spec with too little detail is capped so it cannot look like a strong match. It uses no AI and no network, so the same input always gives the same answer.</p></section>
 
-<section class="m-sec"><h2>Other ways to use Motion Forge</h2><p class="m-lead">The MCP server is one way in. These all work with the same ${total} animations.</p>${waysHtml(WAYS)}</section>
+<section class="m-sec"><h2>Other ways to use Motion Forge</h2><p class="m-lead">The MCP server is one way in. These all work with the same ${total} animations.</p>${waysHtml(WAYS.slice(1))}</section>
 
 <section class="m-sec"><h2>Questions</h2><div class="m-faq">${faqHtml(FAQ)}</div></section>
 
@@ -359,9 +359,10 @@ module.exports.fragments = function fragments({ S, esc }) {
   const total = S.effects.length;
   const arrow = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>';
   const cmd = `<div class="m-cmd"><code>${esc(NPX)}</code><button type="button" class="m-copy" data-copy="${esc(NPX)}">Copy</button></div>`;
-  const ways = (items) => `<div class="m-ways">${items.map(([t, d, h, b, k]) => `<a class="m-way m-spot${b ? " is-new" : ""}" href="${h}">${icon(k)}<span class="m-way-t"><b>${esc(t)}${b ? `<em>${b}</em>` : ""}</b><small>${esc(d)}</small></span></a>`).join("")}</div>`;
+  const ways = (items) => `<div class="m-ways">${items.map(([t, d, h, b, k, c]) => `<a class="m-way m-spot${b ? " is-new" : ""}" href="${h}"><span class="m-way-head">${icon(k)}<span class="m-way-go"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></span><b>${esc(t)}${b ? `<em>${b}</em>` : ""}</b><small>${esc(d)}</small><code class="m-way-chip">${esc(c)}</code></a>`).join("")}</div>`;
   const tools = ["claude-code", "cursor", "vscode", "claude-desktop", "windsurf", "zed", "codex", "antigravity", "devin-desktop"]
     .map((s) => CLIENTS.find((c) => c.slug === s)).map((c) => `<a href="/mcp/clients/${c.slug}/">${esc(c.name)}</a>`).join("");
+  const toolTiles = ["claude-code", "cursor", "vscode", "claude-desktop", "windsurf", "zed", "codex", "antigravity", "devin-desktop"].map((sl) => CLIENTS.find((c) => c.slug === sl)).map((c) => `<a class="m-tool" href="/mcp/clients/${c.slug}/">${icon(GROUP_ICON[c.group] || "mcp")}<span>${esc(c.name)}</span></a>`).join("");
   const home = `<section class="sec" id="ways">
       <link rel="stylesheet" href="/mcp.css" />
       <div class="wrap">
@@ -373,7 +374,7 @@ module.exports.fragments = function fragments({ S, esc }) {
         <div class="m-ai m-spot" data-reveal="up">
           <div><span class="pill">New</span><h3>Let your AI pick the animation</h3>
           <p>Connect the Motion Forge MCP server to Claude, Cursor, VS Code or any MCP client. Ask for an animation by description, get working code, or hand it a Figma interaction and get the closest match. Free, offline, no API key.</p>${cmd}</div>
-          <div><div class="m-ai-tools">${tools}</div><p class="m-more"><a href="/mcp/">How it works ${arrow}</a></p></div>
+          <div class="m-ai-side"><p class="m-ai-label">Works with</p><div class="m-tools">${toolTiles}</div><p class="m-more"><a href="/mcp/clients/">See all ${CLIENTS.length} setup guides ${arrow}</a></p></div>
         </div>
         ${ways(WAYS.slice(1))}
       </div>
@@ -456,7 +457,70 @@ module.exports.fragments = function fragments({ S, esc }) {
         </div>
       </div>
     </section>`;
-  return { home, docs, why };
+
+  const CDN_LINK = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css" />';
+  const win = (label, copy, html) => `<div class="m-codewin"><div class="m-codewin-bar"><span>${label}</span><button type="button" class="m-copy" data-copy="${esc(copy)}">Copy</button></div><pre><code>${html}</code></pre></div>`;
+  const how = `<section class="sec" id="how">
+      <div class="wrap">
+        <div class="sec-head" data-reveal="up">
+          <span class="eyebrow">How it works</span>
+          <h2 class="sec-title">Three steps, no setup</h2>
+          <p class="sec-desc">Load the stylesheet once. Add a class. Tune it if you want to.</p>
+        </div>
+        <ol class="m-stepper" data-reveal="up">
+          <li class="m-step"><div class="m-step-top"><span class="m-step-n">1</span>${icon("install")}</div><h3>Load the CSS</h3><p>From the CDN, or <code>npm i</code> and import it once.</p>
+            ${win("HTML", CDN_LINK, '<span class="t">&lt;link</span> <span class="a">rel</span>=<span class="s">"stylesheet"</span> <span class="a">href</span>=<span class="s">"https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css"</span> <span class="t">/&gt;</span>')}</li>
+          <li class="m-step"><div class="m-step-top"><span class="m-step-n">2</span>${icon("quick")}</div><h3>Add a class</h3><p>One class name on any element. It plays as soon as it loads.</p>
+            ${win("HTML", '<h1 class="sds-velvet-drop">Hello</h1>', '<span class="t">&lt;h1</span> <span class="a">class</span>=<span class="s">"sds-velvet-drop"</span><span class="t">&gt;</span>\n  Hello\n<span class="t">&lt;/h1&gt;</span>')}</li>
+          <li class="m-step"><div class="m-step-top"><span class="m-step-n">3</span>${icon("sliders")}</div><h3>Tune it <span class="m-opt">optional</span></h3><p>Modifier classes change speed, delay and looping.</p>
+            ${win("HTML", '<h1 class="sds-velvet-drop sds-slow sds-delay-2">Hello</h1>', '<span class="t">&lt;h1</span> <span class="a">class</span>=<span class="s">"sds-velvet-drop sds-slow sds-delay-2"</span><span class="t">&gt;</span>\n  Hello\n<span class="t">&lt;/h1&gt;</span>')}</li>
+        </ol>
+      </div>
+    </section>`;
+
+  const meter = (n, label) => `<span class="j-level" role="img" aria-label="JavaScript needed: ${label}"><span class="j-bars">${[1, 2, 3].map((i) => `<i class="${i <= n ? "on" : ""}"></i>`).join("")}</span><b>${label}</b></span>`;
+  const tick = '<span class="j-tick" aria-hidden="true"></span>';
+  const jsSection = `<section class="sec band" id="js">
+      <div class="wrap">
+        <div class="sec-head" data-reveal="up">
+          <span class="eyebrow">Plain answer</span>
+          <h2 class="sec-title">What needs JavaScript</h2>
+          <p class="sec-desc">Most effects need none. Three things are different, and each one is optional.</p>
+        </div>
+        <div class="j-grid">
+          <article class="j-card j-first" data-reveal="up">
+            <header>${icon("quick")}${meter(0, "None")}</header>
+            <div class="j-stat"><b>517</b><span>of ${total} effects</span></div>
+            <h3>CSS effects</h3>
+            <p>Text, buttons, inputs, cards and loaders. Add the class and it plays.</p>
+            <ul class="j-list">
+              <li>${tick}<span>13 text effects need each letter in a <code>.sds-char</code> span</span></li>
+              <li>${tick}<span>48 animate child elements</span></li>
+              <li>${tick}<span>29 input effects need a wrapper</span></li>
+            </ul>
+            <footer><span class="j-chip">No script to load</span></footer>
+          </article>
+          <article class="j-card" data-reveal="up" data-delay="1">
+            <header>${icon("scroll")}${meter(1, "Sometimes")}</header>
+            <div class="j-stat"><b>100</b><span>of ${total} effects</span></div>
+            <h3>Scroll effects</h3>
+            <p>CSS-only in Chrome 115+ with <code>sds-scroll-auto</code>. Other browsers use the 1.3 KB script and <code>data-sds</code>.</p>
+            <ul class="j-list"><li>${tick}<span>Without either, the effect plays on load, not on scroll</span></li></ul>
+            <footer><span class="j-chip">sds-scroll.min.js <b>1.3 KB</b></span></footer>
+          </article>
+          <article class="j-card" data-reveal="up" data-delay="2">
+            <header>${icon("interactive")}${meter(3, "Needs the engine")}</header>
+            <div class="j-stat"><b>7</b><span>cursor-reactive effects</span></div>
+            <h3>Cursor-reactive</h3>
+            <p>Magnetic Pull, Shockwave, Word Morph and four more need the 7 KB <code>motion-interactive.min.js</code>.</p>
+            <ul class="j-list"><li>${tick}<span>The engine splits the text into letters for you</span></li></ul>
+            <footer><span class="j-chip">motion-interactive.min.js <b>7 KB</b></span></footer>
+          </article>
+        </div>
+        <p class="needs-foot">Physics effects use CSS <code>linear()</code> (Chrome 113+, Safari 17.2+, Firefox 112+); older browsers get an approximation. <a href="docs.html#js-needs">Full table in the docs</a></p>
+      </div>
+    </section>`;
+  return { home, docs, why, how, js: jsSection };
 };
 
 module.exports.MCP_PKG = MCP_PKG;

@@ -24,6 +24,7 @@ const S = require("./site-lib");
 const { headerHtml } = require("./site-header");
 const buildMcpPages = require("./mcp-pages");
 const MCP = require("./mcp-pages");
+const { icon } = require("./icons");
 const { config, CATEGORIES, effects, interactive, byCategory, esc, slugOf, urlOf } = S;
 
 const DOCS = path.join(S.ROOT, "docs");
@@ -403,21 +404,22 @@ function categoryPage(cat) {
   };
   const importLine = cat.id === "interactive" ? `import "${facts.package}/dist/motion-interactive.min.js";` : `import "${facts.package}/categories/${cat.id}";`;
   const cdnLine = cat.id === "interactive" ? `${config.cdn}/motion-interactive.min.js` : `${config.cdn}/categories/${cat.id}.min.css`;
+  const cdnTag = cat.id === "interactive" ? `<script src="${cdnLine}" defer></script>` : `<link rel="stylesheet" href="${cdnLine}" />`;
   const groups = [...CATEGORIES, catById.interactive];
   const nav = groups.map((g) => { const n = (g.id === "interactive" ? interactive : byCategory[g.id]).length; return `<li><a href="${S.categoryPath(g.id)}"${g.id === cat.id ? ' aria-current="page"' : ""}>${esc(g.label)} <em>${n}</em></a></li>`; }).join("");
   const html =
     head({ title, description, path: p, jsonld, extraCss: cssLinksFor(list), wide: true, extraJs: cat.id === "interactive" ? ["/dist/motion-interactive.min.js"] : [] }) +
     `${breadcrumbNav(crumb)}
 <section class="cat-hero">
-<div>
-<p class="chipline"><span class="pill">Category</span><span class="pill plain mono">${cat.id === "interactive" ? "sds-*" : cat.prefix + "*"}</span></p>
+<div class="cat-main">
+<div class="cat-top">${icon(cat.id)}<p class="chipline"><span class="pill">Category</span><span class="pill plain mono">${cat.id === "interactive" ? "sds-*" : cat.prefix + "*"}</span></p></div>
 <h1>${list.length} ${esc(cat.label)} CSS animations</h1>
 <p class="lead">${esc(cat.blurb)}</p>
-<ul class="stats"><li class="pill plain">${list.length} effects</li>${gz ? `<li class="pill plain">${esc(gz.split(" (")[0])}</li>` : ""}<li class="pill plain">MIT licensed</li><li class="pill plain">Reduced motion handled</li></ul>
+<ul class="cat-stats"><li><b>${list.length}</b><span>effects</span></li>${gz ? `<li><b>${esc(gz.split(" ")[0])} KB</b><span>gzip, this category</span></li>` : ""}<li><b>MIT</b><span>licensed</span></li><li><b class="cat-ok" aria-hidden="true"></b><span>Reduced motion handled</span></li></ul>
 </div>
-<div class="import-card"><h2>Import only this category</h2>
-<div class="code-row"><code id="imp">${esc(importLine)}</code><button type="button" class="copy-btn" data-copy-from="imp">Copy</button></div>
-<div class="code-row"><code id="cdn">${esc(cdnLine)}</code><button type="button" class="copy-btn" data-copy-from="cdn">Copy</button></div>
+<div class="import-card"><h2>Add this category</h2>
+<div class="m-codewin"><div class="m-codewin-bar"><span>${cat.id === "interactive" ? "npm · script" : "npm · ES module"}</span><button type="button" class="m-copy" data-copy="${esc(importLine)}">Copy</button></div><pre><code>${esc(importLine)}</code></pre></div>
+<div class="m-codewin"><div class="m-codewin-bar"><span>CDN</span><button type="button" class="m-copy" data-copy="${esc(cdnTag)}">Copy</button></div><pre><code>${esc(cdnTag)}</code></pre></div>
 <p class="muted">Core (tokens, modifiers, reduced motion) is already inside each category bundle. To use two or more categories, load the full <code>motion.min.css</code>.</p></div>
 </section>
 <div class="toolbar2">
@@ -616,6 +618,8 @@ patchIndex();
   const frag = buildMcpPages.fragments({ S, esc });
   patchMarked("index.html", "WAYS", frag.home);
   patchMarked("index.html", "WHY", frag.why);
+  patchMarked("index.html", "HOW", frag.how);
+  patchMarked("index.html", "JS", frag.js);
   patchMarked("docs.html", "MCP-DOC", frag.docs);
 }
 write("assets/pages.css", PAGES_CSS);

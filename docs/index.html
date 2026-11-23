@@ -242,28 +242,9 @@
       .tile:hover, .step:hover, .need:hover, .docs-card:hover { transform: translateY(-3px); box-shadow: var(--sh-2); border-color: rgba(92, 74, 225, 0.3); }
 
       /* how it works */
-      .steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 0; padding: 0; list-style: none; counter-reset: step; }
       .step, .need, .docs-card, .tile { min-width: 0; }
-      .step { position: relative; padding: 28px; display: flex; flex-direction: column; gap: 14px; }
-      .step::before { counter-increment: step; content: counter(step); display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: #5c4ae1; color: #fff; font: 600 15px var(--f-head); }
-      .step h3 { font-size: 22px; }
-      .step p { color: var(--ink-2); font-size: 15px; }
-      .step pre { margin: auto 0 0; padding: 14px 16px; border-radius: var(--r-md); background: #1e1b4b; color: #eceaff; font-size: 12.5px; line-height: 1.6; overflow-x: auto; }
-      .step pre .k { color: #ff8b9b; } .step pre .s { color: #8ee0a4; }
 
       /* what needs javascript */
-      .needs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
-      .need { padding: 28px; display: flex; flex-direction: column; gap: 12px; }
-      .need-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-      .need-num { font: 600 44px var(--f-head); letter-spacing: -0.04em; line-height: 1; }
-      .need-tag { padding: 5px 12px; border-radius: var(--r-full); font: 600 12px var(--f-disp); }
-      .need-tag.no { background: rgba(10, 127, 63, 0.1); color: var(--ok); }
-      .need-tag.maybe { background: rgba(255, 159, 28, 0.14); color: #a05a00; }
-      .need-tag.yes { background: var(--brand-dim); color: var(--brand); }
-      .need h3 { font-size: 20px; }
-      .need p, .need li { color: var(--ink-2); font-size: 15px; }
-      .need ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; }
-      .need code { padding: 2px 7px; border-radius: 8px; background: var(--bg-2); font-size: 12.5px; }
       .needs-foot { margin-top: 18px; text-align: center; font-size: 14px; color: var(--ink-3); }
       .needs-foot a { color: var(--ink-2); }
 
@@ -678,76 +659,73 @@
     </section>
 
     <!-- HOW IT WORKS -->
-    <section class="sec" id="how">
+    <!-- HOW:START (generated: scripts/docs/generate-static-pages.js) -->
+<section class="sec" id="how">
       <div class="wrap">
         <div class="sec-head" data-reveal="up">
           <span class="eyebrow">How it works</span>
           <h2 class="sec-title">Three steps, no setup</h2>
           <p class="sec-desc">Load the stylesheet once. Add a class. Tune it if you want to.</p>
         </div>
-        <ol class="steps">
-          <li class="step" data-reveal="up">
-            <h3>Load the CSS</h3>
-            <p>From the CDN, or <code>npm i</code> and import it once.</p>
-            <pre><span class="k">&lt;link</span> rel="stylesheet"
-  href=<span class="s">"https://cdn.jsdelivr.net/npm/
-  @salkomdesignstudio/sds-motion-forge
-  /dist/motion.min.css"</span> /&gt;</pre>
-          </li>
-          <li class="step" data-reveal="up" data-delay="1">
-            <h3>Add a class</h3>
-            <p>One class name on any element. It plays as soon as it loads.</p>
-            <pre>&lt;h1 class=<span class="s">"sds-velvet-drop"</span>&gt;
+        <ol class="m-stepper" data-reveal="up">
+          <li class="m-step"><div class="m-step-top"><span class="m-step-n">1</span><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path d="M12 2.5a1.5 1.5 0 0 1 1.5 1.5v8.4l2.4-2.4a1.5 1.5 0 0 1 2.1 2.1l-4.9 4.9a1.6 1.6 0 0 1-2.2 0L6 12.1a1.5 1.5 0 0 1 2.1-2.1l2.4 2.4V4A1.5 1.5 0 0 1 12 2.5zM5 18.5h14a1.5 1.5 0 0 1 0 3H5a1.5 1.5 0 0 1 0-3z"/></svg></span></div><h3>Load the CSS</h3><p>From the CDN, or <code>npm i</code> and import it once.</p>
+            <div class="m-codewin"><div class="m-codewin-bar"><span>HTML</span><button type="button" class="m-copy" data-copy="&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css&quot; /&gt;">Copy</button></div><pre><code><span class="t">&lt;link</span> <span class="a">rel</span>=<span class="s">"stylesheet"</span> <span class="a">href</span>=<span class="s">"https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css"</span> <span class="t">/&gt;</span></code></pre></div></li>
+          <li class="m-step"><div class="m-step-top"><span class="m-step-n">2</span><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="M13 3 5 13h6l-1 8 8-10h-6z"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path d="M13 3 5 13h6l-1 8 8-10h-6z" stroke-linejoin="round"/></svg></span></div><h3>Add a class</h3><p>One class name on any element. It plays as soon as it loads.</p>
+            <div class="m-codewin"><div class="m-codewin-bar"><span>HTML</span><button type="button" class="m-copy" data-copy="&lt;h1 class=&quot;sds-velvet-drop&quot;&gt;Hello&lt;/h1&gt;">Copy</button></div><pre><code><span class="t">&lt;h1</span> <span class="a">class</span>=<span class="s">"sds-velvet-drop"</span><span class="t">&gt;</span>
   Hello
-&lt;/h1&gt;</pre>
-          </li>
-          <li class="step" data-reveal="up" data-delay="2">
-            <h3>Tune it (optional)</h3>
-            <p>Modifier classes change speed, delay and looping.</p>
-            <pre>&lt;h1 class=<span class="s">"sds-velvet-drop
-  sds-slow sds-delay-2"</span>&gt;
+<span class="t">&lt;/h1&gt;</span></code></pre></div></li>
+          <li class="m-step"><div class="m-step-top"><span class="m-step-n">3</span><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="M5 7h14M5 17h14"/><circle cx="9" cy="7" r="2.2"/><circle cx="15" cy="17" r="2.2"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path d="M4 7h16M4 17h16" fill="none" stroke-width="2.4"/><circle cx="9" cy="7" r="3.4"/><circle cx="15" cy="17" r="3.4"/></svg></span></div><h3>Tune it <span class="m-opt">optional</span></h3><p>Modifier classes change speed, delay and looping.</p>
+            <div class="m-codewin"><div class="m-codewin-bar"><span>HTML</span><button type="button" class="m-copy" data-copy="&lt;h1 class=&quot;sds-velvet-drop sds-slow sds-delay-2&quot;&gt;Hello&lt;/h1&gt;">Copy</button></div><pre><code><span class="t">&lt;h1</span> <span class="a">class</span>=<span class="s">"sds-velvet-drop sds-slow sds-delay-2"</span><span class="t">&gt;</span>
   Hello
-&lt;/h1&gt;</pre>
-          </li>
+<span class="t">&lt;/h1&gt;</span></code></pre></div></li>
         </ol>
       </div>
     </section>
+    <!-- HOW:END -->
 
     <!-- WHAT NEEDS JAVASCRIPT -->
-    <section class="sec band" id="js">
+    <!-- JS:START (generated: scripts/docs/generate-static-pages.js) -->
+<section class="sec band" id="js">
       <div class="wrap">
         <div class="sec-head" data-reveal="up">
           <span class="eyebrow">Plain answer</span>
           <h2 class="sec-title">What needs JavaScript</h2>
           <p class="sec-desc">Most effects need none. Three things are different, and each one is optional.</p>
         </div>
-        <div class="needs">
-          <article class="need" data-reveal="up">
-            <div class="need-top"><span class="need-num">517</span><span class="need-tag no">No JavaScript</span></div>
+        <div class="j-grid">
+          <article class="j-card j-first" data-reveal="up">
+            <header><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="M13 3 5 13h6l-1 8 8-10h-6z"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path d="M13 3 5 13h6l-1 8 8-10h-6z" stroke-linejoin="round"/></svg></span><span class="j-level" role="img" aria-label="JavaScript needed: None"><span class="j-bars"><i class=""></i><i class=""></i><i class=""></i></span><b>None</b></span></header>
+            <div class="j-stat"><b>517</b><span>of 617 effects</span></div>
             <h3>CSS effects</h3>
             <p>Text, buttons, inputs, cards and loaders. Add the class and it plays.</p>
-            <ul>
-              <li>13 text effects need each letter in a <code>.sds-char</code> span</li>
-              <li>48 animate child elements</li>
-              <li>29 input effects need a wrapper</li>
+            <ul class="j-list">
+              <li><span class="j-tick" aria-hidden="true"></span><span>13 text effects need each letter in a <code>.sds-char</code> span</span></li>
+              <li><span class="j-tick" aria-hidden="true"></span><span>48 animate child elements</span></li>
+              <li><span class="j-tick" aria-hidden="true"></span><span>29 input effects need a wrapper</span></li>
             </ul>
+            <footer><span class="j-chip">No script to load</span></footer>
           </article>
-          <article class="need" data-reveal="up" data-delay="1">
-            <div class="need-top"><span class="need-num">100</span><span class="need-tag maybe">Sometimes</span></div>
+          <article class="j-card" data-reveal="up" data-delay="1">
+            <header><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="M12 4v14m0 0-4-4m4 4 4-4"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path d="M12 3a1.5 1.5 0 0 1 1.5 1.5v9.4l2.4-2.4a1.5 1.5 0 1 1 2.1 2.1l-5 5a1.5 1.5 0 0 1-2.1 0l-5-5a1.5 1.5 0 1 1 2.1-2.1l2.5 2.4V4.5A1.5 1.5 0 0 1 12 3z"/></svg></span><span class="j-level" role="img" aria-label="JavaScript needed: Sometimes"><span class="j-bars"><i class="on"></i><i class=""></i><i class=""></i></span><b>Sometimes</b></span></header>
+            <div class="j-stat"><b>100</b><span>of 617 effects</span></div>
             <h3>Scroll effects</h3>
             <p>CSS-only in Chrome 115+ with <code>sds-scroll-auto</code>. Other browsers use the 1.3 KB script and <code>data-sds</code>.</p>
-            <ul><li>Without either, the effect plays on load, not on scroll</li></ul>
+            <ul class="j-list"><li><span class="j-tick" aria-hidden="true"></span><span>Without either, the effect plays on load, not on scroll</span></li></ul>
+            <footer><span class="j-chip">sds-scroll.min.js <b>1.3 KB</b></span></footer>
           </article>
-          <article class="need" data-reveal="up" data-delay="2">
-            <div class="need-top"><span class="need-num">7</span><span class="need-tag yes">Needs the engine</span></div>
+          <article class="j-card" data-reveal="up" data-delay="2">
+            <header><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="m6 4 12 7-5 1.5L11 18z"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path d="M6 4 18 11l-5 1.5L11 18z" stroke-linejoin="round"/></svg></span><span class="j-level" role="img" aria-label="JavaScript needed: Needs the engine"><span class="j-bars"><i class="on"></i><i class="on"></i><i class="on"></i></span><b>Needs the engine</b></span></header>
+            <div class="j-stat"><b>7</b><span>cursor-reactive effects</span></div>
             <h3>Cursor-reactive</h3>
             <p>Magnetic Pull, Shockwave, Word Morph and four more need the 7 KB <code>motion-interactive.min.js</code>.</p>
-            <ul><li>The engine splits the text into letters for you</li></ul>
+            <ul class="j-list"><li><span class="j-tick" aria-hidden="true"></span><span>The engine splits the text into letters for you</span></li></ul>
+            <footer><span class="j-chip">motion-interactive.min.js <b>7 KB</b></span></footer>
           </article>
         </div>
         <p class="needs-foot">Physics effects use CSS <code>linear()</code> (Chrome 113+, Safari 17.2+, Firefox 112+); older browsers get an approximation. <a href="docs.html#js-needs">Full table in the docs</a></p>
       </div>
     </section>
+    <!-- JS:END -->
 
     <!-- WHY -->
     <!-- WHY:START (generated: scripts/docs/generate-static-pages.js) -->
@@ -835,6 +813,8 @@
           </div>
           <div class="phys-main">
             <div class="physics-stage" id="physicsStage">
+              <span class="phys-badge" id="physBadge" aria-hidden="true">01 / 13</span>
+              <div class="phys-nav" role="group" aria-label="Browse physics effects"><button type="button" class="phys-btn" id="physPrev" aria-label="Previous effect"><i class="ri-arrow-left-s-line" aria-hidden="true"></i></button><button type="button" class="phys-btn" id="physNext" aria-label="Next effect"><i class="ri-arrow-right-s-line" aria-hidden="true"></i></button><button type="button" class="phys-btn phys-auto" id="physAuto" aria-pressed="true" aria-label="Auto-play effects"><i class="ri-pause-line" aria-hidden="true"></i></button></div>
               <div class="physics-demo" id="physicsDemo" role="img" aria-label="Spring Drop"><h1 class="sds-spring-drop"><span class="sds-char" aria-hidden="true" style="--i:0">S</span><span class="sds-char" aria-hidden="true" style="--i:1">p</span><span class="sds-char" aria-hidden="true" style="--i:2">r</span><span class="sds-char" aria-hidden="true" style="--i:3">i</span><span class="sds-char" aria-hidden="true" style="--i:4">n</span><span class="sds-char" aria-hidden="true" style="--i:5">g</span></h1></div>
             </div>
             <div class="phys-bar">
@@ -916,9 +896,9 @@
         <div class="m-ai m-spot" data-reveal="up">
           <div><span class="pill">New</span><h3>Let your AI pick the animation</h3>
           <p>Connect the Motion Forge MCP server to Claude, Cursor, VS Code or any MCP client. Ask for an animation by description, get working code, or hand it a Figma interaction and get the closest match. Free, offline, no API key.</p><div class="m-cmd"><code>npx -y @salkomdesignstudio/motion-forge-mcp</code><button type="button" class="m-copy" data-copy="npx -y @salkomdesignstudio/motion-forge-mcp">Copy</button></div></div>
-          <div><div class="m-ai-tools"><a href="/mcp/clients/claude-code/">Claude Code</a><a href="/mcp/clients/cursor/">Cursor</a><a href="/mcp/clients/vscode/">VS Code</a><a href="/mcp/clients/claude-desktop/">Claude Desktop</a><a href="/mcp/clients/windsurf/">Windsurf</a><a href="/mcp/clients/zed/">Zed</a><a href="/mcp/clients/codex/">Codex</a><a href="/mcp/clients/antigravity/">Antigravity</a><a href="/mcp/clients/devin-desktop/">Devin Desktop</a></div><p class="m-more"><a href="/mcp/">How it works <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></p></div>
+          <div class="m-ai-side"><p class="m-ai-label">Works with</p><div class="m-tools"><a class="m-tool" href="/mcp/clients/claude-code/"><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><rect x="3" y="4.5" width="18" height="15" rx="3"/><path d="m7.5 10 3 2.5-3 2.5M13 15h4"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path fill-rule="evenodd" d="M6 4.5h12A3 3 0 0 1 21 7.5v9a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3zM7.4 9.4a.9.9 0 0 0-.7 1.5l1.7 1.5-1.7 1.5a.9.9 0 1 0 1.2 1.4l2.4-2.2a.9.9 0 0 0 0-1.4L7.9 9.6a.9.9 0 0 0-.5-.2zm5.1 4.7a.9.9 0 0 0 0 1.8h3.6a.9.9 0 0 0 0-1.8z"/></svg></span><span>Claude Code</span></a><a class="m-tool" href="/mcp/clients/cursor/"><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="M9 7 4 12l5 5M15 7l5 5-5 5"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path d="M9 7 4 12l5 5M15 7l5 5-5 5" fill="none" stroke-width="3"/></svg></span><span>Cursor</span></a><a class="m-tool" href="/mcp/clients/vscode/"><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="M9 7 4 12l5 5M15 7l5 5-5 5"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path d="M9 7 4 12l5 5M15 7l5 5-5 5" fill="none" stroke-width="3"/></svg></span><span>VS Code</span></a><a class="m-tool" href="/mcp/clients/claude-desktop/"><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.4 3.6 5.2 3.6 8.5s-1.1 6.1-3.6 8.5c-2.5-2.4-3.6-5.2-3.6-8.5S9.5 5.9 12 3.5z"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.7 2.6 3.9 5.8 3.9 9.5s-1.2 6.9-3.9 9.5c-2.7-2.6-3.9-5.8-3.9-9.5S9.3 5.1 12 2.5z" style="stroke:var(--ic-cut)" fill="none" stroke-width="1.5"/></svg></span><span>Claude Desktop</span></a><a class="m-tool" href="/mcp/clients/windsurf/"><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="M9 7 4 12l5 5M15 7l5 5-5 5"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path d="M9 7 4 12l5 5M15 7l5 5-5 5" fill="none" stroke-width="3"/></svg></span><span>Windsurf</span></a><a class="m-tool" href="/mcp/clients/zed/"><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="M9 7 4 12l5 5M15 7l5 5-5 5"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path d="M9 7 4 12l5 5M15 7l5 5-5 5" fill="none" stroke-width="3"/></svg></span><span>Zed</span></a><a class="m-tool" href="/mcp/clients/codex/"><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><rect x="3" y="4.5" width="18" height="15" rx="3"/><path d="m7.5 10 3 2.5-3 2.5M13 15h4"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path fill-rule="evenodd" d="M6 4.5h12A3 3 0 0 1 21 7.5v9a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3zM7.4 9.4a.9.9 0 0 0-.7 1.5l1.7 1.5-1.7 1.5a.9.9 0 1 0 1.2 1.4l2.4-2.2a.9.9 0 0 0 0-1.4L7.9 9.6a.9.9 0 0 0-.5-.2zm5.1 4.7a.9.9 0 0 0 0 1.8h3.6a.9.9 0 0 0 0-1.8z"/></svg></span><span>Codex</span></a><a class="m-tool" href="/mcp/clients/antigravity/"><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="M9 7 4 12l5 5M15 7l5 5-5 5"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path d="M9 7 4 12l5 5M15 7l5 5-5 5" fill="none" stroke-width="3"/></svg></span><span>Antigravity</span></a><a class="m-tool" href="/mcp/clients/devin-desktop/"><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="M9 7 4 12l5 5M15 7l5 5-5 5"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path d="M9 7 4 12l5 5M15 7l5 5-5 5" fill="none" stroke-width="3"/></svg></span><span>Devin Desktop</span></a></div><p class="m-more"><a href="/mcp/clients/">See all 12 setup guides <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></p></div>
         </div>
-        <div class="m-ways"><a class="m-way m-spot" href="/docs.html#install"><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path d="M12 2.5a1.5 1.5 0 0 1 1.5 1.5v8.4l2.4-2.4a1.5 1.5 0 0 1 2.1 2.1l-4.9 4.9a1.6 1.6 0 0 1-2.2 0L6 12.1a1.5 1.5 0 0 1 2.1-2.1l2.4 2.4V4A1.5 1.5 0 0 1 12 2.5zM5 18.5h14a1.5 1.5 0 0 1 0 3H5a1.5 1.5 0 0 1 0-3z"/></svg></span><span class="m-way-t"><b>CDN</b><small>One stylesheet link. Nothing to install.</small></span></a><a class="m-way m-spot" href="/docs.html#install"><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="m12 4 8 4-8 4-8-4zM4 12l8 4 8-4M4 16l8 4 8-4"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path d="m12 3.5 8.5 4.3L12 12 3.5 7.8z"/><path d="M4 11.9l8 4 8-4M4 15.9l8 4 8-4" fill="none" stroke-width="2.2"/></svg></span><span class="m-way-t"><b>npm</b><small>Import the whole library or one category.</small></span></a><a class="m-way m-spot" href="/docs.html#frameworks"><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="M9 8 5 12l4 4M15 8l4 4-4 4"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path d="M9 7.5 4.8 12 9 16.5M15 7.5l4.2 4.5L15 16.5" fill="none" stroke-width="3"/></svg></span><span class="m-way-t"><b>Framework guides</b><small>React, Angular, Vue, Svelte and Tailwind.</small></span></a><a class="m-way m-spot" href="https://github.com/salkomdesignstudio/SDS-Motion-Forge/tree/main/ide"><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="M9 7 4 12l5 5M15 7l5 5-5 5"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path d="M9 7 4 12l5 5M15 7l5 5-5 5" fill="none" stroke-width="3"/></svg></span><span class="m-way-t"><b>Editor autocomplete</b><small>Class-name completion and hover docs in VS Code.</small></span></a><a class="m-way m-spot" href="/builder.html"><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="M13 3 5 13h6l-1 8 8-10h-6z"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path d="M13 3 5 13h6l-1 8 8-10h-6z" stroke-linejoin="round"/></svg></span><span class="m-way-t"><b>Builder</b><small>Pick an effect, tune it and copy the code.</small></span></a><a class="m-way m-spot" href="/llms.txt"><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="M6 4h9l3 3v13H6zM9 12h6M9 16h6"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path fill-rule="evenodd" d="M7 3h7l5 5v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm1.5 9a.9.9 0 0 0 0 1.8h7a.9.9 0 0 0 0-1.8zm0 3.6a.9.9 0 0 0 0 1.8h7a.9.9 0 0 0 0-1.8z"/></svg></span><span class="m-way-t"><b>llms.txt</b><small>A plain summary for AI assistants and crawlers.</small></span></a></div>
+        <div class="m-ways"><a class="m-way m-spot" href="/docs.html#install"><span class="m-way-head"><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path d="M12 2.5a1.5 1.5 0 0 1 1.5 1.5v8.4l2.4-2.4a1.5 1.5 0 0 1 2.1 2.1l-4.9 4.9a1.6 1.6 0 0 1-2.2 0L6 12.1a1.5 1.5 0 0 1 2.1-2.1l2.4 2.4V4A1.5 1.5 0 0 1 12 2.5zM5 18.5h14a1.5 1.5 0 0 1 0 3H5a1.5 1.5 0 0 1 0-3z"/></svg></span><span class="m-way-go"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></span><b>CDN</b><small>One stylesheet link. Nothing to install.</small><code class="m-way-chip">No install, no build step</code></a><a class="m-way m-spot" href="/docs.html#install"><span class="m-way-head"><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="m12 4 8 4-8 4-8-4zM4 12l8 4 8-4M4 16l8 4 8-4"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path d="m12 3.5 8.5 4.3L12 12 3.5 7.8z"/><path d="M4 11.9l8 4 8-4M4 15.9l8 4 8-4" fill="none" stroke-width="2.2"/></svg></span><span class="m-way-go"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></span><b>npm</b><small>Import the whole library or one category.</small><code class="m-way-chip">npm i @salkomdesignstudio/sds-motion-forge</code></a><a class="m-way m-spot" href="/docs.html#frameworks"><span class="m-way-head"><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="M9 8 5 12l4 4M15 8l4 4-4 4"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path d="M9 7.5 4.8 12 9 16.5M15 7.5l4.2 4.5L15 16.5" fill="none" stroke-width="3"/></svg></span><span class="m-way-go"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></span><b>Framework guides</b><small>React, Angular, Vue, Svelte and Tailwind.</small><code class="m-way-chip">Angular · React · Vue · Svelte</code></a><a class="m-way m-spot" href="https://github.com/salkomdesignstudio/SDS-Motion-Forge/tree/main/ide"><span class="m-way-head"><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="M9 7 4 12l5 5M15 7l5 5-5 5"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path d="M9 7 4 12l5 5M15 7l5 5-5 5" fill="none" stroke-width="3"/></svg></span><span class="m-way-go"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></span><b>Editor autocomplete</b><small>Class-name completion and hover docs in VS Code.</small><code class="m-way-chip">Class names and hover docs</code></a><a class="m-way m-spot" href="/builder.html"><span class="m-way-head"><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="M13 3 5 13h6l-1 8 8-10h-6z"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path d="M13 3 5 13h6l-1 8 8-10h-6z" stroke-linejoin="round"/></svg></span><span class="m-way-go"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></span><b>Builder</b><small>Pick an effect, tune it and copy the code.</small><code class="m-way-chip">Download only what you use</code></a><a class="m-way m-spot" href="/llms.txt"><span class="m-way-head"><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="M6 4h9l3 3v13H6zM9 12h6M9 16h6"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path fill-rule="evenodd" d="M7 3h7l5 5v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm1.5 9a.9.9 0 0 0 0 1.8h7a.9.9 0 0 0 0-1.8zm0 3.6a.9.9 0 0 0 0 1.8h7a.9.9 0 0 0 0-1.8z"/></svg></span><span class="m-way-go"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></span><b>llms.txt</b><small>A plain summary for AI assistants and crawlers.</small><code class="m-way-chip">/llms.txt</code></a></div>
       </div>
     </section>
     <!-- WAYS:END -->
@@ -1710,6 +1690,32 @@
             searchTerm = e.target.value.toLowerCase().trim();
             renderGrid();
           });
+
+        /* Physics showcase: counter, previous / next, and gentle auto-play that stops on any interaction */
+        (function () {
+          var box = document.getElementById("physicsChips");
+          var stage = document.getElementById("physicsStage");
+          if (!box || !stage) return;
+          var chips = [].slice.call(box.querySelectorAll(".chip"));
+          var badge = document.getElementById("physBadge");
+          var auto = document.getElementById("physAuto");
+          var on = !reduce;
+          var timer = null;
+          var visible = false;
+          function current() { for (var i = 0; i < chips.length; i++) if (chips[i].getAttribute("aria-pressed") === "true") return i; return 0; }
+          function mark() { if (badge) badge.textContent = String(current() + 1).padStart(2, "0") + " / " + String(chips.length).padStart(2, "0"); }
+          function go(i) { chips[(i + chips.length) % chips.length].click(); }
+          function paint() { auto.setAttribute("aria-pressed", String(on)); auto.firstElementChild.className = on ? "ri-pause-line" : "ri-play-line"; auto.setAttribute("aria-label", on ? "Pause auto-play" : "Start auto-play"); }
+          function tick() { clearTimeout(timer); if (on && visible) timer = setTimeout(function () { go(current() + 1); tick(); }, 4500); }
+          box.addEventListener("click", function (e) { if (e.isTrusted) { on = false; paint(); clearTimeout(timer); } mark(); });
+          document.getElementById("physPrev").addEventListener("click", function () { on = false; paint(); clearTimeout(timer); go(current() - 1); });
+          document.getElementById("physNext").addEventListener("click", function () { on = false; paint(); clearTimeout(timer); go(current() + 1); });
+          auto.addEventListener("click", function () { on = !on; paint(); tick(); });
+          if ("IntersectionObserver" in window) new IntersectionObserver(function (es) { visible = es[0].isIntersecting; tick(); }, { threshold: 0.4 }).observe(stage);
+          if (reduce) auto.hidden = true;
+          paint();
+          mark();
+        })();
 
         /* ---------- Playground ---------- */
         /* Every effect is shown with the demo markup it actually needs (letter spans, children, wrappers),

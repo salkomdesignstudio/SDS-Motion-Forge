@@ -46,17 +46,11 @@
 @media (hover: none) { .fx-replay { opacity: 1; width: 38px; height: 38px; } .fx-card:hover { transform: none; } }
 
 /* ---- category + index ---- */
-.cat-hero { margin: 8px 0 20px; padding: 36px; background: #f7f7fb; border-radius: 32px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: center; }
-.cat-hero h1 { margin: 0 0 12px; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.05; letter-spacing: -0.035em; }
-.cat-hero .lead { margin: 0 0 18px; font-size: 17px; max-width: 620px; }
 .stats { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
-.import-card { background: #fff; border: 1px solid #e6e5f2; border-radius: 24px; padding: 18px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
-.import-card h2 { margin: 0; font: 600 14px "Manrope", Arial, sans-serif; letter-spacing: 0; color: #6a6990; }
 .code-row { position: relative; display: flex; align-items: center; gap: 10px; padding: 12px 12px 12px 16px; background: #1e1b4b; border-radius: 16px; color: #eceaff; font: 13px "Geist Mono", ui-monospace, Menlo, monospace; min-width: 0; }
-.code-row code { flex: 1; min-width: 0; overflow-x: auto; white-space: nowrap; background: none; border: 0; padding: 0; color: inherit; font-size: inherit; }
+.code-row code { flex: 1; min-width: 0; white-space: pre-wrap; overflow-wrap: anywhere; background: none; border: 0; padding: 0; color: inherit; font-size: inherit; }
 .copy-btn { flex: none; display: inline-flex; align-items: center; height: 34px; padding: 0 14px; border: 0; border-radius: 10px; background: #fff; color: #1e1b4b; font: 600 13px "Manrope", Arial, sans-serif; cursor: pointer; }
 .copy-btn.copied { background: #0a7f3f; color: #fff; }
-.import-card .muted { margin: 0; font-size: 13px; }
 .toolbar2 { position: sticky; top: calc(var(--nav-h, 78px) + 2px); z-index: 20; display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 12px 0; margin-bottom: 8px; background: linear-gradient(#fff 70%, rgba(255, 255, 255, 0)); }
 .catnav { display: flex; gap: 4px; padding: 5px; margin: 0; list-style: none; background: #fff; border: 1px solid #e6e5f2; border-radius: 999px; overflow-x: auto; max-width: 100%; }
 .catnav a { display: inline-flex; gap: 6px; align-items: center; padding: 9px 16px; border-radius: 999px; color: #6a6990; font: 600 14px "Manrope", Arial, sans-serif; text-decoration: none; white-space: nowrap; }
@@ -133,3 +127,30 @@
    rule (its own background, border, size) always wins over these defaults. */
 :where(.fx-stage) [class*="sds-card-"] { display: grid; align-content: center; gap: 4px; width: min(176px, 82%); min-height: 96px; padding: 16px; border: 1px solid #e6e5f2; border-radius: 16px; background-color: #fff; box-shadow: 0 1px 2px rgba(30, 27, 75, 0.08); color: #1e1b4b; font: 600 15px "Manrope", Arial, sans-serif; letter-spacing: 0; text-align: left; }
 :where(.fx-stage) [class*="sds-scroll-"] { display: block; padding: 14px 20px; border: 1px solid #e6e5f2; border-radius: 14px; background-color: #fff; box-shadow: 0 1px 2px rgba(30, 27, 75, 0.08); color: #1e1b4b; font: 600 15px "Manrope", Arial, sans-serif; letter-spacing: 0; }
+
+/* ── category pages: hero (all 7) ──────────────────────────────────────────── */
+.cat-hero { margin: 12px 0 28px; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 40px; align-items: center; padding: 36px; border: 1px solid #e6e5f2; border-radius: 32px; background: #fff; }
+.cat-main { min-width: 0; }
+.cat-top { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+.cat-top .chipline { margin: 0; }
+.cat-top .ic { width: 56px; height: 56px; border-radius: 18px; }
+.cat-top .ic svg { width: 28px; height: 28px; }
+.cat-hero:hover .cat-top .ic { --ic-cut: #5c4ae1; background: #5c4ae1; color: #fff; transform: rotate(-6deg) scale(1.05); }
+.cat-hero:hover .cat-top .ic-s { opacity: 0; transform: scale(0.5) rotate(18deg); }
+.cat-hero:hover .cat-top .ic-f { opacity: 1; transform: none; }
+.cat-hero h1 { margin: 0 0 14px; font-size: clamp(34px, 4.6vw, 56px); line-height: 1.04; letter-spacing: -0.04em; }
+.cat-hero .lead { margin: 0 0 24px; max-width: 560px; font-size: 17px; line-height: 1.6; }
+.cat-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin: 0; padding: 0; list-style: none; }
+.cat-stats li { display: flex; flex-direction: column; gap: 2px; padding: 14px 16px; border: 1px solid #e6e5f2; border-radius: 18px; background: #f7f7fb; transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.2s, background 0.2s; }
+.cat-stats li:hover { transform: translateY(-2px); border-color: #5c4ae1; background: #fff; }
+.cat-stats b { font: 700 24px/1.1 "Manrope", Arial, sans-serif; letter-spacing: -0.03em; color: #1e1b4b; }
+.cat-stats span { font-size: 13px; line-height: 1.35; color: #4b4a73; }
+.cat-ok { display: inline-block; width: 26px; height: 26px; border-radius: 50%; background: #5c4ae1 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 12.5 4 4 8-9'/%3E%3C/svg%3E") center / 15px no-repeat; }
+.import-card { display: flex; flex-direction: column; gap: 12px; min-width: 0; padding: 20px; border: 1px solid #e6e5f2; border-radius: 24px; background: #f7f7fb; }
+.import-card h2 { margin: 0; font: 700 13px "Manrope", Arial, sans-serif; letter-spacing: 0.06em; text-transform: uppercase; color: #6a6990; }
+.import-card .m-codewin { margin-top: 0; }
+.import-card .m-codewin pre { min-height: 0; padding: 12px 16px; }
+.import-card .muted { margin: 0; font-size: 13px; line-height: 1.5; }
+@media (max-width: 960px) { .cat-hero { grid-template-columns: minmax(0, 1fr); gap: 24px; padding: 24px; border-radius: 28px; } }
+@media (prefers-reduced-motion: reduce) { .cat-stats li { transition: none; } .cat-stats li:hover, .cat-hero:hover .cat-top .ic { transform: none; } }
+@media (max-width: 560px) { .cat-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } .cat-stats li:last-child:nth-child(odd) { grid-column: 1 / -1; } }
