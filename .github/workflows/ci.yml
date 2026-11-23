@@ -49,6 +49,8 @@ jobs:
         working-directory: packages/elements
       - run: npx publint dist
         working-directory: packages/angular
+      - run: npx publint
+        working-directory: packages/mcp
 
   # ── Visual regression + performance: PRs to main ────────────────────
   visual-perf:

@@ -1,0 +1,25 @@
+export type CubicBezier = { type: 'cubic-bezier'; p: [number, number, number, number] };
+export type Steps = { type: 'steps'; n: number; pos: string };
+export type Linear = { type: 'linear' };
+export type Easing = CubicBezier | Steps | Linear;
+export type Num = { v: number; u: string };
+export type TransformFn = { fn: string; args: Num[] };
+export type Channels = {
+  opacity?: number; tx?: number; ty?: number; tz?: number;
+  sx?: number; sy?: number; rot?: number; rotx?: number; roty?: number;
+  skx?: number; sky?: number; blur?: number;
+};
+export const NAMED_EASINGS: Record<string, [number, number, number, number]>;
+export const IDENTITY: Required<Channels>;
+export function splitTop(str: string, sep: string): string[];
+export function splitSpaces(str: string): string[];
+export function resolveVars(str: string, vars: Record<string, string>, depth?: number): string;
+export function parseTimeMs(s: string): number | null;
+export function parseEasing(s: string): Easing | null;
+export function looksLikeEasing(s: string): boolean;
+export function parseNum(s: string): Num | null;
+export function parseTransform(s: string): TransformFn[];
+export function channelsFromDecls(decls: Record<string, string>): { ch: Channels; other: string[] };
+export function familyOf(channel: string): string;
+export function familyOfCssProp(prop: string): string;
+export function toMs(v: unknown): number | null;

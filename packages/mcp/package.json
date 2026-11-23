@@ -1,0 +1,56 @@
+{
+  "name": "@salkomdesignstudio/motion-forge-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for SDS Motion Forge: find, install and map motion specs (for example from Figma) to Motion Forge animations. Offline, deterministic, no LLM calls.",
+  "license": "MIT",
+  "author": {
+    "name": "Salkom Design Studio",
+    "email": "hello@salkomdesignstudio.com",
+    "url": "https://salkomdesignstudio.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/salkomdesignstudio/SDS-Motion-Forge.git",
+    "directory": "packages/mcp"
+  },
+  "keywords": ["mcp", "model-context-protocol", "animation", "motion", "figma", "css-animation", "sds-motion-forge"],
+  "type": "module",
+  "bin": {
+    "motion-forge-mcp": "./dist/bin.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "files": ["dist/", "catalog/catalog.json", "README.md"],
+  "sideEffects": false,
+  "scripts": {
+    "catalog": "node scripts/generate-catalog.mjs",
+    "catalog:check": "node scripts/verify-catalog.mjs",
+    "build": "npm run catalog && npm run catalog:check && tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "validate": "publint",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "2.4.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "postcss": "^8.5.0",
+    "publint": "^0.3.21",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  }
+}

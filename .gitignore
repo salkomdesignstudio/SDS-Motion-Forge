@@ -26,6 +26,8 @@ examples/angular/.angular/
 # Framework packages — generated build artifacts (rebuilt by npm run build -ws).
 packages/*/dist/
 packages/*/src/generated/
+packages/mcp/catalog/
+packages/mcp/*.tgz
 packages/*/out-tsc/
 
 # Playwright artifacts. Committed: test/visual/__screenshots__/ (baselines).
