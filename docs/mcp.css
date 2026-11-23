@@ -698,3 +698,7 @@ a:hover > .sbi, a[aria-current] > .sbi, .sb-link:hover .sbi, .sb-link.active .sb
 /* the tile field stops where the hero text ends, so tiles never sit on the example cards below */
 .hero-floats { bottom: auto; height: 690px; }
 @media (max-width: 1279px) { .hero-floats { height: 640px; } }
+
+svg.ti-gemini { fill: url(#tl-gemini-grad); }
+.hf-set { display: none; }
+.hf-g svg.ti, .hf-g svg.ti use { width: 100%; height: 100%; }

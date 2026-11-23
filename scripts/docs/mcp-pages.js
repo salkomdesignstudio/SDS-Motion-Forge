@@ -565,35 +565,24 @@ module.exports.fragments = function fragments({ S, esc }) {
 
   const { glyph } = require("./icons");
   const sparkle = (cls) => `<svg class="${cls}" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 2.5v19M2.5 12h19M5.3 5.3l13.4 13.4M18.7 5.3 5.3 18.7"/></svg>`;
-  /* Hero tiles: seeded-random but spaced-out positions down both edges (percent of the hero, so they follow the width),
-     random sizes, tilts and bob speeds. Every tile cycles through its own list of real logos (spec: .reanimate/motvin-hero/spec.md). */
+  /* Hero tiles: ten, five per side, grouped around the vertical centre (left-centre and right-centre) with a few reaching
+     towards the top and bottom. Positions are percent of the hero so they follow the width. There are 11 logos for 10 tiles, so one
+     logo is always spare: the swap script gives a changing tile the spare and takes its old logo back, so no logo is ever on screen twice. */
   const { sprite, use: useTool } = require("./tool-icons");
   const LOGOS = ["claude", "chatgpt", "cursor", "vscode", "gemini", "copilot", "codex", "windsurf", "antigravity", "figma", "replit"];
   const rng = (seed) => () => { seed |= 0; seed = (seed + 0x6d2b79f5) | 0; let t = Math.imul(seed ^ (seed >>> 15), 1 | seed); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
-  const rand = rng(20261123);
-  const pick = (n, from) => { const pool = from.slice(); const out = []; while (out.length < n && pool.length) out.push(pool.splice(Math.floor(rand() * pool.length), 1)[0]); return out; };
-  const PER_SIDE = 7, W = 1440, H = 700; // reference box used only to keep tiles apart
-  const placed = [];
-  const SIZES = [88, 76, 68, 62, 56, 50, 44];
-  for (const side of ["l", "r"]) {
-    const x0 = side === "l" ? 3 : 81, x1 = side === "l" ? 19 : 97;
-    SIZES.slice().sort(() => rand() - 0.5).forEach((sz) => {
-      let best = null;
-      for (let t = 0; t < 600 && !best; t++) {
-        const xp = x0 + rand() * (x1 - x0), yp = 6 + rand() * 82;
-        const cx = (xp / 100) * W, cy = (yp / 100) * H;
-        if (placed.every((p) => Math.hypot(p.cx - cx, p.cy - cy) >= (p.sz + sz) / 2 + 16)) best = { xp, yp, cx, cy, sz, side };
-      }
-      if (best) placed.push(best);
-    });
-  }
-  const deck = pick(LOGOS.length, LOGOS); // each tile starts on a different logo
-  const heroFloats = sprite(LOGOS) + placed.map((p, i) => {
-    const first = deck[i % deck.length];
-    const logos = [first].concat(pick(4, LOGOS.filter((k) => k !== first)));
-    const r = Math.round((rand() * 36 - 18) * 10) / 10, d = Math.round((4.4 + rand() * 2.2) * 10) / 10, l = -Math.round(rand() * 60) / 10, k = Math.round((0.5 + rand() * 1.1) * 10) / 10;
-    const g = logos.map((k2, j) => `<span class="hf-g${j === 0 ? " is-on" : ""}">${useTool(k2)}</span>`).join("");
-    return `<span class="hf hf-tile tone-white" data-depth="${k}" style="--xp:${p.xp.toFixed(2)}%;--yp:${p.yp.toFixed(2)}%;--s:${p.sz}px;--r:${r}deg;--d:${d}s;--l:${l}s;--ei:${i}"><span class="hf-d"><span class="hf-e"><span class="hf-in">${g}</span></span></span></span>`;
+  const rand = rng(20261124);
+  // [x %, y % of the 690 px text area, size px]
+  const LAYOUT = [
+    [7, 41, 88], [17, 25, 58], [12, 60, 96], [14, 78, 62], [5, 84, 50],
+    [92, 38, 92], [83, 23, 54], [88, 58, 84], [86, 76, 64], [95, 82, 56],
+  ];
+  const deck = LOGOS.slice().sort(() => rand() - 0.5);
+  const spare = deck[10];
+  const heroFloats = sprite(LOGOS) + `<span class="hf-set" data-logos="${LOGOS.join(",")}" data-spare="${spare}"></span>` + LAYOUT.map(([xp, yp, sz], i) => {
+    const r = Math.round((rand() * 30 - 15) * 10) / 10, d = Math.round((4.4 + rand() * 2.2) * 10) / 10, l = -Math.round(rand() * 60) / 10, k = Math.round((0.5 + rand() * 1.1) * 10) / 10;
+    const key = deck[i];
+    return `<span class="hf hf-tile tone-white" data-depth="${k}" data-logo="${key}" style="--xp:${xp}%;--yp:${yp}%;--s:${sz}px;--r:${r}deg;--d:${d}s;--l:${l}s;--ei:${i}"><span class="hf-d"><span class="hf-e"><span class="hf-in"><span class="hf-g is-on">${useTool(key)}</span><span class="hf-g">${useTool(spare)}</span></span></span></span></span>`;
   }).join("");
 
   const CTA_GLYPHS = ["claude", "chatgpt", "cursor", "vscode", "codex", "gemini", "copilot"];

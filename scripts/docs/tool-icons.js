@@ -122,9 +122,8 @@ function sprite(keys = Object.keys(TOOLS)) {
 
 /** a logo that points at the sprite (no repeated paths) */
 function use(key, cls = "") {
-  const t = TOOLS[key];
-  if (!t) return "";
-  return '<svg class="ti ti-' + key + (cls ? " " + cls : "") + '" viewBox="' + t.viewBox + '" fill="' + (key === "gemini" ? "url(#tl-gemini-grad)" : "currentColor") + '" aria-hidden="true" focusable="false"><use href="#tl-' + key + '"/></svg>';
+  if (!TOOLS[key]) return "";
+  return '<svg class="ti ti-' + key + (cls ? " " + cls : "") + '" width="100%" height="100%" aria-hidden="true" focusable="false"><use href="#tl-' + key + '" width="100%" height="100%"/></svg>';
 }
 
 module.exports = { TOOLS, FOR, tool, toolFor, sprite, use };
