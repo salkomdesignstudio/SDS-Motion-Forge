@@ -443,7 +443,7 @@ module.exports.fragments = function fragments({ S, esc }) {
         </section>`;
 
   const cats = [["Text", 117], ["Buttons", 100], ["Inputs", 100], ["Cards", 100], ["Loaders", 100], ["Scroll", 100]];
-  const CAT_COLOURS = ["#5c4ae1", "#19b5a5", "#f2a03d", "#3b82f6", "#f2603c", "#1a9b57"];
+  const CAT_COLOURS = ["#5c4ae1", "#19b5a5", "#ec5f9b", "#3b82f6", "#f2603c", "#1a9b57"];
   const seg = cats.map(([n, c], i) => `<span class="w-seg" style="flex:${c};background:${CAT_COLOURS[i]}" title="${n} ${c}"></span>`).join("");
   const legend = cats.map(([n, c], i) => `<li><i style="background:${CAT_COLOURS[i]}"></i>${n} <b>${c}</b></li>`).join("");
   const why = `<section class="sec" id="why">

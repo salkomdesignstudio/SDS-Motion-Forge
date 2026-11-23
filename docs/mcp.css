@@ -4,7 +4,7 @@
 :root {
   --m-ink: #16182c; --m-ink2: #43475c; --m-ink3: #666a7e;
   --m-brand: #5c4ae1; --m-deep: #4535c4; --m-bright: #5c4ae1; --m-night: #16182c;
-  --m-tint: #f7f5f0; --m-tint2: #efece4; --m-line: #e7e3da; --m-line2: #d5cfc2;
+  --m-tint: #f3f5fa; --m-tint2: #eaecf1; --m-line: #e1e3e9; --m-line2: #cccfd7;
   --m-grad: #5c4ae1;
   --m-ease: cubic-bezier(0.22, 1, 0.36, 1); --m-pop: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
@@ -436,7 +436,7 @@
 @media (prefers-reduced-motion: reduce) { .m-tool, .m-way-go { transition: none; } .m-tool:hover, .m-way:hover .m-way-go { transform: none; } }
 
 /* ═══ shared docs sidebar: small group labels, an icon on every row, tinted active pill ═══ */
-.sbi { --ic-cut: #efece4; position: relative; display: inline-grid; place-items: center; flex: none; width: 20px; height: 20px; color: var(--m-ink3); transition: color 0.2s; }
+.sbi { --ic-cut: #eaecf1; position: relative; display: inline-grid; place-items: center; flex: none; width: 20px; height: 20px; color: var(--m-ink3); transition: color 0.2s; }
 .sbi svg { grid-area: 1 / 1; transition: opacity 0.2s, transform 0.3s var(--m-pop); }
 .sbi .ic-s { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 .sbi .ic-f { fill: currentColor; stroke: currentColor; stroke-width: 0; opacity: 0; transform: scale(0.6) rotate(-14deg); }
@@ -503,7 +503,7 @@ a:hover > .sbi .ic-f, a[aria-current] > .sbi .ic-f, .sb-link:hover .sbi .ic-f, .
 .g-toc a[aria-current="true"] { border-left-color: var(--m-brand); color: var(--m-ink); font-weight: 700; }
 .m-side .ic.g-mini { width: 20px; height: 20px; border-radius: 0; background: transparent; color: var(--m-ink3); box-shadow: none; }
 .m-side .ic.g-mini svg { width: 20px; height: 20px; }
-.m-side a:hover .ic.g-mini, .m-side a[aria-current] .ic.g-mini { background: transparent; color: #16182c; box-shadow: none; transform: none; --ic-cut: #efece4; }
+.m-side a:hover .ic.g-mini, .m-side a[aria-current] .ic.g-mini { background: transparent; color: #16182c; box-shadow: none; transform: none; --ic-cut: #eaecf1; }
 
 /* ═══ landing hero: example conversation + live preview ═══ */
 .h-hero { max-width: none; display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(0, 1fr); gap: 48px; align-items: center; padding-bottom: 28px; }
@@ -601,7 +601,7 @@ svg.hf-spark, svg.hf-line { display: block; width: 100%; height: 100%; color: va
 .cta2-primary { background: var(--m-brand); color: #fff; }
 .cta2-primary:hover { background: var(--m-deep); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(92, 74, 225, 0.3); }
 .cta2-soft { background: var(--m-tint2); color: var(--m-ink); }
-.cta2-soft:hover { background: #e6e1d6; transform: translateY(-2px); }
+.cta2-soft:hover { background: #dfe1e7; transform: translateY(-2px); }
 .cta2-soft svg { transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1); }
 .cta2-soft:hover svg { transform: translateX(3px); }
 @media (max-width: 600px) { .cta2 { padding: 72px 20px 88px; } .cta2-tiles { gap: 6px; } .cta2-tile { width: calc(var(--s) * 0.72); height: calc(var(--s) * 0.72); } }
@@ -650,7 +650,7 @@ a:hover .ic.ic-tool, a:focus-visible .ic.ic-tool, .ic-host:hover .ic.ic-tool { b
    Surfaces, borders, icons, selected states and numbers are neutral; success is green; decoration uses natural colours. */
 :root { --m-ok: #1a9b57; }
 .hf-spark, svg.hf-spark, svg.hf-line { color: inherit; }
-.hf.tone-teal svg.hf-spark { color: #19b5a5; } .hf.tone-amber svg.hf-spark { color: #f2a03d; }
+.hf.tone-teal svg.hf-spark { color: #19b5a5; } .hf.tone-amber svg.hf-spark { color: #ec5f9b; }
 .hf.tone-blue svg.hf-line { color: #3b82f6; } .hf.tone-coral svg.hf-line { color: #f2603c; }
 .ic { color: var(--m-ink2); }
 .ic-tool { color: inherit; }

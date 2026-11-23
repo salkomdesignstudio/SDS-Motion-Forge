@@ -8,7 +8,7 @@
 .sh-bar {
   pointer-events: auto; display: flex; align-items: center; gap: 14px; max-width: 1180px; height: 58px; margin: 0 auto; padding: 0 10px 0 24px;
   background: rgba(255, 255, 255, 0.88); -webkit-backdrop-filter: blur(16px) saturate(160%); backdrop-filter: blur(16px) saturate(160%);
-  border: 1px solid #e7e3da; border-radius: 999px; box-shadow: 0 1px 2px rgba(22, 24, 44, 0.08), 0 10px 30px rgba(22, 24, 44, 0.08);
+  border: 1px solid #e1e3e9; border-radius: 999px; box-shadow: 0 1px 2px rgba(22, 24, 44, 0.08), 0 10px 30px rgba(22, 24, 44, 0.08);
   transition: box-shadow 0.2s;
 }
 .sh.is-scrolled .sh-bar { box-shadow: 0 1px 2px rgba(22, 24, 44, 0.08), 0 14px 36px rgba(22, 24, 44, 0.08); }
@@ -18,21 +18,21 @@
   display: inline-flex; align-items: center; gap: 6px; height: 38px; padding: 0 16px; border: 0; border-radius: 999px; background: transparent;
   color: #43475c; font: 500 14.5px "Manrope", Arial, sans-serif; text-decoration: none; cursor: pointer; white-space: nowrap; transition: background 0.15s, color 0.15s;
 }
-.sh-nav > a:hover, .sh-btn:hover, .sh-dd:focus-within > .sh-btn, .sh-dd.open > .sh-btn { background: #f7f5f0; color: #16182c; }
-.sh-nav a[aria-current], .sh-btn[aria-current] { background: #f7f5f0; color: #16182c; }
+.sh-nav > a:hover, .sh-btn:hover, .sh-dd:focus-within > .sh-btn, .sh-dd.open > .sh-btn { background: #f3f5fa; color: #16182c; }
+.sh-nav a[aria-current], .sh-btn[aria-current] { background: #f3f5fa; color: #16182c; }
 .sh-caret { transition: transform 0.2s; }
 .sh-dd.open .sh-caret, .sh-dd:hover .sh-caret { transform: rotate(180deg); }
 .sh-dd { position: relative; }
 .sh-menu {
   position: absolute; top: calc(100% + 10px); left: 0; z-index: 10; width: 360px; padding: 10px; display: flex; flex-direction: column; gap: 2px;
-  background: #fff; border: 1px solid #e7e3da; border-radius: 24px; box-shadow: 0 1px 2px rgba(22, 24, 44, 0.08), 0 28px 70px rgba(22, 24, 44, 0.08);
+  background: #fff; border: 1px solid #e1e3e9; border-radius: 24px; box-shadow: 0 1px 2px rgba(22, 24, 44, 0.08), 0 28px 70px rgba(22, 24, 44, 0.08);
   opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity 0.18s, transform 0.18s, visibility 0.18s;
 }
 .sh-menu-wide { width: 620px; display: grid; grid-template-columns: 1fr 1fr; gap: 2px 6px; }
 .sh-menu::before { content: ""; position: absolute; left: 0; right: 0; top: -12px; height: 12px; }
 .sh-dd:hover .sh-menu, .sh-dd.open .sh-menu, .sh-dd:focus-within .sh-menu { opacity: 1; visibility: visible; transform: none; }
 .sh-menu a { display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 16px; color: #16182c; text-decoration: none; transition: background 0.15s; }
-.sh-menu a:hover, .sh-menu a:focus-visible { background: #f7f5f0; }
+.sh-menu a:hover, .sh-menu a:focus-visible { background: #f3f5fa; }
 .sh-menu a[aria-current] { background: rgba(22, 24, 44, 0.07); }
 .sh-txt { display: flex; flex-direction: column; min-width: 0; }
 .sh-txt b { font: 700 15px "Manrope", Arial, sans-serif; letter-spacing: -0.035em; line-height: 1.25; }
@@ -49,18 +49,18 @@
 .sh-cta { display: inline-flex; align-items: center; height: 40px; padding: 0 20px; border-radius: 999px; background: #5c4ae1; color: #fff; font: 600 14.5px "Manrope", Arial, sans-serif; text-decoration: none; }
 .sh-cta:hover { transform: translateY(-1px); background: #4535c4; box-shadow: 0 6px 16px rgba(92, 74, 225, 0.3); }
 .sh a:focus-visible, .sh button:focus-visible { outline: 2px solid #5c4ae1; outline-offset: 2px; }
-.sh-burger { display: none; width: 40px; height: 40px; margin-left: auto; padding: 0; border: 1px solid #e7e3da; border-radius: 50%; background: #fff; cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 4px; }
+.sh-burger { display: none; width: 40px; height: 40px; margin-left: auto; padding: 0; border: 1px solid #e1e3e9; border-radius: 50%; background: #fff; cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 4px; }
 .sh-burger span { display: block; width: 16px; height: 2px; border-radius: 2px; background: #16182c; transition: transform 0.2s, opacity 0.2s; }
 .sh-burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
 .sh-burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .sh-burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 .sh-drawer {
   pointer-events: auto; max-width: 1180px; max-height: calc(100vh - var(--nav-h) - 16px); margin: 8px auto 0; padding: 12px; overflow-y: auto;
-  background: #fff; border: 1px solid #e7e3da; border-radius: 28px; box-shadow: 0 24px 60px rgba(22, 24, 44, 0.08);
+  background: #fff; border: 1px solid #e1e3e9; border-radius: 28px; box-shadow: 0 24px 60px rgba(22, 24, 44, 0.08);
 }
 .sh-drawer[hidden] { display: none; }
 .sh-drawer a { display: flex; align-items: center; justify-content: space-between; padding: 13px 14px; border-radius: 14px; color: #16182c; font: 600 15.5px "Manrope", Arial, sans-serif; text-decoration: none; }
-.sh-drawer a:hover { background: #f7f5f0; }
+.sh-drawer a:hover { background: #f3f5fa; }
 .sh-drawer a span:not(.sh-new) { color: #666a7e; font: 500 12.5px "Geist Mono", ui-monospace, Menlo, monospace; }
 .sh-dh { margin: 10px 14px 2px; font: 600 12px "Manrope", Arial, sans-serif; letter-spacing: 0.06em; text-transform: uppercase; color: #666a7e; }
 @media (max-width: 960px) {
@@ -71,7 +71,7 @@
 @media (hover: none) { .sh-dd:hover:not(.open) .sh-menu { opacity: 0; visibility: hidden; } }
 
 /* ── icons: outline at rest, filled on hover (scripts/docs/icons.js) ─────────── */
-.ic { --ic-cut: #efece4; position: relative; display: inline-grid; place-items: center; flex: none; width: 42px; height: 42px; border-radius: 14px; background: #efece4; color: #4535c4; transition: background 0.25s, color 0.25s, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s; }
+.ic { --ic-cut: #eaecf1; position: relative; display: inline-grid; place-items: center; flex: none; width: 42px; height: 42px; border-radius: 14px; background: #eaecf1; color: #4535c4; transition: background 0.25s, color 0.25s, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s; }
 .ic svg { grid-area: 1 / 1; transition: opacity 0.22s, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
 .ic-s { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 .ic-f { fill: currentColor; stroke: currentColor; stroke-width: 0; stroke-linecap: round; stroke-linejoin: round; opacity: 0; transform: scale(0.5) rotate(-18deg); }
@@ -86,7 +86,7 @@ a:hover .ic-f, a:focus-visible .ic-f, .ic-host:hover .ic-f, .ic-host:focus-visib
 .sh-nav > a, .sh-btn { position: relative; }
 .sh-nav > a::after, .sh-btn::after { content: ""; position: absolute; left: 50%; bottom: 5px; width: 0; height: 2px; border-radius: 2px; background: #5c4ae1; transform: translateX(-50%); transition: width 0.25s cubic-bezier(0.22, 1, 0.36, 1); }
 .sh-nav > a:hover::after, .sh-btn:hover::after, .sh-dd.open > .sh-btn::after, .sh-dd:focus-within > .sh-btn::after { width: 40%; }
-.sh-nav > a:hover, .sh-btn:hover, .sh-dd:focus-within > .sh-btn, .sh-dd.open > .sh-btn { background: #f7f5f0; color: #16182c; }
+.sh-nav > a:hover, .sh-btn:hover, .sh-dd:focus-within > .sh-btn, .sh-dd.open > .sh-btn { background: #f3f5fa; color: #16182c; }
 .sh-brand { transition: color 0.2s; }
 .sh-brand:hover { color: #16182c; }
 .sh-menu a { transition: background 0.2s, transform 0.25s cubic-bezier(0.22, 1, 0.36, 1); }
@@ -103,8 +103,8 @@ a:hover .ic-f, a:focus-visible .ic-f, .ic-host:hover .ic-f, .ic-host:focus-visib
 .sh-cta { position: relative;  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s; }
 .sh-cta:hover { transform: translateY(-1px) scale(1.03); box-shadow: 0 10px 26px rgba(22, 24, 44, 0.12); }
 .sh-icon { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s, color 0.2s, border-color 0.2s; }
-.sh-icon:hover { transform: rotate(-8deg) scale(1.08); background: #efece4; color: #16182c; border-color: #d5cfc2; }
-.sh-drawer a:hover { background: #f7f5f0; color: #16182c; padding-left: 20px; }
+.sh-icon:hover { transform: rotate(-8deg) scale(1.08); background: #eaecf1; color: #16182c; border-color: #cccfd7; }
+.sh-drawer a:hover { background: #f3f5fa; color: #16182c; padding-left: 20px; }
 .sh-drawer a { transition: background 0.2s, padding 0.25s, color 0.2s; }
 @media (prefers-reduced-motion: reduce) {
   .ic, .ic svg, .sh-cta, .sh-cta::before, .sh-icon, .sh-menu a, .sh-nav > a::after, .sh-btn::after, .sh-drawer a { transition: none; animation: none !important; }

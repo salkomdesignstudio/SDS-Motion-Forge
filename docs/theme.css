@@ -7,8 +7,8 @@
 html:root {
   /* docs.html + home tokens */
   --ink: #16182c; --ink-2: #43475c; --ink-3: #666a7e;
-  --bg: #ffffff; --bg-2: #f7f5f0; --bg-card: #ffffff;
-  --line: #e7e3da; --line-2: #d5cfc2;
+  --bg: #ffffff; --bg-2: #f3f5fa; --bg-card: #ffffff;
+  --line: #e1e3e9; --line-2: #cccfd7;
   --brand: #5c4ae1; --brand-mid: #4535c4; --brand-dim: rgba(22, 24, 44, 0.07); --brand-glow: rgba(92, 74, 225, 0.25);
   --link: #5c4ae1; --accent: #5c4ae1;
   --sds-primary: #4535c4; --sds-primary-glow: rgba(92, 74, 225, 0.28); --sds-primary-dim: rgba(22, 24, 44, 0.07);
@@ -61,7 +61,7 @@ a { text-underline-offset: 3px; }
 
 /* ---- generated effect pages ---- */
 main h1 { letter-spacing: -0.035em; }
-.stage { background: linear-gradient(180deg, #f7f5f0, #efece4); }
+.stage { background: linear-gradient(180deg, #f3f5fa, #eaecf1); }
 
 @media (max-width: 900px) {
   .nav { width: calc(100% - 20px); padding: 0 10px 0 16px; }
@@ -78,7 +78,7 @@ main h1 { letter-spacing: -0.035em; }
 
 /* ---- docs.html layout: rounded sidebar panel + readable content column ---- */
 .page { max-width: 1360px; margin: 0 auto; gap: 28px; padding: calc(var(--nav-h) + 8px) 20px 0; grid-template-columns: 272px minmax(0, 1fr); }
-.sidebar { position: sticky; top: calc(var(--nav-h) + 8px); height: calc(100vh - var(--nav-h) - 28px); padding: 16px 12px; background: var(--panel, #f7f5f0); border: 1px solid var(--line); border-right: 1px solid var(--line); border-radius: var(--r-xl, 28px); }
+.sidebar { position: sticky; top: calc(var(--nav-h) + 8px); height: calc(100vh - var(--nav-h) - 28px); padding: 16px 12px; background: var(--panel, #f3f5fa); border: 1px solid var(--line); border-right: 1px solid var(--line); border-radius: var(--r-xl, 28px); }
 .sb-link { border-radius: 999px; }
 .sb-link.active { background: #16182c; color: #fff; }
 .sb-link.active .sb-count { background: rgba(255, 255, 255, 0.18); color: #fff; }
@@ -92,7 +92,7 @@ main h1 { letter-spacing: -0.035em; }
 .fw-tabs { border-radius: 999px; }
 .fw-tab { border-radius: 999px; }
 .doc-table { border: 1px solid var(--line); border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden; }
-.doc-table th { background: var(--panel, #f7f5f0); }
+.doc-table th { background: var(--panel, #f3f5fa); }
 @media (max-width: 900px) {
   .page { padding: calc(var(--nav-h) + 4px) 12px 0; grid-template-columns: minmax(0, 1fr); gap: 12px; }
   .sidebar { position: static; height: auto; border-radius: 999px; padding: 8px 10px; }

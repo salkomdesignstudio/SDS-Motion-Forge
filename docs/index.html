@@ -132,8 +132,8 @@
          ============================================================ */
       :root {
         --ink: #16182c; --ink-2: #43475c; --ink-3: #666a7e;
-        --bg: #ffffff; --bg-2: #f7f5f0; --panel: #f7f5f0; --card: #ffffff;
-        --line: #e7e3da; --line-2: #d5cfc2;
+        --bg: #ffffff; --bg-2: #f3f5fa; --panel: #f3f5fa; --card: #ffffff;
+        --line: #e1e3e9; --line-2: #cccfd7;
         --brand: #5c4ae1; --brand-2: #5c4ae1; --brand-dim: rgba(22, 24, 44, 0.07);
         --ok: #086b37;
         --r-sm: 10px; --r-md: 14px; --r-lg: 20px; --r-xl: 28px; --r-2xl: 36px; --r-full: 999px;
@@ -201,7 +201,7 @@
       .spec:nth-child(1) { --n: 0; } .spec:nth-child(2) { --n: 1; } .spec:nth-child(3) { --n: 2; } .spec:nth-child(4) { --n: 3; } .spec:nth-child(5) { --n: 4; } .spec:nth-child(6) { --n: 5; }
       .spec:hover { transform: translateY(-4px); box-shadow: var(--sh-2); border-color: rgba(92, 74, 225, 0.3); }
       @keyframes specIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
-      .spec-stage { position: relative; isolation: isolate; overflow: hidden; height: 136px; display: grid; place-items: center; border-radius: var(--r-md); background: linear-gradient(180deg, #f7f5f0, #efece4); border: 1px solid rgba(22, 24, 44, 0.08); --mx: 50%; --my: 50%; --sds-primary: var(--brand); --sds-primary-glow: rgba(92, 74, 225, 0.3); --sds-primary-dim: rgba(22, 24, 44, 0.07); }
+      .spec-stage { position: relative; isolation: isolate; overflow: hidden; height: 136px; display: grid; place-items: center; border-radius: var(--r-md); background: linear-gradient(180deg, #f3f5fa, #eaecf1); border: 1px solid rgba(22, 24, 44, 0.08); --mx: 50%; --my: 50%; --sds-primary: var(--brand); --sds-primary-glow: rgba(92, 74, 225, 0.3); --sds-primary-dim: rgba(22, 24, 44, 0.07); }
       .spec-stage::after { content: ""; position: absolute; inset: 0; z-index: -1; opacity: 0; transition: opacity 0.25s; background: radial-gradient(180px circle at var(--mx) var(--my), rgba(135, 79, 255, 0.16), transparent 70%); }
       .spec:hover .spec-stage::after { opacity: 1; }
       .spec-meta { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; padding: 14px 10px 10px; }
@@ -271,7 +271,7 @@
       .physics-desc b { color: var(--ink); font-weight: 700; }
       .physics-demo { position: relative; text-align: center; padding: 0 24px; }
       .physics-demo h1, .physics-demo h2 { margin: 0; font: 600 clamp(44px, 6.4vw, 76px) var(--f-head); letter-spacing: -0.04em; color: var(--ink); }
-      .physics-stage { position: relative; min-height: 360px; display: grid; place-items: center; background: linear-gradient(180deg, #fff, #f7f5f0); border: 1px solid var(--line); border-radius: var(--r-xl); overflow: hidden; --sds-primary: var(--brand); }
+      .physics-stage { position: relative; min-height: 360px; display: grid; place-items: center; background: linear-gradient(180deg, #fff, #f3f5fa); border: 1px solid var(--line); border-radius: var(--r-xl); overflow: hidden; --sds-primary: var(--brand); }
       .physics-stage::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(22, 24, 44, 0.07) 1px, transparent 1px); background-size: 22px 22px; -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 20%, transparent 75%); mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 20%, transparent 75%); }
       .physics-word { position: relative; font: 600 clamp(48px, 7vw, 84px) var(--f-head); letter-spacing: -0.04em; color: var(--ink); }
       .physics-replay { position: absolute; right: 16px; bottom: 16px; display: inline-flex; align-items: center; gap: 6px; height: 40px; padding: 0 16px; border: 1px solid var(--line); border-radius: var(--r-full); background: #fff; font: 600 13.5px var(--f-disp); cursor: pointer; }
@@ -296,7 +296,7 @@
       .gal-grid .card { content-visibility: auto; contain-intrinsic-size: auto 300px; }
       .card { position: relative; display: flex; flex-direction: column; padding: 8px; background: #fff; border: 1px solid var(--line); border-radius: var(--r-xl); box-shadow: var(--sh-1); cursor: pointer; transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s; }
       .card:hover { transform: translateY(-3px); box-shadow: var(--sh-2); border-color: rgba(92, 74, 225, 0.3); }
-      .card-stage { position: relative; isolation: isolate; height: 150px; display: grid; place-items: center; overflow: hidden; border-radius: var(--r-lg); background: linear-gradient(180deg, #f7f5f0, #efece4); border: 1px solid rgba(22, 24, 44, 0.08); }
+      .card-stage { position: relative; isolation: isolate; height: 150px; display: grid; place-items: center; overflow: hidden; border-radius: var(--r-lg); background: linear-gradient(180deg, #f3f5fa, #eaecf1); border: 1px solid rgba(22, 24, 44, 0.08); }
       .card-demo { font: 700 21px var(--f-head); letter-spacing: -0.02em; color: var(--ink); }
       .card-stage h1, .card-stage h2, .modal-stage h1, .modal-stage h2 { margin: 0; font: 700 20px var(--f-head); letter-spacing: -0.02em; }
       .card-stage button, .modal-stage button, .card-stage input, .modal-stage input { font: 600 14px var(--f-disp); }
@@ -367,7 +367,7 @@
       .modal-copy-primary { display: inline-flex; align-items: center; gap: 6px; height: 42px; padding: 0 18px; border: 0; border-radius: var(--r-full); background: #5c4ae1; color: #fff; font: 600 14px var(--f-disp); cursor: pointer; }
       .modal-copy-primary.copied { background: var(--ok); }
       .modal-x { display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid var(--line); border-radius: 50%; background: #fff; font-size: 18px; cursor: pointer; }
-      .modal-stage { position: relative; isolation: isolate; display: grid; place-items: center; min-height: 220px; margin: 0 16px; padding: 30px; overflow: hidden; border-radius: var(--r-xl); background: linear-gradient(180deg, #f7f5f0, #efece4); border: 1px solid rgba(22, 24, 44, 0.08); }
+      .modal-stage { position: relative; isolation: isolate; display: grid; place-items: center; min-height: 220px; margin: 0 16px; padding: 30px; overflow: hidden; border-radius: var(--r-xl); background: linear-gradient(180deg, #f3f5fa, #eaecf1); border: 1px solid rgba(22, 24, 44, 0.08); }
       .modal-demo { font: 700 clamp(26px, 4vw, 40px) var(--f-head); letter-spacing: -0.03em; }
       .modal-replay { position: absolute; right: 12px; bottom: 12px; display: inline-flex; align-items: center; gap: 6px; height: 38px; padding: 0 16px; border: 0; border-radius: var(--r-full); background: #5c4ae1; color: #fff; font: 600 13px var(--f-disp); cursor: pointer; }
       .modal-notice { display: none; margin: 14px 16px 0; padding: 14px 18px; border-radius: var(--r-lg); background: var(--brand-dim); font-size: 14px; line-height: 1.6; color: var(--ink-2); }
@@ -432,8 +432,8 @@
       /* The library animates an element; it does not draw one. Preview boxes give card and scroll
          effects something to animate. :where() keeps this at the lowest specificity, so a library
          rule (its own background, border, size) always wins over these defaults. */
-      :where(.card-stage, .modal-stage) [class*="sds-card-"] { display: grid; align-content: center; gap: 4px; width: min(176px, 82%); min-height: 96px; padding: 16px; border: 1px solid #e7e3da; border-radius: 16px; background-color: #fff; box-shadow: 0 1px 2px rgba(22, 24, 44, 0.08); color: #16182c; font: 600 15px "Manrope", Arial, sans-serif; letter-spacing: 0; text-align: left; }
-      :where(.card-stage, .modal-stage) [class*="sds-scroll-"] { display: block; padding: 14px 20px; border: 1px solid #e7e3da; border-radius: 14px; background-color: #fff; box-shadow: 0 1px 2px rgba(22, 24, 44, 0.08); color: #16182c; font: 600 15px "Manrope", Arial, sans-serif; letter-spacing: 0; }
+      :where(.card-stage, .modal-stage) [class*="sds-card-"] { display: grid; align-content: center; gap: 4px; width: min(176px, 82%); min-height: 96px; padding: 16px; border: 1px solid #e1e3e9; border-radius: 16px; background-color: #fff; box-shadow: 0 1px 2px rgba(22, 24, 44, 0.08); color: #16182c; font: 600 15px "Manrope", Arial, sans-serif; letter-spacing: 0; text-align: left; }
+      :where(.card-stage, .modal-stage) [class*="sds-scroll-"] { display: block; padding: 14px 20px; border: 1px solid #e1e3e9; border-radius: 14px; background-color: #fff; box-shadow: 0 1px 2px rgba(22, 24, 44, 0.08); color: #16182c; font: 600 15px "Manrope", Arial, sans-serif; letter-spacing: 0; }
 
       /* effect restart helper used by the replay buttons */
       .sds-restart, .sds-restart *, .sds-restart *::before, .sds-restart *::after { animation: none !important; }
@@ -739,8 +739,8 @@
           <article class="w-card w-3" data-reveal="up" data-delay="1">
             <header><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="M4 7h16M4 12h16M4 17h10"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path d="M3 5.5A1.5 1.5 0 0 1 4.5 4h15a1.5 1.5 0 0 1 0 3h-15A1.5 1.5 0 0 1 3 5.5zM3 12a1.5 1.5 0 0 1 1.5-1.5h15a1.5 1.5 0 0 1 0 3h-15A1.5 1.5 0 0 1 3 12zm0 6.5A1.5 1.5 0 0 1 4.5 17h9a1.5 1.5 0 0 1 0 3h-9A1.5 1.5 0 0 1 3 18.5z"/></svg></span><span class="w-label">Library</span></header>
             <div class="w-stat"><b>617</b><span>animations, one class name each</span></div>
-            <div class="w-bar" role="img" aria-label="Animations per category"><span class="w-seg" style="flex:117;background:#5c4ae1" title="Text 117"></span><span class="w-seg" style="flex:100;background:#19b5a5" title="Buttons 100"></span><span class="w-seg" style="flex:100;background:#f2a03d" title="Inputs 100"></span><span class="w-seg" style="flex:100;background:#3b82f6" title="Cards 100"></span><span class="w-seg" style="flex:100;background:#f2603c" title="Loaders 100"></span><span class="w-seg" style="flex:100;background:#1a9b57" title="Scroll 100"></span></div>
-            <ul class="w-legend"><li><i style="background:#5c4ae1"></i>Text <b>117</b></li><li><i style="background:#19b5a5"></i>Buttons <b>100</b></li><li><i style="background:#f2a03d"></i>Inputs <b>100</b></li><li><i style="background:#3b82f6"></i>Cards <b>100</b></li><li><i style="background:#f2603c"></i>Loaders <b>100</b></li><li><i style="background:#1a9b57"></i>Scroll <b>100</b></li></ul>
+            <div class="w-bar" role="img" aria-label="Animations per category"><span class="w-seg" style="flex:117;background:#5c4ae1" title="Text 117"></span><span class="w-seg" style="flex:100;background:#19b5a5" title="Buttons 100"></span><span class="w-seg" style="flex:100;background:#ec5f9b" title="Inputs 100"></span><span class="w-seg" style="flex:100;background:#3b82f6" title="Cards 100"></span><span class="w-seg" style="flex:100;background:#f2603c" title="Loaders 100"></span><span class="w-seg" style="flex:100;background:#1a9b57" title="Scroll 100"></span></div>
+            <ul class="w-legend"><li><i style="background:#5c4ae1"></i>Text <b>117</b></li><li><i style="background:#19b5a5"></i>Buttons <b>100</b></li><li><i style="background:#ec5f9b"></i>Inputs <b>100</b></li><li><i style="background:#3b82f6"></i>Cards <b>100</b></li><li><i style="background:#f2603c"></i>Loaders <b>100</b></li><li><i style="background:#1a9b57"></i>Scroll <b>100</b></li></ul>
             <p class="w-note">Plus 7 cursor-reactive effects.</p>
           </article>
           <article class="w-card w-2" data-reveal="up" data-delay="1">
@@ -1160,7 +1160,7 @@
         document.getElementById("galGrid").innerHTML =
           '<div style="grid-column:1/-1;padding:64px;text-align:center;color:#666a7e;font-size:15px">' +
           '<strong>Gallery requires a local server.</strong><br><br>' +
-          'Run: <code style="background:#f7f5f0;padding:4px 10px;border-radius:4px">' +
+          'Run: <code style="background:#f3f5fa;padding:4px 10px;border-radius:4px">' +
           'npx http-server docs -p 3000</code>' +
           '</div>';
       }
