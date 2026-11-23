@@ -110,3 +110,14 @@ a:hover .ic-f, a:focus-visible .ic-f, .ic-host:hover .ic-f, .ic-host:focus-visib
   .ic, .ic svg, .sh-cta, .sh-cta::before, .sh-icon, .sh-menu a, .sh-nav > a::after, .sh-btn::after, .sh-drawer a { transition: none; animation: none !important; }
   a:hover .ic, .sh-cta:hover, .sh-icon:hover, .sh-menu a:hover { transform: none; }
 }
+
+/* every dropdown item ends with a top-right arrow; it nudges up and right on hover */
+.sh-menu a:not(.sh-all)::after { content: ""; flex: none; margin-left: auto; width: 16px; height: 16px; background: currentColor; opacity: 0.4; transition: opacity 0.2s, transform 0.25s cubic-bezier(0.22, 1, 0.36, 1); -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.5 11.5l7-7M5.5 4.5h6v6'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.5 11.5l7-7M5.5 4.5h6v6'/%3E%3C/svg%3E") center / contain no-repeat; }
+.sh-menu a:not(.sh-all):hover::after, .sh-menu a:not(.sh-all):focus-visible::after { opacity: 1; transform: translate(2px, -2px); color: #5c4ae1; }
+.sh-menu a .sh-avs { margin-left: auto; }
+.sh-menu a .sh-avs + * { margin-left: 0; }
+.sh-menu a.sh-feat::after { margin-left: 10px; }
+.sh-menu a .sh-txt { min-width: 0; }
+@media (prefers-reduced-motion: reduce) { .sh-menu a::after { transition: none; } }
+.sh-menu a.sh-feat { position: relative; }
+.sh-menu a.sh-feat::after { position: absolute; top: 16px; right: 16px; margin: 0; }
