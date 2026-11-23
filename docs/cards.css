@@ -135,7 +135,7 @@
 .cat-top .chipline { margin: 0; }
 .cat-top .ic { width: 56px; height: 56px; border-radius: 18px; }
 .cat-top .ic svg { width: 28px; height: 28px; }
-.cat-hero:hover .cat-top .ic { --ic-cut: #16182c; background: #16182c; color: #fff; transform: rotate(-6deg) scale(1.05); }
+.cat-hero:hover .cat-top .ic { --ic-cut: #5c4ae1; background: #5c4ae1; color: #fff; transform: rotate(-6deg) scale(1.05); }
 .cat-hero:hover .cat-top .ic-s { opacity: 0; transform: scale(0.5) rotate(18deg); }
 .cat-hero:hover .cat-top .ic-f { opacity: 1; transform: none; }
 .cat-hero h1 { margin: 0 0 14px; font-size: clamp(34px, 4.6vw, 56px); line-height: 1.04; letter-spacing: -0.04em; }
