@@ -1,0 +1,38 @@
+name: publish-mcp
+
+# Publishes @salkomdesignstudio/motion-forge-mcp. Trigger by pushing a tag like mcp-v0.1.0
+# (the tag must match packages/mcp/package.json).
+on:
+  push:
+    tags: ["mcp-v*"]
+
+jobs:
+  npm-publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          registry-url: https://registry.npmjs.org
+
+      - run: npm ci
+      # the catalog is generated from the library build output
+      - run: npm run build
+      - name: Tag matches package version
+        run: |
+          v=$(node -p "require('./packages/mcp/package.json').version")
+          test "${GITHUB_REF_NAME}" = "mcp-v${v}" || { echo "tag ${GITHUB_REF_NAME} != mcp-v${v}"; exit 1; }
+      - run: npm run build -w packages/mcp
+      - run: npm test -w packages/mcp
+      - run: npx publint
+        working-directory: packages/mcp
+      - run: npm publish --provenance --access public -w packages/mcp
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
