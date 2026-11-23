@@ -10,7 +10,7 @@
  */
 "use strict";
 
-const { icon } = require("./icons");
+const { icon, sbIcon } = require("./icons");
 const GROUP_ICON = { Terminal: "terminal", Editors: "clients", "Desktop and web": "globe", Other: "mcp" };
 
 const MCP_PKG = "@salkomdesignstudio/motion-forge-mcp";
@@ -183,7 +183,7 @@ const FEATURES = [
   ["Search animations", "Keyword search across every effect, with filters for category, trigger, looping and pure CSS.", "Show me 5 loading spinners that loop without JavaScript.", "search"],
   ["Get code that works", "Install steps and a ready snippet for HTML, React, Angular or Tailwind, with your duration and delay applied.", "Give me sds-bounce-in-up for React, 400 ms.", "js"],
   ["Match a design", "Hand it a motion spec, or Figma's motion output, and get the closest effects with the reasons for each score.", "Map this Figma interaction to Motion Forge.", "target"],
-  ["Compare motion", "See where an implemented animation differs from the design: properties, easing, duration, trigger.", "How far is sds-fade-up from my 300 ms ease-out design?", "compare"],
+  ["Compare motion", "See where an implemented animation differs from the design: properties, easing, duration, trigger.", "How far is sds-scroll-fade-up from my 300 ms ease-out design?", "compare"],
   ["Tune the timing", "Speed, delay and looping come back as modifier classes or one CSS variable, not a rewrite.", "Make that animation slower and play it once.", "sliders"],
   ["Respect reduced motion", "Every snippet comes with the note that the library already honours prefers-reduced-motion.", "Is this animation safe for people who turn motion off?", "a11y"],
 ];
@@ -239,16 +239,39 @@ module.exports = function buildMcpPages({ head, foot, S, config, esc, crumbs, br
     const jsonld = { "@context": "https://schema.org", "@graph": [crumbs([["Home", "/"], ["MCP", p]]), faqLd(FAQ)] };
     const chips = PROMPTS.map((t) => `<button type="button" class="m-chip" data-copy="${esc(t)}">${esc(t)}</button>`).join("");
     const html =
-      head({ title, description, path: p, jsonld, wide: true }) +
+      head({ title, description, path: p, jsonld, extraCss: ["/dist/categories/text.min.css"], extraJs: ["/mcp.js"], wide: true }) +
       `<div class="m-page">
-<section class="m-hero">
+<section class="m-hero h-hero">
+<div class="h-copy">
 <p class="m-eyebrow"><span class="pill">New</span> Motion Forge MCP</p>
-<h1>Your AI picks the right animation. From ${total} real ones.</h1>
+<h1 class="t2"><span class="t2a">Your AI picks the right animation.</span><span class="t2b">From <u class="t2u">${total} real ones</u>.</span></h1>
 <p class="m-sub">Connect Claude, Cursor, VS Code or any MCP client to Motion Forge. Your AI searches the library, writes the code and matches a design's motion before it guesses.</p>
 <div class="m-cta"><a class="btn2 primary" href="#setup">Connect in a minute</a><a class="btn2" href="/mcp/clients/">Choose your tool</a></div>
 ${cmdChip(NPX)}
 <p class="m-fine">Free, offline, no API key. Needs Node 20 or newer.</p>
+</div>
+<div class="h-win" role="group" aria-label="Example: an AI tool using Motion Forge">
+<div class="h-bar"><span class="h-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="h-title">AI chat <em>motion-forge connected</em></span><span class="h-ex">Example</span></div>
+<div class="h-body">
+<p class="h-user">Find a blur-in heading animation and give me the React code.</p>
+<ul class="h-calls">
+<li><span class="h-ok" aria-hidden="true"></span><code>search_animations</code><span>"blur heading"</span></li>
+<li><span class="h-ok" aria-hidden="true"></span><code>get_animation</code><span>sds-blur-focus · react</span></li>
+</ul>
+<div class="h-reply">
+<p>Use <code>sds-blur-focus</code>. It sharpens from a heavy blur.</p>
+<div class="h-demo" data-fx>
+<div class="fx-stage h-stage" aria-hidden="true"><h2 class="sds-blur-focus">Hello</h2></div>
+<button type="button" class="h-replay" data-replay aria-label="Replay the animation"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 0 2.6-5.9M4 4v4.5h4.5"/></svg>Replay</button>
+</div>
+<pre class="h-code"><code>import "@salkomdesignstudio/sds-motion-forge/dist/motion.min.css";
+
+&lt;h1 className="sds-blur-focus"&gt;Hello&lt;/h1&gt;</code></pre>
+</div>
+</div>
+</div>
 </section>
+<div class="h-works"><span>Works with</span>${["claude-code", "claude-desktop", "cursor", "vscode", "windsurf", "zed", "codex", "gemini-cli", "antigravity", "devin-desktop"].map((sl) => CLIENTS.find((x) => x.slug === sl)).map((x) => `<a href="${clientPath(x)}">${esc(x.name)}</a>`).join("")}</div>
 
 <section class="m-sec" id="setup"><h2>Set up in under a minute</h2><p class="m-lead">Three steps. Your AI tool does most of them for you.</p>
 <ol class="m-stepper">
@@ -320,31 +343,45 @@ ${GROUPS.map((g) => `<section class="m-sec"><h2>${g}</h2><div class="m-clients">
       ...(c.extraTrouble || []),
     ];
     const usage = [PROMPTS[0], PROMPTS[1], PROMPTS[4]];
-    const sidebar = GROUPS.map((g) => `<p class="m-sbh">${g}</p>${byGroup(g).map((x) => `<a href="${clientPath(x)}"${x.slug === c.slug ? ' aria-current="page"' : ""}>${esc(x.name)}</a>`).join("")}`).join("");
+    const svg = (d) => `<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
+    const metaIcons = {
+      node: svg('<path d="m9 8-4 4 4 4M15 8l4 4-4 4"/>'),
+      time: svg('<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>'),
+      key: svg('<rect x="5" y="11" width="14" height="9" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 7.5-2"/>'),
+    };
+    const copyIcon = '<svg class="g-i-copy" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15V6.5A2.5 2.5 0 0 1 7.5 4H15"/></svg><svg class="g-i-ok" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5.5 12.5 4.2 4.2L18.5 7.5"/></svg>';
+    let gid = 0;
+    const gcode = (code, lang) => {
+      const id = `g-${c.slug}-${++gid}`;
+      return `<div class="g-code"><pre><code id="${id}"${lang ? ` class="language-${lang}"` : ""}>${esc(code)}</code></pre><button type="button" class="g-copy" data-gcopy="${id}" aria-label="Copy to clipboard">${copyIcon}</button></div>`;
+    };
+    const timeline = (steps) => `<ol class="g-steps">${steps.map((s, k) => `<li><span class="g-n">${k + 1}</span><div class="g-body"><p class="g-t">${s.t}</p>${s.p ? `<p class="g-p">${s.p}</p>` : ""}${s.code ? gcode(s.code, s.lang) : ""}</div></li>`).join("")}</ol>`;
+    const sidebar = GROUPS.map((g) => `<p class="m-sbh">${g}</p>${byGroup(g).map((x) => `<a href="${clientPath(x)}"${x.slug === c.slug ? ' aria-current="page"' : ""}>${sbIcon(GROUP_ICON[x.group] || "mcp")}<span>${esc(x.name)}</span></a>`).join("")}`).join("");
     const html =
-      head({ title, description, path: p, jsonld, wide: true }) +
-      `<div class="m-page">${breadcrumbNav(crumb)}
+      head({ title, description, path: p, jsonld, extraJs: ["/mcp.js"], wide: true }) +
+      `<div class="m-page g-page">
 <div class="m-doc">
 <aside class="m-side" aria-label="MCP guides"><a class="m-sidehome" href="/mcp/clients/">All tools</a>${sidebar}</aside>
-<article class="m-main">
-<h1>${esc(c.name)}</h1>
-<p class="m-sub">${esc(c.lede)}</p>
-<ul class="m-badges"><li>Node 20 or newer</li><li>About a minute</li><li>No account, no API key</li></ul>
+<article class="m-main g-main">
+${breadcrumbNav(crumb)}
+<header class="g-head">${icon(GROUP_ICON[c.group] || "mcp", "g-big")}<h1>${esc(c.name)}</h1></header>
+<p class="g-lede">${esc(c.lede)}</p>
+<ul class="g-meta"><li>${metaIcons.node}Node 20 or newer</li><li>${metaIcons.time}About a minute</li><li>${metaIcons.key}No account, no API key</li></ul>
 ${c.note ? `<p class="note" role="note">${esc(c.note)}</p>` : ""}
-${c.deeplink ? `<p><a class="m-deep" href="${esc(c.deeplink.href)}"><b>${esc(c.deeplink.label)}</b><small>${esc(c.deeplink.sub)}</small></a></p>` : ""}
+${c.deeplink ? `<p class="g-deeprow"><a class="m-deep" href="${esc(c.deeplink.href)}"><b>${esc(c.deeplink.label)}</b><small>${esc(c.deeplink.sub)}</small></a></p>` : ""}
 <h2 id="setup">Setup</h2>
-${stepsHtml(c.steps)}
+${timeline(c.steps)}
 <h2 id="usage">Usage</h2>
-<p>Start a chat and ask. Click a prompt to copy it.</p>
-<div class="m-chips">${usage.map((t) => `<button type="button" class="m-chip" data-copy="${esc(t)}">${esc(t)}</button>`).join("")}</div>
-<h2 id="remove">Remove</h2>
-${stepsHtml(c.remove)}
+<p class="g-p">Start a chat and ask. Click a prompt to copy it.</p>
+<div class="g-prompts">${usage.map((t) => `<button type="button" class="g-prompt" data-gcopy-text="${esc(t)}"><span>${esc(t)}</span>${copyIcon}</button>`).join("")}</div>
+<h2 id="remove">Disconnect or remove</h2>
+${timeline(c.remove)}
 <h2 id="trouble">Troubleshooting</h2>
 <div class="m-faq">${faqHtml(trouble)}</div>
 <p class="m-more">Still stuck? <a href="${config.repoUrl}/issues">Open an issue on GitHub</a>.</p>
 <nav class="m-pager" aria-label="Guides">${prev ? `<a href="${clientPath(prev)}"><small>Previous</small><b>${esc(prev.name)}</b></a>` : "<span></span>"}${next ? `<a class="r" href="${clientPath(next)}"><small>Next</small><b>${esc(next.name)}</b></a>` : "<span></span>"}</nav>
 </article>
-<nav class="m-toc" aria-label="On this page"><p>On this page</p><a href="#setup">Setup</a><a href="#usage">Usage</a><a href="#remove">Remove</a><a href="#trouble">Troubleshooting</a></nav>
+<nav class="m-toc g-toc" aria-label="On this page"><p>On this page</p><a href="#setup" aria-current="true">Setup</a><a href="#usage">Usage</a><a href="#remove">Disconnect</a><a href="#trouble">Troubleshooting</a></nav>
 </div></div>
 ` + foot;
     const md = `# ${c.name}: Motion Forge MCP setup\n\n${c.lede}\n\n${c.steps.map((s, k) => `${k + 1}. ${s.t}${s.p ? ": " + s.p.replace(/<[^>]+>/g, "") : ""}${s.code ? "\n\n```" + (s.lang || "") + "\n" + s.code + "\n```" : ""}`).join("\n\n")}\n`;
@@ -368,7 +405,7 @@ module.exports.fragments = function fragments({ S, esc }) {
       <div class="wrap">
         <div class="sec-head" data-reveal="up">
           <span class="eyebrow">Ways to use it</span>
-          <h2 class="sec-title">Use it your way</h2>
+          <h2 class="sec-title t2"><span class="t2a">Use it your way.</span><span class="t2b">CDN, npm or <u class="t2u">your AI tool</u>.</span></h2>
           <p class="sec-desc">One stylesheet link, an npm import, or your AI tool. All of them use the same ${total} animations.</p>
         </div>
         <div class="m-ai m-spot" data-reveal="up">
@@ -408,7 +445,7 @@ module.exports.fragments = function fragments({ S, esc }) {
       <div class="wrap">
         <div class="sec-head" data-reveal="up">
           <span class="eyebrow">Features</span>
-          <h2 class="sec-title">Built to ship, not to demo</h2>
+          <h2 class="sec-title t2"><span class="t2a">Built to ship.</span><span class="t2b">Not to <u class="t2u">demo</u>.</span></h2>
           <p class="sec-desc">A focused motion system for teams who want character without the weight. Everything below is checked by the build.</p>
         </div>
         <div class="w-grid">
@@ -464,7 +501,7 @@ module.exports.fragments = function fragments({ S, esc }) {
       <div class="wrap">
         <div class="sec-head" data-reveal="up">
           <span class="eyebrow">How it works</span>
-          <h2 class="sec-title">Three steps, no setup</h2>
+          <h2 class="sec-title t2"><span class="t2a">Three steps.</span><span class="t2b"><u class="t2u">No setup</u>.</span></h2>
           <p class="sec-desc">Load the stylesheet once. Add a class. Tune it if you want to.</p>
         </div>
         <ol class="m-stepper" data-reveal="up">
@@ -484,7 +521,7 @@ module.exports.fragments = function fragments({ S, esc }) {
       <div class="wrap">
         <div class="sec-head" data-reveal="up">
           <span class="eyebrow">Plain answer</span>
-          <h2 class="sec-title">What needs JavaScript</h2>
+          <h2 class="sec-title t2"><span class="t2a">What needs JavaScript?</span><span class="t2b">Most <u class="t2u">effects need none</u>.</span></h2>
           <p class="sec-desc">Most effects need none. Three things are different, and each one is optional.</p>
         </div>
         <div class="j-grid">
@@ -520,7 +557,41 @@ module.exports.fragments = function fragments({ S, esc }) {
         <p class="needs-foot">Physics effects use CSS <code>linear()</code> (Chrome 113+, Safari 17.2+, Firefox 112+); older browsers get an approximation. <a href="docs.html#js-needs">Full table in the docs</a></p>
       </div>
     </section>`;
-  return { home, docs, why, how, js: jsSection };
+
+  const { glyph } = require("./icons");
+  const sparkle = (cls) => `<svg class="${cls}" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 2.5v19M2.5 12h19M5.3 5.3l13.4 13.4M18.7 5.3 5.3 18.7"/></svg>`;
+  /* x = offset from the centre in px, y = top in px, s = size, r = tilt, d = bob seconds, l = bob delay, k = parallax depth (spec: .reanimate/motvin-hero/spec.md) */
+  const FLOATS = [
+    { x: -594, y: 184, s: 51, kind: "spark", d: 4.6, l: -1.2, k: 0.6, tone: "brand" },
+    { x: -499, y: 144, s: 72, kind: "tile", g: ["text", "quick", "theme"], r: -12, d: 6.0, l: -2.4, k: 1.1, tone: "white" },
+    { x: -585, y: 244, s: 97, kind: "tile", g: ["cards", "inputs", "buttons"], r: -12, d: 5.2, l: -0.6, k: 1.5, tone: "brand" },
+    { x: -503, y: 248, s: 56, kind: "line", g: "target", d: 5.4, l: -3.0, k: 0.8, tone: "brand" },
+    { x: 447, y: 140, s: 81, kind: "tile", g: ["loaders", "scroll", "interactive"], r: 15, d: 5.4, l: -0.8, k: 1.3, tone: "ink" },
+    { x: 548, y: 281, s: 58, kind: "tile", g: ["a11y", "frameworks", "js"], r: -10, d: 4.8, l: -1.9, k: 1.0, tone: "white" },
+    { x: 548, y: 195, s: 42, kind: "spark", d: 6.2, l: -3.4, k: 0.6, tone: "deep" },
+    { x: 472, y: 281, s: 38, kind: "line", g: "sliders", d: 5.8, l: -2.6, k: 0.8, tone: "brand" },
+  ];
+  const heroFloats = FLOATS.map((f) => {
+    const inner = f.kind === "tile"
+      ? f.g.map((g, i) => `<span class="hf-g${i === 0 ? " is-on" : ""}">${glyph(g, "f")}</span>`).join("")
+      : f.kind === "spark" ? sparkle("hf-spark") : glyph(f.g, "s", "hf-line");
+    return `<span class="hf hf-${f.kind} tone-${f.tone}" data-depth="${f.k}" style="--x:${f.x}px;--y:${f.y}px;--s:${f.s}px;--r:${f.r || 0}deg;--d:${f.d}s;--l:${f.l}s"><span class="hf-d"><span class="hf-e"><span class="hf-in">${inner}</span></span></span></span>`;
+  }).join("");
+
+  const CTA_GLYPHS = ["text", "buttons", "inputs", "cards", "loaders", "scroll", "interactive"];
+  const CTA = [[59, -9, 0, "white"], [57, -6, -0.7, "brand"], [55, -3, -1.4, "white"], [52, 0, -2.1, "ink"], [55, 3, -2.8, "white"], [57, 6, -3.5, "brand"], [59, 9, -4.2, "white"]];
+  const ctaTiles = CTA.map(([sz, r, dl, tone], i) => `<span class="cta2-tile tone-${tone}" style="--s:${sz}px;--r:${r}deg;--l:${dl}s">${glyph(CTA_GLYPHS[i], "f")}</span>`).join("");
+  const arrowR = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>';
+  const cta = `<section class="cta2" id="start" aria-labelledby="cta2-title">
+      <div class="cta2-tiles" aria-hidden="true">${ctaTiles}</div>
+      <h2 id="cta2-title" class="cta2-title">Add motion that ships</h2>
+      <p class="cta2-text">Start from ${total} ready-made animations instead of a blank keyframe. Free, open source and MIT licensed.</p>
+      <div class="cta2-btns">
+        <a class="cta2-primary" href="#gallery">Browse the animations</a>
+        <a class="cta2-soft" href="docs.html">Read the docs ${arrowR}</a>
+      </div>
+    </section>`;
+  return { home, docs, why, how, js: jsSection, heroFloats, cta };
 };
 
 module.exports.MCP_PKG = MCP_PKG;

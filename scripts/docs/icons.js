@@ -117,4 +117,19 @@ function icon(key, extra = "") {
   return `<span class="ic${extra ? " " + extra : ""}">${open} class="ic-s">${d.s}</svg>${open} class="ic-f">${d.f}</svg></span>`;
 }
 
-module.exports = { icon, I };
+/** One bare glyph (no tile): mode "f" is the filled drawing, "s" the outline. */
+function glyph(key, mode = "f", cls = "") {
+  const d = I[key] || I.all;
+  const body = mode === "s" ? d.s : d.f;
+  const attrs = mode === "s" ? 'fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"' : 'fill="currentColor" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round"';
+  return '<svg class="' + cls + '" viewBox="0 0 24 24" aria-hidden="true" focusable="false" ' + attrs + ' style="--ic-cut:var(--hf-cut,#fff)">' + body + "</svg>";
+}
+
+/** Bare outline/filled pair for sidebar rows (no tile): cross-fades on hover like icon(). */
+function sbIcon(key) {
+  const d = I[key] || I.all;
+  const o = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"';
+  return '<span class="sbi">' + o + ' class="ic-s">' + d.s + '</svg>' + o + ' class="ic-f">' + d.f + '</svg></span>';
+}
+
+module.exports = { icon, glyph, sbIcon, I };

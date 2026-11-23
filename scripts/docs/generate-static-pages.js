@@ -620,6 +620,8 @@ patchIndex();
   patchMarked("index.html", "WHY", frag.why);
   patchMarked("index.html", "HOW", frag.how);
   patchMarked("index.html", "JS", frag.js);
+  patchMarked("index.html", "HERO-FLOATS", frag.heroFloats);
+  patchMarked("index.html", "CTA", frag.cta);
   patchMarked("docs.html", "MCP-DOC", frag.docs);
 }
 write("assets/pages.css", PAGES_CSS);

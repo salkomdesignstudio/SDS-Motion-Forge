@@ -59,12 +59,15 @@ function headerHtml() {
     item("/docs.html#theming", "theme", "Theming", "Colour and speed with CSS variables"),
     item("/docs.html#a11y", "a11y", "Accessibility", "Reduced motion, checked on every build"),
   ].join("");
-  const resItems = [
-    item("/mcp/", "mcp", "Motion Forge MCP", "Connect your AI tools", "New"),
-    item("/mcp/clients/", "clients", "Connect your tool", "Claude, Cursor, VS Code and more"),
-    item("/llms.txt", "llms", "llms.txt", "A plain summary for AI assistants"),
-    item(`${REPO}/blob/main/CHANGELOG.md`, "log", "Changelog", "What changed in each release"),
-  ].join("");
+  const feat = `<a class="sh-feat" href="/mcp/">${ico("mcp")}<span class="sh-txt"><b>Motion Forge MCP <span class="sh-new">New</span></b><small>Connect your AI tools</small></span><span class="sh-avs" aria-hidden="true"><i>Cl</i><i>Cu</i><i>VS</i><i>Ws</i><i>Zd</i><i>Cx</i><i>+6</i></span></a>`;
+  const resItems =
+    feat +
+    [
+      item("/mcp/clients/", "clients", "Connect your tool", "Claude, Cursor, VS Code and more"),
+      item("/llms.txt", "llms", "llms.txt", "A plain summary for AI assistants"),
+      item(`${REPO}/blob/main/CHANGELOG.md`, "log", "Changelog", "What changed in each release"),
+    ].join("");
+
   const flat = (list) => list.map(([h, t, n]) => `<a href="${h}">${t}${n !== undefined ? `<span>${n}</span>` : ""}</a>`).join("");
   const drawer = [
     '<a href="/#why">Features</a>',

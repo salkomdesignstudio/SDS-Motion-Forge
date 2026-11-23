@@ -339,18 +339,6 @@
       .faq-item code { padding: 2px 7px; border-radius: 8px; background: var(--bg-2); font-size: 13px; }
 
       /* closing call to action */
-      .cta-band { padding: 16px 0 64px; }
-      .cta-box { position: relative; overflow: hidden; padding: 72px 32px; text-align: center; background: #1e1b4b; color: #fff; border-radius: var(--r-2xl); }
-      .cta-box::before { content: ""; position: absolute; inset: 0; background: radial-gradient(60% 80% at 50% 0%, rgba(135, 79, 255, 0.35), transparent 70%); pointer-events: none; }
-      .cta-box > * { position: relative; }
-      .cta-box h2 { font-size: clamp(32px, 4.6vw, 56px); margin-bottom: 14px; }
-      .cta-box p { color: rgba(255, 255, 255, 0.72); margin-bottom: 28px; font-size: 18px; }
-      .cta-install { display: inline-flex; align-items: center; gap: 12px; padding: 10px 10px 10px 22px; border: 1px solid rgba(255, 255, 255, 0.16); border-radius: var(--r-lg); background: rgba(255, 255, 255, 0.06); font: 14.5px var(--f-mono); max-width: 100%; overflow-x: auto; }
-      .cta-install button { display: grid; place-items: center; width: 40px; height: 40px; border: 0; border-radius: var(--r-sm); background: #fff; color: var(--ink); cursor: pointer; flex-shrink: 0; }
-      .cta-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 24px; }
-      .cta-links .btn-ghost { background: transparent; color: #fff; border-color: rgba(255, 255, 255, 0.24); }
-      .cta-links .btn-ghost:hover { background: rgba(255, 255, 255, 0.08); }
-      .cta-links .btn-primary { background: #fff; color: var(--ink); }
 
       /* footer */
       .foot { padding: 0 0 36px; border-top: 1px solid var(--line); }
@@ -432,7 +420,6 @@
                 .modal-copy-primary span { display: none; }
         .modal-copy-primary { width: 42px; padding: 0; justify-content: center; }
         .ctrl-row { grid-template-columns: 70px 1fr 56px; }
-        .cta-box { padding: 48px 20px; }
       }
       @media (prefers-reduced-motion: reduce) {
         html { scroll-behavior: auto; }
@@ -559,7 +546,7 @@
 <a href="/#playground" data-sh-id="playground">Playground</a>
 <div class="sh-dd"><button type="button" class="sh-btn" aria-expanded="false" aria-haspopup="true" aria-controls="shMenuDocs">Docs <svg class="sh-caret" viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="sh-menu" id="shMenuDocs"><a href="/mcp/"><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><rect x="4" y="4" width="16" height="6" rx="2"/><rect x="4" y="14" width="16" height="6" rx="2"/><path d="M8 7h.01M8 17h.01"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path fill-rule="evenodd" d="M6.5 3.5h11A2.5 2.5 0 0 1 20 6v2a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 8V6a2.5 2.5 0 0 1 2.5-2.5zM8 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2zM6.5 13.5h11A2.5 2.5 0 0 1 20 16v2a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 18v-2a2.5 2.5 0 0 1 2.5-2.5zM8 16a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg></span><span class="sh-txt"><b>MCP for AI tools <span class="sh-new">New</span></b><small>Let your AI search and place animations</small></span></a><a href="/docs.html#install"><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path d="M12 2.5a1.5 1.5 0 0 1 1.5 1.5v8.4l2.4-2.4a1.5 1.5 0 0 1 2.1 2.1l-4.9 4.9a1.6 1.6 0 0 1-2.2 0L6 12.1a1.5 1.5 0 0 1 2.1-2.1l2.4 2.4V4A1.5 1.5 0 0 1 12 2.5zM5 18.5h14a1.5 1.5 0 0 1 0 3H5a1.5 1.5 0 0 1 0-3z"/></svg></span><span class="sh-txt"><b>Installation</b><small>CDN, npm and per-category imports</small></span></a><a href="/docs.html#quickstart"><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="M13 3 5 13h6l-1 8 8-10h-6z"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path d="M13 3 5 13h6l-1 8 8-10h-6z" stroke-linejoin="round"/></svg></span><span class="sh-txt"><b>Quick start</b><small>Your first animation</small></span></a><a href="/docs.html#frameworks"><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="m12 4 8 4-8 4-8-4zM4 12l8 4 8-4M4 16l8 4 8-4"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path d="m12 3.5 8.5 4.3L12 12 3.5 7.8z"/><path d="M4 11.9l8 4 8-4M4 15.9l8 4 8-4" fill="none" stroke-width="2.2"/></svg></span><span class="sh-txt"><b>Framework guides</b><small>React, Vue, Angular, Svelte, Tailwind</small></span></a><a href="/docs.html#js-needs"><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="M9 8 5 12l4 4M15 8l4 4-4 4"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path d="M9 7.5 4.8 12 9 16.5M15 7.5l4.2 4.5L15 16.5" fill="none" stroke-width="3"/></svg></span><span class="sh-txt"><b>What needs JavaScript</b><small>Scripts and browser support</small></span></a><a href="/docs.html#theming"><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><circle cx="12" cy="12" r="8"/><path d="M12 4v16M12 12h8"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path d="M12 3a9 9 0 0 0 0 18z"/><circle cx="12" cy="12" r="8.2" fill="none" stroke-width="1.6"/></svg></span><span class="sh-txt"><b>Theming</b><small>Colour and speed with CSS variables</small></span></a><a href="/docs.html#a11y"><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><circle cx="12" cy="6" r="2"/><path d="M5 9l7 2 7-2M12 11v4m-3 5 3-5 3 5"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><circle cx="12" cy="5.5" r="2.6"/><path d="M4.6 8.6a1.2 1.2 0 0 1 1.4-.9L12 9.2l6-1.5a1.2 1.2 0 0 1 .7 2.3L14 11.2v3.4l2.2 5a1.2 1.2 0 0 1-2.2.9L12 16.6 10 20.5a1.2 1.2 0 0 1-2.2-.9l2.2-5v-3.4l-4.7-1.2a1.2 1.2 0 0 1-.7-1z"/></svg></span><span class="sh-txt"><b>Accessibility</b><small>Reduced motion, checked on every build</small></span></a></div></div>
 <a href="/builder.html">Builder</a>
-<div class="sh-dd"><button type="button" class="sh-btn" aria-expanded="false" aria-haspopup="true" aria-controls="shMenuRes">Resources <svg class="sh-caret" viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="sh-menu" id="shMenuRes"><a href="/mcp/"><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><rect x="4" y="4" width="16" height="6" rx="2"/><rect x="4" y="14" width="16" height="6" rx="2"/><path d="M8 7h.01M8 17h.01"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path fill-rule="evenodd" d="M6.5 3.5h11A2.5 2.5 0 0 1 20 6v2a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 8V6a2.5 2.5 0 0 1 2.5-2.5zM8 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2zM6.5 13.5h11A2.5 2.5 0 0 1 20 16v2a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 18v-2a2.5 2.5 0 0 1 2.5-2.5zM8 16a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg></span><span class="sh-txt"><b>Motion Forge MCP <span class="sh-new">New</span></b><small>Connect your AI tools</small></span></a><a href="/mcp/clients/"><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="M9 7 4 12l5 5M15 7l5 5-5 5"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path d="M9 7 4 12l5 5M15 7l5 5-5 5" fill="none" stroke-width="3"/></svg></span><span class="sh-txt"><b>Connect your tool</b><small>Claude, Cursor, VS Code and more</small></span></a><a href="/llms.txt"><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="M6 4h9l3 3v13H6zM9 12h6M9 16h6"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path fill-rule="evenodd" d="M7 3h7l5 5v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm1.5 9a.9.9 0 0 0 0 1.8h7a.9.9 0 0 0 0-1.8zm0 3.6a.9.9 0 0 0 0 1.8h7a.9.9 0 0 0 0-1.8z"/></svg></span><span class="sh-txt"><b>llms.txt</b><small>A plain summary for AI assistants</small></span></a><a href="https://github.com/salkomdesignstudio/SDS-Motion-Forge/blob/main/CHANGELOG.md"><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="M12 7v5l3 2M4 12a8 8 0 1 0 2.4-5.7M4 4v4h4"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path fill-rule="evenodd" d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zm.9 4.5a.9.9 0 0 0-1.8 0V12c0 .3.2.6.4.8l2.8 1.8a.9.9 0 0 0 1-1.5l-2.4-1.5z"/></svg></span><span class="sh-txt"><b>Changelog</b><small>What changed in each release</small></span></a></div></div>
+<div class="sh-dd"><button type="button" class="sh-btn" aria-expanded="false" aria-haspopup="true" aria-controls="shMenuRes">Resources <svg class="sh-caret" viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="sh-menu" id="shMenuRes"><a class="sh-feat" href="/mcp/"><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><rect x="4" y="4" width="16" height="6" rx="2"/><rect x="4" y="14" width="16" height="6" rx="2"/><path d="M8 7h.01M8 17h.01"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path fill-rule="evenodd" d="M6.5 3.5h11A2.5 2.5 0 0 1 20 6v2a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 8V6a2.5 2.5 0 0 1 2.5-2.5zM8 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2zM6.5 13.5h11A2.5 2.5 0 0 1 20 16v2a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 18v-2a2.5 2.5 0 0 1 2.5-2.5zM8 16a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg></span><span class="sh-txt"><b>Motion Forge MCP <span class="sh-new">New</span></b><small>Connect your AI tools</small></span><span class="sh-avs" aria-hidden="true"><i>Cl</i><i>Cu</i><i>VS</i><i>Ws</i><i>Zd</i><i>Cx</i><i>+6</i></span></a><a href="/mcp/clients/"><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="M9 7 4 12l5 5M15 7l5 5-5 5"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path d="M9 7 4 12l5 5M15 7l5 5-5 5" fill="none" stroke-width="3"/></svg></span><span class="sh-txt"><b>Connect your tool</b><small>Claude, Cursor, VS Code and more</small></span></a><a href="/llms.txt"><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="M6 4h9l3 3v13H6zM9 12h6M9 16h6"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path fill-rule="evenodd" d="M7 3h7l5 5v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm1.5 9a.9.9 0 0 0 0 1.8h7a.9.9 0 0 0 0-1.8zm0 3.6a.9.9 0 0 0 0 1.8h7a.9.9 0 0 0 0-1.8z"/></svg></span><span class="sh-txt"><b>llms.txt</b><small>A plain summary for AI assistants</small></span></a><a href="https://github.com/salkomdesignstudio/SDS-Motion-Forge/blob/main/CHANGELOG.md"><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="M12 7v5l3 2M4 12a8 8 0 1 0 2.4-5.7M4 4v4h4"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path fill-rule="evenodd" d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zm.9 4.5a.9.9 0 0 0-1.8 0V12c0 .3.2.6.4.8l2.8 1.8a.9.9 0 0 0 1-1.5l-2.4-1.5z"/></svg></span><span class="sh-txt"><b>Changelog</b><small>What changed in each release</small></span></a></div></div>
 </nav>
 <div class="sh-actions">
 <a class="sh-icon" href="https://github.com/salkomdesignstudio/SDS-Motion-Forge" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.42-2.7 5.4-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg></a>
@@ -576,11 +563,16 @@
     <!-- HERO -->
     <section class="hero" id="home" aria-labelledby="hero-title">
       <div class="hero-grid" id="heroGrid" aria-hidden="true"></div>
+      <div class="hero-floats" aria-hidden="true">
+      <!-- HERO-FLOATS:START (generated: scripts/docs/generate-static-pages.js) -->
+<span class="hf hf-spark tone-brand" data-depth="0.6" style="--x:-594px;--y:184px;--s:51px;--r:0deg;--d:4.6s;--l:-1.2s"><span class="hf-d"><span class="hf-e"><span class="hf-in"><svg class="hf-spark" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 2.5v19M2.5 12h19M5.3 5.3l13.4 13.4M18.7 5.3 5.3 18.7"/></svg></span></span></span></span><span class="hf hf-tile tone-white" data-depth="1.1" style="--x:-499px;--y:144px;--s:72px;--r:-12deg;--d:6s;--l:-2.4s"><span class="hf-d"><span class="hf-e"><span class="hf-in"><span class="hf-g is-on"><svg class="" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" style="--ic-cut:var(--hf-cut,#fff)"><path fill-rule="evenodd" d="M9.1 5.2a1 1 0 0 1 1.8 0l5 12a1.2 1.2 0 0 1-2.2.9L13.5 16h-7l-1.2 2.1a1.2 1.2 0 0 1-2.2-.9zM10 8.8 7.6 13.8h4.8z"/><path d="M17.8 8.5h2.4a.9.9 0 0 1 0 1.8h-.5v7.2a.9.9 0 0 1-1.8 0v-7.2h-.1a.9.9 0 0 1 0-1.8z"/></svg></span><span class="hf-g"><svg class="" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" style="--ic-cut:var(--hf-cut,#fff)"><path d="M13 3 5 13h6l-1 8 8-10h-6z" stroke-linejoin="round"/></svg></span><span class="hf-g"><svg class="" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" style="--ic-cut:var(--hf-cut,#fff)"><path d="M12 3a9 9 0 0 0 0 18z"/><circle cx="12" cy="12" r="8.2" fill="none" stroke-width="1.6"/></svg></span></span></span></span></span><span class="hf hf-tile tone-brand" data-depth="1.5" style="--x:-585px;--y:244px;--s:97px;--r:-12deg;--d:5.2s;--l:-0.6s"><span class="hf-d"><span class="hf-e"><span class="hf-in"><span class="hf-g is-on"><svg class="" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" style="--ic-cut:var(--hf-cut,#fff)"><rect x="3.5" y="4.5" width="13" height="13" rx="3.5"/><path d="M8 19h10.5a1 1 0 0 0 1-1V9.5a1 1 0 0 1 2 0V18a3 3 0 0 1-3 3H8a1 1 0 0 1 0-2z"/></svg></span><span class="hf-g"><svg class="" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" style="--ic-cut:var(--hf-cut,#fff)"><path fill-rule="evenodd" d="M6 6h12a3.5 3.5 0 0 1 3.5 3.5v5A3.5 3.5 0 0 1 18 18H6a3.5 3.5 0 0 1-3.5-3.5v-5A3.5 3.5 0 0 1 6 6zM8 9.6h1.6v4.8H8z"/></svg></span><span class="hf-g"><svg class="" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" style="--ic-cut:var(--hf-cut,#fff)"><path fill-rule="evenodd" d="M7.5 7h9a5 5 0 0 1 0 10h-9a5 5 0 0 1 0-10zM8 11.2h8v1.6H8z"/></svg></span></span></span></span></span><span class="hf hf-line tone-brand" data-depth="0.8" style="--x:-503px;--y:248px;--s:56px;--r:0deg;--d:5.4s;--l:-3s"><span class="hf-d"><span class="hf-e"><span class="hf-in"><svg class="hf-line" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="--ic-cut:var(--hf-cut,#fff)"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4"/></svg></span></span></span></span><span class="hf hf-tile tone-ink" data-depth="1.3" style="--x:447px;--y:140px;--s:81px;--r:15deg;--d:5.4s;--l:-0.8s"><span class="hf-d"><span class="hf-e"><span class="hf-in"><span class="hf-g is-on"><svg class="" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" style="--ic-cut:var(--hf-cut,#fff)"><path d="M12 3a9 9 0 1 0 9 9h-3a6 6 0 1 1-6-6z"/></svg></span><span class="hf-g"><svg class="" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" style="--ic-cut:var(--hf-cut,#fff)"><path d="M12 3a1.5 1.5 0 0 1 1.5 1.5v9.4l2.4-2.4a1.5 1.5 0 1 1 2.1 2.1l-5 5a1.5 1.5 0 0 1-2.1 0l-5-5a1.5 1.5 0 1 1 2.1-2.1l2.5 2.4V4.5A1.5 1.5 0 0 1 12 3z"/></svg></span><span class="hf-g"><svg class="" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" style="--ic-cut:var(--hf-cut,#fff)"><path d="M6 4 18 11l-5 1.5L11 18z" stroke-linejoin="round"/></svg></span></span></span></span></span><span class="hf hf-tile tone-white" data-depth="1" style="--x:548px;--y:281px;--s:58px;--r:-10deg;--d:4.8s;--l:-1.9s"><span class="hf-d"><span class="hf-e"><span class="hf-in"><span class="hf-g is-on"><svg class="" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" style="--ic-cut:var(--hf-cut,#fff)"><circle cx="12" cy="5.5" r="2.6"/><path d="M4.6 8.6a1.2 1.2 0 0 1 1.4-.9L12 9.2l6-1.5a1.2 1.2 0 0 1 .7 2.3L14 11.2v3.4l2.2 5a1.2 1.2 0 0 1-2.2.9L12 16.6 10 20.5a1.2 1.2 0 0 1-2.2-.9l2.2-5v-3.4l-4.7-1.2a1.2 1.2 0 0 1-.7-1z"/></svg></span><span class="hf-g"><svg class="" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" style="--ic-cut:var(--hf-cut,#fff)"><path d="m12 3.5 8.5 4.3L12 12 3.5 7.8z"/><path d="M4 11.9l8 4 8-4M4 15.9l8 4 8-4" fill="none" stroke-width="2.2"/></svg></span><span class="hf-g"><svg class="" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" style="--ic-cut:var(--hf-cut,#fff)"><path d="M9 7.5 4.8 12 9 16.5M15 7.5l4.2 4.5L15 16.5" fill="none" stroke-width="3"/></svg></span></span></span></span></span><span class="hf hf-spark tone-deep" data-depth="0.6" style="--x:548px;--y:195px;--s:42px;--r:0deg;--d:6.2s;--l:-3.4s"><span class="hf-d"><span class="hf-e"><span class="hf-in"><svg class="hf-spark" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 2.5v19M2.5 12h19M5.3 5.3l13.4 13.4M18.7 5.3 5.3 18.7"/></svg></span></span></span></span><span class="hf hf-line tone-brand" data-depth="0.8" style="--x:472px;--y:281px;--s:38px;--r:0deg;--d:5.8s;--l:-2.6s"><span class="hf-d"><span class="hf-e"><span class="hf-in"><svg class="hf-line" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="--ic-cut:var(--hf-cut,#fff)"><path d="M5 7h14M5 17h14"/><circle cx="9" cy="7" r="2.2"/><circle cx="15" cy="17" r="2.2"/></svg></span></span></span></span>
+    <!-- HERO-FLOATS:END -->
+      </div>
       <div class="wrap hero-center">
-        <a class="announce" href="#physics"><b>New</b> 13 physics text effects <i class="ri-arrow-right-line" aria-hidden="true"></i></a>
+        <a class="announce" href="#physics"><b>New</b><span>13 physics text effects</span><i class="ann-dot" aria-hidden="true"></i><em>Explore <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></em></a>
         <h1 class="hero-h1" id="hero-title">
-          <span class="hero-word sds-velvet-drop">Motion</span> at the
-          <span class="serif">speed</span> of class
+          <span class="hl"><span class="hw hero-word sds-velvet-drop">Motion</span> at the</span>
+          <span class="hl"><span class="hw is-on">speed</span> of <span class="hw">class</span></span>
         </h1>
         <p class="hero-sub">
           617 CSS animations in six categories. Add one class name and the
@@ -589,6 +581,7 @@
         <div class="hero-cta">
           <a href="#gallery" class="btn btn-primary"><i class="ri-gallery-fill" aria-hidden="true"></i> Browse the animations</a>
           <a href="docs.html" class="btn btn-ghost"><i class="ri-book-open-line" aria-hidden="true"></i> Read the docs</a>
+          <div class="hero-stat"><b>617</b><span>animations<br />43.8 KB gzip, MIT</span></div>
         </div>
         <div class="hero-install" role="group" aria-label="Install command">
           <span class="hero-install-label">npm</span>
@@ -664,7 +657,7 @@
       <div class="wrap">
         <div class="sec-head" data-reveal="up">
           <span class="eyebrow">How it works</span>
-          <h2 class="sec-title">Three steps, no setup</h2>
+          <h2 class="sec-title t2"><span class="t2a">Three steps.</span><span class="t2b"><u class="t2u">No setup</u>.</span></h2>
           <p class="sec-desc">Load the stylesheet once. Add a class. Tune it if you want to.</p>
         </div>
         <ol class="m-stepper" data-reveal="up">
@@ -689,7 +682,7 @@
       <div class="wrap">
         <div class="sec-head" data-reveal="up">
           <span class="eyebrow">Plain answer</span>
-          <h2 class="sec-title">What needs JavaScript</h2>
+          <h2 class="sec-title t2"><span class="t2a">What needs JavaScript?</span><span class="t2b">Most <u class="t2u">effects need none</u>.</span></h2>
           <p class="sec-desc">Most effects need none. Three things are different, and each one is optional.</p>
         </div>
         <div class="j-grid">
@@ -733,7 +726,7 @@
       <div class="wrap">
         <div class="sec-head" data-reveal="up">
           <span class="eyebrow">Features</span>
-          <h2 class="sec-title">Built to ship, not to demo</h2>
+          <h2 class="sec-title t2"><span class="t2a">Built to ship.</span><span class="t2b">Not to <u class="t2u">demo</u>.</span></h2>
           <p class="sec-desc">A focused motion system for teams who want character without the weight. Everything below is checked by the build.</p>
         </div>
         <div class="w-grid">
@@ -789,7 +782,7 @@
       <div class="wrap">
         <div class="sec-head phys-head" data-reveal="up">
           <span class="eyebrow">New in 5.1</span>
-          <h2 class="sec-title">Thirteen physics text effects</h2>
+          <h2 class="sec-title t2"><span class="t2a">Thirteen text effects.</span><span class="t2b">Driven by <u class="t2u">real physics</u>.</span></h2>
           <p class="sec-desc">Driven by real equations, not hand-tuned curves. Each equation is sampled into a CSS <code>linear()</code> easing and checked against its closed-form solution on every build.</p>
           <ul class="phys-eq" aria-label="Physical models used">
             <li>Spring</li><li>Bouncing ball</li><li>Pendulum</li><li>Buoyancy against drag</li><li>Drag-limited gust</li><li>Inverse-square infall</li>
@@ -855,7 +848,7 @@
       <div class="wrap">
         <div class="sec-head" data-reveal="up">
           <span class="eyebrow">Playground</span>
-          <h2 class="sec-title">Build it, see it, copy it</h2>
+          <h2 class="sec-title t2"><span class="t2a">Build it. See it.</span><span class="t2b"><u class="t2u">Copy it</u>.</span></h2>
           <p class="sec-desc">Pick any of the 617 effects. Each one is shown with the markup it needs. Add speed, delay or loop, then copy code that is ready to paste.</p>
         </div>
         <div class="pgx" data-reveal="up" data-delay="1">
@@ -890,7 +883,7 @@
       <div class="wrap">
         <div class="sec-head" data-reveal="up">
           <span class="eyebrow">Ways to use it</span>
-          <h2 class="sec-title">Use it your way</h2>
+          <h2 class="sec-title t2"><span class="t2a">Use it your way.</span><span class="t2b">CDN, npm or <u class="t2u">your AI tool</u>.</span></h2>
           <p class="sec-desc">One stylesheet link, an npm import, or your AI tool. All of them use the same 617 animations.</p>
         </div>
         <div class="m-ai m-spot" data-reveal="up">
@@ -908,7 +901,7 @@
       <div class="wrap">
         <div class="sec-head" data-reveal="up">
           <span class="eyebrow">Documentation</span>
-          <h2 class="sec-title">Everything you need to ship</h2>
+          <h2 class="sec-title t2"><span class="t2a">Everything you need.</span><span class="t2b">Ready to <u class="t2u">ship</u>.</span></h2>
           <p class="sec-desc">Installation, the full animation reference, the optional scripts, TypeScript types, theming and accessibility.</p>
         </div>
         <div class="docs-card-grid" data-reveal="up">
@@ -974,22 +967,17 @@
     <!-- FAQ:END -->
 
     <!-- CTA -->
-    <div class="cta-band">
-      <div class="wrap">
-        <div class="cta-box" data-reveal="scale">
-          <h2>Start animating in a minute</h2>
-          <p>Free, open source and MIT licensed. No build step for the CSS effects.</p>
-          <div class="cta-install">
-            <code>npm i @salkomdesignstudio/sds-motion-forge</code>
-            <button type="button" onclick="copyInstall(this)" aria-label="Copy install command"><i class="ri-file-copy-fill" id="installIcon"></i></button>
-          </div>
-          <div class="cta-links">
-            <a href="#gallery" class="btn btn-primary">Browse the animations</a>
-            <a href="docs.html" class="btn btn-ghost">Read the docs</a>
-          </div>
-        </div>
+    <!-- CTA:START (generated: scripts/docs/generate-static-pages.js) -->
+<section class="cta2" id="start" aria-labelledby="cta2-title">
+      <div class="cta2-tiles" aria-hidden="true"><span class="cta2-tile tone-white" style="--s:59px;--r:-9deg;--l:0s"><svg class="" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" style="--ic-cut:var(--hf-cut,#fff)"><path fill-rule="evenodd" d="M9.1 5.2a1 1 0 0 1 1.8 0l5 12a1.2 1.2 0 0 1-2.2.9L13.5 16h-7l-1.2 2.1a1.2 1.2 0 0 1-2.2-.9zM10 8.8 7.6 13.8h4.8z"/><path d="M17.8 8.5h2.4a.9.9 0 0 1 0 1.8h-.5v7.2a.9.9 0 0 1-1.8 0v-7.2h-.1a.9.9 0 0 1 0-1.8z"/></svg></span><span class="cta2-tile tone-brand" style="--s:57px;--r:-6deg;--l:-0.7s"><svg class="" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" style="--ic-cut:var(--hf-cut,#fff)"><path fill-rule="evenodd" d="M7.5 7h9a5 5 0 0 1 0 10h-9a5 5 0 0 1 0-10zM8 11.2h8v1.6H8z"/></svg></span><span class="cta2-tile tone-white" style="--s:55px;--r:-3deg;--l:-1.4s"><svg class="" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" style="--ic-cut:var(--hf-cut,#fff)"><path fill-rule="evenodd" d="M6 6h12a3.5 3.5 0 0 1 3.5 3.5v5A3.5 3.5 0 0 1 18 18H6a3.5 3.5 0 0 1-3.5-3.5v-5A3.5 3.5 0 0 1 6 6zM8 9.6h1.6v4.8H8z"/></svg></span><span class="cta2-tile tone-ink" style="--s:52px;--r:0deg;--l:-2.1s"><svg class="" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" style="--ic-cut:var(--hf-cut,#fff)"><rect x="3.5" y="4.5" width="13" height="13" rx="3.5"/><path d="M8 19h10.5a1 1 0 0 0 1-1V9.5a1 1 0 0 1 2 0V18a3 3 0 0 1-3 3H8a1 1 0 0 1 0-2z"/></svg></span><span class="cta2-tile tone-white" style="--s:55px;--r:3deg;--l:-2.8s"><svg class="" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" style="--ic-cut:var(--hf-cut,#fff)"><path d="M12 3a9 9 0 1 0 9 9h-3a6 6 0 1 1-6-6z"/></svg></span><span class="cta2-tile tone-brand" style="--s:57px;--r:6deg;--l:-3.5s"><svg class="" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" style="--ic-cut:var(--hf-cut,#fff)"><path d="M12 3a1.5 1.5 0 0 1 1.5 1.5v9.4l2.4-2.4a1.5 1.5 0 1 1 2.1 2.1l-5 5a1.5 1.5 0 0 1-2.1 0l-5-5a1.5 1.5 0 1 1 2.1-2.1l2.5 2.4V4.5A1.5 1.5 0 0 1 12 3z"/></svg></span><span class="cta2-tile tone-white" style="--s:59px;--r:9deg;--l:-4.2s"><svg class="" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" style="--ic-cut:var(--hf-cut,#fff)"><path d="M6 4 18 11l-5 1.5L11 18z" stroke-linejoin="round"/></svg></span></div>
+      <h2 id="cta2-title" class="cta2-title">Add motion that ships</h2>
+      <p class="cta2-text">Start from 617 ready-made animations instead of a blank keyframe. Free, open source and MIT licensed.</p>
+      <div class="cta2-btns">
+        <a class="cta2-primary" href="#gallery">Browse the animations</a>
+        <a class="cta2-soft" href="docs.html">Read the docs <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
       </div>
-    </div>
+    </section>
+    <!-- CTA:END -->
 
     </main>
 
@@ -2328,6 +2316,74 @@
           var fine = matchMedia("(hover: hover) and (pointer: fine)").matches;
           var nav = document.querySelector(".sh");
           var navH = nav ? nav.offsetHeight : 66;
+
+          /* 0 — Hero and closing band motion. Spec: .reanimate/motvin-hero/spec.md and .reanimate/motvin-cta/spec.md.
+             CSS owns the endless bob (works before any script); GSAP owns what needs sequencing:
+             accent sweep (every 3 s, 800 ms), glyph swap (every 2.5 s, 450 ms), pointer parallax, scroll drift and the CTA entrance. */
+          (function () {
+            var hero = document.getElementById("home");
+            if (hero) {
+              var floats = [].slice.call(hero.querySelectorAll(".hf"));
+              /* accent sweep: the highlighted word moves on every 3 s */
+              var words = [].slice.call(hero.querySelectorAll(".hw"));
+              var on = Math.max(0, words.findIndex(function (w) { return w.classList.contains("is-on"); }));
+              gsap.set(words, { backgroundPositionX: function (i) { return i === on ? "0%" : "100%"; } });
+              if (words.length > 1) {
+                var sweep = function () {
+                  var next = (on + 1) % words.length;
+                  gsap.to(words[on], { backgroundPositionX: "100%", duration: 0.8, ease: "power2.inOut" });
+                  gsap.to(words[next], { backgroundPositionX: "0%", duration: 0.8, ease: "power2.inOut" });
+                  words[on].classList.remove("is-on");
+                  words[next].classList.add("is-on");
+                  on = next;
+                  gsap.delayedCall(3, sweep);
+                };
+                gsap.delayedCall(3, sweep);
+              }
+              /* glyph swap: one tile changes every 2.5 s, 450 ms cross-fade */
+              var tiles = [].slice.call(hero.querySelectorAll(".hf-tile"));
+              gsap.set(hero.querySelectorAll(".hf-g:not(.is-on)"), { autoAlpha: 0, scale: 0.7 });
+              if (tiles.length) {
+                var tick = 0;
+                var swap = function () {
+                  var gs = [].slice.call(tiles[tick % tiles.length].querySelectorAll(".hf-g"));
+                  tick++;
+                  var cur = Math.max(0, gs.findIndex(function (g) { return g.classList.contains("is-on"); }));
+                  var nx = (cur + 1) % gs.length;
+                  gsap.to(gs[cur], { autoAlpha: 0, scale: 0.7, duration: 0.45, ease: "power1.inOut" });
+                  gsap.to(gs[nx], { autoAlpha: 1, scale: 1, duration: 0.45, ease: "power1.inOut" });
+                  gs[cur].classList.remove("is-on");
+                  gs[nx].classList.add("is-on");
+                  gsap.delayedCall(2.5, swap);
+                };
+                gsap.delayedCall(2.5, swap);
+              }
+              /* pointer parallax (depth-weighted) and scroll drift */
+              if (fine && floats.length) {
+                var qs = floats.map(function (f) {
+                  return { qx: gsap.quickTo(f, "x", { duration: 0.9, ease: "power3.out" }), qy: gsap.quickTo(f, "y", { duration: 0.9, ease: "power3.out" }), k: parseFloat(f.getAttribute("data-depth") || "1") };
+                });
+                hero.addEventListener("pointermove", function (e) {
+                  var r = hero.getBoundingClientRect();
+                  var nx = (e.clientX - r.left) / r.width - 0.5, ny = (e.clientY - r.top) / r.height - 0.5;
+                  qs.forEach(function (q) { q.qx(nx * -28 * q.k); q.qy(ny * -20 * q.k); });
+                });
+                hero.addEventListener("pointerleave", function () { qs.forEach(function (q) { q.qx(0); q.qy(0); }); });
+              }
+              floats.forEach(function (f) {
+                gsap.to(f.querySelector(".hf-d"), { y: -90 * parseFloat(f.getAttribute("data-depth") || "1"), ease: "none", scrollTrigger: { trigger: hero, start: "top top", end: "bottom top", scrub: 0.6 } });
+              });
+            }
+
+            /* closing band: tiles pop in like Motvin's lpi-logo-in (opacity 0, rotate -14deg, scale .5), then copy and buttons rise */
+            var cta = document.querySelector(".cta2");
+            if (cta) {
+              var tl = gsap.timeline({ scrollTrigger: { trigger: cta, start: "top 85%", once: true } });
+              tl.from(cta.querySelectorAll(".cta2-tile"), { autoAlpha: 0, rotation: -14, scale: 0.5, duration: 0.6, ease: "back.out(1.7)", stagger: 0.07 })
+                .from(cta.querySelectorAll(".cta2-title, .cta2-text, .cta2-btns"), { autoAlpha: 0, y: 24, duration: 0.6, ease: "power3.out", stagger: 0.1 }, "-=0.35");
+            }
+          })();
+
 
           /* 1 — Lenis smooth scroll: desktop wheel only; touch keeps native momentum. */
           var lenis = null;
