@@ -10,6 +10,9 @@
  */
 "use strict";
 
+const { icon } = require("./icons");
+const GROUP_ICON = { Terminal: "terminal", Editors: "clients", "Desktop and web": "globe", Other: "mcp" };
+
 const MCP_PKG = "@salkomdesignstudio/motion-forge-mcp";
 const NPX = `npx -y ${MCP_PKG}`;
 const SERVER = "motion-forge";
@@ -177,12 +180,12 @@ const PROMPTS = [
 ];
 
 const FEATURES = [
-  ["Search animations", "Keyword search across every effect, with filters for category, trigger, looping and pure CSS.", "Show me 5 loading spinners that loop without JavaScript."],
-  ["Get code that works", "Install steps and a ready snippet for HTML, React, Angular or Tailwind, with your duration and delay applied.", "Give me sds-bounce-in-up for React, 400 ms."],
-  ["Match a design", "Hand it a motion spec, or Figma's motion output, and get the closest effects with the reasons for each score.", "Map this Figma interaction to Motion Forge."],
-  ["Compare motion", "See where an implemented animation differs from the design: properties, easing, duration, trigger.", "How far is sds-fade-up from my 300 ms ease-out design?"],
-  ["Tune the timing", "Speed, delay and looping come back as modifier classes or one CSS variable, not a rewrite.", "Make that animation slower and play it once."],
-  ["Respect reduced motion", "Every snippet comes with the note that the library already honours prefers-reduced-motion.", "Is this animation safe for people who turn motion off?"],
+  ["Search animations", "Keyword search across every effect, with filters for category, trigger, looping and pure CSS.", "Show me 5 loading spinners that loop without JavaScript.", "search"],
+  ["Get code that works", "Install steps and a ready snippet for HTML, React, Angular or Tailwind, with your duration and delay applied.", "Give me sds-bounce-in-up for React, 400 ms.", "js"],
+  ["Match a design", "Hand it a motion spec, or Figma's motion output, and get the closest effects with the reasons for each score.", "Map this Figma interaction to Motion Forge.", "target"],
+  ["Compare motion", "See where an implemented animation differs from the design: properties, easing, duration, trigger.", "How far is sds-fade-up from my 300 ms ease-out design?", "compare"],
+  ["Tune the timing", "Speed, delay and looping come back as modifier classes or one CSS variable, not a rewrite.", "Make that animation slower and play it once.", "sliders"],
+  ["Respect reduced motion", "Every snippet comes with the note that the library already honours prefers-reduced-motion.", "Is this animation safe for people who turn motion off?", "a11y"],
 ];
 
 const FAQ = [
@@ -196,13 +199,13 @@ const FAQ = [
 ];
 
 const WAYS = [
-  ["MCP server", "Let your AI tool search and place animations for you.", "/mcp/", "New"],
-  ["CDN", "One stylesheet link. Nothing to install.", "/docs.html#install", ""],
-  ["npm", "Import the whole library or one category.", "/docs.html#install", ""],
-  ["Framework guides", "React, Angular, Vue, Svelte and Tailwind.", "/docs.html#frameworks", ""],
-  ["Editor autocomplete", "Class-name completion and hover docs in VS Code.", "https://github.com/salkomdesignstudio/SDS-Motion-Forge/tree/main/ide", ""],
-  ["Builder", "Pick an effect, tune it and copy the code.", "/builder.html", ""],
-  ["llms.txt", "A plain summary for AI assistants and crawlers.", "/llms.txt", ""],
+  ["MCP server", "Let your AI tool search and place animations for you.", "/mcp/", "New", "mcp"],
+  ["CDN", "One stylesheet link. Nothing to install.", "/docs.html#install", "", "install"],
+  ["npm", "Import the whole library or one category.", "/docs.html#install", "", "frameworks"],
+  ["Framework guides", "React, Angular, Vue, Svelte and Tailwind.", "/docs.html#frameworks", "", "js"],
+  ["Editor autocomplete", "Class-name completion and hover docs in VS Code.", "https://github.com/salkomdesignstudio/SDS-Motion-Forge/tree/main/ide", "", "clients"],
+  ["Builder", "Pick an effect, tune it and copy the code.", "/builder.html", "", "quick"],
+  ["llms.txt", "A plain summary for AI assistants and crawlers.", "/llms.txt", "", "llms"],
 ];
 
 module.exports = function buildMcpPages({ head, foot, S, config, esc, crumbs, breadcrumbNav }) {
@@ -220,10 +223,10 @@ module.exports = function buildMcpPages({ head, foot, S, config, esc, crumbs, br
   };
   const stepsHtml = (steps) => `<ol class="m-steps">${steps.map((s) => `<li><b>${s.t}</b>${s.p ? `<p>${s.p}</p>` : ""}${s.code ? codeBlock(s.code, s.lang) : ""}</li>`).join("")}</ol>`;
   const arrow = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>';
-  const clientCard = (c) => `<a class="m-client" href="${clientPath(c)}"><span><b>${esc(c.name)}</b><small>${esc(c.blurb)}</small></span>${arrow}</a>`;
+  const clientCard = (c) => `<a class="m-client m-spot" href="${clientPath(c)}">${icon(GROUP_ICON[c.group] || "mcp")}<span><b>${esc(c.name)}</b><small>${esc(c.blurb)}</small></span><span class="m-arrow">${arrow}</span></a>`;
   const faqHtml = (items) => items.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${a}</p></details>`).join("\n");
   const faqLd = (items) => ({ "@type": "FAQPage", mainEntity: items.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a.replace(/<[^>]+>/g, "") } })) });
-  const waysHtml = (items) => `<div class="m-ways">${items.map(([t, d, h, b]) => `<a class="m-way${b ? " is-new" : ""}" href="${h}"><b>${esc(t)}${b ? `<em>${b}</em>` : ""}</b><small>${esc(d)}</small></a>`).join("")}</div>`;
+  const waysHtml = (items) => `<div class="m-ways">${items.map(([t, d, h, b, k]) => `<a class="m-way m-spot${b ? " is-new" : ""}" href="${h}">${icon(k)}<span class="m-way-t"><b>${esc(t)}${b ? `<em>${b}</em>` : ""}</b><small>${esc(d)}</small></span></a>`).join("")}</div>`;
 
   const pages = [];
   const emit = (p, html, md) => pages.push({ p, html, md });
@@ -236,7 +239,7 @@ module.exports = function buildMcpPages({ head, foot, S, config, esc, crumbs, br
     const jsonld = { "@context": "https://schema.org", "@graph": [crumbs([["Home", "/"], ["MCP", p]]), faqLd(FAQ)] };
     const chips = PROMPTS.map((t) => `<button type="button" class="m-chip" data-copy="${esc(t)}">${esc(t)}</button>`).join("");
     const html =
-      head({ title, description, path: p, jsonld, extraCss: ["/mcp.css"], wide: true }) +
+      head({ title, description, path: p, jsonld, extraCss: ["/mcp.css"], extraJs: ["/mcp.js"], wide: true }) +
       `<div class="m-page">
 <section class="m-hero">
 <p class="m-eyebrow"><span class="pill">New</span> Motion Forge MCP</p>
@@ -249,9 +252,9 @@ ${cmdChip(NPX)}
 
 <section class="m-sec" id="setup"><h2>Set up in under a minute</h2><p class="m-lead">Three steps. Your AI tool does most of them for you.</p>
 <div class="m-three">
-<div><span class="m-n">1</span><b>Add the command</b><p>Paste <code>npx -y ${MCP_PKG}</code> into your tool's MCP settings, or run one command.</p></div>
-<div><span class="m-n">2</span><b>Restart your tool</b><p>Motion Forge appears as <b>motion-forge</b> with six tools. No sign-in.</p></div>
-<div><span class="m-n">3</span><b>Ask</b><p>"Find a blur-in heading animation and give me the React code."</p></div>
+<div class="m-spot"><span class="m-n">1</span><b>Add the command</b><p>Paste <code>npx -y ${MCP_PKG}</code> into your tool's MCP settings, or run one command.</p></div>
+<div class="m-spot"><span class="m-n">2</span><b>Restart your tool</b><p>Motion Forge appears as <b>motion-forge</b> with six tools. No sign-in.</p></div>
+<div class="m-spot"><span class="m-n">3</span><b>Ask</b><p>"Find a blur-in heading animation and give me the React code."</p></div>
 </div></section>
 
 <section class="m-sec"><h2>Connect your tool</h2><p class="m-lead">Pick your tool for a step-by-step guide.</p>
@@ -259,7 +262,7 @@ ${GROUPS.slice(0, 3).map((g) => `<h3 class="m-gh">${g}</h3><div class="m-clients
 <p class="m-more"><a href="/mcp/clients/">See all ${CLIENTS.length} guides ${arrow}</a></p></section>
 
 <section class="m-sec"><h2>Ask anything. Get real animations back.</h2>
-<div class="m-feats">${FEATURES.map(([t, d, q]) => `<div class="m-feat"><b>${esc(t)}</b><p>${esc(d)}</p><button type="button" class="m-chip" data-copy="${esc(q)}">${esc(q)}</button></div>`).join("")}</div></section>
+<div class="m-feats">${FEATURES.map(([t, d, q, k]) => `<div class="m-feat m-spot ic-host">${icon(k)}<b>${esc(t)}</b><p>${esc(d)}</p><button type="button" class="m-chip" data-copy="${esc(q)}">${esc(q)}</button></div>`).join("")}</div></section>
 
 <section class="m-sec"><h2>Things people ask</h2><p class="m-lead">Click one to copy it, then paste it into your AI tool.</p><div class="m-chips">${chips}</div></section>
 
@@ -285,7 +288,7 @@ ${GROUPS.slice(0, 3).map((g) => `<h3 class="m-gh">${g}</h3><div class="m-clients
     const description = `Step-by-step Motion Forge MCP setup for ${CLIENTS.map((c) => c.name).slice(0, 6).join(", ")} and more.`;
     const jsonld = { "@context": "https://schema.org", "@graph": [crumbs([["Home", "/"], ["MCP", "/mcp/"], ["Clients", p]])] };
     const html =
-      head({ title, description, path: p, jsonld, extraCss: ["/mcp.css"], wide: true }) +
+      head({ title, description, path: p, jsonld, extraCss: ["/mcp.css"], extraJs: ["/mcp.js"], wide: true }) +
       `<div class="m-page">${breadcrumbNav([["Home", "/"], ["MCP", "/mcp/"], ["Clients", p]])}
 <section class="m-hero m-hero-sm"><h1>Choose your tool</h1>
 <p class="m-sub">Motion Forge works with any AI tool that supports MCP. Pick yours for step-by-step setup. The command is the same for all of them.</p>
@@ -315,7 +318,7 @@ ${GROUPS.map((g) => `<section class="m-sec"><h2>${g}</h2><div class="m-clients">
     const usage = [PROMPTS[0], PROMPTS[1], PROMPTS[4]];
     const sidebar = GROUPS.map((g) => `<p class="m-sbh">${g}</p>${byGroup(g).map((x) => `<a href="${clientPath(x)}"${x.slug === c.slug ? ' aria-current="page"' : ""}>${esc(x.name)}</a>`).join("")}`).join("");
     const html =
-      head({ title, description, path: p, jsonld, extraCss: ["/mcp.css"], wide: true }) +
+      head({ title, description, path: p, jsonld, extraCss: ["/mcp.css"], extraJs: ["/mcp.js"], wide: true }) +
       `<div class="m-page">${breadcrumbNav(crumb)}
 <div class="m-doc">
 <aside class="m-side" aria-label="MCP guides"><a class="m-sidehome" href="/mcp/clients/">All tools</a>${sidebar}</aside>
@@ -352,18 +355,18 @@ module.exports.fragments = function fragments({ S, esc }) {
   const total = S.effects.length;
   const arrow = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>';
   const cmd = `<div class="m-cmd"><code>${esc(NPX)}</code><button type="button" class="m-copy" data-copy="${esc(NPX)}">Copy</button></div>`;
-  const ways = (items) => `<div class="m-ways">${items.map(([t, d, h, b]) => `<a class="m-way${b ? " is-new" : ""}" href="${h}"><b>${esc(t)}${b ? `<em>${b}</em>` : ""}</b><small>${esc(d)}</small></a>`).join("")}</div>`;
+  const ways = (items) => `<div class="m-ways">${items.map(([t, d, h, b, k]) => `<a class="m-way m-spot${b ? " is-new" : ""}" href="${h}">${icon(k)}<span class="m-way-t"><b>${esc(t)}${b ? `<em>${b}</em>` : ""}</b><small>${esc(d)}</small></span></a>`).join("")}</div>`;
   const tools = ["claude-code", "cursor", "vscode", "claude-desktop", "windsurf", "zed", "codex", "antigravity", "devin-desktop"]
     .map((s) => CLIENTS.find((c) => c.slug === s)).map((c) => `<a href="/mcp/clients/${c.slug}/">${esc(c.name)}</a>`).join("");
   const home = `<section class="sec" id="ways">
-      <link rel="stylesheet" href="/mcp.css" />
+      <link rel="stylesheet" href="/mcp.css" /><script src="/mcp.js" defer></script>
       <div class="wrap">
         <div class="sec-head" data-reveal="up">
           <span class="eyebrow">Ways to use it</span>
           <h2 class="sec-title">Use it your way</h2>
           <p class="sec-desc">One stylesheet link, an npm import, or your AI tool. All of them use the same ${total} animations.</p>
         </div>
-        <div class="m-ai" data-reveal="up">
+        <div class="m-ai m-spot" data-reveal="up">
           <div><span class="pill">New</span><h3>Let your AI pick the animation</h3>
           <p>Connect the Motion Forge MCP server to Claude, Cursor, VS Code or any MCP client. Ask for an animation by description, get working code, or hand it a Figma interaction and get the closest match. Free, offline, no API key.</p>${cmd}</div>
           <div><div class="m-ai-tools">${tools}</div><p class="m-more"><a href="/mcp/">How it works ${arrow}</a></p></div>
@@ -372,7 +375,7 @@ module.exports.fragments = function fragments({ S, esc }) {
       </div>
     </section>`;
   const docs = `<section class="doc-sec" id="mcp">
-          <link rel="stylesheet" href="/mcp.css" />
+          <link rel="stylesheet" href="/mcp.css" /><script src="/mcp.js" defer></script>
           <h2 class="doc-sec-title">Use with AI (MCP)</h2>
           <p class="doc-sec-sub">The Motion Forge MCP server lets Claude, Cursor, VS Code and any MCP client search the library, write the code and match a design's motion to an effect. It runs on your machine, needs no account and makes no network calls.</p>
           <h3 class="doc-h3">Add it</h3>

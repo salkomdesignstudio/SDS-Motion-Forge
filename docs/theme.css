@@ -7,21 +7,21 @@
 
 html:root {
   /* docs.html + home tokens */
-  --ink: #141414; --ink-2: #44444a; --ink-3: #6b6b70;
-  --bg: #ffffff; --bg-2: #f3f3f5; --bg-card: #ffffff;
-  --line: #e4e7ec; --line-2: #d9dde4;
+  --ink: #1c1650; --ink-2: #3f3a6b; --ink-3: #5f5a8a;
+  --bg: #ffffff; --bg-2: #f3f1ff; --bg-card: #ffffff;
+  --line: #e1dcfa; --line-2: #d3ccf5;
   --brand: #5c4ae1; --brand-mid: #4a39c9; --brand-dim: rgba(92, 74, 225, 0.08); --brand-glow: rgba(92, 74, 225, 0.25);
   --link: #5c4ae1; --accent: #874fff;
-  --sds-primary: #141414; --sds-primary-glow: rgba(92, 74, 225, 0.28); --sds-primary-dim: rgba(92, 74, 225, 0.1);
+  --sds-primary: #4a39c9; --sds-primary-glow: rgba(92, 74, 225, 0.28); --sds-primary-dim: rgba(92, 74, 225, 0.1);
   --r-sm: 10px; --r-md: 14px; --r-lg: 20px; --r-xl: 28px;
-  --sh-1: 0 1px 2px rgba(11, 13, 24, 0.04);
-  --sh-2: 0 24px 60px rgba(11, 13, 24, 0.12);
+  --sh-1: 0 1px 2px rgba(60, 44, 170, 0.04);
+  --sh-2: 0 24px 60px rgba(60, 44, 170, 0.12);
   --f-disp: "Manrope", Arial, sans-serif;
   --f-head: "Outfit", "Manrope", Arial, sans-serif;
   --f-serif: "Outfit", "Manrope", Arial, sans-serif;
   --nav-h: 78px;
   /* generated pages (pages.css) */
-  --body: #44444a; --muted: #6b6b70; --canvas: #ffffff; --card: #ffffff;
+  --body: #3f3a6b; --muted: #5f5a8a; --canvas: #ffffff; --card: #ffffff;
 }
 
 html { background: var(--bg, #fff); }
@@ -42,8 +42,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 .btn, .nav-btn, button.primary, .btn-primary {
   border-radius: 999px; font-weight: 600;
 }
-.btn-primary, button.primary { background: #141414; color: #fff; border-color: #141414; }
-.btn-primary:hover, button.primary:hover { background: #000; }
+.btn-primary, button.primary { background: linear-gradient(135deg, #4a39c9, #6a4cf0); color: #fff; border-color: transparent; }
+.btn-primary:hover, button.primary:hover { background: linear-gradient(135deg, #3f2fb8, #5b3de0); }
 .btn-ghost { background: #fff; border: 1px solid var(--line); color: var(--ink); }
 
 /* ---- cards, tables, code, details ---- */
@@ -62,7 +62,7 @@ a { text-underline-offset: 3px; }
 
 /* ---- generated effect pages ---- */
 main h1 { letter-spacing: -0.035em; }
-.stage { background: linear-gradient(180deg, #f8f8fa, #f1f1f5); }
+.stage { background: linear-gradient(180deg, #f8f6ff, #efecff); }
 
 @media (max-width: 900px) {
   .nav { width: calc(100% - 20px); padding: 0 10px 0 16px; }
@@ -79,9 +79,9 @@ main h1 { letter-spacing: -0.035em; }
 
 /* ---- docs.html layout: rounded sidebar panel + readable content column ---- */
 .page { max-width: 1360px; margin: 0 auto; gap: 28px; padding: calc(var(--nav-h) + 8px) 20px 0; grid-template-columns: 272px minmax(0, 1fr); }
-.sidebar { position: sticky; top: calc(var(--nav-h) + 8px); height: calc(100vh - var(--nav-h) - 28px); padding: 16px 12px; background: var(--panel, #f7f7f9); border: 1px solid var(--line); border-right: 1px solid var(--line); border-radius: var(--r-xl, 28px); }
+.sidebar { position: sticky; top: calc(var(--nav-h) + 8px); height: calc(100vh - var(--nav-h) - 28px); padding: 16px 12px; background: var(--panel, #f6f4ff); border: 1px solid var(--line); border-right: 1px solid var(--line); border-radius: var(--r-xl, 28px); }
 .sb-link { border-radius: 999px; }
-.sb-link.active { background: #141414; color: #fff; }
+.sb-link.active { background: linear-gradient(135deg, #4a39c9, #6a4cf0); color: #fff; }
 .sb-link.active .sb-count { background: rgba(255, 255, 255, 0.18); color: #fff; }
 .sb-count { border-radius: 999px; }
 .content { max-width: 900px; padding: 40px 12px 120px; }
@@ -93,7 +93,7 @@ main h1 { letter-spacing: -0.035em; }
 .fw-tabs { border-radius: 999px; }
 .fw-tab { border-radius: 999px; }
 .doc-table { border: 1px solid var(--line); border-collapse: separate; border-spacing: 0; border-radius: 20px; overflow: hidden; }
-.doc-table th { background: var(--panel, #f7f7f9); }
+.doc-table th { background: var(--panel, #f6f4ff); }
 @media (max-width: 900px) {
   .page { padding: calc(var(--nav-h) + 4px) 12px 0; grid-template-columns: minmax(0, 1fr); gap: 12px; }
   .sidebar { position: static; height: auto; border-radius: 999px; padding: 8px 10px; }
