@@ -180,3 +180,34 @@
   .m-spot, .m-client, .m-way, .m-chip, .m-copy, .m-cmd, .m-deep, .m-page .btn2, .m-pager a, .m-arrow, .m-n, .m-steps > li::before, .m-ai-tools a, .m-faq summary::after, .m-badges li { transition: none; animation: none !important; }
   .m-spot:hover, .m-chip:hover, .m-pager a:hover, .m-ai-tools a:hover, .m-page .btn2:hover, .m-deep:hover, .m-client:hover .m-arrow { transform: none; }
 }
+
+/* ── stepper: connected step cards with a live preview row ─────────────────── */
+.m-stepper { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin: 0; padding: 0; list-style: none; }
+.m-step { position: relative; display: flex; flex-direction: column; gap: 10px; padding: 24px; border: 1px solid var(--m-line); border-radius: 24px; background: #fff; transition: transform 0.3s var(--m-ease), border-color 0.25s, box-shadow 0.3s; }
+.m-step:hover { transform: translateY(-2px); border-color: var(--m-brand); box-shadow: 0 8px 24px rgba(30, 27, 75, 0.08); }
+.m-step:not(:last-child)::after { content: ""; position: absolute; top: 46px; right: -21px; width: 20px; border-top: 2px dashed var(--m-line2); }
+.m-step-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+.m-step-n { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--m-brand); color: #fff; font: 700 15px "Manrope", Arial, sans-serif; transition: transform 0.3s var(--m-pop); }
+.m-step:hover .m-step-n { transform: scale(1.12); }
+.m-step h3 { margin: 0; font-size: 20px; line-height: 1.2; }
+.m-step p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--m-ink2); }
+.m-mini { display: flex; align-items: center; gap: 10px; min-height: 52px; margin-top: auto; padding: 8px 8px 8px 14px; border: 1px solid var(--m-line); border-radius: 16px; background: var(--m-tint); font-size: 13px; }
+.m-step > p { margin-bottom: 12px; }
+.m-mini code { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; background: none; border: 0; padding: 0; color: var(--m-ink); font-size: 12.5px; }
+.m-mini .m-copy { min-height: 32px; padding: 0 12px; }
+.m-status { padding-right: 14px; font-size: 14px; color: var(--m-ink); }
+.m-status span:nth-child(2) { flex: 1; }
+.m-status em { padding: 2px 10px; border-radius: 999px; background: var(--m-tint2); color: var(--m-deep); font: 600 12px "Manrope", Arial, sans-serif; font-style: normal; }
+.m-dot { flex: none; width: 10px; height: 10px; border-radius: 50%; background: #1a9b57; box-shadow: 0 0 0 4px rgba(26, 155, 87, 0.16); }
+.m-chat { margin-top: auto; padding: 12px; border: 1px solid var(--m-line); border-radius: 16px; background: var(--m-tint); }
+.m-bubble { margin: 0 0 8px !important; padding: 10px 12px; border-radius: 14px 14px 14px 4px; background: #fff; border: 1px solid var(--m-line); color: var(--m-ink) !important; font-size: 14px !important; }
+.m-reply { margin: 0 !important; font-size: 12.5px !important; color: var(--m-ink2) !important; }
+.m-reply code { padding: 1px 6px; border-radius: 6px; background: var(--m-tint2); border: 0; color: var(--m-deep); font-size: 12px; }
+.m-step:hover .ic { --ic-cut: var(--m-brand); background: var(--m-brand); color: #fff; }
+.m-step:hover .ic-s { opacity: 0; transform: scale(0.5) rotate(18deg); }
+.m-step:hover .ic-f { opacity: 1; transform: none; }
+@media (max-width: 960px) {
+  .m-stepper { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  .m-step:not(:last-child)::after { top: 100%; right: auto; left: 41px; width: 0; height: 22px; border-top: 0; border-left: 2px dashed var(--m-line2); }
+}
+@media (prefers-reduced-motion: reduce) { .m-step, .m-step-n { transition: none; } .m-step:hover, .m-step:hover .m-step-n { transform: none; } }

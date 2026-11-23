@@ -251,11 +251,11 @@ ${cmdChip(NPX)}
 </section>
 
 <section class="m-sec" id="setup"><h2>Set up in under a minute</h2><p class="m-lead">Three steps. Your AI tool does most of them for you.</p>
-<div class="m-three">
-<div class="m-spot"><span class="m-n">1</span><b>Add the command</b><p>Paste <code>npx -y ${MCP_PKG}</code> into your tool's MCP settings, or run one command.</p></div>
-<div class="m-spot"><span class="m-n">2</span><b>Restart your tool</b><p>Motion Forge appears as <b>motion-forge</b> with six tools. No sign-in.</p></div>
-<div class="m-spot"><span class="m-n">3</span><b>Ask</b><p>"Find a blur-in heading animation and give me the React code."</p></div>
-</div></section>
+<ol class="m-stepper">
+<li class="m-step"><div class="m-step-top"><span class="m-step-n">1</span>${icon("terminal")}</div><h3>Add the command</h3><p>Paste it into your tool's MCP settings, or run it in a terminal.</p><div class="m-mini"><code>${esc(NPX)}</code><button type="button" class="m-copy" data-copy="${esc(NPX)}">Copy</button></div></li>
+<li class="m-step"><div class="m-step-top"><span class="m-step-n">2</span>${icon("mcp")}</div><h3>Restart your tool</h3><p>Motion Forge shows up with six tools. No sign-in, no key.</p><div class="m-mini m-status"><span class="m-dot" aria-hidden="true"></span><span><b>motion-forge</b> connected</span><em>6 tools</em></div></li>
+<li class="m-step"><div class="m-step-top"><span class="m-step-n">3</span>${icon("search")}</div><h3>Ask</h3><p>Describe the motion you want. Your AI finds it and writes the code.</p><div class="m-chat"><p class="m-bubble">Find a blur-in heading animation and give me the React code.</p><p class="m-reply">Example reply: <code>sds-blur-focus</code> with a ready snippet</p></div></li>
+</ol></section>
 
 <section class="m-sec"><h2>Connect your tool</h2><p class="m-lead">Pick your tool for a step-by-step guide.</p>
 ${GROUPS.slice(0, 3).map((g) => `<h3 class="m-gh">${g}</h3><div class="m-clients">${byGroup(g).map(clientCard).join("")}</div>`).join("")}
@@ -267,7 +267,11 @@ ${GROUPS.slice(0, 3).map((g) => `<h3 class="m-gh">${g}</h3><div class="m-clients
 <section class="m-sec"><h2>Things people ask</h2><p class="m-lead">Click one to copy it, then paste it into your AI tool.</p><div class="m-chips">${chips}</div></section>
 
 <section class="m-sec"><h2>From Figma to code</h2>
-<div class="m-flow"><div><span class="m-n">1</span><b>Read the motion</b><p>Your AI reads the interaction from Figma with Figma's own MCP server.</p></div><div><span class="m-n">2</span><b>Map it</b><p>Motion Forge scores every animation against it and explains each score.</p></div><div><span class="m-n">3</span><b>Place it</b><p>You get the closest effect with duration and delay already applied.</p></div></div>
+<ol class="m-stepper">
+<li class="m-step"><div class="m-step-top"><span class="m-step-n">1</span>${icon("search")}</div><h3>Read the motion</h3><p>Your AI reads the interaction from Figma with Figma's own MCP server.</p></li>
+<li class="m-step"><div class="m-step-top"><span class="m-step-n">2</span>${icon("target")}</div><h3>Map it</h3><p>Motion Forge scores every animation against it and explains each score.</p></li>
+<li class="m-step"><div class="m-step-top"><span class="m-step-n">3</span>${icon("quick")}</div><h3>Place it</h3><p>You get the closest effect with duration and delay already applied.</p></li>
+</ol>
 <p class="note">Scores rank similarity, they never claim an exact match, and a spec with too little detail is capped so it cannot look like a strong match. It uses no AI and no network, so the same input always gives the same answer.</p></section>
 
 <section class="m-sec"><h2>Other ways to use Motion Forge</h2><p class="m-lead">The MCP server is one way in. These all work with the same ${total} animations.</p>${waysHtml(WAYS)}</section>
