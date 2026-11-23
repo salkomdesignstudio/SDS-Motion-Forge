@@ -634,6 +634,7 @@ a:hover > .sbi-tool, a[aria-current] > .sbi-tool { color: var(--m-brand); }
 .m-tool .ic svg.ti { width: 60%; height: 60%; }
 
 /* ═══ tool logos in their own colours (not our violet) ═══ */
+svg.ti { fill: currentColor; }
 .ti-claude { color: #D97757; } .ti-chatgpt { color: #10A37F; } .ti-cursor { color: #14120B; } .ti-vscode { color: #007ACC; }
 .ti-copilot { color: #1F2328; } .ti-windsurf { color: #09B6A2; } .ti-antigravity { color: #4285F4; } .ti-replit { color: #F26207; }
 .ti-other { color: #43475c; } .ti-codex, .ti-gemini, .ti-figma { color: inherit; }
