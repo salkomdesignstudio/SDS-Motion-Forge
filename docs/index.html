@@ -266,7 +266,7 @@
       .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
       .chip { padding: 8px 16px; border: 1px solid transparent; border-radius: var(--r-full); background: var(--bg-2); font: 500 14px var(--f-disp); color: var(--ink-2); cursor: pointer; transition: background 0.15s, color 0.15s, border-color 0.15s; }
       .chip:hover { background: #fff; border-color: var(--line-2); color: var(--ink); }
-      .chip[aria-pressed="true"] { background: #16182c; color: #fff; }
+      .chip[aria-pressed="true"] { background: var(--m-brand, #5c4ae1); color: #fff; }
       .physics-desc { min-height: 3.2em; margin-top: 2px; font-size: 15px; line-height: 1.6; color: var(--ink-2); }
       .physics-desc b { color: var(--ink); font-weight: 700; }
       .physics-demo { position: relative; text-align: center; padding: 0 24px; }
@@ -283,7 +283,7 @@
       .tabs { display: flex; flex-wrap: wrap; gap: 4px; padding: 5px; background: #fff; border: 1px solid var(--line); border-radius: var(--r-full); }
       .tab { padding: 10px 18px; border: 0; border-radius: var(--r-full); background: transparent; color: var(--ink-3); font: 600 14px var(--f-disp); cursor: pointer; white-space: nowrap; transition: background 0.2s, color 0.2s; }
       .tab:hover { color: var(--ink); }
-      .tab.active { background: #16182c; color: #fff; }
+      .tab.active { background: var(--m-brand, #5c4ae1); color: #fff; box-shadow: 0 4px 12px rgba(92, 74, 225, 0.28); }
       .gal-search { display: flex; flex: 1; min-width: 240px; align-items: center; gap: 10px; padding: 0 8px 0 18px; height: 52px; background: #fff; border: 1px solid var(--line); border-radius: var(--r-full); }
       .gal-search i { color: var(--ink-3); font-size: 18px; }
       .gal-search input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; font: 500 15px var(--f-disp); color: var(--ink); }
@@ -376,7 +376,7 @@
       .modal-how { margin: 14px 16px 0; padding: 14px 18px; border-radius: var(--r-lg); background: var(--panel); font-size: 14px; line-height: 1.65; color: var(--ink-2); }
       .modal-tabs { display: flex; flex-wrap: wrap; gap: 4px; padding: 18px 16px 10px; }
       .mtab { padding: 8px 16px; border: 0; border-radius: var(--r-full); background: transparent; font: 600 13.5px var(--f-disp); color: var(--ink-3); cursor: pointer; }
-      .mtab.on { background: #16182c; color: #fff; }
+      .mtab.on { background: var(--m-brand, #5c4ae1); color: #fff; }
       .modal-code { position: relative; margin: 0 16px 16px; }
       .modal-code pre { margin: 0; padding: 18px; max-height: 280px; overflow: auto; border-radius: var(--r-lg); background: #16182c; color: #eef0f7; font-size: 12.5px; line-height: 1.65; }
       .modal-code-copy { position: absolute; top: 10px; right: 10px; padding: 5px 12px; border: 1px solid rgba(255, 255, 255, 0.18); border-radius: var(--r-full); background: rgba(255, 255, 255, 0.08); color: #fff; font: 600 12px var(--f-disp); cursor: pointer; }
@@ -828,7 +828,7 @@
       <div class="wrap">
         <div class="sec-head" data-reveal="up">
           <span class="eyebrow">Live gallery</span>
-          <h2 class="sec-title">Every animation, playing live</h2>
+          <h2 class="sec-title t2"><span class="t2a">Every animation.</span><span class="t2b">Playing <u class="t2u">live</u>.</span></h2>
           <p class="sec-desc">Hover a card, or tap its replay icon, to play it again. Click a card for the code and timing controls. These are the real animations, not recordings.</p>
         </div>
         <div class="gal-bar">

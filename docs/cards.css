@@ -55,7 +55,7 @@
 .catnav { display: flex; gap: 4px; padding: 5px; margin: 0; list-style: none; background: #fff; border: 1px solid #e1e3e9; border-radius: 999px; overflow-x: auto; max-width: 100%; }
 .catnav a { display: inline-flex; gap: 6px; align-items: center; padding: 9px 16px; border-radius: 999px; color: #666a7e; font: 600 14px "Manrope", Arial, sans-serif; text-decoration: none; white-space: nowrap; }
 .catnav a:hover { color: #16182c; }
-.catnav a[aria-current] { background: #16182c; color: #fff; }
+.catnav a[aria-current] { background: var(--m-brand, #5c4ae1); color: #fff; }
 .catnav em { font: 500 12px "Geist Mono", ui-monospace, Menlo, monospace; font-style: normal; opacity: 0.7; }
 .search2 { display: flex; flex: 1; min-width: 220px; align-items: center; gap: 10px; height: 50px; padding: 0 8px 0 18px; background: #fff; border: 1px solid #e1e3e9; border-radius: 999px; }
 .search2 svg { flex: none; color: #666a7e; }
@@ -97,7 +97,7 @@
 .code-tabs { background: #fff; border: 1px solid #e1e3e9; border-radius: 24px; overflow: hidden; }
 .tabbar { display: flex; flex-wrap: wrap; gap: 4px; padding: 10px; border-bottom: 1px solid #e1e3e9; background: #f3f5fa; }
 .tabbar button { padding: 8px 16px; border: 0; border-radius: 999px; background: transparent; color: #666a7e; font: 600 14px "Manrope", Arial, sans-serif; cursor: pointer; }
-.tabbar button[aria-selected="true"] { background: #16182c; color: #fff; }
+.tabbar button[aria-selected="true"] { background: var(--m-brand, #5c4ae1); color: #fff; box-shadow: 0 4px 12px rgba(92, 74, 225, 0.28); }
 .code-panel { position: relative; }
 .code-panel h3 { margin: 0; padding: 14px 18px 0; font-size: 14px; color: #c6cad9; }
 .js .code-panel h3 { display: none; }
