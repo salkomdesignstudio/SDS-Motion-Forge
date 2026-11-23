@@ -635,4 +635,18 @@
   <url><loc>https://sds-motion-forge.netlify.app/animations/word-morph/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/zoom-out-in/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/zoom-punch/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/mcp/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/mcp/clients/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/mcp/clients/claude-code/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/mcp/clients/codex/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/mcp/clients/gemini-cli/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/mcp/clients/cursor/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/mcp/clients/vscode/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/mcp/clients/windsurf/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/mcp/clients/zed/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/mcp/clients/antigravity/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/mcp/clients/devin-desktop/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/mcp/clients/claude-desktop/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/mcp/clients/web-apps/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/mcp/clients/other-clients/</loc><priority>0.6</priority></url>
 </urlset>

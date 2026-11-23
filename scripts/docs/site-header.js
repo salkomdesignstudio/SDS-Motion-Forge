@@ -47,10 +47,14 @@ const G = {
   frameworks: '<path d="m12 4 8 4-8 4-8-4zM4 12l8 4 8-4M4 16l8 4 8-4"/>',
   js: '<path d="M9 8 5 12l4 4M15 8l4 4-4 4"/>',
   theme: '<circle cx="12" cy="12" r="8"/><path d="M12 4v16M12 12h8"/>',
+  mcp: '<rect x="4" y="4" width="16" height="6" rx="2"/><rect x="4" y="14" width="16" height="6" rx="2"/><path d="M8 7h.01M8 17h.01"/>',
+  clients: '<path d="M9 7 4 12l5 5M15 7l5 5-5 5"/>',
+  llms: '<path d="M6 4h9l3 3v13H6zM9 12h6M9 16h6"/>',
+  log: '<path d="M12 7v5l3 2M4 12a8 8 0 1 0 2.4-5.7M4 4v4h4"/>',
   a11y: '<circle cx="12" cy="6" r="2"/><path d="M5 9l7 2 7-2M12 11v4m-3 5 3-5 3 5"/>',
 };
 const ico = (k) => `<span class="sh-ico"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${G[k]}</svg></span>`;
-const item = (href, k, title, desc) => `<a href="${href}">${ico(k)}<span class="sh-txt"><b>${title}</b><small>${desc}</small></span></a>`;
+const item = (href, k, title, desc, badge) => `<a href="${href}">${ico(k)}<span class="sh-txt"><b>${title}${badge ? ` <span class="sh-new">${badge}</span>` : ""}</b><small>${desc}</small></span></a>`;
 
 function headerHtml() {
   const total = registry.classes.filter((c) => c.kind === "effect").length;
@@ -68,12 +72,19 @@ function headerHtml() {
     CATS.map(([id, label]) => item(`/categories/${id}/`, id, `${label} <em>${count(id)}</em>`, DESC[id])).join("") +
     item("/categories/interactive/", "interactive", `Interactive <em>${interactiveCount}</em>`, "React to the cursor");
   const docItems = [
+    item("/mcp/", "mcp", "MCP for AI tools", "Let your AI search and place animations", "New"),
     item("/docs.html#install", "install", "Installation", "CDN, npm and per-category imports"),
     item("/docs.html#quickstart", "quick", "Quick start", "Your first animation"),
     item("/docs.html#frameworks", "frameworks", "Framework guides", "React, Vue, Angular, Svelte, Tailwind"),
     item("/docs.html#js-needs", "js", "What needs JavaScript", "Scripts and browser support"),
     item("/docs.html#theming", "theme", "Theming", "Colour and speed with CSS variables"),
     item("/docs.html#a11y", "a11y", "Accessibility", "Reduced motion, checked on every build"),
+  ].join("");
+  const resItems = [
+    item("/mcp/", "mcp", "Motion Forge MCP", "Connect your AI tools", "New"),
+    item("/mcp/clients/", "clients", "Connect your tool", "Claude, Cursor, VS Code and more"),
+    item("/llms.txt", "llms", "llms.txt", "A plain summary for AI assistants"),
+    item(`${REPO}/blob/main/CHANGELOG.md`, "log", "Changelog", "What changed in each release"),
   ].join("");
   const flat = (list) => list.map(([h, t, n]) => `<a href="${h}">${t}${n !== undefined ? `<span>${n}</span>` : ""}</a>`).join("");
   const drawer = [
@@ -82,8 +93,10 @@ function headerHtml() {
     flat([["/animations/", "All animations", total], ...CATS.map(([id, label]) => [`/categories/${id}/`, label, count(id)]), ["/categories/interactive/", "Interactive", interactiveCount]]),
     '<a href="/#playground">Playground</a>',
     '<p class="sh-dh">Docs</p>',
-    flat([["/docs.html#install", "Installation"], ["/docs.html#quickstart", "Quick start"], ["/docs.html#frameworks", "Framework guides"], ["/docs.html#js-needs", "What needs JavaScript"], ["/docs.html#theming", "Theming"], ["/docs.html#a11y", "Accessibility"]]),
+    flat([["/mcp/", "MCP for AI tools", "New"], ["/docs.html#install", "Installation"], ["/docs.html#quickstart", "Quick start"], ["/docs.html#frameworks", "Framework guides"], ["/docs.html#js-needs", "What needs JavaScript"], ["/docs.html#theming", "Theming"], ["/docs.html#a11y", "Accessibility"]]),
     '<a href="/builder.html">Builder</a>',
+    '<p class="sh-dh">Resources</p>',
+    flat([["/mcp/", "Motion Forge MCP", "New"], ["/mcp/clients/", "Connect your tool"], ["/llms.txt", "llms.txt"]]),
     `<a href="${REPO}" rel="noopener noreferrer">GitHub</a>`,
   ].join("");
   return `<header class="sh" data-sh>
@@ -95,6 +108,7 @@ function headerHtml() {
 <a href="/#playground" data-sh-id="playground">Playground</a>
 <div class="sh-dd"><button type="button" class="sh-btn" aria-expanded="false" aria-haspopup="true" aria-controls="shMenuDocs">Docs ${ICON_CARET}</button><div class="sh-menu" id="shMenuDocs">${docItems}</div></div>
 <a href="/builder.html">Builder</a>
+<div class="sh-dd"><button type="button" class="sh-btn" aria-expanded="false" aria-haspopup="true" aria-controls="shMenuRes">Resources ${ICON_CARET}</button><div class="sh-menu" id="shMenuRes">${resItems}</div></div>
 </nav>
 <div class="sh-actions">
 <a class="sh-icon" href="${REPO}" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository">${ICON_GH}</a>

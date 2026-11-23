@@ -46,6 +46,7 @@
 .sh-all b { font: 600 15px "Outfit", "Manrope", Arial, sans-serif; letter-spacing: -0.02em; }
 .sh-all small { font: 400 13px "Manrope", Arial, sans-serif; color: rgba(255, 255, 255, 0.7); }
 .sh-n { padding: 4px 12px; border-radius: 999px; background: rgba(255, 255, 255, 0.14); font: 500 13px "Geist Mono", ui-monospace, Menlo, monospace; }
+.sh-new { padding: 2px 8px; border-radius: 999px; background: rgba(92, 74, 225, 0.1); color: #5c4ae1; font: 600 11.5px "Manrope", Arial, sans-serif; letter-spacing: 0.02em; vertical-align: 1px; }
 .sh-actions { display: flex; align-items: center; gap: 8px; }
 .sh-icon { display: inline-grid; place-items: center; width: 40px; height: 40px; border: 1px solid #e4e7ec; border-radius: 50%; background: #fff; color: #141414; }
 .sh-icon:hover { background: #f3f3f5; }
@@ -64,7 +65,7 @@
 .sh-drawer[hidden] { display: none; }
 .sh-drawer a { display: flex; align-items: center; justify-content: space-between; padding: 13px 14px; border-radius: 14px; color: #141414; font: 600 15.5px "Manrope", Arial, sans-serif; text-decoration: none; }
 .sh-drawer a:hover { background: #f3f3f5; }
-.sh-drawer a span { color: #6b6b70; font: 500 12.5px "Geist Mono", ui-monospace, Menlo, monospace; }
+.sh-drawer a span:not(.sh-new) { color: #6b6b70; font: 500 12.5px "Geist Mono", ui-monospace, Menlo, monospace; }
 .sh-dh { margin: 10px 14px 2px; font: 600 12px "Manrope", Arial, sans-serif; letter-spacing: 0.06em; text-transform: uppercase; color: #6b6b70; }
 @media (max-width: 960px) {
   .sh-nav, .sh-actions { display: none; }

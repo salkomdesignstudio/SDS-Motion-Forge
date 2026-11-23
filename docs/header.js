@@ -59,6 +59,10 @@
     sh.querySelector("#shMenuDocs") && sh.querySelector("#shMenuDocs").previousElementSibling.setAttribute("aria-current", "page");
   } else if (p.indexOf("/builder.html") === 0) {
     mark(".sh-nav > a", function (h) { return h === "/builder.html"; });
+  } else if (p.indexOf("/mcp/") === 0) {
+    var r = sh.querySelector("#shMenuRes");
+    if (r) r.previousElementSibling.setAttribute("aria-current", "page");
+    mark("#shMenuRes a", function (h) { return h === p || (h === "/mcp/" && p === "/mcp/"); });
   } else if (p.indexOf("/animations/") === 0 || p.indexOf("/categories/") === 0) {
     var b = sh.querySelector("#shMenuAnim");
     if (b) b.previousElementSibling.setAttribute("aria-current", "page");

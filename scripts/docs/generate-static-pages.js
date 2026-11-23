@@ -22,6 +22,8 @@ const fs = require("fs");
 const path = require("path");
 const S = require("./site-lib");
 const { headerHtml } = require("./site-header");
+const buildMcpPages = require("./mcp-pages");
+const MCP = require("./mcp-pages");
 const { config, CATEGORIES, effects, interactive, byCategory, esc, slugOf, urlOf } = S;
 
 const DOCS = path.join(S.ROOT, "docs");
@@ -160,10 +162,14 @@ ${headerHtml()}
 const foot = `</main>
 <footer class="foot"><div class="wrap">
 <p><a href="/">SDS Motion Forge</a> v${facts.version} · ${facts.license} licensed · ${S.effects.length} CSS animations · by <a href="${config.orgUrl}">${esc(config.orgName)}</a></p>
-<p><a href="/animations/">All animations</a> · <a href="/docs.html">Documentation</a> · <a href="/llms.txt">llms.txt</a> · <a href="${config.npmUrl}">npm</a> · <a href="${config.repoUrl}">GitHub</a></p>
+<p><a href="/animations/">All animations</a> · <a href="/docs.html">Documentation</a> · <a href="/mcp/">MCP for AI tools</a> · <a href="/llms.txt">llms.txt</a> · <a href="${config.npmUrl}">npm</a> · <a href="${config.repoUrl}">GitHub</a></p>
 </div></footer>
 </body>
 </html>
+`;
+
+/** Compact "use it from your AI tool" strip for the list pages. */
+const aiStrip = `<aside class="m-aiblock" style="margin-top:28px"><b>Use these from your AI tool</b><p>Connect the Motion Forge MCP server and ask for an animation by description. Free, offline, no API key.</p><div class="m-ai-tools"><a href="/mcp/">MCP for AI tools</a><a href="/mcp/clients/claude-code/">Claude Code</a><a href="/mcp/clients/cursor/">Cursor</a><a href="/mcp/clients/vscode/">VS Code</a></div></aside>
 `;
 
 const crumbs = (items) => ({
@@ -324,6 +330,11 @@ ${snippets.map((x) => `<div class="code-panel" id="panel-${x.id}" role="tabpanel
 ${config.frameworkPackagesPublished ? "" : `<p class="muted">Typed React, Angular, Tailwind and Web Components wrappers live in <a href="${config.repoUrl}/tree/main/packages">packages/</a> in the repository and are not yet published to npm; the snippets above need only the CSS.</p>`}
 </section>
 
+<section class="sec2" aria-labelledby="ai"><h2 id="ai">Use it with your AI tool</h2>
+<aside class="m-aiblock"><p>Connect the Motion Forge MCP server, then ask:</p>
+<div class="code-row"><code id="ai-prompt">Add the Motion Forge ${c.name} animation to my page${c.category === "scroll" ? " as a scroll reveal" : ""}, with reduced motion respected.</code><button type="button" class="copy-btn" data-copy-from="ai-prompt">Copy</button></div>
+<p class="muted"><a href="/mcp/">How the MCP server works</a> · <a href="/mcp/clients/claude-code/">Claude Code</a> · <a href="/mcp/clients/cursor/">Cursor</a> · <a href="/mcp/clients/vscode/">VS Code</a> · <a href="/mcp/clients/">all tools</a></p></aside></section>
+
 <section class="sec2" aria-labelledby="spec"><h2 id="spec">Technical details</h2><ul class="facts">
 ${factItems}
 </ul></section>
@@ -356,6 +367,10 @@ ${cdnCss.map((u) => `<link rel="stylesheet" href="${u}" />`).join("\n")}
 ${docs.markup[c.name] || `<div class="${c.name}">…</div>`}
 \`\`\`
 ${how ? `\n## How it works\n\n${how}\n` : ""}
+## Use it with your AI tool
+
+Connect the Motion Forge MCP server (\`${MCP.NPX}\`) and ask your AI to add \`.${c.name}\`. Guides: ${urlOf("/mcp/")}
+
 ## Related
 
 ${related.map((r) => `- [${r.displayName}](${urlOf(S.animationPath(r.name))})`).join("\n")}
@@ -415,7 +430,7 @@ ${list.map((c) => fxCard(c, 2)).join("\n")}
 </ul>
 <p class="empty2" id="fxEmpty" hidden>No animation matches your search. Try a shorter word.</p>
 <p style="margin-top:28px"><a href="/animations/">Browse all categories</a> · <a href="/docs.html">Installation &amp; usage docs</a></p>
-` + foot;
+` + aiStrip + foot;
   const md = `# ${list.length} ${cat.label} CSS animations\n\n${cat.blurb}${gz ? ` Bundle: ${gz}.` : ""}\n\n${importLine ? "```js\n" + importLine + "\n```\n\n" : ""}${list.map((c) => `- [${c.displayName}](${urlOf(S.animationPath(c.name))}) — \`.${c.name}\` — ${sentence(descOf(c))}`).join("\n")}\n`;
   return { html, md, p };
 }
@@ -462,7 +477,7 @@ ${fresh.length ? `<div class="sec-title2"><h2>New in v${facts.version}</h2><a hr
 <ul class="fx-grid">
 ${fresh.map((c) => fxCard(c, 3)).join("\n")}
 </ul>` : ""}
-` + foot;
+` + aiStrip + foot;
   const md = `# All ${all.length} CSS animations\n\n${groups.map((cat) => { const list = sortByName(cat.id === "interactive" ? interactive : byCategory[cat.id]); return `## ${cat.label} (${list.length})\n\n${list.map((c) => `- [${c.displayName}](${urlOf(S.animationPath(c.name))}) \`.${c.name}\``).join("\n")}\n`; }).join("\n")}`;
   return { html, md, p };
 }
@@ -563,13 +578,28 @@ ${S.faqHtml()}
   fs.writeFileSync(f, html);
 }
 
+/* ── hand-written pages: MCP blocks between markers ───────────── */
+function patchMarked(file, name, inner) {
+  const f = path.join(DOCS, file);
+  let html = fs.readFileSync(f, "utf8");
+  const crlf = html.includes("\r\n");
+  html = html.replace(/\r\n/g, "\n");
+  const a = html.indexOf(`<!-- ${name}:START`);
+  const end = `<!-- ${name}:END -->`;
+  const b = html.indexOf(end);
+  if (a < 0 || b < a) throw new Error(`${file} is missing the ${name} markers`);
+  const startTagEnd = html.indexOf("-->", a) + 3;
+  html = html.slice(0, startTagEnd) + "\n" + inner + "\n    " + html.slice(b);
+  fs.writeFileSync(f, crlf ? html.replace(/\n/g, "\r\n") : html);
+}
+
 /* ── write ───────────────────────────────────────────────────── */
 function write(rel, content) {
   const f = path.join(DOCS, rel);
   fs.mkdirSync(path.dirname(f), { recursive: true });
   fs.writeFileSync(f, content);
 }
-for (const d of ["animations", "categories"]) fs.rmSync(path.join(DOCS, d), { recursive: true, force: true });
+for (const d of ["animations", "categories", "mcp"]) fs.rmSync(path.join(DOCS, d), { recursive: true, force: true });
 
 const sitemapPaths = [];
 const emitPage = ({ html, md, p }) => {
@@ -580,7 +610,13 @@ const emitPage = ({ html, md, p }) => {
 emitPage(indexPage());
 for (const cat of [...CATEGORIES, catById.interactive]) emitPage(categoryPage(cat));
 for (const c of all) emitPage(effectPage(c));
+for (const pg of buildMcpPages({ head, foot, S, config, esc, crumbs, breadcrumbNav })) emitPage(pg);
 patchIndex();
+{
+  const frag = buildMcpPages.fragments({ S, esc });
+  patchMarked("index.html", "WAYS", frag.home);
+  patchMarked("docs.html", "MCP-DOC", frag.docs);
+}
 write("assets/pages.css", PAGES_CSS);
 write("assets/search-index.json", JSON.stringify(all.map((c) => ({ n: c.displayName, c: c.name, k: catById[c.category] ? catById[c.category].label : "Interactive", u: S.animationPath(c.name), d: sentence(descOf(c)) }))));
 write("sitemap.xml", sitemap(sitemapPaths));

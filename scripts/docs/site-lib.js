@@ -180,8 +180,14 @@ ${frameworkLines().join("\n")}
 
 Every animating selector is neutralized under prefers-reduced-motion; this is checked on every build (npm run verify:reduced-motion).
 
+## Use with AI tools (MCP)
+
+An MCP server, @salkomdesignstudio/motion-forge-mcp, lets Claude, Cursor, VS Code and any MCP client search the animations, fetch code and match a design's motion (for example from Figma) to the closest effect. Offline, no API key, Node 20+. Add it with: npx -y @salkomdesignstudio/motion-forge-mcp
+Guides for each tool: ${f.site}/mcp/clients/
+
 ## Machine-readable resources
 
+- MCP server and setup guides: ${f.site}/mcp/
 - Full per-effect reference (markdown): ${f.site}/llms-full.txt
 - Effect registry (JSON): ${f.site}/registry.json
 - One page per effect: ${f.site}/animations/ (append /index.md for markdown)
@@ -250,6 +256,10 @@ function faqs() {
       a: config.frameworkPackagesPublished
         ? `Yes. Import \`dist/motion.min.css\` once and use the class names in any framework; typed wrappers are published for React, Angular, Tailwind and Web Components.`
         : `Yes. Import \`dist/motion.min.css\` once and use the class names with \`className\` or \`class\` in React, Next.js, Vue, Angular or a Tailwind project. Typed wrappers for React, Angular, Tailwind and Web Components exist in the repository's \`packages/\` folder but are not yet published to npm.`,
+    },
+    {
+      q: "Does Motion Forge have an MCP server for AI tools?",
+      a: `Yes. \`@salkomdesignstudio/motion-forge-mcp\` lets Claude, Cursor, VS Code and other MCP clients search the ${f.effectCount} animations, fetch ready code and match a design's motion to the closest effect. It runs locally with \`npx -y @salkomdesignstudio/motion-forge-mcp\`, needs no account or API key, and makes no network calls.`,
     },
     {
       q: "Is it free to use commercially?",

@@ -49,6 +49,11 @@
 
 Every animating selector is neutralized under prefers-reduced-motion; this is checked on every build (npm run verify:reduced-motion).
 
+## Use with AI tools (MCP)
+
+An MCP server, @salkomdesignstudio/motion-forge-mcp, lets Claude, Cursor, VS Code and any MCP client search the animations, fetch code and match a design's motion (for example from Figma) to the closest effect. Offline, no API key, Node 20+. Add it with: npx -y @salkomdesignstudio/motion-forge-mcp
+Guides for each tool: https://sds-motion-forge.netlify.app/mcp/clients/
+
 ## Machine-readable resources
 
 - Short summary: https://sds-motion-forge.netlify.app/llms.txt
@@ -84,6 +89,10 @@ The full bundle is 43.7 KB gzip. Each category is 5.8–13.5 KB gzip and can be 
 ### Does it work with React, Vue, Next.js and Tailwind?
 
 Yes. Import dist/motion.min.css once and use the class names with className or class in React, Next.js, Vue, Angular or a Tailwind project. Typed wrappers for React, Angular, Tailwind and Web Components exist in the repository's packages/ folder but are not yet published to npm.
+
+### Does Motion Forge have an MCP server for AI tools?
+
+Yes. @salkomdesignstudio/motion-forge-mcp lets Claude, Cursor, VS Code and other MCP clients search the 617 animations, fetch ready code and match a design's motion to the closest effect. It runs locally with npx -y @salkomdesignstudio/motion-forge-mcp, needs no account or API key, and makes no network calls.
 
 ### Is it free to use commercially?
 

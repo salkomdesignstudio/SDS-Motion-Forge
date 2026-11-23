@@ -49,8 +49,14 @@
 
 Every animating selector is neutralized under prefers-reduced-motion; this is checked on every build (npm run verify:reduced-motion).
 
+## Use with AI tools (MCP)
+
+An MCP server, @salkomdesignstudio/motion-forge-mcp, lets Claude, Cursor, VS Code and any MCP client search the animations, fetch code and match a design's motion (for example from Figma) to the closest effect. Offline, no API key, Node 20+. Add it with: npx -y @salkomdesignstudio/motion-forge-mcp
+Guides for each tool: https://sds-motion-forge.netlify.app/mcp/clients/
+
 ## Machine-readable resources
 
+- MCP server and setup guides: https://sds-motion-forge.netlify.app/mcp/
 - Full per-effect reference (markdown): https://sds-motion-forge.netlify.app/llms-full.txt
 - Effect registry (JSON): https://sds-motion-forge.netlify.app/registry.json
 - One page per effect: https://sds-motion-forge.netlify.app/animations/ (append /index.md for markdown)
