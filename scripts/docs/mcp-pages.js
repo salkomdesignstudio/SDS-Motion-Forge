@@ -443,8 +443,9 @@ module.exports.fragments = function fragments({ S, esc }) {
         </section>`;
 
   const cats = [["Text", 117], ["Buttons", 100], ["Inputs", 100], ["Cards", 100], ["Loaders", 100], ["Scroll", 100]];
-  const seg = cats.map(([n, c], i) => `<span class="w-seg" style="flex:${c};opacity:${(1 - i * 0.13).toFixed(2)}" title="${n} ${c}"></span>`).join("");
-  const legend = cats.map(([n, c], i) => `<li><i style="opacity:${(1 - i * 0.13).toFixed(2)}"></i>${n} <b>${c}</b></li>`).join("");
+  const CAT_COLOURS = ["#5c4ae1", "#19b5a5", "#f2a03d", "#3b82f6", "#f2603c", "#1a9b57"];
+  const seg = cats.map(([n, c], i) => `<span class="w-seg" style="flex:${c};background:${CAT_COLOURS[i]}" title="${n} ${c}"></span>`).join("");
+  const legend = cats.map(([n, c], i) => `<li><i style="background:${CAT_COLOURS[i]}"></i>${n} <b>${c}</b></li>`).join("");
   const why = `<section class="sec" id="why">
       <div class="wrap">
         <div class="sec-head" data-reveal="up">
@@ -566,14 +567,14 @@ module.exports.fragments = function fragments({ S, esc }) {
   const sparkle = (cls) => `<svg class="${cls}" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 2.5v19M2.5 12h19M5.3 5.3l13.4 13.4M18.7 5.3 5.3 18.7"/></svg>`;
   /* x = offset from the centre in px, y = top in px, s = size, r = tilt, d = bob seconds, l = bob delay, k = parallax depth (spec: .reanimate/motvin-hero/spec.md) */
   const FLOATS = [
-    { x: -594, y: 184, s: 51, kind: "spark", d: 4.6, l: -1.2, k: 0.6, tone: "brand" },
+    { x: -594, y: 184, s: 51, kind: "spark", d: 4.6, l: -1.2, k: 0.6, tone: "teal" },
     { x: -499, y: 144, s: 72, kind: "tile", g: ["claude", "chatgpt", "gemini"], r: -12, d: 6.0, l: -2.4, k: 1.1, tone: "white" },
-    { x: -585, y: 244, s: 97, kind: "tile", g: ["cursor", "vscode", "windsurf"], r: -12, d: 5.2, l: -0.6, k: 1.5, tone: "brand" },
-    { x: -503, y: 248, s: 56, kind: "line", g: "target", d: 5.4, l: -3.0, k: 0.8, tone: "brand" },
-    { x: 447, y: 140, s: 81, kind: "tile", g: ["codex", "copilot", "figma"], r: 15, d: 5.4, l: -0.8, k: 1.3, tone: "ink" },
+    { x: -585, y: 244, s: 97, kind: "tile", g: ["cursor", "vscode", "windsurf"], r: -12, d: 5.2, l: -0.6, k: 1.5, tone: "white" },
+    { x: -503, y: 248, s: 56, kind: "line", g: "target", d: 5.4, l: -3.0, k: 0.8, tone: "blue" },
+    { x: 447, y: 140, s: 81, kind: "tile", g: ["codex", "copilot", "figma"], r: 15, d: 5.4, l: -0.8, k: 1.3, tone: "white" },
     { x: 548, y: 281, s: 58, kind: "tile", g: ["replit", "antigravity", "claude"], r: -10, d: 4.8, l: -1.9, k: 1.0, tone: "white" },
-    { x: 548, y: 195, s: 42, kind: "spark", d: 6.2, l: -3.4, k: 0.6, tone: "deep" },
-    { x: 472, y: 281, s: 38, kind: "line", g: "sliders", d: 5.8, l: -2.6, k: 0.8, tone: "brand" },
+    { x: 548, y: 195, s: 42, kind: "spark", d: 6.2, l: -3.4, k: 0.6, tone: "amber" },
+    { x: 472, y: 281, s: 38, kind: "line", g: "sliders", d: 5.8, l: -2.6, k: 0.8, tone: "coral" },
   ];
   const heroFloats = FLOATS.map((f) => {
     const inner = f.kind === "tile"
@@ -583,7 +584,7 @@ module.exports.fragments = function fragments({ S, esc }) {
   }).join("");
 
   const CTA_GLYPHS = ["claude", "chatgpt", "cursor", "vscode", "codex", "gemini", "copilot"];
-  const CTA = [[59, -9, 0, "white"], [57, -6, -0.7, "brand"], [55, -3, -1.4, "white"], [52, 0, -2.1, "ink"], [55, 3, -2.8, "white"], [57, 6, -3.5, "brand"], [59, 9, -4.2, "white"]];
+  const CTA = [[59, -9, 0, "white"], [57, -6, -0.7, "white"], [55, -3, -1.4, "white"], [52, 0, -2.1, "white"], [55, 3, -2.8, "white"], [57, 6, -3.5, "white"], [59, 9, -4.2, "white"]];
   const ctaTiles = CTA.map(([sz, r, dl, tone], i) => `<span class="cta2-tile tone-${tone}" style="--s:${sz}px;--r:${r}deg;--l:${dl}s">${tool(CTA_GLYPHS[i])}</span>`).join("");
   const arrowR = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>';
   const cta = `<section class="cta2" id="start" aria-labelledby="cta2-title">

@@ -82,8 +82,20 @@ function tool(key, cls = "") {
   const t = TOOLS[key];
   if (!t) return "";
   const n = ++uid;
-  const inner = t.inner.replace(/id="(ti-[a-z]+-[gmx])"/g, (m, id) => 'id="' + id + "-" + n + '"').replace(/url\(#(ti-[a-z]+-[gmx])\)/g, (m, id) => "url(#" + id + "-" + n + ")");
-  return '<svg class="ti' + (cls ? " " + cls : "") + '" viewBox="' + t.viewBox + '" fill="currentColor" aria-hidden="true" focusable="false">' + inner + "</svg>";
+  let body = t.inner;
+  let rootFill = "currentColor";
+  if (key === "figma") {
+    const colours = ["#1ABCFE", "#0ACF83", "#FF7262", "#F24E1E", "#A259FF"];
+    let i = 0;
+    body = body.replace(/fill="currentColor"/g, () => 'fill="' + colours[i++ % colours.length] + '"');
+  }
+  if (key === "gemini") {
+    const gid = "ti-gemini-grad-" + n;
+    body = '<defs><linearGradient id="' + gid + '" x1="3" y1="21" x2="21" y2="3" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4796E3"/><stop offset="0.55" stop-color="#9168C0"/><stop offset="1" stop-color="#D96570"/></linearGradient></defs>' + body;
+    rootFill = "url(#" + gid + ")";
+  }
+  const inner = body.replace(/id="(ti-[a-z]+-[gmx])"/g, (m, id) => 'id="' + id + "-" + n + '"').replace(/url\(#(ti-[a-z]+-[gmx])\)/g, (m, id) => "url(#" + id + "-" + n + ")");
+  return '<svg class="ti ti-' + key + (cls ? " " + cls : "") + '" viewBox="' + t.viewBox + '" fill="' + rootFill + '" aria-hidden="true" focusable="false">' + inner + "</svg>";
 }
 
 /** logo for one of our guides */
