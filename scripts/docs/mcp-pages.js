@@ -239,7 +239,7 @@ module.exports = function buildMcpPages({ head, foot, S, config, esc, crumbs, br
     const jsonld = { "@context": "https://schema.org", "@graph": [crumbs([["Home", "/"], ["MCP", p]]), faqLd(FAQ)] };
     const chips = PROMPTS.map((t) => `<button type="button" class="m-chip" data-copy="${esc(t)}">${esc(t)}</button>`).join("");
     const html =
-      head({ title, description, path: p, jsonld, extraCss: ["/mcp.css"], extraJs: ["/mcp.js"], wide: true }) +
+      head({ title, description, path: p, jsonld, wide: true }) +
       `<div class="m-page">
 <section class="m-hero">
 <p class="m-eyebrow"><span class="pill">New</span> Motion Forge MCP</p>
@@ -288,7 +288,7 @@ ${GROUPS.slice(0, 3).map((g) => `<h3 class="m-gh">${g}</h3><div class="m-clients
     const description = `Step-by-step Motion Forge MCP setup for ${CLIENTS.map((c) => c.name).slice(0, 6).join(", ")} and more.`;
     const jsonld = { "@context": "https://schema.org", "@graph": [crumbs([["Home", "/"], ["MCP", "/mcp/"], ["Clients", p]])] };
     const html =
-      head({ title, description, path: p, jsonld, extraCss: ["/mcp.css"], extraJs: ["/mcp.js"], wide: true }) +
+      head({ title, description, path: p, jsonld, wide: true }) +
       `<div class="m-page">${breadcrumbNav([["Home", "/"], ["MCP", "/mcp/"], ["Clients", p]])}
 <section class="m-hero m-hero-sm"><h1>Choose your tool</h1>
 <p class="m-sub">Motion Forge works with any AI tool that supports MCP. Pick yours for step-by-step setup. The command is the same for all of them.</p>
@@ -318,7 +318,7 @@ ${GROUPS.map((g) => `<section class="m-sec"><h2>${g}</h2><div class="m-clients">
     const usage = [PROMPTS[0], PROMPTS[1], PROMPTS[4]];
     const sidebar = GROUPS.map((g) => `<p class="m-sbh">${g}</p>${byGroup(g).map((x) => `<a href="${clientPath(x)}"${x.slug === c.slug ? ' aria-current="page"' : ""}>${esc(x.name)}</a>`).join("")}`).join("");
     const html =
-      head({ title, description, path: p, jsonld, extraCss: ["/mcp.css"], extraJs: ["/mcp.js"], wide: true }) +
+      head({ title, description, path: p, jsonld, wide: true }) +
       `<div class="m-page">${breadcrumbNav(crumb)}
 <div class="m-doc">
 <aside class="m-side" aria-label="MCP guides"><a class="m-sidehome" href="/mcp/clients/">All tools</a>${sidebar}</aside>
@@ -359,7 +359,7 @@ module.exports.fragments = function fragments({ S, esc }) {
   const tools = ["claude-code", "cursor", "vscode", "claude-desktop", "windsurf", "zed", "codex", "antigravity", "devin-desktop"]
     .map((s) => CLIENTS.find((c) => c.slug === s)).map((c) => `<a href="/mcp/clients/${c.slug}/">${esc(c.name)}</a>`).join("");
   const home = `<section class="sec" id="ways">
-      <link rel="stylesheet" href="/mcp.css" /><script src="/mcp.js" defer></script>
+      <link rel="stylesheet" href="/mcp.css" />
       <div class="wrap">
         <div class="sec-head" data-reveal="up">
           <span class="eyebrow">Ways to use it</span>
@@ -375,7 +375,7 @@ module.exports.fragments = function fragments({ S, esc }) {
       </div>
     </section>`;
   const docs = `<section class="doc-sec" id="mcp">
-          <link rel="stylesheet" href="/mcp.css" /><script src="/mcp.js" defer></script>
+          <link rel="stylesheet" href="/mcp.css" />
           <h2 class="doc-sec-title">Use with AI (MCP)</h2>
           <p class="doc-sec-sub">The Motion Forge MCP server lets Claude, Cursor, VS Code and any MCP client search the library, write the code and match a design's motion to an effect. It runs on your machine, needs no account and makes no network calls.</p>
           <h3 class="doc-h3">Add it</h3>
