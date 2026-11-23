@@ -671,3 +671,23 @@ a:hover > .sbi, a[aria-current] > .sbi, .sb-link:hover .sbi, .sb-link.active .sb
 
 .w-meter span { background: var(--m-ok); }
 .w-seg { background: var(--m-ink3); }
+
+/* ═══ hero background: a slow aurora of four pastel colours, plus a light that follows the pointer ═══
+   Colours sit at the same lightness and chroma in OKLCH (blue 250, teal 190, pink 350, violet 285) so they blend instead of clashing.
+   Only transforms animate (compositor, no layout or paint), the field is masked away before the cards below, and it all stops under reduced motion. */
+.hero-aurora { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; -webkit-mask-image: linear-gradient(#000 55%, transparent 100%); mask-image: linear-gradient(#000 55%, transparent 100%); will-change: transform; }
+.ab { position: absolute; display: block; border-radius: 50%; filter: blur(80px); opacity: 0.55; will-change: transform; }
+.ab1 { width: 640px; height: 640px; left: calc(50% - 760px); top: -120px; background: #8fb4ff; animation: ab-drift-1 24s ease-in-out infinite alternate; }
+.ab2 { width: 560px; height: 560px; left: calc(50% + 160px); top: -160px; background: #7fe0d4; animation: ab-drift-2 28s ease-in-out infinite alternate; }
+.ab3 { width: 520px; height: 520px; left: calc(50% - 300px); top: 140px; background: #ffa6cf; opacity: 0.42; animation: ab-drift-3 32s ease-in-out infinite alternate; }
+.ab4 { width: 380px; height: 380px; left: calc(50% + 300px); top: 200px; background: #b3a6ff; opacity: 0.4; animation: ab-drift-4 21s ease-in-out infinite alternate; }
+@keyframes ab-drift-1 { 0% { transform: translate3d(0, 0, 0) scale(1); } 50% { transform: translate3d(180px, 70px, 0) scale(1.12); } 100% { transform: translate3d(60px, 160px, 0) scale(0.94); } }
+@keyframes ab-drift-2 { 0% { transform: translate3d(0, 0, 0) scale(1.05); } 50% { transform: translate3d(-200px, 90px, 0) scale(0.92); } 100% { transform: translate3d(-80px, 190px, 0) scale(1.1); } }
+@keyframes ab-drift-3 { 0% { transform: translate3d(-120px, 0, 0) scale(1); } 50% { transform: translate3d(160px, -70px, 0) scale(1.15); } 100% { transform: translate3d(40px, 90px, 0) scale(0.95); } }
+@keyframes ab-drift-4 { 0% { transform: translate3d(0, 0, 0) scale(0.95); } 100% { transform: translate3d(-240px, -80px, 0) scale(1.2); } }
+.hero-spot { position: absolute; left: 0; top: 0; width: 460px; height: 460px; margin: -230px 0 0 -230px; border-radius: 50%; background: radial-gradient(closest-side, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0)); mix-blend-mode: soft-light; opacity: 0; visibility: hidden; will-change: transform; }
+.hero-grid { z-index: 1; }
+@media (max-width: 700px) { .ab { filter: blur(56px); } .ab1 { width: 420px; height: 420px; left: -160px; } .ab2 { width: 380px; height: 380px; left: auto; right: -160px; } .ab3, .ab4, .hero-spot { display: none; } }
+@media (prefers-reduced-motion: reduce) { .ab { animation: none; } .hero-spot { display: none; } }
+/* small secondary text sits on the moving aurora, so it uses the darker ink (worst case measured 3.55:1 with the lighter one, about 6:1 now) */
+.hero-stat span, .hero-fine, .hero-fine a { color: var(--m-ink2); }

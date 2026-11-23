@@ -562,6 +562,7 @@
 
     <!-- HERO -->
     <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero-aurora" aria-hidden="true"><i class="ab ab1"></i><i class="ab ab2"></i><i class="ab ab3"></i><i class="ab ab4"></i><i class="hero-spot"></i></div>
       <div class="hero-grid" id="heroGrid" aria-hidden="true"></div>
       <div class="hero-floats" aria-hidden="true">
       <!-- HERO-FLOATS:START (generated: scripts/docs/generate-static-pages.js) -->
@@ -2325,6 +2326,16 @@
             var hero = document.getElementById("home");
             if (hero) {
               var floats = [].slice.call(hero.querySelectorAll(".hf"));
+              /* aurora: a soft light follows the pointer, the whole field drifts up slowly as the hero scrolls away */
+              var aur = hero.querySelector(".hero-aurora"), spot = hero.querySelector(".hero-spot");
+              if (aur) {
+                gsap.to(aur, { y: -80, ease: "none", scrollTrigger: { trigger: hero, start: "top top", end: "bottom top", scrub: 0.6 } });
+                if (fine && spot) {
+                  var sx = gsap.quickTo(spot, "x", { duration: 0.8, ease: "power3.out" }), sy = gsap.quickTo(spot, "y", { duration: 0.8, ease: "power3.out" });
+                  hero.addEventListener("pointermove", function (e) { var r = hero.getBoundingClientRect(); sx(e.clientX - r.left); sy(e.clientY - r.top); });
+                  gsap.to(spot, { autoAlpha: 1, duration: 0.8, delay: 0.3 });
+                }
+              }
               /* accent sweep: the highlighted word moves on every 3 s */
               var words = [].slice.call(hero.querySelectorAll(".hw"));
               var on = Math.max(0, words.findIndex(function (w) { return w.classList.contains("is-on"); }));
