@@ -9,7 +9,7 @@
   --m-ease: cubic-bezier(0.22, 1, 0.36, 1); --m-pop: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .m-page { overflow-x: clip; max-width: 1120px; margin: 0 auto; padding: 0 4px 64px; font-family: "Manrope", Arial, sans-serif; color: var(--m-ink); }
-.m-page h1, .m-page h2, .m-page h3 { font-family: "Outfit", "Manrope", Arial, sans-serif; letter-spacing: -0.03em; color: var(--m-ink); }
+.m-page h1, .m-page h2, .m-page h3 { font-family: "Manrope", Arial, sans-serif; letter-spacing: -0.035em; color: var(--m-ink); }
 .m-page code, .m-ai code { font-family: "Geist Mono", ui-monospace, Menlo, monospace; }
 
 /* hero with a soft violet glow that drifts */
@@ -60,7 +60,7 @@
 .m-gh { margin: 22px 0 10px; font: 700 13px "Manrope", Arial, sans-serif; letter-spacing: 0.06em; text-transform: uppercase; color: var(--m-deep); }
 .m-three, .m-flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .m-three > div, .m-flow > div, .m-feat { position: relative; padding: 22px; border: 1px solid var(--m-line); border-radius: 24px; background: #fff; }
-.m-three b, .m-flow b, .m-feat b { display: block; margin: 10px 0 4px; font: 600 18px "Outfit", "Manrope", Arial, sans-serif; letter-spacing: -0.02em; }
+.m-three b, .m-flow b, .m-feat b { display: block; margin: 10px 0 4px; font: 700 18px "Manrope", Arial, sans-serif; letter-spacing: -0.035em; }
 .m-three p, .m-flow p, .m-feat p { margin: 0 0 6px; font-size: 15px; line-height: 1.55; color: var(--m-ink2); }
 .m-n { display: inline-grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--m-tint2); color: var(--m-deep); font: 600 14px "Geist Mono", ui-monospace, monospace; transition: transform 0.35s var(--m-pop), background 0.25s, color 0.25s; }
 .m-three > div:hover .m-n, .m-flow > div:hover .m-n { background: var(--m-grad); color: #fff; transform: scale(1.16) rotate(-8deg); }
@@ -76,7 +76,7 @@
 .m-clients { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
 .m-client { display: flex; align-items: center; gap: 14px; min-height: 72px; padding: 14px 18px; border: 1px solid var(--m-line); border-radius: 22px; background: #fff; color: var(--m-ink); text-decoration: none; }
 .m-client > span:nth-child(2) { flex: 1; min-width: 0; }
-.m-client b { display: block; font: 600 16px "Outfit", "Manrope", Arial, sans-serif; letter-spacing: -0.02em; transition: color 0.2s; }
+.m-client b { display: block; font: 700 16px "Manrope", Arial, sans-serif; letter-spacing: -0.035em; transition: color 0.2s; }
 .m-client:hover b { color: var(--m-deep); }
 .m-client small { display: block; margin-top: 2px; font-size: 13.5px; color: var(--m-ink3); }
 .m-arrow { flex: none; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; color: var(--m-deep); background: var(--m-tint); transition: transform 0.35s var(--m-pop), background 0.25s, color 0.25s; }
@@ -100,7 +100,7 @@
 .m-ways { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
 .m-way { display: flex; align-items: flex-start; gap: 12px; min-height: 96px; padding: 16px; border: 1px solid var(--m-line); border-radius: 22px; background: #fff; color: var(--m-ink); text-decoration: none; }
 .m-way-t { min-width: 0; }
-.m-way b { display: flex; align-items: center; gap: 8px; font: 600 16px "Outfit", "Manrope", Arial, sans-serif; letter-spacing: -0.02em; transition: color 0.2s; }
+.m-way b { display: flex; align-items: center; gap: 8px; font: 700 16px "Manrope", Arial, sans-serif; letter-spacing: -0.035em; transition: color 0.2s; }
 .m-way:hover b { color: var(--m-deep); }
 .m-way em, .sh-new { padding: 2px 8px; border-radius: 999px; background: var(--m-tint2); color: var(--m-deep); font: 600 11.5px "Manrope", Arial, sans-serif; font-style: normal; letter-spacing: 0.02em; }
 .m-way small { display: block; margin-top: 4px; font-size: 13.5px; line-height: 1.45; color: var(--m-ink3); }

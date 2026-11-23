@@ -1,8 +1,7 @@
 /* SDS Motion Forge — site theme (shared by docs, builder, 404 and the generated pages).
-   Light, rounded, violet accent. Headings in Outfit, body in Manrope, code in Geist Mono.
+   Light, rounded, violet accent. Manrope throughout (bold, tightly tracked headings, like Motvin), code in Geist Mono.
    Fonts are self-hosted (SIL OFL 1.1, see vendor/outfit/NOTICE.txt and vendor/manrope/NOTICE.txt).
    The home page carries the same tokens inline. Change them in both places. */
-@font-face{font-family:"Outfit";font-style:normal;font-weight:400 700;font-display:swap;src:url("/vendor/outfit/Outfit-latin.woff2") format("woff2")}
 @font-face{font-family:"Manrope";font-style:normal;font-weight:400 700;font-display:swap;src:url("/vendor/manrope/Manrope-latin.woff2") format("woff2")}
 
 html:root {
@@ -17,8 +16,8 @@ html:root {
   --sh-1: 0 1px 2px rgba(60, 44, 170, 0.04);
   --sh-2: 0 24px 60px rgba(60, 44, 170, 0.12);
   --f-disp: "Manrope", Arial, sans-serif;
-  --f-head: "Outfit", "Manrope", Arial, sans-serif;
-  --f-serif: "Outfit", "Manrope", Arial, sans-serif;
+  --f-head: "Manrope", Arial, sans-serif;
+  --f-serif: "Manrope", Arial, sans-serif;
   --nav-h: 78px;
   /* generated pages (pages.css) */
   --body: #3f3a6b; --muted: #5f5a8a; --canvas: #ffffff; --card: #ffffff;
@@ -27,7 +26,7 @@ html:root {
 html { background: var(--bg, #fff); }
 body { font-family: var(--f-disp); background: var(--bg, #fff); }
 h1, h2, h3, .brand, .logo-sans, .logo-serif, .doc-sec-title, .doc-h3, .top h1 {
-  font-family: var(--f-head); font-weight: 600; letter-spacing: -0.025em;
+  font-family: var(--f-head); font-weight: 700; letter-spacing: -0.035em;
 }
 a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
 ::selection { background: rgba(92, 74, 225, 0.2); }

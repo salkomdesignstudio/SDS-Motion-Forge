@@ -138,7 +138,6 @@ ${md ? `<link rel="alternate" type="text/markdown" href="${url}index.md" />\n` :
 <meta name="twitter:title" content="${esc(title)}" />
 <meta name="twitter:description" content="${esc(description)}" />
 <meta name="twitter:image" content="${urlOf(config.ogImage)}" />
-<link rel="preload" href="/vendor/outfit/Outfit-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/vendor/manrope/Manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/vendor/geist/GeistMono-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="/vendor/geist/geist.css" />

@@ -97,10 +97,8 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
     <!-- Self-hosted Geist (OFL): preloaded so the font swap lands before first paint. -->
-    <link rel="preload" href="vendor/outfit/Outfit-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="vendor/manrope/Manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="vendor/geist/GeistMono-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <style>@font-face{font-family:"Outfit";font-style:normal;font-weight:400 700;font-display:swap;src:url("vendor/outfit/Outfit-latin.woff2") format("woff2")}@font-face{font-family:"Manrope";font-style:normal;font-weight:400 700;font-display:swap;src:url("vendor/manrope/Manrope-latin.woff2") format("woff2")}</style>
     <!-- @font-face inlined (source: vendor/geist/geist.css) to keep it off the critical request chain.
          font-display:swap. -->
     <style>@font-face{font-family:"Geist";font-style:normal;font-weight:400 600;font-display:swap;src:url("vendor/geist/Geist-latin.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}@font-face{font-family:"Geist Mono";font-style:normal;font-weight:400 500;font-display:swap;src:url("vendor/geist/GeistMono-latin.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}</style>
@@ -130,7 +128,7 @@
       /* ============================================================
          SDS Motion Forge — home page. One design system:
          white canvas, soft grey panels, 20–36px radii, violet accent,
-         Outfit headings / Manrope body / Geist Mono code.
+         Manrope throughout (bold headings) / Geist Mono code.
          ============================================================ */
       :root {
         --ink: #1c1650; --ink-2: #3f3a6b; --ink-3: #5f5a8a;
@@ -142,7 +140,7 @@
         --sh-1: 0 1px 2px rgba(60, 44, 170, 0.04);
         --sh-2: 0 24px 60px rgba(60, 44, 170, 0.12);
         --ease: cubic-bezier(0.22, 1, 0.36, 1);
-        --f-head: "Outfit", "Manrope", Arial, sans-serif;
+        --f-head: "Manrope", Arial, sans-serif;
         --f-disp: "Manrope", Arial, sans-serif;
         --f-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
         --nav-h: 78px;
@@ -157,7 +155,7 @@
       img { max-width: 100%; height: auto; }
       a { color: inherit; text-underline-offset: 3px; }
       h1, h2, h3, h4, p { margin: 0; }
-      h1, h2, h3 { font-family: var(--f-head); font-weight: 600; letter-spacing: -0.03em; line-height: 1.08; }
+      h1, h2, h3 { font-family: var(--f-head); font-weight: 700; letter-spacing: -0.035em; line-height: 1.06; }
       code, pre, kbd { font-family: var(--f-mono); }
       a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
       .wrap { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
