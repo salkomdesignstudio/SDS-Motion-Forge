@@ -211,3 +211,92 @@
   .m-step:not(:last-child)::after { top: 100%; right: auto; left: 41px; width: 0; height: 22px; border-top: 0; border-left: 2px dashed var(--m-line2); }
 }
 @media (prefers-reduced-motion: reduce) { .m-step, .m-step-n { transition: none; } .m-step:hover, .m-step:hover .m-step-n { transform: none; } }
+
+/* ── home: "Built to ship" proof grid ──────────────────────────────────────── */
+.w-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 16px; }
+.w-card { position: relative; display: flex; flex-direction: column; gap: 14px; min-width: 0; padding: 28px; border: 1px solid var(--m-line); border-radius: 28px; background: #fff; color: var(--m-ink); transition: transform 0.3s var(--m-ease), border-color 0.25s, box-shadow 0.3s; }
+.w-card:hover { transform: translateY(-2px); border-color: var(--m-brand); box-shadow: 0 8px 24px rgba(30, 27, 75, 0.08); }
+.w-card:hover .ic { --ic-cut: var(--m-brand); background: var(--m-brand); color: #fff; }
+.w-card:hover .ic-s { opacity: 0; transform: scale(0.5) rotate(18deg); }
+.w-card:hover .ic-f { opacity: 1; transform: none; }
+.w-3 { grid-column: span 3; } .w-2 { grid-column: span 2; } .w-6 { grid-column: span 6; }
+.w-card header { display: flex; align-items: center; gap: 12px; }
+.w-label { font: 700 13px "Manrope", Arial, sans-serif; letter-spacing: 0.06em; text-transform: uppercase; color: var(--m-ink3); }
+.w-card h3 { margin: 0; font-size: 22px; line-height: 1.2; letter-spacing: -0.035em; }
+.w-card p { margin: 0; font-size: 15px; line-height: 1.6; color: var(--m-ink2); }
+.w-card code { padding: 1px 6px; border-radius: 6px; background: var(--m-tint2); color: var(--m-deep); font-size: 13px; }
+.w-stat { display: flex; flex-direction: column; gap: 2px; }
+.w-stat b { font: 700 clamp(48px, 6vw, 72px) / 1 "Manrope", Arial, sans-serif; letter-spacing: -0.045em; }
+.w-stat b small { font-size: 0.4em; letter-spacing: -0.02em; color: var(--m-ink3); }
+.w-stat span { font-size: 15px; color: var(--m-ink2); }
+.w-stat-sm b { font-size: clamp(40px, 4.4vw, 56px); }
+.w-pills { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.w-pills li { padding: 6px 14px; border: 1px solid var(--m-line); border-radius: 999px; background: var(--m-tint); font: 600 13.5px "Manrope", Arial, sans-serif; color: var(--m-ink); transition: transform 0.3s var(--m-pop), border-color 0.2s, background 0.2s; }
+.w-pills li:hover { transform: translateY(-2px); border-color: var(--m-brand); background: var(--m-tint2); }
+.w-pills b { margin-left: 4px; color: var(--m-deep); }
+.w-code li { font-family: "Geist Mono", ui-monospace, Menlo, monospace; font-size: 12.5px; font-weight: 500; }
+.w-bar { display: flex; gap: 3px; height: 14px; }
+.w-seg { min-width: 6px; border-radius: 5px; background: var(--m-brand); transition: transform 0.3s var(--m-pop); }
+.w-seg:hover { transform: scaleY(1.5); }
+.w-legend { display: grid; grid-template-columns: repeat(3, auto); gap: 6px 18px; justify-content: start; margin: 0; padding: 0; list-style: none; font-size: 14px; color: var(--m-ink2); }
+.w-legend li { display: flex; align-items: center; gap: 8px; }
+.w-legend i { width: 10px; height: 10px; border-radius: 3px; background: var(--m-brand); }
+.w-legend b { color: var(--m-ink); }
+.w-note { font-size: 14px !important; color: var(--m-ink3) !important; }
+.w-meter { height: 12px; border-radius: 999px; background: var(--m-tint2); overflow: hidden; }
+.w-meter span { display: block; height: 100%; border-radius: 999px; background: var(--m-brand); }
+/* dark feature card */
+.w-dark { background: var(--m-ink); border-color: var(--m-ink); color: #fff; }
+.w-dark:hover { border-color: var(--m-brand); box-shadow: 0 8px 28px rgba(30, 27, 75, 0.25); }
+.w-dark .w-label { color: #cfcdf3; }
+.w-dark .w-stat span, .w-dark p { color: #dcdaf7; }
+.w-dark .ic { --ic-cut: #2c2965; background: #2c2965; color: #fff; }
+.w-dark .w-pills li { background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.18); color: #fff; }
+.w-dark .w-pills b { color: #cfcdf3; }
+/* split card with checklist */
+.w-split { flex-direction: row; align-items: center; justify-content: space-between; gap: 32px; }
+.w-split > div { flex: 1 1 0; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.w-checks { flex: 1 1 0; display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.w-checks li { display: flex; gap: 14px; align-items: flex-start; padding: 16px; border: 1px solid var(--m-line); border-radius: 18px; background: var(--m-tint); font-size: 14.5px; line-height: 1.5; color: var(--m-ink2); }
+.w-checks b { display: block; margin-bottom: 2px; color: var(--m-ink); font-size: 15px; }
+.w-tick { flex: none; width: 24px; height: 24px; margin-top: 1px; border-radius: 50%; background: var(--m-brand) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 12.5 4 4 8-9'/%3E%3C/svg%3E") center / 14px no-repeat; }
+@media (max-width: 960px) { .w-3, .w-2 { grid-column: span 3; } .w-split { flex-direction: column; align-items: stretch; } }
+@media (max-width: 720px) { .w-grid { grid-template-columns: minmax(0, 1fr); } .w-3, .w-2, .w-6 { grid-column: span 1; } .w-legend { grid-template-columns: repeat(2, auto); } .w-card { padding: 22px; } }
+@media (prefers-reduced-motion: reduce) { .w-card, .w-pills li, .w-seg { transition: none; } .w-card:hover, .w-pills li:hover, .w-seg:hover { transform: none; } }
+
+/* ── home: physics showcase (list of 13 effects + large stage) ─────────────── */
+.phys-eq { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 18px 0 0; padding: 0; list-style: none; }
+.phys-eq li { padding: 6px 14px; border: 1px solid var(--m-line); border-radius: 999px; background: #fff; font: 600 13.5px "Manrope", Arial, sans-serif; color: var(--m-ink2); transition: transform 0.3s var(--m-pop), border-color 0.2s, color 0.2s; }
+.phys-eq li:hover { transform: translateY(-2px); border-color: var(--m-brand); color: var(--m-deep); }
+.phys-card { display: grid; grid-template-columns: 280px minmax(0, 1fr); overflow: hidden; border: 1px solid var(--m-line); border-radius: 28px; background: #fff; box-shadow: 0 1px 2px rgba(30, 27, 75, 0.04); }
+.phys-list { display: grid; align-content: start; gap: 4px; padding: 14px; border-right: 1px solid var(--m-line); background: #fff; }
+.phys-list .chip { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 46px; padding: 0 14px; border: 0; border-radius: 14px; background: transparent; color: var(--m-ink2); font: 600 15px "Manrope", Arial, sans-serif; text-align: left; box-shadow: none; transition: background 0.2s, color 0.2s, padding 0.25s var(--m-ease); }
+.phys-list .chip i { flex: none; width: 22px; font: 500 12px "Geist Mono", ui-monospace, Menlo, monospace; font-style: normal; color: var(--m-ink3); transition: color 0.2s; }
+.phys-list .chip:hover { background: var(--m-tint); color: var(--m-ink); padding-left: 18px; }
+.phys-list .chip[aria-pressed="true"] { background: var(--m-tint2); color: var(--m-deep); box-shadow: inset 3px 0 0 var(--m-brand); }
+.phys-list .chip[aria-pressed="true"] i { color: var(--m-brand); }
+.phys-list .chip:focus-visible { outline: 2px solid var(--m-brand); outline-offset: 1px; }
+.phys-main { display: flex; flex-direction: column; min-width: 0; }
+.phys-main .physics-stage { flex: 1; min-height: 380px; border: 0; border-radius: 0; background: var(--m-tint); }
+.phys-main .physics-demo h1, .phys-main .physics-demo h2 { font-size: clamp(44px, 6vw, 80px); font-weight: 700; letter-spacing: -0.04em; color: var(--m-ink); }
+.phys-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; padding: 18px 22px; border-top: 1px solid var(--m-line); background: #fff; }
+.phys-bar .physics-desc { flex: 1 1 320px; min-height: 0; margin: 0; font-size: 15px; line-height: 1.55; color: var(--m-ink2); }
+.phys-bar .physics-desc b { color: var(--m-ink); }
+.phys-actions { display: flex; align-items: center; gap: 10px; }
+.phys-actions .physics-cls { position: static; padding: 7px 14px; border: 1px solid var(--m-line); border-radius: 999px; background: var(--m-tint); font: 500 13px "Geist Mono", ui-monospace, Menlo, monospace; color: var(--m-ink); }
+.phys-actions .physics-replay { position: static; height: 42px; padding: 0 20px; border: 0; border-radius: 999px; background: var(--m-brand); color: #fff; font: 700 14px "Manrope", Arial, sans-serif; cursor: pointer; transition: transform 0.3s var(--m-pop), background 0.2s, box-shadow 0.25s; }
+.phys-actions .physics-replay:hover { background: var(--m-deep); transform: translateY(-2px); box-shadow: 0 6px 16px rgba(92, 74, 225, 0.3); }
+.phys-actions .physics-replay:active { transform: scale(0.96); }
+.phys-actions .physics-replay i { display: inline-block; transition: transform 0.45s var(--m-ease); }
+.phys-actions .physics-replay:hover i { transform: rotate(-180deg); }
+@media (max-width: 900px) {
+  .phys-card { grid-template-columns: minmax(0, 1fr); }
+  .phys-list { display: flex; gap: 6px; padding: 12px; overflow-x: auto; border-right: 0; border-bottom: 1px solid var(--m-line); scroll-snap-type: x proximity; scrollbar-width: thin; }
+  .phys-list .chip { flex: none; width: auto; min-height: 42px; padding: 0 16px; border-radius: 999px; white-space: nowrap; scroll-snap-align: start; background: var(--m-tint); }
+  .phys-list .chip i { display: none; }
+  .phys-list .chip:hover { padding-left: 16px; }
+  .phys-list .chip[aria-pressed="true"] { background: var(--m-brand); color: #fff; box-shadow: none; }
+  .phys-main .physics-stage { min-height: 300px; }
+  .phys-actions { width: 100%; justify-content: space-between; }
+}
+@media (prefers-reduced-motion: reduce) { .phys-eq li, .phys-list .chip, .phys-actions .physics-replay, .phys-actions .physics-replay i { transition: none; } .phys-eq li:hover, .phys-actions .physics-replay:hover { transform: none; } }

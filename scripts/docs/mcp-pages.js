@@ -399,7 +399,64 @@ module.exports.fragments = function fragments({ S, esc }) {
           </tbody></table>
           <p class="doc-p">Scores rank similarity and never claim an exact match. <a href="/mcp/">Read how it works</a>.</p>
         </section>`;
-  return { home, docs };
+
+  const cats = [["Text", 117], ["Buttons", 100], ["Inputs", 100], ["Cards", 100], ["Loaders", 100], ["Scroll", 100]];
+  const seg = cats.map(([n, c], i) => `<span class="w-seg" style="flex:${c};opacity:${(1 - i * 0.13).toFixed(2)}" title="${n} ${c}"></span>`).join("");
+  const legend = cats.map(([n, c], i) => `<li><i style="opacity:${(1 - i * 0.13).toFixed(2)}"></i>${n} <b>${c}</b></li>`).join("");
+  const why = `<section class="sec" id="why">
+      <div class="wrap">
+        <div class="sec-head" data-reveal="up">
+          <span class="eyebrow">Features</span>
+          <h2 class="sec-title">Built to ship, not to demo</h2>
+          <p class="sec-desc">A focused motion system for teams who want character without the weight. Everything below is checked by the build.</p>
+        </div>
+        <div class="w-grid">
+          <article class="w-card w-dark w-3" data-reveal="up">
+            <header>${icon("quick")}<span class="w-label">No JavaScript</span></header>
+            <div class="w-stat"><b>0 KB</b><span>of JavaScript for the CSS effects</span></div>
+            <p>All ${total} effects are plain @keyframes and classes. Two optional scripts add what CSS cannot.</p>
+            <ul class="w-pills"><li>Scroll helper <b>1.3 KB</b></li><li>7 cursor effects <b>7 KB</b></li></ul>
+          </article>
+          <article class="w-card w-3" data-reveal="up" data-delay="1">
+            <header>${icon("all")}<span class="w-label">Library</span></header>
+            <div class="w-stat"><b>${total}</b><span>animations, one class name each</span></div>
+            <div class="w-bar" role="img" aria-label="Animations per category">${seg}</div>
+            <ul class="w-legend">${legend}</ul>
+            <p class="w-note">Plus 7 cursor-reactive effects.</p>
+          </article>
+          <article class="w-card w-2" data-reveal="up" data-delay="1">
+            <header>${icon("frameworks")}<span class="w-label">Anywhere</span></header>
+            <h3>Works where a class works</h3>
+            <ul class="w-pills"><li>Angular</li><li>React</li><li>Vue</li><li>Next.js</li><li>Bootstrap</li><li>Tailwind</li></ul>
+            <p>Anything that renders HTML with CSS classes.</p>
+          </article>
+          <article class="w-card w-2" data-reveal="up" data-delay="2">
+            <header>${icon("theme")}<span class="w-label">Themeable</span></header>
+            <h3>Retune with variables</h3>
+            <ul class="w-pills w-code"><li>--sds-primary</li><li>--sds-duration</li><li>--sds-easing</li></ul>
+            <p>Change colour and speed in one place. No rebuild.</p>
+          </article>
+          <article class="w-card w-2" data-reveal="up" data-delay="3">
+            <header>${icon("scroll")}<span class="w-label">Performance</span></header>
+            <div class="w-stat w-stat-sm"><b>468<small> / ${total}</small></b></div>
+            <div class="w-meter" role="img" aria-label="468 of 617 effects are compositor-only"><span style="width:75.8%"></span></div>
+            <p>animate only transform, opacity, filter or clip-path. The other 149 also animate shadows, gradients or sizes and can cost more on slow devices.</p>
+          </article>
+          <article class="w-card w-6 w-split" data-reveal="up" data-delay="1">
+            <div>
+              <header>${icon("a11y")}<span class="w-label">Accessibility</span></header>
+              <h3>Respects reduced motion</h3>
+              <p>Every animating selector is switched off under <code>prefers-reduced-motion: reduce</code>, and the build fails if one is missed.</p>
+            </div>
+            <ul class="w-checks">
+              <li><span class="w-tick" aria-hidden="true"></span><span><b>Checked on every build</b>A missed selector fails the build.</span></li>
+              <li><span class="w-tick" aria-hidden="true"></span><span><b>Nothing breaks on upgrade</b>Every class that worked in v3 and v4 still works in v5, checked against the published package.</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>`;
+  return { home, docs, why };
 };
 
 module.exports.MCP_PKG = MCP_PKG;

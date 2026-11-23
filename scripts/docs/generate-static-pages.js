@@ -615,6 +615,7 @@ patchIndex();
 {
   const frag = buildMcpPages.fragments({ S, esc });
   patchMarked("index.html", "WAYS", frag.home);
+  patchMarked("index.html", "WHY", frag.why);
   patchMarked("docs.html", "MCP-DOC", frag.docs);
 }
 write("assets/pages.css", PAGES_CSS);

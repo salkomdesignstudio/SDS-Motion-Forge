@@ -282,10 +282,6 @@
       .fx-on .tile:hover::after { opacity: 1; }
 
       /* physics spotlight */
-      .physics { display: grid; grid-template-columns: 1.05fr 1fr; gap: 16px; align-items: stretch; }
-      .physics-copy { padding: 40px; display: flex; flex-direction: column; gap: 18px; justify-content: center; background: #fff; border: 1px solid var(--line); border-radius: var(--r-xl); }
-      .physics-copy h2 { font-size: clamp(30px, 3.6vw, 44px); }
-      .physics-copy p { color: var(--ink-2); font-size: 16.5px; }
       .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
       .chip { padding: 8px 16px; border: 1px solid transparent; border-radius: var(--r-full); background: var(--bg-2); font: 500 14px var(--f-disp); color: var(--ink-2); cursor: pointer; transition: background 0.15s, color 0.15s, border-color 0.15s; }
       .chip:hover { background: #fff; border-color: var(--line-2); color: var(--ink); }
@@ -453,7 +449,6 @@
         .specimens { grid-template-columns: repeat(3, minmax(0, 1fr)); }
         .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         .tile, .tile.wide, .tile.full { grid-column: span 1; }
-        .physics { grid-template-columns: 1fr; }
         .docs-card-grid, .steps, .needs { grid-template-columns: minmax(0, 1fr); }
       }
       @media (max-width: 900px) {
@@ -771,77 +766,100 @@
     </section>
 
     <!-- WHY -->
-    <section class="sec" id="why">
+    <!-- WHY:START (generated: scripts/docs/generate-static-pages.js) -->
+<section class="sec" id="why">
       <div class="wrap">
         <div class="sec-head" data-reveal="up">
           <span class="eyebrow">Features</span>
           <h2 class="sec-title">Built to ship, not to demo</h2>
           <p class="sec-desc">A focused motion system for teams who want character without the weight. Everything below is checked by the build.</p>
         </div>
-        <div class="bento">
-          <div class="tile tile-dark wide" data-reveal="scale">
-            <div class="tile-ico"><i class="ri-flashlight-fill"></i></div>
-            <div class="tile-t">No JavaScript for the CSS effects</div>
-            <div class="tile-d">All 617 effects are plain @keyframes and classes. Two optional scripts add what CSS cannot: scroll triggering where CSS scroll-driven animation is missing (1.3 KB) and 7 cursor-reactive effects (7 KB).</div>
-          </div>
-          <div class="tile wide" data-reveal="up" data-delay="1">
-            <div class="tile-ico"><i class="ri-sparkling-2-fill"></i></div>
-            <div class="tile-t">617 animations</div>
-            <div class="tile-d">Text 117 · Buttons 100 · Inputs 100 · Cards 100 · Loaders 100 · Scroll 100, plus 7 cursor-reactive effects.</div>
-          </div>
-          <div class="tile" data-reveal="up" data-delay="1">
-            <div class="tile-ico"><i class="ri-stack-fill"></i></div>
-            <div class="tile-t">Works where a class works</div>
-            <div class="tile-d">Angular, React, Vue, Next.js, Bootstrap and Tailwind projects: anything that renders HTML with CSS classes.</div>
-          </div>
-          <div class="tile" data-reveal="up" data-delay="2">
-            <div class="tile-ico"><i class="ri-palette-fill"></i></div>
-            <div class="tile-t">Themeable</div>
-            <div class="tile-d">Set CSS variables such as --sds-primary, --sds-duration and --sds-easing to retune colour and speed.</div>
-          </div>
-          <div class="tile" data-reveal="up" data-delay="3">
-            <div class="tile-ico"><i class="ri-speed-up-fill"></i></div>
-            <div class="tile-t">Mostly compositor-only</div>
-            <div class="tile-d">468 of 617 effects animate only transform, opacity, filter or clip-path. The other 149 also animate shadows, gradients or sizes and can cost more on slow devices.</div>
-          </div>
-          <div class="tile full" data-reveal="up" data-delay="1">
-            <div class="tile-ico"><i class="ri-wheelchair-fill"></i></div>
-            <div class="tile-t">Respects reduced motion</div>
-            <div class="tile-d">Every animating selector is switched off under prefers-reduced-motion: reduce, and the build fails if one is missed. Every class that worked in v3 and v4 still works in v5, checked against the published package.</div>
-          </div>
+        <div class="w-grid">
+          <article class="w-card w-dark w-3" data-reveal="up">
+            <header><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="M13 3 5 13h6l-1 8 8-10h-6z"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path d="M13 3 5 13h6l-1 8 8-10h-6z" stroke-linejoin="round"/></svg></span><span class="w-label">No JavaScript</span></header>
+            <div class="w-stat"><b>0 KB</b><span>of JavaScript for the CSS effects</span></div>
+            <p>All 617 effects are plain @keyframes and classes. Two optional scripts add what CSS cannot.</p>
+            <ul class="w-pills"><li>Scroll helper <b>1.3 KB</b></li><li>7 cursor effects <b>7 KB</b></li></ul>
+          </article>
+          <article class="w-card w-3" data-reveal="up" data-delay="1">
+            <header><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="M4 7h16M4 12h16M4 17h10"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path d="M3 5.5A1.5 1.5 0 0 1 4.5 4h15a1.5 1.5 0 0 1 0 3h-15A1.5 1.5 0 0 1 3 5.5zM3 12a1.5 1.5 0 0 1 1.5-1.5h15a1.5 1.5 0 0 1 0 3h-15A1.5 1.5 0 0 1 3 12zm0 6.5A1.5 1.5 0 0 1 4.5 17h9a1.5 1.5 0 0 1 0 3h-9A1.5 1.5 0 0 1 3 18.5z"/></svg></span><span class="w-label">Library</span></header>
+            <div class="w-stat"><b>617</b><span>animations, one class name each</span></div>
+            <div class="w-bar" role="img" aria-label="Animations per category"><span class="w-seg" style="flex:117;opacity:1.00" title="Text 117"></span><span class="w-seg" style="flex:100;opacity:0.87" title="Buttons 100"></span><span class="w-seg" style="flex:100;opacity:0.74" title="Inputs 100"></span><span class="w-seg" style="flex:100;opacity:0.61" title="Cards 100"></span><span class="w-seg" style="flex:100;opacity:0.48" title="Loaders 100"></span><span class="w-seg" style="flex:100;opacity:0.35" title="Scroll 100"></span></div>
+            <ul class="w-legend"><li><i style="opacity:1.00"></i>Text <b>117</b></li><li><i style="opacity:0.87"></i>Buttons <b>100</b></li><li><i style="opacity:0.74"></i>Inputs <b>100</b></li><li><i style="opacity:0.61"></i>Cards <b>100</b></li><li><i style="opacity:0.48"></i>Loaders <b>100</b></li><li><i style="opacity:0.35"></i>Scroll <b>100</b></li></ul>
+            <p class="w-note">Plus 7 cursor-reactive effects.</p>
+          </article>
+          <article class="w-card w-2" data-reveal="up" data-delay="1">
+            <header><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="m12 4 8 4-8 4-8-4zM4 12l8 4 8-4M4 16l8 4 8-4"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path d="m12 3.5 8.5 4.3L12 12 3.5 7.8z"/><path d="M4 11.9l8 4 8-4M4 15.9l8 4 8-4" fill="none" stroke-width="2.2"/></svg></span><span class="w-label">Anywhere</span></header>
+            <h3>Works where a class works</h3>
+            <ul class="w-pills"><li>Angular</li><li>React</li><li>Vue</li><li>Next.js</li><li>Bootstrap</li><li>Tailwind</li></ul>
+            <p>Anything that renders HTML with CSS classes.</p>
+          </article>
+          <article class="w-card w-2" data-reveal="up" data-delay="2">
+            <header><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><circle cx="12" cy="12" r="8"/><path d="M12 4v16M12 12h8"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path d="M12 3a9 9 0 0 0 0 18z"/><circle cx="12" cy="12" r="8.2" fill="none" stroke-width="1.6"/></svg></span><span class="w-label">Themeable</span></header>
+            <h3>Retune with variables</h3>
+            <ul class="w-pills w-code"><li>--sds-primary</li><li>--sds-duration</li><li>--sds-easing</li></ul>
+            <p>Change colour and speed in one place. No rebuild.</p>
+          </article>
+          <article class="w-card w-2" data-reveal="up" data-delay="3">
+            <header><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><path d="M12 4v14m0 0-4-4m4 4 4-4"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><path d="M12 3a1.5 1.5 0 0 1 1.5 1.5v9.4l2.4-2.4a1.5 1.5 0 1 1 2.1 2.1l-5 5a1.5 1.5 0 0 1-2.1 0l-5-5a1.5 1.5 0 1 1 2.1-2.1l2.5 2.4V4.5A1.5 1.5 0 0 1 12 3z"/></svg></span><span class="w-label">Performance</span></header>
+            <div class="w-stat w-stat-sm"><b>468<small> / 617</small></b></div>
+            <div class="w-meter" role="img" aria-label="468 of 617 effects are compositor-only"><span style="width:75.8%"></span></div>
+            <p>animate only transform, opacity, filter or clip-path. The other 149 also animate shadows, gradients or sizes and can cost more on slow devices.</p>
+          </article>
+          <article class="w-card w-6 w-split" data-reveal="up" data-delay="1">
+            <div>
+              <header><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-s"><circle cx="12" cy="6" r="2"/><path d="M5 9l7 2 7-2M12 11v4m-3 5 3-5 3 5"/></svg><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" class="ic-f"><circle cx="12" cy="5.5" r="2.6"/><path d="M4.6 8.6a1.2 1.2 0 0 1 1.4-.9L12 9.2l6-1.5a1.2 1.2 0 0 1 .7 2.3L14 11.2v3.4l2.2 5a1.2 1.2 0 0 1-2.2.9L12 16.6 10 20.5a1.2 1.2 0 0 1-2.2-.9l2.2-5v-3.4l-4.7-1.2a1.2 1.2 0 0 1-.7-1z"/></svg></span><span class="w-label">Accessibility</span></header>
+              <h3>Respects reduced motion</h3>
+              <p>Every animating selector is switched off under <code>prefers-reduced-motion: reduce</code>, and the build fails if one is missed.</p>
+            </div>
+            <ul class="w-checks">
+              <li><span class="w-tick" aria-hidden="true"></span><span><b>Checked on every build</b>A missed selector fails the build.</span></li>
+              <li><span class="w-tick" aria-hidden="true"></span><span><b>Nothing breaks on upgrade</b>Every class that worked in v3 and v4 still works in v5, checked against the published package.</span></li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
+    <!-- WHY:END -->
 
     <!-- PHYSICS -->
     <section class="sec" id="physics" style="padding-top:8px">
       <div class="wrap">
-        <div class="physics">
-          <div class="physics-copy" data-reveal="up">
-            <span class="eyebrow" style="align-self:flex-start">New in 5.1</span>
-            <h2>Thirteen physics text effects</h2>
-            <p>Driven by real equations, not hand-tuned curves: a spring, a bouncing ball, a pendulum, buoyancy against drag, a drag-limited gust, an infall in an inverse-square field. Each equation is sampled into a CSS <code>linear()</code> easing and checked against its closed-form solution on every build.</p>
-            <div class="chips" id="physicsChips" role="group" aria-label="Choose a physics effect to preview">
-              <button type="button" class="chip" data-cls="sds-spring-drop" data-name="Spring Drop" aria-pressed="true">Spring Drop</button>
-              <button type="button" class="chip" data-cls="sds-orbit-decay" data-name="Orbit Decay" aria-pressed="false">Orbit Decay</button>
-              <button type="button" class="chip" data-cls="sds-chain-swing" data-name="Chain Swing" aria-pressed="false">Chain Swing</button>
-              <button type="button" class="chip" data-cls="sds-toss-in" data-name="Toss In" aria-pressed="false">Toss In</button>
-              <button type="button" class="chip" data-cls="sds-band-snap" data-name="Band Snap" aria-pressed="false">Band Snap</button>
-              <button type="button" class="chip" data-cls="sds-bubble-rise" data-name="Bubble Rise" aria-pressed="false">Bubble Rise</button>
-              <button type="button" class="chip" data-cls="sds-wind-drift" data-name="Wind Drift" aria-pressed="false">Wind Drift</button>
-              <button type="button" class="chip" data-cls="sds-gravity-collapse" data-name="Gravity Collapse" aria-pressed="false">Gravity Collapse</button>
-              <button type="button" class="chip" data-cls="sds-liquid-slosh" data-name="Liquid Slosh" aria-pressed="false">Liquid Slosh</button>
-              <button type="button" class="chip" data-cls="sds-split-halves" data-name="Split Halves" aria-pressed="false">Split Halves</button>
-              <button type="button" class="chip" data-cls="sds-strike-swap" data-name="Strike Swap" aria-pressed="false">Strike Swap</button>
-              <button type="button" class="chip" data-cls="sds-count-roll" data-name="Count Roll" aria-pressed="false">Count Roll</button>
-              <button type="button" class="chip" data-cls="sds-extrude-rise" data-name="Extrude Rise" aria-pressed="false">Extrude Rise</button>
-            </div>
-            <p class="physics-desc" id="physicsDesc" aria-live="polite"><b>Spring Drop.</b> Letters fall under gravity and bounce off a floor, each landing squashing with its impact speed.</p>
+        <div class="sec-head phys-head" data-reveal="up">
+          <span class="eyebrow">New in 5.1</span>
+          <h2 class="sec-title">Thirteen physics text effects</h2>
+          <p class="sec-desc">Driven by real equations, not hand-tuned curves. Each equation is sampled into a CSS <code>linear()</code> easing and checked against its closed-form solution on every build.</p>
+          <ul class="phys-eq" aria-label="Physical models used">
+            <li>Spring</li><li>Bouncing ball</li><li>Pendulum</li><li>Buoyancy against drag</li><li>Drag-limited gust</li><li>Inverse-square infall</li>
+          </ul>
+        </div>
+        <div class="phys-card" data-reveal="up" data-delay="1">
+          <div class="phys-list" id="physicsChips" role="group" aria-label="Choose a physics effect to preview">
+            <button type="button" class="chip" data-cls="sds-spring-drop" data-name="Spring Drop" aria-pressed="true"><i>01</i><span>Spring Drop</span></button>
+            <button type="button" class="chip" data-cls="sds-orbit-decay" data-name="Orbit Decay" aria-pressed="false"><i>02</i><span>Orbit Decay</span></button>
+            <button type="button" class="chip" data-cls="sds-chain-swing" data-name="Chain Swing" aria-pressed="false"><i>03</i><span>Chain Swing</span></button>
+            <button type="button" class="chip" data-cls="sds-toss-in" data-name="Toss In" aria-pressed="false"><i>04</i><span>Toss In</span></button>
+            <button type="button" class="chip" data-cls="sds-band-snap" data-name="Band Snap" aria-pressed="false"><i>05</i><span>Band Snap</span></button>
+            <button type="button" class="chip" data-cls="sds-bubble-rise" data-name="Bubble Rise" aria-pressed="false"><i>06</i><span>Bubble Rise</span></button>
+            <button type="button" class="chip" data-cls="sds-wind-drift" data-name="Wind Drift" aria-pressed="false"><i>07</i><span>Wind Drift</span></button>
+            <button type="button" class="chip" data-cls="sds-gravity-collapse" data-name="Gravity Collapse" aria-pressed="false"><i>08</i><span>Gravity Collapse</span></button>
+            <button type="button" class="chip" data-cls="sds-liquid-slosh" data-name="Liquid Slosh" aria-pressed="false"><i>09</i><span>Liquid Slosh</span></button>
+            <button type="button" class="chip" data-cls="sds-split-halves" data-name="Split Halves" aria-pressed="false"><i>10</i><span>Split Halves</span></button>
+            <button type="button" class="chip" data-cls="sds-strike-swap" data-name="Strike Swap" aria-pressed="false"><i>11</i><span>Strike Swap</span></button>
+            <button type="button" class="chip" data-cls="sds-count-roll" data-name="Count Roll" aria-pressed="false"><i>12</i><span>Count Roll</span></button>
+            <button type="button" class="chip" data-cls="sds-extrude-rise" data-name="Extrude Rise" aria-pressed="false"><i>13</i><span>Extrude Rise</span></button>
           </div>
-          <div class="physics-stage" id="physicsStage" data-reveal="scale">
-            <div class="physics-demo" id="physicsDemo" role="img" aria-label="Spring Drop"><h1 class="sds-spring-drop"><span class="sds-char" aria-hidden="true" style="--i:0">S</span><span class="sds-char" aria-hidden="true" style="--i:1">p</span><span class="sds-char" aria-hidden="true" style="--i:2">r</span><span class="sds-char" aria-hidden="true" style="--i:3">i</span><span class="sds-char" aria-hidden="true" style="--i:4">n</span><span class="sds-char" aria-hidden="true" style="--i:5">g</span></h1></div>
-            <code class="physics-cls" id="physicsCls">.sds-spring-drop</code>
-            <button type="button" class="physics-replay" id="physicsReplay"><i class="ri-restart-line" aria-hidden="true"></i> Replay</button>
+          <div class="phys-main">
+            <div class="physics-stage" id="physicsStage">
+              <div class="physics-demo" id="physicsDemo" role="img" aria-label="Spring Drop"><h1 class="sds-spring-drop"><span class="sds-char" aria-hidden="true" style="--i:0">S</span><span class="sds-char" aria-hidden="true" style="--i:1">p</span><span class="sds-char" aria-hidden="true" style="--i:2">r</span><span class="sds-char" aria-hidden="true" style="--i:3">i</span><span class="sds-char" aria-hidden="true" style="--i:4">n</span><span class="sds-char" aria-hidden="true" style="--i:5">g</span></h1></div>
+            </div>
+            <div class="phys-bar">
+              <p class="physics-desc" id="physicsDesc" aria-live="polite"><b>Spring Drop.</b> Letters fall under gravity and bounce off a floor, each landing squashing with its impact speed.</p>
+              <div class="phys-actions">
+                <code class="physics-cls" id="physicsCls">.sds-spring-drop</code>
+                <button type="button" class="physics-replay" id="physicsReplay"><i class="ri-restart-line" aria-hidden="true"></i> Replay</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
