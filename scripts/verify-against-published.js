@@ -100,7 +100,9 @@ if (!fs.existsSync(newCssPath)) {
 }
 
 const baseModel = buildModel(fs.readFileSync(baseCssPath, "utf8"));
-const newModel = buildModel(fs.readFileSync(newCssPath, "utf8"));
+// v6: classes moved out of the default bundle live in dist/legacy.css; the published contract is met by both together.
+const legacyCssPath = path.join(ROOT, "dist", "legacy.css");
+const newModel = buildModel(fs.readFileSync(newCssPath, "utf8") + (fs.existsSync(legacyCssPath) ? "\n" + fs.readFileSync(legacyCssPath, "utf8") : ""));
 
 function computedDecls(rule, vars) {
   // returns Map prop -> ordered array of "value!important" computed strings

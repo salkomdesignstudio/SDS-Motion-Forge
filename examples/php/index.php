@@ -19,6 +19,6 @@ $cards = array( 'One', 'Two', 'Three' );
 		<div class="sds-card-stack-pop"><?php echo htmlspecialchars( $label ); ?></div>
 	<?php endforeach; ?>
 
-	<button class="sds-btn-amp">Deploy</button>
+	<button class="sds-btn-ui-arrow-slide">Deploy</button>
 </body>
 </html>

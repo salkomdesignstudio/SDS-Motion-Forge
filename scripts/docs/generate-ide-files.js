@@ -59,7 +59,7 @@ for (const c of all.filter((x) => x.kind !== "modifier").sort((a, b) => a.name.l
 out("ide/sds-motion-forge.code-snippets", JSON.stringify(snippets, null, 1) + "\n");
 
 /* ── AI assistant rules ──────────────────────────────────────── */
-const real = ["sds-velvet-drop", "sds-aurora-text", "sds-btn-aurora", "sds-input-focus-glow", "sds-card-cascade", "sds-loader-orbital", "sds-scroll-rise"];
+const real = ["sds-velvet-drop", "sds-aurora-text", "sds-btn-ui-aurora-mesh", "sds-input-focus-glow", "sds-card-cascade", "sds-loader-orbital", "sds-scroll-rise"];
 const names = new Set(S.registry.classes.map((c) => c.name));
 const bad = real.filter((n) => !names.has(n));
 if (bad.length) { console.error("AI-ASSISTANT examples missing from registry:", bad.join(", ")); process.exit(1); }

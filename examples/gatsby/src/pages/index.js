@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <main>
       <h1 className="sds-aurora-text">Aurora heading</h1>
-      <button className="sds-btn-amp">Deploy</button>
+      <button className="sds-btn-ui-arrow-slide">Deploy</button>
       <div className="sds-card-stack-pop">
         <p>Card</p>
       </div>

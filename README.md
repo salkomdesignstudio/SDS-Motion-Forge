@@ -36,7 +36,7 @@ Or with npm: `npm i @salkomdesignstudio/sds-motion-forge`, then import `@salkomd
 <div class="sds-scroll-auto sds-scroll-rise">Rises into view</div>
 
 <!-- 3. Buttons and loaders: same pattern, plus modifiers for speed and delay -->
-<button class="sds-btn-aurora sds-fast">Deploy</button>
+<button class="sds-btn-ui-aurora-mesh sds-fast">Deploy</button>
 <span class="sds-loader-orbital"></span>
 ```
 
@@ -186,14 +186,14 @@ import '@salkomdesignstudio/sds-motion-forge/categories/loaders';
 <!-- @sds-size-table:start -->
 | Bundle | Import | Minified | Gzip |
 |---|---|---|---|
-| text | `@salkomdesignstudio/sds-motion-forge/categories/text` | 64.7 KB | 13.5 KB |
-| buttons | `@salkomdesignstudio/sds-motion-forge/categories/buttons` | 60.7 KB | 10.9 KB |
-| inputs | `@salkomdesignstudio/sds-motion-forge/categories/inputs` | 47.0 KB | 8.4 KB |
-| cards | `@salkomdesignstudio/sds-motion-forge/categories/cards` | 39.6 KB | 7.5 KB |
-| loaders | `@salkomdesignstudio/sds-motion-forge/categories/loaders` | 49.1 KB | 8.1 KB |
-| scroll | `@salkomdesignstudio/sds-motion-forge/categories/scroll` | 33.6 KB | 5.8 KB |
-| core only | `@salkomdesignstudio/sds-motion-forge/categories/core` | 3.3 KB | 1.0 KB |
-| **everything** | `@salkomdesignstudio/sds-motion-forge` | **272.4 KB** | **46.0 KB** |
+| text | `@salkomdesignstudio/sds-motion-forge/categories/text` | 65.7 KB | 13.7 KB |
+| buttons | `@salkomdesignstudio/sds-motion-forge/categories/buttons` | 38.0 KB | 7.0 KB |
+| inputs | `@salkomdesignstudio/sds-motion-forge/categories/inputs` | 47.2 KB | 8.4 KB |
+| cards | `@salkomdesignstudio/sds-motion-forge/categories/cards` | 40.4 KB | 7.6 KB |
+| loaders | `@salkomdesignstudio/sds-motion-forge/categories/loaders` | 50.1 KB | 8.3 KB |
+| scroll | `@salkomdesignstudio/sds-motion-forge/categories/scroll` | 34.6 KB | 6.0 KB |
+| core only | `@salkomdesignstudio/sds-motion-forge/categories/core` | 4.3 KB | 1.2 KB |
+| **everything** | `@salkomdesignstudio/sds-motion-forge` | **250.3 KB** | **42.4 KB** |
 <!-- @sds-size-table:end -->
 
 Core is intentionally **inlined** into every category bundle so each one works
@@ -636,7 +636,7 @@ Apply directly to `<button>` or `<a>` elements. Effects are ambient — no inter
 ```html
 <button class="sds-btn-magnetic">Magnetic pulse</button>
 <button class="sds-btn-plasma">Plasma glow</button>
-<button class="sds-btn-aurora">Aurora border</button>
+<button class="sds-btn-ui-aurora-mesh">Aurora border</button>
 <button class="sds-btn-neon">Neon sign</button>
 <button class="sds-btn-charge">Charging animation</button>
 <button class="sds-btn-hologram">Hologram flicker</button>
@@ -694,7 +694,7 @@ Restyle them with custom properties on the element or a parent: `--sds-btn-bg`, 
 All 100 ambient button classes:
 
 ```
-sds-btn-amp          sds-btn-aurora       sds-btn-border-flow  sds-btn-bounce
+sds-btn-ui-arrow-slide          sds-btn-ui-aurora-mesh       sds-btn-border-flow  sds-btn-bounce
 sds-btn-burst        sds-btn-charge       sds-btn-crystal      sds-btn-depth-press
 sds-btn-dissolve     sds-btn-edge         sds-btn-energy       sds-btn-fire
 sds-btn-flare        sds-btn-float        sds-btn-flux         sds-btn-glow-core

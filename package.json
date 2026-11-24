@@ -19,6 +19,12 @@
     "./dist/motion-interactive.min.js.map": "./dist/motion-interactive.min.js.map",
     "./motion.css": "./dist/motion.css",
     "./motion.min.css": "./dist/motion.min.css",
+    "./legacy": {
+      "style": "./dist/legacy.min.css",
+      "default": "./dist/legacy.min.css"
+    },
+    "./dist/legacy.css": "./dist/legacy.css",
+    "./dist/legacy.min.css": "./dist/legacy.min.css",
     "./categories/core": {
       "style": "./dist/categories/core.css",
       "default": "./dist/categories/core.css"
@@ -86,7 +92,7 @@
   ],
   "scripts": {
     "build:tokens": "node scripts/generate-tokens.js",
-    "build:css": "postcss src/motion.css -o dist/motion.css && cleancss -o dist/motion.min.css dist/motion.css",
+    "build:css": "postcss src/motion.css -o dist/motion.css && cleancss -o dist/motion.min.css dist/motion.css && postcss src/legacy.css -o dist/legacy.css && cleancss -o dist/legacy.min.css dist/legacy.css",
     "build:js": "terser src/sds-scroll.js -o dist/sds-scroll.min.js --compress --mangle --source-map \"url='sds-scroll.min.js.map'\" && terser src/motion-interactive.js -o dist/motion-interactive.min.js --compress --mangle --source-map \"url='motion-interactive.min.js.map'\"",
     "build:categories": "node scripts/build-categories.js",
     "build:packages": "npm run build --workspaces --if-present",

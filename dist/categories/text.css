@@ -367,6 +367,84 @@ html:not(.sds-js) [data-sds] {
   transform: none !important;
 }
 
+/* Shared keyframes: used by more than one category, so they live here (v6 moved them out of the legacy buttons). */
+
+
+/* Shared keyframes: used by more than one category, so they live here (v6 moved them out of the legacy buttons). */
+
+
+/* Shared keyframes: used by more than one category, so they live here (v6 moved them out of the legacy buttons). */
+@keyframes sds-magnetPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 var(--sds-primary-glow);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(0, 21, 209, 0);
+    transform: scale(1.02);
+  }
+}
+
+@keyframes sds-plasmaGlow {
+  0% {
+    box-shadow:
+      0 0 12px var(--sds-primary-glow),
+      inset 0 0 12px var(--sds-primary-dim);
+  }
+  33% {
+    box-shadow:
+      0 0 24px var(--sds-primary-glow),
+      inset 0 0 18px var(--sds-primary-dim);
+  }
+  66% {
+    box-shadow:
+      0 0 20px rgba(209, 0, 40, 0.35),
+      inset 0 0 14px rgba(209, 0, 40, 0.06);
+  }
+  100% {
+    box-shadow:
+      0 0 12px var(--sds-primary-glow),
+      inset 0 0 12px var(--sds-primary-dim);
+  }
+}
+
+@keyframes sds-neonSign {
+  0%,
+  95%,
+  100% {
+    box-shadow:
+      0 0 8px var(--sds-primary-glow),
+      0 0 20px var(--sds-primary-dim),
+      inset 0 0 8px var(--sds-primary-dim);
+  }
+  96% {
+    box-shadow: 0 0 2px rgba(0, 21, 209, 0.2);
+  }
+  97.5% {
+    box-shadow:
+      0 0 8px var(--sds-primary-glow),
+      0 0 20px var(--sds-primary-dim);
+  }
+  98.5% {
+    box-shadow: 0 0 1px rgba(0, 21, 209, 0.1);
+  }
+}
+
+@keyframes sds-glowSurge {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 1px rgba(0, 21, 209, 0.15),
+      0 4px 20px rgba(0, 21, 209, 0.06);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px rgba(0, 21, 209, 0.5),
+      0 0 24px rgba(0, 21, 209, 0.2),
+      0 4px 30px rgba(0, 21, 209, 0.1);
+  }
+}
+
 /*!
  * SDS Motion Forge — text.css
  * Text animations (Section 1) + interactive base rules.

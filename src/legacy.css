@@ -1,0 +1,6 @@
+/*!
+ * SDS Motion Forge — legacy bundle (v5 classes).
+ * Load this next to motion.css (or any category bundle) to keep the v5 classes that v6 moved out of the default set.
+ * It carries no core: tokens, modifiers and the reduced-motion rule come from motion.css.
+ */
+@import "./legacy/buttons.css";

@@ -3090,5 +3090,145 @@
     "description": "A light button that rises on hover and blooms a soft shadow beneath it.",
     "displayName": "Soft Lift",
     "source": "authored"
+  },
+  "sds-btn-ui-iris-reveal": {
+    "description": "A circle of accent colour opens from the centre and floods the button on hover.",
+    "displayName": "Iris Reveal",
+    "source": "authored"
+  },
+  "sds-btn-ui-diagonal-wipe": {
+    "description": "A slanted wipe of accent colour sweeps across the button, edge first.",
+    "displayName": "Diagonal Wipe",
+    "source": "authored"
+  },
+  "sds-btn-ui-curtain-split": {
+    "description": "Two halves of accent colour slide in from the sides and meet in the middle.",
+    "displayName": "Curtain Split",
+    "source": "authored"
+  },
+  "sds-btn-ui-ghost-fill": {
+    "description": "An outlined button whose tinted fill rises from the bottom on hover.",
+    "displayName": "Ghost Fill",
+    "source": "authored"
+  },
+  "sds-btn-ui-underline-grow": {
+    "description": "A link-style button whose underline exits right and re-enters from the left on hover.",
+    "displayName": "Underline Grow",
+    "source": "authored"
+  },
+  "sds-btn-ui-bracket-open": {
+    "description": "Corner brackets open out into the full outline of the button on hover.",
+    "displayName": "Bracket Open",
+    "source": "authored"
+  },
+  "sds-btn-ui-frame-draw": {
+    "description": "The outline is traced around the button, clockwise, on hover.",
+    "displayName": "Frame Draw",
+    "source": "authored"
+  },
+  "sds-btn-ui-circle-expand": {
+    "description": "A small circle at the end grows until it fills the button, nudging the arrow forward.",
+    "displayName": "Circle Expand",
+    "source": "authored"
+  },
+  "sds-btn-ui-brutal-offset": {
+    "description": "A flat button with a hard offset shadow that it presses into on hover and press.",
+    "displayName": "Brutal Offset",
+    "source": "authored"
+  },
+  "sds-btn-ui-stepped-press": {
+    "description": "A retro, frame-by-frame press with a dithered flash, moving in hard steps.",
+    "displayName": "Stepped Press",
+    "source": "authored"
+  },
+  "sds-btn-ui-bloom-halo": {
+    "description": "A blurred halo blooms behind the button and the button lifts on hover.",
+    "displayName": "Bloom Halo",
+    "source": "authored"
+  },
+  "sds-btn-ui-tilt-3d": {
+    "description": "The button tilts in perspective with a soft highlight, and levels out when pressed.",
+    "displayName": "Tilt 3D",
+    "source": "authored"
+  },
+  "sds-btn-ui-flip-spin": {
+    "description": "The whole button flips once around its horizontal axis on hover.",
+    "displayName": "Flip Spin",
+    "source": "authored"
+  },
+  "sds-btn-ui-rubber-stretch": {
+    "description": "The button stretches and squashes like rubber, settling after a few rebounds.",
+    "displayName": "Rubber Stretch",
+    "source": "authored"
+  },
+  "sds-btn-ui-jelly-wobble": {
+    "description": "The button wobbles sideways like jelly and settles on hover.",
+    "displayName": "Jelly Wobble",
+    "source": "authored"
+  },
+  "sds-btn-ui-holo-sheen": {
+    "description": "A pink, cyan and yellow holographic sheen drifts across the button while it is hovered.",
+    "displayName": "Holo Sheen",
+    "source": "authored"
+  },
+  "sds-btn-ui-spotlight-sweep": {
+    "description": "A soft round spotlight travels across the button on hover.",
+    "displayName": "Spotlight Sweep",
+    "source": "authored"
+  },
+  "sds-btn-ui-glitch-split": {
+    "description": "Red and cyan edges split apart and jitter for half a second, then snap back.",
+    "displayName": "Glitch Split",
+    "source": "authored"
+  },
+  "sds-btn-ui-hue-cycle": {
+    "description": "The button's colours cycle round the whole hue wheel while it is hovered.",
+    "displayName": "Hue Cycle",
+    "source": "authored"
+  },
+  "sds-btn-ui-invert-flip": {
+    "description": "The colours flip to their opposites on hover.",
+    "displayName": "Invert Flip",
+    "source": "authored"
+  },
+  "sds-btn-ui-stripe-march": {
+    "description": "Diagonal stripes march steadily across the button while it is hovered.",
+    "displayName": "Stripe March",
+    "source": "authored"
+  },
+  "sds-btn-ui-spark-burst": {
+    "description": "Two rings of sparks fly outward from the centre on hover.",
+    "displayName": "Spark Burst",
+    "source": "authored"
+  },
+  "sds-btn-ui-ring-pulse": {
+    "description": "Rings radiate outward from the button, one after another, while it is hovered.",
+    "displayName": "Ring Pulse",
+    "source": "authored"
+  },
+  "sds-btn-ui-scan-line": {
+    "description": "A bright scan line sweeps down the button repeatedly while it is hovered.",
+    "displayName": "Scan Line",
+    "source": "authored"
+  },
+  "sds-btn-ui-hold-to-confirm": {
+    "description": "Press and hold: a fill runs across the button and fires an animationend event when it completes.",
+    "displayName": "Hold To Confirm",
+    "source": "authored"
+  },
+  "sds-btn-ui-progress-fill": {
+    "description": "A fill that follows --sds-btn-progress (0 to 1), so the button can show real progress.",
+    "displayName": "Progress Fill",
+    "source": "authored"
+  },
+  "sds-btn-ui-loading-ring": {
+    "description": "Set aria-busy=\"true\" and the label gives way to a spinning ring.",
+    "displayName": "Loading Ring",
+    "source": "authored"
+  },
+  "sds-btn-ui-toggle-pill": {
+    "description": "Follows aria-pressed: a dot at the start grows to fill the button when it is pressed on.",
+    "displayName": "Toggle Pill",
+    "source": "authored"
   }
 }

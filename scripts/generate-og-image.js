@@ -18,7 +18,7 @@ const S = require('./docs/site-lib');
 const OUT = path.resolve(__dirname, '../docs/images');
 const names = new Set(S.registry.classes.map((c) => c.name));
 const SHOWN = [
-  'sds-velvet-drop', 'sds-btn-aurora', 'sds-card-cascade', 'sds-scroll-fade-up',
+  'sds-velvet-drop', 'sds-btn-ui-aurora-mesh', 'sds-card-cascade', 'sds-scroll-fade-up',
   'sds-loader-plasma-ring', 'sds-input-focus-glow', 'sds-aurora-text', 'sds-btn-magnetic',
 ];
 const missing = SHOWN.filter((n) => !names.has(n));

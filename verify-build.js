@@ -255,7 +255,9 @@ if (!fs.existsSync(srcCssPath) || !fs.existsSync(distCssPath)) {
 }
 
 const srcCSS = fs.readFileSync(srcCssPath, "utf8");
-const distCSS = fs.readFileSync(distCssPath, "utf8");
+// v6: the v5 classes moved to dist/legacy.css; the required lists below must still resolve in motion.css + legacy.css together.
+const legacyDistPath = path.join(DIST_DIR, "legacy.css");
+const distCSS = fs.readFileSync(distCssPath, "utf8") + (fs.existsSync(legacyDistPath) ? "\n" + fs.readFileSync(legacyDistPath, "utf8") : "");
 const pkg = JSON.parse(fs.readFileSync(path.join(ROOT_DIR, "package.json"), "utf8"));
 const docsPath = path.join(ROOT_DIR, "docs", "index.html");
 const docsHTML = fs.existsSync(docsPath) ? fs.readFileSync(docsPath, "utf8") : "";
