@@ -257,18 +257,30 @@
       .eyebrow::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--brand-2); }
       .sec-title { margin: 14px 0 12px; font-size: clamp(32px, 4.6vw, 56px); line-height: 1.04; letter-spacing: -0.035em; }
       .sec-desc { max-width: 640px; margin: 0 auto; color: var(--ink-2); font-size: 18px; line-height: 1.6; }
-      /* works-in row: an open strip, a brand-coloured icon and the name, no boxes; the icon fills in on hover */
+      /* works-in row: an open strip. Without script it simply lists every stack; with script it becomes five slots whose logos roll:
+         the old one slides up and blurs out while the next rises in (0.7 s, staggered 90 ms per slot, every 2.8 s: the rhythm measured on motvin.com) */
       .logos { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 18px 48px; margin: 0; padding: 22px 0 6px; list-style: none; }
-      .logos li { --c: #16182c; display: inline-flex; align-items: center; gap: 12px; padding: 4px 0; color: var(--ink); transition: transform 0.3s var(--ease); }
-      .logos li:hover { transform: translateY(-2px); }
+      .logos li, .lg-item { --c: #16182c; display: inline-flex; align-items: center; gap: 12px; padding: 4px 0; color: var(--ink); transition: transform 0.3s var(--ease); }
+      .logos li:hover, .lg-item:hover { transform: translateY(-2px); }
       .lg-ic { display: inline-grid; place-items: center; width: 28px; height: 28px; color: var(--c); transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1); }
       .lg-ic i, .lg-ic svg { width: 28px; height: 28px; font-size: 28px; line-height: 1; }
-      .logos li:hover .lg-ic { transform: rotate(-8deg) scale(1.12); }
+      .logos li:hover .lg-ic, .lg-item:hover .lg-ic { transform: rotate(-8deg) scale(1.12); }
       .logos b { font: 600 16px var(--f-head); letter-spacing: -0.02em; color: var(--ink-2); transition: color 0.2s; }
-      .logos li:hover b { color: var(--ink); }
-      .logos li:nth-child(1) { --c: #e34f26; } .logos li:nth-child(2) { --c: #0ea5c6; } .logos li:nth-child(3) { --c: #16182c; } .logos li:nth-child(4) { --c: #dd0031; }
-      .logos li:nth-child(5) { --c: #36a374; } .logos li:nth-child(6) { --c: #7952b3; } .logos li:nth-child(7) { --c: #0891b2; }
-      @media (max-width: 640px) { .logos { gap: 14px 28px; } }
+      .logos li:hover b, .lg-item:hover b { color: var(--ink); }
+      .logos.is-roll { flex-wrap: nowrap; gap: 20px; }
+      .logos.is-roll > li:not(.lg-slot) { display: none; }
+      .logos li.lg-slot { display: grid; place-items: center; width: 188px; height: 40px; padding: 0; overflow: visible; }
+      .lg-slot > * { grid-area: 1 / 1; }
+      .lg-item { white-space: nowrap; }
+      .lg-item.is-entering, .lg-item.is-leaving { animation-duration: 0.7s; animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1); animation-fill-mode: both; animation-delay: calc(var(--n, 0) * 90ms); }
+      .lg-item.is-entering { animation-name: lg-in; }
+      .lg-item.is-leaving { animation-name: lg-out; pointer-events: none; }
+      @keyframes lg-in { 0% { opacity: 0; filter: blur(6px); translate: 0 70%; } 100% { opacity: 1; filter: blur(0); translate: 0 0; } }
+      @keyframes lg-out { 0% { opacity: 1; filter: blur(0); translate: 0 0; } 100% { opacity: 0; filter: blur(6px); translate: 0 -70%; } }
+      @media (max-width: 1180px) { .logos.is-roll .lg-slot:nth-child(n+5) { display: none; } }
+      @media (max-width: 900px) { .logos.is-roll .lg-slot:nth-child(n+4) { display: none; } }
+      @media (max-width: 640px) { .logos.is-roll .lg-slot:nth-child(n+3) { display: none; } .logos.is-roll { gap: 8px; } .logos li.lg-slot { width: 160px; } }
+      @media (prefers-reduced-motion: reduce) { .lg-item.is-entering, .lg-item.is-leaving { animation: none; } }
       .logos-note { text-align: center; margin-top: 14px; font-size: 13px; color: var(--ink-3); }
 
       /* cards: one language everywhere */
@@ -707,14 +719,18 @@
     <!-- WORKS IN -->
     <section class="sec" style="padding-top:32px;padding-bottom:8px" aria-label="Where it works">
       <div class="wrap">
-        <ul class="logos">
-          <li><span class="lg-ic"><i class="ri-html5-line"></i></span><b>Plain HTML</b></li>
-          <li><span class="lg-ic"><i class="ri-reactjs-line"></i></span><b>React</b></li>
-          <li><span class="lg-ic"><i class="ri-nextjs-line"></i></span><b>Next.js</b></li>
-          <li><span class="lg-ic"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="currentColor"><path fill-rule="evenodd" d="M12 1.8 2.9 5.1l1.4 12.1L12 22.2l7.7-5 1.4-12.1zM12 6.6l-4.4 9.9h1.7l.9-2.2h3.6l.9 2.2h1.7zm0 3.6 1.2 3H10.8z"/></svg></span><b>Angular</b></li>
-          <li><span class="lg-ic"><i class="ri-vuejs-line"></i></span><b>Vue</b></li>
-          <li><span class="lg-ic"><i class="ri-bootstrap-line"></i></span><b>Bootstrap</b></li>
-          <li><span class="lg-ic"><i class="ri-tailwind-css-line"></i></span><b>Tailwind</b></li>
+        <ul class="logos" id="logosRoll" aria-label="Works with">
+          <li style="--c:#e34f26"><span class="lg-ic"><i class="ri-html5-line"></i></span><b>Plain HTML</b></li>
+          <li style="--c:#0ea5c6"><span class="lg-ic"><i class="ri-reactjs-line"></i></span><b>React</b></li>
+          <li style="--c:#16182c"><span class="lg-ic"><i class="ri-nextjs-line"></i></span><b>Next.js</b></li>
+          <li style="--c:#dd0031"><span class="lg-ic"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="currentColor"><path fill-rule="evenodd" d="M12 1.8 2.9 5.1l1.4 12.1L12 22.2l7.7-5 1.4-12.1zM12 6.6l-4.4 9.9h1.7l.9-2.2h3.6l.9 2.2h1.7zm0 3.6 1.2 3H10.8z"/></svg></span><b>Angular</b></li>
+          <li style="--c:#36a374"><span class="lg-ic"><i class="ri-vuejs-line"></i></span><b>Vue</b></li>
+          <li style="--c:#7952b3"><span class="lg-ic"><i class="ri-bootstrap-line"></i></span><b>Bootstrap</b></li>
+          <li style="--c:#0891b2"><span class="lg-ic"><i class="ri-tailwind-css-line"></i></span><b>Tailwind</b></li>
+          <li style="--c:#ff3e00"><span class="lg-ic"><i class="ri-svelte-line"></i></span><b>Svelte</b></li>
+          <li style="--c:#21759b"><span class="lg-ic"><i class="ri-wordpress-line"></i></span><b>WordPress</b></li>
+          <li style="--c:#663399"><span class="lg-ic"><i class="ri-gatsby-line"></i></span><b>Gatsby</b></li>
+          <li style="--c:#777bb4"><span class="lg-ic"><i class="ri-php-line"></i></span><b>PHP</b></li>
         </ul>
         <p class="logos-note">Anything that renders HTML with CSS classes. Not for email clients or native and canvas-based apps.</p>
       </div>
@@ -1089,6 +1105,38 @@
       <div class="foot-wm" aria-hidden="true"><span class="wm-w"><span class="wm-l">M</span><span class="wm-l">o</span><span class="wm-l">t</span><span class="wm-l">i</span><span class="wm-l">o</span><span class="wm-l">n</span></span><span class="wm-w"><span class="wm-l">F</span><span class="wm-l">o</span><span class="wm-l">r</span><span class="wm-l">g</span><span class="wm-l">e</span></span></div>
     </footer>
 
+
+    <script>
+      /* works-in strip: five slots, the logo in each rolls to the next stack every 2.8 s (only while it is on screen) */
+      (function () {
+        var ul = document.getElementById("logosRoll");
+        if (!ul || (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches)) return;
+        var pool = [].slice.call(ul.children).map(function (li) { return { html: li.innerHTML, color: li.getAttribute("style") || "" }; });
+        var SLOTS = 5, slots = [], shown = {}, idx = -1;
+        function item(p, n, cls) { var d = document.createElement("div"); d.className = "lg-item " + cls; d.setAttribute("style", p.color + ";--n:" + n); d.innerHTML = p.html; return d; }
+        function next() { do { idx = (idx + 1) % pool.length; } while (shown[idx]); return idx; }
+        ul.classList.add("is-roll");
+        ul.innerHTML = "";
+        for (var i = 0; i < SLOTS; i++) {
+          var slot = document.createElement("li"); slot.className = "lg-slot";
+          var k = next(); shown[k] = true; slot.setAttribute("data-k", k); slot.appendChild(item(pool[k], 0, ""));
+          ul.appendChild(slot); slots.push(slot);
+        }
+        function roll() {
+          var live = slots.filter(function (s) { return s.offsetParent !== null; });
+          live.forEach(function (slot, n) {
+            var old = slot.lastElementChild, ok = +slot.getAttribute("data-k"); delete shown[ok];
+            var k = next(); shown[k] = true; slot.setAttribute("data-k", k);
+            old.className = "lg-item is-leaving"; old.style.setProperty("--n", n);
+            slot.appendChild(item(pool[k], n, "is-entering"));
+            setTimeout(function () { if (old.parentNode) old.parentNode.removeChild(old); }, 700 + n * 90 + 60);
+          });
+        }
+        var timer = null, on = false;
+        function tick() { if (on && !document.hidden) roll(); }
+        if ("IntersectionObserver" in window) new IntersectionObserver(function (es) { on = es[0].isIntersecting; if (on && !timer) timer = setInterval(tick, 2800); if (!on && timer) { clearInterval(timer); timer = null; } }, { threshold: 0.3 }).observe(ul);
+      })();
+    </script>
 
     <!-- ANIMATION DETAIL MODAL -->
     <div class="modal" id="modal">
