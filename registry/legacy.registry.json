@@ -1,0 +1,905 @@
+{
+  "$comment": "v5 classes that moved out of the default v6 set into dist/legacy.css. Used by the framework packages so existing class names still type-check. Frozen from release 5.1.1.",
+  "classes": [
+    {
+      "name": "sds-btn-amp",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-aurora",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-beacon",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-blinds",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-border-flow",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-bounce",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-breath-hold",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-burst",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-charge",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-crystal",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-depth-press",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-dissolve",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-draw-corners",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-draw-cross",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-draw-dash",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-draw-perimeter",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-draw-pulse-frame",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-draw-underline-orbit",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-edge",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-ember",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-energy",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-fill-corner",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-fill-drain",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-fill-iris",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-fill-rise",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-fill-split",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-fill-sweep",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-fill-wave",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-fire",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-flare",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-float",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-flux",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-glow-core",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-glow-surge",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-gradient-shift",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-gravity",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-gravity-pull",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-guillotine",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-halo-breathe",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-halo-flicker-on",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-halo-split",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-heartbeat",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-hologram",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-ice",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-icon-launch",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": true,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-icon-spin-settle",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": true,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-kinetic",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-label-slide",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": true,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-label-typewrite",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": true,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-label-wave",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": true,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-lift",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-liquid",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-magnetic",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-magnetic-trail",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-momentum",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-morph",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-neon",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-neon-trace",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-night-sweep",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-nudge",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": true,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-outline-grow",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-plasma",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-press",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-press-coin",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-press-drop",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-press-elastic",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-press-pop",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-press-seesaw",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-press-spring",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-prism-edge",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-pulse-border",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-quantum",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-radar",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-recoil",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-ripple",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-rotate",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-scan",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-sheen-double",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-sheen-pass",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-shimmer",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-shock",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-shutter-snap",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-slice-hover",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-slice-reveal",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-spark-orbit",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-split",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-spotlight-pan",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-stretch",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-surge-charge",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-swap-flip",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": true,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-swipe",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-tick-tock",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-tilt",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-tilt-float",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-tilt-orbit",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-tilt-pendulum",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-tilt-scan",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-volt",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-warp",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    },
+    {
+      "name": "sds-btn-wink",
+      "category": "buttons",
+      "kind": "effect",
+      "trigger": "load",
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "requiresJs": false
+    }
+  ]
+}

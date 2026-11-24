@@ -78,21 +78,21 @@
   },
   {
     "path": "packages/react/dist/index.js",
-    "limit": "91479 B",
+    "limit": "107922 B",
     "name": "packages/react/dist/index.js",
     "gzip": false,
     "brotli": false
   },
   {
     "path": "packages/elements/dist/index.global.js",
-    "limit": "73941 B",
+    "limit": "87559 B",
     "name": "packages/elements/dist/index.global.js",
     "gzip": false,
     "brotli": false
   },
   {
     "path": "packages/tailwind/dist/sds-motion.css",
-    "limit": "631460 B",
+    "limit": "724561 B",
     "name": "packages/tailwind/dist/sds-motion.css",
     "gzip": false,
     "brotli": false

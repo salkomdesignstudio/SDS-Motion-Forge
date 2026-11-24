@@ -22,7 +22,7 @@
 const fs = require("fs");
 const path = require("path");
 const postcss = require("postcss");
-const { loadRegistry, loadClassRules } = require("../../../scripts/codegen/effects-data.js");
+const { loadRegistry, loadLegacy, loadClassRules } = require("../../../scripts/codegen/effects-data.js");
 
 const PKG = path.join(__dirname, "..");
 const DIST = path.join(PKG, "dist");
@@ -43,7 +43,7 @@ const coreRoot = {};
 
 /* Effects eligible for utilities: CSS-only effect classes (no aliases —
    aliases resolve to their target's utility; no JS-engine classes). */
-const effects = registry.classes.filter((c) =>
+const effects = registry.classes.concat(loadLegacy()).filter((c) =>
   c.kind === "effect" && !c.aliasOf && !c.requiresJs &&
   ["text", "buttons", "inputs", "cards", "loaders", "scroll"].includes(c.category));
 

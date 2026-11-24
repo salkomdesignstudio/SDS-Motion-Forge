@@ -21,6 +21,9 @@ declare module '@salkomdesignstudio/sds-motion-forge/motion.min.css' {}
 declare module '@salkomdesignstudio/sds-motion-forge' {}
 
 /** Per-category standalone bundles (v5) — each includes core (tokens, modifiers, reduced-motion). */
+declare module '@salkomdesignstudio/sds-motion-forge/legacy' {}
+declare module '@salkomdesignstudio/sds-motion-forge/dist/legacy.css' {}
+declare module '@salkomdesignstudio/sds-motion-forge/dist/legacy.min.css' {}
 declare module '@salkomdesignstudio/sds-motion-forge/categories/core' {}
 declare module '@salkomdesignstudio/sds-motion-forge/categories/text' {}
 declare module '@salkomdesignstudio/sds-motion-forge/categories/buttons' {}
@@ -155,7 +158,113 @@ export type SdsTextAnimation =
   | 'sds-zoom-far'
   | 'sds-zoom-punch';
 
-/** All 50 button animation class names. Apply to `<button>` elements. */
+/**
+ * The 100 UI button class names of the default v6 set (self-styled, state-driven).
+ * The 100 v5 button classes are in SdsButtonAnimation and need dist/legacy.css.
+ */
+export type SdsUiButton =
+  | 'sds-btn-ui-arrow-slide'
+  | 'sds-btn-ui-aurora-mesh'
+  | 'sds-btn-ui-bar-loading'
+  | 'sds-btn-ui-bars-open'
+  | 'sds-btn-ui-blob-shift'
+  | 'sds-btn-ui-bloom-halo'
+  | 'sds-btn-ui-bracket-open'
+  | 'sds-btn-ui-brutal-offset'
+  | 'sds-btn-ui-bubble-rise'
+  | 'sds-btn-ui-burger-x'
+  | 'sds-btn-ui-caret-bounce'
+  | 'sds-btn-ui-check-draw'
+  | 'sds-btn-ui-chevron-turn'
+  | 'sds-btn-ui-circle-expand'
+  | 'sds-btn-ui-confetti-pop'
+  | 'sds-btn-ui-conic-border'
+  | 'sds-btn-ui-corner-fold'
+  | 'sds-btn-ui-corner-grow'
+  | 'sds-btn-ui-countdown-drain'
+  | 'sds-btn-ui-crt-lines'
+  | 'sds-btn-ui-current-marker'
+  | 'sds-btn-ui-curtain-split'
+  | 'sds-btn-ui-diagonal-nudge'
+  | 'sds-btn-ui-diagonal-wipe'
+  | 'sds-btn-ui-disabled-nope'
+  | 'sds-btn-ui-dots-loading'
+  | 'sds-btn-ui-download-loop'
+  | 'sds-btn-ui-drop-in'
+  | 'sds-btn-ui-duotone-slide'
+  | 'sds-btn-ui-edge-light'
+  | 'sds-btn-ui-flip-spin'
+  | 'sds-btn-ui-float-shadow'
+  | 'sds-btn-ui-frame-draw'
+  | 'sds-btn-ui-ghost-fill'
+  | 'sds-btn-ui-glass-lift'
+  | 'sds-btn-ui-glitch-split'
+  | 'sds-btn-ui-gloss-drop'
+  | 'sds-btn-ui-gradient-flow'
+  | 'sds-btn-ui-halftone-fade'
+  | 'sds-btn-ui-heartbeat'
+  | 'sds-btn-ui-hex-reveal'
+  | 'sds-btn-ui-hold-to-confirm'
+  | 'sds-btn-ui-holo-sheen'
+  | 'sds-btn-ui-hue-cycle'
+  | 'sds-btn-ui-ink-bloom'
+  | 'sds-btn-ui-inner-glow'
+  | 'sds-btn-ui-invert-flip'
+  | 'sds-btn-ui-iris-reveal'
+  | 'sds-btn-ui-jelly-wobble'
+  | 'sds-btn-ui-laser-sweep'
+  | 'sds-btn-ui-lens-flare'
+  | 'sds-btn-ui-levitate-bob'
+  | 'sds-btn-ui-liquid-fill'
+  | 'sds-btn-ui-loading-ring'
+  | 'sds-btn-ui-neon-edge'
+  | 'sds-btn-ui-neon-underline'
+  | 'sds-btn-ui-neumorph-press'
+  | 'sds-btn-ui-notify-dot'
+  | 'sds-btn-ui-outline-echo'
+  | 'sds-btn-ui-pendulum'
+  | 'sds-btn-ui-pinch-squeeze'
+  | 'sds-btn-ui-plus-turn'
+  | 'sds-btn-ui-press-3d'
+  | 'sds-btn-ui-pressed-burst'
+  | 'sds-btn-ui-prism-shift'
+  | 'sds-btn-ui-progress-fill'
+  | 'sds-btn-ui-pulse-core'
+  | 'sds-btn-ui-rain-streak'
+  | 'sds-btn-ui-refresh-spin'
+  | 'sds-btn-ui-ring-pulse'
+  | 'sds-btn-ui-ripple-press'
+  | 'sds-btn-ui-rubber-band-x'
+  | 'sds-btn-ui-rubber-stretch'
+  | 'sds-btn-ui-scan-line'
+  | 'sds-btn-ui-send-fly'
+  | 'sds-btn-ui-shake-no'
+  | 'sds-btn-ui-sheet-fan'
+  | 'sds-btn-ui-shine-sweep'
+  | 'sds-btn-ui-skeleton-shimmer'
+  | 'sds-btn-ui-skew-slide'
+  | 'sds-btn-ui-soft-lift'
+  | 'sds-btn-ui-spark-burst'
+  | 'sds-btn-ui-split-doors'
+  | 'sds-btn-ui-split-icon'
+  | 'sds-btn-ui-spotlight-sweep'
+  | 'sds-btn-ui-spring-pop'
+  | 'sds-btn-ui-squash-land'
+  | 'sds-btn-ui-state-error'
+  | 'sds-btn-ui-state-success'
+  | 'sds-btn-ui-stepped-press'
+  | 'sds-btn-ui-stripe-march'
+  | 'sds-btn-ui-sunburst'
+  | 'sds-btn-ui-sunrise-glow'
+  | 'sds-btn-ui-switch-knob'
+  | 'sds-btn-ui-tilt-3d'
+  | 'sds-btn-ui-toggle-pill'
+  | 'sds-btn-ui-twinkle'
+  | 'sds-btn-ui-underline-grow'
+  | 'sds-btn-ui-wiggle'
+  | 'sds-btn-ui-wipe-up';
+
+/** The v5 button animation class names. Apply to `<button>` elements. Since v6 they ship in dist/legacy.css. */
 export type SdsButtonAnimation =
   | 'sds-btn-amp'
   | 'sds-btn-aurora'
@@ -508,6 +617,7 @@ export type SdsScrollGate = 'sds-play' | 'sds-scroll-auto';
 export type SdsAnimationClass =
   | SdsTextAnimation
   | SdsButtonAnimation
+  | SdsUiButton
   | SdsInputAnimation
   | SdsCardAnimation
   | SdsLoaderAnimation

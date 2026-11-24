@@ -8,7 +8,7 @@ const catalog = loadCatalog();
 describe("catalog", () => {
   it("matches the registry it was built from", () => {
     expect(catalog.schemaVersion).toBe(1);
-    expect(catalog.animations.length).toBe(628);
+    expect(catalog.animations.length).toBe(629);
     expect(getEntry("sds-bounce-in-up")?.motion.durationMs).toBe(850);
     expect(getEntry("bounce-in-up")?.name).toBe("sds-bounce-in-up");
     expect(getEntry(".sds-bounce-in-up")?.name).toBe("sds-bounce-in-up");

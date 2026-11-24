@@ -1,7 +1,8 @@
 /*!
  * SDS Motion Forge — legacy bundle (v5 classes).
  * Load this next to motion.css (or any category bundle) to keep the v5 classes that v6 moved out of the default set.
- * It carries no core: tokens, modifiers and the reduced-motion rule come from motion.css.
+ * Tokens fall back to literal values, so it also works on its own. The reduced-motion rule below is repeated from
+ * core on purpose: it keeps these classes still for visitors who ask for less motion, even without motion.css.
  */
 /*!
  * SDS Motion Forge — legacy buttons (v5 and earlier).
@@ -2799,3 +2800,17 @@
     opacity: 0;
   }
 }
+/* @sds-standalone-rm:start */
+@media (prefers-reduced-motion: reduce) {
+  [class*="sds-"],
+  [class*="sds-"] > *,
+  [class*="sds-"]::before,
+  [class*="sds-"]::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+}
+/* @sds-standalone-rm:end */

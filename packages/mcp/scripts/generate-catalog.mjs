@@ -176,15 +176,17 @@ function analyse(entry) {
   }
   // transitions (interaction states) on own/pseudo selectors
   let transition = null;
+  // an effect can carry several transitions (the shared base and its own layers); the longest one is the visible motion
   for (const sel of [...own, ...pseudo]) {
     const d = rulesBySelector.get(sel);
     if (d && d.transition) {
-      const first = splitTop(resolveVars(d.transition, vars), ",")[0];
-      const toks = splitSpaces(first);
-      const ms = toks.map(parseTimeMs).filter((x) => x !== null);
-      const easingTok = toks.find(looksLikeEasing);
-      transition = { property: toks[0], durationMs: ms[0] ?? null, easing: easingTok ? parseEasing(easingTok) : null };
-      break;
+      for (const part of splitTop(resolveVars(d.transition, vars), ",")) {
+        const toks = splitSpaces(part);
+        const ms = toks.map(parseTimeMs).filter((x) => x !== null);
+        const easingTok = toks.find(looksLikeEasing);
+        const cand = { property: toks[0], durationMs: ms[0] ?? null, easing: easingTok ? parseEasing(easingTok) : null };
+        if (!transition || (cand.durationMs ?? 0) > (transition.durationMs ?? 0)) transition = cand;
+      }
     }
   }
 
@@ -214,6 +216,20 @@ function analyse(entry) {
     else if (p === "transform") { if (!stops.length) families.add("transform"); }
     else if (p === "filter") { if (!families.has("blur")) families.add("filter"); }
     else families.add(familyOfCssProp(p));
+  }
+  // transition-driven effects (v6 UI buttons) have no keyframes: the properties they animate are the ones their transitions name
+  if (!families.size) {
+    for (const sel of [...own, ...pseudo]) {
+      const d = rulesBySelector.get(sel);
+      if (!d || !d.transition) continue;
+      for (const part of splitTop(resolveVars(d.transition, vars), ",")) {
+        const p = splitSpaces(part)[0];
+        if (p === "opacity") families.add("opacity");
+        else if (p === "transform") families.add("transform");
+        else if (p === "filter") families.add("filter");
+        else if (p && /^[a-z-]+$/.test(p) && p !== "all" && p !== "none") families.add(familyOfCssProp(p));
+      }
+    }
   }
   // first/last explicit stops: what the element animates from and to
   const first = stops[0], last = stops[stops.length - 1];
