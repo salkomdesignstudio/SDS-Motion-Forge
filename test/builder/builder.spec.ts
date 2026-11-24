@@ -7,7 +7,7 @@ import { test, expect } from "@playwright/test";
 
 const FIVE = [
   "sds-velvet-drop",   // text entrance
-  "sds-btn-magnetic",  // button glow
+  "sds-card-glow",     // card glow
   "sds-card-rise",     // card entrance
   "sds-loader-orbital",// loader (pseudo elements + 2 keyframes)
   "sds-scroll-rise",   // scroll (gate infra comes from core)
@@ -35,7 +35,7 @@ test("builder: 5 effects -> standalone CSS < 8KB that animates", async ({ page }
   await page.setContent(`<!doctype html><html><head><style>${css}</style></head>
     <body>
       <h1 class="sds-velvet-drop">Hello</h1>
-      <button class="sds-btn-magnetic">B</button>
+      <div class="sds-card-glow">B</div>
       <div class="sds-card-rise">C</div>
       <span class="sds-loader-orbital"></span>
       <div class="sds-scroll-rise">S</div>

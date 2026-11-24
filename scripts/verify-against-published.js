@@ -45,11 +45,22 @@ const approved = fs.existsSync(approvedPath)
   ? JSON.parse(fs.readFileSync(approvedPath, "utf8")).deviations || []
   : [];
 
+const removedPath = path.join(ROOT, "compat", "removed-in-6.0.json");
+const removed = fs.existsSync(removedPath) ? JSON.parse(fs.readFileSync(removedPath, "utf8")) : { classPrefixes: [], keyframes: [], exports: [] };
+const removedReason = "Removed in 6.0 on purpose (Buttons and Inputs categories dropped): see compat/removed-in-6.0.json";
+function isRemoved(id) {
+  if (removed.classPrefixes.some((p) => id.includes("." + p))) return true;
+  if (removed.keyframes.some((k) => id.includes(k))) return true;
+  if (removed.exports.some((e) => id.includes(":" + e + ":") || id.includes("exports:" + e))) return true;
+  return false;
+}
+
 const deviations = []; // { id, kind, detail, approved: bool }
 
 function record(kind, id, detail) {
   const appr = approved.find((a) => a.id === id);
-  deviations.push({ id, kind, detail, approved: !!appr, reason: appr ? appr.reason : null });
+  const rm = !appr && isRemoved(id);
+  deviations.push({ id, kind, detail, approved: !!appr || rm, reason: appr ? appr.reason : rm ? removedReason : null });
 }
 
 /* ════════════════ 1. EXPORTS MAP ════════════════ */
@@ -100,9 +111,7 @@ if (!fs.existsSync(newCssPath)) {
 }
 
 const baseModel = buildModel(fs.readFileSync(baseCssPath, "utf8"));
-// v6: classes moved out of the default bundle live in dist/legacy.css; the published contract is met by both together.
-const legacyCssPath = path.join(ROOT, "dist", "legacy.css");
-const newModel = buildModel(fs.readFileSync(newCssPath, "utf8") + (fs.existsSync(legacyCssPath) ? "\n" + fs.readFileSync(legacyCssPath, "utf8").replace(/\/\* @sds-standalone-rm:start \*\/[\s\S]*?\/\* @sds-standalone-rm:end \*\//, "") : ""));
+const newModel = buildModel(fs.readFileSync(newCssPath, "utf8"));
 
 function computedDecls(rule, vars) {
   // returns Map prop -> ordered array of "value!important" computed strings

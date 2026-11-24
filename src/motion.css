@@ -8,8 +8,6 @@
  */
 @import "./categories/core.css";
 @import "./categories/text.css";
-@import "./categories/buttons.css";
-@import "./categories/inputs.css";
 @import "./categories/cards.css";
 @import "./categories/loaders.css";
 @import "./categories/scroll.css";

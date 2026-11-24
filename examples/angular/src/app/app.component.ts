@@ -20,7 +20,7 @@ import { SnippetsComponent } from "./snippets.component";
         <p>Enters on scroll, replays on re-entry.</p>
       </section>
 
-      <button sdsMotion="sds-btn-magnetic" [delay]="200">Magnetic button</button>
+      <button sdsMotion="sds-card-magnetic" [delay]="200">Magnetic button</button>
 
       <div style="height: 120vh"></div>
 

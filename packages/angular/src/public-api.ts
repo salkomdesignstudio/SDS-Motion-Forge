@@ -4,8 +4,6 @@ export { SdsInViewDirective } from "./lib/sds-in-view.directive";
 export type {
   SdsEffect,
   SdsTextEffect,
-  SdsButtonsEffect,
-  SdsInputsEffect,
   SdsCardsEffect,
   SdsLoadersEffect,
   SdsScrollEffect,

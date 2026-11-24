@@ -4,8 +4,6 @@ export { useSdsInView, type UseSdsInViewOptions } from "./useSdsInView";
 export type {
   SdsEffect,
   SdsTextEffect,
-  SdsButtonsEffect,
-  SdsInputsEffect,
   SdsCardsEffect,
   SdsLoadersEffect,
   SdsScrollEffect,

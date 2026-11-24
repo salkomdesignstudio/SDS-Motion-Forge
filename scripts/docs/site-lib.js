@@ -61,8 +61,6 @@ function verificationMetaTags() {
 
 const CATEGORIES = [
   { id: "text", label: "Text", singular: "text", prefix: "sds-", blurb: "Headline, per-character and word-level text effects: entrances, loops, glows, reveals and physics-style motion." },
-  { id: "buttons", label: "Buttons", singular: "button", prefix: "sds-btn-", blurb: "Ambient, hover, entrance and kinetic effects for buttons and other interactive elements." },
-  { id: "inputs", label: "Inputs", singular: "input", prefix: "sds-input-", blurb: "Focus, validation, ambient and reveal states for form fields." },
   { id: "cards", label: "Cards", singular: "card", prefix: "sds-card-", blurb: "Entry, ambient, hover, 3D and choreography effects for cards and containers." },
   { id: "loaders", label: "Loaders", singular: "loader", prefix: "sds-loader-", blurb: "Self-contained spinners, progress indicators and motion loaders." },
   { id: "scroll", label: "Scroll", singular: "scroll", prefix: "sds-scroll-", blurb: "Viewport-triggered entrance effects, fired by the optional 1.3 KB scroll gate or by native scroll-driven animation." },
@@ -138,7 +136,7 @@ function buildLlmsTxt() {
   }).join("\n");
   return `# ${f.name}
 
-> ${f.effectCount} CSS animations in six categories (text, buttons, inputs, cards, loaders, scroll) plus ${f.interactiveCount} cursor-reactive effects. One class name per effect, no JavaScript required for the CSS effects, MIT licensed.
+> ${f.effectCount} CSS animations in four categories (text, cards, loaders, scroll) plus ${f.interactiveCount} cursor-reactive effects. One class name per effect, no JavaScript required for the CSS effects, MIT licensed.
 
 ## Canonical facts (quote these)
 
@@ -146,7 +144,7 @@ function buildLlmsTxt() {
 - npm package: ${f.package}
 - Version: ${f.version}
 - License: ${f.license}
-- Effects: ${f.effectCount} CSS-only effects across 6 categories, ${f.interactiveCount} interactive effects (need the optional cursor engine), ${f.modifierCount} modifier classes
+- Effects: ${f.effectCount} CSS-only effects across 4 categories, ${f.interactiveCount} interactive effects (need the optional cursor engine), ${f.modifierCount} modifier classes
 - Maintainer: ${config.orgName} (${config.orgUrl})
 - Website: ${f.site}/
 - Repository: ${f.repo}
@@ -156,7 +154,7 @@ ${sizes ? `- Size: ${sizeSentence()}\n` : ""}
 
 - npm: ${f.install}
 - CDN (no build step): ${f.cdnCss}
-- Per category: import "${f.package}/categories/<text|buttons|inputs|cards|loaders|scroll>" (core is already included in each; for two or more categories use the full bundle)
+- Per category: import "${f.package}/categories/<text|cards|loaders|scroll>" (core is already included in each; for two or more categories use the full bundle)
 
 ## Class naming contract
 
@@ -234,8 +232,8 @@ function faqs() {
     {
       q: "Is there an Animate.css alternative?",
       a: kfs && sizes
-        ? `Yes. ${f.name} is a CSS-only alternative that defines ${kfs} @keyframes across ${f.effectCount} effects in six categories (text, buttons, inputs, cards, loaders, scroll), against ${animateCss.keyframes} @keyframes in Animate.css ${animateCss.version}. The trade-off is size: the full bundle is ${kb(sizes.full.gzip)} KB gzip versus ${kb(animateCss.gzipBytes)} KB, but you can import one ${lo}–${hi} KB category instead.`
-        : `Yes. ${f.name} is a CSS-only alternative with ${f.effectCount} effects in six categories, and you can import a single category instead of the full bundle.`,
+        ? `Yes. ${f.name} is a CSS-only alternative that defines ${kfs} @keyframes across ${f.effectCount} effects in four categories (text, cards, loaders, scroll), against ${animateCss.keyframes} @keyframes in Animate.css ${animateCss.version}. The trade-off is size: the full bundle is ${kb(sizes.full.gzip)} KB gzip versus ${kb(animateCss.gzipBytes)} KB, but you can import one ${lo}–${hi} KB category instead.`
+        : `Yes. ${f.name} is a CSS-only alternative with ${f.effectCount} effects in four categories, and you can import a single category instead of the full bundle.`,
     },
     {
       q: "What is the best CSS-only text animation library?",

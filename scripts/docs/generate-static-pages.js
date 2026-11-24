@@ -214,7 +214,7 @@ function badgesFor(c) {
 }
 function fxCard(c, level) {
   const h = level || 3;
-  const interactiveDemo = c.kind === "interactive" || /^sds-(btn|input)-ui-/.test(c.name);
+  const interactiveDemo = c.kind === "interactive";
   return `<li class="fx-card" data-fx data-s="${esc((c.displayName + " " + c.name + " " + sentence(descOf(c))).toLowerCase())}">
 <div class="fx-stage"${interactiveDemo ? "" : ' aria-hidden="true" inert'}>${demoMarkup(c)}</div>
 <button type="button" class="fx-replay" data-replay aria-label="Replay ${esc(c.displayName)}">${ICON_REPLAY}</button>
@@ -244,23 +244,6 @@ function relatedFor(c) {
 /* ── effect page ─────────────────────────────────────────────── */
 const seenDesc = new Map();
 let fallbackCss = 0;
-function inputSection(c) {
-  const n = c.name;
-  const ex = [
-    ["The markup: a wrapper, the input, then its label", "<div class=\"" + n + "\">\n  <input id=\"email\" type=\"email\" placeholder=\" \" />\n  <label for=\"email\">Email address</label>\n</div>\n\n<!-- placeholder=\" \" (one space) is required: it is how CSS knows the field is empty -->"],
-    ["Change the label, the type and the content", "<div class=\"" + n + "\">\n  <input id=\"phone\" type=\"tel\" placeholder=\" \" autocomplete=\"tel\" />\n  <label for=\"phone\">Phone number</label>\n</div>\n\n<div class=\"" + n + "\">\n  <input id=\"pw\" type=\"password\" placeholder=\" \" required />\n  <label for=\"pw\">Password</label>\n</div>"],
-    ["Colour, size and shape", "/* every UI input is 18em wide and 3.5em high by default */\n.my-field { --sds-input-width: 24em; --sds-input-height: 4em; --sds-input-radius: 1em; --sds-input-accent: #0ea5e9; --sds-input-bg: #f8fafc; --sds-input-fg: #0f172a; --sds-input-line: rgba(15, 23, 42, 0.2); --sds-input-muted: rgba(15, 23, 42, 0.5); }"]
-  ];
-  return `<section class="sec2" aria-labelledby="own"><h2 id="own">Make it yours</h2><p>The label is the <code>&lt;label&gt;</code> text and the typed text is the <code>&lt;input&gt;</code>: use any type, name, autocomplete or validation attribute. Every UI input has the same default size; change it with <code>--sds-input-width</code> and <code>--sds-input-height</code>.</p><div class="code-tabs">${ex.map(([t, code], i) => `<div class="code-panel" style="display:block"><h3>${esc(t)}</h3><button type="button" class="copy-btn" data-copy-from="own-${i}">Copy</button><pre><code id="own-${i}">${esc(code)}</code></pre></div>`).join("")}</div></section>\n\n`;
-}
-
-function customiseSection(c) {
-  if (c.name.startsWith("sds-input-ui-")) return inputSection(c);
-  if (!c.name.startsWith("sds-btn-ui-")) return "";
-  const ex = [["Change the text","<button class=\"sds-btn-ui-arrow-slide\">Buy now</button>\n<a class=\"sds-btn-ui-arrow-slide\" href=\"/pricing\">See pricing</a>"],["Use any icon: inline SVG, icon font, image or emoji","<!-- the icon slot takes any markup; it follows the text colour and the font size -->\n<button class=\"sds-btn-ui-arrow-slide\">\n  Add to cart\n  <span class=\"sds-btn-icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\">…</svg></span>\n</button>\n\n<button class=\"sds-btn-ui-arrow-slide\">Checkout <span class=\"sds-btn-icon\"><i class=\"ri-shopping-bag-3-line\"></i></span></button>\n<button class=\"sds-btn-ui-arrow-slide\">Launch <span class=\"sds-btn-icon\">🚀</span></button>\n<button class=\"sds-btn-ui-arrow-slide\">Done <span class=\"sds-btn-icon\"><img src=\"check.svg\" alt=\"\"></span></button>\n\n<!-- put the slot first for a leading icon: any UI button takes one -->\n<button class=\"sds-btn-ui-liquid-fill\"><span class=\"sds-btn-icon\"><svg>…</svg></span> Shop</button>"],["Swap the built-in glyph, or hide it","<!-- any SVG file or data URI, tinted with the text colour -->\n<button class=\"sds-btn-ui-arrow-slide\" style=\"--sds-btn-icon: url(star.svg)\">Favourite</button>\n\n<!-- no icon at all -->\n<button class=\"sds-btn-ui-arrow-slide\" style=\"--sds-btn-icon-display: none\">Plain label</button>\n\n/* colour, shape, icon size and spacing */\n.my-button { --sds-btn-bg: #14162a; --sds-btn-fg: #fff; --sds-btn-radius: 14px; --sds-btn-icon-size: 1.5em; --sds-btn-gap: 0.8em; --sds-btn-width: 14em; --sds-btn-height: 3.5em; }"]];
-  return `<section class="sec2" aria-labelledby="own"><h2 id="own">Make it yours</h2><p>The label is just the element's text, and any icon works: inline SVG, an icon font, an image, an emoji or an SVG file. Put the icon in a <code>.sds-btn-icon</code> slot, or change the built-in glyph with <code>--sds-btn-icon</code>.</p><div class="code-tabs">${ex.map(([t, code], i) => `<div class="code-panel" style="display:block"><h3>${esc(t)}</h3><button type="button" class="copy-btn" data-copy-from="own-${i}">Copy</button><pre><code id="own-${i}">${esc(code)}</code></pre></div>`).join("")}</div></section>\n\n`;
-}
-
 function effectPage(c) {
   const cat = catById[c.category];
   const p = S.animationPath(c.name);
@@ -341,7 +324,7 @@ ${S.isUnreleased(c) ? `<p class="note" role="note"><strong>New in v${esc(c.since
 <section class="sec2" aria-labelledby="needs"><h2 id="needs">What it needs</h2>
 <div class="needs2">${needsList.map(([t, d]) => `<div class="need2"><b>${t}</b>${d}</div>`).join("")}</div></section>
 
-${customiseSection(c)}<section class="sec2" aria-labelledby="use"><h2 id="use">Quick start</h2>
+<section class="sec2" aria-labelledby="use"><h2 id="use">Quick start</h2>
 <div class="import-card"><div class="code-row"><code id="qs">${esc(cdnCss.map((u) => `<link rel="stylesheet" href="${u}" />`).join("\n"))}</code><button type="button" class="copy-btn" data-copy-from="qs">Copy</button></div>
 <div class="code-row"><code id="qs2">${esc(docs.markup[c.name] || `<div class="${c.name}">…</div>`)}</code><button type="button" class="copy-btn" data-copy-from="qs2">Copy</button></div>
 <p class="muted">${files ? `Loads only the ${esc(cat.label.toLowerCase())} bundle (core is included). ` : ""}Prefer one file? Use <code>${config.cdn}/motion.min.css</code> (all ${S.effects.length} effects).</p></div></section>
@@ -461,12 +444,12 @@ ${list.map((c) => fxCard(c, 2)).join("\n")}
 function indexPage() {
   const p = "/animations/";
   const title = `All ${all.length} CSS Animations | SDS Motion Forge`;
-  const description = `Every ${facts.name} animation on one page: ${S.effects.length} CSS-only effects in six categories plus ${interactive.length} cursor-reactive effects. One class name each.`;
+  const description = `Every ${facts.name} animation on one page: ${S.effects.length} CSS-only effects in four categories plus ${interactive.length} cursor-reactive effects. One class name each.`;
   const crumb = [["Home", "/"], ["Animations", p]];
   const jsonld = { "@context": "https://schema.org", "@graph": [crumbs(crumb), { "@type": "CollectionPage", "@id": urlOf(p) + "#collection", name: title, description, url: urlOf(p), isPartOf: { "@id": urlOf("/#website") } }] };
   const groups = [...CATEGORIES, catById.interactive];
   // one live example per category, chosen to be visible and self-contained
-  const SAMPLE = { text: "sds-aurora-text", buttons: "sds-btn-surge-charge", inputs: "sds-input-gradient-border", cards: "sds-card-stack-pop", loaders: "sds-loader-glow-pulse", scroll: "sds-scroll-rise", interactive: "sds-magnetic-pull" };
+  const SAMPLE = { text: "sds-aurora-text", cards: "sds-card-stack-pop", loaders: "sds-loader-glow-pulse", scroll: "sds-scroll-rise", interactive: "sds-magnetic-pull" };
   const sampleOf = (id) => all.find((c) => c.name === SAMPLE[id]) || (id === "interactive" ? interactive[0] : byCategory[id][0]);
   const tiles = groups.map((cat) => {
     const list = cat.id === "interactive" ? interactive : byCategory[cat.id];
@@ -484,7 +467,7 @@ function indexPage() {
 <div>
 <p class="chipline"><span class="pill">Animations</span><span class="pill plain mono">v${facts.version}</span></p>
 <h1>All ${all.length} CSS animations</h1>
-<p class="lead">${S.effects.length} CSS-only effects in six categories, plus ${interactive.length} cursor-reactive effects. Each one is a single class name. Open any category to see every effect playing live.</p>
+<p class="lead">${S.effects.length} CSS-only effects in four categories, plus ${interactive.length} cursor-reactive effects. Each one is a single class name. Open any category to see every effect playing live.</p>
 <ul class="stats"><li class="pill plain">${S.effects.length} CSS effects</li><li class="pill plain">${interactive.length} cursor-reactive</li><li class="pill plain">MIT licensed</li></ul>
 </div>
 <div class="import-card"><h2>Search every animation</h2>

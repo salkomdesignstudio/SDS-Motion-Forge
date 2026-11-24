@@ -20,7 +20,7 @@ export default function Home() {
         <p>Enters on scroll, replays on re-entry.</p>
       </SdsMotion>
 
-      <SdsMotion as="button" effect="sds-btn-magnetic" delay={200}>
+      <SdsMotion as="button" effect="sds-card-magnetic" delay={200}>
         Magnetic button
       </SdsMotion>
     </main>

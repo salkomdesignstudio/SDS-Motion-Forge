@@ -1,15 +1,211 @@
 # Compatibility Report — new build vs published tarball
 
-- Generated: 2026-11-24T12:38:41.463Z
+- Generated: 2026-11-24T13:35:46.824Z
 - Baseline: @salkomdesignstudio/sds-motion-forge@4.0.3 (baseline/extracted)
 - Candidate: @salkomdesignstudio/sds-motion-forge@5.1.1 (working tree build)
 - Selectors compared: 609
 - Keyframes compared: 324
-- Deviations found: 1 (approved: 1, UNAPPROVED: 0)
+- Deviations found: 197 (approved: 197, UNAPPROVED: 0)
 
 ## Approved deviations (allowed by compat/approved-deviations.json)
 
+- `selector:|.sds-btn-magnetic` [css-selector] — Selector missing in new build: |.sds-btn-magnetic
+- `selector:|.sds-btn-liquid` [css-selector] — Selector missing in new build: |.sds-btn-liquid
+- `selector:|.sds-btn-energy` [css-selector] — Selector missing in new build: |.sds-btn-energy
+- `selector:|.sds-btn-press` [css-selector] — Selector missing in new build: |.sds-btn-press
+- `selector:|.sds-btn-edge` [css-selector] — Selector missing in new build: |.sds-btn-edge
+- `selector:|.sds-btn-plasma` [css-selector] — Selector missing in new build: |.sds-btn-plasma
+- `selector:|.sds-btn-morph` [css-selector] — Selector missing in new build: |.sds-btn-morph
+- `selector:|.sds-btn-lift` [css-selector] — Selector missing in new build: |.sds-btn-lift
+- `selector:|.sds-btn-shock` [css-selector] — Selector missing in new build: |.sds-btn-shock
+- `selector:|.sds-btn-neon` [css-selector] — Selector missing in new build: |.sds-btn-neon
+- `selector:|.sds-btn-volt` [css-selector] — Selector missing in new build: |.sds-btn-volt
+- `selector:|.sds-btn-glow-surge` [css-selector] — Selector missing in new build: |.sds-btn-glow-surge
+- `selector:|.sds-btn-quantum` [css-selector] — Selector missing in new build: |.sds-btn-quantum
+- `selector:|.sds-btn-ripple` [css-selector] — Selector missing in new build: |.sds-btn-ripple
+- `selector:|.sds-btn-swipe` [css-selector] — Selector missing in new build: |.sds-btn-swipe
+- `selector:|.sds-btn-burst` [css-selector] — Selector missing in new build: |.sds-btn-burst
+- `selector:|.sds-btn-scan` [css-selector] — Selector missing in new build: |.sds-btn-scan
+- `selector:|.sds-btn-bounce` [css-selector] — Selector missing in new build: |.sds-btn-bounce
+- `selector:|.sds-btn-gradient-shift` [css-selector] — Selector missing in new build: |.sds-btn-gradient-shift
+- `selector:|.sds-btn-outline-grow` [css-selector] — Selector missing in new build: |.sds-btn-outline-grow
+- `selector:|.sds-btn-shimmer` [css-selector] — Selector missing in new build: |.sds-btn-shimmer
+- `selector:|.sds-btn-float` [css-selector] — Selector missing in new build: |.sds-btn-float
+- `selector:|.sds-btn-border-flow` [css-selector] — Selector missing in new build: |.sds-btn-border-flow
+- `selector:|.sds-btn-glow-core` [css-selector] — Selector missing in new build: |.sds-btn-glow-core
+- `selector:|.sds-btn-kinetic` [css-selector] — Selector missing in new build: |.sds-btn-kinetic
+- `selector:|.sds-btn-charge` [css-selector] — Selector missing in new build: |.sds-btn-charge
+- `selector:|.sds-btn-aurora` [css-selector] — Selector missing in new build: |.sds-btn-aurora
+- `selector:|.sds-btn-heartbeat` [css-selector] — Selector missing in new build: |.sds-btn-heartbeat
+- `selector:|.sds-btn-neon-trace` [css-selector] — Selector missing in new build: |.sds-btn-neon-trace
+- `selector:|.sds-btn-gravity` [css-selector] — Selector missing in new build: |.sds-btn-gravity
+- `selector:|.sds-btn-momentum` [css-selector] — Selector missing in new build: |.sds-btn-momentum
+- `selector:|.sds-btn-ice` [css-selector] — Selector missing in new build: |.sds-btn-ice
+- `selector:|.sds-btn-fire` [css-selector] — Selector missing in new build: |.sds-btn-fire
+- `selector:|.sds-btn-flux` [css-selector] — Selector missing in new build: |.sds-btn-flux
+- `selector:|.sds-btn-radar` [css-selector] — Selector missing in new build: |.sds-btn-radar
+- `selector:|.sds-btn-tilt` [css-selector] — Selector missing in new build: |.sds-btn-tilt
+- `selector:|.sds-btn-stretch` [css-selector] — Selector missing in new build: |.sds-btn-stretch
+- `selector:|.sds-btn-recoil` [css-selector] — Selector missing in new build: |.sds-btn-recoil
+- `selector:|.sds-btn-depth-press` [css-selector] — Selector missing in new build: |.sds-btn-depth-press
+- `selector:|.sds-btn-rotate` [css-selector] — Selector missing in new build: |.sds-btn-rotate
+- `selector:|.sds-btn-pulse-border` [css-selector] — Selector missing in new build: |.sds-btn-pulse-border
+- `selector:|.sds-btn-gravity-pull` [css-selector] — Selector missing in new build: |.sds-btn-gravity-pull
+- `selector:|.sds-btn-warp` [css-selector] — Selector missing in new build: |.sds-btn-warp
+- `selector:|.sds-btn-dissolve` [css-selector] — Selector missing in new build: |.sds-btn-dissolve
+- `selector:|.sds-btn-split` [css-selector] — Selector missing in new build: |.sds-btn-split
+- `selector:|.sds-btn-magnetic-trail` [css-selector] — Selector missing in new build: |.sds-btn-magnetic-trail
+- `selector:|.sds-btn-hologram` [css-selector] — Selector missing in new build: |.sds-btn-hologram
+- `selector:|.sds-btn-crystal` [css-selector] — Selector missing in new build: |.sds-btn-crystal
+- `selector:|.sds-btn-flare` [css-selector] — Selector missing in new build: |.sds-btn-flare
+- `selector:|.sds-btn-amp` [css-selector] — Selector missing in new build: |.sds-btn-amp
+- `selector:|.sds-input-focus:focus` [css-selector] — Selector missing in new build: |.sds-input-focus:focus
+- `selector:|.sds-input-morph` [css-selector] — Selector missing in new build: |.sds-input-morph
+- `selector:|.sds-input-shimmer` [css-selector] — Selector missing in new build: |.sds-input-shimmer
+- `selector:|.sds-input-voltage` [css-selector] — Selector missing in new build: |.sds-input-voltage
+- `selector:|.sds-input-shake` [css-selector] — Selector missing in new build: |.sds-input-shake
+- `selector:|.sds-input-success` [css-selector] — Selector missing in new build: |.sds-input-success
+- `selector:|.sds-input-caret` [css-selector] — Selector missing in new build: |.sds-input-caret
+- `selector:|.sds-input-morph-ph::-moz-placeholder` [css-selector] — Selector missing in new build: |.sds-input-morph-ph::-moz-placeholder
+- `selector:|.sds-input-morph-ph::placeholder` [css-selector] — Selector missing in new build: |.sds-input-morph-ph::placeholder
+- `selector:|.sds-input-elevate-wrap` [css-selector] — Selector missing in new build: |.sds-input-elevate-wrap
+- `selector:|.sds-input-elevate-wrap label` [css-selector] — Selector missing in new build: |.sds-input-elevate-wrap label
+- `selector:|.sds-input-elevate-wrap input:not(:-moz-placeholder) ~ label` [css-selector] — Selector missing in new build: |.sds-input-elevate-wrap input:not(:-moz-placeholder) ~ label
+- `selector:|.sds-input-elevate-wrap input:focus ~ label` [css-selector] — Selector missing in new build: |.sds-input-elevate-wrap input:focus ~ label
+- `selector:|.sds-input-elevate-wrap input:not(:placeholder-shown) ~ label` [css-selector] — Selector missing in new build: |.sds-input-elevate-wrap input:not(:placeholder-shown) ~ label
+- `selector:|.sds-input-ink:focus` [css-selector] — Selector missing in new build: |.sds-input-ink:focus
+- `selector:|.sds-input-plasma` [css-selector] — Selector missing in new build: |.sds-input-plasma
+- `selector:|.sds-input-ring` [css-selector] — Selector missing in new build: |.sds-input-ring
+- `selector:|.sds-input-neon` [css-selector] — Selector missing in new build: |.sds-input-neon
+- `selector:|.sds-input-scan` [css-selector] — Selector missing in new build: |.sds-input-scan
+- `selector:|.sds-input-glow-border` [css-selector] — Selector missing in new build: |.sds-input-glow-border
+- `selector:|.sds-input-neural` [css-selector] — Selector missing in new build: |.sds-input-neural
+- `selector:|.sds-input-aurora` [css-selector] — Selector missing in new build: |.sds-input-aurora
+- `selector:|.sds-input-border-beam` [css-selector] — Selector missing in new build: |.sds-input-border-beam
+- `selector:|.sds-input-depth` [css-selector] — Selector missing in new build: |.sds-input-depth
+- `selector:|.sds-input-charge` [css-selector] — Selector missing in new build: |.sds-input-charge
+- `selector:|.sds-input-ripple` [css-selector] — Selector missing in new build: |.sds-input-ripple
+- `selector:|.sds-input-pulse-dot` [css-selector] — Selector missing in new build: |.sds-input-pulse-dot
+- `selector:|.sds-input-orbit` [css-selector] — Selector missing in new build: |.sds-input-orbit
+- `selector:|.sds-input-gradient-border` [css-selector] — Selector missing in new build: |.sds-input-gradient-border
+- `selector:|.sds-input-active-line` [css-selector] — Selector missing in new build: |.sds-input-active-line
+- `selector:|.sds-input-glitch-valid` [css-selector] — Selector missing in new build: |.sds-input-glitch-valid
+- `selector:|.sds-input-flicker` [css-selector] — Selector missing in new build: |.sds-input-flicker
+- `selector:|.sds-input-kinetic` [css-selector] — Selector missing in new build: |.sds-input-kinetic
+- `selector:|.sds-input-waveform` [css-selector] — Selector missing in new build: |.sds-input-waveform
+- `selector:|.sds-input-solar` [css-selector] — Selector missing in new build: |.sds-input-solar
+- `selector:|.sds-input-burst` [css-selector] — Selector missing in new build: |.sds-input-burst
+- `selector:|.sds-input-momentum` [css-selector] — Selector missing in new build: |.sds-input-momentum
+- `selector:|.sds-input-echo` [css-selector] — Selector missing in new build: |.sds-input-echo
+- `selector:|.sds-input-laser` [css-selector] — Selector missing in new build: |.sds-input-laser
+- `selector:|.sds-input-gravity` [css-selector] — Selector missing in new build: |.sds-input-gravity
+- `selector:|.sds-input-void` [css-selector] — Selector missing in new build: |.sds-input-void
+- `selector:|.sds-input-comet` [css-selector] — Selector missing in new build: |.sds-input-comet
+- `selector:|.sds-input-zap` [css-selector] — Selector missing in new build: |.sds-input-zap
+- `selector:|.sds-input-ghost` [css-selector] — Selector missing in new build: |.sds-input-ghost
+- `selector:|.sds-input-crystal` [css-selector] — Selector missing in new build: |.sds-input-crystal
+- `selector:|.sds-input-prism` [css-selector] — Selector missing in new build: |.sds-input-prism
+- `selector:|.sds-input-fire` [css-selector] — Selector missing in new build: |.sds-input-fire
+- `selector:|.sds-input-quantum` [css-selector] — Selector missing in new build: |.sds-input-quantum
+- `selector:|.sds-input-expand` [css-selector] — Selector missing in new build: |.sds-input-expand
+- `selector:|.sds-input-unlock` [css-selector] — Selector missing in new build: |.sds-input-unlock
+- `selector:|.sds-input-flow` [css-selector] — Selector missing in new build: |.sds-input-flow
+- `selector:|.sds-input-frost` [css-selector] — Selector missing in new build: |.sds-input-frost
+- `selector:|.sds-input-electric` [css-selector] — Selector missing in new build: |.sds-input-electric
+- `selector:|.sds-input-radar` [css-selector] — Selector missing in new build: |.sds-input-radar
+- `selector:|.sds-input-bloom` [css-selector] — Selector missing in new build: |.sds-input-bloom
+- `selector:|.sds-input-focus-glow:focus` [css-selector] — Selector missing in new build: |.sds-input-focus-glow:focus
 - `selector-count:|[data-sds]:not(.sds-play)` [css-selector] — Selector "|[data-sds]:not(.sds-play)" occurs 1x in published, 2x in new build (cascade order risk)
+- `keyframes:keyframes:sds-liquidFill` [keyframes] — @keyframes:sds-liquidFill missing in new build
+- `keyframes:keyframes:sds-energyRipple` [keyframes] — @keyframes:sds-energyRipple missing in new build
+- `keyframes:keyframes:sds-pressDepth` [keyframes] — @keyframes:sds-pressDepth missing in new build
+- `keyframes:keyframes:sds-edgeTrace` [keyframes] — @keyframes:sds-edgeTrace missing in new build
+- `keyframes:keyframes:sds-morphPill` [keyframes] — @keyframes:sds-morphPill missing in new build
+- `keyframes:keyframes:sds-liftShadow` [keyframes] — @keyframes:sds-liftShadow missing in new build
+- `keyframes:keyframes:sds-shockwave` [keyframes] — @keyframes:sds-shockwave missing in new build
+- `keyframes:keyframes:sds-btnRipple` [keyframes] — @keyframes:sds-btnRipple missing in new build
+- `keyframes:keyframes:sds-btnSwipe` [keyframes] — @keyframes:sds-btnSwipe missing in new build
+- `keyframes:keyframes:sds-btnBurst` [keyframes] — @keyframes:sds-btnBurst missing in new build
+- `keyframes:keyframes:sds-btnScan` [keyframes] — @keyframes:sds-btnScan missing in new build
+- `keyframes:keyframes:sds-btnBounce` [keyframes] — @keyframes:sds-btnBounce missing in new build
+- `keyframes:keyframes:sds-btnGradShift` [keyframes] — @keyframes:sds-btnGradShift missing in new build
+- `keyframes:keyframes:sds-btnOutlineGrow` [keyframes] — @keyframes:sds-btnOutlineGrow missing in new build
+- `keyframes:keyframes:sds-btnShimmer` [keyframes] — @keyframes:sds-btnShimmer missing in new build
+- `keyframes:keyframes:sds-btnFloat` [keyframes] — @keyframes:sds-btnFloat missing in new build
+- `keyframes:keyframes:sds-btnBorderFlow` [keyframes] — @keyframes:sds-btnBorderFlow missing in new build
+- `keyframes:keyframes:sds-btnGlowCore` [keyframes] — @keyframes:sds-btnGlowCore missing in new build
+- `keyframes:keyframes:sds-btnKinetic` [keyframes] — @keyframes:sds-btnKinetic missing in new build
+- `keyframes:keyframes:sds-btnCharge` [keyframes] — @keyframes:sds-btnCharge missing in new build
+- `keyframes:keyframes:sds-btnAurora` [keyframes] — @keyframes:sds-btnAurora missing in new build
+- `keyframes:keyframes:sds-btnHeartbeat` [keyframes] — @keyframes:sds-btnHeartbeat missing in new build
+- `keyframes:keyframes:sds-btnNeonTrace` [keyframes] — @keyframes:sds-btnNeonTrace missing in new build
+- `keyframes:keyframes:sds-btnGravity` [keyframes] — @keyframes:sds-btnGravity missing in new build
+- `keyframes:keyframes:sds-btnMomentum` [keyframes] — @keyframes:sds-btnMomentum missing in new build
+- `keyframes:keyframes:sds-btnIce` [keyframes] — @keyframes:sds-btnIce missing in new build
+- `keyframes:keyframes:sds-btnFire` [keyframes] — @keyframes:sds-btnFire missing in new build
+- `keyframes:keyframes:sds-btnFlux` [keyframes] — @keyframes:sds-btnFlux missing in new build
+- `keyframes:keyframes:sds-btnRadar` [keyframes] — @keyframes:sds-btnRadar missing in new build
+- `keyframes:keyframes:sds-btnTilt` [keyframes] — @keyframes:sds-btnTilt missing in new build
+- `keyframes:keyframes:sds-btnStretch` [keyframes] — @keyframes:sds-btnStretch missing in new build
+- `keyframes:keyframes:sds-btnRecoil` [keyframes] — @keyframes:sds-btnRecoil missing in new build
+- `keyframes:keyframes:sds-btnDepthPress` [keyframes] — @keyframes:sds-btnDepthPress missing in new build
+- `keyframes:keyframes:sds-btnRotate` [keyframes] — @keyframes:sds-btnRotate missing in new build
+- `keyframes:keyframes:sds-btnPulseBorder` [keyframes] — @keyframes:sds-btnPulseBorder missing in new build
+- `keyframes:keyframes:sds-btnGravityPull` [keyframes] — @keyframes:sds-btnGravityPull missing in new build
+- `keyframes:keyframes:sds-btnWarp` [keyframes] — @keyframes:sds-btnWarp missing in new build
+- `keyframes:keyframes:sds-btnDissolve` [keyframes] — @keyframes:sds-btnDissolve missing in new build
+- `keyframes:keyframes:sds-btnSplit` [keyframes] — @keyframes:sds-btnSplit missing in new build
+- `keyframes:keyframes:sds-btnMagTrail` [keyframes] — @keyframes:sds-btnMagTrail missing in new build
+- `keyframes:keyframes:sds-btnHologram` [keyframes] — @keyframes:sds-btnHologram missing in new build
+- `keyframes:keyframes:sds-btnCrystal` [keyframes] — @keyframes:sds-btnCrystal missing in new build
+- `keyframes:keyframes:sds-btnFlare` [keyframes] — @keyframes:sds-btnFlare missing in new build
+- `keyframes:keyframes:sds-btnAmp` [keyframes] — @keyframes:sds-btnAmp missing in new build
+- `keyframes:keyframes:sds-focusField` [keyframes] — @keyframes:sds-focusField missing in new build
+- `keyframes:keyframes:sds-borderMorph` [keyframes] — @keyframes:sds-borderMorph missing in new build
+- `keyframes:keyframes:sds-shimmerScan` [keyframes] — @keyframes:sds-shimmerScan missing in new build
+- `keyframes:keyframes:sds-voltagePulse` [keyframes] — @keyframes:sds-voltagePulse missing in new build
+- `keyframes:keyframes:sds-seismicShake` [keyframes] — @keyframes:sds-seismicShake missing in new build
+- `keyframes:keyframes:sds-successGlow` [keyframes] — @keyframes:sds-successGlow missing in new build
+- `keyframes:keyframes:sds-caretTrail` [keyframes] — @keyframes:sds-caretTrail missing in new build
+- `keyframes:keyframes:sds-morphPlaceholder` [keyframes] — @keyframes:sds-morphPlaceholder missing in new build
+- `keyframes:keyframes:sds-inkStroke` [keyframes] — @keyframes:sds-inkStroke missing in new build
+- `keyframes:keyframes:sds-inputScan` [keyframes] — @keyframes:sds-inputScan missing in new build
+- `keyframes:keyframes:sds-inputGlowBorder` [keyframes] — @keyframes:sds-inputGlowBorder missing in new build
+- `keyframes:keyframes:sds-inputNeural` [keyframes] — @keyframes:sds-inputNeural missing in new build
+- `keyframes:keyframes:sds-inputAurora` [keyframes] — @keyframes:sds-inputAurora missing in new build
+- `keyframes:keyframes:sds-inputBorderBeam` [keyframes] — @keyframes:sds-inputBorderBeam missing in new build
+- `keyframes:keyframes:sds-inputDepth` [keyframes] — @keyframes:sds-inputDepth missing in new build
+- `keyframes:keyframes:sds-inputCharge` [keyframes] — @keyframes:sds-inputCharge missing in new build
+- `keyframes:keyframes:sds-inputRipple` [keyframes] — @keyframes:sds-inputRipple missing in new build
+- `keyframes:keyframes:sds-inputPulseDot` [keyframes] — @keyframes:sds-inputPulseDot missing in new build
+- `keyframes:keyframes:sds-inputOrbit` [keyframes] — @keyframes:sds-inputOrbit missing in new build
+- `keyframes:keyframes:sds-inputGradBorder` [keyframes] — @keyframes:sds-inputGradBorder missing in new build
+- `keyframes:keyframes:sds-inputActiveLine` [keyframes] — @keyframes:sds-inputActiveLine missing in new build
+- `keyframes:keyframes:sds-inputGlitchValid` [keyframes] — @keyframes:sds-inputGlitchValid missing in new build
+- `keyframes:keyframes:sds-inputFlicker` [keyframes] — @keyframes:sds-inputFlicker missing in new build
+- `keyframes:keyframes:sds-inputKinetic` [keyframes] — @keyframes:sds-inputKinetic missing in new build
+- `keyframes:keyframes:sds-inputWaveform` [keyframes] — @keyframes:sds-inputWaveform missing in new build
+- `keyframes:keyframes:sds-inputSolar` [keyframes] — @keyframes:sds-inputSolar missing in new build
+- `keyframes:keyframes:sds-inputBurst` [keyframes] — @keyframes:sds-inputBurst missing in new build
+- `keyframes:keyframes:sds-inputMomentum` [keyframes] — @keyframes:sds-inputMomentum missing in new build
+- `keyframes:keyframes:sds-inputEcho` [keyframes] — @keyframes:sds-inputEcho missing in new build
+- `keyframes:keyframes:sds-inputLaser` [keyframes] — @keyframes:sds-inputLaser missing in new build
+- `keyframes:keyframes:sds-inputGravity` [keyframes] — @keyframes:sds-inputGravity missing in new build
+- `keyframes:keyframes:sds-inputVoid` [keyframes] — @keyframes:sds-inputVoid missing in new build
+- `keyframes:keyframes:sds-inputComet` [keyframes] — @keyframes:sds-inputComet missing in new build
+- `keyframes:keyframes:sds-inputZap` [keyframes] — @keyframes:sds-inputZap missing in new build
+- `keyframes:keyframes:sds-inputGhost` [keyframes] — @keyframes:sds-inputGhost missing in new build
+- `keyframes:keyframes:sds-inputCrystal` [keyframes] — @keyframes:sds-inputCrystal missing in new build
+- `keyframes:keyframes:sds-inputPrism` [keyframes] — @keyframes:sds-inputPrism missing in new build
+- `keyframes:keyframes:sds-inputFire` [keyframes] — @keyframes:sds-inputFire missing in new build
+- `keyframes:keyframes:sds-inputQuantum` [keyframes] — @keyframes:sds-inputQuantum missing in new build
+- `keyframes:keyframes:sds-inputExpand` [keyframes] — @keyframes:sds-inputExpand missing in new build
+- `keyframes:keyframes:sds-inputUnlock` [keyframes] — @keyframes:sds-inputUnlock missing in new build
+- `keyframes:keyframes:sds-inputFlow` [keyframes] — @keyframes:sds-inputFlow missing in new build
+- `keyframes:keyframes:sds-inputFrost` [keyframes] — @keyframes:sds-inputFrost missing in new build
+- `keyframes:keyframes:sds-inputElectric` [keyframes] — @keyframes:sds-inputElectric missing in new build
+- `keyframes:keyframes:sds-inputRadar` [keyframes] — @keyframes:sds-inputRadar missing in new build
+- `keyframes:keyframes:sds-inputBloom` [keyframes] — @keyframes:sds-inputBloom missing in new build
     - reason: 
 
 **Result: PASS (all deviations explicitly approved)**

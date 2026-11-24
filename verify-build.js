@@ -38,35 +38,7 @@ const REQUIRED_CLASSES = [
   ".sds-flicker-on", ".sds-magnetic-drift", ".sds-data-stream", ".sds-chromatic-shift",
   ".sds-ripple-text", ".sds-stagger-chars", ".sds-word-blur-in", ".sds-split-reveal",
   ".sds-bounce-in-up", ".sds-cinema-title", ".sds-heat-shimmer", ".sds-unfurl",
-  // Buttons
-  ".sds-btn-magnetic", ".sds-btn-liquid", ".sds-btn-energy", ".sds-btn-press",
-  ".sds-btn-edge", ".sds-btn-plasma", ".sds-btn-morph", ".sds-btn-lift",
-  ".sds-btn-shock", ".sds-btn-neon", ".sds-btn-volt", ".sds-btn-glow-surge",
-  ".sds-btn-quantum", ".sds-btn-ripple", ".sds-btn-swipe", ".sds-btn-burst",
-  ".sds-btn-scan", ".sds-btn-bounce", ".sds-btn-gradient-shift", ".sds-btn-outline-grow",
-  ".sds-btn-shimmer", ".sds-btn-float", ".sds-btn-border-flow", ".sds-btn-glow-core",
-  ".sds-btn-kinetic", ".sds-btn-charge", ".sds-btn-aurora", ".sds-btn-heartbeat",
-  ".sds-btn-neon-trace", ".sds-btn-gravity", ".sds-btn-momentum", ".sds-btn-ice",
-  ".sds-btn-fire", ".sds-btn-flux", ".sds-btn-radar", ".sds-btn-tilt",
-  ".sds-btn-stretch", ".sds-btn-recoil", ".sds-btn-depth-press", ".sds-btn-rotate",
-  ".sds-btn-pulse-border", ".sds-btn-gravity-pull", ".sds-btn-warp", ".sds-btn-dissolve",
-  ".sds-btn-split", ".sds-btn-magnetic-trail", ".sds-btn-hologram", ".sds-btn-crystal",
-  ".sds-btn-flare", ".sds-btn-amp",
-  // Inputs
-  ".sds-input-focus", ".sds-input-morph", ".sds-input-shimmer", ".sds-input-voltage",
-  ".sds-input-shake", ".sds-input-success", ".sds-input-caret", ".sds-input-morph-ph",
-  ".sds-input-elevate-wrap", ".sds-input-ink", ".sds-input-plasma", ".sds-input-ring",
-  ".sds-input-neon", ".sds-input-scan", ".sds-input-glow-border", ".sds-input-neural",
-  ".sds-input-aurora", ".sds-input-border-beam", ".sds-input-depth", ".sds-input-charge",
-  ".sds-input-ripple", ".sds-input-pulse-dot", ".sds-input-orbit", ".sds-input-gradient-border",
-  ".sds-input-active-line", ".sds-input-glitch-valid", ".sds-input-flicker", ".sds-input-kinetic",
-  ".sds-input-waveform", ".sds-input-solar", ".sds-input-burst", ".sds-input-momentum",
-  ".sds-input-echo", ".sds-input-laser", ".sds-input-gravity", ".sds-input-void",
-  ".sds-input-comet", ".sds-input-zap", ".sds-input-ghost", ".sds-input-crystal",
-  ".sds-input-prism", ".sds-input-fire", ".sds-input-quantum", ".sds-input-expand",
-  ".sds-input-unlock", ".sds-input-flow", ".sds-input-frost", ".sds-input-electric",
-  ".sds-input-radar", ".sds-input-bloom",
-  // Cards
+                                                      // Cards
   ".sds-card-cinematic", ".sds-card-holo", ".sds-card-portal", ".sds-card-shimmer",
   ".sds-card-magnetic", ".sds-card-warp", ".sds-card-float", ".sds-card-slice",
   ".sds-card-glow", ".sds-card-parallax", ".sds-card-tilt", ".sds-card-expand",
@@ -110,56 +82,25 @@ const REQUIRED_CLASSES = [
   // Utilities
   ".sds-delay-1", ".sds-fast", ".sds-loop", ".sds-pause-hover",
   // Legacy
-  ".sds-scroll-fade-up", ".sds-input-focus-glow", ".sds-card-neon",
+  ".sds-scroll-fade-up", ".sds-card-neon",
   ".sds-card-depth", ".sds-card-flip", ".sds-loader-progress-glow",
 ];
 
 const REQUIRED_KEYFRAMES = [
-  // Text originals
   "sds-velvetDrop", "sds-liquidRise", "sds-phantomBlur", "sds-gravityDrop",
   "sds-elasticStamp", "sds-sliceReveal", "sds-charOrbit", "sds-inkBleed",
   "sds-refract", "sds-staticBurst", "sds-kineticWave", "sds-perspSwing",
   "sds-focusPull", "sds-gradSweep", "sds-depthWarp", "sds-typewriterPrem",
   "sds-cursorBlink", "sds-highlightBurn", "sds-shatterIn", "sds-prismSplit",
-  "sds-glitchFlicker", "sds-velocityBlur", "sds-neonPulseText",
-  // Text new
-  "sds-morphWord", "sds-cipherReveal", "sds-levitateText", "sds-streakIn",
-  "sds-hologramText", "sds-auroraFlow", "sds-elasticBounce", "sds-oscillateText",
-  "sds-flickerOn", "sds-magnetDrift", "sds-dataStream", "sds-chromaticShift",
-  "sds-rippleText", "sds-staggerChar", "sds-wordBlurIn", "sds-splitReveal",
-  "sds-bounceInUp", "sds-cinematicTitle", "sds-heatShimmer", "sds-unfurlText",
-  // Buttons originals
-  "sds-magnetPulse", "sds-liquidFill", "sds-energyRipple", "sds-pressDepth",
-  "sds-edgeTrace", "sds-plasmaGlow", "sds-morphPill", "sds-liftShadow",
-  "sds-shockwave", "sds-neonSign", "sds-voltagePulse", "sds-glowSurge",
-  // Buttons new
-  "sds-btnRipple", "sds-btnSwipe", "sds-btnBurst", "sds-btnScan",
-  "sds-btnBounce", "sds-btnGradShift", "sds-btnOutlineGrow", "sds-btnShimmer",
-  "sds-btnFloat", "sds-btnBorderFlow", "sds-btnGlowCore", "sds-btnKinetic",
-  "sds-btnCharge", "sds-btnAurora", "sds-btnHeartbeat", "sds-btnNeonTrace",
-  "sds-btnGravity", "sds-btnMomentum", "sds-btnIce", "sds-btnFire",
-  "sds-btnFlux", "sds-btnRadar", "sds-btnTilt", "sds-btnStretch",
-  "sds-btnRecoil", "sds-btnDepthPress", "sds-btnRotate", "sds-btnPulseBorder",
-  "sds-btnGravityPull", "sds-btnWarp", "sds-btnDissolve", "sds-btnSplit",
-  "sds-btnMagTrail", "sds-btnHologram", "sds-btnCrystal", "sds-btnFlare", "sds-btnAmp",
-  // Inputs originals
-  "sds-focusField", "sds-borderMorph", "sds-shimmerScan", "sds-seismicShake",
-  "sds-successGlow", "sds-caretTrail", "sds-morphPlaceholder", "sds-inkStroke",
-  // Inputs new
-  "sds-inputScan", "sds-inputGlowBorder", "sds-inputNeural", "sds-inputAurora",
-  "sds-inputBorderBeam", "sds-inputDepth", "sds-inputCharge", "sds-inputRipple",
-  "sds-inputPulseDot", "sds-inputOrbit", "sds-inputGradBorder", "sds-inputActiveLine",
-  "sds-inputGlitchValid", "sds-inputFlicker", "sds-inputKinetic", "sds-inputWaveform",
-  "sds-inputSolar", "sds-inputBurst", "sds-inputMomentum", "sds-inputEcho",
-  "sds-inputLaser", "sds-inputGravity", "sds-inputVoid", "sds-inputComet",
-  "sds-inputZap", "sds-inputGhost", "sds-inputCrystal", "sds-inputPrism",
-  "sds-inputFire", "sds-inputQuantum", "sds-inputExpand", "sds-inputUnlock",
-  "sds-inputFlow", "sds-inputFrost", "sds-inputElectric", "sds-inputRadar", "sds-inputBloom",
-  // Cards originals
-  "sds-cinematicReveal", "sds-holographicTilt", "sds-depthPortal",
-  "sds-refractionShimmer", "sds-magneticHover", "sds-warpGate",
-  "sds-ambientFloat", "sds-sliceUp", "sds-parallaxDepth",
-  // Cards new
+  "sds-glitchFlicker", "sds-velocityBlur", "sds-neonPulseText", "sds-morphWord",
+  "sds-cipherReveal", "sds-levitateText", "sds-streakIn", "sds-hologramText",
+  "sds-auroraFlow", "sds-elasticBounce", "sds-oscillateText", "sds-flickerOn",
+  "sds-magnetDrift", "sds-dataStream", "sds-chromaticShift", "sds-rippleText",
+  "sds-staggerChar", "sds-wordBlurIn", "sds-splitReveal", "sds-bounceInUp",
+  "sds-cinematicTitle", "sds-heatShimmer", "sds-unfurlText", "sds-magnetPulse",
+  "sds-plasmaGlow", "sds-neonSign", "sds-glowSurge", "sds-cinematicReveal",
+  "sds-holographicTilt", "sds-depthPortal", "sds-refractionShimmer", "sds-magneticHover",
+  "sds-warpGate", "sds-ambientFloat", "sds-sliceUp", "sds-parallaxDepth",
   "sds-cardTilt", "sds-cardExpand", "sds-cardFlipReveal", "sds-cardSpotlight",
   "sds-cardGlitch", "sds-cardMorph", "sds-cardRise", "sds-cardDrift",
   "sds-cardGlass", "sds-cardBreath", "sds-cardAurora", "sds-cardScan",
@@ -169,34 +110,27 @@ const REQUIRED_KEYFRAMES = [
   "sds-cardSnap", "sds-cardGravity", "sds-cardBloom", "sds-cardFold",
   "sds-cardBurst", "sds-cardLiquidBorder", "sds-cardStaggerChild", "sds-cardDeepFloat",
   "sds-cardForce", "sds-cardCascadeChild", "sds-cardSmoke", "sds-cardMomentum",
-  // Loaders originals
   "sds-orbitalA", "sds-orbitalB", "sds-fluidFlow", "sds-particleSync",
   "sds-cometSpin", "sds-waveBar", "sds-pingCascade", "sds-progressGlow",
-  "sds-skeletonPulse", "sds-vortexSpin",
-  // Loaders new
-  "sds-loaderDna", "sds-loaderPulse", "sds-loaderBounce", "sds-loaderSignal",
-  "sds-loaderMorph", "sds-loaderCascade", "sds-loaderGrid", "sds-loaderRipple",
-  "sds-loaderNeonRing", "sds-loaderElectric", "sds-loaderExpand",
-  "sds-loaderNeural", "sds-loaderBreath", "sds-loaderPendulum",
-  "sds-loaderCube", "sds-loaderSolar", "sds-loaderStar",
-  "sds-loaderMatrix", "sds-loaderGlitch", "sds-loaderWarp", "sds-loaderHex",
-  "sds-loaderQuantum", "sds-loaderLiquidRing", "sds-loaderHourglass",
-  "sds-loaderCrystal", "sds-loaderPlasmaRing", "sds-loaderHelix",
-  "sds-loaderMosaic", "sds-loaderData", "sds-loaderBar", "sds-loaderSpark",
-  // Scroll originals
-  "sds-viewportRise", "sds-curtainLift", "sds-scrollWarp", "sds-momentumSlide",
-  "sds-scaleReveal", "sds-radialExpand", "sds-blurAscend", "sds-tiltReveal",
-  "sds-scanLine", "sds-staggerPop",
-  // Scroll new
-  "sds-scrollFlip", "sds-scrollZoomBlur", "sds-scrollSplit", "sds-scrollMorph",
-  "sds-scrollSpring", "sds-scrollClipLeft", "sds-scrollClipRight", "sds-scrollElastic",
-  "sds-scrollCinema", "sds-scrollFog", "sds-scrollNeon", "sds-scrollPrism",
-  "sds-scrollCharge", "sds-scrollMagnetic", "sds-scrollDissolve",
-  "sds-scrollUnfold", "sds-scrollPerspLeft", "sds-scrollBounce", "sds-scrollInk",
-  "sds-scrollSnap", "sds-scrollSpiral", "sds-scrollVortex", "sds-scrollSkew",
-  "sds-scrollPunch", "sds-scrollCrystallize", "sds-scrollCascadeChild", "sds-scrollHologram",
-  "sds-scrollDrift", "sds-scrollStreak", "sds-scrollElasticPop",
-  "sds-scrollSlideRight", "sds-scrollWarpIn", "sds-scrollFlash",
+  "sds-skeletonPulse", "sds-vortexSpin", "sds-loaderDna", "sds-loaderPulse",
+  "sds-loaderBounce", "sds-loaderSignal", "sds-loaderMorph", "sds-loaderCascade",
+  "sds-loaderGrid", "sds-loaderRipple", "sds-loaderNeonRing", "sds-loaderElectric",
+  "sds-loaderExpand", "sds-loaderNeural", "sds-loaderBreath", "sds-loaderPendulum",
+  "sds-loaderCube", "sds-loaderSolar", "sds-loaderStar", "sds-loaderMatrix",
+  "sds-loaderGlitch", "sds-loaderWarp", "sds-loaderHex", "sds-loaderQuantum",
+  "sds-loaderLiquidRing", "sds-loaderHourglass", "sds-loaderCrystal", "sds-loaderPlasmaRing",
+  "sds-loaderHelix", "sds-loaderMosaic", "sds-loaderData", "sds-loaderBar",
+  "sds-loaderSpark", "sds-viewportRise", "sds-curtainLift", "sds-scrollWarp",
+  "sds-momentumSlide", "sds-scaleReveal", "sds-radialExpand", "sds-blurAscend",
+  "sds-tiltReveal", "sds-scanLine", "sds-staggerPop", "sds-scrollFlip",
+  "sds-scrollZoomBlur", "sds-scrollSplit", "sds-scrollMorph", "sds-scrollSpring",
+  "sds-scrollClipLeft", "sds-scrollClipRight", "sds-scrollElastic", "sds-scrollCinema",
+  "sds-scrollFog", "sds-scrollNeon", "sds-scrollPrism", "sds-scrollCharge",
+  "sds-scrollMagnetic", "sds-scrollDissolve", "sds-scrollUnfold", "sds-scrollPerspLeft",
+  "sds-scrollBounce", "sds-scrollInk", "sds-scrollSnap", "sds-scrollSpiral",
+  "sds-scrollVortex", "sds-scrollSkew", "sds-scrollPunch", "sds-scrollCrystallize",
+  "sds-scrollCascadeChild", "sds-scrollHologram", "sds-scrollDrift", "sds-scrollStreak",
+  "sds-scrollElasticPop", "sds-scrollSlideRight", "sds-scrollWarpIn", "sds-scrollFlash",
 ];
 
 const REQUIRED_TOKENS = [
@@ -255,9 +189,7 @@ if (!fs.existsSync(srcCssPath) || !fs.existsSync(distCssPath)) {
 }
 
 const srcCSS = fs.readFileSync(srcCssPath, "utf8");
-// v6: the v5 classes moved to dist/legacy.css; the required lists below must still resolve in motion.css + legacy.css together.
-const legacyDistPath = path.join(DIST_DIR, "legacy.css");
-const distCSS = fs.readFileSync(distCssPath, "utf8") + (fs.existsSync(legacyDistPath) ? "\n" + fs.readFileSync(legacyDistPath, "utf8") : "");
+const distCSS = fs.readFileSync(distCssPath, "utf8");
 const pkg = JSON.parse(fs.readFileSync(path.join(ROOT_DIR, "package.json"), "utf8"));
 const docsPath = path.join(ROOT_DIR, "docs", "index.html");
 const docsHTML = fs.existsSync(docsPath) ? fs.readFileSync(docsPath, "utf8") : "";

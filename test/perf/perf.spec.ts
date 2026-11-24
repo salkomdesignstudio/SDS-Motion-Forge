@@ -15,8 +15,6 @@ import { test, expect } from "@playwright/test";
 
 const HEAVIEST: Record<string, string> = {
   text: "sds-grand-entrance",      // translate+scale+rotate+blur, 5 stages
-  buttons: "sds-btn-hologram",     // continuous hue-rotate/brightness filter
-  inputs: "sds-input-frost",       // blur+brightness+scale entrance
   cards: "sds-card-holo",          // 3D perspective tilt + hue-rotate loop
   loaders: "sds-loader-mosaic",    // 9 staggered children, infinite
   scroll: "sds-scroll-vortex",     // perspective translateZ+rotate+blur

@@ -1,28 +1,28 @@
 [
   {
     "path": "dist/motion.min.css",
-    "limit": "356853 B",
+    "limit": "185724 B",
     "name": "dist/motion.min.css",
     "gzip": false,
     "brotli": false
   },
   {
     "path": "dist/motion.css",
-    "limit": "493406 B",
+    "limit": "285597 B",
     "name": "dist/motion.css",
     "gzip": false,
     "brotli": false
   },
   {
     "path": "dist/sds-scroll.min.js",
-    "limit": "1366 B",
+    "limit": "1412 B",
     "name": "dist/sds-scroll.min.js",
     "gzip": false,
     "brotli": false
   },
   {
     "path": "dist/motion-interactive.min.js",
-    "limit": "7436 B",
+    "limit": "7589 B",
     "name": "dist/motion-interactive.min.js",
     "gzip": false,
     "brotli": false
@@ -42,57 +42,43 @@
     "brotli": false
   },
   {
-    "path": "dist/categories/buttons.min.css",
-    "limit": "89201 B",
-    "name": "dist/categories/buttons.min.css",
-    "gzip": false,
-    "brotli": false
-  },
-  {
-    "path": "dist/categories/inputs.min.css",
-    "limit": "91844 B",
-    "name": "dist/categories/inputs.min.css",
-    "gzip": false,
-    "brotli": false
-  },
-  {
     "path": "dist/categories/cards.min.css",
-    "limit": "42172 B",
+    "limit": "43024 B",
     "name": "dist/categories/cards.min.css",
     "gzip": false,
     "brotli": false
   },
   {
     "path": "dist/categories/loaders.min.css",
-    "limit": "52343 B",
+    "limit": "53410 B",
     "name": "dist/categories/loaders.min.css",
     "gzip": false,
     "brotli": false
   },
   {
     "path": "dist/categories/scroll.min.css",
-    "limit": "35791 B",
+    "limit": "36858 B",
     "name": "dist/categories/scroll.min.css",
     "gzip": false,
     "brotli": false
   },
   {
     "path": "packages/react/dist/index.js",
-    "limit": "122674 B",
+    "limit": "65058 B",
     "name": "packages/react/dist/index.js",
     "gzip": false,
     "brotli": false
   },
   {
     "path": "packages/elements/dist/index.global.js",
-    "limit": "99814 B",
+    "limit": "52175 B",
     "name": "packages/elements/dist/index.global.js",
     "gzip": false,
     "brotli": false
   },
   {
     "path": "packages/tailwind/dist/sds-motion.css",
-    "limit": "724561 B",
+    "limit": "424166 B",
     "name": "packages/tailwind/dist/sds-motion.css",
     "gzip": false,
     "brotli": false

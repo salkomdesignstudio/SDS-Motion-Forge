@@ -2,7 +2,7 @@
 
 React bindings for [SDS Motion Forge](https://www.npmjs.com/package/@salkomdesignstudio/sds-motion-forge).
 Effect names are TypeScript unions **generated from the motion registry** —
-autocomplete for all 629 effects, guaranteed in sync with the CSS.
+autocomplete for all 417 effects, guaranteed in sync with the CSS.
 
 > **This package ships no CSS.** Load the stylesheet once in your app —
 > that keeps the CSS cacheable, CDN-compatible, and identical to what every

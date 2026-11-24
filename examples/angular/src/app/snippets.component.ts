@@ -12,12 +12,12 @@ import { SdsMotionDirective, SdsTextDirective } from "@salkomdesignstudio/motion
       <div sdsMotion="sds-roll-in" easing="spring">Roll In</div>
       <div sdsMotion="sds-shimmer-sweep" easing="spring">Shimmer Sweep</div>
       <div sdsMotion="sds-slide-blur-left" easing="spring">Slide Blur Left</div>
-      <button sdsMotion="sds-btn-gravity" duration="fast">Gravity</button>
-      <button sdsMotion="sds-btn-kinetic" duration="fast">Kinetic</button>
-      <button sdsMotion="sds-btn-momentum" duration="fast">Momentum</button>
-      <div sdsMotion="sds-input-flicker" easing="spring">Flicker</div>
-      <div sdsMotion="sds-input-ghost" easing="spring">Ghost</div>
-      <div sdsMotion="sds-input-ink" easing="spring">Ink Stroke</div>
+      <button sdsMotion="sds-card-gravity" duration="fast">Gravity</button>
+      <button sdsMotion="sds-card-force" duration="fast">Kinetic</button>
+      <button sdsMotion="sds-card-momentum" duration="fast">Momentum</button>
+      <div sdsMotion="sds-card-shimmer" easing="spring">Flicker</div>
+      <div sdsMotion="sds-card-smoke" easing="spring">Ghost</div>
+      <div sdsMotion="sds-card-ink" easing="spring">Ink Stroke</div>
       <div sdsMotion="sds-card-ink" easing="spring">Ink</div>
       <div sdsMotion="sds-card-momentum" easing="spring">Momentum</div>
       <div sdsMotion="sds-card-portal" easing="spring">Depth Portal</div>

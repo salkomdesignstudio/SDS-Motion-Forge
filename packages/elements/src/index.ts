@@ -3,8 +3,6 @@ export { SdsTextElement } from "./sds-text-element";
 export type {
   SdsEffect,
   SdsTextEffect,
-  SdsButtonsEffect,
-  SdsInputsEffect,
   SdsCardsEffect,
   SdsLoadersEffect,
   SdsScrollEffect,

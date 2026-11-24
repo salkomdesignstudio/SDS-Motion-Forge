@@ -10,12 +10,12 @@ export default function Snippets() {
       <SdsMotion effect="sds-roll-in" easing="spring">Roll In</SdsMotion>
       <SdsMotion effect="sds-shimmer-sweep" easing="spring">Shimmer Sweep</SdsMotion>
       <SdsMotion effect="sds-slide-blur-left" easing="spring">Slide Blur Left</SdsMotion>
-      <SdsMotion as="button" effect="sds-btn-gravity" duration="fast">Gravity</SdsMotion>
-      <SdsMotion as="button" effect="sds-btn-kinetic" duration="fast">Kinetic</SdsMotion>
-      <SdsMotion as="button" effect="sds-btn-momentum" duration="fast">Momentum</SdsMotion>
-      <SdsMotion effect="sds-input-flicker" easing="spring">Flicker</SdsMotion>
-      <SdsMotion effect="sds-input-ghost" easing="spring">Ghost</SdsMotion>
-      <SdsMotion effect="sds-input-ink" easing="spring">Ink Stroke</SdsMotion>
+      <SdsMotion as="button" effect="sds-card-gravity" duration="fast">Gravity</SdsMotion>
+      <SdsMotion as="button" effect="sds-card-force" duration="fast">Kinetic</SdsMotion>
+      <SdsMotion as="button" effect="sds-card-momentum" duration="fast">Momentum</SdsMotion>
+      <SdsMotion effect="sds-card-shimmer" easing="spring">Flicker</SdsMotion>
+      <SdsMotion effect="sds-card-smoke" easing="spring">Ghost</SdsMotion>
+      <SdsMotion effect="sds-card-ink" easing="spring">Ink Stroke</SdsMotion>
       <SdsMotion effect="sds-card-ink" easing="spring">Ink</SdsMotion>
       <SdsMotion effect="sds-card-momentum" easing="spring">Momentum</SdsMotion>
       <SdsMotion effect="sds-card-portal" easing="spring">Depth Portal</SdsMotion>

@@ -23,7 +23,7 @@ function isoWeek(d = new Date()) {
 }
 const WEEK = Number(process.env.SDS_SAMPLE_SEED ?? isoWeek());
 
-const CATS = ["text", "buttons", "inputs", "cards", "loaders", "scroll"];
+const CATS = ["text", "cards", "loaders", "scroll"];
 const picked = [];
 for (const cat of CATS) {
   const pool = registry.classes

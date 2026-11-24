@@ -22,7 +22,7 @@ const { splitTopLevel } = require("./lib/css-model");
 
 const ROOT = path.join(__dirname, "..");
 const CAT_DIR = path.join(ROOT, "src", "categories");
-const ORDER = ["core", "text", "buttons", "inputs", "cards", "loaders", "scroll"];
+const ORDER = ["core", "text", "cards", "loaders", "scroll"];
 
 /* Pre-existing anomaly in published 4.0.3 — referenced but never defined. */
 const KNOWN_MISSING_KEYFRAMES = new Set(["sds-charOrbitBob"]);

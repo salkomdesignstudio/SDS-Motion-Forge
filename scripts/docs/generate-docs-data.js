@@ -381,7 +381,7 @@ function howFor(c) {
 }
 
 /* ── assemble ────────────────────────────────────────────────── */
-const animations = { text: [], buttons: [], inputs: [], cards: [], loaders: [], scroll: [] };
+const animations = { text: [], cards: [], loaders: [], scroll: [] };
 const markup = {};
 const snippets = {};
 const how = {};
@@ -438,7 +438,7 @@ emit("docs-data.js",
 emit("registry.json", fs.readFileSync(path.join(ROOT, "registry", "motion.registry.json"), "utf8"));
 
 /* ── builder data: structured rules + keyframes + core ───────── */
-const CAT_FILES = ["core", "text", "buttons", "inputs", "cards", "loaders", "scroll"];
+const CAT_FILES = ["core", "text", "cards", "loaders", "scroll"];
 const ruleTexts = {};   // class -> [rule css strings]
 const kfTexts = {};     // keyframe name -> css string
 let coreCss = "";

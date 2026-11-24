@@ -2,7 +2,7 @@
 
 An [MCP](https://modelcontextprotocol.io) server for [SDS Motion Forge](https://github.com/salkomdesignstudio/SDS-Motion-Forge), the CSS-only animation library. It lets an AI assistant:
 
-- **find and install** animations (628 effects across text, buttons, cards, inputs, loaders, scroll and cursor), and
+- **find and install** animations (428 effects across text, cards, loaders, scroll and cursor), and
 - **map a design's motion to the closest Motion Forge animation**, for example from Figma, with a score that explains itself.
 
 It is offline and deterministic. There are no network calls and no LLM calls at runtime: the answers come from a catalog generated from the library's own CSS at build time.

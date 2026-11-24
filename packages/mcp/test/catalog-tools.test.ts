@@ -8,7 +8,7 @@ const catalog = loadCatalog();
 describe("catalog", () => {
   it("matches the registry it was built from", () => {
     expect(catalog.schemaVersion).toBe(1);
-    expect(catalog.animations.length).toBe(629);
+    expect(catalog.animations.length).toBe(428);
     expect(getEntry("sds-bounce-in-up")?.motion.durationMs).toBe(850);
     expect(getEntry("bounce-in-up")?.name).toBe("sds-bounce-in-up");
     expect(getEntry(".sds-bounce-in-up")?.name).toBe("sds-bounce-in-up");
@@ -79,9 +79,9 @@ describe("golden mappings", () => {
     expect(r[0].entry.category).toBe("scroll");
     expect(r[0].match.score).toBeGreaterThanOrEqual(60);
   });
-  it("a looping glow on a button maps to a looping button effect", () => {
-    const r = mapSpec(catalog, want({ properties: ["shadow"], loop: true, target: "button", duration: 2000 }), { limit: 3 });
-    expect(r[0].entry.category).toBe("buttons");
+  it("a looping glow on a card maps to a looping card effect", () => {
+    const r = mapSpec(catalog, want({ properties: ["shadow"], loop: true, target: "card", duration: 2000 }), { limit: 3 });
+    expect(r[0].entry.category).toBe("cards");
     expect(r[0].entry.loop).toBe(true);
   });
   it("blur-in text maps to a text effect that animates blur", () => {

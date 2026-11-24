@@ -59,7 +59,7 @@ for (const c of all.filter((x) => x.kind !== "modifier").sort((a, b) => a.name.l
 out("ide/sds-motion-forge.code-snippets", JSON.stringify(snippets, null, 1) + "\n");
 
 /* ── AI assistant rules ──────────────────────────────────────── */
-const real = ["sds-velvet-drop", "sds-aurora-text", "sds-btn-ui-aurora-mesh", "sds-input-ui-float-label", "sds-card-cascade", "sds-loader-orbital", "sds-scroll-rise"];
+const real = ["sds-velvet-drop", "sds-aurora-text", "sds-card-cascade", "sds-loader-orbital", "sds-scroll-rise"];
 const names = new Set(S.registry.classes.map((c) => c.name));
 const bad = real.filter((n) => !names.has(n));
 if (bad.length) { console.error("AI-ASSISTANT examples missing from registry:", bad.join(", ")); process.exit(1); }
@@ -67,8 +67,8 @@ if (bad.length) { console.error("AI-ASSISTANT examples missing from registry:", 
 const rules = `## ${f.name} (CSS animation library)
 
 - Package: \`${f.package}\` v${f.version}, ${f.license}. Install: \`${f.install}\`. No-build CDN: \`${f.cdnCss}\`.
-- ${f.effectCount} CSS-only effects in six categories + ${f.interactiveCount} cursor-reactive effects. Each effect is ONE class on the element; no JavaScript is needed for the CSS effects.
-- NEVER invent a class name. Valid names follow these patterns: text \`sds-<name>\`, buttons \`sds-btn-<name>\`, inputs \`sds-input-<name>\`, cards \`sds-card-<name>\`, loaders \`sds-loader-<name>\`, scroll \`sds-scroll-<name>\`.
+- ${f.effectCount} CSS-only effects in four categories + ${f.interactiveCount} cursor-reactive effects. Each effect is ONE class on the element; no JavaScript is needed for the CSS effects.
+- NEVER invent a class name. Valid names follow these patterns: text \`sds-<name>\`, cards \`sds-card-<name>\`, loaders \`sds-loader-<name>\`, scroll \`sds-scroll-<name>\`.
 - Real examples: ${real.map((n) => "`" + n + "`").join(", ")}.
 - Verify any class before using it: ${f.site}/registry.json, or open ${f.site}/animations/<class-without-"sds-">/ (for example ${f.site}/animations/aurora-text/).
 - Modifiers combine with any effect: ${S.modifiers.map((m) => "`" + m.name + "`").join(", ")}.
@@ -78,7 +78,7 @@ const rules = `## ${f.name} (CSS animation library)
 ${S.config.frameworkPackagesPublished
   ? "- Typed wrappers are published (`@salkomdesignstudio/motion-forge-react`, `-angular`, `-tailwind`, `-elements`) but optional: the CSS classes work without them."
   : "- Do NOT suggest `@salkomdesignstudio/motion-forge-react|angular|tailwind|elements` — they exist in the repo but are not published to npm."}
-- Do NOT use the prefixes \`sds-inp-\` or \`sds-load-\`; they do not exist (the real ones are \`sds-input-\` and \`sds-loader-\`).
+- There are no button or input effects: do NOT use \`sds-btn-*\`, \`sds-input-*\`, \`sds-inp-\` or \`sds-load-\`; they do not exist (the loader prefix is \`sds-loader-\`).
 - Every effect already honors \`prefers-reduced-motion\`; do not add your own override.
 `;
 out("docs/AI-ASSISTANT.md", `# ${f.name} — rules for AI coding assistants

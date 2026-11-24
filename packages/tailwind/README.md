@@ -18,7 +18,7 @@ under 6 KB of CSS including keyframes (measured in `examples/tailwind-v4`).
 
 ```html
 <h1 class="animate-sds-velvet-drop">Hello</h1>
-<button class="animate-sds-btn-magnetic">Save</button>
+<div class="animate-sds-card-rise">Card</div>
 
 <!-- Speed variants map to the SDS duration scale
      (instant | fast | base | slow | slower | dramatic) -->
@@ -67,7 +67,3 @@ the core library CSS. The v4 plugin carries the full rule bodies.
 - Reduced motion is neutralized for every utility via a
   `prefers-reduced-motion` block shipped with the plugin.
 - Zero runtime dependencies. `tailwindcss >= 3` is a peer dependency.
-
-## v6 UI buttons and inputs
-
-The `sds-btn-ui-*` buttons and `sds-input-ui-*` inputs share one base style, so they are plain CSS classes rather than `animate-*` utilities. Load `motion.css` (or the `buttons` / `inputs` category bundle) next to the plugin and use the classes as written in the main README. The v5 button and input classes are still available as utilities.

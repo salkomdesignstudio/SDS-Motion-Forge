@@ -57,7 +57,6 @@ const INTERACTIVE = {
 /* Documented permanent legacy aliases (README "Backward Compatibility"). */
 const ALIASES = {
   "sds-scroll-fade-up": "sds-scroll-rise",
-  "sds-input-focus-glow": "sds-input-focus",
   "sds-card-neon": "sds-card-glow",
   "sds-card-depth": "sds-card-parallax",
   "sds-card-flip": "sds-card-slice",
@@ -65,14 +64,12 @@ const ALIASES = {
 };
 
 const MODIFIER_RE = /^sds-(delay-\d+|fast|slow|xslow|normal|loop|alt|once|fill-both|fill-forward|pause-hover)$/;
-const INFRA = new Set(["sds-play", "sds-in", "sds-js", "sds-scroll-auto", "sds-char", "sds-btn-icon"]);
+const INFRA = new Set(["sds-play", "sds-in", "sds-js", "sds-scroll-auto", "sds-char"]);
 
 function categorize(cls, sourceFile) {
   if (MODIFIER_RE.test(cls)) return "modifiers";
   if (INFRA.has(cls)) return "infrastructure";
   if (INTERACTIVE[cls]) return "interactive";
-  if (/^sds-btn-/.test(cls)) return "buttons";
-  if (/^sds-input-/.test(cls)) return "inputs";
   if (/^sds-card-/.test(cls)) return "cards";
   if (/^sds-loader-/.test(cls)) return "loaders";
   if (/^sds-scroll-/.test(cls)) return "scroll";
@@ -224,13 +221,12 @@ function collectVars(value, set) {
     let trigger;
     if (INTERACTIVE[name]) trigger = INTERACTIVE[name];
     else if (category === "scroll") trigger = "scroll";
-    else if (category === "buttons" && e.triggers.has("hover")) trigger = "hover"; // a button that answers hover and focus is a hover button
     else if (e.triggers.has("focus")) trigger = "focus";
     else if (e.triggers.has("hover")) trigger = "hover";
     else trigger = "load";
 
     const displayName = (meta[name] && meta[name].displayName) || e.displayName ||
-      name.replace(/^sds-(btn-|input-|card-|loader-|scroll-)?/, "")
+      name.replace(/^sds-(card-|loader-|scroll-)?/, "")
         .split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join(" ");
 
     const description = (meta[name] && meta[name].description) ||
@@ -258,12 +254,7 @@ function collectVars(value, set) {
       /* true only when child elements carry the ONLY animation — effects that
          also animate the host (e.g. fill-wave) work without children */
       requiresChildren: e.targetsChildren && !e.requiresCharSplit && !e.hostAnimates,
-      /* inputs whose effect lives on a wrapper (pseudo-element overlays,
-         :focus-within, or descendant input/label rules) — <input> elements
-         cannot render ::before/::after, so these classes wrap the field */
-      inputWrap: category === "inputs" && e.selectors.some((s) =>
-        /::(before|after)\b/.test(s) || /:focus-within/.test(s) ||
-        /\.sds-[a-z0-9-]+[^,]*\s(input|label)\b/.test(s)),
+      inputWrap: false,
       requiresJs: !!INTERACTIVE[name],
       jsEngine: INTERACTIVE[name] ? "motion-interactive" : (category === "scroll" ? "sds-scroll (optional)" : null),
       trigger,

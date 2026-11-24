@@ -22,7 +22,7 @@
 const fs = require("fs");
 const path = require("path");
 const postcss = require("postcss");
-const { loadRegistry, loadLegacy, loadClassRules } = require("../../../scripts/codegen/effects-data.js");
+const { loadRegistry, loadClassRules } = require("../../../scripts/codegen/effects-data.js");
 
 const PKG = path.join(__dirname, "..");
 const DIST = path.join(PKG, "dist");
@@ -43,10 +43,9 @@ const coreRoot = {};
 
 /* Effects eligible for utilities: CSS-only effect classes (no aliases —
    aliases resolve to their target's utility; no JS-engine classes). */
-// the v6 UI buttons and inputs share one base rule (a selector list / attribute selector) that a per-class utility cannot carry: use their CSS from motion.css instead
-const effects = registry.classes.concat(loadLegacy()).filter((c) => !/^sds-(btn|input)-ui-/.test(c.name) &&
+const effects = registry.classes.filter((c) =>
   c.kind === "effect" && !c.aliasOf && !c.requiresJs &&
-  ["text", "buttons", "inputs", "cards", "loaders", "scroll"].includes(c.category));
+  ["text", "cards", "loaders", "scroll"].includes(c.category));
 
 function utilityName(cls) { return `animate-${cls}`; }
 

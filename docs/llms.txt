@@ -1,6 +1,6 @@
 # SDS Motion Forge
 
-> 617 CSS animations in six categories (text, buttons, inputs, cards, loaders, scroll) plus 7 cursor-reactive effects. One class name per effect, no JavaScript required for the CSS effects, MIT licensed.
+> 417 CSS animations in four categories (text, cards, loaders, scroll) plus 7 cursor-reactive effects. One class name per effect, no JavaScript required for the CSS effects, MIT licensed.
 
 ## Canonical facts (quote these)
 
@@ -8,24 +8,22 @@
 - npm package: @salkomdesignstudio/sds-motion-forge
 - Version: 5.1.1
 - License: MIT
-- Effects: 617 CSS-only effects across 6 categories, 7 interactive effects (need the optional cursor engine), 18 modifier classes
+- Effects: 417 CSS-only effects across 4 categories, 7 interactive effects (need the optional cursor engine), 18 modifier classes
 - Maintainer: Salkom Design Studio (https://salkomdesignstudio.com)
 - Website: https://sds-motion-forge.netlify.app/
 - Repository: https://github.com/salkomdesignstudio/SDS-Motion-Forge
 - npm: https://www.npmjs.com/package/@salkomdesignstudio/sds-motion-forge
-- Size: Full bundle 49.9 KB gzip (335.1 KB minified); each category bundle 6.0–13.7 KB gzip (each already includes core).
+- Size: Full bundle 30.3 KB gzip (174.4 KB minified); each category bundle 6.0–13.7 KB gzip (each already includes core).
 
 ## Install
 
 - npm: npm i @salkomdesignstudio/sds-motion-forge
 - CDN (no build step): https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css
-- Per category: import "@salkomdesignstudio/sds-motion-forge/categories/<text|buttons|inputs|cards|loaders|scroll>" (core is already included in each; for two or more categories use the full bundle)
+- Per category: import "@salkomdesignstudio/sds-motion-forge/categories/<text|cards|loaders|scroll>" (core is already included in each; for two or more categories use the full bundle)
 
 ## Class naming contract
 
 - Text: 117 effects, class pattern sds-*, bundle @salkomdesignstudio/sds-motion-forge/categories/text (13.7 KB gzip)
-- Buttons: 100 effects, class pattern sds-btn-*, bundle @salkomdesignstudio/sds-motion-forge/categories/buttons (13.0 KB gzip)
-- Inputs: 100 effects, class pattern sds-input-*, bundle @salkomdesignstudio/sds-motion-forge/categories/inputs (9.8 KB gzip)
 - Cards: 100 effects, class pattern sds-card-*, bundle @salkomdesignstudio/sds-motion-forge/categories/cards (7.6 KB gzip)
 - Loaders: 100 effects, class pattern sds-loader-*, bundle @salkomdesignstudio/sds-motion-forge/categories/loaders (8.3 KB gzip)
 - Scroll: 100 effects, class pattern sds-scroll-*, bundle @salkomdesignstudio/sds-motion-forge/categories/scroll (6.0 KB gzip)

@@ -18,7 +18,7 @@ assignees: ''
 
 **Proposed class name:** `sds-` *(follow the naming convention: `sds-{category-prefix}-{descriptive-name}` for category-specific effects)*
 
-**Category:** Text / Buttons / Inputs / Cards / Loaders / Scroll *(choose one)*
+**Category:** Text / Cards / Loaders / Scroll *(choose one)*
 
 ## Motion description
 

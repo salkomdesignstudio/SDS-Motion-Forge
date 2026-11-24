@@ -31,16 +31,10 @@ function tsUnion(names) {
  * Generated TypeScript module shared by react/angular/elements packages.
  * Includes per-effect metadata needed at runtime (char-split, children, js).
  */
-function loadLegacy() {
-  const p = path.join(ROOT, "registry", "legacy.registry.json");
-  return fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, "utf8")).classes : [];
-}
-
 function generateEffectsTs(pkgName) {
   const registry = loadRegistry();
-  const legacy = loadLegacy(); // v5 classes that live in dist/legacy.css since v6; still accepted by the typed wrappers
-  const effects = effectClasses(registry).concat(legacy);
-  const cats = ["text", "buttons", "inputs", "cards", "loaders", "scroll", "interactive"];
+  const effects = effectClasses(registry);
+  const cats = ["text", "cards", "loaders", "scroll", "interactive"];
   const lines = [];
   lines.push("/**");
   lines.push(` * GENERATED FILE — do not edit.`);
@@ -57,15 +51,8 @@ function generateEffectsTs(pkgName) {
     lines.push(tsUnion(names) + ";");
     lines.push("");
   }
-  lines.push("/** v5 classes moved out of the default set in v6. They need dist/legacy.css next to motion.css. */");
-  lines.push("export type SdsLegacyEffect =");
-  lines.push(tsUnion(legacy.map((c) => c.name).sort()) + ";");
-  lines.push("");
   lines.push("export type SdsEffect =");
-  lines.push("  | SdsLegacyEffect");
   lines.push("  | SdsTextEffect");
-  lines.push("  | SdsButtonsEffect");
-  lines.push("  | SdsInputsEffect");
   lines.push("  | SdsCardsEffect");
   lines.push("  | SdsLoadersEffect");
   lines.push("  | SdsScrollEffect");
@@ -107,9 +94,7 @@ function loadClassRules() {
   const catDir = path.join(ROOT, "src", "categories");
   const keyframes = {};
   const rules = {}; // class -> [{selector, decls}]
-  const files = ["core", "text", "buttons", "inputs", "cards", "loaders", "scroll"].map((n) => path.join(catDir, `${n}.css`));
-  const legacyDir = path.join(ROOT, "src", "legacy"); // v5 classes kept for existing sites (dist/legacy.css)
-  if (fs.existsSync(legacyDir)) for (const n of fs.readdirSync(legacyDir).filter((x) => x.endsWith(".css")).sort()) files.push(path.join(legacyDir, n));
+  const files = ["core", "text", "cards", "loaders", "scroll"].map((n) => path.join(catDir, `${n}.css`));
   for (const file of files) {
     const root = postcss.parse(fs.readFileSync(file, "utf8"));
     root.walkAtRules(/^(-webkit-)?keyframes$/, (at) => {
@@ -128,4 +113,4 @@ function loadClassRules() {
   return { rules, keyframes };
 }
 
-module.exports = { ROOT, loadRegistry, loadLegacy, effectClasses, byCategory, tsUnion, generateEffectsTs, loadClassRules };
+module.exports = { ROOT, loadRegistry, effectClasses, byCategory, tsUnion, generateEffectsTs, loadClassRules };

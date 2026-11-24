@@ -1,7 +1,7 @@
 {
   "name": "@salkomdesignstudio/sds-motion-forge",
   "version": "5.1.1",
-  "description": "629 CSS animations for text, buttons, inputs, cards, loaders and scroll. One class name each, no JavaScript needed for the CSS effects, per-category bundles, TypeScript types and prefers-reduced-motion support. An Animate.css alternative.",
+  "description": "629 CSS animations for text, cards, loaders and scroll. One class name each, no JavaScript needed for the CSS effects, per-category bundles, TypeScript types and prefers-reduced-motion support. An Animate.css alternative.",
   "main": "./dist/motion.css",
   "style": "./dist/motion.css",
   "types": "./index.d.ts",
@@ -19,12 +19,6 @@
     "./dist/motion-interactive.min.js.map": "./dist/motion-interactive.min.js.map",
     "./motion.css": "./dist/motion.css",
     "./motion.min.css": "./dist/motion.min.css",
-    "./legacy": {
-      "style": "./dist/legacy.min.css",
-      "default": "./dist/legacy.min.css"
-    },
-    "./dist/legacy.css": "./dist/legacy.css",
-    "./dist/legacy.min.css": "./dist/legacy.min.css",
     "./categories/core": {
       "style": "./dist/categories/core.css",
       "default": "./dist/categories/core.css"
@@ -32,14 +26,6 @@
     "./categories/text": {
       "style": "./dist/categories/text.css",
       "default": "./dist/categories/text.css"
-    },
-    "./categories/buttons": {
-      "style": "./dist/categories/buttons.css",
-      "default": "./dist/categories/buttons.css"
-    },
-    "./categories/inputs": {
-      "style": "./dist/categories/inputs.css",
-      "default": "./dist/categories/inputs.css"
     },
     "./categories/cards": {
       "style": "./dist/categories/cards.css",
@@ -57,10 +43,6 @@
     "./dist/categories/core.min.css": "./dist/categories/core.min.css",
     "./dist/categories/text.css": "./dist/categories/text.css",
     "./dist/categories/text.min.css": "./dist/categories/text.min.css",
-    "./dist/categories/buttons.css": "./dist/categories/buttons.css",
-    "./dist/categories/buttons.min.css": "./dist/categories/buttons.min.css",
-    "./dist/categories/inputs.css": "./dist/categories/inputs.css",
-    "./dist/categories/inputs.min.css": "./dist/categories/inputs.min.css",
     "./dist/categories/cards.css": "./dist/categories/cards.css",
     "./dist/categories/cards.min.css": "./dist/categories/cards.min.css",
     "./dist/categories/loaders.css": "./dist/categories/loaders.css",
@@ -92,7 +74,7 @@
   ],
   "scripts": {
     "build:tokens": "node scripts/generate-tokens.js",
-    "build:css": "postcss src/motion.css -o dist/motion.css && cleancss -o dist/motion.min.css dist/motion.css && postcss src/legacy.css -o dist/legacy.css && cleancss -o dist/legacy.min.css dist/legacy.css",
+    "build:css": "postcss src/motion.css -o dist/motion.css && cleancss -o dist/motion.min.css dist/motion.css",
     "build:js": "terser src/sds-scroll.js -o dist/sds-scroll.min.js --compress --mangle --source-map \"url='sds-scroll.min.js.map'\" && terser src/motion-interactive.js -o dist/motion-interactive.min.js --compress --mangle --source-map \"url='motion-interactive.min.js.map'\"",
     "build:categories": "node scripts/build-categories.js",
     "build:packages": "npm run build --workspaces --if-present",
@@ -143,7 +125,6 @@
     "scroll-animation",
     "text-animation",
     "hover-effects",
-    "button-animation",
     "loader",
     "spinner",
     "css-only",

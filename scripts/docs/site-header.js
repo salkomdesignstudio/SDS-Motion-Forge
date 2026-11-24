@@ -22,8 +22,6 @@ const REPO = "https://github.com/salkomdesignstudio/SDS-Motion-Forge";
 const count = (cat) => registry.classes.filter((c) => c.kind === "effect" && c.category === cat).length;
 const CATS = [
   ["text", "Text"],
-  ["buttons", "Buttons"],
-  ["inputs", "Inputs"],
   ["cards", "Cards"],
   ["loaders", "Loaders"],
   ["scroll", "Scroll"],
@@ -42,8 +40,6 @@ function headerHtml() {
   const interactiveCount = registry.classes.filter((c) => c.kind === "interactive").length;
   const DESC = {
     text: "Headings, words and letters",
-    buttons: "Ambient button effects",
-    inputs: "Field and focus effects",
     cards: "Cards and surfaces",
     loaders: "Spinners and progress",
     scroll: "Reveal as you scroll",
@@ -51,8 +47,6 @@ function headerHtml() {
   const SVG_CURSOR = '<svg viewBox="0 0 24 24" width="22" height="22" fill="#fff" stroke="#14162a" stroke-width="1.4" stroke-linejoin="round"><path d="M5 3l14 7-6 2-2 6z"/></svg>';
   const PV = {
     text: ["sds-aurora-text", '<span class="p-text">Aurora</span>'],
-    buttons: ["sds-btn-surge-charge", '<span class="p-btn">Deploy</span>'],
-    inputs: ["sds-input-gradient-border", '<span class="p-input"><i></i>you@example.com</span>'],
     cards: ["sds-card-stack-pop", '<span class="p-card"><b>Card</b><small>Stack pop</small></span>'],
     loaders: ["sds-loader-glow-pulse", '<span class="p-ring"></span><span class="p-dots"><i></i><i></i><i></i></span>'],
     scroll: ["sds-scroll-barrel", '<span class="p-sc"><i></i><i></i><i></i></span>'],

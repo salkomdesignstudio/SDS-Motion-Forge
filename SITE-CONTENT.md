@@ -11,13 +11,13 @@ Voice: plain, specific, active. One idea per sentence. No hype words ("revolutio
 ## 0. Entity and facts (use these exact words everywhere)
 
 - **Name:** SDS Motion Forge (short form in UI: Motion Forge)
-- **What it is:** a free, MIT-licensed CSS animation library. 629 effects in six categories, each used by adding one class name. No JavaScript is required for the CSS effects.
+- **What it is:** a free, MIT-licensed CSS animation library. 417 effects in four categories, each used by adding one class name. No JavaScript is required for the CSS effects.
 - **Maker:** Salkom Design Studio
 - **Package:** `@salkomdesignstudio/sds-motion-forge` (npm), version 5.2.0 once released
 - **Site:** https://sds-motion-forge.netlify.app
 - **Repository:** https://github.com/salkomdesignstudio/SDS-Motion-Forge
-- **Categories (effects):** Text 117, Buttons 112, Inputs 100, Cards 100, Loaders 100, Scroll 100. Plus 7 cursor-reactive effects and 18 modifier classes.
-- **Size:** full bundle 46.0 KB gzip (272.4 KB minified). Each category 5.8–13.5 KB gzip, core included.
+- **Categories (effects):** Text 117, Cards 100, Loaders 100, Scroll 100. Plus 7 cursor-reactive effects and 18 modifier classes.
+- **Size:** full bundle 30.3 KB gzip (174.4 KB minified). Each category 6.0–13.7 KB gzip, core included.
 - **Promise (machine-verified on every build):** every class that worked in v3 and v4 works identically in v5; every animating selector is neutralised under `prefers-reduced-motion`.
 - **Contact:** hello@salkomdesignstudio.com (from SECURITY.md)
 
@@ -119,7 +119,7 @@ Rule: only card 1 is highlighted. One accent per viewport.
 ### 1.11 Quick answers (generated from `faqs()` in `scripts/docs/site-lib.js`; wording below is the target)
 1. **What is the best CSS animation library for Angular?** There is no single best option, but a CSS-only library suits Angular because it needs no Angular-specific code. SDS Motion Forge provides 629 animations as plain CSS classes: load the stylesheet once and add a class to any element.
 2. **How do I add scroll animations without JavaScript?** Add `sds-scroll-auto` and any `sds-scroll-*` class, for example `class="sds-scroll-auto sds-scroll-rise"`. It uses native CSS scroll-driven animation (Chrome 115+). Browsers without it show the content unanimated. The optional 1.3 KB script covers the rest.
-3. **Is there an Animate.css alternative?** Yes. SDS Motion Forge is CSS-only and covers 629 effects in six categories. The trade-off is size: the full bundle is 46.0 KB gzip against 5.2 KB for Animate.css 4.1.1, so import one category (5.8–13.5 KB gzip) if size matters.
+3. **Is there an Animate.css alternative?** Yes. SDS Motion Forge is CSS-only and covers 417 effects in four categories. The trade-off is size: the full bundle is 46.0 KB gzip against 5.2 KB for Animate.css 4.1.1, so import one category (5.8–13.5 KB gzip) if size matters.
 4. **Does it respect `prefers-reduced-motion`?** Yes. Every animating selector is neutralised under `prefers-reduced-motion: reduce`, and the build fails if one is missed.
 5. **How big is it, and can I import part of it?** Full bundle 46.0 KB gzip. Each category is 5.8–13.5 KB gzip and can be imported alone.
 6. **Does it work with React, Vue, Next.js and Tailwind?** Yes. Load `dist/motion.min.css` once and use the class names with `className` or `class`.

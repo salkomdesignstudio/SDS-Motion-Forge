@@ -196,7 +196,8 @@ export function buildUsage(entry: CatalogEntry, framework: Framework, o: UsageOp
 
 /* ── mapping ────────────────────────────────────────────────────── */
 
-const TARGET_CATEGORY: Record<string, string> = { text: "text", button: "buttons", card: "cards", input: "inputs", loader: "loaders" };
+// buttons and inputs are no longer categories: a button or input target searches every category
+const TARGET_CATEGORY: Record<string, string> = { text: "text", card: "cards", loader: "loaders" };
 
 export interface MapCandidate {
   entry: CatalogEntry;

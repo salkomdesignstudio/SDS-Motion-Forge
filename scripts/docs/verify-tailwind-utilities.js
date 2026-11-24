@@ -14,7 +14,7 @@ const registry = JSON.parse(fs.readFileSync(path.join(ROOT, "registry", "motion.
 
 const utilities = registry.classes
   .filter((c) => c.kind === "effect" && !c.aliasOf && !c.requiresJs &&
-    ["text", "buttons", "inputs", "cards", "loaders", "scroll"].includes(c.category))
+    ["text", "cards", "loaders", "scroll"].includes(c.category))
   .map((c) => `animate-${c.name}`);
 
 fs.writeFileSync(path.join(APP, ".probe-all.html"),

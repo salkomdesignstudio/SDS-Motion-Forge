@@ -56,7 +56,7 @@ lines.push("## Full class inventory");
 lines.push("");
 lines.push("Legend: CS = compositor-safe, CH = targets children, PE = uses pseudo-elements.");
 lines.push("");
-for (const cat of ["text", "buttons", "inputs", "cards", "loaders", "scroll", "interactive", "modifiers", "infrastructure"]) {
+for (const cat of ["text", "cards", "loaders", "scroll", "interactive", "modifiers", "infrastructure"]) {
   const items = classes.filter(c => c.category === cat);
   if (!items.length) continue;
   lines.push(`### ${cat} (${items.length})`);

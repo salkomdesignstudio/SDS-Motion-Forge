@@ -64,10 +64,10 @@ describe("stdio server", () => {
     for (const t of r.result.tools) expect(t.inputSchema.type).toBe("object");
   });
   it("searches", async () => {
-    const r = await c.call("search_animations", { query: "pulse", category: "buttons", limit: 3 });
+    const r = await c.call("search_animations", { query: "pulse", category: "cards", limit: 3 });
     expect(r.isError).toBe(false);
     expect(r.json.results.length).toBeLessThanOrEqual(3);
-    expect(r.json.results.every((x: any) => x.category === "buttons")).toBe(true);
+    expect(r.json.results.every((x: any) => x.category === "cards")).toBe(true);
   });
   it("returns an animation with a snippet", async () => {
     const r = await c.call("get_animation", { name: "sds-bounce-in-up", framework: "react" });

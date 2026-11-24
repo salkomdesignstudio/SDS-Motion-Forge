@@ -1,7 +1,7 @@
 # SDS Motion Forge
 
-**629 CSS animations. One class name each. The CSS effects need no JavaScript.**
-Text, buttons, inputs, cards, loaders and scroll effects as plain CSS — drop them into HTML, React, Next.js, Angular, Vue or a Tailwind project.
+**417 CSS animations. One class name each. The CSS effects need no JavaScript.**
+Text, card, loader and scroll effects as plain CSS — drop them into HTML, React, Next.js, Angular, Vue or a Tailwind project.
 
 [![npm version](https://img.shields.io/npm/v/@salkomdesignstudio/sds-motion-forge.svg?style=flat-square)](https://www.npmjs.com/package/@salkomdesignstudio/sds-motion-forge)
 [![npm downloads](https://img.shields.io/npm/dm/@salkomdesignstudio/sds-motion-forge.svg?style=flat-square)](https://www.npmjs.com/package/@salkomdesignstudio/sds-motion-forge)
@@ -9,7 +9,7 @@ Text, buttons, inputs, cards, loaders and scroll effects as plain CSS — drop t
 [![License: MIT](https://img.shields.io/badge/License-MIT-171717.svg?style=flat-square)](LICENSE)
 [![CI](https://github.com/salkomdesignstudio/SDS-Motion-Forge/actions/workflows/ci.yml/badge.svg)](https://github.com/salkomdesignstudio/SDS-Motion-Forge/actions/workflows/ci.yml)
 
-**[Live gallery](https://sds-motion-forge.netlify.app)** · **[Docs](https://sds-motion-forge.netlify.app/docs.html)** · **[Browse all 629](https://sds-motion-forge.netlify.app/animations/)** · **[Bundle builder](https://sds-motion-forge.netlify.app/builder.html)** · **[llms.txt](https://sds-motion-forge.netlify.app/llms.txt)**
+**[Live gallery](https://sds-motion-forge.netlify.app)** · **[Docs](https://sds-motion-forge.netlify.app/docs.html)** · **[Browse all 417](https://sds-motion-forge.netlify.app/animations/)** · **[Bundle builder](https://sds-motion-forge.netlify.app/builder.html)** · **[llms.txt](https://sds-motion-forge.netlify.app/llms.txt)**
 
 Every class that worked in v3/v4 works identically in v5 — machine-verified against the published tarball on every build.
 
@@ -35,8 +35,8 @@ Or with npm: `npm i @salkomdesignstudio/sds-motion-forge`, then import `@salkomd
 <!-- 2. Scroll, zero JavaScript (CSS scroll-driven animation, Chrome 115+) -->
 <div class="sds-scroll-auto sds-scroll-rise">Rises into view</div>
 
-<!-- 3. Buttons and loaders: same pattern, plus modifiers for speed and delay -->
-<button class="sds-btn-ui-aurora-mesh sds-fast">Deploy</button>
+<!-- 3. Cards and loaders: same pattern, plus modifiers for speed and delay -->
+<div class="sds-card-rise sds-fast">Card</div>
 <span class="sds-loader-orbital"></span>
 ```
 
@@ -47,8 +47,6 @@ Prefer a live preview? Every effect has its own page with a demo and copy-paste 
 | Category | Effects | Class pattern | Browse |
 |---|---|---|---|
 | Text | 117 | `sds-*` | [text animations](https://sds-motion-forge.netlify.app/categories/text/) |
-| Buttons | 112 | `sds-btn-*` | [button animations](https://sds-motion-forge.netlify.app/categories/buttons/) |
-| Inputs | 100 | `sds-input-*` | [input animations](https://sds-motion-forge.netlify.app/categories/inputs/) |
 | Cards | 100 | `sds-card-*` | [card animations](https://sds-motion-forge.netlify.app/categories/cards/) |
 | Loaders | 100 | `sds-loader-*` | [loader animations](https://sds-motion-forge.netlify.app/categories/loaders/) |
 | Scroll | 100 | `sds-scroll-*` | [scroll animations](https://sds-motion-forge.netlify.app/categories/scroll/) |
@@ -61,15 +59,15 @@ Measured, not estimated. Animate.css 4.1.1 was downloaded from npm on 2026-11-01
 
 | | SDS Motion Forge 5.1.1 | Animate.css 4.1.1 |
 |---|---|---|
-| Animations | 629 effects (637 `@keyframes`) | 97 `@keyframes` |
-| Full bundle | 260.8 KB min · **43.7 KB gzip** | 70.1 KB min · **5.2 KB gzip** |
-| Smaller imports | Per-category bundles, 5.8–13.5 KB gzip each | Individual source files in the package's `source/` folder |
-| JavaScript required | None for the 629 CSS effects | None |
+| Animations | 417 effects (422 `@keyframes`) | 97 `@keyframes` |
+| Full bundle | 174.4 KB min · **30.3 KB gzip** | 70.1 KB min · **5.2 KB gzip** |
+| Smaller imports | Per-category bundles, 6.0–13.7 KB gzip each | Individual source files in the package's `source/` folder |
+| JavaScript required | None for the 417 CSS effects | None |
 | `prefers-reduced-motion` | Every animating selector neutralized; the build fails if one is missed | A reduced-motion media rule is included |
 | License | MIT | MIT |
 
 **Choose Animate.css** if you want the smallest possible file for a classic set of entrance, exit and attention effects.
-**Choose SDS Motion Forge** if you also need UI-component motion — inputs, cards, loaders, scroll reveals, per-character text — and prefer one class per effect with typed names ([`index.d.ts`](index.d.ts)).
+**Choose SDS Motion Forge** if you also need UI-component motion — cards, loaders, scroll reveals, per-character text — and prefer one class per effect with typed names ([`index.d.ts`](index.d.ts)).
 GSAP and Framer Motion are JavaScript animation engines rather than CSS class libraries, so they are not compared here.
 
 ## Frameworks
@@ -99,8 +97,6 @@ If SDS Motion Forge saves you time, a ⭐ on GitHub helps other developers find 
 - [How It Works](#how-it-works)
 - [Animation Reference](#animation-reference)
   - [Text — 117 classes](#text--117-classes)
-  - [Buttons — 112 classes](#buttons--112-classes)
-  - [Inputs — 100 classes](#inputs--100-classes)
   - [Cards — 100 classes](#cards--100-classes)
   - [Loaders — 100 classes](#loaders--100-classes)
   - [Scroll — 100 classes](#scroll--100-classes)
@@ -122,8 +118,6 @@ If SDS Motion Forge saves you time, a ⭐ on GitHub helps other developers find 
 ## What's in v5
 
 - **117 text animations** — 50 originals + 5 physics per-character animations + 49 new motion families + 13 equation-driven physics effects (new in 5.1)
-- **112 button animations** — 100 ambient loops, plus 12 modern UI buttons (new in 5.2) that bring their own surface and answer hover, focus and press
-- **100 input animations** — focus, validation, ambient, and reveal states for form fields
 - **100 card animations** — entry, ambient, hover, 3D, and choreography effects for containers
 - **100 loader animations** — self-contained spinners, progress indicators, and motion loaders
 - **100 scroll animations** — viewport-triggered entrance effects across 15+ motion families
@@ -144,7 +138,7 @@ If SDS Motion Forge saves you time, a ⭐ on GitHub helps other developers find 
   </head>
   <body>
     <h1 class="sds-velvet-drop">Hello World</h1>
-    <button class="sds-btn-magnetic">Click me</button>
+    <div class="sds-card-rise">A card</div>
     <span class="sds-loader-orbital"></span>
   </body>
 </html>
@@ -187,13 +181,11 @@ import '@salkomdesignstudio/sds-motion-forge/categories/loaders';
 | Bundle | Import | Minified | Gzip |
 |---|---|---|---|
 | text | `@salkomdesignstudio/sds-motion-forge/categories/text` | 65.7 KB | 13.7 KB |
-| buttons | `@salkomdesignstudio/sds-motion-forge/categories/buttons` | 83.8 KB | 13.0 KB |
-| inputs | `@salkomdesignstudio/sds-motion-forge/categories/inputs` | 86.2 KB | 9.8 KB |
 | cards | `@salkomdesignstudio/sds-motion-forge/categories/cards` | 40.4 KB | 7.6 KB |
 | loaders | `@salkomdesignstudio/sds-motion-forge/categories/loaders` | 50.1 KB | 8.3 KB |
 | scroll | `@salkomdesignstudio/sds-motion-forge/categories/scroll` | 34.6 KB | 6.0 KB |
 | core only | `@salkomdesignstudio/sds-motion-forge/categories/core` | 4.3 KB | 1.2 KB |
-| **everything** | `@salkomdesignstudio/sds-motion-forge` | **335.1 KB** | **49.9 KB** |
+| **everything** | `@salkomdesignstudio/sds-motion-forge` | **174.4 KB** | **30.3 KB** |
 <!-- @sds-size-table:end -->
 
 Core is intentionally **inlined** into every category bundle so each one works
@@ -340,9 +332,9 @@ A PHP template only has to print the class names. Tested on PHP 8.3. Example: [`
 Motion Forge layers cleanly alongside Tailwind. Classes never conflict because all SDS classes are prefixed `sds-`:
 
 ```html
-<button class="px-6 py-3 rounded-full bg-blue-600 text-white sds-btn-plasma">
+<div class="px-6 py-3 rounded-full bg-blue-600 text-white sds-card-glow">
   Tailwind + Motion
-</button>
+</div>
 <div class="rounded-xl shadow-lg p-6 sds-card-levitate">
   Card with ambient float
 </div>
@@ -351,7 +343,6 @@ Motion Forge layers cleanly alongside Tailwind. Classes never conflict because a
 #### Bootstrap
 
 ```html
-<button class="btn btn-primary sds-btn-neon">Bootstrap + Neon</button>
 <div class="card sds-card-holo">Holographic card</div>
 ```
 
@@ -380,7 +371,7 @@ module.exports = {
 
 | What | Needs JavaScript? | Notes |
 |---|---|---|
-| 629 CSS effects (text, buttons, inputs, cards, loaders) | No | Add the class. Some need markup: 13 text effects need each letter in a `.sds-char` span, 48 animate child elements, 29 input effects need a wrapper. |
+| 417 CSS effects (text, cards, loaders, scroll) | No | Add the class. Some need markup: 13 text effects need each letter in a `.sds-char` span, 48 animate child elements, 29 input effects need a wrapper. |
 | 100 scroll effects | Only to trigger on scroll in some browsers | `sds-scroll-auto` + `sds-scroll-*` is CSS-only in Chrome 115+. Elsewhere load the 1.3 KB `sds-scroll.min.js` and use `data-sds`; without it the effect plays on load instead of on scroll. |
 | 7 cursor-reactive effects | Yes | Need the 7 KB `motion-interactive.min.js`: Jelly Hover, Magnetic Pull, Repulsion Field, Scatter Return, Shockwave, Spring Kerning, Word Morph. |
 | Physics easing (`linear()`) | No | Chrome 113+, Safari 17.2+, Firefox 112+; older browsers get a cubic-bezier approximation. |
@@ -628,154 +619,6 @@ which also verifies them against their closed-form solutions on every run.
 
 These cost about 5 KB gzip in the text bundle (the equation-sampled easing
 curves are the bytes).
-
-### Buttons — 112 classes
-
-Apply directly to `<button>` or `<a>` elements. Effects are ambient — no interaction required.
-
-```html
-<button class="sds-btn-magnetic">Magnetic pulse</button>
-<button class="sds-btn-plasma">Plasma glow</button>
-<button class="sds-btn-ui-aurora-mesh">Aurora border</button>
-<button class="sds-btn-neon">Neon sign</button>
-<button class="sds-btn-charge">Charging animation</button>
-<button class="sds-btn-hologram">Hologram flicker</button>
-```
-
-#### UI buttons (new in 5.2): modern, self-styled, state-driven
-
-The ambient loops above animate a button you have already styled. The 12 `sds-btn-ui-*` classes are different: they bring their own surface and answer **hover, keyboard focus and press**, so one class gives you a finished modern button. Motion is `transform`, `opacity` and `filter` only.
-
-```html
-<a class="sds-btn-ui-arrow-slide" href="/signup">Get started</a>
-<button class="sds-btn-ui-split-icon">Download</button>
-<button class="sds-btn-ui-liquid-fill">Hover me</button>
-<button class="sds-btn-ui-conic-border">Launch app</button>
-<button class="sds-btn-ui-press-3d">Play now</button>
-```
-
-| Class | What it does |
-|---|---|
-| `sds-btn-ui-arrow-slide` | An arrow glides in from the left and settles on hover |
-| `sds-btn-ui-split-icon` | Split button; the icon segment swaps its arrow on hover |
-| `sds-btn-ui-liquid-fill` | A wavy liquid rises and fills the button on hover |
-| `sds-btn-ui-shine-sweep` | Glossy button with a light streak that sweeps across every few seconds |
-| `sds-btn-ui-conic-border` | A bright arc travels around a dark button's edge |
-| `sds-btn-ui-aurora-mesh` | Blurred colour blobs drift behind the label |
-| `sds-btn-ui-press-3d` | Chunky button with a solid edge: lifts on hover, presses flat on click |
-| `sds-btn-ui-glass-lift` | Frosted glass that lifts and catches a highlight on hover |
-| `sds-btn-ui-neon-edge` | Pulsing neon outline that swells on hover |
-| `sds-btn-ui-ripple-press` | A soft ripple spreads from the centre when pressed |
-| `sds-btn-ui-gradient-flow` | A violet-to-magenta gradient that flows through the button |
-| `sds-btn-ui-soft-lift` | Light button that rises and blooms a soft shadow |
-
-**Make it yours.** The label is just the element's text. Any icon works (inline SVG, an icon font such as Remix or Font Awesome, an `<img>`, an emoji, or any SVG file): put it in an `sds-btn-icon` slot, before or after the text, or swap the built-in glyph with a variable.
-
-```html
-<button class="sds-btn-ui-arrow-slide">Buy now</button>
-
-<button class="sds-btn-ui-arrow-slide">
-  Add to cart
-  <span class="sds-btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">…</svg></span>
-</button>
-
-<button class="sds-btn-ui-arrow-slide">Checkout <span class="sds-btn-icon"><i class="ri-shopping-bag-3-line"></i></span></button>
-<button class="sds-btn-ui-liquid-fill"><span class="sds-btn-icon">🚀</span> Launch</button>
-
-<!-- swap the built-in glyph for any SVG file, or hide it -->
-<button class="sds-btn-ui-arrow-slide" style="--sds-btn-icon: url(star.svg)">Favourite</button>
-<button class="sds-btn-ui-arrow-slide" style="--sds-btn-icon-display: none">Plain label</button>
-```
-
-Every UI button has the same default size (12em wide, 3.25em high, so they line up in any layout). Change it per button or for all with `--sds-btn-width` and `--sds-btn-height`, or set `--sds-btn-width: auto` to fit the label. Icons follow the text colour and the font size. Set `--sds-btn-icon-size` and `--sds-btn-gap` to resize and space them. With a slot present, browsers that support `:has()` hide the built-in glyph automatically; elsewhere add `--sds-btn-icon-display: none`. `<a>` works as well as `<button>` (an `<input>` cannot hold an icon).
-
-Restyle them with custom properties on the element or a parent: `--sds-btn-bg`, `--sds-btn-fg`, `--sds-btn-radius`, plus `--sds-btn-liquid` (liquid fill), `--sds-btn-surface` (conic border) and `--sds-btn-edge` (press 3D). Under `prefers-reduced-motion` the motion collapses and the buttons keep their static look.
-
-All 100 ambient button classes:
-
-```
-sds-btn-ui-arrow-slide          sds-btn-ui-aurora-mesh       sds-btn-border-flow  sds-btn-bounce
-sds-btn-burst        sds-btn-charge       sds-btn-crystal      sds-btn-depth-press
-sds-btn-dissolve     sds-btn-edge         sds-btn-energy       sds-btn-fire
-sds-btn-flare        sds-btn-float        sds-btn-flux         sds-btn-glow-core
-sds-btn-glow-surge   sds-btn-gradient-shift sds-btn-gravity    sds-btn-gravity-pull
-sds-btn-heartbeat    sds-btn-hologram     sds-btn-ice          sds-btn-kinetic
-sds-btn-lift         sds-btn-liquid       sds-btn-magnetic     sds-btn-magnetic-trail
-sds-btn-momentum     sds-btn-morph        sds-btn-neon         sds-btn-neon-trace
-sds-btn-outline-grow sds-btn-plasma       sds-btn-press        sds-btn-pulse-border
-sds-btn-quantum      sds-btn-radar        sds-btn-recoil       sds-btn-ripple
-sds-btn-rotate       sds-btn-scan         sds-btn-shimmer      sds-btn-shock
-sds-btn-split        sds-btn-stretch      sds-btn-swipe        sds-btn-tilt
-sds-btn-volt         sds-btn-warp
-```
-
----
-
-### UI inputs (v6)
-
-100 self-styled input fields (`sds-input-ui-*`): floating labels, focus lines and frames, fills, validation and loading states, physical focus effects and AI-style prompt boxes. Every one has the same default size (18em by 3.5em).
-
-```html
-<div class="sds-input-ui-float-notch">
-  <input id="email" type="email" placeholder=" " />
-  <label for="email">Email address</label>
-</div>
-```
-
-- The wrapper takes the class, then the `<input>`, then its `<label>`. Use any input type, name, `autocomplete` or validation attribute, and any label text.
-- `placeholder=" "` (one space) is required: it is how CSS knows the field is empty. The label doubles as the placeholder and floats away when the field is focused or filled.
-- Colour and size: `--sds-input-width`, `--sds-input-height`, `--sds-input-radius`, `--sds-input-accent`, `--sds-input-bg`, `--sds-input-fg`, `--sds-input-line`, `--sds-input-muted`.
-- State-driven ones follow the field or the wrapper: `:valid` / `:invalid` (valid-check, invalid-shake), `aria-busy="true"` (busy-bar, busy-dots), `data-state="success|error|warning"`, `--sds-input-progress` (0 to 1) and `--sds-input-level` (0 to 4).
-- Reduced motion is honoured automatically.
-
-The 100 v5 input classes moved to `dist/legacy.css` (the migration notes come with 6.0.0); load it next to `motion.css` to keep using them.
-
-### Inputs — 100 classes
-
-State-based effects for `<input>` and `<textarea>` elements. Some activate on `:focus`, others run continuously.
-
-```html
-<input class="sds-input-focus" placeholder="Focus glow" />
-<input class="sds-input-voltage" placeholder="Voltage pulse" />
-<input class="sds-input-glow-border" placeholder="Animated glow border" />
-<input class="sds-input-shake" placeholder="Error shake" />
-<input class="sds-input-success" placeholder="Success pulse" />
-<input class="sds-input-laser" placeholder="Laser scan line" />
-<input class="sds-input-aurora" placeholder="Aurora sweep" />
-```
-
-**Floating label wrapper** — `sds-input-elevate-wrap` requires a specific structure:
-
-```html
-<div class="sds-input-elevate-wrap">
-  <label for="email">Email</label>
-  <input id="email" placeholder=" " type="email" />
-</div>
-```
-
-All 100 input classes:
-
-```
-sds-input-active-line    sds-input-aurora         sds-input-bloom
-sds-input-border-beam    sds-input-burst          sds-input-caret
-sds-input-charge         sds-input-comet          sds-input-crystal
-sds-input-depth          sds-input-echo           sds-input-electric
-sds-input-elevate-wrap   sds-input-expand         sds-input-fire
-sds-input-flicker        sds-input-flow           sds-input-focus
-sds-input-ui-float-label     sds-input-frost          sds-input-ghost
-sds-input-glitch-valid   sds-input-glow-border    sds-input-gradient-border
-sds-input-gravity        sds-input-ink            sds-input-kinetic
-sds-input-laser          sds-input-momentum       sds-input-morph
-sds-input-morph-ph       sds-input-neon           sds-input-neural
-sds-input-orbit          sds-input-plasma         sds-input-prism
-sds-input-pulse-dot      sds-input-quantum        sds-input-radar
-sds-input-ring           sds-input-ripple         sds-input-scan
-sds-input-shake          sds-input-shimmer        sds-input-solar
-sds-input-success        sds-input-unlock         sds-input-void
-sds-input-voltage        sds-input-waveform       sds-input-zap
-```
-
----
 
 ### Cards — 100 classes
 
@@ -1122,7 +965,6 @@ Some animation classes target direct child elements (`> *`) rather than the elem
 |---|---|
 | Text | `sds-kinetic-wave`, `sds-arc-orbit`, `sds-signal-wave`, `sds-stagger-chars` |
 | Text (physics) | `sds-gravity-bounce`, `sds-drop-settle`, `sds-wave-cascade`, `sds-center-burst`, `sds-explode-formation` |
-| Buttons | `sds-btn-icon-launch`, `sds-btn-spin-settle`, `sds-btn-label-slide`, `sds-btn-label-typewrite`, `sds-btn-label-wave`, `sds-btn-nudge`, `sds-btn-swap-flip` |
 | Cards | `sds-card-cascade`, `sds-card-slice`, `sds-card-stagger`, `sds-card-accordion-in`, `sds-card-checker`, `sds-card-fan-spread`, `sds-card-layers`, `sds-card-reveal-stack` |
 | Loaders | `sds-loader-cascade`, `sds-loader-dots`, `sds-loader-grid`, `sds-loader-signal`, `sds-loader-wave`, `sds-loader-bounce-bar`, `sds-loader-dots-bounce`, `sds-loader-dots-expand`, `sds-loader-dots-fade`, `sds-loader-dots-flip`, `sds-loader-dots-wave`, `sds-loader-equalizer`, `sds-loader-pinwheel`, `sds-loader-spin-fade`, `sds-loader-squares`, `sds-loader-windmill` |
 | Scroll | `sds-scroll-stagger-pop`, `sds-scroll-stagger-grid`, `sds-scroll-cascade`, `sds-scroll-stagger-fade`, `sds-scroll-stagger-rise`, `sds-scroll-stagger-slide` |
@@ -1221,8 +1063,6 @@ Available exported types:
 | Type | Classes |
 |---|---|
 | `SdsTextAnimation` | All 117 text animation classes |
-| `SdsButtonAnimation` | All 112 button animation classes |
-| `SdsInputAnimation` | All 100 input animation classes |
 | `SdsCardAnimation` | All 100 card animation classes |
 | `SdsLoaderAnimation` | All 100 loader animation classes |
 | `SdsScrollAnimation` | All 100 scroll animation classes |
@@ -1234,15 +1074,15 @@ Available exported types:
 **React with TypeScript:**
 
 ```tsx
-import type { SdsButtonAnimation } from '@salkomdesignstudio/sds-motion-forge';
+import type { SdsCardAnimation } from '@salkomdesignstudio/sds-motion-forge';
 
-interface ButtonProps {
-  animation?: SdsButtonAnimation;
+interface CardProps {
+  animation?: SdsCardAnimation;
   children: React.ReactNode;
 }
 
-export function Button({ animation = 'sds-btn-magnetic', children }: ButtonProps) {
-  return <button className={animation}>{children}</button>;
+export function Card({ animation = 'sds-card-rise', children }: CardProps) {
+  return <div className={animation}>{children}</div>;
 }
 ```
 
@@ -1306,7 +1146,7 @@ IE11 is not supported.
 ```
 SDS-Motion-Forge/
 ├── src/
-│   ├── motion.css                    # Source — 629 animations
+│   ├── motion.css                    # Source — 417 animations
 │   ├── sds-scroll.js                 # Scroll gate engine source, 3.6 KB
 │   └── motion-interactive.js         # Interactive JS engine source, 15.2 KB
 │
@@ -1326,7 +1166,7 @@ SDS-Motion-Forge/
 │       ├── ci.yml                    # Tests on Node 20/22 × Ubuntu/macOS/Windows
 │       └── publish.yml               # npm publish with OIDC provenance on release
 │
-├── index.d.ts                        # TypeScript declarations — all 629 classes typed
+├── index.d.ts                        # TypeScript declarations — all 417 classes typed
 ├── verify-build.js                   # Pre-publish verification (8-stage gate)
 ├── postcss.config.js                 # PostCSS config (autoprefixer)
 ├── package.json
@@ -1509,12 +1349,11 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the full 7-step checklist.
 
 ## Backward Compatibility
 
-All v3.x class names continue to work identically. The following legacy aliases are permanent and will never be removed:
+From 6.0 the Buttons and Inputs categories are gone: every `sds-btn-*` and `sds-input-*` class, including the alias `sds-input-focus-glow`, was removed (see the migration notes). All other v3.x class names continue to work identically, and these legacy aliases are permanent:
 
 | Legacy class | Resolves to |
 |---|---|
 | `sds-scroll-fade-up` | `sds-scroll-rise` |
-| `sds-input-ui-float-label` | `sds-input-focus` |
 | `sds-card-neon` | `sds-card-glow` |
 | `sds-card-depth` | `sds-card-parallax` |
 | `sds-card-flip` | `sds-card-slice` |

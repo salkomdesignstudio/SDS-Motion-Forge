@@ -36,7 +36,7 @@ const CleanCSS = require("clean-css");
 const ROOT = path.join(__dirname, "..");
 const SRC_DIR = path.join(ROOT, "src", "categories");
 const OUT_DIR = path.join(ROOT, "dist", "categories");
-const ORDER = ["core", "text", "buttons", "inputs", "cards", "loaders", "scroll"];
+const ORDER = ["core", "text", "cards", "loaders", "scroll"];
 const { splitTopLevel } = require("./lib/css-model");
 
 const KNOWN_MISSING = new Set(["sds-charOrbitBob"]); // published anomaly

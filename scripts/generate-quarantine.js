@@ -16,7 +16,7 @@ const ROOT = path.join(__dirname, "..");
 const ALLOWED = require("./stylelint/allowed-props.cjs");
 
 const quarantine = {};
-for (const file of ["core", "text", "buttons", "inputs", "cards", "loaders", "scroll"]) {
+for (const file of ["core", "text", "cards", "loaders", "scroll"]) {
   const root = postcss.parse(fs.readFileSync(path.join(ROOT, "src", "categories", `${file}.css`), "utf8"));
   root.walkAtRules(/^(-webkit-)?keyframes$/, (at) => {
     const name = at.params.trim();
