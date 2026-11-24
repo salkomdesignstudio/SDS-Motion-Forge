@@ -187,13 +187,13 @@ import '@salkomdesignstudio/sds-motion-forge/categories/loaders';
 | Bundle | Import | Minified | Gzip |
 |---|---|---|---|
 | text | `@salkomdesignstudio/sds-motion-forge/categories/text` | 65.7 KB | 13.7 KB |
-| buttons | `@salkomdesignstudio/sds-motion-forge/categories/buttons` | 83.7 KB | 13.0 KB |
+| buttons | `@salkomdesignstudio/sds-motion-forge/categories/buttons` | 83.8 KB | 13.0 KB |
 | inputs | `@salkomdesignstudio/sds-motion-forge/categories/inputs` | 47.2 KB | 8.4 KB |
 | cards | `@salkomdesignstudio/sds-motion-forge/categories/cards` | 40.4 KB | 7.6 KB |
 | loaders | `@salkomdesignstudio/sds-motion-forge/categories/loaders` | 50.1 KB | 8.3 KB |
 | scroll | `@salkomdesignstudio/sds-motion-forge/categories/scroll` | 34.6 KB | 6.0 KB |
 | core only | `@salkomdesignstudio/sds-motion-forge/categories/core` | 4.3 KB | 1.2 KB |
-| **everything** | `@salkomdesignstudio/sds-motion-forge` | **296.0 KB** | **48.3 KB** |
+| **everything** | `@salkomdesignstudio/sds-motion-forge` | **296.1 KB** | **48.3 KB** |
 <!-- @sds-size-table:end -->
 
 Core is intentionally **inlined** into every category bundle so each one works
@@ -687,7 +687,7 @@ The ambient loops above animate a button you have already styled. The 12 `sds-bt
 <button class="sds-btn-ui-arrow-slide" style="--sds-btn-icon-display: none">Plain label</button>
 ```
 
-Icons follow the text colour and the font size. Set `--sds-btn-icon-size` and `--sds-btn-gap` to resize and space them. With a slot present, browsers that support `:has()` hide the built-in glyph automatically; elsewhere add `--sds-btn-icon-display: none`. `<a>` works as well as `<button>` (an `<input>` cannot hold an icon).
+Every UI button has the same default size (12em wide, 3.25em high, so they line up in any layout). Change it per button or for all with `--sds-btn-width` and `--sds-btn-height`, or set `--sds-btn-width: auto` to fit the label. Icons follow the text colour and the font size. Set `--sds-btn-icon-size` and `--sds-btn-gap` to resize and space them. With a slot present, browsers that support `:has()` hide the built-in glyph automatically; elsewhere add `--sds-btn-icon-display: none`. `<a>` works as well as `<button>` (an `<input>` cannot hold an icon).
 
 Restyle them with custom properties on the element or a parent: `--sds-btn-bg`, `--sds-btn-fg`, `--sds-btn-radius`, plus `--sds-btn-liquid` (liquid fill), `--sds-btn-surface` (conic border) and `--sds-btn-edge` (press 3D). Under `prefers-reduced-motion` the motion collapses and the buttons keep their static look.
 

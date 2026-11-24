@@ -162,4 +162,4 @@
 }
 
 /* the UI buttons (sds-btn-ui-*) bring their own surface; in a demo stage they are live: hover, focus and press them */
-.fx-stage [class*="sds-btn-ui-"] { font: 600 15px "Manrope", Arial, sans-serif; }
+.fx-stage [class*="sds-btn-ui-"] { font: 600 14px "Manrope", Arial, sans-serif; --sds-btn-width: 11em; }

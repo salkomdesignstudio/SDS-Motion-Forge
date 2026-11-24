@@ -3861,7 +3861,9 @@ html:not(.sds-js) [data-sds] {
   align-items: center;
   justify-content: center;
   gap: var(--sds-btn-gap, 0.6em);
-  min-height: 3em;
+  box-sizing: border-box;
+  width: var(--sds-btn-width, 12em);
+  height: var(--sds-btn-height, 3.25em);
   padding: 0.85em 1.7em;
   border: 0;
   border-radius: var(--sds-btn-radius, 999px);
@@ -4550,16 +4552,14 @@ html:not(.sds-js) [data-sds] {
 .sds-btn-ui-underline-grow {
   background: transparent;
   color: var(--sds-btn-bg, var(--sds-primary, #5c4ae1));
-  padding: 0.55em 0.2em;
-  min-height: 0;
   border-radius: 0;
 }
 .sds-btn-ui-underline-grow::after {
   content: "";
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  left: 2.2em;
+  right: 2.2em;
+  bottom: 0.85em;
   height: 2px;
   background: currentColor;
 }
@@ -5573,7 +5573,7 @@ html:not(.sds-js) [data-sds] {
 .sds-btn-ui-switch-knob[aria-checked="true"]:hover::after,
 .sds-btn-ui-switch-knob[aria-checked="true"]:focus-visible::after { transform: translateX(1.1em) scale(1.12); }
 /* 179 · Current Marker ------------------------------ */
-.sds-btn-ui-current-marker { background: transparent; color: var(--sds-btn-bg, var(--sds-primary, #5c4ae1)); padding-bottom: 1.15em; }
+.sds-btn-ui-current-marker { background: transparent; color: var(--sds-btn-bg, var(--sds-primary, #5c4ae1)); }
 .sds-btn-ui-current-marker::after { content: ""; position: absolute; left: 50%; bottom: 0.45em; width: 0.45em; height: 0.45em; margin-left: -0.225em; border-radius: 50%; background: currentColor; transform: scale(0); transition: transform 0.5s var(--sds-ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1)); }
 .sds-btn-ui-current-marker:hover::after,
 .sds-btn-ui-current-marker:focus-visible::after { transform: scale(0.65); }
@@ -5747,8 +5747,8 @@ html:not(.sds-js) [data-sds] {
 .sds-btn-ui-inner-glow:focus-visible::before { opacity: 1; transform: scale(1); }
 .sds-btn-ui-inner-glow:active { transform: scale(0.97); }
 /* 192 · Neon Underline ------------------------------ */
-.sds-btn-ui-neon-underline { background: transparent; color: var(--sds-btn-bg, var(--sds-primary, #5c4ae1)); border-radius: 0; padding: 0.7em 0.3em; min-height: 0; overflow: visible; }
-.sds-btn-ui-neon-underline::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--sds-btn-accent, #d4206b); box-shadow: 0 0 0.6em 0.05em var(--sds-btn-accent, #d4206b); transform: scaleX(0); transition: transform 0.5s var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)); }
+.sds-btn-ui-neon-underline { background: transparent; color: var(--sds-btn-bg, var(--sds-primary, #5c4ae1)); border-radius: 0; overflow: visible; }
+.sds-btn-ui-neon-underline::after { content: ""; position: absolute; left: 2.2em; right: 2.2em; bottom: 0.85em; height: 2px; background: var(--sds-btn-accent, #d4206b); box-shadow: 0 0 0.6em 0.05em var(--sds-btn-accent, #d4206b); transform: scaleX(0); transition: transform 0.5s var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)); }
 .sds-btn-ui-neon-underline:hover::after,
 .sds-btn-ui-neon-underline:focus-visible::after { transform: scaleX(1); }
 /* 193 · Skew Slide ---------------------------------- */

@@ -366,10 +366,12 @@
         "--sds-btn-bg",
         "--sds-btn-fg",
         "--sds-btn-gap",
+        "--sds-btn-height",
         "--sds-btn-icon",
         "--sds-btn-icon-display",
         "--sds-btn-icon-size",
         "--sds-btn-radius",
+        "--sds-btn-width",
         "--sds-primary"
       ],
       "compositorSafe": true,
