@@ -13,7 +13,7 @@
 - Website: https://sds-motion-forge.netlify.app/
 - Repository: https://github.com/salkomdesignstudio/SDS-Motion-Forge
 - npm: https://www.npmjs.com/package/@salkomdesignstudio/sds-motion-forge
-- Size: Full bundle 45.8 KB gzip (271.5 KB minified); each category bundle 5.8–13.5 KB gzip (each already includes core).
+- Size: Full bundle 46.0 KB gzip (272.4 KB minified); each category bundle 5.8–13.5 KB gzip (each already includes core).
 
 ## Install
 
@@ -24,7 +24,7 @@
 ## Class naming contract
 
 - Text: 117 effects, class pattern sds-*, bundle @salkomdesignstudio/sds-motion-forge/categories/text (13.5 KB gzip)
-- Buttons: 112 effects, class pattern sds-btn-*, bundle @salkomdesignstudio/sds-motion-forge/categories/buttons (10.7 KB gzip)
+- Buttons: 112 effects, class pattern sds-btn-*, bundle @salkomdesignstudio/sds-motion-forge/categories/buttons (10.9 KB gzip)
 - Inputs: 100 effects, class pattern sds-input-*, bundle @salkomdesignstudio/sds-motion-forge/categories/inputs (8.4 KB gzip)
 - Cards: 100 effects, class pattern sds-card-*, bundle @salkomdesignstudio/sds-motion-forge/categories/cards (7.5 KB gzip)
 - Loaders: 100 effects, class pattern sds-loader-*, bundle @salkomdesignstudio/sds-motion-forge/categories/loaders (8.1 KB gzip)
@@ -72,7 +72,7 @@ Combine sds-scroll-auto with any sds-scroll-* class, for example class="sds-scro
 
 ### Is there an Animate.css alternative?
 
-Yes. SDS Motion Forge is a CSS-only alternative that defines 648 @keyframes across 629 effects in six categories (text, buttons, inputs, cards, loaders, scroll), against 97 @keyframes in Animate.css 4.1.1. The trade-off is size: the full bundle is 45.8 KB gzip versus 5.2 KB, but you can import one 5.8–13.5 KB category instead.
+Yes. SDS Motion Forge is a CSS-only alternative that defines 648 @keyframes across 629 effects in six categories (text, buttons, inputs, cards, loaders, scroll), against 97 @keyframes in Animate.css 4.1.1. The trade-off is size: the full bundle is 46.0 KB gzip versus 5.2 KB, but you can import one 5.8–13.5 KB category instead.
 
 ### What is the best CSS-only text animation library?
 
@@ -84,7 +84,7 @@ Yes. Every animating selector is neutralized under prefers-reduced-motion: reduc
 
 ### How big is it, and can I import only part of it?
 
-The full bundle is 45.8 KB gzip. Each category is 5.8–13.5 KB gzip and can be imported alone, with core already included: import "@salkomdesignstudio/sds-motion-forge/categories/text";. For two or more categories, use the full bundle. The two optional scripts are 1.3 KB (scroll) and 7.0 KB (cursor effects).
+The full bundle is 46.0 KB gzip. Each category is 5.8–13.5 KB gzip and can be imported alone, with core already included: import "@salkomdesignstudio/sds-motion-forge/categories/text";. For two or more categories, use the full bundle. The two optional scripts are 1.3 KB (scroll) and 7.0 KB (cursor effects).
 
 ### Does it work with React, Vue, Next.js and Tailwind?
 

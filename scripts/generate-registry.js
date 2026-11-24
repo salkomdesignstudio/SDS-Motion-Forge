@@ -65,7 +65,7 @@ const ALIASES = {
 };
 
 const MODIFIER_RE = /^sds-(delay-\d+|fast|slow|xslow|normal|loop|alt|once|fill-both|fill-forward|pause-hover)$/;
-const INFRA = new Set(["sds-play", "sds-in", "sds-js", "sds-scroll-auto", "sds-char"]);
+const INFRA = new Set(["sds-play", "sds-in", "sds-js", "sds-scroll-auto", "sds-char", "sds-btn-icon"]);
 
 function categorize(cls, sourceFile) {
   if (MODIFIER_RE.test(cls)) return "modifiers";

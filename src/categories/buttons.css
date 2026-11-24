@@ -1189,14 +1189,17 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.6em;
+  gap: var(--sds-btn-gap, 0.6em);
   min-height: 3em;
   padding: 0.85em 1.7em;
   border: 0;
   border-radius: var(--sds-btn-radius, 999px);
   background: var(--sds-btn-bg, var(--sds-primary, #5c4ae1));
   color: var(--sds-btn-fg, #fff);
-  font: 600 1em/1.1 inherit;
+  font-family: inherit;
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 1.1;
   letter-spacing: -0.01em;
   text-decoration: none;
   white-space: nowrap;
@@ -1224,25 +1227,75 @@
   outline-offset: 3px;
 }
 
+/* Icons and text -------------------------------------------
+   Change the label by changing the element's text. Change an icon any way you like:
+   1. Swap the built-in glyph for any SVG file or data URI:   style="--sds-btn-icon: url(my-icon.svg)"
+   2. Bring your own markup, any of: inline <svg>, an icon font <i>, <img>, an emoji, text:
+        <button class="sds-btn-ui-arrow-slide">Buy now <span class="sds-btn-icon"><svg>…</svg></span></button>
+      (a browser with :has() hides the built-in glyph on its own; otherwise add style="--sds-btn-icon-display: none")
+   3. Put the slot first or last: it is a normal inline item in every UI button.
+   Colour follows the text colour (currentColor); size follows the font size (1.25em, set --sds-btn-icon-size to change). */
+
+.sds-btn-icon {
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+  width: var(--sds-btn-icon-size, 1.25em);
+  height: var(--sds-btn-icon-size, 1.25em);
+  line-height: 1;
+  color: inherit;
+}
+
+.sds-btn-icon > svg,
+.sds-btn-icon > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.sds-btn-icon > svg:not([fill]) {
+  fill: currentColor;
+}
+
+.sds-btn-icon > i {
+  font-size: var(--sds-btn-icon-size, 1.25em);
+  line-height: 1;
+}
+
 /* 101 · Arrow Slide -------------------------------------- */
 
 .sds-btn-ui-arrow-slide {
+  --sds-btn-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z'/%3E%3C/svg%3E");
   padding-right: 3.6em;
 }
 
 .sds-btn-ui-arrow-slide::after {
   content: "";
+  display: var(--sds-btn-icon-display, block);
   position: absolute;
   right: 1.3em;
   top: 50%;
-  width: 1.25em;
-  height: 1.25em;
-  margin-top: -0.625em;
+  width: var(--sds-btn-icon-size, 1.25em);
+  height: var(--sds-btn-icon-size, 1.25em);
+  margin-top: calc(var(--sds-btn-icon-size, 1.25em) / -2);
   background: currentColor;
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z'/%3E%3C/svg%3E") center / contain no-repeat;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  -webkit-mask: var(--sds-btn-icon) center / contain no-repeat;
+  mask: var(--sds-btn-icon) center / contain no-repeat;
   opacity: 0.55;
   transform: translateX(-0.5em);
+}
+
+.sds-btn-ui-arrow-slide > .sds-btn-icon {
+  position: absolute;
+  right: 1.3em;
+  top: 50%;
+  margin-top: calc(var(--sds-btn-icon-size, 1.25em) / -2);
+  opacity: 0.55;
+  transform: translateX(-0.5em);
+}
+
+.sds-btn-ui-arrow-slide:has(> .sds-btn-icon)::after {
+  display: none;
 }
 
 .sds-btn-ui-arrow-slide:hover,
@@ -1251,7 +1304,9 @@
 }
 
 .sds-btn-ui-arrow-slide:hover::after,
-.sds-btn-ui-arrow-slide:focus-visible::after {
+.sds-btn-ui-arrow-slide:focus-visible::after,
+.sds-btn-ui-arrow-slide:hover > .sds-btn-icon,
+.sds-btn-ui-arrow-slide:focus-visible > .sds-btn-icon {
   animation: sds-btnUiArrowSlide 0.55s var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) forwards;
 }
 
@@ -1273,6 +1328,7 @@
 /* 102 · Split Icon --------------------------------------- */
 
 .sds-btn-ui-split-icon {
+  --sds-btn-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13 10H18L12 16L6 10H11V3H13V10ZM4 19H20V12H22V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V12H4V19Z'/%3E%3C/svg%3E");
   padding-right: 5.2em;
   border-radius: var(--sds-btn-radius, 14px);
 }
@@ -1290,19 +1346,35 @@
 
 .sds-btn-ui-split-icon::after {
   content: "";
+  display: var(--sds-btn-icon-display, block);
   position: absolute;
   top: 50%;
   right: 1.2em;
-  width: 1.3em;
-  height: 1.3em;
-  margin-top: -0.65em;
+  width: var(--sds-btn-icon-size, 1.3em);
+  height: var(--sds-btn-icon-size, 1.3em);
+  margin-top: calc(var(--sds-btn-icon-size, 1.3em) / -2);
   background: currentColor;
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13 10H18L12 16L6 10H11V3H13V10ZM4 19H20V12H22V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V12H4V19Z'/%3E%3C/svg%3E") center / contain no-repeat;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13 10H18L12 16L6 10H11V3H13V10ZM4 19H20V12H22V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V12H4V19Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  -webkit-mask: var(--sds-btn-icon) center / contain no-repeat;
+  mask: var(--sds-btn-icon) center / contain no-repeat;
+}
+
+.sds-btn-ui-split-icon > .sds-btn-icon {
+  position: absolute;
+  top: 50%;
+  right: 1.2em;
+  width: var(--sds-btn-icon-size, 1.3em);
+  height: var(--sds-btn-icon-size, 1.3em);
+  margin-top: calc(var(--sds-btn-icon-size, 1.3em) / -2);
+}
+
+.sds-btn-ui-split-icon:has(> .sds-btn-icon)::after {
+  display: none;
 }
 
 .sds-btn-ui-split-icon:hover::after,
-.sds-btn-ui-split-icon:focus-visible::after {
+.sds-btn-ui-split-icon:focus-visible::after,
+.sds-btn-ui-split-icon:hover > .sds-btn-icon,
+.sds-btn-ui-split-icon:focus-visible > .sds-btn-icon {
   animation: sds-btnUiSplitIcon 0.9s var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1));
 }
 

@@ -1230,7 +1230,34 @@ Group block        sds-card-stack-pop
 <span class="ct">&lt;button</span> <span class="ck">class</span>=<span class="cs">"<span class="ccl">sds-btn-hologram</span>"</span><span class="ct">&gt;</span>Hologram flicker<span class="ct">&lt;/button&gt;</span></pre>
           </div>
 
-          <h3 class="doc-h3">All 112 button classes</h3>
+                    <h3 class="doc-h3">Make the UI buttons yours</h3>
+          <p class="doc-sec-sub">The label is the element's text. Any icon works: inline SVG, an icon font, an image, an emoji or any SVG file. Put it in a <code>.sds-btn-icon</code> slot (before or after the text), or swap the built-in glyph with <code>--sds-btn-icon</code>. Resize with <code>--sds-btn-icon-size</code>, space with <code>--sds-btn-gap</code>.</p>
+          <div class="codeblock">
+            <div class="codeblock-head"><span class="codeblock-lang">HTML</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+            <pre>&lt;!-- the icon slot takes any markup; it follows the text colour and the font size --&gt;
+&lt;button class="sds-btn-ui-arrow-slide"&gt;
+  Add to cart
+  &lt;span class="sds-btn-icon"&gt;&lt;svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;…&lt;/svg&gt;&lt;/span&gt;
+&lt;/button&gt;
+
+&lt;button class="sds-btn-ui-arrow-slide"&gt;Checkout &lt;span class="sds-btn-icon"&gt;&lt;i class="ri-shopping-bag-3-line"&gt;&lt;/i&gt;&lt;/span&gt;&lt;/button&gt;
+&lt;button class="sds-btn-ui-arrow-slide"&gt;Launch &lt;span class="sds-btn-icon"&gt;🚀&lt;/span&gt;&lt;/button&gt;
+&lt;button class="sds-btn-ui-arrow-slide"&gt;Done &lt;span class="sds-btn-icon"&gt;&lt;img src="check.svg" alt=""&gt;&lt;/span&gt;&lt;/button&gt;
+
+&lt;!-- put the slot first for a leading icon: any UI button takes one --&gt;
+&lt;button class="sds-btn-ui-liquid-fill"&gt;&lt;span class="sds-btn-icon"&gt;&lt;svg&gt;…&lt;/svg&gt;&lt;/span&gt; Shop&lt;/button&gt;
+
+&lt;!-- any SVG file or data URI, tinted with the text colour --&gt;
+&lt;button class="sds-btn-ui-arrow-slide" style="--sds-btn-icon: url(star.svg)"&gt;Favourite&lt;/button&gt;
+
+&lt;!-- no icon at all --&gt;
+&lt;button class="sds-btn-ui-arrow-slide" style="--sds-btn-icon-display: none"&gt;Plain label&lt;/button&gt;
+
+/* colour, shape, icon size and spacing */
+.my-button { --sds-btn-bg: #14162a; --sds-btn-fg: #fff; --sds-btn-radius: 14px; --sds-btn-icon-size: 1.5em; --sds-btn-gap: 0.8em; }</pre>
+          </div>
+
+<h3 class="doc-h3">All 112 button classes</h3>
           <div class="cls-grid" id="btnClassGrid"></div>
         </section>
 

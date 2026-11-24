@@ -244,6 +244,12 @@ function relatedFor(c) {
 /* ── effect page ─────────────────────────────────────────────── */
 const seenDesc = new Map();
 let fallbackCss = 0;
+function customiseSection(c) {
+  if (!c.name.startsWith("sds-btn-ui-")) return "";
+  const ex = [["Change the text","<button class=\"sds-btn-ui-arrow-slide\">Buy now</button>\n<a class=\"sds-btn-ui-arrow-slide\" href=\"/pricing\">See pricing</a>"],["Use any icon: inline SVG, icon font, image or emoji","<!-- the icon slot takes any markup; it follows the text colour and the font size -->\n<button class=\"sds-btn-ui-arrow-slide\">\n  Add to cart\n  <span class=\"sds-btn-icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\">…</svg></span>\n</button>\n\n<button class=\"sds-btn-ui-arrow-slide\">Checkout <span class=\"sds-btn-icon\"><i class=\"ri-shopping-bag-3-line\"></i></span></button>\n<button class=\"sds-btn-ui-arrow-slide\">Launch <span class=\"sds-btn-icon\">🚀</span></button>\n<button class=\"sds-btn-ui-arrow-slide\">Done <span class=\"sds-btn-icon\"><img src=\"check.svg\" alt=\"\"></span></button>\n\n<!-- put the slot first for a leading icon: any UI button takes one -->\n<button class=\"sds-btn-ui-liquid-fill\"><span class=\"sds-btn-icon\"><svg>…</svg></span> Shop</button>"],["Swap the built-in glyph, or hide it","<!-- any SVG file or data URI, tinted with the text colour -->\n<button class=\"sds-btn-ui-arrow-slide\" style=\"--sds-btn-icon: url(star.svg)\">Favourite</button>\n\n<!-- no icon at all -->\n<button class=\"sds-btn-ui-arrow-slide\" style=\"--sds-btn-icon-display: none\">Plain label</button>\n\n/* colour, shape, icon size and spacing */\n.my-button { --sds-btn-bg: #14162a; --sds-btn-fg: #fff; --sds-btn-radius: 14px; --sds-btn-icon-size: 1.5em; --sds-btn-gap: 0.8em; }"]];
+  return `<section class="sec2" aria-labelledby="own"><h2 id="own">Make it yours</h2><p>The label is just the element's text, and any icon works: inline SVG, an icon font, an image, an emoji or an SVG file. Put the icon in a <code>.sds-btn-icon</code> slot, or change the built-in glyph with <code>--sds-btn-icon</code>.</p><div class="code-tabs">${ex.map(([t, code], i) => `<div class="code-panel" style="display:block"><h3>${esc(t)}</h3><button type="button" class="copy-btn" data-copy-from="own-${i}">Copy</button><pre><code id="own-${i}">${esc(code)}</code></pre></div>`).join("")}</div></section>\n\n`;
+}
+
 function effectPage(c) {
   const cat = catById[c.category];
   const p = S.animationPath(c.name);
@@ -324,7 +330,7 @@ ${S.isUnreleased(c) ? `<p class="note" role="note"><strong>New in v${esc(c.since
 <section class="sec2" aria-labelledby="needs"><h2 id="needs">What it needs</h2>
 <div class="needs2">${needsList.map(([t, d]) => `<div class="need2"><b>${t}</b>${d}</div>`).join("")}</div></section>
 
-<section class="sec2" aria-labelledby="use"><h2 id="use">Quick start</h2>
+${customiseSection(c)}<section class="sec2" aria-labelledby="use"><h2 id="use">Quick start</h2>
 <div class="import-card"><div class="code-row"><code id="qs">${esc(cdnCss.map((u) => `<link rel="stylesheet" href="${u}" />`).join("\n"))}</code><button type="button" class="copy-btn" data-copy-from="qs">Copy</button></div>
 <div class="code-row"><code id="qs2">${esc(docs.markup[c.name] || `<div class="${c.name}">…</div>`)}</code><button type="button" class="copy-btn" data-copy-from="qs2">Copy</button></div>
 <p class="muted">${files ? `Loads only the ${esc(cat.label.toLowerCase())} bundle (core is included). ` : ""}Prefer one file? Use <code>${config.cdn}/motion.min.css</code> (all ${S.effects.length} effects).</p></div></section>

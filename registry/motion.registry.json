@@ -1895,6 +1895,38 @@
       "sinceVersion": "4.0.3"
     },
     {
+      "name": "sds-btn-icon",
+      "displayName": "Icon",
+      "category": "infrastructure",
+      "kind": "infrastructure",
+      "description": "Icon — infrastructure animation.",
+      "selectors": [
+        ".sds-btn-icon",
+        ".sds-btn-icon > svg, .sds-btn-icon > img",
+        ".sds-btn-icon > svg:not([fill])",
+        ".sds-btn-icon > i"
+      ],
+      "keyframes": [],
+      "tokensUsed": [],
+      "customProperties": [
+        "--sds-btn-icon-size"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "load",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
       "name": "sds-btn-icon-launch",
       "displayName": "Icon Launch",
       "category": "buttons",
@@ -3764,8 +3796,10 @@
         ".sds-btn-ui-arrow-slide:focus-visible, .sds-btn-ui-split-icon:focus-visible, .sds-btn-ui-liquid-fill:focus-visible, .sds-btn-ui-shine-sweep:focus-visible, .sds-btn-ui-conic-border:focus-visible, .sds-btn-ui-aurora-mesh:focus-visible, .sds-btn-ui-press-3d:focus-visible, .sds-btn-ui-glass-lift:focus-visible, .sds-btn-ui-neon-edge:focus-visible, .sds-btn-ui-ripple-press:focus-visible, .sds-btn-ui-gradient-flow:focus-visible, .sds-btn-ui-soft-lift:focus-visible",
         ".sds-btn-ui-arrow-slide",
         ".sds-btn-ui-arrow-slide::after",
+        ".sds-btn-ui-arrow-slide > .sds-btn-icon",
+        ".sds-btn-ui-arrow-slide:has(> .sds-btn-icon)::after",
         ".sds-btn-ui-arrow-slide:hover, .sds-btn-ui-arrow-slide:focus-visible",
-        ".sds-btn-ui-arrow-slide:hover::after, .sds-btn-ui-arrow-slide:focus-visible::after"
+        ".sds-btn-ui-arrow-slide:hover::after, .sds-btn-ui-arrow-slide:focus-visible::after, .sds-btn-ui-arrow-slide:hover > .sds-btn-icon, .sds-btn-ui-arrow-slide:focus-visible > .sds-btn-icon"
       ],
       "keyframes": [
         "sds-btnUiArrowSlide"
@@ -3776,6 +3810,10 @@
       "customProperties": [
         "--sds-btn-bg",
         "--sds-btn-fg",
+        "--sds-btn-gap",
+        "--sds-btn-icon",
+        "--sds-btn-icon-display",
+        "--sds-btn-icon-size",
         "--sds-btn-radius",
         "--sds-primary"
       ],
@@ -4181,7 +4219,9 @@
         ".sds-btn-ui-split-icon",
         ".sds-btn-ui-split-icon::before",
         ".sds-btn-ui-split-icon::after",
-        ".sds-btn-ui-split-icon:hover::after, .sds-btn-ui-split-icon:focus-visible::after",
+        ".sds-btn-ui-split-icon > .sds-btn-icon",
+        ".sds-btn-ui-split-icon:has(> .sds-btn-icon)::after",
+        ".sds-btn-ui-split-icon:hover::after, .sds-btn-ui-split-icon:focus-visible::after, .sds-btn-ui-split-icon:hover > .sds-btn-icon, .sds-btn-ui-split-icon:focus-visible > .sds-btn-icon",
         ".sds-btn-ui-split-icon:active"
       ],
       "keyframes": [
@@ -4191,6 +4231,9 @@
         "--sds-ease-standard"
       ],
       "customProperties": [
+        "--sds-btn-icon",
+        "--sds-btn-icon-display",
+        "--sds-btn-icon-size",
         "--sds-btn-radius"
       ],
       "compositorSafe": true,
