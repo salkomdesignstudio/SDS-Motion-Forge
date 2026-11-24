@@ -201,6 +201,7 @@ function tagLabel(c) {
   if (c.kind === "interactive") return "Cursor-reactive";
   if (c.trigger === "scroll") return "On scroll";
   if (c.trigger === "focus") return "On focus";
+  if (c.trigger === "hover") return "On hover";
   return c.loop ? "Loops" : "Plays once";
 }
 function badgesFor(c) {
@@ -247,10 +248,11 @@ function effectPage(c) {
   const cat = catById[c.category];
   const p = S.animationPath(c.name);
   const d = sentence(descOf(c));
-  const loop = c.loop ? "loops continuously" : "plays once";
-  const trig = c.trigger === "scroll" ? "when scrolled into view" : c.kind === "interactive" ? "in response to the cursor" : "as soon as the class is applied";
+  const hov = c.trigger === "hover";
+  const loop = hov ? "reacts" : c.loop ? "loops continuously" : "plays once";
+  const trig = hov ? "on hover, focus and press" : c.trigger === "scroll" ? "when scrolled into view" : c.kind === "interactive" ? "in response to the cursor" : "as soon as the class is applied";
   const title = [`${c.displayName} — ${cat.singular} CSS animation (.${c.name})`, `${c.displayName} ${cat.singular} CSS animation (.${c.name})`, `${c.displayName} CSS animation (.${c.name})`, `${c.displayName} CSS animation`].find((t) => t.length <= 60) || `${c.displayName} CSS animation`;
-  const description = fit([`${d}.`, `Use .${c.name} — ${loop}, ${trig}.`, "CSS-only, copy-paste for HTML, React, Angular and Tailwind.", "Free and MIT licensed."], 158);
+  const description = fit([`${d}.`, hov ? `Use .${c.name} — it reacts on hover, focus and press.` : `Use .${c.name} — ${loop}, ${trig}.`, "CSS-only, copy-paste for HTML, React, Angular and Tailwind.", "Free and MIT licensed."], 158);
   seenDesc.set(description, (seenDesc.get(description) || 0) + 1);
   const files = cssFor(c);
   if (!files) fallbackCss++;
@@ -265,7 +267,7 @@ function effectPage(c) {
   const specs = [
     ["Class", `<code>.${c.name}</code>`],
     ["Category", `<a href="${S.categoryPath(c.category)}">${esc(cat.label)}</a>`],
-    ["Runs", esc(`${loop}, ${trig}`)],
+    ["Runs", esc(hov ? `${loop} ${trig}` : `${loop}, ${trig}`)],
     ["Animated properties", esc((c.animatedProps || []).join(", ") || "n/a")],
     ["Compositor-only", c.compositorSafe ? "Yes — transform/opacity only, no layout reflow" : "No — also animates paint or layout properties"],
     ["Needs child elements", c.requiresChildren ? "Yes" : "No"],

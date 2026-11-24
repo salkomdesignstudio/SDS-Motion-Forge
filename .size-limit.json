@@ -1,14 +1,14 @@
 [
   {
     "path": "dist/motion.min.css",
-    "limit": "276141 B",
+    "limit": "289088 B",
     "name": "dist/motion.min.css",
     "gzip": false,
     "brotli": false
   },
   {
     "path": "dist/motion.css",
-    "limit": "420846 B",
+    "limit": "441348 B",
     "name": "dist/motion.css",
     "gzip": false,
     "brotli": false
@@ -43,7 +43,7 @@
   },
   {
     "path": "dist/categories/buttons.min.css",
-    "limit": "52294 B",
+    "limit": "63595 B",
     "name": "dist/categories/buttons.min.css",
     "gzip": false,
     "brotli": false

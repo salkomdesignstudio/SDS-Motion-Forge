@@ -432,6 +432,54 @@
      "description": "Tilt Scan — buttons · Leans corner-to-corner with brief holds, as if scanning for the cursor. https://sds-motion-forge.netlify.app/animations/btn-tilt-scan/"
     },
     {
+     "name": "sds-btn-ui-arrow-slide",
+     "description": "Arrow Slide — buttons · An arrow glides in from the left and settles with a small overshoot on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-arrow-slide/"
+    },
+    {
+     "name": "sds-btn-ui-aurora-mesh",
+     "description": "Aurora Mesh — buttons · Blurred colour blobs drift slowly behind the label like a northern light. https://sds-motion-forge.netlify.app/animations/btn-ui-aurora-mesh/"
+    },
+    {
+     "name": "sds-btn-ui-conic-border",
+     "description": "Conic Border — buttons · A bright arc travels endlessly around a dark button's edge. https://sds-motion-forge.netlify.app/animations/btn-ui-conic-border/"
+    },
+    {
+     "name": "sds-btn-ui-glass-lift",
+     "description": "Glass Lift — buttons · A frosted-glass button that lifts and catches a passing highlight on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-glass-lift/"
+    },
+    {
+     "name": "sds-btn-ui-gradient-flow",
+     "description": "Gradient Flow — buttons · A violet-to-magenta gradient flows endlessly through the button. https://sds-motion-forge.netlify.app/animations/btn-ui-gradient-flow/"
+    },
+    {
+     "name": "sds-btn-ui-liquid-fill",
+     "description": "Liquid Fill — buttons · A coloured liquid with a wavy surface rises and fills the button on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-liquid-fill/"
+    },
+    {
+     "name": "sds-btn-ui-neon-edge",
+     "description": "Neon Edge — buttons · A neon outline that pulses softly and swells a little on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-neon-edge/"
+    },
+    {
+     "name": "sds-btn-ui-press-3d",
+     "description": "Press 3D — buttons · A chunky button with a solid edge that lifts on hover and presses flat on click. https://sds-motion-forge.netlify.app/animations/btn-ui-press-3d/"
+    },
+    {
+     "name": "sds-btn-ui-ripple-press",
+     "description": "Ripple Press — buttons · A soft light ripples out from the centre when the button is pressed. https://sds-motion-forge.netlify.app/animations/btn-ui-ripple-press/"
+    },
+    {
+     "name": "sds-btn-ui-shine-sweep",
+     "description": "Shine Sweep — buttons · A glossy button with a light streak that sweeps across it every few seconds. https://sds-motion-forge.netlify.app/animations/btn-ui-shine-sweep/"
+    },
+    {
+     "name": "sds-btn-ui-soft-lift",
+     "description": "Soft Lift — buttons · A light button that rises on hover and blooms a soft shadow beneath it. https://sds-motion-forge.netlify.app/animations/btn-ui-soft-lift/"
+    },
+    {
+     "name": "sds-btn-ui-split-icon",
+     "description": "Split Icon — buttons · A split button whose icon segment swaps the arrow out and back in on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-split-icon/"
+    },
+    {
      "name": "sds-btn-volt",
      "description": "Volt Strike — buttons · High-voltage border pulse. https://sds-motion-forge.netlify.app/animations/btn-volt/"
     },

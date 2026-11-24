@@ -3754,6 +3754,464 @@
       "sinceVersion": "4.0.3"
     },
     {
+      "name": "sds-btn-ui-arrow-slide",
+      "displayName": "Arrow Slide",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "An arrow glides in from the left and settles with a small overshoot on hover.",
+      "selectors": [
+        ".sds-btn-ui-arrow-slide, .sds-btn-ui-split-icon, .sds-btn-ui-liquid-fill, .sds-btn-ui-shine-sweep, .sds-btn-ui-conic-border, .sds-btn-ui-aurora-mesh, .sds-btn-ui-press-3d, .sds-btn-ui-glass-lift, .sds-btn-ui-neon-edge, .sds-btn-ui-ripple-press, .sds-btn-ui-gradient-flow, .sds-btn-ui-soft-lift",
+        ".sds-btn-ui-arrow-slide:focus-visible, .sds-btn-ui-split-icon:focus-visible, .sds-btn-ui-liquid-fill:focus-visible, .sds-btn-ui-shine-sweep:focus-visible, .sds-btn-ui-conic-border:focus-visible, .sds-btn-ui-aurora-mesh:focus-visible, .sds-btn-ui-press-3d:focus-visible, .sds-btn-ui-glass-lift:focus-visible, .sds-btn-ui-neon-edge:focus-visible, .sds-btn-ui-ripple-press:focus-visible, .sds-btn-ui-gradient-flow:focus-visible, .sds-btn-ui-soft-lift:focus-visible",
+        ".sds-btn-ui-arrow-slide",
+        ".sds-btn-ui-arrow-slide::after",
+        ".sds-btn-ui-arrow-slide:hover, .sds-btn-ui-arrow-slide:focus-visible",
+        ".sds-btn-ui-arrow-slide:hover::after, .sds-btn-ui-arrow-slide:focus-visible::after"
+      ],
+      "keyframes": [
+        "sds-btnUiArrowSlide"
+      ],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-btn-bg",
+        "--sds-btn-fg",
+        "--sds-btn-radius",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "opacity",
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-aurora-mesh",
+      "displayName": "Aurora Mesh",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "Blurred colour blobs drift slowly behind the label like a northern light.",
+      "selectors": [
+        ".sds-btn-ui-aurora-mesh",
+        ".sds-btn-ui-aurora-mesh::before",
+        ".sds-btn-ui-aurora-mesh:hover, .sds-btn-ui-aurora-mesh:focus-visible"
+      ],
+      "keyframes": [
+        "sds-btnUiAuroraMesh"
+      ],
+      "tokensUsed": [],
+      "customProperties": [
+        "--sds-btn-bg"
+      ],
+      "compositorSafe": true,
+      "loop": true,
+      "animatedProps": [
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-conic-border",
+      "displayName": "Conic Border",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A bright arc travels endlessly around a dark button's edge.",
+      "selectors": [
+        ".sds-btn-ui-conic-border",
+        ".sds-btn-ui-conic-border::before",
+        ".sds-btn-ui-conic-border::after",
+        ".sds-btn-ui-conic-border:hover, .sds-btn-ui-conic-border:focus-visible"
+      ],
+      "keyframes": [
+        "sds-btnUiConicBorder"
+      ],
+      "tokensUsed": [],
+      "customProperties": [
+        "--sds-btn-fg",
+        "--sds-btn-surface",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": true,
+      "animatedProps": [
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-glass-lift",
+      "displayName": "Glass Lift",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A frosted-glass button that lifts and catches a passing highlight on hover.",
+      "selectors": [
+        ".sds-btn-ui-glass-lift",
+        ".sds-btn-ui-glass-lift::after",
+        ".sds-btn-ui-glass-lift:hover, .sds-btn-ui-glass-lift:focus-visible",
+        ".sds-btn-ui-glass-lift:hover::after, .sds-btn-ui-glass-lift:focus-visible::after"
+      ],
+      "keyframes": [
+        "sds-btnUiGlassLift"
+      ],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-btn-bg",
+        "--sds-btn-fg"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "opacity",
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-gradient-flow",
+      "displayName": "Gradient Flow",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A violet-to-magenta gradient flows endlessly through the button.",
+      "selectors": [
+        ".sds-btn-ui-gradient-flow",
+        ".sds-btn-ui-gradient-flow::before",
+        ".sds-btn-ui-gradient-flow:hover, .sds-btn-ui-gradient-flow:focus-visible"
+      ],
+      "keyframes": [
+        "sds-btnUiGradientFlow"
+      ],
+      "tokensUsed": [],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": true,
+      "animatedProps": [
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-liquid-fill",
+      "displayName": "Liquid Fill",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A coloured liquid with a wavy surface rises and fills the button on hover.",
+      "selectors": [
+        ".sds-btn-ui-liquid-fill",
+        ".sds-btn-ui-liquid-fill::before",
+        ".sds-btn-ui-liquid-fill:hover::before, .sds-btn-ui-liquid-fill:focus-visible::before"
+      ],
+      "keyframes": [
+        "sds-btnUiLiquidFill"
+      ],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-btn-bg",
+        "--sds-btn-liquid",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-neon-edge",
+      "displayName": "Neon Edge",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A neon outline that pulses softly and swells a little on hover.",
+      "selectors": [
+        ".sds-btn-ui-neon-edge",
+        ".sds-btn-ui-neon-edge::after",
+        ".sds-btn-ui-neon-edge:hover, .sds-btn-ui-neon-edge:focus-visible"
+      ],
+      "keyframes": [
+        "sds-btnUiNeonEdge"
+      ],
+      "tokensUsed": [],
+      "customProperties": [
+        "--sds-btn-bg",
+        "--sds-btn-fg"
+      ],
+      "compositorSafe": true,
+      "loop": true,
+      "animatedProps": [
+        "opacity"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-press-3d",
+      "displayName": "Press 3D",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A chunky button with a solid edge that lifts on hover and presses flat on click.",
+      "selectors": [
+        ".sds-btn-ui-press-3d",
+        ".sds-btn-ui-press-3d:hover, .sds-btn-ui-press-3d:focus-visible",
+        ".sds-btn-ui-press-3d:active"
+      ],
+      "keyframes": [
+        "sds-btnUiPress3d"
+      ],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-btn-edge",
+        "--sds-btn-radius"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-ripple-press",
+      "displayName": "Ripple Press",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A soft light ripples out from the centre when the button is pressed.",
+      "selectors": [
+        ".sds-btn-ui-ripple-press::after",
+        ".sds-btn-ui-ripple-press:hover, .sds-btn-ui-ripple-press:focus-visible",
+        ".sds-btn-ui-ripple-press:active",
+        ".sds-btn-ui-ripple-press:active::after"
+      ],
+      "keyframes": [
+        "sds-btnUiRipplePress"
+      ],
+      "tokensUsed": [],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "opacity",
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-shine-sweep",
+      "displayName": "Shine Sweep",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A glossy button with a light streak that sweeps across it every few seconds.",
+      "selectors": [
+        ".sds-btn-ui-shine-sweep",
+        ".sds-btn-ui-shine-sweep::after",
+        ".sds-btn-ui-shine-sweep:hover, .sds-btn-ui-shine-sweep:focus-visible"
+      ],
+      "keyframes": [
+        "sds-btnUiShineSweep"
+      ],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-btn-bg",
+        "--sds-btn-bg-top",
+        "--sds-primary",
+        "--sds-primary-glow"
+      ],
+      "compositorSafe": true,
+      "loop": true,
+      "animatedProps": [
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-soft-lift",
+      "displayName": "Soft Lift",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A light button that rises on hover and blooms a soft shadow beneath it.",
+      "selectors": [
+        ".sds-btn-ui-soft-lift",
+        ".sds-btn-ui-soft-lift::after",
+        ".sds-btn-ui-soft-lift:hover, .sds-btn-ui-soft-lift:focus-visible",
+        ".sds-btn-ui-soft-lift:hover::after, .sds-btn-ui-soft-lift:focus-visible::after",
+        ".sds-btn-ui-soft-lift:active"
+      ],
+      "keyframes": [
+        "sds-btnUiSoftLift"
+      ],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-btn-bg",
+        "--sds-btn-fg"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "opacity"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-split-icon",
+      "displayName": "Split Icon",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A split button whose icon segment swaps the arrow out and back in on hover.",
+      "selectors": [
+        ".sds-btn-ui-split-icon",
+        ".sds-btn-ui-split-icon::before",
+        ".sds-btn-ui-split-icon::after",
+        ".sds-btn-ui-split-icon:hover::after, .sds-btn-ui-split-icon:focus-visible::after",
+        ".sds-btn-ui-split-icon:active"
+      ],
+      "keyframes": [
+        "sds-btnUiSplitIcon"
+      ],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-btn-radius"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "opacity",
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
       "name": "sds-btn-volt",
       "displayName": "Volt Strike",
       "category": "buttons",

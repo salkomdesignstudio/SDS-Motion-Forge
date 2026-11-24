@@ -388,7 +388,7 @@ const how = {};
 
 for (const c of effects) {
   const cat = c.category === "interactive" ? "text" : c.category;
-  const tag = c.requiresJs ? "js" : c.trigger === "scroll" ? "scroll" : c.trigger === "focus" ? "focus" : c.loop ? "loop" : "once";
+  const tag = c.requiresJs ? "js" : c.trigger === "scroll" ? "scroll" : c.trigger === "focus" ? "focus" : c.trigger === "hover" ? "hover" : c.loop ? "loop" : "once";
   animations[cat].push({ name: c.displayName, cls: c.name, tag, desc: c.description });
   const m = markupFor(c);
   markup[c.name] = m;

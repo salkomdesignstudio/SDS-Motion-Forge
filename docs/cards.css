@@ -23,7 +23,7 @@
 .fx-stage { font: 700 21px "Manrope", Arial, sans-serif; letter-spacing: -0.035em; color: #16182c; position: relative; isolation: isolate; display: grid; place-items: center; height: 150px; overflow: hidden; border-radius: 20px; border: 1px solid rgba(22, 24, 44, 0.08); background: linear-gradient(180deg, #f3f5fa, #eaecf1); --sds-primary: #5c4ae1; --sds-primary-glow: rgba(92, 74, 225, 0.3); --sds-primary-dim: rgba(22, 24, 44, 0.07); }
 .fx-stage h1, .fx-stage h2, .fx-stage h3, .fx-stage div, .fx-stage span, .fx-stage p { margin: 0; }
 .fx-stage h1, .fx-stage h2 { font: 700 21px "Manrope", Arial, sans-serif; letter-spacing: -0.035em; color: #16182c; }
-.fx-stage button { padding: 10px 18px; border: 0; border-radius: 12px; background: #5c4ae1; color: #fff; font: 600 14px "Manrope", Arial, sans-serif; cursor: default; }
+.fx-stage button:not([class*="sds-btn-ui-"]) { padding: 10px 18px; border: 0; border-radius: 12px; background: #5c4ae1; color: #fff; font: 600 14px "Manrope", Arial, sans-serif; cursor: default; }
 .fx-stage input { width: 80%; max-width: 220px; height: 40px; padding: 0 12px; border: 1px solid #d9dde4; border-radius: 10px; background: #fff; color: #16182c; font: 600 14px "Manrope", Arial, sans-serif; }
 .fx-stage .sds-loader-skeleton { display: block; width: 160px; height: 14px; }
 .fx-stage .sds-loader-progress-glow { display: block; width: 160px; height: 6px; border-radius: 99px; background: var(--sds-primary); transform-origin: left center; }
@@ -160,3 +160,6 @@
   .wrap.wide { max-width: min(1640px, calc(100vw - 64px)); }
   .fx-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; }
 }
+
+/* the UI buttons (sds-btn-ui-*) bring their own surface; in a demo stage they are live: hover, focus and press them */
+.fx-stage [class*="sds-btn-ui-"] { font: 600 15px "Manrope", Arial, sans-serif; }

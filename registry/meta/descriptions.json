@@ -3030,5 +3030,65 @@
     "displayName": "Gravity Collapse",
     "sinceVersion": "5.1.0",
     "source": "authored"
+  },
+  "sds-btn-ui-arrow-slide": {
+    "description": "An arrow glides in from the left and settles with a small overshoot on hover.",
+    "displayName": "Arrow Slide",
+    "source": "authored"
+  },
+  "sds-btn-ui-split-icon": {
+    "description": "A split button whose icon segment swaps the arrow out and back in on hover.",
+    "displayName": "Split Icon",
+    "source": "authored"
+  },
+  "sds-btn-ui-liquid-fill": {
+    "description": "A coloured liquid with a wavy surface rises and fills the button on hover.",
+    "displayName": "Liquid Fill",
+    "source": "authored"
+  },
+  "sds-btn-ui-shine-sweep": {
+    "description": "A glossy button with a light streak that sweeps across it every few seconds.",
+    "displayName": "Shine Sweep",
+    "source": "authored"
+  },
+  "sds-btn-ui-conic-border": {
+    "description": "A bright arc travels endlessly around a dark button's edge.",
+    "displayName": "Conic Border",
+    "source": "authored"
+  },
+  "sds-btn-ui-aurora-mesh": {
+    "description": "Blurred colour blobs drift slowly behind the label like a northern light.",
+    "displayName": "Aurora Mesh",
+    "source": "authored"
+  },
+  "sds-btn-ui-press-3d": {
+    "description": "A chunky button with a solid edge that lifts on hover and presses flat on click.",
+    "displayName": "Press 3D",
+    "source": "authored"
+  },
+  "sds-btn-ui-glass-lift": {
+    "description": "A frosted-glass button that lifts and catches a passing highlight on hover.",
+    "displayName": "Glass Lift",
+    "source": "authored"
+  },
+  "sds-btn-ui-neon-edge": {
+    "description": "A neon outline that pulses softly and swells a little on hover.",
+    "displayName": "Neon Edge",
+    "source": "authored"
+  },
+  "sds-btn-ui-ripple-press": {
+    "description": "A soft light ripples out from the centre when the button is pressed.",
+    "displayName": "Ripple Press",
+    "source": "authored"
+  },
+  "sds-btn-ui-gradient-flow": {
+    "description": "A violet-to-magenta gradient flows endlessly through the button.",
+    "displayName": "Gradient Flow",
+    "source": "authored"
+  },
+  "sds-btn-ui-soft-lift": {
+    "description": "A light button that rises on hover and blooms a soft shadow beneath it.",
+    "displayName": "Soft Lift",
+    "source": "authored"
   }
 }

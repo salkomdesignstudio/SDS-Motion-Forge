@@ -1,6 +1,6 @@
 # SDS Motion Forge
 
-**617 CSS animations. One class name each. The CSS effects need no JavaScript.**
+**629 CSS animations. One class name each. The CSS effects need no JavaScript.**
 Text, buttons, inputs, cards, loaders and scroll effects as plain CSS — drop them into HTML, React, Next.js, Angular, Vue or a Tailwind project.
 
 [![npm version](https://img.shields.io/npm/v/@salkomdesignstudio/sds-motion-forge.svg?style=flat-square)](https://www.npmjs.com/package/@salkomdesignstudio/sds-motion-forge)
@@ -9,7 +9,7 @@ Text, buttons, inputs, cards, loaders and scroll effects as plain CSS — drop t
 [![License: MIT](https://img.shields.io/badge/License-MIT-171717.svg?style=flat-square)](LICENSE)
 [![CI](https://github.com/salkomdesignstudio/SDS-Motion-Forge/actions/workflows/ci.yml/badge.svg)](https://github.com/salkomdesignstudio/SDS-Motion-Forge/actions/workflows/ci.yml)
 
-**[Live gallery](https://sds-motion-forge.netlify.app)** · **[Docs](https://sds-motion-forge.netlify.app/docs.html)** · **[Browse all 617](https://sds-motion-forge.netlify.app/animations/)** · **[Bundle builder](https://sds-motion-forge.netlify.app/builder.html)** · **[llms.txt](https://sds-motion-forge.netlify.app/llms.txt)**
+**[Live gallery](https://sds-motion-forge.netlify.app)** · **[Docs](https://sds-motion-forge.netlify.app/docs.html)** · **[Browse all 629](https://sds-motion-forge.netlify.app/animations/)** · **[Bundle builder](https://sds-motion-forge.netlify.app/builder.html)** · **[llms.txt](https://sds-motion-forge.netlify.app/llms.txt)**
 
 Every class that worked in v3/v4 works identically in v5 — machine-verified against the published tarball on every build.
 
@@ -47,7 +47,7 @@ Prefer a live preview? Every effect has its own page with a demo and copy-paste 
 | Category | Effects | Class pattern | Browse |
 |---|---|---|---|
 | Text | 117 | `sds-*` | [text animations](https://sds-motion-forge.netlify.app/categories/text/) |
-| Buttons | 100 | `sds-btn-*` | [button animations](https://sds-motion-forge.netlify.app/categories/buttons/) |
+| Buttons | 112 | `sds-btn-*` | [button animations](https://sds-motion-forge.netlify.app/categories/buttons/) |
 | Inputs | 100 | `sds-input-*` | [input animations](https://sds-motion-forge.netlify.app/categories/inputs/) |
 | Cards | 100 | `sds-card-*` | [card animations](https://sds-motion-forge.netlify.app/categories/cards/) |
 | Loaders | 100 | `sds-loader-*` | [loader animations](https://sds-motion-forge.netlify.app/categories/loaders/) |
@@ -61,10 +61,10 @@ Measured, not estimated. Animate.css 4.1.1 was downloaded from npm on 2026-11-01
 
 | | SDS Motion Forge 5.1.1 | Animate.css 4.1.1 |
 |---|---|---|
-| Animations | 617 effects (637 `@keyframes`) | 97 `@keyframes` |
+| Animations | 629 effects (637 `@keyframes`) | 97 `@keyframes` |
 | Full bundle | 260.8 KB min · **43.7 KB gzip** | 70.1 KB min · **5.2 KB gzip** |
 | Smaller imports | Per-category bundles, 5.8–13.5 KB gzip each | Individual source files in the package's `source/` folder |
-| JavaScript required | None for the 617 CSS effects | None |
+| JavaScript required | None for the 629 CSS effects | None |
 | `prefers-reduced-motion` | Every animating selector neutralized; the build fails if one is missed | A reduced-motion media rule is included |
 | License | MIT | MIT |
 
@@ -99,7 +99,7 @@ If SDS Motion Forge saves you time, a ⭐ on GitHub helps other developers find 
 - [How It Works](#how-it-works)
 - [Animation Reference](#animation-reference)
   - [Text — 117 classes](#text--117-classes)
-  - [Buttons — 100 classes](#buttons--100-classes)
+  - [Buttons — 112 classes](#buttons--112-classes)
   - [Inputs — 100 classes](#inputs--100-classes)
   - [Cards — 100 classes](#cards--100-classes)
   - [Loaders — 100 classes](#loaders--100-classes)
@@ -122,7 +122,7 @@ If SDS Motion Forge saves you time, a ⭐ on GitHub helps other developers find 
 ## What's in v5
 
 - **117 text animations** — 50 originals + 5 physics per-character animations + 49 new motion families + 13 equation-driven physics effects (new in 5.1)
-- **100 button animations** — ambient, hover, entrance, and kinetic effects for interactive elements
+- **112 button animations** — 100 ambient loops, plus 12 modern UI buttons (new in 5.2) that bring their own surface and answer hover, focus and press
 - **100 input animations** — focus, validation, ambient, and reveal states for form fields
 - **100 card animations** — entry, ambient, hover, 3D, and choreography effects for containers
 - **100 loader animations** — self-contained spinners, progress indicators, and motion loaders
@@ -187,13 +187,13 @@ import '@salkomdesignstudio/sds-motion-forge/categories/loaders';
 | Bundle | Import | Minified | Gzip |
 |---|---|---|---|
 | text | `@salkomdesignstudio/sds-motion-forge/categories/text` | 64.7 KB | 13.5 KB |
-| buttons | `@salkomdesignstudio/sds-motion-forge/categories/buttons` | 49.1 KB | 8.6 KB |
+| buttons | `@salkomdesignstudio/sds-motion-forge/categories/buttons` | 59.7 KB | 10.7 KB |
 | inputs | `@salkomdesignstudio/sds-motion-forge/categories/inputs` | 47.0 KB | 8.4 KB |
 | cards | `@salkomdesignstudio/sds-motion-forge/categories/cards` | 39.6 KB | 7.5 KB |
 | loaders | `@salkomdesignstudio/sds-motion-forge/categories/loaders` | 49.1 KB | 8.1 KB |
 | scroll | `@salkomdesignstudio/sds-motion-forge/categories/scroll` | 33.6 KB | 5.8 KB |
 | core only | `@salkomdesignstudio/sds-motion-forge/categories/core` | 3.3 KB | 1.0 KB |
-| **everything** | `@salkomdesignstudio/sds-motion-forge` | **260.8 KB** | **43.7 KB** |
+| **everything** | `@salkomdesignstudio/sds-motion-forge` | **271.5 KB** | **45.8 KB** |
 <!-- @sds-size-table:end -->
 
 Core is intentionally **inlined** into every category bundle so each one works
@@ -380,7 +380,7 @@ module.exports = {
 
 | What | Needs JavaScript? | Notes |
 |---|---|---|
-| 617 CSS effects (text, buttons, inputs, cards, loaders) | No | Add the class. Some need markup: 13 text effects need each letter in a `.sds-char` span, 48 animate child elements, 29 input effects need a wrapper. |
+| 629 CSS effects (text, buttons, inputs, cards, loaders) | No | Add the class. Some need markup: 13 text effects need each letter in a `.sds-char` span, 48 animate child elements, 29 input effects need a wrapper. |
 | 100 scroll effects | Only to trigger on scroll in some browsers | `sds-scroll-auto` + `sds-scroll-*` is CSS-only in Chrome 115+. Elsewhere load the 1.3 KB `sds-scroll.min.js` and use `data-sds`; without it the effect plays on load instead of on scroll. |
 | 7 cursor-reactive effects | Yes | Need the 7 KB `motion-interactive.min.js`: Jelly Hover, Magnetic Pull, Repulsion Field, Scatter Return, Shockwave, Spring Kerning, Word Morph. |
 | Physics easing (`linear()`) | No | Chrome 113+, Safari 17.2+, Firefox 112+; older browsers get a cubic-bezier approximation. |
@@ -629,7 +629,7 @@ which also verifies them against their closed-form solutions on every run.
 These cost about 5 KB gzip in the text bundle (the equation-sampled easing
 curves are the bytes).
 
-### Buttons — 100 classes
+### Buttons — 112 classes
 
 Apply directly to `<button>` or `<a>` elements. Effects are ambient — no interaction required.
 
@@ -642,7 +642,36 @@ Apply directly to `<button>` or `<a>` elements. Effects are ambient — no inter
 <button class="sds-btn-hologram">Hologram flicker</button>
 ```
 
-All 100 button classes:
+#### UI buttons (new in 5.2): modern, self-styled, state-driven
+
+The ambient loops above animate a button you have already styled. The 12 `sds-btn-ui-*` classes are different: they bring their own surface and answer **hover, keyboard focus and press**, so one class gives you a finished modern button. Motion is `transform`, `opacity` and `filter` only.
+
+```html
+<a class="sds-btn-ui-arrow-slide" href="/signup">Get started</a>
+<button class="sds-btn-ui-split-icon">Download</button>
+<button class="sds-btn-ui-liquid-fill">Hover me</button>
+<button class="sds-btn-ui-conic-border">Launch app</button>
+<button class="sds-btn-ui-press-3d">Play now</button>
+```
+
+| Class | What it does |
+|---|---|
+| `sds-btn-ui-arrow-slide` | An arrow glides in from the left and settles on hover |
+| `sds-btn-ui-split-icon` | Split button; the icon segment swaps its arrow on hover |
+| `sds-btn-ui-liquid-fill` | A wavy liquid rises and fills the button on hover |
+| `sds-btn-ui-shine-sweep` | Glossy button with a light streak that sweeps across every few seconds |
+| `sds-btn-ui-conic-border` | A bright arc travels around a dark button's edge |
+| `sds-btn-ui-aurora-mesh` | Blurred colour blobs drift behind the label |
+| `sds-btn-ui-press-3d` | Chunky button with a solid edge: lifts on hover, presses flat on click |
+| `sds-btn-ui-glass-lift` | Frosted glass that lifts and catches a highlight on hover |
+| `sds-btn-ui-neon-edge` | Pulsing neon outline that swells on hover |
+| `sds-btn-ui-ripple-press` | A soft ripple spreads from the centre when pressed |
+| `sds-btn-ui-gradient-flow` | A violet-to-magenta gradient that flows through the button |
+| `sds-btn-ui-soft-lift` | Light button that rises and blooms a soft shadow |
+
+Restyle them with custom properties on the element or a parent: `--sds-btn-bg`, `--sds-btn-fg`, `--sds-btn-radius`, plus `--sds-btn-liquid` (liquid fill), `--sds-btn-surface` (conic border) and `--sds-btn-edge` (press 3D). Under `prefers-reduced-motion` the motion collapses and the buttons keep their static look.
+
+All 100 ambient button classes:
 
 ```
 sds-btn-amp          sds-btn-aurora       sds-btn-border-flow  sds-btn-bounce
@@ -1153,7 +1182,7 @@ Available exported types:
 | Type | Classes |
 |---|---|
 | `SdsTextAnimation` | All 117 text animation classes |
-| `SdsButtonAnimation` | All 100 button animation classes |
+| `SdsButtonAnimation` | All 112 button animation classes |
 | `SdsInputAnimation` | All 100 input animation classes |
 | `SdsCardAnimation` | All 100 card animation classes |
 | `SdsLoaderAnimation` | All 100 loader animation classes |
@@ -1238,7 +1267,7 @@ IE11 is not supported.
 ```
 SDS-Motion-Forge/
 ├── src/
-│   ├── motion.css                    # Source — 617 animations
+│   ├── motion.css                    # Source — 629 animations
 │   ├── sds-scroll.js                 # Scroll gate engine source, 3.6 KB
 │   └── motion-interactive.js         # Interactive JS engine source, 15.2 KB
 │
@@ -1258,7 +1287,7 @@ SDS-Motion-Forge/
 │       ├── ci.yml                    # Tests on Node 20/22 × Ubuntu/macOS/Windows
 │       └── publish.yml               # npm publish with OIDC provenance on release
 │
-├── index.d.ts                        # TypeScript declarations — all 617 classes typed
+├── index.d.ts                        # TypeScript declarations — all 629 classes typed
 ├── verify-build.js                   # Pre-publish verification (8-stage gate)
 ├── postcss.config.js                 # PostCSS config (autoprefixer)
 ├── package.json

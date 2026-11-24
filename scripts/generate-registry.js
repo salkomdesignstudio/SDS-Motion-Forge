@@ -224,6 +224,7 @@ function collectVars(value, set) {
     let trigger;
     if (INTERACTIVE[name]) trigger = INTERACTIVE[name];
     else if (category === "scroll") trigger = "scroll";
+    else if (category === "buttons" && e.triggers.has("hover")) trigger = "hover"; // a button that answers hover and focus is a hover button
     else if (e.triggers.has("focus")) trigger = "focus";
     else if (e.triggers.has("hover")) trigger = "hover";
     else trigger = "load";

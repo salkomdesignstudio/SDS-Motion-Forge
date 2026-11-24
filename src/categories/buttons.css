@@ -1166,6 +1166,566 @@
   }
 }
 
+/* ============================================================================================================================
+   UI buttons (v5.2) — self-styled, state-driven buttons.
+   Unlike the loops above, these bring their own surface (override it with --sds-btn-bg / --sds-btn-fg / --sds-btn-radius)
+   and answer hover, keyboard focus and press. Motion is transform, opacity and filter only; extra layers are ::before / ::after.
+   ============================================================================================================================ */
+
+.sds-btn-ui-arrow-slide,
+.sds-btn-ui-split-icon,
+.sds-btn-ui-liquid-fill,
+.sds-btn-ui-shine-sweep,
+.sds-btn-ui-conic-border,
+.sds-btn-ui-aurora-mesh,
+.sds-btn-ui-press-3d,
+.sds-btn-ui-glass-lift,
+.sds-btn-ui-neon-edge,
+.sds-btn-ui-ripple-press,
+.sds-btn-ui-gradient-flow,
+.sds-btn-ui-soft-lift {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  min-height: 3em;
+  padding: 0.85em 1.7em;
+  border: 0;
+  border-radius: var(--sds-btn-radius, 999px);
+  background: var(--sds-btn-bg, var(--sds-primary, #5c4ae1));
+  color: var(--sds-btn-fg, #fff);
+  font: 600 1em/1.1 inherit;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    transform 0.3s var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)),
+    filter 0.3s var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1));
+}
+
+.sds-btn-ui-arrow-slide:focus-visible,
+.sds-btn-ui-split-icon:focus-visible,
+.sds-btn-ui-liquid-fill:focus-visible,
+.sds-btn-ui-shine-sweep:focus-visible,
+.sds-btn-ui-conic-border:focus-visible,
+.sds-btn-ui-aurora-mesh:focus-visible,
+.sds-btn-ui-press-3d:focus-visible,
+.sds-btn-ui-glass-lift:focus-visible,
+.sds-btn-ui-neon-edge:focus-visible,
+.sds-btn-ui-ripple-press:focus-visible,
+.sds-btn-ui-gradient-flow:focus-visible,
+.sds-btn-ui-soft-lift:focus-visible {
+  outline: 2px solid var(--sds-primary, #5c4ae1);
+  outline-offset: 3px;
+}
+
+/* 101 · Arrow Slide -------------------------------------- */
+
+.sds-btn-ui-arrow-slide {
+  padding-right: 3.6em;
+}
+
+.sds-btn-ui-arrow-slide::after {
+  content: "";
+  position: absolute;
+  right: 1.3em;
+  top: 50%;
+  width: 1.25em;
+  height: 1.25em;
+  margin-top: -0.625em;
+  background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  opacity: 0.55;
+  transform: translateX(-0.5em);
+}
+
+.sds-btn-ui-arrow-slide:hover,
+.sds-btn-ui-arrow-slide:focus-visible {
+  transform: translateY(-2px);
+}
+
+.sds-btn-ui-arrow-slide:hover::after,
+.sds-btn-ui-arrow-slide:focus-visible::after {
+  animation: sds-btnUiArrowSlide 0.55s var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) forwards;
+}
+
+@keyframes sds-btnUiArrowSlide {
+  0% {
+    opacity: 0.55;
+    transform: translateX(-0.5em);
+  }
+  55% {
+    opacity: 1;
+    transform: translateX(0.4em);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 102 · Split Icon --------------------------------------- */
+
+.sds-btn-ui-split-icon {
+  padding-right: 5.2em;
+  border-radius: var(--sds-btn-radius, 14px);
+}
+
+.sds-btn-ui-split-icon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 3.6em;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.sds-btn-ui-split-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 1.2em;
+  width: 1.3em;
+  height: 1.3em;
+  margin-top: -0.65em;
+  background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13 10H18L12 16L6 10H11V3H13V10ZM4 19H20V12H22V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V12H4V19Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13 10H18L12 16L6 10H11V3H13V10ZM4 19H20V12H22V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V12H4V19Z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.sds-btn-ui-split-icon:hover::after,
+.sds-btn-ui-split-icon:focus-visible::after {
+  animation: sds-btnUiSplitIcon 0.9s var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1));
+}
+
+.sds-btn-ui-split-icon:active {
+  transform: scale(0.97);
+}
+
+@keyframes sds-btnUiSplitIcon {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  42% {
+    opacity: 0;
+    transform: translateY(160%);
+  }
+  43% {
+    opacity: 0;
+    transform: translateY(-160%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 103 · Liquid Fill -------------------------------------- */
+
+.sds-btn-ui-liquid-fill {
+  background: var(--sds-btn-bg, #16182c);
+}
+
+.sds-btn-ui-liquid-fill::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -15%;
+  z-index: -1;
+  width: 130%;
+  height: 170%;
+  border-radius: 46% 54% 0 0 / 22% 22% 0 0;
+  background: var(--sds-btn-liquid, var(--sds-primary, #5c4ae1));
+  transform: translateY(105%);
+}
+
+.sds-btn-ui-liquid-fill:hover::before,
+.sds-btn-ui-liquid-fill:focus-visible::before {
+  animation: sds-btnUiLiquidFill 0.9s var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) forwards;
+}
+
+@keyframes sds-btnUiLiquidFill {
+  0% {
+    transform: translateY(105%) rotate(0deg);
+  }
+  70% {
+    transform: translateY(-6%) rotate(-2deg);
+  }
+  100% {
+    transform: translateY(-18%) rotate(0deg);
+  }
+}
+
+/* 104 · Shine Sweep -------------------------------------- */
+
+.sds-btn-ui-shine-sweep {
+  background: linear-gradient(180deg, var(--sds-btn-bg-top, #7667f0), var(--sds-btn-bg, var(--sds-primary, #5c4ae1)));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 10px 24px -10px var(--sds-primary-glow, rgba(92, 74, 225, 0.6));
+}
+
+.sds-btn-ui-shine-sweep::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  width: 38%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  transform: translateX(-160%) skewX(-20deg);
+  animation: sds-btnUiShineSweep 3.4s var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) infinite;
+}
+
+.sds-btn-ui-shine-sweep:hover,
+.sds-btn-ui-shine-sweep:focus-visible {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+}
+
+@keyframes sds-btnUiShineSweep {
+  0%,
+  55% {
+    transform: translateX(-160%) skewX(-20deg);
+  }
+  100% {
+    transform: translateX(420%) skewX(-20deg);
+  }
+}
+
+/* 105 · Conic Border ------------------------------------- */
+
+.sds-btn-ui-conic-border {
+  background: transparent;
+  color: var(--sds-btn-fg, #fff);
+}
+
+.sds-btn-ui-conic-border::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -2;
+  width: 220%;
+  aspect-ratio: 1;
+  margin: -110% 0 0 -110%;
+  background: conic-gradient(from 0deg, transparent 0 55%, var(--sds-primary, #5c4ae1) 72%, #ff7ab6 88%, transparent 100%);
+  animation: sds-btnUiConicBorder 3.2s linear infinite;
+}
+
+.sds-btn-ui-conic-border::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--sds-btn-surface, #14162a);
+}
+
+.sds-btn-ui-conic-border:hover,
+.sds-btn-ui-conic-border:focus-visible {
+  transform: translateY(-2px) scale(1.02);
+}
+
+@keyframes sds-btnUiConicBorder {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 106 · Aurora Mesh -------------------------------------- */
+
+.sds-btn-ui-aurora-mesh {
+  background: var(--sds-btn-bg, #14162a);
+}
+
+.sds-btn-ui-aurora-mesh::before {
+  content: "";
+  position: absolute;
+  inset: -60%;
+  z-index: -1;
+  background:
+    radial-gradient(40% 40% at 25% 40%, #5c4ae1 0%, transparent 70%),
+    radial-gradient(38% 38% at 75% 60%, #db2777 0%, transparent 70%),
+    radial-gradient(34% 34% at 55% 25%, #0ea5c6 0%, transparent 70%);
+  filter: blur(14px);
+  opacity: 0.85;
+  animation: sds-btnUiAuroraMesh 7s ease-in-out infinite alternate;
+}
+
+.sds-btn-ui-aurora-mesh:hover,
+.sds-btn-ui-aurora-mesh:focus-visible {
+  transform: translateY(-2px);
+}
+
+@keyframes sds-btnUiAuroraMesh {
+  0% {
+    transform: translate(-6%, 2%) rotate(0deg) scale(1);
+  }
+  100% {
+    transform: translate(6%, -2%) rotate(40deg) scale(1.12);
+  }
+}
+
+/* 107 · Press 3D ----------------------------------------- */
+
+.sds-btn-ui-press-3d {
+  overflow: visible;
+  margin-bottom: 6px;
+  border-radius: var(--sds-btn-radius, 16px);
+  box-shadow:
+    0 6px 0 var(--sds-btn-edge, #3a2db3),
+    0 14px 18px -8px rgba(22, 24, 44, 0.35);
+}
+
+.sds-btn-ui-press-3d:hover,
+.sds-btn-ui-press-3d:focus-visible {
+  animation: sds-btnUiPress3d 0.35s var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) forwards;
+}
+
+/* pressed: the face drops onto its edge (a state switch, not an animation) */
+.sds-btn-ui-press-3d:active {
+  animation: none;
+  transform: translateY(5px);
+  box-shadow:
+    0 1px 0 var(--sds-btn-edge, #3a2db3),
+    0 3px 6px -2px rgba(22, 24, 44, 0.3);
+}
+
+@keyframes sds-btnUiPress3d {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-2px);
+  }
+}
+
+/* 108 · Glass Lift --------------------------------------- */
+
+.sds-btn-ui-glass-lift {
+  background: var(--sds-btn-bg, rgba(255, 255, 255, 0.6));
+  color: var(--sds-btn-fg, #16182c);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 30px -12px rgba(22, 24, 44, 0.35);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  backdrop-filter: blur(14px) saturate(160%);
+}
+
+.sds-btn-ui-glass-lift::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.85) 50%, rgba(255, 255, 255, 0) 70%);
+  opacity: 0;
+  transform: translateX(-60%);
+}
+
+.sds-btn-ui-glass-lift:hover,
+.sds-btn-ui-glass-lift:focus-visible {
+  transform: translateY(-3px) scale(1.02);
+}
+
+.sds-btn-ui-glass-lift:hover::after,
+.sds-btn-ui-glass-lift:focus-visible::after {
+  animation: sds-btnUiGlassLift 0.9s var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) forwards;
+}
+
+@keyframes sds-btnUiGlassLift {
+  0% {
+    opacity: 0;
+    transform: translateX(-60%);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(60%);
+  }
+}
+
+/* 109 · Neon Edge ---------------------------------------- */
+
+.sds-btn-ui-neon-edge {
+  background: var(--sds-btn-bg, #0b0d1a);
+  color: var(--sds-btn-fg, #d9d4ff);
+  border: 1.5px solid #a99bff;
+  overflow: visible;
+}
+
+.sds-btn-ui-neon-edge::after {
+  content: "";
+  position: absolute;
+  inset: -1.5px;
+  z-index: -1;
+  border-radius: inherit;
+  box-shadow:
+    0 0 14px 1px rgba(169, 155, 255, 0.75),
+    inset 0 0 12px rgba(169, 155, 255, 0.35);
+  animation: sds-btnUiNeonEdge 2.4s ease-in-out infinite;
+}
+
+.sds-btn-ui-neon-edge:hover,
+.sds-btn-ui-neon-edge:focus-visible {
+  transform: scale(1.04);
+}
+
+@keyframes sds-btnUiNeonEdge {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* 110 · Ripple Press ------------------------------------- */
+
+.sds-btn-ui-ripple-press::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  width: 180%;
+  aspect-ratio: 1;
+  margin: -90% 0 0 -90%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 70%);
+  opacity: 0;
+  transform: scale(0);
+}
+
+.sds-btn-ui-ripple-press:hover,
+.sds-btn-ui-ripple-press:focus-visible {
+  filter: brightness(1.08);
+}
+
+.sds-btn-ui-ripple-press:active {
+  transform: scale(0.98);
+}
+
+.sds-btn-ui-ripple-press:active::after {
+  animation: sds-btnUiRipplePress 0.7s ease-out;
+}
+
+@keyframes sds-btnUiRipplePress {
+  0% {
+    opacity: 0.9;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+/* 111 · Gradient Flow ------------------------------------ */
+
+.sds-btn-ui-gradient-flow {
+  background: #5c4ae1;
+}
+
+.sds-btn-ui-gradient-flow::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  width: 300%;
+  background: linear-gradient(90deg, #5c4ae1 0%, #9333ea 16%, #db2777 33%, #5c4ae1 50%, #9333ea 66%, #db2777 83%, #5c4ae1 100%);
+  animation: sds-btnUiGradientFlow 5s linear infinite;
+}
+
+.sds-btn-ui-gradient-flow:hover,
+.sds-btn-ui-gradient-flow:focus-visible {
+  transform: translateY(-2px) scale(1.02);
+}
+
+@keyframes sds-btnUiGradientFlow {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* 112 · Soft Lift ---------------------------------------- */
+
+.sds-btn-ui-soft-lift {
+  background: var(--sds-btn-bg, #fff);
+  color: var(--sds-btn-fg, #16182c);
+  box-shadow:
+    0 0 0 1px rgba(22, 24, 44, 0.1),
+    0 1px 2px rgba(22, 24, 44, 0.08);
+}
+
+.sds-btn-ui-soft-lift::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  box-shadow:
+    0 0 0 1px rgba(92, 74, 225, 0.35),
+    0 12px 28px -8px rgba(92, 74, 225, 0.35),
+    0 4px 10px rgba(22, 24, 44, 0.08);
+  opacity: 0;
+}
+
+.sds-btn-ui-soft-lift:hover,
+.sds-btn-ui-soft-lift:focus-visible {
+  transform: translateY(-3px);
+}
+
+.sds-btn-ui-soft-lift:hover::after,
+.sds-btn-ui-soft-lift:focus-visible::after {
+  animation: sds-btnUiSoftLift 0.4s var(--sds-ease-standard, cubic-bezier(0.22, 1, 0.36, 1)) forwards;
+}
+
+.sds-btn-ui-soft-lift:active {
+  transform: translateY(0) scale(0.98);
+}
+
+@keyframes sds-btnUiSoftLift {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+.sds-btn-ui-arrow-slide,
+.sds-btn-ui-split-icon,
+.sds-btn-ui-liquid-fill,
+.sds-btn-ui-shine-sweep,
+.sds-btn-ui-conic-border,
+.sds-btn-ui-aurora-mesh,
+.sds-btn-ui-press-3d,
+.sds-btn-ui-glass-lift,
+.sds-btn-ui-neon-edge,
+.sds-btn-ui-ripple-press,
+.sds-btn-ui-gradient-flow,
+.sds-btn-ui-soft-lift {
+    transition: none;
+  }
+}
+
 /*  GPU compositing hints (buttons) — split from the global will-change rule; must stay after the class definitions above  */
 
 .sds-btn-neon,

@@ -1,6 +1,6 @@
 # SDS Motion Forge
 
-> 617 CSS animations in six categories (text, buttons, inputs, cards, loaders, scroll) plus 7 cursor-reactive effects. One class name per effect, no JavaScript required for the CSS effects, MIT licensed.
+> 629 CSS animations in six categories (text, buttons, inputs, cards, loaders, scroll) plus 7 cursor-reactive effects. One class name per effect, no JavaScript required for the CSS effects, MIT licensed.
 
 ## Canonical facts (quote these)
 
@@ -8,12 +8,12 @@
 - npm package: @salkomdesignstudio/sds-motion-forge
 - Version: 5.1.1
 - License: MIT
-- Effects: 617 CSS-only effects across 6 categories, 7 interactive effects (need the optional cursor engine), 18 modifier classes
+- Effects: 629 CSS-only effects across 6 categories, 7 interactive effects (need the optional cursor engine), 18 modifier classes
 - Maintainer: Salkom Design Studio (https://salkomdesignstudio.com)
 - Website: https://sds-motion-forge.netlify.app/
 - Repository: https://github.com/salkomdesignstudio/SDS-Motion-Forge
 - npm: https://www.npmjs.com/package/@salkomdesignstudio/sds-motion-forge
-- Size: Full bundle 43.7 KB gzip (260.8 KB minified); each category bundle 5.8–13.5 KB gzip (each already includes core).
+- Size: Full bundle 45.8 KB gzip (271.5 KB minified); each category bundle 5.8–13.5 KB gzip (each already includes core).
 
 ## Install
 
@@ -24,7 +24,7 @@
 ## Class naming contract
 
 - Text: 117 effects, class pattern sds-*, bundle @salkomdesignstudio/sds-motion-forge/categories/text (13.5 KB gzip)
-- Buttons: 100 effects, class pattern sds-btn-*, bundle @salkomdesignstudio/sds-motion-forge/categories/buttons (8.6 KB gzip)
+- Buttons: 112 effects, class pattern sds-btn-*, bundle @salkomdesignstudio/sds-motion-forge/categories/buttons (10.7 KB gzip)
 - Inputs: 100 effects, class pattern sds-input-*, bundle @salkomdesignstudio/sds-motion-forge/categories/inputs (8.4 KB gzip)
 - Cards: 100 effects, class pattern sds-card-*, bundle @salkomdesignstudio/sds-motion-forge/categories/cards (7.5 KB gzip)
 - Loaders: 100 effects, class pattern sds-loader-*, bundle @salkomdesignstudio/sds-motion-forge/categories/loaders (8.1 KB gzip)
@@ -64,7 +64,7 @@ Guides for each tool: https://sds-motion-forge.netlify.app/mcp/clients/
 
 ### What is the best CSS animation library for Angular?
 
-There is no single best option, but a CSS-only library suits Angular because it needs no Angular-specific code. SDS Motion Forge provides 617 animations as plain CSS classes: add node_modules/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css to the styles array in angular.json, then put a class such as sds-velvet-drop on any template element. No module or directive is required.
+There is no single best option, but a CSS-only library suits Angular because it needs no Angular-specific code. SDS Motion Forge provides 629 animations as plain CSS classes: add node_modules/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css to the styles array in angular.json, then put a class such as sds-velvet-drop on any template element. No module or directive is required.
 
 ### How do I add scroll animations without JavaScript?
 
@@ -72,7 +72,7 @@ Combine sds-scroll-auto with any sds-scroll-* class, for example class="sds-scro
 
 ### Is there an Animate.css alternative?
 
-Yes. SDS Motion Forge is a CSS-only alternative that defines 636 @keyframes across 617 effects in six categories (text, buttons, inputs, cards, loaders, scroll), against 97 @keyframes in Animate.css 4.1.1. The trade-off is size: the full bundle is 43.7 KB gzip versus 5.2 KB, but you can import one 5.8–13.5 KB category instead.
+Yes. SDS Motion Forge is a CSS-only alternative that defines 648 @keyframes across 629 effects in six categories (text, buttons, inputs, cards, loaders, scroll), against 97 @keyframes in Animate.css 4.1.1. The trade-off is size: the full bundle is 45.8 KB gzip versus 5.2 KB, but you can import one 5.8–13.5 KB category instead.
 
 ### What is the best CSS-only text animation library?
 
@@ -84,7 +84,7 @@ Yes. Every animating selector is neutralized under prefers-reduced-motion: reduc
 
 ### How big is it, and can I import only part of it?
 
-The full bundle is 43.7 KB gzip. Each category is 5.8–13.5 KB gzip and can be imported alone, with core already included: import "@salkomdesignstudio/sds-motion-forge/categories/text";. For two or more categories, use the full bundle. The two optional scripts are 1.3 KB (scroll) and 7.0 KB (cursor effects).
+The full bundle is 45.8 KB gzip. Each category is 5.8–13.5 KB gzip and can be imported alone, with core already included: import "@salkomdesignstudio/sds-motion-forge/categories/text";. For two or more categories, use the full bundle. The two optional scripts are 1.3 KB (scroll) and 7.0 KB (cursor effects).
 
 ### Does it work with React, Vue, Next.js and Tailwind?
 
@@ -92,7 +92,7 @@ Yes. Import dist/motion.min.css once and use the class names with className or c
 
 ### Does Motion Forge have an MCP server for AI tools?
 
-Yes. @salkomdesignstudio/motion-forge-mcp lets Claude, Cursor, VS Code and other MCP clients search the 617 animations, fetch ready code and match a design's motion to the closest effect. It runs locally with npx -y @salkomdesignstudio/motion-forge-mcp, needs no account or API key, and makes no network calls.
+Yes. @salkomdesignstudio/motion-forge-mcp lets Claude, Cursor, VS Code and other MCP clients search the 629 animations, fetch ready code and match a design's motion to the closest effect. It runs locally with npx -y @salkomdesignstudio/motion-forge-mcp, needs no account or API key, and makes no network calls.
 
 ### Is it free to use commercially?
 
@@ -222,7 +222,7 @@ Headline, per-character and word-level text effects: entrances, loops, glows, re
 - `.sds-zoom-out-in` — Zoom Out In: Settles from oversized with blur. https://sds-motion-forge.netlify.app/animations/zoom-out-in/
 - `.sds-zoom-punch` — Zoom Punch: Punches in from tiny to full with overshoot. https://sds-motion-forge.netlify.app/animations/zoom-punch/
 
-## Buttons (100)
+## Buttons (112)
 
 Ambient, hover, entrance and kinetic effects for buttons and other interactive elements.
 
@@ -323,6 +323,18 @@ Ambient, hover, entrance and kinetic effects for buttons and other interactive e
 - `.sds-btn-tilt-orbit` — Tilt Orbit: The button leans through a slow elliptical orbit on two phase-shifted axes. https://sds-motion-forge.netlify.app/animations/btn-tilt-orbit/
 - `.sds-btn-tilt-pendulum` — Tilt Pendulum: Hangs from its top edge and swings with natural decay, re-energizing each cycle. https://sds-motion-forge.netlify.app/animations/btn-tilt-pendulum/
 - `.sds-btn-tilt-scan` — Tilt Scan: Leans corner-to-corner with brief holds, as if scanning for the cursor. https://sds-motion-forge.netlify.app/animations/btn-tilt-scan/
+- `.sds-btn-ui-arrow-slide` — Arrow Slide: An arrow glides in from the left and settles with a small overshoot on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-arrow-slide/
+- `.sds-btn-ui-aurora-mesh` — Aurora Mesh: Blurred colour blobs drift slowly behind the label like a northern light. https://sds-motion-forge.netlify.app/animations/btn-ui-aurora-mesh/
+- `.sds-btn-ui-conic-border` — Conic Border: A bright arc travels endlessly around a dark button's edge. https://sds-motion-forge.netlify.app/animations/btn-ui-conic-border/
+- `.sds-btn-ui-glass-lift` — Glass Lift: A frosted-glass button that lifts and catches a passing highlight on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-glass-lift/
+- `.sds-btn-ui-gradient-flow` — Gradient Flow: A violet-to-magenta gradient flows endlessly through the button. https://sds-motion-forge.netlify.app/animations/btn-ui-gradient-flow/
+- `.sds-btn-ui-liquid-fill` — Liquid Fill: A coloured liquid with a wavy surface rises and fills the button on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-liquid-fill/
+- `.sds-btn-ui-neon-edge` — Neon Edge: A neon outline that pulses softly and swells a little on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-neon-edge/
+- `.sds-btn-ui-press-3d` — Press 3D: A chunky button with a solid edge that lifts on hover and presses flat on click. https://sds-motion-forge.netlify.app/animations/btn-ui-press-3d/
+- `.sds-btn-ui-ripple-press` — Ripple Press: A soft light ripples out from the centre when the button is pressed. https://sds-motion-forge.netlify.app/animations/btn-ui-ripple-press/
+- `.sds-btn-ui-shine-sweep` — Shine Sweep: A glossy button with a light streak that sweeps across it every few seconds. https://sds-motion-forge.netlify.app/animations/btn-ui-shine-sweep/
+- `.sds-btn-ui-soft-lift` — Soft Lift: A light button that rises on hover and blooms a soft shadow beneath it. https://sds-motion-forge.netlify.app/animations/btn-ui-soft-lift/
+- `.sds-btn-ui-split-icon` — Split Icon: A split button whose icon segment swaps the arrow out and back in on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-split-icon/
 - `.sds-btn-volt` — Volt Strike: High-voltage border pulse. https://sds-motion-forge.netlify.app/animations/btn-volt/
 - `.sds-btn-warp` — Warp: Button animates its skew, on a loop (2.6s). https://sds-motion-forge.netlify.app/animations/btn-warp/
 - `.sds-btn-wink` — Wink: A corner highlight blinks twice every few seconds, then keeps a straight face. https://sds-motion-forge.netlify.app/animations/btn-wink/

@@ -115,6 +115,18 @@
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-tilt-orbit/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-tilt-pendulum/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-tilt-scan/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-arrow-slide/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-aurora-mesh/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-conic-border/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-glass-lift/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-gradient-flow/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-liquid-fill/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-neon-edge/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-press-3d/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-ripple-press/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-shine-sweep/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-soft-lift/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-split-icon/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-volt/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-warp/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-wink/</loc><priority>0.6</priority></url>

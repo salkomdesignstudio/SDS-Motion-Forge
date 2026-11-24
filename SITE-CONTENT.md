@@ -11,12 +11,12 @@ Voice: plain, specific, active. One idea per sentence. No hype words ("revolutio
 ## 0. Entity and facts (use these exact words everywhere)
 
 - **Name:** SDS Motion Forge (short form in UI: Motion Forge)
-- **What it is:** a free, MIT-licensed CSS animation library. 617 effects in six categories, each used by adding one class name. No JavaScript is required for the CSS effects.
+- **What it is:** a free, MIT-licensed CSS animation library. 629 effects in six categories, each used by adding one class name. No JavaScript is required for the CSS effects.
 - **Maker:** Salkom Design Studio
 - **Package:** `@salkomdesignstudio/sds-motion-forge` (npm), version 5.2.0 once released
 - **Site:** https://sds-motion-forge.netlify.app
 - **Repository:** https://github.com/salkomdesignstudio/SDS-Motion-Forge
-- **Categories (effects):** Text 117, Buttons 100, Inputs 100, Cards 100, Loaders 100, Scroll 100. Plus 7 cursor-reactive effects and 18 modifier classes.
+- **Categories (effects):** Text 117, Buttons 112, Inputs 100, Cards 100, Loaders 100, Scroll 100. Plus 7 cursor-reactive effects and 18 modifier classes.
 - **Size:** full bundle 43.8 KB gzip (261.0 KB minified). Each category 5.8–13.5 KB gzip, core included.
 - **Promise (machine-verified on every build):** every class that worked in v3 and v4 works identically in v5; every animating selector is neutralised under `prefers-reduced-motion`.
 - **Contact:** hello@salkomdesignstudio.com (from SECURITY.md)
@@ -26,14 +26,14 @@ Voice: plain, specific, active. One idea per sentence. No hype words ("revolutio
 ## 1. Home page
 
 ### 1.1 Meta
-- **Title (52):** 617 CSS Animations, One Class Each — SDS Motion Forge
-- **Description (151):** 617 production-ready CSS animations in 6 categories. Add one class name to any element — no JavaScript, no build step, no config. Free and open source.
+- **Title (52):** 629 CSS Animations, One Class Each — SDS Motion Forge
+- **Description (151):** 629 production-ready CSS animations in 6 categories. Add one class name to any element — no JavaScript, no build step, no config. Free and open source.
 - **H1:** Motion at the speed of class
 
 ### 1.2 Hero
-- **Eyebrow:** v5.2.0 · MIT · 617 animations
+- **Eyebrow:** v5.2.0 · MIT · 629 animations
 - **H1:** Motion at the speed of class
-- **Sub:** 617 CSS animations in six categories. Add one class name and the element moves. The CSS effects need no JavaScript.
+- **Sub:** 629 CSS animations in six categories. Add one class name and the element moves. The CSS effects need no JavaScript.
 - **Fine print (one line, links to the JS table):** JavaScript is optional: 7 cursor-reactive effects need a 7 KB script, and scroll triggers use a 1.3 KB script in browsers without CSS scroll-driven animation.
 - **Primary button:** Browse the animations
 - **Secondary button:** Copy install command → `npm i @salkomdesignstudio/sds-motion-forge`
@@ -43,7 +43,7 @@ Voice: plain, specific, active. One idea per sentence. No hype words ("revolutio
 ### 1.3 Proof strip (four numbers, all from the build)
 | Value | Label |
 |---|---|
-| 617 | CSS animations |
+| 629 | CSS animations |
 | 0 KB | JavaScript for the CSS effects (7 cursor-reactive effects and the scroll fallback use optional scripts) |
 | 43.8 KB | Full bundle, gzip |
 | 6 | Categories, each importable alone |
@@ -67,11 +67,11 @@ Or with npm: `npm i @salkomdesignstudio/sds-motion-forge`, then import `@salkomd
 
 | Card | Title | Copy |
 |---|---|---|
-| 1 (highlight) | No JavaScript for the CSS effects | All 617 effects are plain `@keyframes` and classes. Two optional scripts add what CSS cannot: scroll triggering where CSS scroll-driven animation is missing (1.3 KB) and 7 cursor-reactive effects (7 KB). |
-| 2 | 617 animations | Text 117, Buttons 100, Inputs 100, Cards 100, Loaders 100, Scroll 100. One class name each. |
+| 1 (highlight) | No JavaScript for the CSS effects | All 629 effects are plain `@keyframes` and classes. Two optional scripts add what CSS cannot: scroll triggering where CSS scroll-driven animation is missing (1.3 KB) and 7 cursor-reactive effects (7 KB). |
+| 2 | 629 animations | Text 117, Buttons 112, Inputs 100, Cards 100, Loaders 100, Scroll 100. One class name each. |
 | 3 | Works anywhere a class works | HTML, React, Next.js, Angular, Vue, Svelte, Bootstrap and Tailwind projects: anything that renders HTML with CSS classes. Not for email clients or native/canvas apps such as Flutter. |
 | 4 | Themeable | Set `--sds-primary`, `--sds-duration` and `--sds-easing` and the whole library follows your brand. |
-| 5 | Mostly compositor-only | 468 of 617 effects animate only transform, opacity, filter or clip-path. The other 149 also animate shadows, gradients or sizes and can cost more on slow devices. |
+| 5 | Mostly compositor-only | 480 of 629 effects animate only transform, opacity, filter or clip-path. The other 149 also animate shadows, gradients or sizes and can cost more on slow devices. |
 | 6 | Respects reduced motion | Every animating selector is switched off under `prefers-reduced-motion: reduce`. The build fails if one is missed. |
 
 Rule: only card 1 is highlighted. One accent per viewport.
@@ -88,7 +88,7 @@ Rule: only card 1 is highlighted. One accent per viewport.
 - **Eyebrow:** Live gallery
 - **H2:** Every animation, playing live
 - **Intro:** Hover a card to replay it. Click it to open the detail view, change speed and delay, and copy the code. These are the real animations, not recordings.
-- **Search placeholder:** Search 617 animations
+- **Search placeholder:** Search 629 animations
 - **Empty state:** No animation matches "{query}". Try a shorter word, or pick a category.
 - **Card hint (small, once):** Effects marked "Needs JS" use the optional interactive engine.
 
@@ -113,13 +113,13 @@ Rule: only card 1 is highlighted. One accent per viewport.
 ### 1.10 Documentation teaser
 - **H2:** Everything you need to ship
 - **Intro:** Installation, the full animation reference, the scroll and interactive engines, TypeScript types, theming and accessibility.
-- **Links:** Installation (CDN, npm, per-category imports) · Animation reference (all 617) · Scroll animations (3 ways to trigger) · Interactive engine · TypeScript · Contributing
+- **Links:** Installation (CDN, npm, per-category imports) · Animation reference (all 629) · Scroll animations (3 ways to trigger) · Interactive engine · TypeScript · Contributing
 - **Buttons:** Open the docs · View on GitHub
 
 ### 1.11 Quick answers (generated from `faqs()` in `scripts/docs/site-lib.js`; wording below is the target)
-1. **What is the best CSS animation library for Angular?** There is no single best option, but a CSS-only library suits Angular because it needs no Angular-specific code. SDS Motion Forge provides 617 animations as plain CSS classes: load the stylesheet once and add a class to any element.
+1. **What is the best CSS animation library for Angular?** There is no single best option, but a CSS-only library suits Angular because it needs no Angular-specific code. SDS Motion Forge provides 629 animations as plain CSS classes: load the stylesheet once and add a class to any element.
 2. **How do I add scroll animations without JavaScript?** Add `sds-scroll-auto` and any `sds-scroll-*` class, for example `class="sds-scroll-auto sds-scroll-rise"`. It uses native CSS scroll-driven animation (Chrome 115+). Browsers without it show the content unanimated. The optional 1.3 KB script covers the rest.
-3. **Is there an Animate.css alternative?** Yes. SDS Motion Forge is CSS-only and covers 617 effects in six categories. The trade-off is size: the full bundle is 43.8 KB gzip against 5.2 KB for Animate.css 4.1.1, so import one category (5.8–13.5 KB gzip) if size matters.
+3. **Is there an Animate.css alternative?** Yes. SDS Motion Forge is CSS-only and covers 629 effects in six categories. The trade-off is size: the full bundle is 43.8 KB gzip against 5.2 KB for Animate.css 4.1.1, so import one category (5.8–13.5 KB gzip) if size matters.
 4. **Does it respect `prefers-reduced-motion`?** Yes. Every animating selector is neutralised under `prefers-reduced-motion: reduce`, and the build fails if one is missed.
 5. **How big is it, and can I import part of it?** Full bundle 43.8 KB gzip. Each category is 5.8–13.5 KB gzip and can be imported alone.
 6. **Does it work with React, Vue, Next.js and Tailwind?** Yes. Load `dist/motion.min.css` once and use the class names with `className` or `class`.
@@ -132,7 +132,7 @@ Rule: only card 1 is highlighted. One accent per viewport.
 - **Buttons:** Browse the animations · Read the docs
 
 ### 1.13 Footer
-- **Blurb:** 617 CSS animations. One class name each. No JavaScript required. Open source under the MIT licence. Made by Salkom Design Studio.
+- **Blurb:** 629 CSS animations. One class name each. No JavaScript required. Open source under the MIT licence. Made by Salkom Design Studio.
 - **Columns:** Product (Features, Gallery, Playground) · Resources (Docs, npm, Changelog, Issues) · Studio (Salkom Design Studio, MIT licence, Privacy, Accessibility)
 - **Legal line:** © 2026 Salkom Design Studio · MIT licence
 
@@ -161,7 +161,7 @@ Rule: only card 1 is highlighted. One accent per viewport.
 
 | | SDS Motion Forge 5.2.0 | Animate.css 4.1.1 |
 |---|---|---|
-| Effects | 617 (+ 7 interactive) | see Animate.css |
+| Effects | 629 (+ 7 interactive) | see Animate.css |
 | `@keyframes` | 636 | 97 |
 | Full bundle | 261.0 KB min · 43.8 KB gzip | 70.1 KB min · 5.2 KB gzip |
 | Import part of it | Six category bundles, 5.8–13.5 KB gzip | Individual source files |
@@ -253,9 +253,9 @@ Rule: only card 1 is highlighted. One accent per viewport.
 
 | URL | Title | Description | H1 | Primary keyword |
 |---|---|---|---|---|
-| `/` | 617 CSS Animations, One Class Each — SDS Motion Forge | 617 production-ready CSS animations in 6 categories. Add one class name to any element — no JavaScript, no build step, no config. Free and open source. | Motion at the speed of class | css animation library |
+| `/` | 629 CSS Animations, One Class Each — SDS Motion Forge | 629 production-ready CSS animations in 6 categories. Add one class name to any element — no JavaScript, no build step, no config. Free and open source. | Motion at the speed of class | css animation library |
 | `/docs.html` | SDS Motion Forge Docs — Install, Usage, Frameworks | Install SDS Motion Forge and use every animation: CDN and npm setup, framework guides, scroll and interactive engines, TypeScript, theming. | Installation | css animation library documentation |
-| `/animations/` | All 617 CSS Animations \| SDS Motion Forge | Every SDS Motion Forge animation on one page: CSS-only effects in six categories plus cursor-reactive effects. One class name each. | All animations | css animations list |
+| `/animations/` | All 629 CSS Animations \| SDS Motion Forge | Every SDS Motion Forge animation on one page: CSS-only effects in six categories plus cursor-reactive effects. One class name each. | All animations | css animations list |
 | `/categories/text/` | 117 Text CSS animations — copy-paste classes \| SDS Motion Forge | Text animations: 117 ready-made effects, each one class name, CSS-only, MIT licensed. | Text animations | css text animations |
 | `/compare/animate-css` | SDS Motion Forge vs Animate.css — Size and Coverage | Compare size, coverage and licence of SDS Motion Forge and Animate.css 4.1.1 with measured numbers. | SDS Motion Forge vs Animate.css | animate.css alternative |
 | `/accessibility` | Accessibility — SDS Motion Forge | How SDS Motion Forge handles reduced motion, and what you need to do on your side. | Accessibility | css animations reduced motion |
@@ -280,7 +280,7 @@ Rule: only card 1 is highlighted. One accent per viewport.
 
 | What | Needs JavaScript? | Notes |
 |---|---|---|
-| 617 CSS effects | No | Some need markup: 13 text effects need each letter in a `.sds-char` span, 48 animate child elements, 29 input effects need a wrapper. |
+| 629 CSS effects | No | Some need markup: 13 text effects need each letter in a `.sds-char` span, 48 animate child elements, 29 input effects need a wrapper. |
 | 100 scroll effects | Only to trigger on scroll in some browsers | `sds-scroll-auto` + `sds-scroll-*` is CSS-only in Chrome 115+. Elsewhere use the 1.3 KB `sds-scroll.min.js` and `data-sds`; without either the effect plays on load. |
 | 7 cursor-reactive effects | Yes | Need the 7 KB `motion-interactive.min.js`. |
 | Physics easing | No | Needs CSS `linear()` (Chrome 113+, Safari 17.2+, Firefox 112+); older browsers get a cubic-bezier approximation. |

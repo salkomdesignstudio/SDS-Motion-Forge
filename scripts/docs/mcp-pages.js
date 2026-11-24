@@ -442,7 +442,7 @@ module.exports.fragments = function fragments({ S, esc }) {
           <p class="doc-p">Scores rank similarity and never claim an exact match. <a href="/mcp/">Read how it works</a>.</p>
         </section>`;
 
-  const cats = [["Text", 117], ["Buttons", 100], ["Inputs", 100], ["Cards", 100], ["Loaders", 100], ["Scroll", 100]];
+  const cats = [["Text", 117], ["Buttons", 112], ["Inputs", 100], ["Cards", 100], ["Loaders", 100], ["Scroll", 100]];
   const CAT_COLOURS = ["#5c4ae1", "#19b5a5", "#ec5f9b", "#3b82f6", "#f2603c", "#1a9b57"];
   const seg = cats.map(([n, c], i) => `<span class="w-seg" style="flex:${c};background:${CAT_COLOURS[i]}" title="${n} ${c}"></span>`).join("");
   const legend = cats.map(([n, c], i) => `<li><i style="background:${CAT_COLOURS[i]}"></i>${n} <b>${c}</b></li>`).join("");
@@ -482,7 +482,7 @@ module.exports.fragments = function fragments({ S, esc }) {
           <article class="w-card w-2" data-reveal="up" data-delay="3">
             <header>${icon("scroll")}<span class="w-label">Performance</span></header>
             <div class="w-stat w-stat-sm"><b>468<small> / ${total}</small></b></div>
-            <div class="w-meter" role="img" aria-label="468 of 617 effects are compositor-only"><span style="width:75.8%"></span></div>
+            <div class="w-meter" role="img" aria-label="480 of 629 effects are compositor-only"><span style="width:76.3%"></span></div>
             <p>animate only transform, opacity, filter or clip-path. The other 149 also animate shadows, gradients or sizes and can cost more on slow devices.</p>
           </article>
           <article class="w-card w-6 w-split" data-reveal="up" data-delay="1">
