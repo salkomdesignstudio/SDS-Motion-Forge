@@ -512,7 +512,7 @@ a:hover > .sbi .ic-f, a[aria-current] > .sbi .ic-f, .sb-link:hover .sbi .ic-f, .
 .h-bar { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--m-line); background: var(--m-tint); }
 .h-dots { display: inline-flex; gap: 6px; } .h-dots i { width: 10px; height: 10px; border-radius: 50%; background: var(--m-line2); }
 .h-title { font: 600 13.5px "Manrope", Arial, sans-serif; color: var(--m-ink); } .h-title em { margin-left: 8px; font-style: normal; font-weight: 500; color: var(--m-ink3); }
-.h-ex { margin-left: auto; padding: 2px 10px; border-radius: 999px; background: var(--m-tint2); color: var(--m-deep); font: 700 11.5px "Manrope", Arial, sans-serif; }
+.h-ex { margin-left: auto; padding: 4px 11px; border-radius: 999px; background: var(--m-tint2); color: var(--m-deep); font: 700 11.5px "Manrope", Arial, sans-serif; }
 .h-body { display: flex; flex-direction: column; gap: 14px; padding: 18px; }
 .h-user { align-self: flex-end; max-width: 86%; margin: 0; padding: 11px 14px; border-radius: 16px 16px 4px 16px; background: var(--m-brand); color: #fff; font: 500 14.5px/1.45 "Manrope", Arial, sans-serif; }
 .h-calls { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }

@@ -228,3 +228,13 @@ table td, table th { padding-top: 12px; padding-bottom: 12px; }
 
 /* code blocks never push the page sideways: they scroll inside their own box */
 pre { max-width: 100%; overflow-x: auto; }
+
+/* brand font icons swap to their fill drawing while the row, link or button is hovered */
+li:hover > .ri-html5-line:before, .tile:hover .ri-html5-line:before { content: "\ee40"; }
+li:hover > .ri-reactjs-line:before, .tile:hover .ri-reactjs-line:before { content: "\f057"; }
+li:hover > .ri-vuejs-line:before, .tile:hover .ri-vuejs-line:before { content: "\f2a5"; }
+li:hover > .ri-nextjs-line:before, .tile:hover .ri-nextjs-line:before { content: "\f502"; }
+li:hover > .ri-bootstrap-line:before, .tile:hover .ri-bootstrap-line:before { content: "\f2ee"; }
+li:hover > .ri-tailwind-css-line:before, .tile:hover .ri-tailwind-css-line:before { content: "\f517"; }
+li:hover > .ri-javascript-line:before, .tile:hover .ri-javascript-line:before { content: "\f33a"; }
+li:hover > .ri-github-line:before, .tile:hover .ri-github-line:before { content: "\edca"; }

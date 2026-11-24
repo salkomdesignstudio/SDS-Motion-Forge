@@ -564,7 +564,6 @@ module.exports.fragments = function fragments({ S, esc }) {
     </section>`;
 
   const { glyph } = require("./icons");
-  const sparkle = (cls) => `<svg class="${cls}" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 2.5v19M2.5 12h19M5.3 5.3l13.4 13.4M18.7 5.3 5.3 18.7"/></svg>`;
   /* Hero tiles: ten, five per side, grouped around the vertical centre (left-centre and right-centre) with a few reaching
      towards the top and bottom. Positions are percent of the hero so they follow the width. There are 11 logos for 10 tiles, so one
      logo is always spare: the swap script gives a changing tile the spare and takes its old logo back, so no logo is ever on screen twice. */
