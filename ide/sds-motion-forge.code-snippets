@@ -1461,6 +1461,269 @@
   "description": "Gravity Drop — text animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the text bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
+ "SDS Card Depth (sds-gsap-card-depth)": {
+  "prefix": [
+   "sds-gsap-card-depth"
+  ],
+  "body": [
+   "<div class=\"sds-gsap-card-depth\">",
+   "  <div data-depth=\"0.4\">Back</div>",
+   "  <div data-depth=\"1\">Front</div>",
+   "</div>"
+  ],
+  "description": "Card Depth — interactive animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the interactive bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Card Fan (sds-gsap-card-fan)": {
+  "prefix": [
+   "sds-gsap-card-fan"
+  ],
+  "body": [
+   "<div class=\"sds-gsap-card-fan\">",
+   "  <div>A</div>",
+   "  <div>B</div>",
+   "  <div>C</div>",
+   "  <div>D</div>",
+   "</div>"
+  ],
+  "description": "Card Fan — interactive animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the interactive bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Card Flip In (sds-gsap-card-flip-in)": {
+  "prefix": [
+   "sds-gsap-card-flip-in"
+  ],
+  "body": [
+   "<div class=\"sds-gsap-card-flip-in\">",
+   "  <div>One</div>",
+   "  <div>Two</div>",
+   "  <div>Three</div>",
+   "</div>"
+  ],
+  "description": "Card Flip In — interactive animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the interactive bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Card Magnetic (sds-gsap-card-magnetic)": {
+  "prefix": [
+   "sds-gsap-card-magnetic"
+  ],
+  "body": [
+   "<div class=\"sds-gsap-card-magnetic\">Pull me</div>"
+  ],
+  "description": "Card Magnetic — interactive animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the interactive bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Card Spotlight (sds-gsap-card-spotlight)": {
+  "prefix": [
+   "sds-gsap-card-spotlight"
+  ],
+  "body": [
+   "<div class=\"sds-gsap-card-spotlight\">Spotlight</div>"
+  ],
+  "description": "Card Spotlight — interactive animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the interactive bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Card Tilt (sds-gsap-card-tilt)": {
+  "prefix": [
+   "sds-gsap-card-tilt"
+  ],
+  "body": [
+   "<div class=\"sds-gsap-card-tilt\">Tilt me</div>"
+  ],
+  "description": "Card Tilt — interactive animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the interactive bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Loader Blob (sds-gsap-loader-blob)": {
+  "prefix": [
+   "sds-gsap-loader-blob"
+  ],
+  "body": [
+   "<span class=\"sds-gsap-loader-blob\" role=\"status\" aria-label=\"Loading\"></span>"
+  ],
+  "description": "Loader Blob — interactive animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the interactive bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Loader Chase (sds-gsap-loader-chase)": {
+  "prefix": [
+   "sds-gsap-loader-chase"
+  ],
+  "body": [
+   "<span class=\"sds-gsap-loader-chase\" role=\"status\" aria-label=\"Loading\"></span>"
+  ],
+  "description": "Loader Chase — interactive animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the interactive bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Loader Count (sds-gsap-loader-count)": {
+  "prefix": [
+   "sds-gsap-loader-count"
+  ],
+  "body": [
+   "<span class=\"sds-gsap-loader-count\">0%</span>"
+  ],
+  "description": "Loader Count — interactive animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the interactive bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Loader Equalizer (sds-gsap-loader-equalizer)": {
+  "prefix": [
+   "sds-gsap-loader-equalizer"
+  ],
+  "body": [
+   "<span class=\"sds-gsap-loader-equalizer\" role=\"status\" aria-label=\"Loading\"></span>"
+  ],
+  "description": "Loader Equalizer — interactive animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the interactive bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Loader Orbit (sds-gsap-loader-orbit)": {
+  "prefix": [
+   "sds-gsap-loader-orbit"
+  ],
+  "body": [
+   "<span class=\"sds-gsap-loader-orbit\" role=\"status\" aria-label=\"Loading\"></span>"
+  ],
+  "description": "Loader Orbit — interactive animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the interactive bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Loader Ring (sds-gsap-loader-ring)": {
+  "prefix": [
+   "sds-gsap-loader-ring"
+  ],
+  "body": [
+   "<span class=\"sds-gsap-loader-ring\" role=\"status\" aria-label=\"Loading\"></span>"
+  ],
+  "description": "Loader Ring — interactive animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the interactive bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Scroll Horizontal (sds-gsap-scroll-horizontal)": {
+  "prefix": [
+   "sds-gsap-scroll-horizontal"
+  ],
+  "body": [
+   "<div class=\"sds-gsap-scroll-horizontal\">",
+   "  <div>",
+   "    <div>One</div>",
+   "    <div>Two</div>",
+   "    <div>Three</div>",
+   "    <div>Four</div>",
+   "  </div>",
+   "</div>"
+  ],
+  "description": "Scroll Horizontal — interactive animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the interactive bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Scroll Parallax (sds-gsap-scroll-parallax)": {
+  "prefix": [
+   "sds-gsap-scroll-parallax"
+  ],
+  "body": [
+   "<div class=\"sds-gsap-scroll-parallax\" data-sds-speed=\"0.4\">Parallax</div>"
+  ],
+  "description": "Scroll Parallax — interactive animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the interactive bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Scroll Pin (sds-gsap-scroll-pin)": {
+  "prefix": [
+   "sds-gsap-scroll-pin"
+  ],
+  "body": [
+   "<section class=\"sds-gsap-scroll-pin\" data-sds-length=\"100%\">Pinned while you scroll</section>"
+  ],
+  "description": "Scroll Pin — interactive animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the interactive bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Scroll Progress (sds-gsap-scroll-progress)": {
+  "prefix": [
+   "sds-gsap-scroll-progress"
+  ],
+  "body": [
+   "<div class=\"sds-gsap-scroll-progress\"></div>"
+  ],
+  "description": "Scroll Progress — interactive animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the interactive bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Scroll Stagger (sds-gsap-scroll-stagger)": {
+  "prefix": [
+   "sds-gsap-scroll-stagger"
+  ],
+  "body": [
+   "<div class=\"sds-gsap-scroll-stagger\">",
+   "  <div>One</div>",
+   "  <div>Two</div>",
+   "  <div>Three</div>",
+   "</div>"
+  ],
+  "description": "Scroll Stagger — interactive animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the interactive bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Scroll Zoom (sds-gsap-scroll-zoom)": {
+  "prefix": [
+   "sds-gsap-scroll-zoom"
+  ],
+  "body": [
+   "<div class=\"sds-gsap-scroll-zoom\">Zoom into view</div>"
+  ],
+  "description": "Scroll Zoom — interactive animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the interactive bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Text Count (sds-gsap-text-count)": {
+  "prefix": [
+   "sds-gsap-text-count"
+  ],
+  "body": [
+   "<h2 class=\"sds-gsap-text-count\" data-sds-to=\"12800\" data-sds-suffix=\"+\">0</h2>"
+  ],
+  "description": "Text Count — interactive animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the interactive bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Text Marquee (sds-gsap-text-marquee)": {
+  "prefix": [
+   "sds-gsap-text-marquee"
+  ],
+  "body": [
+   "<div class=\"sds-gsap-text-marquee\">Motion Forge · Motion Forge · Motion Forge · </div>"
+  ],
+  "description": "Text Marquee — interactive animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the interactive bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Text Mask (sds-gsap-text-mask)": {
+  "prefix": [
+   "sds-gsap-text-mask"
+  ],
+  "body": [
+   "<h2 class=\"sds-gsap-text-mask\">Words slide up from a mask</h2>"
+  ],
+  "description": "Text Mask — interactive animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the interactive bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Text Scramble (sds-gsap-text-scramble)": {
+  "prefix": [
+   "sds-gsap-text-scramble"
+  ],
+  "body": [
+   "<h2 class=\"sds-gsap-text-scramble\">Decoding the message</h2>"
+  ],
+  "description": "Text Scramble — interactive animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the interactive bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Text Scrub (sds-gsap-text-scrub)": {
+  "prefix": [
+   "sds-gsap-text-scrub"
+  ],
+  "body": [
+   "<p class=\"sds-gsap-text-scrub\">Every word lights up as you scroll past it, so the reader always knows where they are.</p>"
+  ],
+  "description": "Text Scrub — interactive animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the interactive bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Text Wave (sds-gsap-text-wave)": {
+  "prefix": [
+   "sds-gsap-text-wave"
+  ],
+  "body": [
+   "<h2 class=\"sds-gsap-text-wave\">Letters rise in a wave</h2>"
+  ],
+  "description": "Text Wave — interactive animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the interactive bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
  "SDS Heartbeat (sds-heartbeat-text)": {
   "prefix": [
    "sds-heartbeat-text"

@@ -632,6 +632,102 @@
      "description": "Gravity Drop — text · Falls from above with overshoot bounce. https://sds-motion-forge.netlify.app/animations/gravity-drop/"
     },
     {
+     "name": "sds-gsap-card-depth",
+     "description": "Card Depth — interactive · The layers inside the card shift by different amounts as the pointer moves, for a sense of depth. https://sds-motion-forge.netlify.app/animations/gsap-card-depth/"
+    },
+    {
+     "name": "sds-gsap-card-fan",
+     "description": "Card Fan — interactive · A stack of cards fans out like a hand of playing cards when it scrolls into view. https://sds-motion-forge.netlify.app/animations/gsap-card-fan/"
+    },
+    {
+     "name": "sds-gsap-card-flip-in",
+     "description": "Card Flip In — interactive · Cards flip in one by one around the vertical axis when they scroll into view. https://sds-motion-forge.netlify.app/animations/gsap-card-flip-in/"
+    },
+    {
+     "name": "sds-gsap-card-magnetic",
+     "description": "Card Magnetic — interactive · The card is pulled towards the pointer and snaps back with an elastic bounce. https://sds-motion-forge.netlify.app/animations/gsap-card-magnetic/"
+    },
+    {
+     "name": "sds-gsap-card-spotlight",
+     "description": "Card Spotlight — interactive · A soft spotlight follows the pointer across the card surface. https://sds-motion-forge.netlify.app/animations/gsap-card-spotlight/"
+    },
+    {
+     "name": "sds-gsap-card-tilt",
+     "description": "Card Tilt — interactive · The card tilts in 3D towards the pointer and springs back when it leaves. https://sds-motion-forge.netlify.app/animations/gsap-card-tilt/"
+    },
+    {
+     "name": "sds-gsap-loader-blob",
+     "description": "Loader Blob — interactive · A blob squashes and stretches as it wobbles. https://sds-motion-forge.netlify.app/animations/gsap-loader-blob/"
+    },
+    {
+     "name": "sds-gsap-loader-chase",
+     "description": "Loader Chase — interactive · Three dots bounce in a chase, one after another. https://sds-motion-forge.netlify.app/animations/gsap-loader-chase/"
+    },
+    {
+     "name": "sds-gsap-loader-count",
+     "description": "Loader Count — interactive · A percentage counts from 0 to 100 on a loop and exposes the value as a progress bar. https://sds-motion-forge.netlify.app/animations/gsap-loader-count/"
+    },
+    {
+     "name": "sds-gsap-loader-equalizer",
+     "description": "Loader Equalizer — interactive · Five bars bounce like an audio equalizer, each at its own random pace. https://sds-motion-forge.netlify.app/animations/gsap-loader-equalizer/"
+    },
+    {
+     "name": "sds-gsap-loader-orbit",
+     "description": "Loader Orbit — interactive · Three dots orbit a centre point, each with its own eased rhythm. https://sds-motion-forge.netlify.app/animations/gsap-loader-orbit/"
+    },
+    {
+     "name": "sds-gsap-loader-ring",
+     "description": "Loader Ring — interactive · A ring spins with an elastic snap and breathes in and out. https://sds-motion-forge.netlify.app/animations/gsap-loader-ring/"
+    },
+    {
+     "name": "sds-gsap-scroll-horizontal",
+     "description": "Scroll Horizontal — interactive · The section pins and its row of panels slides sideways as you scroll down. https://sds-motion-forge.netlify.app/animations/gsap-scroll-horizontal/"
+    },
+    {
+     "name": "sds-gsap-scroll-parallax",
+     "description": "Scroll Parallax — interactive · The element drifts slower or faster than the page as you scroll. https://sds-motion-forge.netlify.app/animations/gsap-scroll-parallax/"
+    },
+    {
+     "name": "sds-gsap-scroll-pin",
+     "description": "Scroll Pin — interactive · The section stays pinned on screen while you scroll through its length. https://sds-motion-forge.netlify.app/animations/gsap-scroll-pin/"
+    },
+    {
+     "name": "sds-gsap-scroll-progress",
+     "description": "Scroll Progress — interactive · A bar at the top of the page fills as you read down the document. https://sds-motion-forge.netlify.app/animations/gsap-scroll-progress/"
+    },
+    {
+     "name": "sds-gsap-scroll-stagger",
+     "description": "Scroll Stagger — interactive · Child elements rise into place in a staggered batch as they enter the viewport. https://sds-motion-forge.netlify.app/animations/gsap-scroll-stagger/"
+    },
+    {
+     "name": "sds-gsap-scroll-zoom",
+     "description": "Scroll Zoom — interactive · The element grows from a rounded, smaller frame to full size as it scrolls up the screen. https://sds-motion-forge.netlify.app/animations/gsap-scroll-zoom/"
+    },
+    {
+     "name": "sds-gsap-text-count",
+     "description": "Text Count — interactive · A number counts up to the value in data-sds-to when it scrolls into view. https://sds-motion-forge.netlify.app/animations/gsap-text-count/"
+    },
+    {
+     "name": "sds-gsap-text-marquee",
+     "description": "Text Marquee — interactive · A seamless looping marquee that speeds up while you scroll. https://sds-motion-forge.netlify.app/animations/gsap-text-marquee/"
+    },
+    {
+     "name": "sds-gsap-text-mask",
+     "description": "Text Mask — interactive · Words slide up out of an invisible mask, one after another. https://sds-motion-forge.netlify.app/animations/gsap-text-mask/"
+    },
+    {
+     "name": "sds-gsap-text-scramble",
+     "description": "Text Scramble — interactive · The text decodes out of random characters, left to right. https://sds-motion-forge.netlify.app/animations/gsap-text-scramble/"
+    },
+    {
+     "name": "sds-gsap-text-scrub",
+     "description": "Text Scrub — interactive · Words light up one by one as you scroll past the paragraph. https://sds-motion-forge.netlify.app/animations/gsap-text-scrub/"
+    },
+    {
+     "name": "sds-gsap-text-wave",
+     "description": "Text Wave — interactive · Letters rise into place in a wave with a small overshoot when the text scrolls into view. https://sds-motion-forge.netlify.app/animations/gsap-text-wave/"
+    },
+    {
      "name": "sds-heartbeat-text",
      "description": "Heartbeat — text · Beats like a heartbeat (loop). https://sds-motion-forge.netlify.app/animations/heartbeat-text/"
     },

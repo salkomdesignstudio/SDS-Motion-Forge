@@ -2317,3 +2317,47 @@ html:not(.sds-js) [data-sds] {
 .sds-card-idle-rock {
   animation: sds-idleRock 3.5s ease-in-out infinite;
 }
+
+/* ============================================================
+   GSAP engine classes (need the optional sds-gsap.min.js)
+   Base styles only: the motion is driven by GSAP, see src/sds-gsap.js
+   ============================================================ */
+
+.sds-gsap-card-tilt {
+  will-change: transform;
+}
+
+.sds-gsap-card-magnetic {
+  will-change: transform;
+}
+
+.sds-gsap-card-spotlight {
+  position: relative;
+  overflow: hidden;
+}
+
+.sds-gsap-card-spotlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle 180px at var(--sds-x, 50%) var(--sds-y, 50%), rgba(255, 255, 255, 0.4), transparent 70%);
+  opacity: var(--sds-o, 0);
+}
+
+.sds-gsap-card-fan {
+  display: flex;
+  justify-content: center;
+  gap: 0.75em;
+}
+
+.sds-gsap-card-flip-in {
+  display: flex;
+  justify-content: center;
+  gap: 0.75em;
+}
+
+.sds-gsap-card-depth {
+  position: relative;
+  overflow: hidden;
+}

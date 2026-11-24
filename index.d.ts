@@ -387,6 +387,35 @@ export type SdsModifier =
  */
 export type SdsScrollGate = 'sds-play' | 'sds-scroll-auto';
 
+/**
+ * The 24 GSAP class names. They need the optional dist/sds-gsap.min.js, which loads GSAP from a CDN on first use.
+ */
+export type SdsGsapAnimation =
+  | 'sds-gsap-card-depth'
+  | 'sds-gsap-card-fan'
+  | 'sds-gsap-card-flip-in'
+  | 'sds-gsap-card-magnetic'
+  | 'sds-gsap-card-spotlight'
+  | 'sds-gsap-card-tilt'
+  | 'sds-gsap-loader-blob'
+  | 'sds-gsap-loader-chase'
+  | 'sds-gsap-loader-count'
+  | 'sds-gsap-loader-equalizer'
+  | 'sds-gsap-loader-orbit'
+  | 'sds-gsap-loader-ring'
+  | 'sds-gsap-scroll-horizontal'
+  | 'sds-gsap-scroll-parallax'
+  | 'sds-gsap-scroll-pin'
+  | 'sds-gsap-scroll-progress'
+  | 'sds-gsap-scroll-stagger'
+  | 'sds-gsap-scroll-zoom'
+  | 'sds-gsap-text-count'
+  | 'sds-gsap-text-marquee'
+  | 'sds-gsap-text-mask'
+  | 'sds-gsap-text-scramble'
+  | 'sds-gsap-text-scrub'
+  | 'sds-gsap-text-wave';
+
 /** Union of every public SDS Motion Forge class name. */
 export type SdsAnimationClass =
   | SdsTextAnimation
@@ -394,6 +423,7 @@ export type SdsAnimationClass =
   | SdsLoaderAnimation
   | SdsScrollAnimation
   | SdsInteractiveAnimation
+  | SdsGsapAnimation
   | SdsModifier
   | SdsScrollGate;
 

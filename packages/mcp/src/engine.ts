@@ -162,14 +162,16 @@ export function buildUsage(entry: CatalogEntry, framework: Framework, o: UsageOp
   const pkg = "@salkomdesignstudio/sds-motion-forge";
   const imports: string[] = [];
   if (entry.category === "scroll") imports.push(`import "${pkg}/dist/sds-scroll.min.js"; // optional 1.3 KB scroll gate, client-side only`);
-  if (entry.kind === "interactive" || entry.category === "interactive") imports.push(`import "${pkg}/dist/motion-interactive.min.js"; // cursor engine, client-side only`);
+  const gsapEngine = entry.requires.jsEngine === "sds-gsap";
+  if (gsapEngine) imports.push(`import "${pkg}/dist/sds-gsap.min.js"; // GSAP engine: loads GSAP from a CDN on first use, client-side only`);
+  else if (entry.kind === "interactive" || entry.category === "interactive") imports.push(`import "${pkg}/dist/motion-interactive.min.js"; // cursor engine, client-side only`);
 
   let code: string;
   if (framework === "html") {
     const el = addToFirstTag(base, cls, style, false);
     const scripts = [
       entry.category === "scroll" ? `    <script src="https://cdn.jsdelivr.net/npm/${pkg}/dist/sds-scroll.min.js" defer></script>` : "",
-      entry.category === "interactive" ? `    <script src="https://cdn.jsdelivr.net/npm/${pkg}/dist/motion-interactive.min.js" defer></script>` : "",
+      gsapEngine ? `    <script src="https://cdn.jsdelivr.net/npm/${pkg}/dist/sds-gsap.min.js" defer></script>` : entry.category === "interactive" ? `    <script src="https://cdn.jsdelivr.net/npm/${pkg}/dist/motion-interactive.min.js" defer></script>` : "",
     ].filter(Boolean).join("\n");
     code = `<link rel="stylesheet" href="${catalog.install.cdn}" />\n${scripts ? scripts + "\n" : ""}\n${el}`;
   } else if (framework === "react") {

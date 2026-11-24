@@ -28,6 +28,22 @@
 /* the UI inputs (sds-input-ui-*) bring their own surface, label and focus effect; the stage only sets the type size and a narrower width */
 .fx-stage [class*="sds-input-ui-"] { --sds-input-width: 12.5em; font: 600 14px "Manrope", Arial, sans-serif; }
 .fx-stage [class*="sds-input-ui-"] > input { width: 100%; max-width: none; height: 100%; padding: 1.3em 1em 0.3em; border: 0; border-radius: inherit; background: transparent; color: inherit; font: inherit; }
+/* GSAP engine demos (sds-gsap-*): small boxes that fit the stage */
+.fx-stage :is(.sds-gsap-card-tilt, .sds-gsap-card-magnetic, .sds-gsap-card-spotlight, .sds-gsap-card-depth) { display: grid; place-items: center; width: 150px; height: 88px; border: 1px solid #d9dde4; border-radius: 14px; background: #fff; color: #16182c; font: 600 14px "Manrope", Arial, sans-serif; box-shadow: 0 1px 2px rgba(20, 22, 42, 0.06); }
+.fx-stage .sds-gsap-card-depth { position: relative; }
+.fx-stage .sds-gsap-card-depth > div { position: absolute; inset: 0; display: grid; place-items: center; }
+.fx-stage .sds-gsap-card-depth > div:first-child { color: rgba(20, 22, 42, 0.3); font-size: 26px; }
+.fx-stage :is(.sds-gsap-card-fan, .sds-gsap-card-flip-in) { gap: 8px; }
+.fx-stage :is(.sds-gsap-card-fan, .sds-gsap-card-flip-in) > div { display: grid; place-items: center; width: 46px; height: 62px; border: 1px solid #d9dde4; border-radius: 10px; background: #fff; color: #16182c; font: 700 13px "Manrope", Arial, sans-serif; box-shadow: 0 1px 2px rgba(20, 22, 42, 0.06); }
+.fx-stage .sds-gsap-card-fan { margin-top: 14px; gap: 0; }
+.fx-stage :is(.sds-gsap-scroll-pin, .sds-gsap-scroll-parallax, .sds-gsap-scroll-zoom) { display: grid; place-items: center; width: 150px; height: 64px; border: 1px solid #d9dde4; border-radius: 14px; background: #fff; color: #16182c; font: 600 13px "Manrope", Arial, sans-serif; text-align: center; }
+.fx-stage .sds-gsap-scroll-horizontal { width: 170px; }
+.fx-stage .sds-gsap-scroll-horizontal > div > div, .fx-stage .sds-gsap-scroll-stagger > div { display: grid; place-items: center; min-width: 58px; height: 52px; border: 1px solid #d9dde4; border-radius: 10px; background: #fff; color: #16182c; font: 600 13px "Manrope", Arial, sans-serif; }
+.fx-stage .sds-gsap-scroll-stagger { display: flex; gap: 8px; }
+.fx-stage .sds-gsap-scroll-progress { position: relative; z-index: auto; width: 160px; height: 6px; border-radius: 99px; }
+.fx-stage :is(.sds-gsap-text-scrub, .sds-gsap-text-wave, .sds-gsap-text-mask, .sds-gsap-text-scramble, .sds-gsap-text-count) { max-width: 90%; margin: 0; font: 700 20px/1.2 "Manrope", Arial, sans-serif; letter-spacing: -0.03em; text-align: center; }
+.fx-stage .sds-gsap-text-scrub { font-size: 15px; font-weight: 600; line-height: 1.35; }
+.fx-stage .sds-gsap-text-marquee { width: 100%; font: 800 26px "Manrope", Arial, sans-serif; letter-spacing: -0.03em; }
 .fx-stage .sds-loader-skeleton { display: block; width: 160px; height: 14px; }
 .fx-stage .sds-loader-progress-glow { display: block; width: 160px; height: 6px; border-radius: 99px; background: var(--sds-primary); transform-origin: left center; }
 .fx-replay { position: absolute; top: 14px; right: 14px; z-index: 3; display: grid; place-items: center; width: 32px; height: 32px; padding: 0; border: 1px solid #e1e3e9; border-radius: 50%; background: #fff; color: #43475c; cursor: pointer; opacity: 0; transition: opacity 0.15s; }

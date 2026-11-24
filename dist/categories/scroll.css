@@ -2426,6 +2426,50 @@ html:not(.sds-js) [data-sds] {
   }
 }
 
+/* ============================================================
+   GSAP engine classes (need the optional sds-gsap.min.js)
+   Base styles only: the motion is driven by GSAP, see src/sds-gsap.js
+   ============================================================ */
+
+.sds-gsap-scroll-parallax {
+  will-change: transform;
+}
+
+.sds-gsap-scroll-zoom {
+  will-change: transform;
+}
+
+.sds-gsap-scroll-horizontal {
+  overflow: hidden;
+}
+
+.sds-gsap-scroll-horizontal > :first-child {
+  display: flex;
+  gap: 1em;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.sds-gsap-scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  height: 3px;
+  background: var(--sds-primary, #0015d1);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+}
+
+.sds-gsap-scroll-pin {
+  display: block;
+}
+
+.sds-gsap-scroll-stagger {
+  display: block;
+}
+
 /* ── Cross-category keyframe dependencies ── */
 /* dependency: @keyframes sds-depthPortal (defined in cards.css) */
 @keyframes sds-depthPortal {

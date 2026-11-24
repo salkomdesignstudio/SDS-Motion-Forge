@@ -3112,6 +3112,59 @@ html:not(.sds-js) [data-sds] {
   animation: sds-ldThrob 1.1s ease-in-out infinite;
 }
 
+/* ============================================================
+   GSAP engine classes (need the optional sds-gsap.min.js)
+   Base styles only: the motion is driven by GSAP, see src/sds-gsap.js
+   ============================================================ */
+
+.sds-gsap-loader-orbit {
+  position: relative;
+  display: inline-block;
+  width: 2.5em;
+  height: 2.5em;
+  color: var(--sds-primary, #0015d1);
+}
+
+.sds-gsap-loader-chase {
+  position: relative;
+  display: inline-block;
+  width: 2.5em;
+  height: 2.5em;
+  color: var(--sds-primary, #0015d1);
+}
+
+.sds-gsap-loader-equalizer {
+  position: relative;
+  display: inline-block;
+  width: 2.5em;
+  height: 2.5em;
+  color: var(--sds-primary, #0015d1);
+}
+
+.sds-gsap-loader-ring {
+  position: relative;
+  display: inline-block;
+  width: 2.5em;
+  height: 2.5em;
+  color: var(--sds-primary, #0015d1);
+}
+
+.sds-gsap-loader-blob {
+  position: relative;
+  display: inline-block;
+  width: 2.5em;
+  height: 2.5em;
+  color: var(--sds-primary, #0015d1);
+}
+
+.sds-gsap-loader-count {
+  display: inline-block;
+  min-width: 3ch;
+  color: var(--sds-primary, #0015d1);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
 /* ── Cross-category keyframe dependencies ── */
 /* dependency: @keyframes sds-typewriterPrem (defined in text.css) */
 @keyframes sds-typewriterPrem {

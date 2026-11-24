@@ -180,12 +180,12 @@ import '@salkomdesignstudio/sds-motion-forge/categories/loaders';
 <!-- @sds-size-table:start -->
 | Bundle | Import | Minified | Gzip |
 |---|---|---|---|
-| text | `@salkomdesignstudio/sds-motion-forge/categories/text` | 65.7 KB | 13.7 KB |
-| cards | `@salkomdesignstudio/sds-motion-forge/categories/cards` | 40.4 KB | 7.6 KB |
-| loaders | `@salkomdesignstudio/sds-motion-forge/categories/loaders` | 50.1 KB | 8.3 KB |
-| scroll | `@salkomdesignstudio/sds-motion-forge/categories/scroll` | 34.6 KB | 6.0 KB |
+| text | `@salkomdesignstudio/sds-motion-forge/categories/text` | 65.9 KB | 13.7 KB |
+| cards | `@salkomdesignstudio/sds-motion-forge/categories/cards` | 40.9 KB | 7.8 KB |
+| loaders | `@salkomdesignstudio/sds-motion-forge/categories/loaders` | 50.9 KB | 8.4 KB |
+| scroll | `@salkomdesignstudio/sds-motion-forge/categories/scroll` | 35.1 KB | 6.2 KB |
 | core only | `@salkomdesignstudio/sds-motion-forge/categories/core` | 4.3 KB | 1.2 KB |
-| **everything** | `@salkomdesignstudio/sds-motion-forge` | **174.4 KB** | **30.3 KB** |
+| **everything** | `@salkomdesignstudio/sds-motion-forge` | **176.4 KB** | **30.8 KB** |
 <!-- @sds-size-table:end -->
 
 Core is intentionally **inlined** into every category bundle so each one works
@@ -371,9 +371,10 @@ module.exports = {
 
 | What | Needs JavaScript? | Notes |
 |---|---|---|
-| 417 CSS effects (text, cards, loaders, scroll) | No | Add the class. Some need markup: 13 text effects need each letter in a `.sds-char` span, 48 animate child elements, 29 input effects need a wrapper. |
+| 417 CSS effects (text, cards, loaders, scroll) | No | Add the class. Some need markup: 13 text effects need each letter in a `.sds-char` span, 48 animate child elements. |
 | 100 scroll effects | Only to trigger on scroll in some browsers | `sds-scroll-auto` + `sds-scroll-*` is CSS-only in Chrome 115+. Elsewhere load the 1.3 KB `sds-scroll.min.js` and use `data-sds`; without it the effect plays on load instead of on scroll. |
 | 7 cursor-reactive effects | Yes | Need the 7 KB `motion-interactive.min.js`: Jelly Hover, Magnetic Pull, Repulsion Field, Scatter Return, Shockwave, Spring Kerning, Word Morph. |
+| 24 GSAP effects | Yes | Need the optional `sds-gsap.min.js` (about 5 KB gzip). It loads GSAP from a CDN only on pages that use an `sds-gsap-*` class; nothing is added to the CSS bundles. |
 | Physics easing (`linear()`) | No | Chrome 113+, Safari 17.2+, Firefox 112+; older browsers get a cubic-bezier approximation. |
 
 ---
@@ -821,6 +822,29 @@ sds-scroll-warp-in      sds-scroll-wave-rise    sds-scroll-zoom-blur
 ```
 
 ---
+
+### GSAP effects (optional, by class name)
+
+24 effects that CSS cannot do alone: pointer tilt and magnetic cards, pinned and horizontal scroll sections, scroll-scrubbed text, counters, marquees and physics loaders. Add the class and one small script:
+
+```html
+<h2 class="sds-gsap-text-wave">Letters rise in a wave</h2>
+<div class="sds-gsap-card-tilt">Tilt me</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/sds-gsap.min.js" defer></script>
+```
+
+- **The package stays small.** `sds-gsap.min.js` is about 5 KB gzip and adds nothing to the CSS bundles. GSAP itself is not bundled: the script loads GSAP and ScrollTrigger from jsDelivr the first time it finds an `sds-gsap-*` class, so pages that do not use one download nothing extra. To self-host, add `data-gsap` and `data-scrolltrigger` attributes with your own URLs to the script tag.
+- **Options** are data attributes on the element, for example `data-sds-duration="1.2"`, `data-sds-stagger="0.05"`, `data-sds-to="12800"`, `data-sds-speed="0.4"`.
+- **Reduced motion:** nothing runs and the content stays as written.
+- **Frameworks:** import `@salkomdesignstudio/sds-motion-forge/dist/sds-gsap.min.js` once on the client. It watches for elements added later, or call `window.sdsGsap.init(container)`.
+
+| Group | Classes |
+|---|---|
+| Text | `sds-gsap-text-count`, `sds-gsap-text-marquee`, `sds-gsap-text-mask`, `sds-gsap-text-scramble`, `sds-gsap-text-scrub`, `sds-gsap-text-wave` |
+| Cards | `sds-gsap-card-depth`, `sds-gsap-card-fan`, `sds-gsap-card-flip-in`, `sds-gsap-card-magnetic`, `sds-gsap-card-spotlight`, `sds-gsap-card-tilt` |
+| Loaders | `sds-gsap-loader-blob`, `sds-gsap-loader-chase`, `sds-gsap-loader-count`, `sds-gsap-loader-equalizer`, `sds-gsap-loader-orbit`, `sds-gsap-loader-ring` |
+| Scroll | `sds-gsap-scroll-horizontal`, `sds-gsap-scroll-parallax`, `sds-gsap-scroll-pin`, `sds-gsap-scroll-progress`, `sds-gsap-scroll-stagger`, `sds-gsap-scroll-zoom` |
 
 ## Interactive Animations (JS engine)
 

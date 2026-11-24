@@ -2105,5 +2105,125 @@
     "displayName": "Gravity Collapse",
     "sinceVersion": "5.1.0",
     "source": "authored"
+  },
+  "sds-gsap-text-scrub": {
+    "description": "Words light up one by one as you scroll past the paragraph.",
+    "displayName": "Text Scrub",
+    "source": "authored"
+  },
+  "sds-gsap-text-wave": {
+    "description": "Letters rise into place in a wave with a small overshoot when the text scrolls into view.",
+    "displayName": "Text Wave",
+    "source": "authored"
+  },
+  "sds-gsap-text-mask": {
+    "description": "Words slide up out of an invisible mask, one after another.",
+    "displayName": "Text Mask",
+    "source": "authored"
+  },
+  "sds-gsap-text-scramble": {
+    "description": "The text decodes out of random characters, left to right.",
+    "displayName": "Text Scramble",
+    "source": "authored"
+  },
+  "sds-gsap-text-count": {
+    "description": "A number counts up to the value in data-sds-to when it scrolls into view.",
+    "displayName": "Text Count",
+    "source": "authored"
+  },
+  "sds-gsap-text-marquee": {
+    "description": "A seamless looping marquee that speeds up while you scroll.",
+    "displayName": "Text Marquee",
+    "source": "authored"
+  },
+  "sds-gsap-card-tilt": {
+    "description": "The card tilts in 3D towards the pointer and springs back when it leaves.",
+    "displayName": "Card Tilt",
+    "source": "authored"
+  },
+  "sds-gsap-card-magnetic": {
+    "description": "The card is pulled towards the pointer and snaps back with an elastic bounce.",
+    "displayName": "Card Magnetic",
+    "source": "authored"
+  },
+  "sds-gsap-card-spotlight": {
+    "description": "A soft spotlight follows the pointer across the card surface.",
+    "displayName": "Card Spotlight",
+    "source": "authored"
+  },
+  "sds-gsap-card-fan": {
+    "description": "A stack of cards fans out like a hand of playing cards when it scrolls into view.",
+    "displayName": "Card Fan",
+    "source": "authored"
+  },
+  "sds-gsap-card-flip-in": {
+    "description": "Cards flip in one by one around the vertical axis when they scroll into view.",
+    "displayName": "Card Flip In",
+    "source": "authored"
+  },
+  "sds-gsap-card-depth": {
+    "description": "The layers inside the card shift by different amounts as the pointer moves, for a sense of depth.",
+    "displayName": "Card Depth",
+    "source": "authored"
+  },
+  "sds-gsap-loader-orbit": {
+    "description": "Three dots orbit a centre point, each with its own eased rhythm.",
+    "displayName": "Loader Orbit",
+    "source": "authored"
+  },
+  "sds-gsap-loader-chase": {
+    "description": "Three dots bounce in a chase, one after another.",
+    "displayName": "Loader Chase",
+    "source": "authored"
+  },
+  "sds-gsap-loader-equalizer": {
+    "description": "Five bars bounce like an audio equalizer, each at its own random pace.",
+    "displayName": "Loader Equalizer",
+    "source": "authored"
+  },
+  "sds-gsap-loader-ring": {
+    "description": "A ring spins with an elastic snap and breathes in and out.",
+    "displayName": "Loader Ring",
+    "source": "authored"
+  },
+  "sds-gsap-loader-count": {
+    "description": "A percentage counts from 0 to 100 on a loop and exposes the value as a progress bar.",
+    "displayName": "Loader Count",
+    "source": "authored"
+  },
+  "sds-gsap-loader-blob": {
+    "description": "A blob squashes and stretches as it wobbles.",
+    "displayName": "Loader Blob",
+    "source": "authored"
+  },
+  "sds-gsap-scroll-pin": {
+    "description": "The section stays pinned on screen while you scroll through its length.",
+    "displayName": "Scroll Pin",
+    "source": "authored"
+  },
+  "sds-gsap-scroll-parallax": {
+    "description": "The element drifts slower or faster than the page as you scroll.",
+    "displayName": "Scroll Parallax",
+    "source": "authored"
+  },
+  "sds-gsap-scroll-horizontal": {
+    "description": "The section pins and its row of panels slides sideways as you scroll down.",
+    "displayName": "Scroll Horizontal",
+    "source": "authored"
+  },
+  "sds-gsap-scroll-stagger": {
+    "description": "Child elements rise into place in a staggered batch as they enter the viewport.",
+    "displayName": "Scroll Stagger",
+    "source": "authored"
+  },
+  "sds-gsap-scroll-zoom": {
+    "description": "The element grows from a rounded, smaller frame to full size as it scrolls up the screen.",
+    "displayName": "Scroll Zoom",
+    "source": "authored"
+  },
+  "sds-gsap-scroll-progress": {
+    "description": "A bar at the top of the page fills as you read down the document.",
+    "displayName": "Scroll Progress",
+    "source": "authored"
   }
 }

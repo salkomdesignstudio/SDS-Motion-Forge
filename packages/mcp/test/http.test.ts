@@ -54,7 +54,7 @@ describe("streamable HTTP", () => {
   });
   it("serves /health", async () => {
     const r = await fetch(new URL("/health", base));
-    expect(((await r.json()) as { animations: number }).animations).toBe(428);
+    expect(((await r.json()) as { animations: number }).animations).toBe(452);
   });
   it("answers a CORS preflight for an allowed origin only", async () => {
     const ok = await fetch(base, { method: "OPTIONS", headers: { origin: APP, "access-control-request-method": "POST" } });

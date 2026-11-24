@@ -538,7 +538,6 @@ module.exports.fragments = function fragments({ S, esc }) {
             <ul class="j-list">
               <li>${tick}<span>13 text effects need each letter in a <code>.sds-char</code> span</span></li>
               <li>${tick}<span>48 animate child elements</span></li>
-              <li>${tick}<span>29 input effects need a wrapper</span></li>
             </ul>
             <footer><span class="j-chip">No script to load</span></footer>
           </article>
@@ -557,6 +556,14 @@ module.exports.fragments = function fragments({ S, esc }) {
             <p>Magnetic Pull, Shockwave, Word Morph and four more need the 7 KB <code>motion-interactive.min.js</code>.</p>
             <ul class="j-list"><li>${tick}<span>The engine splits the text into letters for you</span></li></ul>
             <footer><span class="j-chip">motion-interactive.min.js <b>7 KB</b></span></footer>
+          </article>
+          <article class="j-card" data-reveal="up" data-delay="3">
+            <header><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false" width="22" height="22" class="ic-s"><path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z"/></svg></span></header>
+            <div class="j-stat"><b>24</b><span>GSAP effects</span></div>
+            <h3>GSAP by class name</h3>
+            <p>Tilt, magnetic, pinned and horizontal scroll, scrubbed text and more. Add the class and the 5 KB <code>sds-gsap.min.js</code>; it loads GSAP from a CDN only on pages that use one.</p>
+            <ul class="j-list"><li><span class="j-tick" aria-hidden="true"></span><span>Nothing is added to the CSS bundles</span></li></ul>
+            <footer><span class="j-chip">sds-gsap.min.js <b>5 KB gzip</b></span></footer>
           </article>
         </div>
         <p class="needs-foot">Physics effects use CSS <code>linear()</code> (Chrome 113+, Safari 17.2+, Firefox 112+); older browsers get an approximation. <a href="docs.html#js-needs">Full table in the docs</a></p>

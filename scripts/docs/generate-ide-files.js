@@ -78,6 +78,7 @@ const rules = `## ${f.name} (CSS animation library)
 ${S.config.frameworkPackagesPublished
   ? "- Typed wrappers are published (`@salkomdesignstudio/motion-forge-react`, `-angular`, `-tailwind`, `-elements`) but optional: the CSS classes work without them."
   : "- Do NOT suggest `@salkomdesignstudio/motion-forge-react|angular|tailwind|elements` — they exist in the repo but are not published to npm."}
+- GSAP effects follow \`sds-gsap-<text|card|loader|scroll>-<name>\` and need the optional script \`${f.cdnCss.replace(/motion\.min\.css$/, "sds-gsap.min.js")}\` (it loads GSAP itself, about 5 KB gzip).
 - There are no button or input effects: do NOT use \`sds-btn-*\`, \`sds-input-*\`, \`sds-inp-\` or \`sds-load-\`; they do not exist (the loader prefix is \`sds-loader-\`).
 - Every effect already honors \`prefers-reduced-motion\`; do not add your own override.
 `;

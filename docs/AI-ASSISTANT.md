@@ -6,7 +6,7 @@ Copy the block below into `CLAUDE.md`, `AGENTS.md`, `.cursorrules`, `.windsurfru
 ## SDS Motion Forge (CSS animation library)
 
 - Package: `@salkomdesignstudio/sds-motion-forge` v5.1.1, MIT. Install: `npm i @salkomdesignstudio/sds-motion-forge`. No-build CDN: `https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css`.
-- 417 CSS-only effects in four categories + 7 cursor-reactive effects. Each effect is ONE class on the element; no JavaScript is needed for the CSS effects.
+- 417 CSS-only effects in four categories + 31 cursor-reactive effects. Each effect is ONE class on the element; no JavaScript is needed for the CSS effects.
 - NEVER invent a class name. Valid names follow these patterns: text `sds-<name>`, cards `sds-card-<name>`, loaders `sds-loader-<name>`, scroll `sds-scroll-<name>`.
 - Real examples: `sds-velvet-drop`, `sds-aurora-text`, `sds-card-cascade`, `sds-loader-orbital`, `sds-scroll-rise`.
 - Verify any class before using it: https://sds-motion-forge.netlify.app/registry.json, or open https://sds-motion-forge.netlify.app/animations/<class-without-"sds-">/ (for example https://sds-motion-forge.netlify.app/animations/aurora-text/).
@@ -15,6 +15,7 @@ Copy the block below into `CLAUDE.md`, `AGENTS.md`, `.cursorrules`, `.windsurfru
 - Import ONE category for a small bundle (`import "@salkomdesignstudio/sds-motion-forge/categories/text"` — core is already included); for two or more categories import the full `@salkomdesignstudio/sds-motion-forge/dist/motion.min.css`.
 - Frameworks: import the CSS once, then use `className` (React/Next.js) or `class` (Angular, Vue, Svelte, Tailwind projects). No wrapper package is required.
 - Do NOT suggest `@salkomdesignstudio/motion-forge-react|angular|tailwind|elements` — they exist in the repo but are not published to npm.
+- GSAP effects follow `sds-gsap-<text|card|loader|scroll>-<name>` and need the optional script `https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/sds-gsap.min.js` (it loads GSAP itself, about 5 KB gzip).
 - There are no button or input effects: do NOT use `sds-btn-*`, `sds-input-*`, `sds-inp-` or `sds-load-`; they do not exist (the loader prefix is `sds-loader-`).
 - Every effect already honors `prefers-reduced-motion`; do not add your own override.
 ```

@@ -32,6 +32,7 @@ const SCROLL_SCRIPT = `<script src="${CDN}/sds-scroll.min.js" defer></script>`;
 const ENGINE_SCRIPT = `<script src="${CDN}/motion-interactive.min.js" defer></script>`;
 const BOOTSTRAP_CSS = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />`;
 
+const GSAPD = require("./gsap-demos");
 const effects = registry.classes.filter((c) => c.kind === "effect" || c.kind === "interactive");
 
 /* ── markup: the single preview/snippet template per effect ──── */
@@ -51,6 +52,7 @@ function loaderChildCount(name) {
 
 function markupFor(c) {
   const cls = c.name;
+  if (GSAPD.isGsap(c)) return GSAPD.markup(c);
   switch (c.category) {
     case "buttons":
       if (c.requiresChildren)
@@ -101,7 +103,7 @@ function markupFor(c) {
 function scriptsFor(c) {
   const out = [];
   if (c.category === "scroll") out.push(SCROLL_SCRIPT);
-  if (c.requiresJs) out.push(ENGINE_SCRIPT);
+  if (c.requiresJs) out.push(c.jsEngine === "sds-gsap" ? `<script src="${CDN}/sds-gsap.min.js" defer></script>` : ENGINE_SCRIPT);
   return out;
 }
 
@@ -387,7 +389,7 @@ const snippets = {};
 const how = {};
 
 for (const c of effects) {
-  const cat = c.category === "interactive" ? "text" : c.category;
+  const cat = GSAPD.isGsap(c) ? GSAPD.groupOf(c) : c.category === "interactive" ? "text" : c.category;
   const tag = c.requiresJs ? "js" : c.trigger === "scroll" ? "scroll" : c.trigger === "focus" ? "focus" : c.trigger === "hover" ? "hover" : c.loop ? "loop" : "once";
   animations[cat].push({ name: c.displayName, cls: c.name, tag, desc: c.description });
   const m = markupFor(c);
@@ -401,6 +403,11 @@ for (const c of effects) {
     bootstrap: bootstrapTab(c),
   };
   how[c.name] = howFor(c);
+  if (GSAPD.isGsap(c)) {
+    const t = GSAPD.tabs(c, CDN, "@salkomdesignstudio/sds-motion-forge");
+    snippets[c.name] = { html: t.html, js: t.js, react: t.react, angular: t.angular, tailwind: t.tailwind, bootstrap: t.bootstrap };
+    how[c.name] = GSAPD.how(c);
+  }
 }
 
 const docsData = {

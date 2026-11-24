@@ -3746,6 +3746,30 @@ html:not(.sds-js) [data-sds] {
   }
 }
 /* @sds-physics:end */
+/* ============================================================
+   GSAP engine classes (need the optional sds-gsap.min.js)
+   Base styles only: the motion is driven by GSAP, see src/sds-gsap.js
+   ============================================================ */
+.sds-gsap-text-scrub {
+  display: block;
+}
+.sds-gsap-text-wave {
+  display: block;
+}
+.sds-gsap-text-mask {
+  display: block;
+}
+.sds-gsap-text-scramble {
+  display: block;
+}
+.sds-gsap-text-count {
+  display: block;
+}
+.sds-gsap-text-marquee {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+}
 /*!
  * SDS Motion Forge — cards.css
  * Card animations (Section 4).
@@ -5388,6 +5412,42 @@ html:not(.sds-js) [data-sds] {
 }
 .sds-card-idle-rock {
   animation: sds-idleRock 3.5s ease-in-out infinite;
+}
+/* ============================================================
+   GSAP engine classes (need the optional sds-gsap.min.js)
+   Base styles only: the motion is driven by GSAP, see src/sds-gsap.js
+   ============================================================ */
+.sds-gsap-card-tilt {
+  will-change: transform;
+}
+.sds-gsap-card-magnetic {
+  will-change: transform;
+}
+.sds-gsap-card-spotlight {
+  position: relative;
+  overflow: hidden;
+}
+.sds-gsap-card-spotlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle 180px at var(--sds-x, 50%) var(--sds-y, 50%), rgba(255, 255, 255, 0.4), transparent 70%);
+  opacity: var(--sds-o, 0);
+}
+.sds-gsap-card-fan {
+  display: flex;
+  justify-content: center;
+  gap: 0.75em;
+}
+.sds-gsap-card-flip-in {
+  display: flex;
+  justify-content: center;
+  gap: 0.75em;
+}
+.sds-gsap-card-depth {
+  position: relative;
+  overflow: hidden;
 }
 /*!
  * SDS Motion Forge — loaders.css
@@ -7756,6 +7816,52 @@ html:not(.sds-js) [data-sds] {
   background: var(--sds-primary, currentColor);
   animation: sds-ldThrob 1.1s ease-in-out infinite;
 }
+/* ============================================================
+   GSAP engine classes (need the optional sds-gsap.min.js)
+   Base styles only: the motion is driven by GSAP, see src/sds-gsap.js
+   ============================================================ */
+.sds-gsap-loader-orbit {
+  position: relative;
+  display: inline-block;
+  width: 2.5em;
+  height: 2.5em;
+  color: var(--sds-primary, #0015d1);
+}
+.sds-gsap-loader-chase {
+  position: relative;
+  display: inline-block;
+  width: 2.5em;
+  height: 2.5em;
+  color: var(--sds-primary, #0015d1);
+}
+.sds-gsap-loader-equalizer {
+  position: relative;
+  display: inline-block;
+  width: 2.5em;
+  height: 2.5em;
+  color: var(--sds-primary, #0015d1);
+}
+.sds-gsap-loader-ring {
+  position: relative;
+  display: inline-block;
+  width: 2.5em;
+  height: 2.5em;
+  color: var(--sds-primary, #0015d1);
+}
+.sds-gsap-loader-blob {
+  position: relative;
+  display: inline-block;
+  width: 2.5em;
+  height: 2.5em;
+  color: var(--sds-primary, #0015d1);
+}
+.sds-gsap-loader-count {
+  display: inline-block;
+  min-width: 3ch;
+  color: var(--sds-primary, #0015d1);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
 /*!
  * SDS Motion Forge — scroll.css
  * Scroll / viewport animations (Section 6) + scroll legacy alias.
@@ -9390,4 +9496,40 @@ html:not(.sds-js) [data-sds] {
     opacity: 1;
     transform: scale(1);
   }
+}
+/* ============================================================
+   GSAP engine classes (need the optional sds-gsap.min.js)
+   Base styles only: the motion is driven by GSAP, see src/sds-gsap.js
+   ============================================================ */
+.sds-gsap-scroll-parallax {
+  will-change: transform;
+}
+.sds-gsap-scroll-zoom {
+  will-change: transform;
+}
+.sds-gsap-scroll-horizontal {
+  overflow: hidden;
+}
+.sds-gsap-scroll-horizontal > :first-child {
+  display: flex;
+  gap: 1em;
+  width: -moz-max-content;
+  width: max-content;
+}
+.sds-gsap-scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  height: 3px;
+  background: var(--sds-primary, #0015d1);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+}
+.sds-gsap-scroll-pin {
+  display: block;
+}
+.sds-gsap-scroll-stagger {
+  display: block;
 }

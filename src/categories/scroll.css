@@ -1165,10 +1165,10 @@
 
 
 /* ====================================================================
-   BATCH 16 — Scroll: Clean Entrances (6) + Drama & Emphasis (6)
+   BATCH 16 ï¿½ Scroll: Clean Entrances (6) + Drama & Emphasis (6)
    ==================================================================== */
 
-/* 131 · Zoom In ----------------------------------------- */
+/* 131 ï¿½ Zoom In ----------------------------------------- */
 
 .sds-scroll-zoom-in {
   animation: sds-scrollZoomIn var(--sds-duration-base, 0.8s) var(--sds-easing) both;
@@ -1185,7 +1185,7 @@
   }
 }
 
-/* 132 · Zoom Out ---------------------------------------- */
+/* 132 ï¿½ Zoom Out ---------------------------------------- */
 
 .sds-scroll-zoom-out {
   animation: sds-scrollZoomOut var(--sds-duration-base, 0.8s) var(--sds-easing) both;
@@ -1202,7 +1202,7 @@
   }
 }
 
-/* 133 · Rotate In --------------------------------------- */
+/* 133 ï¿½ Rotate In --------------------------------------- */
 
 .sds-scroll-rotate-in {
   animation: sds-scrollRotateIn var(--sds-duration-base, 0.8s) var(--sds-easing) both;
@@ -1219,7 +1219,7 @@
   }
 }
 
-/* 134 · Hinge In ---------------------------------------- */
+/* 134 ï¿½ Hinge In ---------------------------------------- */
 
 .sds-scroll-hinge-in {
   animation: sds-scrollHingeIn var(--sds-duration-base, 0.8s) var(--sds-easing) both;
@@ -1237,7 +1237,7 @@
   }
 }
 
-/* 135 · Roll In ----------------------------------------- */
+/* 135 ï¿½ Roll In ----------------------------------------- */
 
 .sds-scroll-roll-in {
   animation: sds-scrollRollIn var(--sds-duration-base, 0.8s) var(--sds-easing) both;
@@ -1254,7 +1254,7 @@
   }
 }
 
-/* 136 · Rise Right -------------------------------------- */
+/* 136 ï¿½ Rise Right -------------------------------------- */
 
 .sds-scroll-rise-right {
   animation: sds-scrollRiseRight var(--sds-duration-base, 0.8s) var(--sds-easing) both;
@@ -1271,7 +1271,7 @@
   }
 }
 
-/* 137 · Cinematic --------------------------------------- */
+/* 137 ï¿½ Cinematic --------------------------------------- */
 
 .sds-scroll-cinematic {
   animation: sds-scrollCinematic var(--sds-duration-base, 0.8s) var(--sds-easing) both;
@@ -1290,7 +1290,7 @@
   }
 }
 
-/* 138 · Kaboom ------------------------------------------ */
+/* 138 ï¿½ Kaboom ------------------------------------------ */
 
 .sds-scroll-kaboom {
   animation: sds-scrollKaboom 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
@@ -1307,7 +1307,7 @@
   }
 }
 
-/* 139 · Lean -------------------------------------------- */
+/* 139 ï¿½ Lean -------------------------------------------- */
 
 .sds-scroll-lean {
   animation: sds-scrollLean var(--sds-duration-base, 0.8s) var(--sds-easing) both;
@@ -1324,7 +1324,7 @@
   }
 }
 
-/* 140 · Peel -------------------------------------------- */
+/* 140 ï¿½ Peel -------------------------------------------- */
 
 .sds-scroll-peel {
   animation: sds-scrollPeel var(--sds-duration-base, 0.8s) var(--sds-easing) both;
@@ -1341,7 +1341,7 @@
   }
 }
 
-/* 141 · Stretch ----------------------------------------- */
+/* 141 ï¿½ Stretch ----------------------------------------- */
 
 .sds-scroll-stretch {
   animation: sds-scrollStretchIn var(--sds-duration-base, 0.8s) var(--sds-easing) both;
@@ -1362,7 +1362,7 @@
   }
 }
 
-/* 142 · Jello ------------------------------------------- */
+/* 142 ï¿½ Jello ------------------------------------------- */
 
 .sds-scroll-jello {
   animation: sds-scrollJello 0.85s ease both;
@@ -1394,10 +1394,10 @@
 
 
 /* ====================================================================
-   BATCH 17 — Scroll: 3D Hinges (4) + Filter Reveals (4) + Clip Wipes (4)
+   BATCH 17 ï¿½ Scroll: 3D Hinges (4) + Filter Reveals (4) + Clip Wipes (4)
    ==================================================================== */
 
-/* 143 · Flip Up ----------------------------------------- */
+/* 143 ï¿½ Flip Up ----------------------------------------- */
 
 .sds-scroll-flip-up {
   animation: sds-scrollFlipUp var(--sds-duration-base, 0.8s) var(--sds-easing) both;
@@ -1415,7 +1415,7 @@
   }
 }
 
-/* 144 · Door Left --------------------------------------- */
+/* 144 ï¿½ Door Left --------------------------------------- */
 
 .sds-scroll-door-left {
   animation: sds-scrollDoorLeft var(--sds-duration-base, 0.8s) var(--sds-easing) both;
@@ -1433,7 +1433,7 @@
   }
 }
 
-/* 145 · Door Right -------------------------------------- */
+/* 145 ï¿½ Door Right -------------------------------------- */
 
 .sds-scroll-door-right {
   animation: sds-scrollDoorRight var(--sds-duration-base, 0.8s) var(--sds-easing) both;
@@ -1451,7 +1451,7 @@
   }
 }
 
-/* 146 · Barrel ------------------------------------------ */
+/* 146 ï¿½ Barrel ------------------------------------------ */
 
 .sds-scroll-barrel {
   animation: sds-scrollBarrel 0.9s var(--sds-easing) both;
@@ -1468,7 +1468,7 @@
   }
 }
 
-/* 147 · Saturate ---------------------------------------- */
+/* 147 ï¿½ Saturate ---------------------------------------- */
 
 .sds-scroll-saturate {
   animation: sds-scrollSaturate var(--sds-duration-base, 0.8s) ease-out both;
@@ -1487,7 +1487,7 @@
   }
 }
 
-/* 148 · Sepia ------------------------------------------- */
+/* 148 ï¿½ Sepia ------------------------------------------- */
 
 .sds-scroll-sepia {
   animation: sds-scrollSepia var(--sds-duration-base, 0.8s) ease-out both;
@@ -1506,7 +1506,7 @@
   }
 }
 
-/* 149 · Overexpose -------------------------------------- */
+/* 149 ï¿½ Overexpose -------------------------------------- */
 
 .sds-scroll-overexpose {
   animation: sds-scrollOverexpose var(--sds-duration-base, 0.8s) ease-out both;
@@ -1527,7 +1527,7 @@
   }
 }
 
-/* 150 · Thermal ----------------------------------------- */
+/* 150 ï¿½ Thermal ----------------------------------------- */
 
 .sds-scroll-thermal {
   animation: sds-scrollThermal var(--sds-duration-base, 0.8s) ease-out both;
@@ -1548,7 +1548,7 @@
   }
 }
 
-/* 151 · Iris -------------------------------------------- */
+/* 151 ï¿½ Iris -------------------------------------------- */
 
 .sds-scroll-iris {
   animation: sds-scrollIris var(--sds-duration-base, 0.8s) var(--sds-easing) both;
@@ -1565,7 +1565,7 @@
   }
 }
 
-/* 152 · Wipe Up ----------------------------------------- */
+/* 152 ï¿½ Wipe Up ----------------------------------------- */
 
 .sds-scroll-wipe-up {
   animation: sds-scrollWipeUp var(--sds-duration-base, 0.8s) var(--sds-easing) both;
@@ -1582,7 +1582,7 @@
   }
 }
 
-/* 153 · Wipe Right -------------------------------------- */
+/* 153 ï¿½ Wipe Right -------------------------------------- */
 
 .sds-scroll-wipe-right {
   animation: sds-scrollWipeRight var(--sds-duration-base, 0.8s) var(--sds-easing) both;
@@ -1599,7 +1599,7 @@
   }
 }
 
-/* 154 · Drop In ----------------------------------------- */
+/* 154 ï¿½ Drop In ----------------------------------------- */
 
 .sds-scroll-drop-in {
   animation: sds-scrollDropIn var(--sds-duration-base, 0.8s) var(--sds-easing) both;
@@ -1625,10 +1625,10 @@
 
 
 /* ====================================================================
-   BATCH 18 — Scroll: Subtle Motion (5) + Stagger (2) + Kinetic (4)
+   BATCH 18 ï¿½ Scroll: Subtle Motion (5) + Stagger (2) + Kinetic (4)
    ==================================================================== */
 
-/* 155 · Float ------------------------------------------- */
+/* 155 ï¿½ Float ------------------------------------------- */
 
 .sds-scroll-float {
   animation: sds-scrollFloat 1.2s cubic-bezier(0.2, 0, 0, 1) both;
@@ -1647,7 +1647,7 @@
   }
 }
 
-/* 156 · Sink -------------------------------------------- */
+/* 156 ï¿½ Sink -------------------------------------------- */
 
 .sds-scroll-sink {
   animation: sds-scrollSink var(--sds-duration-base, 0.8s) var(--sds-easing) both;
@@ -1664,7 +1664,7 @@
   }
 }
 
-/* 157 · Shudder ----------------------------------------- */
+/* 157 ï¿½ Shudder ----------------------------------------- */
 
 .sds-scroll-shudder {
   animation: sds-scrollShudder 0.7s ease both;
@@ -1680,7 +1680,7 @@
   100% { transform: translateX(0); opacity: 1; }
 }
 
-/* 158 · Spin Y ------------------------------------------ */
+/* 158 ï¿½ Spin Y ------------------------------------------ */
 
 .sds-scroll-spin-y {
   animation: sds-scrollSpinY 0.9s var(--sds-easing) both;
@@ -1697,7 +1697,7 @@
   }
 }
 
-/* 159 · Rubber Band ------------------------------------- */
+/* 159 ï¿½ Rubber Band ------------------------------------- */
 
 .sds-scroll-rubber-band {
   animation: sds-scrollRubberBand 0.8s ease both;
@@ -1712,7 +1712,7 @@
   100% { transform: scaleX(1) scaleY(1); opacity: 1; }
 }
 
-/* 160 · Stagger Fade — children fade in sequence (requiresChildren) */
+/* 160 ï¿½ Stagger Fade ï¿½ children fade in sequence (requiresChildren) */
 
 .sds-scroll-stagger-fade > * {
   animation: sds-scrollStaggerFadeChild 0.5s ease both;
@@ -1728,7 +1728,7 @@
   to   { opacity: 1; }
 }
 
-/* 161 · Stagger Rise — children rise up in sequence (requiresChildren) */
+/* 161 ï¿½ Stagger Rise ï¿½ children rise up in sequence (requiresChildren) */
 
 .sds-scroll-stagger-rise > * {
   animation: sds-scrollStaggerRiseChild 0.6s var(--sds-easing) both;
@@ -1744,7 +1744,7 @@
   to   { transform: translateY(0); opacity: 1; }
 }
 
-/* 162 · Glare ------------------------------------------- */
+/* 162 ï¿½ Glare ------------------------------------------- */
 
 .sds-scroll-glare {
   animation: sds-scrollGlare 0.7s ease-out both;
@@ -1756,7 +1756,7 @@
   100% { filter: brightness(1) contrast(1); transform: scale(1); opacity: 1; }
 }
 
-/* 163 · Skid In ----------------------------------------- */
+/* 163 ï¿½ Skid In ----------------------------------------- */
 
 .sds-scroll-skid-in {
   animation: sds-scrollSkidIn 0.7s cubic-bezier(0.2, 0, 0.3, 1) both;
@@ -1769,7 +1769,7 @@
   100% { transform: translateX(0); opacity: 1; }
 }
 
-/* 164 · Slingshot --------------------------------------- */
+/* 164 ï¿½ Slingshot --------------------------------------- */
 
 .sds-scroll-slingshot {
   animation: sds-scrollSlingshot 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
@@ -1782,7 +1782,7 @@
   100% { transform: translateX(0) scaleX(1); opacity: 1; }
 }
 
-/* 165 · Blink In ---------------------------------------- */
+/* 165 ï¿½ Blink In ---------------------------------------- */
 
 .sds-scroll-blink-in {
   animation: sds-scrollBlinkIn 0.8s linear both;
@@ -1798,11 +1798,11 @@
 
 
 /* ====================================================================
-   BATCH 19 — Scroll: Stagger (1) + Reveal FX (5) + Character (5)
+   BATCH 19 ï¿½ Scroll: Stagger (1) + Reveal FX (5) + Character (5)
    scroll complete at 100/100
    ==================================================================== */
 
-/* 166 · Stagger Slide — children slide from left in sequence (requiresChildren) */
+/* 166 ï¿½ Stagger Slide ï¿½ children slide from left in sequence (requiresChildren) */
 
 .sds-scroll-stagger-slide > * {
   animation: sds-scrollStaggerSlideChild 0.6s var(--sds-easing) both;
@@ -1818,7 +1818,7 @@
   to   { transform: translateX(0); opacity: 1; }
 }
 
-/* 167 · Neon Pop ---------------------------------------- */
+/* 167 ï¿½ Neon Pop ---------------------------------------- */
 
 .sds-scroll-neon-pop {
   animation: sds-scrollNeonPop 0.7s ease-out both;
@@ -1830,7 +1830,7 @@
   100% { transform: scale(1); opacity: 1; filter: drop-shadow(0 0 4px currentColor); }
 }
 
-/* 168 · Pixel In ---------------------------------------- */
+/* 168 ï¿½ Pixel In ---------------------------------------- */
 
 .sds-scroll-pixel-in {
   animation: sds-scrollPixelIn 0.8s ease-out both;
@@ -1849,7 +1849,7 @@
   }
 }
 
-/* 169 · Tidal ------------------------------------------- */
+/* 169 ï¿½ Tidal ------------------------------------------- */
 
 .sds-scroll-tidal {
   animation: sds-scrollTidal 0.9s ease both;
@@ -1864,7 +1864,7 @@
   100% { transform: translateX(0); opacity: 1; }
 }
 
-/* 170 · Materialize ------------------------------------- */
+/* 170 ï¿½ Materialize ------------------------------------- */
 
 .sds-scroll-materialize {
   animation: sds-scrollMaterialize 1s steps(4, end) both;
@@ -1878,7 +1878,7 @@
   100% { opacity: 1;    transform: scale(1);    filter: blur(0); }
 }
 
-/* 171 · Exhale ------------------------------------------ */
+/* 171 ï¿½ Exhale ------------------------------------------ */
 
 .sds-scroll-exhale {
   animation: sds-scrollExhale 1s cubic-bezier(0.2, 0, 0, 1) both;
@@ -1895,7 +1895,7 @@
   }
 }
 
-/* 172 · Typewriter -------------------------------------- */
+/* 172 ï¿½ Typewriter -------------------------------------- */
 
 .sds-scroll-typewriter {
   animation: sds-scrollTypewriter 0.9s steps(14, end) both;
@@ -1906,7 +1906,7 @@
   to   { clip-path: inset(0 0% 0 0); }
 }
 
-/* 173 · Glitch In --------------------------------------- */
+/* 173 ï¿½ Glitch In --------------------------------------- */
 
 .sds-scroll-glitch-in {
   animation: sds-scrollGlitchIn 0.7s ease-out both;
@@ -1920,7 +1920,7 @@
   100% { transform: translateX(0); opacity: 1; filter: hue-rotate(0deg); clip-path: inset(0 0 0 0); }
 }
 
-/* 174 · Unfurl ------------------------------------------ */
+/* 174 ï¿½ Unfurl ------------------------------------------ */
 
 .sds-scroll-unfurl {
   animation: sds-scrollUnfurl var(--sds-duration-base, 0.8s) var(--sds-easing) both;
@@ -1942,7 +1942,7 @@
   }
 }
 
-/* 175 · Pop In ------------------------------------------ */
+/* 175 ï¿½ Pop In ------------------------------------------ */
 
 .sds-scroll-pop-in {
   animation: sds-scrollPopIn 0.65s ease both;
@@ -1956,7 +1956,7 @@
   100% { transform: scale(1); opacity: 1; }
 }
 
-/* 176 · Contrast In ------------------------------------- */
+/* 176 ï¿½ Contrast In ------------------------------------- */
 
 .sds-scroll-contrast-in {
   animation: sds-scrollContrastIn 0.8s ease-out both;
@@ -1977,4 +1977,47 @@
     opacity: 1;
     transform: scale(1);
   }
+}
+
+/* ============================================================
+   GSAP engine classes (need the optional sds-gsap.min.js)
+   Base styles only: the motion is driven by GSAP, see src/sds-gsap.js
+   ============================================================ */
+
+.sds-gsap-scroll-parallax {
+  will-change: transform;
+}
+
+.sds-gsap-scroll-zoom {
+  will-change: transform;
+}
+
+.sds-gsap-scroll-horizontal {
+  overflow: hidden;
+}
+
+.sds-gsap-scroll-horizontal > :first-child {
+  display: flex;
+  gap: 1em;
+  width: max-content;
+}
+
+.sds-gsap-scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  height: 3px;
+  background: var(--sds-primary, #0015d1);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+}
+
+.sds-gsap-scroll-pin {
+  display: block;
+}
+
+.sds-gsap-scroll-stagger {
+  display: block;
 }

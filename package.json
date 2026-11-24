@@ -17,6 +17,8 @@
     "./dist/sds-scroll.min.js.map": "./dist/sds-scroll.min.js.map",
     "./dist/motion-interactive.min.js": "./dist/motion-interactive.min.js",
     "./dist/motion-interactive.min.js.map": "./dist/motion-interactive.min.js.map",
+    "./dist/sds-gsap.min.js": "./dist/sds-gsap.min.js",
+    "./dist/sds-gsap.min.js.map": "./dist/sds-gsap.min.js.map",
     "./motion.css": "./dist/motion.css",
     "./motion.min.css": "./dist/motion.min.css",
     "./categories/core": {
@@ -75,7 +77,7 @@
   "scripts": {
     "build:tokens": "node scripts/generate-tokens.js",
     "build:css": "postcss src/motion.css -o dist/motion.css && cleancss -o dist/motion.min.css dist/motion.css",
-    "build:js": "terser src/sds-scroll.js -o dist/sds-scroll.min.js --compress --mangle --source-map \"url='sds-scroll.min.js.map'\" && terser src/motion-interactive.js -o dist/motion-interactive.min.js --compress --mangle --source-map \"url='motion-interactive.min.js.map'\"",
+    "build:js": "terser src/sds-scroll.js -o dist/sds-scroll.min.js --compress --mangle --source-map \"url='sds-scroll.min.js.map'\" && terser src/motion-interactive.js -o dist/motion-interactive.min.js --compress --mangle --source-map \"url='motion-interactive.min.js.map'\" && terser src/sds-gsap.js -o dist/sds-gsap.min.js --compress --mangle --source-map \"url='sds-gsap.min.js.map'\"",
     "build:categories": "node scripts/build-categories.js",
     "build:packages": "npm run build --workspaces --if-present",
     "test:packages": "npm run test --workspaces --if-present",

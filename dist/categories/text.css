@@ -4241,3 +4241,34 @@ html:not(.sds-js) [data-sds] {
   }
 }
 /* @sds-physics:end */
+
+/* ============================================================
+   GSAP engine classes (need the optional sds-gsap.min.js)
+   Base styles only: the motion is driven by GSAP, see src/sds-gsap.js
+   ============================================================ */
+
+.sds-gsap-text-scrub {
+  display: block;
+}
+
+.sds-gsap-text-wave {
+  display: block;
+}
+
+.sds-gsap-text-mask {
+  display: block;
+}
+
+.sds-gsap-text-scramble {
+  display: block;
+}
+
+.sds-gsap-text-count {
+  display: block;
+}
+
+.sds-gsap-text-marquee {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+}
