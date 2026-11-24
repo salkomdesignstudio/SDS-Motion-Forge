@@ -252,3 +252,8 @@ li:hover .ri-github-line:before, .tile:hover .ri-github-line:before { content: "
   .sh-nav > a, .sh-btn { padding-left: 10px; padding-right: 10px; font-size: 14px; }
   .sh-cta { padding: 0 14px; }
 }
+
+/* GitHub button: one size on every page, a round 40px button with a 20px mark (line at rest, fill on hover) */
+.sh .sh-actions .sh-icon { display: inline-grid; place-items: center; flex: none; width: 40px; height: 40px; padding: 0; border: 1px solid #e1e3e9; border-radius: 50%; background: #fff; color: #16182c; text-decoration: none; }
+.sh .sh-icon svg { width: 20px; height: 20px; margin: 0; fill: currentColor; }
+.sh .sh-icon:hover { transform: translateY(-1px) scale(1.06); background: #f3f5fa; border-color: #cccfd7; }
