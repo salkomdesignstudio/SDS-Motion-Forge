@@ -473,8 +473,6 @@
       #how, #js, #why, #physics, #playground, #docs, #answers, .cta-band { content-visibility: auto; contain-intrinsic-size: auto 720px; }
 
       /* reveal on scroll */
-      [data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
-      [data-reveal].in { opacity: 1; transform: none; }
       @keyframes none-anim { to { opacity: 1; } }
 
       /* responsive */
@@ -501,7 +499,6 @@
       }
       @media (prefers-reduced-motion: reduce) {
         html { scroll-behavior: auto; }
-        [data-reveal] { opacity: 1 !important; transform: none !important; transition: none !important; }
         .spec, .card, .tile, .step, .need, .docs-card { animation: none !important; transition: none !important; }
         .spec:hover, .card:hover, .tile:hover, .step:hover, .need:hover, .docs-card:hover { transform: none; }
         .hero-grid { transform: none !important; }
@@ -612,6 +609,7 @@
     <!-- FAQ-LD:END -->
     <link rel="stylesheet" href="/header.css" />
     <script src="/header.js" defer></script>
+    <script src="/reveal.js" defer></script>
   </head>
   <body>
     <!-- SITE-HEADER:START (generated: node scripts/docs/site-header.js) -->

@@ -148,6 +148,7 @@ ${md ? `<link rel="alternate" type="text/markdown" href="${url}index.md" />\n` :
 <link rel="stylesheet" href="/header.css" />
 <link rel="stylesheet" href="/mcp.css" />
 <script src="/header.js" defer></script>
+    <script src="/reveal.js" defer></script>
 <script src="/pages.js" defer></script>
 ${extraCss.map((h) => `<link rel="stylesheet" href="${h}" />`).join("\n")}
 <script type="application/ld+json">${JSON.stringify(jsonld)}</script>
