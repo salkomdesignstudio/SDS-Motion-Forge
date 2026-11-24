@@ -6,6 +6,7 @@
   if (!sh) return;
   var dds = [].slice.call(sh.querySelectorAll(".sh-dd"));
   var burger = sh.querySelector(".sh-burger");
+  var cmenu = sh.querySelector(".sh-cmenu");
   var drawer = sh.querySelector(".sh-drawer");
 
   function closeMenus(except) {
@@ -33,8 +34,10 @@
     drawer.hidden = !open;
     burger.setAttribute("aria-expanded", open ? "true" : "false");
     burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    if (cmenu) { cmenu.setAttribute("aria-expanded", open ? "true" : "false"); cmenu.setAttribute("aria-label", open ? "Close menu" : "Open menu"); }
   }
   if (burger) burger.addEventListener("click", function () { setDrawer(drawer.hidden); });
+  if (cmenu) cmenu.addEventListener("click", function () { setDrawer(drawer.hidden); });
   if (drawer) drawer.addEventListener("click", function (e) { if (e.target.closest("a")) setDrawer(false); });
   document.addEventListener("keydown", function (e) {
     if (e.key !== "Escape") return;
@@ -43,7 +46,18 @@
   });
   window.addEventListener("resize", function () { if (window.innerWidth > 960) setDrawer(false); });
 
-  function onScroll() { sh.classList.toggle("is-scrolled", window.scrollY > 8); }
+  var lastY = window.scrollY, still = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function onScroll() {
+    var y = window.scrollY, dy = y - lastY;
+    sh.classList.toggle("is-scrolled", y > 8);
+    /* collapse the pill when scrolling down past 180 px, bring it back on any scroll up (measured on motvin.com) */
+    if (!still && window.innerWidth > 960 && dy !== 0) {
+      var busy = !!sh.querySelector(".sh-dd.open") || (drawer && !drawer.hidden);
+      if (dy < 0 || y <= 180) sh.classList.remove("is-collapsed");
+      else if (dy > 1 && !busy) sh.classList.add("is-collapsed");
+    }
+    lastY = y;
+  }
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 

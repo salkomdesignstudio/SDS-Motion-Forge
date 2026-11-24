@@ -99,6 +99,7 @@ function headerHtml() {
 </div>
 <button type="button" class="sh-burger" aria-label="Open menu" aria-expanded="false" aria-controls="shDrawer"><span></span><span></span><span></span></button>
 </div>
+<div class="sh-compact"><a class="sh-cta" href="/docs.html#install">Get started</a><button type="button" class="sh-cmenu" aria-label="Open menu" aria-expanded="false" aria-controls="shDrawer"><span></span><span></span></button></div>
 <div class="sh-drawer" id="shDrawer" hidden>${drawer}</div>
 </header>`;
 }

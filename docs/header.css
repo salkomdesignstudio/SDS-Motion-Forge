@@ -121,3 +121,19 @@ a:hover .ic-f, a:focus-visible .ic-f, .ic-host:hover .ic-f, .ic-host:focus-visib
 @media (prefers-reduced-motion: reduce) { .sh-menu a::after { transition: none; } }
 .sh-menu a.sh-feat { position: relative; }
 .sh-menu a.sh-feat::after { position: absolute; top: 16px; right: 16px; margin: 0; }
+
+/* scrolling down past 180 px: the pill slides up and fades (0.45 s, slow start, as on motvin.com), and a Get started button
+   plus a round menu button take its place at the top right. Any scroll up brings the pill back. */
+.sh-bar { transition: box-shadow 0.2s, transform 0.45s cubic-bezier(0.55, 0.05, 0.9, 0.5), opacity 0.45s cubic-bezier(0.55, 0.05, 0.9, 0.5); }
+.sh.is-collapsed .sh-bar { transform: translateY(-150px); opacity: 0; pointer-events: none; }
+.sh-compact { position: absolute; top: 10px; right: max(12px, calc((100% - 1180px) / 2 + 10px)); display: none; align-items: center; gap: 8px; opacity: 0; pointer-events: none; transform: scale(0.9); transform-origin: 100% 0; transition: opacity 0.3s ease 0.12s, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.12s; }
+.sh-compact .sh-cta { height: 46px; padding: 0 20px; display: inline-flex; align-items: center; }
+.sh-cmenu { width: 46px; height: 46px; padding: 0; border: 1px solid #e1e3e9; border-radius: 50%; background: #fff; display: inline-flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; cursor: pointer; box-shadow: 0 6px 18px rgba(22, 24, 44, 0.1); transition: background 0.2s, border-color 0.2s, transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.sh-cmenu span { display: block; width: 16px; height: 2px; border-radius: 2px; background: #16182c; transition: transform 0.2s, background 0.2s; }
+.sh-cmenu:hover { border-color: #5c4ae1; transform: scale(1.06); }
+.sh-cmenu:hover span { background: #5c4ae1; }
+.sh-cmenu[aria-expanded="true"] span:nth-child(1) { transform: translateY(3.5px) rotate(45deg); }
+.sh-cmenu[aria-expanded="true"] span:nth-child(2) { transform: translateY(-3.5px) rotate(-45deg); }
+@media (min-width: 961px) { .sh-compact { display: flex; } }
+.sh.is-collapsed .sh-compact { opacity: 1; pointer-events: auto; transform: none; }
+@media (prefers-reduced-motion: reduce) { .sh-bar, .sh-compact { transition: none; } }
