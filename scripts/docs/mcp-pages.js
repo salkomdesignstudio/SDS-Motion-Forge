@@ -10,7 +10,7 @@
  */
 "use strict";
 
-const { icon, sbIcon } = require("./icons");
+const { icon, sbIcon, ri } = require("./icons");
 const { tool, toolFor } = require("./tool-icons");
 /** tile with the real logo of a guide (generic glyph when there is no logo, e.g. Zed or web apps) */
 const toolTile = (c, extra = "") => (toolFor(c.slug) ? `<span class="ic ic-tool${extra ? " " + extra : ""}">${toolFor(c.slug)}</span>` : icon(GROUP_ICON[c.group] || "mcp", extra));
@@ -226,11 +226,11 @@ module.exports = function buildMcpPages({ head, foot, S, config, esc, crumbs, br
     return `<div class="m-code"><button type="button" class="m-copy" data-copy-from="${id}">Copy</button><pre><code id="${id}"${lang ? ` class="language-${lang}"` : ""}>${esc(code)}</code></pre></div>`;
   };
   const stepsHtml = (steps) => `<ol class="m-steps">${steps.map((s) => `<li><b>${s.t}</b>${s.p ? `<p>${s.p}</p>` : ""}${s.code ? codeBlock(s.code, s.lang) : ""}</li>`).join("")}</ol>`;
-  const arrow = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>';
+  const arrow = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"/></svg>';
   const clientCard = (c) => `<a class="m-client m-spot" href="${clientPath(c)}">${toolTile(c)}<span><b>${esc(c.name)}</b><small>${esc(c.blurb)}</small></span><span class="m-arrow">${arrow}</span></a>`;
   const faqHtml = (items) => items.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${a}</p></details>`).join("\n");
   const faqLd = (items) => ({ "@type": "FAQPage", mainEntity: items.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a.replace(/<[^>]+>/g, "") } })) });
-  const waysHtml = (items) => `<div class="m-ways">${items.map(([t, d, h, b, k, c]) => `<a class="m-way m-spot${b ? " is-new" : ""}" href="${h}"><span class="m-way-head">${icon(k)}<span class="m-way-go"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></span><b>${esc(t)}${b ? `<em>${b}</em>` : ""}</b><small>${esc(d)}</small><code class="m-way-chip">${esc(c)}</code></a>`).join("")}</div>`;
+  const waysHtml = (items) => `<div class="m-ways">${items.map(([t, d, h, b, k, c]) => `<a class="m-way m-spot${b ? " is-new" : ""}" href="${h}"><span class="m-way-head">${icon(k)}<span class="m-way-go"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"/></svg></span></span><b>${esc(t)}${b ? `<em>${b}</em>` : ""}</b><small>${esc(d)}</small><code class="m-way-chip">${esc(c)}</code></a>`).join("")}</div>`;
 
   const pages = [];
   const emit = (p, html, md) => pages.push({ p, html, md });
@@ -266,7 +266,7 @@ ${cmdChip(NPX)}
 <p>Use <code>sds-blur-focus</code>. It sharpens from a heavy blur.</p>
 <div class="h-demo" data-fx>
 <div class="fx-stage h-stage" aria-hidden="true"><h2 class="sds-blur-focus">Hello</h2></div>
-<button type="button" class="h-replay" data-replay aria-label="Replay the animation"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 0 2.6-5.9M4 4v4.5h4.5"/></svg>Replay</button>
+<button type="button" class="h-replay" data-replay aria-label="Replay the animation"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M18.5374 19.5674C16.7844 21.0831 14.4993 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 14.1361 21.3302 16.1158 20.1892 17.7406L17 12H20C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C14.1502 20 16.1022 19.1517 17.5398 17.7716L18.5374 19.5674Z"/></svg>Replay</button>
 </div>
 <pre class="h-code"><code>import "@salkomdesignstudio/sds-motion-forge/dist/motion.min.css";
 
@@ -275,7 +275,7 @@ ${cmdChip(NPX)}
 </div>
 </div>
 </section>
-<div class="h-works"><span>Works with</span>${["claude-code", "claude-desktop", "cursor", "vscode", "windsurf", "zed", "codex", "gemini-cli", "antigravity", "devin-desktop"].map((sl) => CLIENTS.find((x) => x.slug === sl)).map((x) => `<a href="${clientPath(x)}">${toolFor(x.slug) ? `<span class="h-wlogo">${toolFor(x.slug)}</span>` : ""}${esc(x.name)}</a>`).join("")}</div>
+<div class="h-works"><span>Works with</span>${["claude-code", "claude-desktop", "cursor", "vscode", "windsurf", "zed", "codex", "gemini-cli", "antigravity", "devin-desktop"].map((sl) => CLIENTS.find((x) => x.slug === sl)).map((x) => `<a href="${clientPath(x)}"><span class="h-wlogo">${toolFor(x.slug) || ri("computer", "line", "", 18)}</span>${esc(x.name)}</a>`).join("")}</div>
 
 <section class="m-sec" id="setup"><h2>Set up in under a minute</h2><p class="m-lead">Three steps. Your AI tool does most of them for you.</p>
 <ol class="m-stepper">
@@ -353,7 +353,7 @@ ${GROUPS.map((g) => `<section class="m-sec"><h2>${g}</h2><div class="m-clients">
       time: svg('<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>'),
       key: svg('<rect x="5" y="11" width="14" height="9" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 7.5-2"/>'),
     };
-    const copyIcon = '<svg class="g-i-copy" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15V6.5A2.5 2.5 0 0 1 7.5 4H15"/></svg><svg class="g-i-ok" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5.5 12.5 4.2 4.2L18.5 7.5"/></svg>';
+    const copyIcon = '<svg class="g-i-copy" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z"/></svg><svg class="g-i-ok" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"/></svg>';
     let gid = 0;
     const gcode = (code, lang) => {
       const id = `g-${c.slug}-${++gid}`;
@@ -398,9 +398,9 @@ ${timeline(c.remove)}
 /** Fragments for the hand-written pages (patched between markers by generate-static-pages.js). */
 module.exports.fragments = function fragments({ S, esc }) {
   const total = S.effects.length;
-  const arrow = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>';
+  const arrow = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"/></svg>';
   const cmd = `<div class="m-cmd"><code>${esc(NPX)}</code><button type="button" class="m-copy" data-copy="${esc(NPX)}">Copy</button></div>`;
-  const ways = (items) => `<div class="m-ways">${items.map(([t, d, h, b, k, c]) => `<a class="m-way m-spot${b ? " is-new" : ""}" href="${h}"><span class="m-way-head">${icon(k)}<span class="m-way-go"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></span><b>${esc(t)}${b ? `<em>${b}</em>` : ""}</b><small>${esc(d)}</small><code class="m-way-chip">${esc(c)}</code></a>`).join("")}</div>`;
+  const ways = (items) => `<div class="m-ways">${items.map(([t, d, h, b, k, c]) => `<a class="m-way m-spot${b ? " is-new" : ""}" href="${h}"><span class="m-way-head">${icon(k)}<span class="m-way-go"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"/></svg></span></span><b>${esc(t)}${b ? `<em>${b}</em>` : ""}</b><small>${esc(d)}</small><code class="m-way-chip">${esc(c)}</code></a>`).join("")}</div>`;
   const tools = ["claude-code", "cursor", "vscode", "claude-desktop", "windsurf", "zed", "codex", "antigravity", "devin-desktop"]
     .map((s) => CLIENTS.find((c) => c.slug === s)).map((c) => `<a href="/mcp/clients/${c.slug}/">${esc(c.name)}</a>`).join("");
   const toolTiles = ["claude-code", "cursor", "vscode", "claude-desktop", "windsurf", "zed", "codex", "antigravity", "devin-desktop"].map((sl) => CLIENTS.find((c) => c.slug === sl)).map((c) => `<a class="m-tool" href="/mcp/clients/${c.slug}/">${toolTile(c)}<span>${esc(c.name)}</span></a>`).join("");
@@ -588,7 +588,7 @@ module.exports.fragments = function fragments({ S, esc }) {
   const CTA_GLYPHS = ["claude", "chatgpt", "cursor", "vscode", "codex", "gemini", "copilot"];
   const CTA = [[59, -9, 0, "white"], [57, -6, -0.7, "white"], [55, -3, -1.4, "white"], [52, 0, -2.1, "white"], [55, 3, -2.8, "white"], [57, 6, -3.5, "white"], [59, 9, -4.2, "white"]];
   const ctaTiles = CTA.map(([sz, r, dl, tone], i) => `<span class="cta2-tile tone-${tone}" style="--s:${sz}px;--r:${r}deg;--l:${dl}s">${tool(CTA_GLYPHS[i])}</span>`).join("");
-  const arrowR = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>';
+  const arrowR = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"/></svg>';
   const cta = `<section class="cta2" id="start" aria-labelledby="cta2-title">
       <div class="cta2-tiles" aria-hidden="true">${ctaTiles}</div>
       <h2 id="cta2-title" class="cta2-title">Add motion that ships</h2>

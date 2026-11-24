@@ -73,9 +73,8 @@
 /* ── icons: outline at rest, filled on hover (scripts/docs/icons.js) ─────────── */
 .ic { --ic-cut: #eaecf1; position: relative; display: inline-grid; place-items: center; flex: none; width: 42px; height: 42px; border-radius: 14px; background: #eaecf1; color: #4535c4; transition: background 0.25s, color 0.25s, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s; }
 .ic svg { grid-area: 1 / 1; transition: opacity 0.22s, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
-.ic-s { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
-.ic-f { fill: currentColor; stroke: currentColor; stroke-width: 0; stroke-linecap: round; stroke-linejoin: round; opacity: 0; transform: scale(0.5) rotate(-18deg); }
-.ic-f [fill="none"], .ic-f path[stroke-width] { stroke: currentColor; }
+.ic-s { fill: currentColor; }
+.ic-f { fill: currentColor; opacity: 0; transform: scale(0.5) rotate(-18deg); }
 a:hover .ic, a:focus-visible .ic, .ic-host:hover .ic, .ic-host:focus-visible .ic {
   --ic-cut: #5c4ae1; background: #5c4ae1; color: #fff; transform: translateY(-1px) rotate(-6deg) scale(1.06); box-shadow: 0 8px 20px rgba(92, 74, 225, 0.32);
 }
@@ -112,7 +111,7 @@ a:hover .ic-f, a:focus-visible .ic-f, .ic-host:hover .ic-f, .ic-host:focus-visib
 }
 
 /* every dropdown item ends with a top-right arrow; it nudges up and right on hover */
-.sh-menu a:not(.sh-all)::after { content: ""; flex: none; margin-left: auto; width: 16px; height: 16px; background: currentColor; opacity: 0.4; transition: opacity 0.2s, transform 0.25s cubic-bezier(0.22, 1, 0.36, 1); -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.5 11.5l7-7M5.5 4.5h6v6'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.5 11.5l7-7M5.5 4.5h6v6'/%3E%3C/svg%3E") center / contain no-repeat; }
+.sh-menu a:not(.sh-all)::after { content: ""; flex: none; margin-left: auto; width: 16px; height: 16px; background: currentColor; opacity: 0.4; transition: opacity 0.2s, transform 0.25s cubic-bezier(0.22, 1, 0.36, 1); -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z'/%3E%3C/svg%3E") center / contain no-repeat; }
 .sh-menu a:not(.sh-all):hover::after, .sh-menu a:not(.sh-all):focus-visible::after { opacity: 1; transform: translate(2px, -2px); color: #5c4ae1; }
 .sh-menu a .sh-avs { margin-left: auto; }
 .sh-menu a .sh-avs + * { margin-left: 0; }
@@ -176,3 +175,56 @@ a:hover .ic-f, a:focus-visible .ic-f, .ic-host:hover .ic-f, .ic-host:focus-visib
 .p-cur { position: absolute; left: 50%; top: 50%; margin: -4px 0 0 -4px; animation: shp-orb 3.2s ease-in-out infinite; }
 @keyframes shp-orb { 0%, 100% { translate: -70px -18px; } 25% { translate: 60px -30px; } 50% { translate: 70px 26px; } 75% { translate: -50px 30px; } }
 @media (prefers-reduced-motion: reduce) { .shp * { animation: none !important; } }
+
+/* Remix font icons: line drawing at rest, fill drawing while the link or button is hovered. Arrows are never swapped. */
+a:hover .ri-file-copy-line:before, button:hover .ri-file-copy-line:before { content: "\ecd4"; }
+a:hover .ri-gallery-line:before, button:hover .ri-gallery-line:before { content: "\eda4"; }
+a:hover .ri-download-2-line:before, button:hover .ri-download-2-line:before { content: "\ec53"; }
+a:hover .ri-cursor-line:before, button:hover .ri-cursor-line:before { content: "\ec09"; }
+a:hover .ri-close-line:before, button:hover .ri-close-line:before { content: "\eb98"; }
+a:hover .ri-book-open-line:before, button:hover .ri-book-open-line:before { content: "\eada"; }
+a:hover .ri-search-line:before, button:hover .ri-search-line:before { content: "\f0d0"; }
+a:hover .ri-restart-line:before, button:hover .ri-restart-line:before { content: "\f07f"; }
+a:hover .ri-pause-line:before, button:hover .ri-pause-line:before { content: "\efd7"; }
+a:hover .ri-play-line:before, button:hover .ri-play-line:before { content: "\f00a"; }
+a:hover .ri-code-s-slash-line:before, button:hover .ri-code-s-slash-line:before { content: "\ebac"; }
+a:hover .ri-external-link-line:before, button:hover .ri-external-link-line:before { content: "\ecae"; }
+a:hover .ri-check-line:before, button:hover .ri-check-line:before { content: "\eb7a"; }
+a:hover .ri-error-warning-line:before, button:hover .ri-error-warning-line:before { content: "\eca0"; }
+a:hover .ri-github-line:before, button:hover .ri-github-line:before { content: "\edca"; }
+
+/* GitHub mark: line drawing at rest, fill drawing on hover */
+.sh-icon .gh-f { display: none; } .sh-icon:hover .gh-f { display: inline; } .sh-icon:hover .gh-s { display: none; }
+
+/* every button ends with an icon: the Remix arrow-right (line drawing, never filled), which nudges right on hover.
+   Buttons that already carry their own trailing svg are left alone. */
+.btn:not(:has(svg)):not(.btn-icon)::after, .btn2:not(:has(svg))::after, .sh-cta::after, .cta2-primary:not(:has(svg))::after, .cta2-soft:not(:has(svg))::after {
+  content: ""; flex: none; display: inline-block; width: 1.2em; height: 1.2em; margin-left: 0.45em; background: currentColor; vertical-align: -0.2em;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z'/%3E%3C/svg%3E") center / contain no-repeat; transition: translate 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.btn:hover::after, .btn2:hover::after, .sh-cta:hover::after, .cta2-primary:hover::after, .cta2-soft:hover::after { translate: 3px 0; }
+.sh-cta { display: inline-flex; align-items: center; }
+@media (prefers-reduced-motion: reduce) { .btn::after, .btn2::after, .sh-cta::after, .cta2-primary::after, .cta2-soft::after { transition: none; } }
+
+/* Animations menu, compact: shorter rows, smaller tiles, a shorter preview pane */
+.sh-menu-mega { padding: 8px; }
+.sh-mega { grid-template-columns: 1fr 290px; gap: 8px; }
+.sh-list { gap: 0; padding: 0; }
+.sh-cat { padding: 6px 10px; gap: 10px; }
+.sh-cat .ic { width: 34px; height: 34px; border-radius: 11px; }
+.sh-cat .ic svg { width: 19px; height: 19px; }
+.sh-cat .sh-txt b { font-size: 14px; line-height: 1.25; }
+.sh-cat .sh-txt small { font-size: 12.5px; line-height: 1.3; }
+.sh-pane { padding: 8px; gap: 8px; }
+.sh-stage { min-height: 200px; }
+.shp { height: 96px; }
+.sh-pane .sh-all { padding: 10px 14px; }
+
+/* ---------- spacing scale (one place) ----------
+   chips and badges: 4-5px by 10-12px; inline code: .15em by .5em; long code strings wrap instead of pushing the page sideways */
+:not(pre) > code { padding: 0.15em 0.5em; border-radius: 7px; overflow-wrap: anywhere; }
+td > code, th > code { display: inline-block; margin: 2px 0; }
+table td, table th { padding-top: 12px; padding-bottom: 12px; }
+
+/* code blocks never push the page sideways: they scroll inside their own box */
+pre { max-width: 100%; overflow-x: auto; }
