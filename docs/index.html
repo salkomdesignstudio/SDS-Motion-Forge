@@ -390,6 +390,39 @@
       .foot-col a:hover, .foot-studio-link:hover { color: var(--ink); text-decoration: underline; }
       .foot-studio-link { color: var(--brand); }
       .foot-bottom { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-top: 24px; border-top: 1px solid var(--line); font-size: 13.5px; color: var(--ink-3); }
+      /* ---------- footer: curtain reveal (measured on motvin.com: sticky footer under a rounded white sheet) ---------- */
+      main#content { position: relative; z-index: 1; background: var(--bg); border-radius: 0 0 40px 40px; }
+      .foot { position: sticky; bottom: 0; z-index: 0; display: flex; flex-direction: column; height: min(100svh, 1000px); margin-top: -40px; padding: 40px 0 0; overflow: hidden; background: #14162a; color: #fff; border-top: 0; }
+      .foot-in { flex: none; grid-template-columns: 340px minmax(0, 1fr); gap: 96px; padding-top: 64px; padding-bottom: 0; }
+      .foot-logo-text, .foot-brand p { color: rgba(255, 255, 255, 0.86); }
+      .foot .foot-logo { text-decoration: none; }
+      .foot-brand p { max-width: 360px; font-size: 15px; }
+      .foot-brand p a, .foot-studio-link { color: #fff; text-decoration: underline dotted 1.5px; text-underline-offset: 4px; }
+      .foot-cols { display: flex; justify-content: flex-end; gap: 96px; padding-top: 6px; }
+      .foot-col h3 { color: rgba(255, 255, 255, 0.55); text-transform: none; letter-spacing: 0; font-weight: 500; font-size: 15px; }
+      .foot-col a { color: rgba(255, 255, 255, 0.88); font-weight: 500; font-size: 15.5px; transition: color 0.2s; }
+      .foot-col a:hover { color: rgba(255, 255, 255, 0.6); text-decoration: none; }
+      .foot-bottom { flex: none; margin-top: 28px; padding: 22px 0; border-top: 1px solid rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.58); }
+      .foot-bottom .foot-studio-link { color: rgba(255, 255, 255, 0.85); }
+      .foot-bottom .tm { color: rgba(255, 255, 255, 0.6); }
+      .foot a:focus-visible { outline: 2px solid #fff; outline-offset: 3px; border-radius: 6px; }
+      /* the wordmark: outlined letters, cropped by the bottom edge. Hover a letter and it hops; its dots spin (timings from motvin.com) */
+      .foot-wm { --wm: min(calc((100vw - 64px) / 2.7), 600px); flex: 1; min-height: 100px; display: flex; justify-content: center; align-items: flex-start; gap: calc(var(--wm) * 0.025); overflow: hidden; padding-top: calc(var(--wm) * 0.01); font: 800 var(--wm) / 0.9 "Manrope", Arial, sans-serif; letter-spacing: -0.04em; user-select: none; }
+      .wm-l { position: relative; display: inline-block; color: transparent; -webkit-text-stroke: clamp(2px, 0.4vw, 6px) #fff; cursor: default; transform-origin: 50% 100%; transition: translate 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), scale 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); }
+      .wm-l:hover { translate: 0 -7%; scale: 1.03 0.97; }
+      .wm-dot { position: absolute; width: calc(var(--wm) * 0.16); height: calc(var(--wm) * 0.16); margin: calc(var(--wm) * -0.08) 0 0 calc(var(--wm) * -0.08); border-radius: 50%; background: var(--a); border: clamp(3px, 0.45vw, 7px) solid #fff; box-sizing: border-box; -webkit-text-stroke: 0; }
+      .wm-dot::after { content: ""; position: absolute; inset: 28%; border-radius: 50%; background: var(--b); }
+      .wm-l:hover .wm-dot { animation: wm-spin 0.7s linear; }
+      @keyframes wm-spin { 0% { scale: 1; rotate: 0deg; animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1); } 50% { scale: 1.25; animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1); } 100% { scale: 1; rotate: 360deg; } }
+      @media (max-width: 900px), (max-height: 700px) {
+        main#content { border-radius: 0; }
+        .foot { position: relative; height: auto; margin-top: 0; padding-top: 0; }
+        .foot-in { grid-template-columns: 1fr; gap: 32px; padding-top: 48px; }
+        .foot-cols { justify-content: flex-start; flex-wrap: wrap; gap: 32px 48px; }
+        .foot-wm { flex: none; height: calc(var(--wm) * 0.62); }
+      }
+      @media (prefers-reduced-motion: reduce) { .wm-l { transition: none; } .wm-l:hover .wm-dot { animation: none; } }
+
 
       /* animation detail */
       .modal { position: fixed; inset: 0; z-index: 300; display: grid; place-items: center; padding: 20px; visibility: hidden; }
@@ -430,7 +463,7 @@
       .ctrl-seg button.on { background: #fff; color: var(--ink); box-shadow: var(--sh-1); }
 
       /* below-the-fold sections are laid out only when they get near the viewport */
-      #how, #js, #why, #physics, #playground, #docs, #answers, .cta-band, .foot { content-visibility: auto; contain-intrinsic-size: auto 720px; }
+      #how, #js, #why, #physics, #playground, #docs, #answers, .cta-band { content-visibility: auto; contain-intrinsic-size: auto 720px; }
 
       /* reveal on scroll */
       [data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
@@ -699,7 +732,7 @@
       <div class="wrap">
         <div class="sec-head" data-reveal="up">
           <span class="eyebrow">How it works</span>
-          <h2 class="sec-title t2"><span class="t2a">Three steps.</span><span class="t2b"><u class="t2u">No setup</u>.</span></h2>
+          <h2 class="sec-title">Three steps. No setup.</h2>
           <p class="sec-desc">Load the stylesheet once. Add a class. Tune it if you want to.</p>
         </div>
         <ol class="m-stepper" data-reveal="up">
@@ -724,7 +757,7 @@
       <div class="wrap">
         <div class="sec-head" data-reveal="up">
           <span class="eyebrow">Plain answer</span>
-          <h2 class="sec-title t2"><span class="t2a">What needs JavaScript?</span><span class="t2b">Most <u class="t2u">effects need none</u>.</span></h2>
+          <h2 class="sec-title">What needs JavaScript? Most effects need none.</h2>
           <p class="sec-desc">Most effects need none. Three things are different, and each one is optional.</p>
         </div>
         <div class="j-grid">
@@ -824,7 +857,7 @@
       <div class="wrap">
         <div class="sec-head phys-head" data-reveal="up">
           <span class="eyebrow">New in 5.1</span>
-          <h2 class="sec-title t2"><span class="t2a">Thirteen text effects.</span><span class="t2b">Driven by <u class="t2u">real physics</u>.</span></h2>
+          <h2 class="sec-title">Thirteen text effects. Driven by real physics.</h2>
           <p class="sec-desc">Driven by real equations, not hand-tuned curves. Each equation is sampled into a CSS <code>linear()</code> easing and checked against its closed-form solution on every build.</p>
           <ul class="phys-eq" aria-label="Physical models used">
             <li>Spring</li><li>Bouncing ball</li><li>Pendulum</li><li>Buoyancy against drag</li><li>Drag-limited gust</li><li>Inverse-square infall</li>
@@ -869,7 +902,7 @@
       <div class="wrap">
         <div class="sec-head" data-reveal="up">
           <span class="eyebrow">Live gallery</span>
-          <h2 class="sec-title t2"><span class="t2a">Every animation.</span><span class="t2b">Playing <u class="t2u">live</u>.</span></h2>
+          <h2 class="sec-title">Every animation, playing live.</h2>
           <p class="sec-desc">Hover a card, or tap its replay icon, to play it again. Click a card for the code and timing controls. These are the real animations, not recordings.</p>
         </div>
         <div class="gal-bar">
@@ -890,7 +923,7 @@
       <div class="wrap">
         <div class="sec-head" data-reveal="up">
           <span class="eyebrow">Playground</span>
-          <h2 class="sec-title t2"><span class="t2a">Build it. See it.</span><span class="t2b"><u class="t2u">Copy it</u>.</span></h2>
+          <h2 class="sec-title">Build it. See it. Copy it.</h2>
           <p class="sec-desc">Pick any of the 617 effects. Each one is shown with the markup it needs. Add speed, delay or loop, then copy code that is ready to paste.</p>
         </div>
         <div class="pgx" data-reveal="up" data-delay="1">
@@ -925,7 +958,7 @@
       <div class="wrap">
         <div class="sec-head" data-reveal="up">
           <span class="eyebrow">Ways to use it</span>
-          <h2 class="sec-title t2"><span class="t2a">Use it your way.</span><span class="t2b">CDN, npm or <u class="t2u">your AI tool</u>.</span></h2>
+          <h2 class="sec-title">Use it your way. CDN, npm or your AI tool.</h2>
           <p class="sec-desc">One stylesheet link, an npm import, or your AI tool. All of them use the same 617 animations.</p>
         </div>
         <div class="m-ai m-spot" data-reveal="up">
@@ -943,7 +976,7 @@
       <div class="wrap">
         <div class="sec-head" data-reveal="up">
           <span class="eyebrow">Documentation</span>
-          <h2 class="sec-title t2"><span class="t2a">Everything you need.</span><span class="t2b">Ready to <u class="t2u">ship</u>.</span></h2>
+          <h2 class="sec-title">Everything you need. Ready to ship.</h2>
           <p class="sec-desc">Installation, the full animation reference, the optional scripts, TypeScript types, theming and accessibility.</p>
         </div>
         <div class="docs-card-grid" data-reveal="up">
@@ -1059,6 +1092,7 @@
         <span class="tm">Tool names and logos belong to their owners and are shown only to say what works with Motion Forge.</span>
         <span>Designed and developed by <a href="https://salkomdesignstudio.com" target="_blank" rel="noopener noreferrer" class="foot-studio-link">Salkom Design Studio</a></span>
       </div>
+      <div class="foot-wm" aria-hidden="true"><span class="wm-l" style="--i:0">f<i class="wm-dot" style="left:64%;top:25%;--a:#5c4ae1;--b:#ffd166"></i></span><span class="wm-l" style="--i:1">o<i class="wm-dot" style="left:12%;top:55%;--a:#12b5e5;--b:#ff6b4a"></i><i class="wm-dot" style="left:78%;top:36%;--a:#ff7ab6;--b:#2dd4a0"></i></span><span class="wm-l" style="--i:2">r<i class="wm-dot" style="left:82%;top:33%;--a:#ffd166;--b:#5c4ae1"></i></span><span class="wm-l" style="--i:3">g<i class="wm-dot" style="left:80%;top:34%;--a:#2dd4a0;--b:#ff7ab6"></i><i class="wm-dot" style="left:8%;top:60%;--a:#12b5e5;--b:#ff6b4a"></i></span><span class="wm-l" style="--i:4">e<i class="wm-dot" style="left:14%;top:48%;--a:#ff6b4a;--b:#12b5e5"></i></span></div>
     </footer>
 
     <!-- ANIMATION DETAIL MODAL -->

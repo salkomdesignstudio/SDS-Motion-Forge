@@ -409,7 +409,7 @@ module.exports.fragments = function fragments({ S, esc }) {
       <div class="wrap">
         <div class="sec-head" data-reveal="up">
           <span class="eyebrow">Ways to use it</span>
-          <h2 class="sec-title t2"><span class="t2a">Use it your way.</span><span class="t2b">CDN, npm or <u class="t2u">your AI tool</u>.</span></h2>
+          <h2 class="sec-title">Use it your way. CDN, npm or your AI tool.</h2>
           <p class="sec-desc">One stylesheet link, an npm import, or your AI tool. All of them use the same ${total} animations.</p>
         </div>
         <div class="m-ai m-spot" data-reveal="up">
@@ -506,7 +506,7 @@ module.exports.fragments = function fragments({ S, esc }) {
       <div class="wrap">
         <div class="sec-head" data-reveal="up">
           <span class="eyebrow">How it works</span>
-          <h2 class="sec-title t2"><span class="t2a">Three steps.</span><span class="t2b"><u class="t2u">No setup</u>.</span></h2>
+          <h2 class="sec-title">Three steps. No setup.</h2>
           <p class="sec-desc">Load the stylesheet once. Add a class. Tune it if you want to.</p>
         </div>
         <ol class="m-stepper" data-reveal="up">
@@ -526,7 +526,7 @@ module.exports.fragments = function fragments({ S, esc }) {
       <div class="wrap">
         <div class="sec-head" data-reveal="up">
           <span class="eyebrow">Plain answer</span>
-          <h2 class="sec-title t2"><span class="t2a">What needs JavaScript?</span><span class="t2b">Most <u class="t2u">effects need none</u>.</span></h2>
+          <h2 class="sec-title">What needs JavaScript? Most effects need none.</h2>
           <p class="sec-desc">Most effects need none. Three things are different, and each one is optional.</p>
         </div>
         <div class="j-grid">
