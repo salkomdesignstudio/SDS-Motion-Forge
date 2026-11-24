@@ -257,17 +257,19 @@
       .eyebrow::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--brand-2); }
       .sec-title { margin: 14px 0 12px; font-size: clamp(32px, 4.6vw, 56px); line-height: 1.04; letter-spacing: -0.035em; }
       .sec-desc { max-width: 640px; margin: 0 auto; color: var(--ink-2); font-size: 18px; line-height: 1.6; }
-      .logos { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 0; padding: 18px 0 8px; list-style: none; }
-      .logos li { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border: 1px solid var(--line); border-radius: var(--r-full); background: #fff; font: 600 14px var(--f-disp); color: var(--ink-2); }
-      .logos i { font-size: 18px; color: var(--ink); }
-      /* works-in row: each framework gets a tile in its own colour */
-      .logos { gap: 12px; }
-      .logos li { --c: #16182c; gap: 10px; padding: 7px 18px 7px 7px; box-shadow: var(--sh-1); color: var(--ink); transition: transform 0.25s var(--ease), box-shadow 0.25s, border-color 0.25s; }
-      .logos li:hover { transform: translateY(-3px); box-shadow: var(--sh-2); border-color: color-mix(in srgb, var(--c) 45%, transparent); }
-      .logos li > i, .logos li > svg { box-sizing: content-box; width: 20px; height: 20px; padding: 7px; border-radius: 12px; font-size: 20px; color: var(--c); background: color-mix(in srgb, var(--c) 12%, #fff); transition: background 0.25s, color 0.25s, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
-      .logos li:hover > i, .logos li:hover > svg { background: var(--c); color: #fff; transform: rotate(-6deg) scale(1.06); }
+      /* works-in row: one card per stack, an icon tile in its own colour, its name, and the line that applies a class there */
+      .logos { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 14px; margin: 0; padding: 18px 0 8px; list-style: none; }
+      .logos li { --c: #16182c; display: flex; flex-direction: column; align-items: flex-start; gap: 12px; min-width: 0; padding: 18px; background: #fff; border: 1px solid var(--line); border-radius: 22px; box-shadow: var(--sh-1); transition: transform 0.3s var(--ease), box-shadow 0.3s, border-color 0.3s; }
+      .logos li:hover { transform: translateY(-4px); box-shadow: var(--sh-2); border-color: color-mix(in srgb, var(--c) 40%, transparent); }
+      .lg-ic { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 15px; background: color-mix(in srgb, var(--c) 12%, #fff); color: var(--c); transition: background 0.25s, color 0.25s, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1); }
+      .lg-ic i, .lg-ic svg { width: 24px; height: 24px; font-size: 24px; line-height: 1; }
+      .logos li:hover .lg-ic { background: var(--c); color: #fff; transform: rotate(-6deg) scale(1.06); }
+      .logos b { font: 700 16px var(--f-head); letter-spacing: -0.02em; color: var(--ink); }
+      .logos code { max-width: 100%; padding: 5px 10px; border-radius: var(--r-full); background: var(--bg-2); color: var(--ink-2); font: 11.5px var(--f-mono); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
       .logos li:nth-child(1) { --c: #e34f26; } .logos li:nth-child(2) { --c: #0ea5c6; } .logos li:nth-child(3) { --c: #16182c; } .logos li:nth-child(4) { --c: #dd0031; }
       .logos li:nth-child(5) { --c: #36a374; } .logos li:nth-child(6) { --c: #7952b3; } .logos li:nth-child(7) { --c: #0891b2; }
+      @media (max-width: 1100px) { .logos { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+      @media (max-width: 640px) { .logos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; } .logos li { padding: 14px; } }
       .logos-note { text-align: center; margin-top: 14px; font-size: 13px; color: var(--ink-3); }
 
       /* cards: one language everywhere */
@@ -327,6 +329,7 @@
       .rm-toggle input { accent-color: var(--brand); }
       .gal-meta { min-height: 22px; margin: 4px 4px 14px; font-size: 13.5px; color: var(--ink-3); }
       .gal-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(268px, 1fr)); gap: 16px; }
+      @media (min-width: 1400px) { #gallery > .wrap { max-width: min(1640px, calc(100vw - 64px)); } .gal-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; } }
       .gal-empty { grid-column: 1 / -1; padding: 56px 16px; text-align: center; color: var(--ink-2); font-size: 16px; }
       .gal-grid .card { content-visibility: auto; contain-intrinsic-size: auto 300px; }
       .card { position: relative; display: flex; flex-direction: column; padding: 8px; background: #fff; border: 1px solid var(--line); border-radius: var(--r-xl); box-shadow: var(--sh-1); cursor: pointer; transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s; }
@@ -707,13 +710,13 @@
     <section class="sec" style="padding-top:32px;padding-bottom:8px" aria-label="Where it works">
       <div class="wrap">
         <ul class="logos">
-          <li><i class="ri-html5-line"></i> Plain HTML</li>
-          <li><i class="ri-reactjs-line"></i> React</li>
-          <li><i class="ri-nextjs-line"></i> Next.js</li>
-          <li><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><path fill-rule="evenodd" d="M12 1.8 2.9 5.1l1.4 12.1L12 22.2l7.7-5 1.4-12.1zM12 6.6l-4.4 9.9h1.7l.9-2.2h3.6l.9 2.2h1.7zm0 3.6 1.2 3H10.8z"/></svg> Angular</li>
-          <li><i class="ri-vuejs-line"></i> Vue</li>
-          <li><i class="ri-bootstrap-line"></i> Bootstrap</li>
-          <li><i class="ri-tailwind-css-line"></i> Tailwind</li>
+          <li><span class="lg-ic"><i class="ri-html5-line"></i></span><b>Plain HTML</b><code>class="sds-btn-amp"</code></li>
+          <li><span class="lg-ic"><i class="ri-reactjs-line"></i></span><b>React</b><code>className="sds-btn-amp"</code></li>
+          <li><span class="lg-ic"><i class="ri-nextjs-line"></i></span><b>Next.js</b><code>className="sds-btn-amp"</code></li>
+          <li><span class="lg-ic"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="currentColor"><path fill-rule="evenodd" d="M12 1.8 2.9 5.1l1.4 12.1L12 22.2l7.7-5 1.4-12.1zM12 6.6l-4.4 9.9h1.7l.9-2.2h3.6l.9 2.2h1.7zm0 3.6 1.2 3H10.8z"/></svg></span><b>Angular</b><code>class="sds-btn-amp"</code></li>
+          <li><span class="lg-ic"><i class="ri-vuejs-line"></i></span><b>Vue</b><code>class="sds-btn-amp"</code></li>
+          <li><span class="lg-ic"><i class="ri-bootstrap-line"></i></span><b>Bootstrap</b><code>class="btn sds-btn-amp"</code></li>
+          <li><span class="lg-ic"><i class="ri-tailwind-css-line"></i></span><b>Tailwind</b><code>class="px-4 sds-btn-amp"</code></li>
         </ul>
         <p class="logos-note">Anything that renders HTML with CSS classes. Not for email clients or native and canvas-based apps.</p>
       </div>
@@ -2473,6 +2476,12 @@
                 var els = hero.querySelectorAll(p[0]);
                 if (els.length) gsap.to(els, { opacity: 0, ease: "power1.inOut", scrollTrigger: { trigger: hero, start: "top top", end: "+=" + p[1], scrub: true } });
               });
+              /* the floating logos travel up with the headline, then fade out before the cards reach them */
+              var floatsWrap = hero.querySelector(".hero-floats");
+              if (floatsWrap) {
+                gsap.to(floatsWrap, { y: -190, ease: "power1.out", scrollTrigger: { trigger: hero, start: "top top", end: "+=300", scrub: true } });
+                gsap.to(floatsWrap, { opacity: 0, ease: "power1.in", scrollTrigger: { trigger: hero, start: "top+=80 top", end: "+=300", scrub: true } });
+              }
               var specWrap = hero.querySelector(".specimens");
               specWrap = specWrap && specWrap.parentNode;
               if (specWrap) gsap.fromTo(specWrap, { scale: 1, transformOrigin: "50% 0%" }, { scale: 1.03, ease: "power1.inOut", scrollTrigger: { trigger: hero, start: "top+=60 top", end: "top+=330 top", scrub: true } });

@@ -230,11 +230,25 @@ table td, table th { padding-top: 12px; padding-bottom: 12px; }
 pre { max-width: 100%; overflow-x: auto; }
 
 /* brand font icons swap to their fill drawing while the row, link or button is hovered */
-li:hover > .ri-html5-line:before, .tile:hover .ri-html5-line:before { content: "\ee40"; }
-li:hover > .ri-reactjs-line:before, .tile:hover .ri-reactjs-line:before { content: "\f057"; }
-li:hover > .ri-vuejs-line:before, .tile:hover .ri-vuejs-line:before { content: "\f2a5"; }
-li:hover > .ri-nextjs-line:before, .tile:hover .ri-nextjs-line:before { content: "\f502"; }
-li:hover > .ri-bootstrap-line:before, .tile:hover .ri-bootstrap-line:before { content: "\f2ee"; }
-li:hover > .ri-tailwind-css-line:before, .tile:hover .ri-tailwind-css-line:before { content: "\f517"; }
-li:hover > .ri-javascript-line:before, .tile:hover .ri-javascript-line:before { content: "\f33a"; }
-li:hover > .ri-github-line:before, .tile:hover .ri-github-line:before { content: "\edca"; }
+li:hover .ri-html5-line:before, .tile:hover .ri-html5-line:before { content: "\ee40"; }
+li:hover .ri-reactjs-line:before, .tile:hover .ri-reactjs-line:before { content: "\f057"; }
+li:hover .ri-vuejs-line:before, .tile:hover .ri-vuejs-line:before { content: "\f2a5"; }
+li:hover .ri-nextjs-line:before, .tile:hover .ri-nextjs-line:before { content: "\f502"; }
+li:hover .ri-bootstrap-line:before, .tile:hover .ri-bootstrap-line:before { content: "\f2ee"; }
+li:hover .ri-tailwind-css-line:before, .tile:hover .ri-tailwind-css-line:before { content: "\f517"; }
+li:hover .ri-javascript-line:before, .tile:hover .ri-javascript-line:before { content: "\f33a"; }
+li:hover .ri-github-line:before, .tile:hover .ri-github-line:before { content: "\edca"; }
+
+/* narrower desktops: the Animations menu spans the window instead of hanging off its button */
+@media (max-width: 1240px) and (min-width: 961px) {
+  .sh-menu-mega { position: fixed; top: 74px; left: 12px; right: 12px; width: auto; }
+  .sh-menu-mega::before { top: -16px; height: 16px; }
+}
+
+.sh-cta { white-space: nowrap; }
+@media (max-width: 1120px) and (min-width: 961px) {
+  .sh-bar { gap: 6px; padding-left: 18px; }
+  .sh-nav { margin-left: 4px; gap: 0; }
+  .sh-nav > a, .sh-btn { padding-left: 10px; padding-right: 10px; font-size: 14px; }
+  .sh-cta { padding: 0 14px; }
+}

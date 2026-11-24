@@ -154,3 +154,9 @@
 @media (max-width: 960px) { .cat-hero { grid-template-columns: minmax(0, 1fr); gap: 24px; padding: 24px; border-radius: 28px; } }
 @media (prefers-reduced-motion: reduce) { .cat-stats li { transition: none; } .cat-stats li:hover, .cat-hero:hover .cat-top .ic { transform: none; } }
 @media (max-width: 560px) { .cat-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } .cat-stats li:last-child:nth-child(odd) { grid-column: 1 / -1; } }
+
+/* wide screens: six animation cards per row (the page container grows with the screen) */
+@media (min-width: 1400px) {
+  .wrap.wide { max-width: min(1640px, calc(100vw - 64px)); }
+  .fx-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; }
+}
