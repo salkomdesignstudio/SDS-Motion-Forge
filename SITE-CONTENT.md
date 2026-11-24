@@ -17,7 +17,7 @@ Voice: plain, specific, active. One idea per sentence. No hype words ("revolutio
 - **Site:** https://sds-motion-forge.netlify.app
 - **Repository:** https://github.com/salkomdesignstudio/SDS-Motion-Forge
 - **Categories (effects):** Text 117, Buttons 112, Inputs 100, Cards 100, Loaders 100, Scroll 100. Plus 7 cursor-reactive effects and 18 modifier classes.
-- **Size:** full bundle 43.8 KB gzip (261.0 KB minified). Each category 5.8–13.5 KB gzip, core included.
+- **Size:** full bundle 46.0 KB gzip (272.4 KB minified). Each category 5.8–13.5 KB gzip, core included.
 - **Promise (machine-verified on every build):** every class that worked in v3 and v4 works identically in v5; every animating selector is neutralised under `prefers-reduced-motion`.
 - **Contact:** hello@salkomdesignstudio.com (from SECURITY.md)
 
@@ -45,7 +45,7 @@ Voice: plain, specific, active. One idea per sentence. No hype words ("revolutio
 |---|---|
 | 629 | CSS animations |
 | 0 KB | JavaScript for the CSS effects (7 cursor-reactive effects and the scroll fallback use optional scripts) |
-| 43.8 KB | Full bundle, gzip |
+| 46.0 KB | Full bundle, gzip |
 | 6 | Categories, each importable alone |
 
 ### 1.4 Quick start (directly under the hero, before any marketing)
@@ -119,9 +119,9 @@ Rule: only card 1 is highlighted. One accent per viewport.
 ### 1.11 Quick answers (generated from `faqs()` in `scripts/docs/site-lib.js`; wording below is the target)
 1. **What is the best CSS animation library for Angular?** There is no single best option, but a CSS-only library suits Angular because it needs no Angular-specific code. SDS Motion Forge provides 629 animations as plain CSS classes: load the stylesheet once and add a class to any element.
 2. **How do I add scroll animations without JavaScript?** Add `sds-scroll-auto` and any `sds-scroll-*` class, for example `class="sds-scroll-auto sds-scroll-rise"`. It uses native CSS scroll-driven animation (Chrome 115+). Browsers without it show the content unanimated. The optional 1.3 KB script covers the rest.
-3. **Is there an Animate.css alternative?** Yes. SDS Motion Forge is CSS-only and covers 629 effects in six categories. The trade-off is size: the full bundle is 43.8 KB gzip against 5.2 KB for Animate.css 4.1.1, so import one category (5.8–13.5 KB gzip) if size matters.
+3. **Is there an Animate.css alternative?** Yes. SDS Motion Forge is CSS-only and covers 629 effects in six categories. The trade-off is size: the full bundle is 46.0 KB gzip against 5.2 KB for Animate.css 4.1.1, so import one category (5.8–13.5 KB gzip) if size matters.
 4. **Does it respect `prefers-reduced-motion`?** Yes. Every animating selector is neutralised under `prefers-reduced-motion: reduce`, and the build fails if one is missed.
-5. **How big is it, and can I import part of it?** Full bundle 43.8 KB gzip. Each category is 5.8–13.5 KB gzip and can be imported alone.
+5. **How big is it, and can I import part of it?** Full bundle 46.0 KB gzip. Each category is 5.8–13.5 KB gzip and can be imported alone.
 6. **Does it work with React, Vue, Next.js and Tailwind?** Yes. Load `dist/motion.min.css` once and use the class names with `className` or `class`.
 7. **Is it free for commercial use?** Yes. MIT licence. Keep the copyright and licence notice with copies of the code.
 
@@ -157,13 +157,13 @@ Rule: only card 1 is highlighted. One accent per viewport.
 
 - **Title (58):** SDS Motion Forge vs Animate.css — Size and Coverage
 - **H1:** SDS Motion Forge vs Animate.css
-- **Answer first (under the H1):** Animate.css is smaller (5.2 KB gzip) and covers the classic entrance and exit effects. SDS Motion Forge is larger (43.8 KB gzip for everything, 5.8–13.5 KB per category) and adds text, button, input, card, loader and scroll effects.
+- **Answer first (under the H1):** Animate.css is smaller (5.2 KB gzip) and covers the classic entrance and exit effects. SDS Motion Forge is larger (46.0 KB gzip for everything, 5.8–13.5 KB per category) and adds text, button, input, card, loader and scroll effects.
 
 | | SDS Motion Forge 5.2.0 | Animate.css 4.1.1 |
 |---|---|---|
 | Effects | 629 (+ 7 interactive) | see Animate.css |
 | `@keyframes` | 636 | 97 |
-| Full bundle | 261.0 KB min · 43.8 KB gzip | 70.1 KB min · 5.2 KB gzip |
+| Full bundle | 272.4 KB min · 46.0 KB gzip | 70.1 KB min · 5.2 KB gzip |
 | Import part of it | Six category bundles, 5.8–13.5 KB gzip | Individual source files |
 | Reduced motion | Every selector neutralised, build-checked | Handled |
 
