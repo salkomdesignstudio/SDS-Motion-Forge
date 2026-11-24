@@ -43,7 +43,8 @@ const coreRoot = {};
 
 /* Effects eligible for utilities: CSS-only effect classes (no aliases —
    aliases resolve to their target's utility; no JS-engine classes). */
-const effects = registry.classes.concat(loadLegacy()).filter((c) =>
+// the v6 UI buttons and inputs share one base rule (a selector list / attribute selector) that a per-class utility cannot carry: use their CSS from motion.css instead
+const effects = registry.classes.concat(loadLegacy()).filter((c) => !/^sds-(btn|input)-ui-/.test(c.name) &&
   c.kind === "effect" && !c.aliasOf && !c.requiresJs &&
   ["text", "buttons", "inputs", "cards", "loaders", "scroll"].includes(c.category));
 

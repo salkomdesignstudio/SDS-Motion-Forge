@@ -2511,1065 +2511,1304 @@
   "description": "Ink Bleed — text animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the text bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
- "SDS Active Line (sds-input-active-line)": {
+ "SDS AI Rainbow (sds-input-ui-ai-rainbow)": {
   "prefix": [
-   "sds-input-active-line"
+   "sds-input-ui-ai-rainbow"
   ],
   "body": [
-   "<input class=\"sds-input-active-line\" placeholder=\"Type here\" />"
-  ],
-  "description": "Active Line — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Arrive Drop (sds-input-arrive-drop)": {
-  "prefix": [
-   "sds-input-arrive-drop"
-  ],
-  "body": [
-   "<input class=\"sds-input-arrive-drop\" placeholder=\"Type here\" />"
-  ],
-  "description": "Arrive Drop — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Arrive Materialize (sds-input-arrive-materialize)": {
-  "prefix": [
-   "sds-input-arrive-materialize"
-  ],
-  "body": [
-   "<input class=\"sds-input-arrive-materialize\" placeholder=\"Type here\" />"
-  ],
-  "description": "Arrive Materialize — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Arrive Pendulum (sds-input-arrive-pendulum)": {
-  "prefix": [
-   "sds-input-arrive-pendulum"
-  ],
-  "body": [
-   "<input class=\"sds-input-arrive-pendulum\" placeholder=\"Type here\" />"
-  ],
-  "description": "Arrive Pendulum — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Arrive Slide Label (sds-input-arrive-slide-label)": {
-  "prefix": [
-   "sds-input-arrive-slide-label"
-  ],
-  "body": [
-   "<div class=\"sds-input-arrive-slide-label\">",
+   "<div class=\"sds-input-ui-ai-rainbow\">",
    "  <input id=\"sds-email\" placeholder=\" \" />",
    "  <label for=\"sds-email\">Email</label>",
    "</div>"
   ],
-  "description": "Arrive Slide Label — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "description": "AI Rainbow — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
- "SDS Arrive Spotlight (sds-input-arrive-spotlight)": {
+ "SDS Aura Rim (sds-input-ui-aura-rim)": {
   "prefix": [
-   "sds-input-arrive-spotlight"
+   "sds-input-ui-aura-rim"
   ],
   "body": [
-   "<div class=\"sds-input-arrive-spotlight\">",
-   "  <input placeholder=\"Type here\" />",
-   "</div>"
-  ],
-  "description": "Arrive Spotlight — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Arrive Stack (sds-input-arrive-stack)": {
-  "prefix": [
-   "sds-input-arrive-stack"
-  ],
-  "body": [
-   "<div class=\"sds-input-arrive-stack\">",
-   "  <input placeholder=\"Type here\" />",
-   "</div>"
-  ],
-  "description": "Arrive Stack — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Arrive Stretch (sds-input-arrive-stretch)": {
-  "prefix": [
-   "sds-input-arrive-stretch"
-  ],
-  "body": [
-   "<input class=\"sds-input-arrive-stretch\" placeholder=\"Type here\" />"
-  ],
-  "description": "Arrive Stretch — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Arrive Unzip (sds-input-arrive-unzip)": {
-  "prefix": [
-   "sds-input-arrive-unzip"
-  ],
-  "body": [
-   "<input class=\"sds-input-arrive-unzip\" placeholder=\"Type here\" />"
-  ],
-  "description": "Arrive Unzip — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Aurora (sds-input-aurora)": {
-  "prefix": [
-   "sds-input-aurora"
-  ],
-  "body": [
-   "<input class=\"sds-input-aurora\" placeholder=\"Type here\" />"
-  ],
-  "description": "Aurora — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Bloom (sds-input-bloom)": {
-  "prefix": [
-   "sds-input-bloom"
-  ],
-  "body": [
-   "<input class=\"sds-input-bloom\" placeholder=\"Type here\" />"
-  ],
-  "description": "Bloom — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Border Beam (sds-input-border-beam)": {
-  "prefix": [
-   "sds-input-border-beam"
-  ],
-  "body": [
-   "<input class=\"sds-input-border-beam\" placeholder=\"Type here\" />"
-  ],
-  "description": "Border Beam — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Border Comet Loop (sds-input-border-comet-loop)": {
-  "prefix": [
-   "sds-input-border-comet-loop"
-  ],
-  "body": [
-   "<div class=\"sds-input-border-comet-loop\">",
-   "  <input placeholder=\"Type here\" />",
-   "</div>"
-  ],
-  "description": "Border Comet Loop — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Border Corners (sds-input-border-corners)": {
-  "prefix": [
-   "sds-input-border-corners"
-  ],
-  "body": [
-   "<div class=\"sds-input-border-corners\">",
-   "  <input placeholder=\"Type here\" />",
-   "</div>"
-  ],
-  "description": "Border Corners — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Border Heartline (sds-input-border-heartline)": {
-  "prefix": [
-   "sds-input-border-heartline"
-  ],
-  "body": [
-   "<div class=\"sds-input-border-heartline\">",
-   "  <input placeholder=\"Type here\" />",
-   "</div>"
-  ],
-  "description": "Border Heartline — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Border Orbiters (sds-input-border-orbiters)": {
-  "prefix": [
-   "sds-input-border-orbiters"
-  ],
-  "body": [
-   "<div class=\"sds-input-border-orbiters\">",
-   "  <input placeholder=\"Type here\" />",
-   "</div>"
-  ],
-  "description": "Border Orbiters — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Border Rain (sds-input-border-rain)": {
-  "prefix": [
-   "sds-input-border-rain"
-  ],
-  "body": [
-   "<div class=\"sds-input-border-rain\">",
-   "  <input placeholder=\"Type here\" />",
-   "</div>"
-  ],
-  "description": "Border Rain — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Border Static (sds-input-border-static)": {
-  "prefix": [
-   "sds-input-border-static"
-  ],
-  "body": [
-   "<div class=\"sds-input-border-static\">",
-   "  <input placeholder=\"Type here\" />",
-   "</div>"
-  ],
-  "description": "Border Static — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Border Tide (sds-input-border-tide)": {
-  "prefix": [
-   "sds-input-border-tide"
-  ],
-  "body": [
-   "<div class=\"sds-input-border-tide\">",
-   "  <input placeholder=\"Type here\" />",
-   "</div>"
-  ],
-  "description": "Border Tide — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Burst (sds-input-burst)": {
-  "prefix": [
-   "sds-input-burst"
-  ],
-  "body": [
-   "<input class=\"sds-input-burst\" placeholder=\"Type here\" />"
-  ],
-  "description": "Burst — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Caret Trail (sds-input-caret)": {
-  "prefix": [
-   "sds-input-caret"
-  ],
-  "body": [
-   "<input class=\"sds-input-caret\" placeholder=\"Type here\" />"
-  ],
-  "description": "Caret Trail — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Caret Pop (sds-input-caret-pop)": {
-  "prefix": [
-   "sds-input-caret-pop"
-  ],
-  "body": [
-   "<div class=\"sds-input-caret-pop\">",
-   "  <input placeholder=\"Type here\" />",
-   "</div>"
-  ],
-  "description": "Caret Pop — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Charge (sds-input-charge)": {
-  "prefix": [
-   "sds-input-charge"
-  ],
-  "body": [
-   "<input class=\"sds-input-charge\" placeholder=\"Type here\" />"
-  ],
-  "description": "Charge — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Comet (sds-input-comet)": {
-  "prefix": [
-   "sds-input-comet"
-  ],
-  "body": [
-   "<input class=\"sds-input-comet\" placeholder=\"Type here\" />"
-  ],
-  "description": "Comet — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Crystal (sds-input-crystal)": {
-  "prefix": [
-   "sds-input-crystal"
-  ],
-  "body": [
-   "<input class=\"sds-input-crystal\" placeholder=\"Type here\" />"
-  ],
-  "description": "Crystal — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Depth (sds-input-depth)": {
-  "prefix": [
-   "sds-input-depth"
-  ],
-  "body": [
-   "<input class=\"sds-input-depth\" placeholder=\"Type here\" />"
-  ],
-  "description": "Depth — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Echo (sds-input-echo)": {
-  "prefix": [
-   "sds-input-echo"
-  ],
-  "body": [
-   "<input class=\"sds-input-echo\" placeholder=\"Type here\" />"
-  ],
-  "description": "Echo — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Electric (sds-input-electric)": {
-  "prefix": [
-   "sds-input-electric"
-  ],
-  "body": [
-   "<input class=\"sds-input-electric\" placeholder=\"Type here\" />"
-  ],
-  "description": "Electric — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Elevate Focus (sds-input-elevate-wrap)": {
-  "prefix": [
-   "sds-input-elevate-wrap"
-  ],
-  "body": [
-   "<div class=\"sds-input-elevate-wrap\">",
+   "<div class=\"sds-input-ui-aura-rim\">",
    "  <input id=\"sds-email\" placeholder=\" \" />",
    "  <label for=\"sds-email\">Email</label>",
    "</div>"
   ],
-  "description": "Elevate Focus — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "description": "Aura Rim — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
- "SDS Error Buzz (sds-input-error-buzz)": {
+ "SDS Aurora Glow (sds-input-ui-aurora-glow)": {
   "prefix": [
-   "sds-input-error-buzz"
+   "sds-input-ui-aurora-glow"
   ],
   "body": [
-   "<input class=\"sds-input-error-buzz\" placeholder=\"Type here\" />"
-  ],
-  "description": "Error Buzz — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Error Quake (sds-input-error-quake)": {
-  "prefix": [
-   "sds-input-error-quake"
-  ],
-  "body": [
-   "<div class=\"sds-input-error-quake\">",
-   "  <input placeholder=\"Type here\" />",
+   "<div class=\"sds-input-ui-aurora-glow\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
    "</div>"
   ],
-  "description": "Error Quake — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "description": "Aurora Glow — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
- "SDS Error Sink (sds-input-error-sink)": {
+ "SDS Autofill Glow (sds-input-ui-autofill-glow)": {
   "prefix": [
-   "sds-input-error-sink"
+   "sds-input-ui-autofill-glow"
   ],
   "body": [
-   "<input class=\"sds-input-error-sink\" placeholder=\"Type here\" />"
-  ],
-  "description": "Error Sink — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Expand (sds-input-expand)": {
-  "prefix": [
-   "sds-input-expand"
-  ],
-  "body": [
-   "<input class=\"sds-input-expand\" placeholder=\"Type here\" />"
-  ],
-  "description": "Expand — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Fill Corner Shade (sds-input-fill-corner-shade)": {
-  "prefix": [
-   "sds-input-fill-corner-shade"
-  ],
-  "body": [
-   "<div class=\"sds-input-fill-corner-shade\">",
-   "  <input placeholder=\"Type here\" />",
+   "<div class=\"sds-input-ui-autofill-glow\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
    "</div>"
   ],
-  "description": "Fill Corner Shade — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "description": "Autofill Glow — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
- "SDS Fill Flood (sds-input-fill-flood)": {
+ "SDS Border Sweep (sds-input-ui-border-sweep)": {
   "prefix": [
-   "sds-input-fill-flood"
+   "sds-input-ui-border-sweep"
   ],
   "body": [
-   "<div class=\"sds-input-fill-flood\">",
-   "  <input placeholder=\"Type here\" />",
+   "<div class=\"sds-input-ui-border-sweep\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
    "</div>"
   ],
-  "description": "Fill Flood — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "description": "Border Sweep — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
- "SDS Fill Meter (sds-input-fill-meter)": {
+ "SDS Busy Bar (sds-input-ui-busy-bar)": {
   "prefix": [
-   "sds-input-fill-meter"
+   "sds-input-ui-busy-bar"
   ],
   "body": [
-   "<div class=\"sds-input-fill-meter\">",
-   "  <input placeholder=\"Type here\" />",
+   "<div class=\"sds-input-ui-busy-bar\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
    "</div>"
   ],
-  "description": "Fill Meter — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "description": "Busy Bar — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
- "SDS Fill Pulse Floor (sds-input-fill-pulse-floor)": {
+ "SDS Busy Dots (sds-input-ui-busy-dots)": {
   "prefix": [
-   "sds-input-fill-pulse-floor"
+   "sds-input-ui-busy-dots"
   ],
   "body": [
-   "<div class=\"sds-input-fill-pulse-floor\">",
-   "  <input placeholder=\"Type here\" />",
+   "<div class=\"sds-input-ui-busy-dots\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
    "</div>"
   ],
-  "description": "Fill Pulse Floor — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "description": "Busy Dots — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
- "SDS Fill Rise (sds-input-fill-rise)": {
+ "SDS Caret Bar (sds-input-ui-caret-bar)": {
   "prefix": [
-   "sds-input-fill-rise"
+   "sds-input-ui-caret-bar"
   ],
   "body": [
-   "<div class=\"sds-input-fill-rise\">",
-   "  <input placeholder=\"Type here\" />",
+   "<div class=\"sds-input-ui-caret-bar\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Caret Bar — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Clear X (sds-input-ui-clear-x)": {
+  "prefix": [
+   "sds-input-ui-clear-x"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-clear-x\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Clear X — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Command Bar (sds-input-ui-command-bar)": {
+  "prefix": [
+   "sds-input-ui-command-bar"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-command-bar\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Command Bar — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Corner Brackets (sds-input-ui-corner-brackets)": {
+  "prefix": [
+   "sds-input-ui-corner-brackets"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-corner-brackets\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Corner Brackets — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Corner Dots (sds-input-ui-corner-dots)": {
+  "prefix": [
+   "sds-input-ui-corner-dots"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-corner-dots\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Corner Dots — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Disabled Stripe (sds-input-ui-disabled-stripe)": {
+  "prefix": [
+   "sds-input-ui-disabled-stripe"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-disabled-stripe\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Disabled Stripe — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Dot Matrix (sds-input-ui-dot-matrix)": {
+  "prefix": [
+   "sds-input-ui-dot-matrix"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-dot-matrix\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Dot Matrix — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Double Ring (sds-input-ui-double-ring)": {
+  "prefix": [
+   "sds-input-ui-double-ring"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-double-ring\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Double Ring — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Edge Dots (sds-input-ui-edge-dots)": {
+  "prefix": [
+   "sds-input-ui-edge-dots"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-edge-dots\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Edge Dots — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Fill Diagonal (sds-input-ui-fill-diagonal)": {
+  "prefix": [
+   "sds-input-ui-fill-diagonal"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-fill-diagonal\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Fill Diagonal — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Fill Iris (sds-input-ui-fill-iris)": {
+  "prefix": [
+   "sds-input-ui-fill-iris"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-fill-iris\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Fill Iris — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Fill Rise (sds-input-ui-fill-rise)": {
+  "prefix": [
+   "sds-input-ui-fill-rise"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-fill-rise\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
    "</div>"
   ],
   "description": "Fill Rise — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
- "SDS Fill Scanline (sds-input-fill-scanline)": {
+ "SDS Fill Split (sds-input-ui-fill-split)": {
   "prefix": [
-   "sds-input-fill-scanline"
+   "sds-input-ui-fill-split"
   ],
   "body": [
-   "<div class=\"sds-input-fill-scanline\">",
-   "  <input placeholder=\"Type here\" />",
-   "</div>"
-  ],
-  "description": "Fill Scanline — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Fire (sds-input-fire)": {
-  "prefix": [
-   "sds-input-fire"
-  ],
-  "body": [
-   "<input class=\"sds-input-fire\" placeholder=\"Type here\" />"
-  ],
-  "description": "Fire — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Flicker (sds-input-flicker)": {
-  "prefix": [
-   "sds-input-flicker"
-  ],
-  "body": [
-   "<input class=\"sds-input-flicker\" placeholder=\"Type here\" />"
-  ],
-  "description": "Flicker — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Flow (sds-input-flow)": {
-  "prefix": [
-   "sds-input-flow"
-  ],
-  "body": [
-   "<input class=\"sds-input-flow\" placeholder=\"Type here\" />"
-  ],
-  "description": "Flow — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Focus Field (sds-input-focus)": {
-  "prefix": [
-   "sds-input-focus"
-  ],
-  "body": [
-   "<input class=\"sds-input-focus\" placeholder=\"Type here\" />"
-  ],
-  "description": "Focus Field — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Focus Glow (sds-input-focus-glow)": {
-  "prefix": [
-   "sds-input-focus-glow"
-  ],
-  "body": [
-   "<input class=\"sds-input-focus-glow\" placeholder=\"Type here\" />"
-  ],
-  "description": "Focus Glow — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Frame Bloom (sds-input-frame-bloom)": {
-  "prefix": [
-   "sds-input-frame-bloom"
-  ],
-  "body": [
-   "<div class=\"sds-input-frame-bloom\">",
-   "  <input placeholder=\"Type here\" />",
-   "</div>"
-  ],
-  "description": "Frame Bloom — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Frost (sds-input-frost)": {
-  "prefix": [
-   "sds-input-frost"
-  ],
-  "body": [
-   "<input class=\"sds-input-frost\" placeholder=\"Type here\" />"
-  ],
-  "description": "Frost — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Gate Open (sds-input-gate-open)": {
-  "prefix": [
-   "sds-input-gate-open"
-  ],
-  "body": [
-   "<div class=\"sds-input-gate-open\">",
-   "  <input placeholder=\"Type here\" />",
-   "</div>"
-  ],
-  "description": "Gate Open — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Ghost (sds-input-ghost)": {
-  "prefix": [
-   "sds-input-ghost"
-  ],
-  "body": [
-   "<input class=\"sds-input-ghost\" placeholder=\"Type here\" />"
-  ],
-  "description": "Ghost — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Glitch Valid (sds-input-glitch-valid)": {
-  "prefix": [
-   "sds-input-glitch-valid"
-  ],
-  "body": [
-   "<input class=\"sds-input-glitch-valid\" placeholder=\"Type here\" />"
-  ],
-  "description": "Glitch Valid — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Glow Border (sds-input-glow-border)": {
-  "prefix": [
-   "sds-input-glow-border"
-  ],
-  "body": [
-   "<input class=\"sds-input-glow-border\" placeholder=\"Type here\" />"
-  ],
-  "description": "Glow Border — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Gradient Border (sds-input-gradient-border)": {
-  "prefix": [
-   "sds-input-gradient-border"
-  ],
-  "body": [
-   "<input class=\"sds-input-gradient-border\" placeholder=\"Type here\" />"
-  ],
-  "description": "Gradient Border — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Gravity (sds-input-gravity)": {
-  "prefix": [
-   "sds-input-gravity"
-  ],
-  "body": [
-   "<input class=\"sds-input-gravity\" placeholder=\"Type here\" />"
-  ],
-  "description": "Gravity — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Idle Depth (sds-input-idle-depth)": {
-  "prefix": [
-   "sds-input-idle-depth"
-  ],
-  "body": [
-   "<input class=\"sds-input-idle-depth\" placeholder=\"Type here\" />"
-  ],
-  "description": "Idle Depth — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Idle Floatline (sds-input-idle-floatline)": {
-  "prefix": [
-   "sds-input-idle-floatline"
-  ],
-  "body": [
-   "<div class=\"sds-input-idle-floatline\">",
-   "  <input placeholder=\"Type here\" />",
-   "</div>"
-  ],
-  "description": "Idle Floatline — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Idle Glimmer (sds-input-idle-glimmer)": {
-  "prefix": [
-   "sds-input-idle-glimmer"
-  ],
-  "body": [
-   "<div class=\"sds-input-idle-glimmer\">",
-   "  <input placeholder=\"Type here\" />",
-   "</div>"
-  ],
-  "description": "Idle Glimmer — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Idle Lean (sds-input-idle-lean)": {
-  "prefix": [
-   "sds-input-idle-lean"
-  ],
-  "body": [
-   "<input class=\"sds-input-idle-lean\" placeholder=\"Type here\" />"
-  ],
-  "description": "Idle Lean — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Idle Noise (sds-input-idle-noise)": {
-  "prefix": [
-   "sds-input-idle-noise"
-  ],
-  "body": [
-   "<div class=\"sds-input-idle-noise\">",
-   "  <input placeholder=\"Type here\" />",
-   "</div>"
-  ],
-  "description": "Idle Noise — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Idle Perimeter Dot (sds-input-idle-perimeter-dot)": {
-  "prefix": [
-   "sds-input-idle-perimeter-dot"
-  ],
-  "body": [
-   "<div class=\"sds-input-idle-perimeter-dot\">",
-   "  <input placeholder=\"Type here\" />",
-   "</div>"
-  ],
-  "description": "Idle Perimeter Dot — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Idle Soft Zoom (sds-input-idle-soft-zoom)": {
-  "prefix": [
-   "sds-input-idle-soft-zoom"
-  ],
-  "body": [
-   "<input class=\"sds-input-idle-soft-zoom\" placeholder=\"Type here\" />"
-  ],
-  "description": "Idle Soft Zoom — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Ink Stroke (sds-input-ink)": {
-  "prefix": [
-   "sds-input-ink"
-  ],
-  "body": [
-   "<input class=\"sds-input-ink\" placeholder=\"Type here\" />"
-  ],
-  "description": "Ink Stroke — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Kinetic (sds-input-kinetic)": {
-  "prefix": [
-   "sds-input-kinetic"
-  ],
-  "body": [
-   "<input class=\"sds-input-kinetic\" placeholder=\"Type here\" />"
-  ],
-  "description": "Kinetic — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Label Spring (sds-input-label-spring)": {
-  "prefix": [
-   "sds-input-label-spring"
-  ],
-  "body": [
-   "<div class=\"sds-input-label-spring\">",
+   "<div class=\"sds-input-ui-fill-split\">",
    "  <input id=\"sds-email\" placeholder=\" \" />",
    "  <label for=\"sds-email\">Email</label>",
    "</div>"
   ],
-  "description": "Label Spring — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "description": "Fill Split — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
- "SDS Laser (sds-input-laser)": {
+ "SDS Fill Wipe (sds-input-ui-fill-wipe)": {
   "prefix": [
-   "sds-input-laser"
+   "sds-input-ui-fill-wipe"
   ],
   "body": [
-   "<input class=\"sds-input-laser\" placeholder=\"Type here\" />"
-  ],
-  "description": "Laser — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Momentum (sds-input-momentum)": {
-  "prefix": [
-   "sds-input-momentum"
-  ],
-  "body": [
-   "<input class=\"sds-input-momentum\" placeholder=\"Type here\" />"
-  ],
-  "description": "Momentum — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Border Morph (sds-input-morph)": {
-  "prefix": [
-   "sds-input-morph"
-  ],
-  "body": [
-   "<input class=\"sds-input-morph\" placeholder=\"Type here\" />"
-  ],
-  "description": "Border Morph — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Morph Placeholder (sds-input-morph-ph)": {
-  "prefix": [
-   "sds-input-morph-ph"
-  ],
-  "body": [
-   "<input class=\"sds-input-morph-ph\" placeholder=\"Type here\" />"
-  ],
-  "description": "Morph Placeholder — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Neon Input (sds-input-neon)": {
-  "prefix": [
-   "sds-input-neon"
-  ],
-  "body": [
-   "<input class=\"sds-input-neon\" placeholder=\"Type here\" />"
-  ],
-  "description": "Neon Input — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Neural (sds-input-neural)": {
-  "prefix": [
-   "sds-input-neural"
-  ],
-  "body": [
-   "<input class=\"sds-input-neural\" placeholder=\"Type here\" />"
-  ],
-  "description": "Neural — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Orbit (sds-input-orbit)": {
-  "prefix": [
-   "sds-input-orbit"
-  ],
-  "body": [
-   "<input class=\"sds-input-orbit\" placeholder=\"Type here\" />"
-  ],
-  "description": "Orbit — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Placeholder Blink (sds-input-ph-blink)": {
-  "prefix": [
-   "sds-input-ph-blink"
-  ],
-  "body": [
-   "<input class=\"sds-input-ph-blink\" placeholder=\"Type here\" />"
-  ],
-  "description": "Placeholder Blink — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Placeholder Breathe (sds-input-ph-breathe)": {
-  "prefix": [
-   "sds-input-ph-breathe"
-  ],
-  "body": [
-   "<input class=\"sds-input-ph-breathe\" placeholder=\"Type here\" />"
-  ],
-  "description": "Placeholder Breathe — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Placeholder Fade Steps (sds-input-ph-fade-steps)": {
-  "prefix": [
-   "sds-input-ph-fade-steps"
-  ],
-  "body": [
-   "<input class=\"sds-input-ph-fade-steps\" placeholder=\"Type here\" />"
-  ],
-  "description": "Placeholder Fade Steps — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Placeholder Flicker In (sds-input-ph-flicker-in)": {
-  "prefix": [
-   "sds-input-ph-flicker-in"
-  ],
-  "body": [
-   "<input class=\"sds-input-ph-flicker-in\" placeholder=\"Type here\" />"
-  ],
-  "description": "Placeholder Flicker In — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Placeholder Ghost (sds-input-ph-ghost)": {
-  "prefix": [
-   "sds-input-ph-ghost"
-  ],
-  "body": [
-   "<input class=\"sds-input-ph-ghost\" placeholder=\"Type here\" />"
-  ],
-  "description": "Placeholder Ghost — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Placeholder Wave (sds-input-ph-wave)": {
-  "prefix": [
-   "sds-input-ph-wave"
-  ],
-  "body": [
-   "<input class=\"sds-input-ph-wave\" placeholder=\"Type here\" />"
-  ],
-  "description": "Placeholder Wave — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Plasma Field (sds-input-plasma)": {
-  "prefix": [
-   "sds-input-plasma"
-  ],
-  "body": [
-   "<input class=\"sds-input-plasma\" placeholder=\"Type here\" />"
-  ],
-  "description": "Plasma Field — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Prism (sds-input-prism)": {
-  "prefix": [
-   "sds-input-prism"
-  ],
-  "body": [
-   "<input class=\"sds-input-prism\" placeholder=\"Type here\" />"
-  ],
-  "description": "Prism — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Pulse Dot (sds-input-pulse-dot)": {
-  "prefix": [
-   "sds-input-pulse-dot"
-  ],
-  "body": [
-   "<input class=\"sds-input-pulse-dot\" placeholder=\"Type here\" />"
-  ],
-  "description": "Pulse Dot — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Quantum (sds-input-quantum)": {
-  "prefix": [
-   "sds-input-quantum"
-  ],
-  "body": [
-   "<input class=\"sds-input-quantum\" placeholder=\"Type here\" />"
-  ],
-  "description": "Quantum — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Radar (sds-input-radar)": {
-  "prefix": [
-   "sds-input-radar"
-  ],
-  "body": [
-   "<input class=\"sds-input-radar\" placeholder=\"Type here\" />"
-  ],
-  "description": "Radar — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Ring Pulse (sds-input-ring)": {
-  "prefix": [
-   "sds-input-ring"
-  ],
-  "body": [
-   "<input class=\"sds-input-ring\" placeholder=\"Type here\" />"
-  ],
-  "description": "Ring Pulse — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Ripple (sds-input-ripple)": {
-  "prefix": [
-   "sds-input-ripple"
-  ],
-  "body": [
-   "<input class=\"sds-input-ripple\" placeholder=\"Type here\" />"
-  ],
-  "description": "Ripple — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Saved Flash (sds-input-saved-flash)": {
-  "prefix": [
-   "sds-input-saved-flash"
-  ],
-  "body": [
-   "<input class=\"sds-input-saved-flash\" placeholder=\"Type here\" />"
-  ],
-  "description": "Saved Flash — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Scan (sds-input-scan)": {
-  "prefix": [
-   "sds-input-scan"
-  ],
-  "body": [
-   "<input class=\"sds-input-scan\" placeholder=\"Type here\" />"
-  ],
-  "description": "Scan — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Seismic Shake (sds-input-shake)": {
-  "prefix": [
-   "sds-input-shake"
-  ],
-  "body": [
-   "<input class=\"sds-input-shake\" placeholder=\"Type here\" />"
-  ],
-  "description": "Seismic Shake — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Shimmer Scan (sds-input-shimmer)": {
-  "prefix": [
-   "sds-input-shimmer"
-  ],
-  "body": [
-   "<input class=\"sds-input-shimmer\" placeholder=\"Type here\" />"
-  ],
-  "description": "Shimmer Scan — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Solar (sds-input-solar)": {
-  "prefix": [
-   "sds-input-solar"
-  ],
-  "body": [
-   "<input class=\"sds-input-solar\" placeholder=\"Type here\" />"
-  ],
-  "description": "Solar — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Success Glow (sds-input-success)": {
-  "prefix": [
-   "sds-input-success"
-  ],
-  "body": [
-   "<input class=\"sds-input-success\" placeholder=\"Type here\" />"
-  ],
-  "description": "Success Glow — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Success Ripple (sds-input-success-ripple)": {
-  "prefix": [
-   "sds-input-success-ripple"
-  ],
-  "body": [
-   "<input class=\"sds-input-success-ripple\" placeholder=\"Type here\" />"
-  ],
-  "description": "Success Ripple — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Success Tick (sds-input-success-tick)": {
-  "prefix": [
-   "sds-input-success-tick"
-  ],
-  "body": [
-   "<div class=\"sds-input-success-tick\">",
-   "  <input placeholder=\"Type here\" />",
+   "<div class=\"sds-input-ui-fill-wipe\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
    "</div>"
   ],
-  "description": "Success Tick — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "description": "Fill Wipe — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
- "SDS Tilt In (sds-input-tilt-in)": {
+ "SDS Float Above (sds-input-ui-float-above)": {
   "prefix": [
-   "sds-input-tilt-in"
+   "sds-input-ui-float-above"
   ],
   "body": [
-   "<input class=\"sds-input-tilt-in\" placeholder=\"Type here\" />"
-  ],
-  "description": "Tilt In — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
-  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
- },
- "SDS Underline Draw (sds-input-underline-draw)": {
-  "prefix": [
-   "sds-input-underline-draw"
-  ],
-  "body": [
-   "<div class=\"sds-input-underline-draw\">",
-   "  <input placeholder=\"Type here\" />",
+   "<div class=\"sds-input-ui-float-above\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
    "</div>"
   ],
-  "description": "Underline Draw — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "description": "Float Above — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
- "SDS Underline Trail (sds-input-underline-trail)": {
+ "SDS Float Arc (sds-input-ui-float-arc)": {
   "prefix": [
-   "sds-input-underline-trail"
+   "sds-input-ui-float-arc"
   ],
   "body": [
-   "<div class=\"sds-input-underline-trail\">",
-   "  <input placeholder=\"Type here\" />",
+   "<div class=\"sds-input-ui-float-arc\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
    "</div>"
   ],
-  "description": "Underline Trail — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "description": "Float Arc — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
- "SDS Unlock (sds-input-unlock)": {
+ "SDS Float Below (sds-input-ui-float-below)": {
   "prefix": [
-   "sds-input-unlock"
+   "sds-input-ui-float-below"
   ],
   "body": [
-   "<input class=\"sds-input-unlock\" placeholder=\"Type here\" />"
+   "<div class=\"sds-input-ui-float-below\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
   ],
-  "description": "Unlock — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "description": "Float Below — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
- "SDS Void (sds-input-void)": {
+ "SDS Float Blur (sds-input-ui-float-blur)": {
   "prefix": [
-   "sds-input-void"
+   "sds-input-ui-float-blur"
   ],
   "body": [
-   "<input class=\"sds-input-void\" placeholder=\"Type here\" />"
+   "<div class=\"sds-input-ui-float-blur\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
   ],
-  "description": "Void — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "description": "Float Blur — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
- "SDS Voltage Pulse (sds-input-voltage)": {
+ "SDS Float Bounce (sds-input-ui-float-bounce)": {
   "prefix": [
-   "sds-input-voltage"
+   "sds-input-ui-float-bounce"
   ],
   "body": [
-   "<input class=\"sds-input-voltage\" placeholder=\"Type here\" />"
+   "<div class=\"sds-input-ui-float-bounce\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
   ],
-  "description": "Voltage Pulse — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "description": "Float Bounce — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
- "SDS Warn Tilt (sds-input-warn-tilt)": {
+ "SDS Float Center (sds-input-ui-float-center)": {
   "prefix": [
-   "sds-input-warn-tilt"
+   "sds-input-ui-float-center"
   ],
   "body": [
-   "<input class=\"sds-input-warn-tilt\" placeholder=\"Type here\" />"
+   "<div class=\"sds-input-ui-float-center\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
   ],
-  "description": "Warn Tilt — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "description": "Float Center — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
- "SDS Waveform (sds-input-waveform)": {
+ "SDS Float Edge (sds-input-ui-float-edge)": {
   "prefix": [
-   "sds-input-waveform"
+   "sds-input-ui-float-edge"
   ],
   "body": [
-   "<input class=\"sds-input-waveform\" placeholder=\"Type here\" />"
+   "<div class=\"sds-input-ui-float-edge\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
   ],
-  "description": "Waveform — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "description": "Float Edge — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
- "SDS Zap (sds-input-zap)": {
+ "SDS Float Flip (sds-input-ui-float-flip)": {
   "prefix": [
-   "sds-input-zap"
+   "sds-input-ui-float-flip"
   ],
   "body": [
-   "<input class=\"sds-input-zap\" placeholder=\"Type here\" />"
+   "<div class=\"sds-input-ui-float-flip\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
   ],
-  "description": "Zap — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "description": "Float Flip — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
- "SDS Zoom Focus (sds-input-zoom-focus)": {
+ "SDS Float Glass (sds-input-ui-float-glass)": {
   "prefix": [
-   "sds-input-zoom-focus"
+   "sds-input-ui-float-glass"
   ],
   "body": [
-   "<input class=\"sds-input-zoom-focus\" placeholder=\"Type here\" />"
+   "<div class=\"sds-input-ui-float-glass\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
   ],
-  "description": "Zoom Focus — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "description": "Float Glass — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Float Label (sds-input-ui-float-label)": {
+  "prefix": [
+   "sds-input-ui-float-label"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-float-label\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Float Label — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Float Micro (sds-input-ui-float-micro)": {
+  "prefix": [
+   "sds-input-ui-float-micro"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-float-micro\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Float Micro — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Float Notch (sds-input-ui-float-notch)": {
+  "prefix": [
+   "sds-input-ui-float-notch"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-float-notch\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Float Notch — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Float Pill (sds-input-ui-float-pill)": {
+  "prefix": [
+   "sds-input-ui-float-pill"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-float-pill\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Float Pill — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Float Slide (sds-input-ui-float-slide)": {
+  "prefix": [
+   "sds-input-ui-float-slide"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-float-slide\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Float Slide — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Float Spring (sds-input-ui-float-spring)": {
+  "prefix": [
+   "sds-input-ui-float-spring"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-float-spring\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Float Spring — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Float Squash (sds-input-ui-float-squash)": {
+  "prefix": [
+   "sds-input-ui-float-squash"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-float-squash\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Float Squash — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Float Tilt (sds-input-ui-float-tilt)": {
+  "prefix": [
+   "sds-input-ui-float-tilt"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-float-tilt\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Float Tilt — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Float Underline (sds-input-ui-float-underline)": {
+  "prefix": [
+   "sds-input-ui-float-underline"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-float-underline\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Float Underline — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Float Zoom (sds-input-ui-float-zoom)": {
+  "prefix": [
+   "sds-input-ui-float-zoom"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-float-zoom\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Float Zoom — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Focus Bloom (sds-input-ui-focus-bloom)": {
+  "prefix": [
+   "sds-input-ui-focus-bloom"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-focus-bloom\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Focus Bloom — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Focus Breathe (sds-input-ui-focus-breathe)": {
+  "prefix": [
+   "sds-input-ui-focus-breathe"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-focus-breathe\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Focus Breathe — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Focus Float (sds-input-ui-focus-float)": {
+  "prefix": [
+   "sds-input-ui-focus-float"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-focus-float\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Focus Float — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Focus Jelly (sds-input-ui-focus-jelly)": {
+  "prefix": [
+   "sds-input-ui-focus-jelly"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-focus-jelly\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Focus Jelly — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Focus Nudge (sds-input-ui-focus-nudge)": {
+  "prefix": [
+   "sds-input-ui-focus-nudge"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-focus-nudge\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Focus Nudge — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Focus Pop (sds-input-ui-focus-pop)": {
+  "prefix": [
+   "sds-input-ui-focus-pop"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-focus-pop\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Focus Pop — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Focus Squash (sds-input-ui-focus-squash)": {
+  "prefix": [
+   "sds-input-ui-focus-squash"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-focus-squash\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Focus Squash — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Focus Stretch (sds-input-ui-focus-stretch)": {
+  "prefix": [
+   "sds-input-ui-focus-stretch"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-focus-stretch\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Focus Stretch — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Focus Tilt (sds-input-ui-focus-tilt)": {
+  "prefix": [
+   "sds-input-ui-focus-tilt"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-focus-tilt\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Focus Tilt — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Focus Wobble (sds-input-ui-focus-wobble)": {
+  "prefix": [
+   "sds-input-ui-focus-wobble"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-focus-wobble\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Focus Wobble — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Focus Zoom (sds-input-ui-focus-zoom)": {
+  "prefix": [
+   "sds-input-ui-focus-zoom"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-focus-zoom\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Focus Zoom — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Frame Draw (sds-input-ui-frame-draw)": {
+  "prefix": [
+   "sds-input-ui-frame-draw"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-frame-draw\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Frame Draw — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Glass Glow (sds-input-ui-glass-glow)": {
+  "prefix": [
+   "sds-input-ui-glass-glow"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-glass-glow\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Glass Glow — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Gradient Bloom (sds-input-ui-gradient-bloom)": {
+  "prefix": [
+   "sds-input-ui-gradient-bloom"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-gradient-bloom\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Gradient Bloom — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Gradient Halo (sds-input-ui-gradient-halo)": {
+  "prefix": [
+   "sds-input-ui-gradient-halo"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-gradient-halo\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Gradient Halo — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Grid Fade (sds-input-ui-grid-fade)": {
+  "prefix": [
+   "sds-input-ui-grid-fade"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-grid-fade\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Grid Fade — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Halo Pulse (sds-input-ui-halo-pulse)": {
+  "prefix": [
+   "sds-input-ui-halo-pulse"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-halo-pulse\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Halo Pulse — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Holo Border (sds-input-ui-holo-border)": {
+  "prefix": [
+   "sds-input-ui-holo-border"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-holo-border\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Holo Border — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Hover Lift (sds-input-ui-hover-lift)": {
+  "prefix": [
+   "sds-input-ui-hover-lift"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-hover-lift\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Hover Lift — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Hover Line (sds-input-ui-hover-line)": {
+  "prefix": [
+   "sds-input-ui-hover-line"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-hover-line\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Hover Line — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Icon Arrive (sds-input-ui-icon-arrive)": {
+  "prefix": [
+   "sds-input-ui-icon-arrive"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-icon-arrive\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Icon Arrive — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Ink Spread (sds-input-ui-ink-spread)": {
+  "prefix": [
+   "sds-input-ui-ink-spread"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-ink-spread\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Ink Spread — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Invalid Shake (sds-input-ui-invalid-shake)": {
+  "prefix": [
+   "sds-input-ui-invalid-shake"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-invalid-shake\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Invalid Shake — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Line Center (sds-input-ui-line-center)": {
+  "prefix": [
+   "sds-input-ui-line-center"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-line-center\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Line Center — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Line Dash (sds-input-ui-line-dash)": {
+  "prefix": [
+   "sds-input-ui-line-dash"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-line-dash\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Line Dash — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Line Flow (sds-input-ui-line-flow)": {
+  "prefix": [
+   "sds-input-ui-line-flow"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-line-flow\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Line Flow — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Line Glow (sds-input-ui-line-glow)": {
+  "prefix": [
+   "sds-input-ui-line-glow"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-line-glow\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Line Glow — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Line Left (sds-input-ui-line-left)": {
+  "prefix": [
+   "sds-input-ui-line-left"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-line-left\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Line Left — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Line Split (sds-input-ui-line-split)": {
+  "prefix": [
+   "sds-input-ui-line-split"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-line-split\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Line Split — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Line Spring (sds-input-ui-line-spring)": {
+  "prefix": [
+   "sds-input-ui-line-spring"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-line-spring\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Line Spring — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Lock Pulse (sds-input-ui-lock-pulse)": {
+  "prefix": [
+   "sds-input-ui-lock-pulse"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-lock-pulse\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Lock Pulse — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Magic Underline (sds-input-ui-magic-underline)": {
+  "prefix": [
+   "sds-input-ui-magic-underline"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-magic-underline\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Magic Underline — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Neon Edge (sds-input-ui-neon-edge)": {
+  "prefix": [
+   "sds-input-ui-neon-edge"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-neon-edge\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Neon Edge — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Neural Dots (sds-input-ui-neural-dots)": {
+  "prefix": [
+   "sds-input-ui-neural-dots"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-neural-dots\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Neural Dots — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Progress Line (sds-input-ui-progress-line)": {
+  "prefix": [
+   "sds-input-ui-progress-line"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-progress-line\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Progress Line — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Prompt Glow (sds-input-ui-prompt-glow)": {
+  "prefix": [
+   "sds-input-ui-prompt-glow"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-prompt-glow\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Prompt Glow — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Readonly Lock (sds-input-ui-readonly-lock)": {
+  "prefix": [
+   "sds-input-ui-readonly-lock"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-readonly-lock\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Readonly Lock — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Required Dot (sds-input-ui-required-dot)": {
+  "prefix": [
+   "sds-input-ui-required-dot"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-required-dot\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Required Dot — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Ring Expand (sds-input-ui-ring-expand)": {
+  "prefix": [
+   "sds-input-ui-ring-expand"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-ring-expand\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Ring Expand — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Ring Radiate (sds-input-ui-ring-radiate)": {
+  "prefix": [
+   "sds-input-ui-ring-radiate"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-ring-radiate\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Ring Radiate — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Scan Beam (sds-input-ui-scan-beam)": {
+  "prefix": [
+   "sds-input-ui-scan-beam"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-scan-beam\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Scan Beam — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Search Spin (sds-input-ui-search-spin)": {
+  "prefix": [
+   "sds-input-ui-search-spin"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-search-spin\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Search Spin — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Shadow Lift (sds-input-ui-shadow-lift)": {
+  "prefix": [
+   "sds-input-ui-shadow-lift"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-shadow-lift\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Shadow Lift — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Sheen Sweep (sds-input-ui-sheen-sweep)": {
+  "prefix": [
+   "sds-input-ui-sheen-sweep"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-sheen-sweep\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Sheen Sweep — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Shimmer Border (sds-input-ui-shimmer-border)": {
+  "prefix": [
+   "sds-input-ui-shimmer-border"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-shimmer-border\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Shimmer Border — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Side Bar (sds-input-ui-side-bar)": {
+  "prefix": [
+   "sds-input-ui-side-bar"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-side-bar\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Side Bar — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Sparkle (sds-input-ui-sparkle)": {
+  "prefix": [
+   "sds-input-ui-sparkle"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-sparkle\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Sparkle — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Spotlight (sds-input-ui-spotlight)": {
+  "prefix": [
+   "sds-input-ui-spotlight"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-spotlight\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Spotlight — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Spotlight Card (sds-input-ui-spotlight-card)": {
+  "prefix": [
+   "sds-input-ui-spotlight-card"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-spotlight-card\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Spotlight Card — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS State Error (sds-input-ui-state-error)": {
+  "prefix": [
+   "sds-input-ui-state-error"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-state-error\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "State Error — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS State Success (sds-input-ui-state-success)": {
+  "prefix": [
+   "sds-input-ui-state-success"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-state-success\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "State Success — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS State Warning (sds-input-ui-state-warning)": {
+  "prefix": [
+   "sds-input-ui-state-warning"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-state-warning\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "State Warning — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Strength Meter (sds-input-ui-strength-meter)": {
+  "prefix": [
+   "sds-input-ui-strength-meter"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-strength-meter\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Strength Meter — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Stripe March (sds-input-ui-stripe-march)": {
+  "prefix": [
+   "sds-input-ui-stripe-march"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-stripe-march\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Stripe March — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Tint Fade (sds-input-ui-tint-fade)": {
+  "prefix": [
+   "sds-input-ui-tint-fade"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-tint-fade\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Tint Fade — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Top Bar (sds-input-ui-top-bar)": {
+  "prefix": [
+   "sds-input-ui-top-bar"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-top-bar\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Top Bar — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Valid Check (sds-input-ui-valid-check)": {
+  "prefix": [
+   "sds-input-ui-valid-check"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-valid-check\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Valid Check — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Valid Ring (sds-input-ui-valid-ring)": {
+  "prefix": [
+   "sds-input-ui-valid-ring"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-valid-ring\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Valid Ring — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Vignette Glow (sds-input-ui-vignette-glow)": {
+  "prefix": [
+   "sds-input-ui-vignette-glow"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-vignette-glow\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Vignette Glow — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Voice Wave (sds-input-ui-voice-wave)": {
+  "prefix": [
+   "sds-input-ui-voice-wave"
+  ],
+  "body": [
+   "<div class=\"sds-input-ui-voice-wave\">",
+   "  <input id=\"sds-email\" placeholder=\" \" />",
+   "  <label for=\"sds-email\">Email</label>",
+   "</div>"
+  ],
+  "description": "Voice Wave — inputs animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the inputs bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
  "SDS Iris Open (sds-iris-open)": {

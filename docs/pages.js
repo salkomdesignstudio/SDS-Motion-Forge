@@ -54,6 +54,17 @@
     });
   }
 
+  /* UI inputs answer focus: focus the field while its card is hovered, release it when the pointer leaves */
+  document.querySelectorAll(".fx-card, .cat-tile").forEach(function (card) {
+    var field = card.querySelector('[class*="sds-input-ui-"] > input');
+    if (!field) return;
+    card.addEventListener("pointerenter", function () {
+      var a = document.activeElement;
+      if (!a || a === document.body || a === field || card.contains(a)) field.focus({ preventScroll: true });
+    });
+    card.addEventListener("pointerleave", function () { if (document.activeElement === field) field.blur(); });
+  });
+
   /* code tabs (all panels are visible without JavaScript) */
   document.querySelectorAll("[data-tabs]").forEach(function (box) {
     var tabs = [].slice.call(box.querySelectorAll('[role="tab"]'));

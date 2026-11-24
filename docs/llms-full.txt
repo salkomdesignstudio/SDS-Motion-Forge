@@ -13,7 +13,7 @@
 - Website: https://sds-motion-forge.netlify.app/
 - Repository: https://github.com/salkomdesignstudio/SDS-Motion-Forge
 - npm: https://www.npmjs.com/package/@salkomdesignstudio/sds-motion-forge
-- Size: Full bundle 48.3 KB gzip (296.1 KB minified); each category bundle 6.0–13.7 KB gzip (each already includes core).
+- Size: Full bundle 49.9 KB gzip (335.1 KB minified); each category bundle 6.0–13.7 KB gzip (each already includes core).
 
 ## Install
 
@@ -25,7 +25,7 @@
 
 - Text: 117 effects, class pattern sds-*, bundle @salkomdesignstudio/sds-motion-forge/categories/text (13.7 KB gzip)
 - Buttons: 100 effects, class pattern sds-btn-*, bundle @salkomdesignstudio/sds-motion-forge/categories/buttons (13.0 KB gzip)
-- Inputs: 100 effects, class pattern sds-input-*, bundle @salkomdesignstudio/sds-motion-forge/categories/inputs (8.4 KB gzip)
+- Inputs: 100 effects, class pattern sds-input-*, bundle @salkomdesignstudio/sds-motion-forge/categories/inputs (9.8 KB gzip)
 - Cards: 100 effects, class pattern sds-card-*, bundle @salkomdesignstudio/sds-motion-forge/categories/cards (7.6 KB gzip)
 - Loaders: 100 effects, class pattern sds-loader-*, bundle @salkomdesignstudio/sds-motion-forge/categories/loaders (8.3 KB gzip)
 - Scroll: 100 effects, class pattern sds-scroll-*, bundle @salkomdesignstudio/sds-motion-forge/categories/scroll (6.0 KB gzip)
@@ -72,7 +72,7 @@ Combine sds-scroll-auto with any sds-scroll-* class, for example class="sds-scro
 
 ### Is there an Animate.css alternative?
 
-Yes. SDS Motion Forge is a CSS-only alternative that defines 588 @keyframes across 617 effects in six categories (text, buttons, inputs, cards, loaders, scroll), against 97 @keyframes in Animate.css 4.1.1. The trade-off is size: the full bundle is 48.3 KB gzip versus 5.2 KB, but you can import one 6.0–13.7 KB category instead.
+Yes. SDS Motion Forge is a CSS-only alternative that defines 521 @keyframes across 617 effects in six categories (text, buttons, inputs, cards, loaders, scroll), against 97 @keyframes in Animate.css 4.1.1. The trade-off is size: the full bundle is 49.9 KB gzip versus 5.2 KB, but you can import one 6.0–13.7 KB category instead.
 
 ### What is the best CSS-only text animation library?
 
@@ -84,7 +84,7 @@ Yes. Every animating selector is neutralized under prefers-reduced-motion: reduc
 
 ### How big is it, and can I import only part of it?
 
-The full bundle is 48.3 KB gzip. Each category is 6.0–13.7 KB gzip and can be imported alone, with core already included: import "@salkomdesignstudio/sds-motion-forge/categories/text";. For two or more categories, use the full bundle. The two optional scripts are 1.3 KB (scroll) and 7.0 KB (cursor effects).
+The full bundle is 49.9 KB gzip. Each category is 6.0–13.7 KB gzip and can be imported alone, with core already included: import "@salkomdesignstudio/sds-motion-forge/categories/text";. For two or more categories, use the full bundle. The two optional scripts are 1.3 KB (scroll) and 7.0 KB (cursor effects).
 
 ### Does it work with React, Vue, Next.js and Tailwind?
 
@@ -331,106 +331,106 @@ Ambient, hover, entrance and kinetic effects for buttons and other interactive e
 
 Focus, validation, ambient and reveal states for form fields.
 
-- `.sds-input-active-line` — Active Line: Field animates its shadow, on a loop (1.8s). https://sds-motion-forge.netlify.app/animations/input-active-line/
-- `.sds-input-arrive-drop` — Arrive Drop: Drops in from above and lands with a squash while its shadow snaps up to meet it. https://sds-motion-forge.netlify.app/animations/input-arrive-drop/
-- `.sds-input-arrive-materialize` — Arrive Materialize: Assembles in stepped slices out of blur and brightness, left to right. https://sds-motion-forge.netlify.app/animations/input-arrive-materialize/
-- `.sds-input-arrive-pendulum` — Arrive Pendulum: Swings in from a top hinge through two decaying swings, then levels out. https://sds-motion-forge.netlify.app/animations/input-arrive-pendulum/
-- `.sds-input-arrive-slide-label` — Arrive Slide Label: The field slides in from the left as its label drops from above, meeting with a synced bounce. https://sds-motion-forge.netlify.app/animations/input-arrive-slide-label/
-- `.sds-input-arrive-spotlight` — Arrive Spotlight: A dark veil lifts as a spotlight passes over the arriving field. https://sds-motion-forge.netlify.app/animations/input-arrive-spotlight/
-- `.sds-input-arrive-stack` — Arrive Stack: Frame, interior tint, and field arrive as three staggered layers. https://sds-motion-forge.netlify.app/animations/input-arrive-stack/
-- `.sds-input-arrive-stretch` — Arrive Stretch: Stretches open from a narrow pill to full width with an elastic settle. https://sds-motion-forge.netlify.app/animations/input-arrive-stretch/
-- `.sds-input-arrive-unzip` — Arrive Unzip: The field unzips open from its center line with a bright seam that cools as it spreads. https://sds-motion-forge.netlify.app/animations/input-arrive-unzip/
-- `.sds-input-aurora` — Aurora: Field animates its shadow, on a loop (4s). https://sds-motion-forge.netlify.app/animations/input-aurora/
-- `.sds-input-bloom` — Bloom: Field animates its glow and shadow, on a loop (2.4s). https://sds-motion-forge.netlify.app/animations/input-bloom/
-- `.sds-input-border-beam` — Border Beam: Field animates, on a loop (2s). https://sds-motion-forge.netlify.app/animations/input-border-beam/
-- `.sds-input-border-comet-loop` — Border Comet Loop: A glowing comet head rides the field's outline in a steady lap, dimming on the far side. https://sds-motion-forge.netlify.app/animations/input-border-comet-loop/
-- `.sds-input-border-corners` — Border Corners: Corners take turns glowing — NE, SE, SW, NW — with a crossfade between each. https://sds-motion-forge.netlify.app/animations/input-border-corners/
-- `.sds-input-border-heartline` — Border Heartline: An ECG blip races along the underline every few seconds, then flatlines politely. https://sds-motion-forge.netlify.app/animations/input-border-heartline/
-- `.sds-input-border-orbiters` — Border Orbiters: Two dim satellites orbit the field on opposite sides of its outline. https://sds-motion-forge.netlify.app/animations/input-border-orbiters/
-- `.sds-input-border-rain` — Border Rain: Thin light streaks run down both sides of the field in offset phase. https://sds-motion-forge.netlify.app/animations/input-border-rain/
-- `.sds-input-border-static` — Border Static: A quiet frame with an occasional two-frame static jitter — idle tech energy. https://sds-motion-forge.netlify.app/animations/input-border-static/
-- `.sds-input-border-tide` — Border Tide: Border emphasis flows around the frame like a tide through four phases. https://sds-motion-forge.netlify.app/animations/input-border-tide/
-- `.sds-input-burst` — Burst: Field animates its opacity and shadow, once on load (1.8s). https://sds-motion-forge.netlify.app/animations/input-burst/
-- `.sds-input-caret` — Caret Trail: Pulsing inner ring emulates caret activity. https://sds-motion-forge.netlify.app/animations/input-caret/
-- `.sds-input-caret-pop` — Caret Pop: A caret bar pops in at the text start with a double bounce, blinks once, and hands over. https://sds-motion-forge.netlify.app/animations/input-caret-pop/
-- `.sds-input-charge` — Charge: Field animates its shadow and border colour, on a loop (2.2s). https://sds-motion-forge.netlify.app/animations/input-charge/
-- `.sds-input-comet` — Comet: Field animates its shadow, on a loop (3s). https://sds-motion-forge.netlify.app/animations/input-comet/
-- `.sds-input-crystal` — Crystal: Field animates its glow, shadow and border colour, on a loop (2.4s). https://sds-motion-forge.netlify.app/animations/input-crystal/
-- `.sds-input-depth` — Depth: Field animates its shadow, on a loop (2.4s). https://sds-motion-forge.netlify.app/animations/input-depth/
-- `.sds-input-echo` — Echo: Field animates, on a loop (2.4s). https://sds-motion-forge.netlify.app/animations/input-echo/
-- `.sds-input-electric` — Electric: Field animates its shadow and border colour, on a loop (2s). https://sds-motion-forge.netlify.app/animations/input-electric/
-- `.sds-input-elevate-wrap` — Elevate Focus: Label floats up on focus/fill. https://sds-motion-forge.netlify.app/animations/input-elevate-wrap/
-- `.sds-input-error-buzz` — Error Buzz: Three sharp 1px vibrations with a red-shifted flash, then an apologetic settle. https://sds-motion-forge.netlify.app/animations/input-error-buzz/
-- `.sds-input-error-quake` — Error Quake: Caret-safe shake — the frame quakes while the field counter-shifts so your text stays readable. https://sds-motion-forge.netlify.app/animations/input-error-quake/
-- `.sds-input-error-sink` — Error Sink: The field sinks 2px and desaturates, recovering slowly — the weight of the error. https://sds-motion-forge.netlify.app/animations/input-error-sink/
-- `.sds-input-expand` — Expand: Field animates its opacity, once on load (0.6s). https://sds-motion-forge.netlify.app/animations/input-expand/
-- `.sds-input-fill-corner-shade` — Fill Corner Shade: A shade wedge sweeps in from the bottom-right corner on focus, adding active depth. https://sds-motion-forge.netlify.app/animations/input-fill-corner-shade/
-- `.sds-input-fill-flood` — Fill Flood: On focus the interior floods with tint, then drains down to a strong underline — two acts. https://sds-motion-forge.netlify.app/animations/input-fill-flood/
-- `.sds-input-fill-meter` — Fill Meter: While focused, a meter advances in confident bursts with holds — progress you can feel. https://sds-motion-forge.netlify.app/animations/input-fill-meter/
-- `.sds-input-fill-pulse-floor` — Fill Pulse Floor: The field's floor pulses brighter on a slow loop while it holds focus. https://sds-motion-forge.netlify.app/animations/input-fill-pulse-floor/
-- `.sds-input-fill-rise` — Fill Rise: On focus a tint rises from the floor and settles at a shallow waterline. https://sds-motion-forge.netlify.app/animations/input-fill-rise/
-- `.sds-input-fill-scanline` — Fill Scanline: One soft scanline crosses the field on focus, then drifts back and parks at the caret edge. https://sds-motion-forge.netlify.app/animations/input-fill-scanline/
-- `.sds-input-fire` — Fire: Field animates its shadow and border colour, on a loop (2s). https://sds-motion-forge.netlify.app/animations/input-fire/
-- `.sds-input-flicker` — Flicker: Field animates, on a loop (4s). https://sds-motion-forge.netlify.app/animations/input-flicker/
-- `.sds-input-flow` — Flow: Field animates its gradient position, on a loop (3s). https://sds-motion-forge.netlify.app/animations/input-flow/
-- `.sds-input-focus` — Focus Field: Glow ring appears on :focus. https://sds-motion-forge.netlify.app/animations/input-focus/
-- `.sds-input-focus-glow` — Focus Glow: Field animates its shadow, when focused (0.5s). https://sds-motion-forge.netlify.app/animations/input-focus-glow/
-- `.sds-input-frame-bloom` — Frame Bloom: Four corner accents bloom outward then seat back onto the field, top pair leading. https://sds-motion-forge.netlify.app/animations/input-frame-bloom/
-- `.sds-input-frost` — Frost: Field animates its opacity, blur and glow, once on load (2s). https://sds-motion-forge.netlify.app/animations/input-frost/
-- `.sds-input-gate-open` — Gate Open: Two tinted panels part horizontally over the field when it takes focus. https://sds-motion-forge.netlify.app/animations/input-gate-open/
-- `.sds-input-ghost` — Ghost: Field animates its gradient position, on a loop (3s). https://sds-motion-forge.netlify.app/animations/input-ghost/
-- `.sds-input-glitch-valid` — Glitch Valid: Field animates its position and border colour, once on load (0.4s). https://sds-motion-forge.netlify.app/animations/input-glitch-valid/
-- `.sds-input-glow-border` — Glow Border: Field animates its shadow, on a loop (2s). https://sds-motion-forge.netlify.app/animations/input-glow-border/
-- `.sds-input-gradient-border` — Gradient Border: Field animates its colour hue, on a loop (3s). https://sds-motion-forge.netlify.app/animations/input-gradient-border/
-- `.sds-input-gravity` — Gravity: Field animates its position and opacity, once on load (0.8s). https://sds-motion-forge.netlify.app/animations/input-gravity/
-- `.sds-input-idle-depth` — Idle Depth: The field breathes in depth — its shadow approaches and recedes on a slow tide. https://sds-motion-forge.netlify.app/animations/input-idle-depth/
-- `.sds-input-idle-floatline` — Idle Floatline: The underline drifts gently side to side like a buoy line at rest. https://sds-motion-forge.netlify.app/animations/input-idle-floatline/
-- `.sds-input-idle-glimmer` — Idle Glimmer: A tiny star glimmers at the corner every few seconds, spins a quarter turn, and is gone. https://sds-motion-forge.netlify.app/animations/input-idle-glimmer/
-- `.sds-input-idle-lean` — Idle Lean: A barely-perceptible lean cycle, like paper that isn't quite flat. https://sds-motion-forge.netlify.app/animations/input-idle-lean/
-- `.sds-input-idle-noise` — Idle Noise: Film-grain dots shimmer at 7% opacity in stepped jumps — analog quiet. https://sds-motion-forge.netlify.app/animations/input-idle-noise/
-- `.sds-input-idle-perimeter-dot` — Idle Perimeter Dot: A single dot blinks at each corner in turn, patrolling the field's perimeter. https://sds-motion-forge.netlify.app/animations/input-idle-perimeter-dot/
-- `.sds-input-idle-soft-zoom` — Idle Soft Zoom: A 0.6% scale tide — imperceptibly alive. https://sds-motion-forge.netlify.app/animations/input-idle-soft-zoom/
-- `.sds-input-ink` — Ink Stroke: Outline expands with ink-stroke feel. https://sds-motion-forge.netlify.app/animations/input-ink/
-- `.sds-input-kinetic` — Kinetic: Field animates, on a loop (3s). https://sds-motion-forge.netlify.app/animations/input-kinetic/
-- `.sds-input-label-spring` — Label Spring: On focus the label lifts with an 8% overshoot and settles small while the field swells a hair. https://sds-motion-forge.netlify.app/animations/input-label-spring/
-- `.sds-input-laser` — Laser: Field animates its gradient position, on a loop (1.5s). https://sds-motion-forge.netlify.app/animations/input-laser/
-- `.sds-input-momentum` — Momentum: Field animates its position, opacity and blur, once on load (0.7s). https://sds-motion-forge.netlify.app/animations/input-momentum/
-- `.sds-input-morph` — Border Morph: Border-radius morphs between shapes. https://sds-motion-forge.netlify.app/animations/input-morph/
-- `.sds-input-morph-ph` — Morph Placeholder: Placeholder letter-spacing breathes. https://sds-motion-forge.netlify.app/animations/input-morph-ph/
-- `.sds-input-neon` — Neon Input: Neon glow with flicker on the border. https://sds-motion-forge.netlify.app/animations/input-neon/
-- `.sds-input-neural` — Neural: Field animates its shadow, on a loop (3s). https://sds-motion-forge.netlify.app/animations/input-neural/
-- `.sds-input-orbit` — Orbit: Field animates, on a loop (2s). https://sds-motion-forge.netlify.app/animations/input-orbit/
-- `.sds-input-ph-blink` — Placeholder Blink: A double-blink invitation every few seconds, then a straight face. https://sds-motion-forge.netlify.app/animations/input-ph-blink/
-- `.sds-input-ph-breathe` — Placeholder Breathe: The placeholder breathes slowly between half-light and dim — alive, not urgent. https://sds-motion-forge.netlify.app/animations/input-ph-breathe/
-- `.sds-input-ph-fade-steps` — Placeholder Fade Steps: On focus the placeholder vanishes in three stepped after-images, like type lifting off. https://sds-motion-forge.netlify.app/animations/input-ph-fade-steps/
-- `.sds-input-ph-flicker-in` — Placeholder Flicker In: The placeholder powers on through stepped flickers when the field loads. https://sds-motion-forge.netlify.app/animations/input-ph-flicker-in/
-- `.sds-input-ph-ghost` — Placeholder Ghost: On focus the placeholder dips to a ghost, lingers a beat, then lets go. https://sds-motion-forge.netlify.app/animations/input-ph-ghost/
-- `.sds-input-ph-wave` — Placeholder Wave: Soft irregular pulses roll through the placeholder, like text under water. https://sds-motion-forge.netlify.app/animations/input-ph-wave/
-- `.sds-input-plasma` — Plasma Field: Plasma glow cycles around the field. https://sds-motion-forge.netlify.app/animations/input-plasma/
-- `.sds-input-prism` — Prism: Field animates its shadow and border colour, on a loop (4s). https://sds-motion-forge.netlify.app/animations/input-prism/
-- `.sds-input-pulse-dot` — Pulse Dot: Field animates its shadow, on a loop (1.4s). https://sds-motion-forge.netlify.app/animations/input-pulse-dot/
-- `.sds-input-quantum` — Quantum: Field animates its border colour, on a loop (3s). https://sds-motion-forge.netlify.app/animations/input-quantum/
-- `.sds-input-radar` — Radar: Field animates its shadow, on a loop (2s). https://sds-motion-forge.netlify.app/animations/input-radar/
-- `.sds-input-ring` — Ring Pulse: Magnetic ring pulse on the border. https://sds-motion-forge.netlify.app/animations/input-ring/
-- `.sds-input-ripple` — Ripple: Field animates its shadow, on a loop (2.4s). https://sds-motion-forge.netlify.app/animations/input-ripple/
-- `.sds-input-saved-flash` — Saved Flash: A quick brightness sweep with a 1% stamp-squash — saved, confirmed. https://sds-motion-forge.netlify.app/animations/input-saved-flash/
-- `.sds-input-scan` — Scan: Field animates its gradient position, on a loop (2s). https://sds-motion-forge.netlify.app/animations/input-scan/
-- `.sds-input-shake` — Seismic Shake: Horizontal shake for invalid state. https://sds-motion-forge.netlify.app/animations/input-shake/
-- `.sds-input-shimmer` — Shimmer Scan: Light shimmer scans across the field. https://sds-motion-forge.netlify.app/animations/input-shimmer/
-- `.sds-input-solar` — Solar: Field animates its shadow, on a loop (2.8s). https://sds-motion-forge.netlify.app/animations/input-solar/
-- `.sds-input-success` — Success Glow: Green glow for a validated field. https://sds-motion-forge.netlify.app/animations/input-success/
-- `.sds-input-success-ripple` — Success Ripple: Two green glow rings ripple off the field as it does a contented little bob. https://sds-motion-forge.netlify.app/animations/input-success-ripple/
-- `.sds-input-success-tick` — Success Tick: A checkmark draws itself in two strokes and snaps at the finish. https://sds-motion-forge.netlify.app/animations/input-success-tick/
-- `.sds-input-tilt-in` — Tilt In: The field tips toward you on focus while its shadow approaches — a 3D nod. https://sds-motion-forge.netlify.app/animations/input-tilt-in/
-- `.sds-input-underline-draw` — Underline Draw: Underline draws from the center to both edges with a snap of overshoot. https://sds-motion-forge.netlify.app/animations/input-underline-draw/
-- `.sds-input-underline-trail` — Underline Trail: Underline draws left to right behind a bright comet head that burns out at the far edge. https://sds-motion-forge.netlify.app/animations/input-underline-trail/
-- `.sds-input-unlock` — Unlock: Field animates its rotation and opacity, once on load (0.8s). https://sds-motion-forge.netlify.app/animations/input-unlock/
-- `.sds-input-void` — Void: Field animates its shadow, on a loop (2.6s). https://sds-motion-forge.netlify.app/animations/input-void/
-- `.sds-input-voltage` — Voltage Pulse: Border brightens like voltage spikes. https://sds-motion-forge.netlify.app/animations/input-voltage/
-- `.sds-input-warn-tilt` — Warn Tilt: Leans one degree with an amber cast, then rights itself — visible uncertainty. https://sds-motion-forge.netlify.app/animations/input-warn-tilt/
-- `.sds-input-waveform` — Waveform: Field animates its border colour, on a loop (1.6s). https://sds-motion-forge.netlify.app/animations/input-waveform/
-- `.sds-input-zap` — Zap: Field animates its skew, shadow and border colour, on a loop (3s). https://sds-motion-forge.netlify.app/animations/input-zap/
-- `.sds-input-zoom-focus` — Zoom Focus: Camera-focus on the field: a breath of blur clears as it sharpens and brightens. https://sds-motion-forge.netlify.app/animations/input-zoom-focus/
+- `.sds-input-ui-ai-rainbow` — AI Rainbow: A rainbow gradient circles the border like an AI prompt box and speeds up on focus. https://sds-motion-forge.netlify.app/animations/input-ui-ai-rainbow/
+- `.sds-input-ui-aura-rim` — Aura Rim: A coloured gradient rotates around the border on focus. https://sds-motion-forge.netlify.app/animations/input-ui-aura-rim/
+- `.sds-input-ui-aurora-glow` — Aurora Glow: Two blurred colour blobs drift through the field while it is focused. https://sds-motion-forge.netlify.app/animations/input-ui-aurora-glow/
+- `.sds-input-ui-autofill-glow` — Autofill Glow: A green glow flashes when the browser autofills the field. https://sds-motion-forge.netlify.app/animations/input-ui-autofill-glow/
+- `.sds-input-ui-border-sweep` — Border Sweep: A band of light sweeps across the field once on focus. https://sds-motion-forge.netlify.app/animations/input-ui-border-sweep/
+- `.sds-input-ui-busy-bar` — Busy Bar: Set aria-busy="true" and a bright bar runs along the bottom edge. https://sds-motion-forge.netlify.app/animations/input-ui-busy-bar/
+- `.sds-input-ui-busy-dots` — Busy Dots: Set aria-busy="true" and three dots pulse in turn at the end. https://sds-motion-forge.netlify.app/animations/input-ui-busy-dots/
+- `.sds-input-ui-caret-bar` — Caret Bar: A blinking accent bar sits at the end of the field on focus. https://sds-motion-forge.netlify.app/animations/input-ui-caret-bar/
+- `.sds-input-ui-clear-x` — Clear X: A clear button appears at the end as soon as there is text. https://sds-motion-forge.netlify.app/animations/input-ui-clear-x/
+- `.sds-input-ui-command-bar` — Command Bar: A slash key hint sits at the end and slips away when you focus or type. https://sds-motion-forge.netlify.app/animations/input-ui-command-bar/
+- `.sds-input-ui-corner-brackets` — Corner Brackets: Corner brackets open out around the field on focus. https://sds-motion-forge.netlify.app/animations/input-ui-corner-brackets/
+- `.sds-input-ui-corner-dots` — Corner Dots: Four dots pop in at the corners of the field on focus. https://sds-motion-forge.netlify.app/animations/input-ui-corner-dots/
+- `.sds-input-ui-disabled-stripe` — Disabled Stripe: A disabled field is striped and dimmed, and shakes a little if hovered. https://sds-motion-forge.netlify.app/animations/input-ui-disabled-stripe/
+- `.sds-input-ui-dot-matrix` — Dot Matrix: A dot-matrix pattern slides in from the left on focus. https://sds-motion-forge.netlify.app/animations/input-ui-dot-matrix/
+- `.sds-input-ui-double-ring` — Double Ring: Two outlines echo outward around the field on focus. https://sds-motion-forge.netlify.app/animations/input-ui-double-ring/
+- `.sds-input-ui-edge-dots` — Edge Dots: A dotted accent line is drawn along the bottom on focus. https://sds-motion-forge.netlify.app/animations/input-ui-edge-dots/
+- `.sds-input-ui-fill-diagonal` — Fill Diagonal: A tint sweeps across the field on a diagonal on focus. https://sds-motion-forge.netlify.app/animations/input-ui-fill-diagonal/
+- `.sds-input-ui-fill-iris` — Fill Iris: A tint opens from the centre like an iris on focus. https://sds-motion-forge.netlify.app/animations/input-ui-fill-iris/
+- `.sds-input-ui-fill-rise` — Fill Rise: A tint rises from the bottom and fills the field on focus. https://sds-motion-forge.netlify.app/animations/input-ui-fill-rise/
+- `.sds-input-ui-fill-split` — Fill Split: A tint opens from the middle line out to both sides on focus. https://sds-motion-forge.netlify.app/animations/input-ui-fill-split/
+- `.sds-input-ui-fill-wipe` — Fill Wipe: A tint wipes across the field from left to right on focus. https://sds-motion-forge.netlify.app/animations/input-ui-fill-wipe/
+- `.sds-input-ui-float-above` — Float Above: The label leaves the field completely and settles above it. https://sds-motion-forge.netlify.app/animations/input-ui-float-above/
+- `.sds-input-ui-float-arc` — Float Arc: The label rises along a curved path instead of a straight line. https://sds-motion-forge.netlify.app/animations/input-ui-float-arc/
+- `.sds-input-ui-float-below` — Float Below: The label drops below the field and becomes a caption. https://sds-motion-forge.netlify.app/animations/input-ui-float-below/
+- `.sds-input-ui-float-blur` — Float Blur: The label blurs while it travels up and sharpens when it lands. https://sds-motion-forge.netlify.app/animations/input-ui-float-blur/
+- `.sds-input-ui-float-bounce` — Float Bounce: The label overshoots and bounces into its floating position. https://sds-motion-forge.netlify.app/animations/input-ui-float-bounce/
+- `.sds-input-ui-float-center` — Float Center: A centred field: the label sits in the middle and floats straight up. https://sds-motion-forge.netlify.app/animations/input-ui-float-center/
+- `.sds-input-ui-float-edge` — Float Edge: The label floats onto the top edge while an accent line draws along it. https://sds-motion-forge.netlify.app/animations/input-ui-float-edge/
+- `.sds-input-ui-float-flip` — Float Flip: The label does a full flip around its horizontal axis as it floats up. https://sds-motion-forge.netlify.app/animations/input-ui-float-flip/
+- `.sds-input-ui-float-glass` — Float Glass: The label floats into a frosted glass chip above the field. https://sds-motion-forge.netlify.app/animations/input-ui-float-glass/
+- `.sds-input-ui-float-label` — Float Label: The label floats up and shrinks above the text when the field is focused or filled. https://sds-motion-forge.netlify.app/animations/input-ui-float-label/
+- `.sds-input-ui-float-micro` — Float Micro: An underlined field with a small, tightly tracked label and an accent underline. https://sds-motion-forge.netlify.app/animations/input-ui-float-micro/
+- `.sds-input-ui-float-notch` — Float Notch: An outlined field where the label floats onto the top border and cuts a notch in it. https://sds-motion-forge.netlify.app/animations/input-ui-float-notch/
+- `.sds-input-ui-float-pill` — Float Pill: The label turns into a small tinted pill above the field when it floats. https://sds-motion-forge.netlify.app/animations/input-ui-float-pill/
+- `.sds-input-ui-float-slide` — Float Slide: The label slides up and a little to the right as it shrinks. https://sds-motion-forge.netlify.app/animations/input-ui-float-slide/
+- `.sds-input-ui-float-spring` — Float Spring: The label springs up with a small overshoot. https://sds-motion-forge.netlify.app/animations/input-ui-float-spring/
+- `.sds-input-ui-float-squash` — Float Squash: The label squashes and stretches like a drop as it rises. https://sds-motion-forge.netlify.app/animations/input-ui-float-squash/
+- `.sds-input-ui-float-tilt` — Float Tilt: The label tilts as it floats, then settles on a spring. https://sds-motion-forge.netlify.app/animations/input-ui-float-tilt/
+- `.sds-input-ui-float-underline` — Float Underline: The label floats up and draws a short underline beneath itself. https://sds-motion-forge.netlify.app/animations/input-ui-float-underline/
+- `.sds-input-ui-float-zoom` — Float Zoom: The label starts large and zooms down to size as it floats. https://sds-motion-forge.netlify.app/animations/input-ui-float-zoom/
+- `.sds-input-ui-focus-bloom` — Focus Bloom: A soft bloom of colour rises under the field on focus. https://sds-motion-forge.netlify.app/animations/input-ui-focus-bloom/
+- `.sds-input-ui-focus-breathe` — Focus Breathe: The focus outline breathes in and out slowly. https://sds-motion-forge.netlify.app/animations/input-ui-focus-breathe/
+- `.sds-input-ui-focus-float` — Focus Float: The field floats up while its shadow on the ground shrinks. https://sds-motion-forge.netlify.app/animations/input-ui-focus-float/
+- `.sds-input-ui-focus-jelly` — Focus Jelly: The field wobbles like jelly once when focused. https://sds-motion-forge.netlify.app/animations/input-ui-focus-jelly/
+- `.sds-input-ui-focus-nudge` — Focus Nudge: The field nudges to the right on a spring on focus. https://sds-motion-forge.netlify.app/animations/input-ui-focus-nudge/
+- `.sds-input-ui-focus-pop` — Focus Pop: The field pops up on a spring when focused. https://sds-motion-forge.netlify.app/animations/input-ui-focus-pop/
+- `.sds-input-ui-focus-squash` — Focus Squash: The field squashes and rebounds once on focus. https://sds-motion-forge.netlify.app/animations/input-ui-focus-squash/
+- `.sds-input-ui-focus-stretch` — Focus Stretch: The field stretches out to the right on a spring on focus. https://sds-motion-forge.netlify.app/animations/input-ui-focus-stretch/
+- `.sds-input-ui-focus-tilt` — Focus Tilt: The field tilts back in perspective on focus. https://sds-motion-forge.netlify.app/animations/input-ui-focus-tilt/
+- `.sds-input-ui-focus-wobble` — Focus Wobble: The field gives a tiny rotating wobble on focus. https://sds-motion-forge.netlify.app/animations/input-ui-focus-wobble/
+- `.sds-input-ui-focus-zoom` — Focus Zoom: The field zooms up with a soft shadow on focus. https://sds-motion-forge.netlify.app/animations/input-ui-focus-zoom/
+- `.sds-input-ui-frame-draw` — Frame Draw: The outline is traced around the field, clockwise, on focus. https://sds-motion-forge.netlify.app/animations/input-ui-frame-draw/
+- `.sds-input-ui-glass-glow` — Glass Glow: A frosted glass field whose top edge lights up on focus. https://sds-motion-forge.netlify.app/animations/input-ui-glass-glow/
+- `.sds-input-ui-gradient-bloom` — Gradient Bloom: A gradient blooms up from the bottom edge on focus. https://sds-motion-forge.netlify.app/animations/input-ui-gradient-bloom/
+- `.sds-input-ui-gradient-halo` — Gradient Halo: A blurred blue-to-violet gradient glows beneath the field and brightens on focus. https://sds-motion-forge.netlify.app/animations/input-ui-gradient-halo/
+- `.sds-input-ui-grid-fade` — Grid Fade: A fine grid fades in behind the text on focus. https://sds-motion-forge.netlify.app/animations/input-ui-grid-fade/
+- `.sds-input-ui-halo-pulse` — Halo Pulse: A soft halo breathes around the field while it is focused. https://sds-motion-forge.netlify.app/animations/input-ui-halo-pulse/
+- `.sds-input-ui-holo-border` — Holo Border: An iridescent holographic border that moves faster on focus. https://sds-motion-forge.netlify.app/animations/input-ui-holo-border/
+- `.sds-input-ui-hover-lift` — Hover Lift: The field lifts slightly when hovered. https://sds-motion-forge.netlify.app/animations/input-ui-hover-lift/
+- `.sds-input-ui-hover-line` — Hover Line: An accent underline appears on hover and stays on focus. https://sds-motion-forge.netlify.app/animations/input-ui-hover-line/
+- `.sds-input-ui-icon-arrive` — Icon Arrive: An arrow slides in at the end of the field on focus. https://sds-motion-forge.netlify.app/animations/input-ui-icon-arrive/
+- `.sds-input-ui-ink-spread` — Ink Spread: A soft blot of ink spreads across the field from the bottom. https://sds-motion-forge.netlify.app/animations/input-ui-ink-spread/
+- `.sds-input-ui-invalid-shake` — Invalid Shake: The field shakes and shows a red outline when the typed value is invalid. https://sds-motion-forge.netlify.app/animations/input-ui-invalid-shake/
+- `.sds-input-ui-line-center` — Line Center: The accent underline grows from the centre outward on focus. https://sds-motion-forge.netlify.app/animations/input-ui-line-center/
+- `.sds-input-ui-line-dash` — Line Dash: A dashed accent underline marches along the bottom while focused. https://sds-motion-forge.netlify.app/animations/input-ui-line-dash/
+- `.sds-input-ui-line-flow` — Line Flow: A gradient underline that flows continuously while the field is focused. https://sds-motion-forge.netlify.app/animations/input-ui-line-flow/
+- `.sds-input-ui-line-glow` — Line Glow: The underline grows from the centre and a soft glow rises under it. https://sds-motion-forge.netlify.app/animations/input-ui-line-glow/
+- `.sds-input-ui-line-left` — Line Left: The accent underline grows from the left on focus. https://sds-motion-forge.netlify.app/animations/input-ui-line-left/
+- `.sds-input-ui-line-split` — Line Split: Two accent lines grow from both ends and meet in the middle. https://sds-motion-forge.netlify.app/animations/input-ui-line-split/
+- `.sds-input-ui-line-spring` — Line Spring: The accent underline springs in from the left with a small overshoot. https://sds-motion-forge.netlify.app/animations/input-ui-line-spring/
+- `.sds-input-ui-lock-pulse` — Lock Pulse: A lock icon at the end pulses while the field is focused. https://sds-motion-forge.netlify.app/animations/input-ui-lock-pulse/
+- `.sds-input-ui-magic-underline` — Magic Underline: A flowing gradient underline with a sparkle at the end on focus. https://sds-motion-forge.netlify.app/animations/input-ui-magic-underline/
+- `.sds-input-ui-neon-edge` — Neon Edge: A glowing neon outline switches on and hums gently on focus. https://sds-motion-forge.netlify.app/animations/input-ui-neon-edge/
+- `.sds-input-ui-neural-dots` — Neural Dots: Three dots pulse at the end of the field on focus, like an AI thinking. https://sds-motion-forge.netlify.app/animations/input-ui-neural-dots/
+- `.sds-input-ui-progress-line` — Progress Line: A line along the bottom follows --sds-input-progress (0 to 1). https://sds-motion-forge.netlify.app/animations/input-ui-progress-line/
+- `.sds-input-ui-prompt-glow` — Prompt Glow: A soft multicolour glow lights up behind the field on focus. https://sds-motion-forge.netlify.app/animations/input-ui-prompt-glow/
+- `.sds-input-ui-readonly-lock` — Readonly Lock: A lock icon appears on a readonly field. https://sds-motion-forge.netlify.app/animations/input-ui-readonly-lock/
+- `.sds-input-ui-required-dot` — Required Dot: A small red dot pulses on a required field that is still empty. https://sds-motion-forge.netlify.app/animations/input-ui-required-dot/
+- `.sds-input-ui-ring-expand` — Ring Expand: An outer ring expands out from the field on focus. https://sds-motion-forge.netlify.app/animations/input-ui-ring-expand/
+- `.sds-input-ui-ring-radiate` — Ring Radiate: Rings radiate outward from the field one after another while focused. https://sds-motion-forge.netlify.app/animations/input-ui-ring-radiate/
+- `.sds-input-ui-scan-beam` — Scan Beam: A thin scan beam sweeps across the field while it is focused. https://sds-motion-forge.netlify.app/animations/input-ui-scan-beam/
+- `.sds-input-ui-search-spin` — Search Spin: A search icon spins a full turn on focus. https://sds-motion-forge.netlify.app/animations/input-ui-search-spin/
+- `.sds-input-ui-shadow-lift` — Shadow Lift: The field lifts off the page and a soft shadow appears underneath. https://sds-motion-forge.netlify.app/animations/input-ui-shadow-lift/
+- `.sds-input-ui-sheen-sweep` — Sheen Sweep: A bright sheen sweeps across the field once on focus. https://sds-motion-forge.netlify.app/animations/input-ui-sheen-sweep/
+- `.sds-input-ui-shimmer-border` — Shimmer Border: A band of light runs around the border, faster on focus. https://sds-motion-forge.netlify.app/animations/input-ui-shimmer-border/
+- `.sds-input-ui-side-bar` — Side Bar: An accent bar grows up the left edge on focus. https://sds-motion-forge.netlify.app/animations/input-ui-side-bar/
+- `.sds-input-ui-sparkle` — Sparkle: Two sparkles twinkle at the edge of the field on focus. https://sds-motion-forge.netlify.app/animations/input-ui-sparkle/
+- `.sds-input-ui-spotlight` — Spotlight: A soft spotlight drifts across the field and settles on focus. https://sds-motion-forge.netlify.app/animations/input-ui-spotlight/
+- `.sds-input-ui-spotlight-card` — Spotlight Card: A soft violet spotlight rises inside the field on focus. https://sds-motion-forge.netlify.app/animations/input-ui-spotlight-card/
+- `.sds-input-ui-state-error` — State Error: Set data-state="error": the field shakes and shows a red outline and a warning icon. https://sds-motion-forge.netlify.app/animations/input-ui-state-error/
+- `.sds-input-ui-state-success` — State Success: Set data-state="success": a green outline and a check mark spring in. https://sds-motion-forge.netlify.app/animations/input-ui-state-success/
+- `.sds-input-ui-state-warning` — State Warning: Set data-state="warning": an amber outline and a pulsing warning icon. https://sds-motion-forge.netlify.app/animations/input-ui-state-warning/
+- `.sds-input-ui-strength-meter` — Strength Meter: A red, amber and green bar follows --sds-input-level (0 to 4), like a password meter. https://sds-motion-forge.netlify.app/animations/input-ui-strength-meter/
+- `.sds-input-ui-stripe-march` — Stripe March: Faint diagonal stripes march across the field while focused. https://sds-motion-forge.netlify.app/animations/input-ui-stripe-march/
+- `.sds-input-ui-tint-fade` — Tint Fade: The field fades to a light tint on focus. https://sds-motion-forge.netlify.app/animations/input-ui-tint-fade/
+- `.sds-input-ui-top-bar` — Top Bar: An accent bar sweeps across the top edge on focus. https://sds-motion-forge.netlify.app/animations/input-ui-top-bar/
+- `.sds-input-ui-valid-check` — Valid Check: A check mark pops in when the typed value is valid (use type, required or pattern). https://sds-motion-forge.netlify.app/animations/input-ui-valid-check/
+- `.sds-input-ui-valid-ring` — Valid Ring: A green outline appears around the field when its value is valid. https://sds-motion-forge.netlify.app/animations/input-ui-valid-ring/
+- `.sds-input-ui-vignette-glow` — Vignette Glow: A soft glow gathers around the inside edge of the field on focus. https://sds-motion-forge.netlify.app/animations/input-ui-vignette-glow/
+- `.sds-input-ui-voice-wave` — Voice Wave: Five bars bounce like a voice wave at the end of the field on focus. https://sds-motion-forge.netlify.app/animations/input-ui-voice-wave/
 
 ## Cards (100)
 

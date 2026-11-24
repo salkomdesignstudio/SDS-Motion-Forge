@@ -3530,5 +3530,505 @@
     "description": "The button floats up while its shadow on the ground shrinks and fades.",
     "displayName": "Float Shadow",
     "source": "authored"
+  },
+  "sds-input-ui-float-label": {
+    "description": "The label floats up and shrinks above the text when the field is focused or filled.",
+    "displayName": "Float Label",
+    "source": "authored"
+  },
+  "sds-input-ui-float-notch": {
+    "description": "An outlined field where the label floats onto the top border and cuts a notch in it.",
+    "displayName": "Float Notch",
+    "source": "authored"
+  },
+  "sds-input-ui-float-pill": {
+    "description": "The label turns into a small tinted pill above the field when it floats.",
+    "displayName": "Float Pill",
+    "source": "authored"
+  },
+  "sds-input-ui-float-slide": {
+    "description": "The label slides up and a little to the right as it shrinks.",
+    "displayName": "Float Slide",
+    "source": "authored"
+  },
+  "sds-input-ui-float-flip": {
+    "description": "The label does a full flip around its horizontal axis as it floats up.",
+    "displayName": "Float Flip",
+    "source": "authored"
+  },
+  "sds-input-ui-float-blur": {
+    "description": "The label blurs while it travels up and sharpens when it lands.",
+    "displayName": "Float Blur",
+    "source": "authored"
+  },
+  "sds-input-ui-float-spring": {
+    "description": "The label springs up with a small overshoot.",
+    "displayName": "Float Spring",
+    "source": "authored"
+  },
+  "sds-input-ui-float-above": {
+    "description": "The label leaves the field completely and settles above it.",
+    "displayName": "Float Above",
+    "source": "authored"
+  },
+  "sds-input-ui-float-below": {
+    "description": "The label drops below the field and becomes a caption.",
+    "displayName": "Float Below",
+    "source": "authored"
+  },
+  "sds-input-ui-float-squash": {
+    "description": "The label squashes and stretches like a drop as it rises.",
+    "displayName": "Float Squash",
+    "source": "authored"
+  },
+  "sds-input-ui-float-arc": {
+    "description": "The label rises along a curved path instead of a straight line.",
+    "displayName": "Float Arc",
+    "source": "authored"
+  },
+  "sds-input-ui-float-underline": {
+    "description": "The label floats up and draws a short underline beneath itself.",
+    "displayName": "Float Underline",
+    "source": "authored"
+  },
+  "sds-input-ui-float-center": {
+    "description": "A centred field: the label sits in the middle and floats straight up.",
+    "displayName": "Float Center",
+    "source": "authored"
+  },
+  "sds-input-ui-float-tilt": {
+    "description": "The label tilts as it floats, then settles on a spring.",
+    "displayName": "Float Tilt",
+    "source": "authored"
+  },
+  "sds-input-ui-float-glass": {
+    "description": "The label floats into a frosted glass chip above the field.",
+    "displayName": "Float Glass",
+    "source": "authored"
+  },
+  "sds-input-ui-float-zoom": {
+    "description": "The label starts large and zooms down to size as it floats.",
+    "displayName": "Float Zoom",
+    "source": "authored"
+  },
+  "sds-input-ui-float-bounce": {
+    "description": "The label overshoots and bounces into its floating position.",
+    "displayName": "Float Bounce",
+    "source": "authored"
+  },
+  "sds-input-ui-float-edge": {
+    "description": "The label floats onto the top edge while an accent line draws along it.",
+    "displayName": "Float Edge",
+    "source": "authored"
+  },
+  "sds-input-ui-float-micro": {
+    "description": "An underlined field with a small, tightly tracked label and an accent underline.",
+    "displayName": "Float Micro",
+    "source": "authored"
+  },
+  "sds-input-ui-line-center": {
+    "description": "The accent underline grows from the centre outward on focus.",
+    "displayName": "Line Center",
+    "source": "authored"
+  },
+  "sds-input-ui-line-left": {
+    "description": "The accent underline grows from the left on focus.",
+    "displayName": "Line Left",
+    "source": "authored"
+  },
+  "sds-input-ui-line-spring": {
+    "description": "The accent underline springs in from the left with a small overshoot.",
+    "displayName": "Line Spring",
+    "source": "authored"
+  },
+  "sds-input-ui-line-split": {
+    "description": "Two accent lines grow from both ends and meet in the middle.",
+    "displayName": "Line Split",
+    "source": "authored"
+  },
+  "sds-input-ui-line-flow": {
+    "description": "A gradient underline that flows continuously while the field is focused.",
+    "displayName": "Line Flow",
+    "source": "authored"
+  },
+  "sds-input-ui-line-glow": {
+    "description": "The underline grows from the centre and a soft glow rises under it.",
+    "displayName": "Line Glow",
+    "source": "authored"
+  },
+  "sds-input-ui-line-dash": {
+    "description": "A dashed accent underline marches along the bottom while focused.",
+    "displayName": "Line Dash",
+    "source": "authored"
+  },
+  "sds-input-ui-frame-draw": {
+    "description": "The outline is traced around the field, clockwise, on focus.",
+    "displayName": "Frame Draw",
+    "source": "authored"
+  },
+  "sds-input-ui-corner-brackets": {
+    "description": "Corner brackets open out around the field on focus.",
+    "displayName": "Corner Brackets",
+    "source": "authored"
+  },
+  "sds-input-ui-ring-expand": {
+    "description": "An outer ring expands out from the field on focus.",
+    "displayName": "Ring Expand",
+    "source": "authored"
+  },
+  "sds-input-ui-halo-pulse": {
+    "description": "A soft halo breathes around the field while it is focused.",
+    "displayName": "Halo Pulse",
+    "source": "authored"
+  },
+  "sds-input-ui-shadow-lift": {
+    "description": "The field lifts off the page and a soft shadow appears underneath.",
+    "displayName": "Shadow Lift",
+    "source": "authored"
+  },
+  "sds-input-ui-neon-edge": {
+    "description": "A glowing neon outline switches on and hums gently on focus.",
+    "displayName": "Neon Edge",
+    "source": "authored"
+  },
+  "sds-input-ui-double-ring": {
+    "description": "Two outlines echo outward around the field on focus.",
+    "displayName": "Double Ring",
+    "source": "authored"
+  },
+  "sds-input-ui-side-bar": {
+    "description": "An accent bar grows up the left edge on focus.",
+    "displayName": "Side Bar",
+    "source": "authored"
+  },
+  "sds-input-ui-top-bar": {
+    "description": "An accent bar sweeps across the top edge on focus.",
+    "displayName": "Top Bar",
+    "source": "authored"
+  },
+  "sds-input-ui-corner-dots": {
+    "description": "Four dots pop in at the corners of the field on focus.",
+    "displayName": "Corner Dots",
+    "source": "authored"
+  },
+  "sds-input-ui-aura-rim": {
+    "description": "A coloured gradient rotates around the border on focus.",
+    "displayName": "Aura Rim",
+    "source": "authored"
+  },
+  "sds-input-ui-border-sweep": {
+    "description": "A band of light sweeps across the field once on focus.",
+    "displayName": "Border Sweep",
+    "source": "authored"
+  },
+  "sds-input-ui-focus-bloom": {
+    "description": "A soft bloom of colour rises under the field on focus.",
+    "displayName": "Focus Bloom",
+    "source": "authored"
+  },
+  "sds-input-ui-edge-dots": {
+    "description": "A dotted accent line is drawn along the bottom on focus.",
+    "displayName": "Edge Dots",
+    "source": "authored"
+  },
+  "sds-input-ui-fill-rise": {
+    "description": "A tint rises from the bottom and fills the field on focus.",
+    "displayName": "Fill Rise",
+    "source": "authored"
+  },
+  "sds-input-ui-fill-wipe": {
+    "description": "A tint wipes across the field from left to right on focus.",
+    "displayName": "Fill Wipe",
+    "source": "authored"
+  },
+  "sds-input-ui-fill-iris": {
+    "description": "A tint opens from the centre like an iris on focus.",
+    "displayName": "Fill Iris",
+    "source": "authored"
+  },
+  "sds-input-ui-fill-diagonal": {
+    "description": "A tint sweeps across the field on a diagonal on focus.",
+    "displayName": "Fill Diagonal",
+    "source": "authored"
+  },
+  "sds-input-ui-fill-split": {
+    "description": "A tint opens from the middle line out to both sides on focus.",
+    "displayName": "Fill Split",
+    "source": "authored"
+  },
+  "sds-input-ui-spotlight": {
+    "description": "A soft spotlight drifts across the field and settles on focus.",
+    "displayName": "Spotlight",
+    "source": "authored"
+  },
+  "sds-input-ui-aurora-glow": {
+    "description": "Two blurred colour blobs drift through the field while it is focused.",
+    "displayName": "Aurora Glow",
+    "source": "authored"
+  },
+  "sds-input-ui-sheen-sweep": {
+    "description": "A bright sheen sweeps across the field once on focus.",
+    "displayName": "Sheen Sweep",
+    "source": "authored"
+  },
+  "sds-input-ui-gradient-bloom": {
+    "description": "A gradient blooms up from the bottom edge on focus.",
+    "displayName": "Gradient Bloom",
+    "source": "authored"
+  },
+  "sds-input-ui-ink-spread": {
+    "description": "A soft blot of ink spreads across the field from the bottom.",
+    "displayName": "Ink Spread",
+    "source": "authored"
+  },
+  "sds-input-ui-tint-fade": {
+    "description": "The field fades to a light tint on focus.",
+    "displayName": "Tint Fade",
+    "source": "authored"
+  },
+  "sds-input-ui-grid-fade": {
+    "description": "A fine grid fades in behind the text on focus.",
+    "displayName": "Grid Fade",
+    "source": "authored"
+  },
+  "sds-input-ui-dot-matrix": {
+    "description": "A dot-matrix pattern slides in from the left on focus.",
+    "displayName": "Dot Matrix",
+    "source": "authored"
+  },
+  "sds-input-ui-stripe-march": {
+    "description": "Faint diagonal stripes march across the field while focused.",
+    "displayName": "Stripe March",
+    "source": "authored"
+  },
+  "sds-input-ui-vignette-glow": {
+    "description": "A soft glow gathers around the inside edge of the field on focus.",
+    "displayName": "Vignette Glow",
+    "source": "authored"
+  },
+  "sds-input-ui-valid-check": {
+    "description": "A check mark pops in when the typed value is valid (use type, required or pattern).",
+    "displayName": "Valid Check",
+    "source": "authored"
+  },
+  "sds-input-ui-invalid-shake": {
+    "description": "The field shakes and shows a red outline when the typed value is invalid.",
+    "displayName": "Invalid Shake",
+    "source": "authored"
+  },
+  "sds-input-ui-clear-x": {
+    "description": "A clear button appears at the end as soon as there is text.",
+    "displayName": "Clear X",
+    "source": "authored"
+  },
+  "sds-input-ui-search-spin": {
+    "description": "A search icon spins a full turn on focus.",
+    "displayName": "Search Spin",
+    "source": "authored"
+  },
+  "sds-input-ui-icon-arrive": {
+    "description": "An arrow slides in at the end of the field on focus.",
+    "displayName": "Icon Arrive",
+    "source": "authored"
+  },
+  "sds-input-ui-lock-pulse": {
+    "description": "A lock icon at the end pulses while the field is focused.",
+    "displayName": "Lock Pulse",
+    "source": "authored"
+  },
+  "sds-input-ui-required-dot": {
+    "description": "A small red dot pulses on a required field that is still empty.",
+    "displayName": "Required Dot",
+    "source": "authored"
+  },
+  "sds-input-ui-focus-breathe": {
+    "description": "The focus outline breathes in and out slowly.",
+    "displayName": "Focus Breathe",
+    "source": "authored"
+  },
+  "sds-input-ui-disabled-stripe": {
+    "description": "A disabled field is striped and dimmed, and shakes a little if hovered.",
+    "displayName": "Disabled Stripe",
+    "source": "authored"
+  },
+  "sds-input-ui-readonly-lock": {
+    "description": "A lock icon appears on a readonly field.",
+    "displayName": "Readonly Lock",
+    "source": "authored"
+  },
+  "sds-input-ui-busy-bar": {
+    "description": "Set aria-busy=\"true\" and a bright bar runs along the bottom edge.",
+    "displayName": "Busy Bar",
+    "source": "authored"
+  },
+  "sds-input-ui-busy-dots": {
+    "description": "Set aria-busy=\"true\" and three dots pulse in turn at the end.",
+    "displayName": "Busy Dots",
+    "source": "authored"
+  },
+  "sds-input-ui-state-success": {
+    "description": "Set data-state=\"success\": a green outline and a check mark spring in.",
+    "displayName": "State Success",
+    "source": "authored"
+  },
+  "sds-input-ui-state-error": {
+    "description": "Set data-state=\"error\": the field shakes and shows a red outline and a warning icon.",
+    "displayName": "State Error",
+    "source": "authored"
+  },
+  "sds-input-ui-state-warning": {
+    "description": "Set data-state=\"warning\": an amber outline and a pulsing warning icon.",
+    "displayName": "State Warning",
+    "source": "authored"
+  },
+  "sds-input-ui-progress-line": {
+    "description": "A line along the bottom follows --sds-input-progress (0 to 1).",
+    "displayName": "Progress Line",
+    "source": "authored"
+  },
+  "sds-input-ui-strength-meter": {
+    "description": "A red, amber and green bar follows --sds-input-level (0 to 4), like a password meter.",
+    "displayName": "Strength Meter",
+    "source": "authored"
+  },
+  "sds-input-ui-autofill-glow": {
+    "description": "A green glow flashes when the browser autofills the field.",
+    "displayName": "Autofill Glow",
+    "source": "authored"
+  },
+  "sds-input-ui-hover-lift": {
+    "description": "The field lifts slightly when hovered.",
+    "displayName": "Hover Lift",
+    "source": "authored"
+  },
+  "sds-input-ui-hover-line": {
+    "description": "An accent underline appears on hover and stays on focus.",
+    "displayName": "Hover Line",
+    "source": "authored"
+  },
+  "sds-input-ui-valid-ring": {
+    "description": "A green outline appears around the field when its value is valid.",
+    "displayName": "Valid Ring",
+    "source": "authored"
+  },
+  "sds-input-ui-focus-pop": {
+    "description": "The field pops up on a spring when focused.",
+    "displayName": "Focus Pop",
+    "source": "authored"
+  },
+  "sds-input-ui-focus-jelly": {
+    "description": "The field wobbles like jelly once when focused.",
+    "displayName": "Focus Jelly",
+    "source": "authored"
+  },
+  "sds-input-ui-focus-tilt": {
+    "description": "The field tilts back in perspective on focus.",
+    "displayName": "Focus Tilt",
+    "source": "authored"
+  },
+  "sds-input-ui-focus-squash": {
+    "description": "The field squashes and rebounds once on focus.",
+    "displayName": "Focus Squash",
+    "source": "authored"
+  },
+  "sds-input-ui-focus-zoom": {
+    "description": "The field zooms up with a soft shadow on focus.",
+    "displayName": "Focus Zoom",
+    "source": "authored"
+  },
+  "sds-input-ui-focus-wobble": {
+    "description": "The field gives a tiny rotating wobble on focus.",
+    "displayName": "Focus Wobble",
+    "source": "authored"
+  },
+  "sds-input-ui-focus-nudge": {
+    "description": "The field nudges to the right on a spring on focus.",
+    "displayName": "Focus Nudge",
+    "source": "authored"
+  },
+  "sds-input-ui-focus-stretch": {
+    "description": "The field stretches out to the right on a spring on focus.",
+    "displayName": "Focus Stretch",
+    "source": "authored"
+  },
+  "sds-input-ui-focus-float": {
+    "description": "The field floats up while its shadow on the ground shrinks.",
+    "displayName": "Focus Float",
+    "source": "authored"
+  },
+  "sds-input-ui-ai-rainbow": {
+    "description": "A rainbow gradient circles the border like an AI prompt box and speeds up on focus.",
+    "displayName": "AI Rainbow",
+    "source": "authored"
+  },
+  "sds-input-ui-prompt-glow": {
+    "description": "A soft multicolour glow lights up behind the field on focus.",
+    "displayName": "Prompt Glow",
+    "source": "authored"
+  },
+  "sds-input-ui-sparkle": {
+    "description": "Two sparkles twinkle at the edge of the field on focus.",
+    "displayName": "Sparkle",
+    "source": "authored"
+  },
+  "sds-input-ui-shimmer-border": {
+    "description": "A band of light runs around the border, faster on focus.",
+    "displayName": "Shimmer Border",
+    "source": "authored"
+  },
+  "sds-input-ui-gradient-halo": {
+    "description": "A blurred blue-to-violet gradient glows beneath the field and brightens on focus.",
+    "displayName": "Gradient Halo",
+    "source": "authored"
+  },
+  "sds-input-ui-command-bar": {
+    "description": "A slash key hint sits at the end and slips away when you focus or type.",
+    "displayName": "Command Bar",
+    "source": "authored"
+  },
+  "sds-input-ui-caret-bar": {
+    "description": "A blinking accent bar sits at the end of the field on focus.",
+    "displayName": "Caret Bar",
+    "source": "authored"
+  },
+  "sds-input-ui-voice-wave": {
+    "description": "Five bars bounce like a voice wave at the end of the field on focus.",
+    "displayName": "Voice Wave",
+    "source": "authored"
+  },
+  "sds-input-ui-magic-underline": {
+    "description": "A flowing gradient underline with a sparkle at the end on focus.",
+    "displayName": "Magic Underline",
+    "source": "authored"
+  },
+  "sds-input-ui-spotlight-card": {
+    "description": "A soft violet spotlight rises inside the field on focus.",
+    "displayName": "Spotlight Card",
+    "source": "authored"
+  },
+  "sds-input-ui-glass-glow": {
+    "description": "A frosted glass field whose top edge lights up on focus.",
+    "displayName": "Glass Glow",
+    "source": "authored"
+  },
+  "sds-input-ui-holo-border": {
+    "description": "An iridescent holographic border that moves faster on focus.",
+    "displayName": "Holo Border",
+    "source": "authored"
+  },
+  "sds-input-ui-ring-radiate": {
+    "description": "Rings radiate outward from the field one after another while focused.",
+    "displayName": "Ring Radiate",
+    "source": "authored"
+  },
+  "sds-input-ui-scan-beam": {
+    "description": "A thin scan beam sweeps across the field while it is focused.",
+    "displayName": "Scan Beam",
+    "source": "authored"
+  },
+  "sds-input-ui-neural-dots": {
+    "description": "Three dots pulse at the end of the field on focus, like an AI thinking.",
+    "displayName": "Neural Dots",
+    "source": "authored"
   }
 }

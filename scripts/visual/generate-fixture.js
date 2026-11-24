@@ -18,7 +18,7 @@ function hostFor(c) {
   switch (c.category) {
     case "buttons": return { tag: "button", text: "Button" };
     case "inputs": return c.inputWrap
-      ? { tag: "wrap-input", withLabel: (c.selectors || []).some((s) => /\blabel\b/.test(s)) }
+      ? { tag: "wrap-input", withLabel: c.name.startsWith("sds-input-ui-") || (c.selectors || []).some((s) => /\blabel\b/.test(s)) }
       : { tag: "input", text: null };
     case "loaders": return { tag: "span", text: c.name === "sds-loader-type" ? "load" : null };
     case "cards": return { tag: "div", text: "Card", card: true };

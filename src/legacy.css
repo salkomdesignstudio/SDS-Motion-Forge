@@ -5,6 +5,7 @@
  * core on purpose: it keeps these classes still for visitors who ask for less motion, even without motion.css.
  */
 @import "./legacy/buttons.css";
+@import "./legacy/inputs.css";
 
 /* @sds-standalone-rm:start */
 @media (prefers-reduced-motion: reduce) {

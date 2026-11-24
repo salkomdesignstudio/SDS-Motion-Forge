@@ -188,12 +188,12 @@ import '@salkomdesignstudio/sds-motion-forge/categories/loaders';
 |---|---|---|---|
 | text | `@salkomdesignstudio/sds-motion-forge/categories/text` | 65.7 KB | 13.7 KB |
 | buttons | `@salkomdesignstudio/sds-motion-forge/categories/buttons` | 83.8 KB | 13.0 KB |
-| inputs | `@salkomdesignstudio/sds-motion-forge/categories/inputs` | 47.2 KB | 8.4 KB |
+| inputs | `@salkomdesignstudio/sds-motion-forge/categories/inputs` | 86.2 KB | 9.8 KB |
 | cards | `@salkomdesignstudio/sds-motion-forge/categories/cards` | 40.4 KB | 7.6 KB |
 | loaders | `@salkomdesignstudio/sds-motion-forge/categories/loaders` | 50.1 KB | 8.3 KB |
 | scroll | `@salkomdesignstudio/sds-motion-forge/categories/scroll` | 34.6 KB | 6.0 KB |
 | core only | `@salkomdesignstudio/sds-motion-forge/categories/core` | 4.3 KB | 1.2 KB |
-| **everything** | `@salkomdesignstudio/sds-motion-forge` | **296.1 KB** | **48.3 KB** |
+| **everything** | `@salkomdesignstudio/sds-motion-forge` | **335.1 KB** | **49.9 KB** |
 <!-- @sds-size-table:end -->
 
 Core is intentionally **inlined** into every category bundle so each one works
@@ -711,6 +711,25 @@ sds-btn-volt         sds-btn-warp
 
 ---
 
+### UI inputs (v6)
+
+100 self-styled input fields (`sds-input-ui-*`): floating labels, focus lines and frames, fills, validation and loading states, physical focus effects and AI-style prompt boxes. Every one has the same default size (18em by 3.5em).
+
+```html
+<div class="sds-input-ui-float-notch">
+  <input id="email" type="email" placeholder=" " />
+  <label for="email">Email address</label>
+</div>
+```
+
+- The wrapper takes the class, then the `<input>`, then its `<label>`. Use any input type, name, `autocomplete` or validation attribute, and any label text.
+- `placeholder=" "` (one space) is required: it is how CSS knows the field is empty. The label doubles as the placeholder and floats away when the field is focused or filled.
+- Colour and size: `--sds-input-width`, `--sds-input-height`, `--sds-input-radius`, `--sds-input-accent`, `--sds-input-bg`, `--sds-input-fg`, `--sds-input-line`, `--sds-input-muted`.
+- State-driven ones follow the field or the wrapper: `:valid` / `:invalid` (valid-check, invalid-shake), `aria-busy="true"` (busy-bar, busy-dots), `data-state="success|error|warning"`, `--sds-input-progress` (0 to 1) and `--sds-input-level` (0 to 4).
+- Reduced motion is honoured automatically.
+
+The 100 v5 input classes moved to `dist/legacy.css` (the migration notes come with 6.0.0); load it next to `motion.css` to keep using them.
+
 ### Inputs — 100 classes
 
 State-based effects for `<input>` and `<textarea>` elements. Some activate on `:focus`, others run continuously.
@@ -743,7 +762,7 @@ sds-input-charge         sds-input-comet          sds-input-crystal
 sds-input-depth          sds-input-echo           sds-input-electric
 sds-input-elevate-wrap   sds-input-expand         sds-input-fire
 sds-input-flicker        sds-input-flow           sds-input-focus
-sds-input-focus-glow     sds-input-frost          sds-input-ghost
+sds-input-ui-float-label     sds-input-frost          sds-input-ghost
 sds-input-glitch-valid   sds-input-glow-border    sds-input-gradient-border
 sds-input-gravity        sds-input-ink            sds-input-kinetic
 sds-input-laser          sds-input-momentum       sds-input-morph
@@ -1495,7 +1514,7 @@ All v3.x class names continue to work identically. The following legacy aliases 
 | Legacy class | Resolves to |
 |---|---|
 | `sds-scroll-fade-up` | `sds-scroll-rise` |
-| `sds-input-focus-glow` | `sds-input-focus` |
+| `sds-input-ui-float-label` | `sds-input-focus` |
 | `sds-card-neon` | `sds-card-glow` |
 | `sds-card-depth` | `sds-card-parallax` |
 | `sds-card-flip` | `sds-card-slice` |

@@ -58,7 +58,7 @@ function markupFor(c) {
       return `<button class="${cls}">Button</button>`;
     case "inputs":
       if (c.inputWrap) {
-        const withLabel = c.selectors.some((s) => /\blabel\b/.test(s));
+        const withLabel = c.name.startsWith("sds-input-ui-") || c.selectors.some((s) => /\blabel\b/.test(s));
         return withLabel
           ? `<div class="${cls}">\n  <input id="sds-email" placeholder=" " />\n  <label for="sds-email">Email</label>\n</div>`
           : `<div class="${cls}">\n  <input placeholder="Type here" />\n</div>`;
@@ -267,7 +267,7 @@ function bootstrapTab(c) {
       break;
     case "inputs":
       body = c.inputWrap
-        ? `<div class="${c.name}">\n      <input type="text" class="form-control" placeholder="Email address" />\n      ${c.selectors.some((s) => /\blabel\b/.test(s)) ? "<label>Email</label>\n      " : ""}</div>`
+        ? `<div class="${c.name}">\n      <input type="text" class="form-control" placeholder="Email address" />\n      ${c.name.startsWith("sds-input-ui-") || c.selectors.some((s) => /\blabel\b/.test(s)) ? "<label>Email</label>\n      " : ""}</div>`
         : `<input type="text" class="form-control ${c.name}" placeholder="Email address" />`;
       break;
     case "cards":

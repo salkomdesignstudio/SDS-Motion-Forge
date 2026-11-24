@@ -25,6 +25,9 @@
 .fx-stage h1, .fx-stage h2 { font: 700 21px "Manrope", Arial, sans-serif; letter-spacing: -0.035em; color: #16182c; }
 .fx-stage button:not([class*="sds-btn-ui-"]) { padding: 10px 18px; border: 0; border-radius: 12px; background: #5c4ae1; color: #fff; font: 600 14px "Manrope", Arial, sans-serif; cursor: default; }
 .fx-stage input { width: 80%; max-width: 220px; height: 40px; padding: 0 12px; border: 1px solid #d9dde4; border-radius: 10px; background: #fff; color: #16182c; font: 600 14px "Manrope", Arial, sans-serif; }
+/* the UI inputs (sds-input-ui-*) bring their own surface, label and focus effect; the stage only sets the type size and a narrower width */
+.fx-stage [class*="sds-input-ui-"] { --sds-input-width: 12.5em; font: 600 14px "Manrope", Arial, sans-serif; }
+.fx-stage [class*="sds-input-ui-"] > input { width: 100%; max-width: none; height: 100%; padding: 1.3em 1em 0.3em; border: 0; border-radius: inherit; background: transparent; color: inherit; font: inherit; }
 .fx-stage .sds-loader-skeleton { display: block; width: 160px; height: 14px; }
 .fx-stage .sds-loader-progress-glow { display: block; width: 160px; height: 6px; border-radius: 99px; background: var(--sds-primary); transform-origin: left center; }
 .fx-replay { position: absolute; top: 14px; right: 14px; z-index: 3; display: grid; place-items: center; width: 32px; height: 32px; padding: 0; border: 1px solid #e1e3e9; border-radius: 50%; background: #fff; color: #43475c; cursor: pointer; opacity: 0; transition: opacity 0.15s; }

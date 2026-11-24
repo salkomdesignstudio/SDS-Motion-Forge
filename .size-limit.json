@@ -1,14 +1,14 @@
 [
   {
     "path": "dist/motion.min.css",
-    "limit": "315280 B",
+    "limit": "356853 B",
     "name": "dist/motion.min.css",
     "gzip": false,
     "brotli": false
   },
   {
     "path": "dist/motion.css",
-    "limit": "441348 B",
+    "limit": "493406 B",
     "name": "dist/motion.css",
     "gzip": false,
     "brotli": false
@@ -50,7 +50,7 @@
   },
   {
     "path": "dist/categories/inputs.min.css",
-    "limit": "50050 B",
+    "limit": "91844 B",
     "name": "dist/categories/inputs.min.css",
     "gzip": false,
     "brotli": false
@@ -78,14 +78,14 @@
   },
   {
     "path": "packages/react/dist/index.js",
-    "limit": "107922 B",
+    "limit": "122674 B",
     "name": "packages/react/dist/index.js",
     "gzip": false,
     "brotli": false
   },
   {
     "path": "packages/elements/dist/index.global.js",
-    "limit": "87559 B",
+    "limit": "99814 B",
     "name": "packages/elements/dist/index.global.js",
     "gzip": false,
     "brotli": false

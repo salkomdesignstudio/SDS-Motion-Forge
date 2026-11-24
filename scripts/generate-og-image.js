@@ -19,7 +19,7 @@ const OUT = path.resolve(__dirname, '../docs/images');
 const names = new Set(S.registry.classes.map((c) => c.name));
 const SHOWN = [
   'sds-velvet-drop', 'sds-btn-ui-aurora-mesh', 'sds-card-cascade', 'sds-scroll-fade-up',
-  'sds-loader-plasma-ring', 'sds-input-focus-glow', 'sds-aurora-text', 'sds-btn-magnetic',
+  'sds-loader-plasma-ring', 'sds-input-ui-float-label', 'sds-aurora-text', 'sds-btn-ui-glass-lift',
 ];
 const missing = SHOWN.filter((n) => !names.has(n));
 if (missing.length) {

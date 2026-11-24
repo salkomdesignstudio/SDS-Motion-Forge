@@ -214,7 +214,7 @@ function badgesFor(c) {
 }
 function fxCard(c, level) {
   const h = level || 3;
-  const interactiveDemo = c.kind === "interactive";
+  const interactiveDemo = c.kind === "interactive" || /^sds-(btn|input)-ui-/.test(c.name);
   return `<li class="fx-card" data-fx data-s="${esc((c.displayName + " " + c.name + " " + sentence(descOf(c))).toLowerCase())}">
 <div class="fx-stage"${interactiveDemo ? "" : ' aria-hidden="true" inert'}>${demoMarkup(c)}</div>
 <button type="button" class="fx-replay" data-replay aria-label="Replay ${esc(c.displayName)}">${ICON_REPLAY}</button>
@@ -244,7 +244,18 @@ function relatedFor(c) {
 /* ── effect page ─────────────────────────────────────────────── */
 const seenDesc = new Map();
 let fallbackCss = 0;
+function inputSection(c) {
+  const n = c.name;
+  const ex = [
+    ["The markup: a wrapper, the input, then its label", "<div class=\"" + n + "\">\n  <input id=\"email\" type=\"email\" placeholder=\" \" />\n  <label for=\"email\">Email address</label>\n</div>\n\n<!-- placeholder=\" \" (one space) is required: it is how CSS knows the field is empty -->"],
+    ["Change the label, the type and the content", "<div class=\"" + n + "\">\n  <input id=\"phone\" type=\"tel\" placeholder=\" \" autocomplete=\"tel\" />\n  <label for=\"phone\">Phone number</label>\n</div>\n\n<div class=\"" + n + "\">\n  <input id=\"pw\" type=\"password\" placeholder=\" \" required />\n  <label for=\"pw\">Password</label>\n</div>"],
+    ["Colour, size and shape", "/* every UI input is 18em wide and 3.5em high by default */\n.my-field { --sds-input-width: 24em; --sds-input-height: 4em; --sds-input-radius: 1em; --sds-input-accent: #0ea5e9; --sds-input-bg: #f8fafc; --sds-input-fg: #0f172a; --sds-input-line: rgba(15, 23, 42, 0.2); --sds-input-muted: rgba(15, 23, 42, 0.5); }"]
+  ];
+  return `<section class="sec2" aria-labelledby="own"><h2 id="own">Make it yours</h2><p>The label is the <code>&lt;label&gt;</code> text and the typed text is the <code>&lt;input&gt;</code>: use any type, name, autocomplete or validation attribute. Every UI input has the same default size; change it with <code>--sds-input-width</code> and <code>--sds-input-height</code>.</p><div class="code-tabs">${ex.map(([t, code], i) => `<div class="code-panel" style="display:block"><h3>${esc(t)}</h3><button type="button" class="copy-btn" data-copy-from="own-${i}">Copy</button><pre><code id="own-${i}">${esc(code)}</code></pre></div>`).join("")}</div></section>\n\n`;
+}
+
 function customiseSection(c) {
+  if (c.name.startsWith("sds-input-ui-")) return inputSection(c);
   if (!c.name.startsWith("sds-btn-ui-")) return "";
   const ex = [["Change the text","<button class=\"sds-btn-ui-arrow-slide\">Buy now</button>\n<a class=\"sds-btn-ui-arrow-slide\" href=\"/pricing\">See pricing</a>"],["Use any icon: inline SVG, icon font, image or emoji","<!-- the icon slot takes any markup; it follows the text colour and the font size -->\n<button class=\"sds-btn-ui-arrow-slide\">\n  Add to cart\n  <span class=\"sds-btn-icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\">…</svg></span>\n</button>\n\n<button class=\"sds-btn-ui-arrow-slide\">Checkout <span class=\"sds-btn-icon\"><i class=\"ri-shopping-bag-3-line\"></i></span></button>\n<button class=\"sds-btn-ui-arrow-slide\">Launch <span class=\"sds-btn-icon\">🚀</span></button>\n<button class=\"sds-btn-ui-arrow-slide\">Done <span class=\"sds-btn-icon\"><img src=\"check.svg\" alt=\"\"></span></button>\n\n<!-- put the slot first for a leading icon: any UI button takes one -->\n<button class=\"sds-btn-ui-liquid-fill\"><span class=\"sds-btn-icon\"><svg>…</svg></span> Shop</button>"],["Swap the built-in glyph, or hide it","<!-- any SVG file or data URI, tinted with the text colour -->\n<button class=\"sds-btn-ui-arrow-slide\" style=\"--sds-btn-icon: url(star.svg)\">Favourite</button>\n\n<!-- no icon at all -->\n<button class=\"sds-btn-ui-arrow-slide\" style=\"--sds-btn-icon-display: none\">Plain label</button>\n\n/* colour, shape, icon size and spacing */\n.my-button { --sds-btn-bg: #14162a; --sds-btn-fg: #fff; --sds-btn-radius: 14px; --sds-btn-icon-size: 1.5em; --sds-btn-gap: 0.8em; --sds-btn-width: 14em; --sds-btn-height: 3.5em; }"]];
   return `<section class="sec2" aria-labelledby="own"><h2 id="own">Make it yours</h2><p>The label is just the element's text, and any icon works: inline SVG, an icon font, an image, an emoji or an SVG file. Put the icon in a <code>.sds-btn-icon</code> slot, or change the built-in glyph with <code>--sds-btn-icon</code>.</p><div class="code-tabs">${ex.map(([t, code], i) => `<div class="code-panel" style="display:block"><h3>${esc(t)}</h3><button type="button" class="copy-btn" data-copy-from="own-${i}">Copy</button><pre><code id="own-${i}">${esc(code)}</code></pre></div>`).join("")}</div></section>\n\n`;

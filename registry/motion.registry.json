@@ -9086,174 +9086,108 @@
       "sinceVersion": "4.0.3"
     },
     {
-      "name": "sds-input-active-line",
-      "displayName": "Active Line",
+      "name": "sds-input-ui-ai-rainbow",
+      "displayName": "AI Rainbow",
       "category": "inputs",
       "kind": "effect",
-      "description": "Field animates its shadow, on a loop (1.8s).",
+      "description": "A rainbow gradient circles the border like an AI prompt box and speeds up on focus.",
       "selectors": [
-        ".sds-input-active-line"
+        ".sds-input-ui-ai-rainbow",
+        ".sds-input-ui-ai-rainbow::before",
+        ".sds-input-ui-ai-rainbow::after",
+        ".sds-input-ui-ai-rainbow:focus-within::before"
       ],
       "keyframes": [
-        "sds-inputActiveLine"
+        "sds-inputUiAiRainbow"
       ],
       "tokensUsed": [],
       "customProperties": [
-        "--sds-primary"
+        "--sds-input-bg",
+        "--sds-input-radius"
       ],
-      "compositorSafe": false,
+      "compositorSafe": true,
       "loop": true,
       "animatedProps": [
-        "border-bottom-color",
-        "box-shadow"
-      ],
-      "animatedPaintProps": [
-        "border-bottom-color",
-        "box-shadow"
-      ],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-arrive-drop",
-      "displayName": "Arrive Drop",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Drops in from above and lands with a squash while its shadow snaps up to meet it",
-      "selectors": [
-        ".sds-input-arrive-drop"
-      ],
-      "keyframes": [
-        "sds-inputArriveDrop"
-      ],
-      "tokensUsed": [
-        "--sds-duration-base",
-        "--sds-ease-emphasized"
-      ],
-      "customProperties": [],
-      "compositorSafe": true,
-      "loop": false,
-      "animatedProps": [
-        "filter",
-        "opacity",
         "transform"
       ],
       "animatedPaintProps": [],
       "animatedLayoutProps": [],
       "requiresCharSplit": false,
       "requiresChildren": false,
-      "inputWrap": false,
+      "inputWrap": true,
       "requiresJs": false,
       "jsEngine": null,
-      "trigger": "load",
+      "trigger": "focus",
       "deprecated": false,
       "aliasOf": null,
       "sinceVersion": "4.0.3"
     },
     {
-      "name": "sds-input-arrive-materialize",
-      "displayName": "Arrive Materialize",
+      "name": "sds-input-ui-aura-rim",
+      "displayName": "Aura Rim",
       "category": "inputs",
       "kind": "effect",
-      "description": "Assembles in stepped slices out of blur and brightness, left to right",
+      "description": "A coloured gradient rotates around the border on focus.",
       "selectors": [
-        ".sds-input-arrive-materialize"
+        ".sds-input-ui-aura-rim",
+        ".sds-input-ui-aura-rim::before",
+        ".sds-input-ui-aura-rim::after",
+        ".sds-input-ui-aura-rim:focus-within::before"
       ],
       "keyframes": [
-        "sds-inputArriveMaterialize"
+        "sds-inputUiAuraRim"
       ],
       "tokensUsed": [
-        "--sds-duration-base"
+        "--sds-ease-standard"
       ],
-      "customProperties": [],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-input-bg",
+        "--sds-input-radius",
+        "--sds-primary"
+      ],
       "compositorSafe": true,
-      "loop": false,
+      "loop": true,
       "animatedProps": [
-        "clip-path",
-        "filter",
-        "opacity",
         "transform"
       ],
       "animatedPaintProps": [],
       "animatedLayoutProps": [],
       "requiresCharSplit": false,
       "requiresChildren": false,
-      "inputWrap": false,
+      "inputWrap": true,
       "requiresJs": false,
       "jsEngine": null,
-      "trigger": "load",
+      "trigger": "focus",
       "deprecated": false,
       "aliasOf": null,
       "sinceVersion": "4.0.3"
     },
     {
-      "name": "sds-input-arrive-pendulum",
-      "displayName": "Arrive Pendulum",
+      "name": "sds-input-ui-aurora-glow",
+      "displayName": "Aurora Glow",
       "category": "inputs",
       "kind": "effect",
-      "description": "Swings in from a top hinge through two decaying swings, then levels out",
+      "description": "Two blurred colour blobs drift through the field while it is focused.",
       "selectors": [
-        ".sds-input-arrive-pendulum"
+        ".sds-input-ui-aurora-glow",
+        ".sds-input-ui-aurora-glow::before, .sds-input-ui-aurora-glow::after",
+        ".sds-input-ui-aurora-glow::before",
+        ".sds-input-ui-aurora-glow::after",
+        ".sds-input-ui-aurora-glow:focus-within::before",
+        ".sds-input-ui-aurora-glow:focus-within::after"
       ],
       "keyframes": [
-        "sds-inputArrivePendulum"
+        "sds-inputUiAuroraA",
+        "sds-inputUiAuroraB"
       ],
       "tokensUsed": [
-        "--sds-duration-slow",
         "--sds-ease-standard"
       ],
       "customProperties": [],
       "compositorSafe": true,
-      "loop": false,
+      "loop": true,
       "animatedProps": [
-        "opacity",
-        "transform"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-arrive-slide-label",
-      "displayName": "Arrive Slide Label",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "The field slides in from the left as its label drops from above, meeting with a synced bounce",
-      "selectors": [
-        ".sds-input-arrive-slide-label",
-        ".sds-input-arrive-slide-label label",
-        ".sds-input-arrive-slide-label input"
-      ],
-      "keyframes": [
-        "sds-inputArriveLabelDrop",
-        "sds-inputArriveFieldSlide"
-      ],
-      "tokensUsed": [
-        "--sds-duration-base",
-        "--sds-ease-decelerate",
-        "--sds-ease-spring"
-      ],
-      "customProperties": [],
-      "compositorSafe": true,
-      "loop": false,
-      "animatedProps": [
-        "opacity",
         "transform"
       ],
       "animatedPaintProps": [],
@@ -9263,631 +9197,33 @@
       "inputWrap": true,
       "requiresJs": false,
       "jsEngine": null,
-      "trigger": "load",
+      "trigger": "focus",
       "deprecated": false,
       "aliasOf": null,
       "sinceVersion": "4.0.3"
     },
     {
-      "name": "sds-input-arrive-spotlight",
-      "displayName": "Arrive Spotlight",
+      "name": "sds-input-ui-autofill-glow",
+      "displayName": "Autofill Glow",
       "category": "inputs",
       "kind": "effect",
-      "description": "A dark veil lifts as a spotlight passes over the arriving field",
+      "description": "A green glow flashes when the browser autofills the field.",
       "selectors": [
-        ".sds-input-arrive-spotlight",
-        ".sds-input-arrive-spotlight::before"
+        ".sds-input-ui-autofill-glow::before",
+        ".sds-input-ui-autofill-glow:focus-within::before",
+        ".sds-input-ui-autofill-glow::after",
+        ".sds-input-ui-autofill-glow:has(> input:-webkit-autofill)::after",
+        ".sds-input-ui-autofill-glow:has(> input:autofill)::after"
       ],
       "keyframes": [
-        "sds-inputArriveSpotlightHost",
-        "sds-inputArriveSpotlightBeam"
+        "sds-inputUiAutofill"
       ],
       "tokensUsed": [
-        "--sds-duration-slow",
-        "--sds-ease-standard"
-      ],
-      "customProperties": [],
-      "compositorSafe": true,
-      "loop": false,
-      "animatedProps": [
-        "filter",
-        "opacity",
-        "transform"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": true,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-arrive-stack",
-      "displayName": "Arrive Stack",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Frame, interior tint, and field arrive as three staggered layers",
-      "selectors": [
-        ".sds-input-arrive-stack",
-        ".sds-input-arrive-stack::before",
-        ".sds-input-arrive-stack::after",
-        ".sds-input-arrive-stack input"
-      ],
-      "keyframes": [
-        "sds-inputArriveStackFrame",
-        "sds-inputArriveStackTint",
-        "sds-inputArriveStackField"
-      ],
-      "tokensUsed": [
-        "--sds-duration-base",
         "--sds-ease-standard"
       ],
       "customProperties": [
-        "--sds-primary"
-      ],
-      "compositorSafe": true,
-      "loop": false,
-      "animatedProps": [
-        "opacity",
-        "transform"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": true,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-arrive-stretch",
-      "displayName": "Arrive Stretch",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Stretches open from a narrow pill to full width with an elastic settle",
-      "selectors": [
-        ".sds-input-arrive-stretch"
-      ],
-      "keyframes": [
-        "sds-inputArriveStretch"
-      ],
-      "tokensUsed": [
-        "--sds-duration-base",
-        "--sds-ease-spring"
-      ],
-      "customProperties": [],
-      "compositorSafe": true,
-      "loop": false,
-      "animatedProps": [
-        "opacity",
-        "transform"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-arrive-unzip",
-      "displayName": "Arrive Unzip",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "The field unzips open from its center line with a bright seam that cools as it spreads",
-      "selectors": [
-        ".sds-input-arrive-unzip"
-      ],
-      "keyframes": [
-        "sds-inputArriveUnzip"
-      ],
-      "tokensUsed": [
-        "--sds-duration-base",
-        "--sds-ease-standard"
-      ],
-      "customProperties": [],
-      "compositorSafe": true,
-      "loop": false,
-      "animatedProps": [
-        "clip-path",
-        "filter",
-        "opacity"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-aurora",
-      "displayName": "Aurora",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Field animates its shadow, on a loop (4s).",
-      "selectors": [
-        ".sds-input-aurora"
-      ],
-      "keyframes": [
-        "sds-inputAurora"
-      ],
-      "tokensUsed": [],
-      "customProperties": [],
-      "compositorSafe": false,
-      "loop": true,
-      "animatedProps": [
-        "box-shadow"
-      ],
-      "animatedPaintProps": [
-        "box-shadow"
-      ],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-bloom",
-      "displayName": "Bloom",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Field animates its glow and shadow, on a loop (2.4s).",
-      "selectors": [
-        ".sds-input-bloom"
-      ],
-      "keyframes": [
-        "sds-inputBloom"
-      ],
-      "tokensUsed": [],
-      "customProperties": [],
-      "compositorSafe": false,
-      "loop": true,
-      "animatedProps": [
-        "box-shadow",
-        "filter"
-      ],
-      "animatedPaintProps": [
-        "box-shadow"
-      ],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-border-beam",
-      "displayName": "Border Beam",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Field animates, on a loop (2s).",
-      "selectors": [
-        ".sds-input-border-beam"
-      ],
-      "keyframes": [
-        "sds-inputBorderBeam"
-      ],
-      "tokensUsed": [],
-      "customProperties": [],
-      "compositorSafe": false,
-      "loop": true,
-      "animatedProps": [
-        "outline-color",
-        "outline-offset",
-        "outline-width"
-      ],
-      "animatedPaintProps": [
-        "outline-color"
-      ],
-      "animatedLayoutProps": [
-        "outline-offset",
-        "outline-width"
-      ],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-border-comet-loop",
-      "displayName": "Border Comet Loop",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "A glowing comet head rides the field's outline in a steady lap, dimming on the far side",
-      "selectors": [
-        ".sds-input-border-comet-loop",
-        ".sds-input-border-comet-loop::before"
-      ],
-      "keyframes": [
-        "sds-inputBorderCometLoop"
-      ],
-      "tokensUsed": [
-        "--sds-duration-dramatic"
-      ],
-      "customProperties": [
-        "--sds-primary",
-        "--sds-primary-glow"
-      ],
-      "compositorSafe": false,
-      "loop": true,
-      "animatedProps": [
-        "offset-distance",
-        "opacity"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [
-        "offset-distance"
-      ],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": true,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-border-corners",
-      "displayName": "Border Corners",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Corners take turns glowing — NE, SE, SW, NW — with a crossfade between each",
-      "selectors": [
-        ".sds-input-border-corners",
-        ".sds-input-border-corners::before"
-      ],
-      "keyframes": [
-        "sds-inputBorderCorners",
-        "sds-inputBorderCornersFade"
-      ],
-      "tokensUsed": [
-        "--sds-duration-dramatic"
-      ],
-      "customProperties": [
-        "--sds-primary"
-      ],
-      "compositorSafe": true,
-      "loop": true,
-      "animatedProps": [
-        "clip-path",
-        "opacity"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": true,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-border-heartline",
-      "displayName": "Border Heartline",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "An ECG blip races along the underline every few seconds, then flatlines politely",
-      "selectors": [
-        ".sds-input-border-heartline",
-        ".sds-input-border-heartline::before",
-        ".sds-input-border-heartline::after"
-      ],
-      "keyframes": [
-        "sds-inputBorderHeartline"
-      ],
-      "tokensUsed": [
-        "--sds-duration-dramatic"
-      ],
-      "customProperties": [
-        "--sds-primary",
-        "--sds-primary-glow"
-      ],
-      "compositorSafe": true,
-      "loop": true,
-      "animatedProps": [
-        "opacity",
-        "transform"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": true,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-border-orbiters",
-      "displayName": "Border Orbiters",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Two dim satellites orbit the field on opposite sides of its outline",
-      "selectors": [
-        ".sds-input-border-orbiters",
-        ".sds-input-border-orbiters::before, .sds-input-border-orbiters::after",
-        ".sds-input-border-orbiters::before",
-        ".sds-input-border-orbiters::after"
-      ],
-      "keyframes": [
-        "sds-inputBorderOrbiterA",
-        "sds-inputBorderOrbiterB"
-      ],
-      "tokensUsed": [
-        "--sds-duration-dramatic"
-      ],
-      "customProperties": [
-        "--sds-primary"
-      ],
-      "compositorSafe": false,
-      "loop": true,
-      "animatedProps": [
-        "offset-distance"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [
-        "offset-distance"
-      ],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": true,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-border-rain",
-      "displayName": "Border Rain",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Thin light streaks run down both sides of the field in offset phase",
-      "selectors": [
-        ".sds-input-border-rain",
-        ".sds-input-border-rain::before, .sds-input-border-rain::after",
-        ".sds-input-border-rain::before",
-        ".sds-input-border-rain::after"
-      ],
-      "keyframes": [
-        "sds-inputBorderRain"
-      ],
-      "tokensUsed": [
-        "--sds-duration-slower",
-        "--sds-ease-accelerate"
-      ],
-      "customProperties": [
-        "--sds-primary"
-      ],
-      "compositorSafe": true,
-      "loop": true,
-      "animatedProps": [
-        "opacity",
-        "transform"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": true,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-border-static",
-      "displayName": "Border Static",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "A quiet frame with an occasional two-frame static jitter — idle tech energy",
-      "selectors": [
-        ".sds-input-border-static",
-        ".sds-input-border-static::before"
-      ],
-      "keyframes": [
-        "sds-inputBorderStatic"
-      ],
-      "tokensUsed": [
-        "--sds-duration-dramatic"
-      ],
-      "customProperties": [
-        "--sds-primary"
-      ],
-      "compositorSafe": true,
-      "loop": true,
-      "animatedProps": [
-        "clip-path",
-        "opacity",
-        "transform"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": true,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-border-tide",
-      "displayName": "Border Tide",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Border emphasis flows around the frame like a tide through four phases",
-      "selectors": [
-        ".sds-input-border-tide",
-        ".sds-input-border-tide::before",
-        ".sds-input-border-tide::after"
-      ],
-      "keyframes": [
-        "sds-inputBorderTide"
-      ],
-      "tokensUsed": [
-        "--sds-duration-dramatic"
-      ],
-      "customProperties": [
-        "--sds-primary",
-        "--sds-primary-glow"
-      ],
-      "compositorSafe": true,
-      "loop": true,
-      "animatedProps": [
-        "clip-path",
-        "opacity"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": true,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-burst",
-      "displayName": "Burst",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Field animates its opacity and shadow, once on load (1.8s).",
-      "selectors": [
-        ".sds-input-burst"
-      ],
-      "keyframes": [
-        "sds-inputBurst"
-      ],
-      "tokensUsed": [
-        "--sds-easing"
-      ],
-      "customProperties": [],
-      "compositorSafe": false,
-      "loop": false,
-      "animatedProps": [
-        "box-shadow",
-        "opacity",
-        "transform"
-      ],
-      "animatedPaintProps": [
-        "box-shadow"
-      ],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-caret",
-      "displayName": "Caret Trail",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Pulsing inner ring emulates caret activity",
-      "selectors": [
-        ".sds-input-caret"
-      ],
-      "keyframes": [
-        "sds-caretTrail"
-      ],
-      "tokensUsed": [],
-      "customProperties": [],
-      "compositorSafe": false,
-      "loop": true,
-      "animatedProps": [
-        "box-shadow"
-      ],
-      "animatedPaintProps": [
-        "box-shadow"
-      ],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-caret-pop",
-      "displayName": "Caret Pop",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "A caret bar pops in at the text start with a double bounce, blinks once, and hands over",
-      "selectors": [
-        ".sds-input-caret-pop",
-        ".sds-input-caret-pop::before",
-        ".sds-input-caret-pop:focus-within::before"
-      ],
-      "keyframes": [
-        "sds-inputCaretPop"
-      ],
-      "tokensUsed": [
-        "--sds-duration-base",
-        "--sds-ease-spring"
-      ],
-      "customProperties": [
+        "--sds-input-accent",
+        "--sds-input-ok",
         "--sds-primary"
       ],
       "compositorSafe": true,
@@ -9909,236 +9245,188 @@
       "sinceVersion": "4.0.3"
     },
     {
-      "name": "sds-input-charge",
-      "displayName": "Charge",
+      "name": "sds-input-ui-border-sweep",
+      "displayName": "Border Sweep",
       "category": "inputs",
       "kind": "effect",
-      "description": "Field animates its shadow and border colour, on a loop (2.2s).",
+      "description": "A band of light sweeps across the field once on focus.",
       "selectors": [
-        ".sds-input-charge"
+        ".sds-input-ui-border-sweep",
+        ".sds-input-ui-border-sweep::before",
+        ".sds-input-ui-border-sweep:focus-within::before",
+        ".sds-input-ui-border-sweep::after",
+        ".sds-input-ui-border-sweep:focus-within::after"
       ],
       "keyframes": [
-        "sds-inputCharge"
+        "sds-inputUiBorderSweep"
       ],
       "tokensUsed": [
-        "--sds-duration-slower"
+        "--sds-ease-standard"
       ],
-      "customProperties": [],
-      "compositorSafe": false,
-      "loop": true,
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
       "animatedProps": [
-        "border-color",
-        "box-shadow"
-      ],
-      "animatedPaintProps": [
-        "border-color",
-        "box-shadow"
-      ],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-comet",
-      "displayName": "Comet",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Field animates its shadow, on a loop (3s).",
-      "selectors": [
-        ".sds-input-comet"
-      ],
-      "keyframes": [
-        "sds-inputComet"
-      ],
-      "tokensUsed": [
-        "--sds-duration-dramatic"
-      ],
-      "customProperties": [],
-      "compositorSafe": false,
-      "loop": true,
-      "animatedProps": [
-        "box-shadow"
-      ],
-      "animatedPaintProps": [
-        "box-shadow"
-      ],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-crystal",
-      "displayName": "Crystal",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Field animates its glow, shadow and border colour, on a loop (2.4s).",
-      "selectors": [
-        ".sds-input-crystal"
-      ],
-      "keyframes": [
-        "sds-inputCrystal"
-      ],
-      "tokensUsed": [],
-      "customProperties": [],
-      "compositorSafe": false,
-      "loop": true,
-      "animatedProps": [
-        "border-color",
-        "box-shadow",
-        "filter"
-      ],
-      "animatedPaintProps": [
-        "border-color",
-        "box-shadow"
-      ],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-depth",
-      "displayName": "Depth",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Field animates its shadow, on a loop (2.4s).",
-      "selectors": [
-        ".sds-input-depth"
-      ],
-      "keyframes": [
-        "sds-inputDepth"
-      ],
-      "tokensUsed": [],
-      "customProperties": [],
-      "compositorSafe": false,
-      "loop": true,
-      "animatedProps": [
-        "box-shadow",
+        "opacity",
         "transform"
       ],
-      "animatedPaintProps": [
-        "box-shadow"
-      ],
+      "animatedPaintProps": [],
       "animatedLayoutProps": [],
       "requiresCharSplit": false,
       "requiresChildren": false,
-      "inputWrap": false,
+      "inputWrap": true,
       "requiresJs": false,
       "jsEngine": null,
-      "trigger": "load",
+      "trigger": "focus",
       "deprecated": false,
       "aliasOf": null,
       "sinceVersion": "4.0.3"
     },
     {
-      "name": "sds-input-echo",
-      "displayName": "Echo",
+      "name": "sds-input-ui-busy-bar",
+      "displayName": "Busy Bar",
       "category": "inputs",
       "kind": "effect",
-      "description": "Field animates, on a loop (2.4s).",
+      "description": "Set aria-busy=\"true\" and a bright bar runs along the bottom edge.",
       "selectors": [
-        ".sds-input-echo"
+        ".sds-input-ui-busy-bar::before",
+        ".sds-input-ui-busy-bar:focus-within::before",
+        ".sds-input-ui-busy-bar",
+        ".sds-input-ui-busy-bar::after",
+        ".sds-input-ui-busy-bar[aria-busy=\"true\"]::after"
       ],
       "keyframes": [
-        "sds-inputEcho"
+        "sds-inputUiBusyBar"
       ],
-      "tokensUsed": [],
-      "customProperties": [],
-      "compositorSafe": false,
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
       "loop": true,
       "animatedProps": [
-        "outline-color",
-        "outline-offset",
-        "outline-width"
+        "transform"
       ],
-      "animatedPaintProps": [
-        "outline-color"
-      ],
-      "animatedLayoutProps": [
-        "outline-offset",
-        "outline-width"
-      ],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-electric",
-      "displayName": "Electric",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Field animates its shadow and border colour, on a loop (2s).",
-      "selectors": [
-        ".sds-input-electric"
-      ],
-      "keyframes": [
-        "sds-inputElectric"
-      ],
-      "tokensUsed": [],
-      "customProperties": [],
-      "compositorSafe": false,
-      "loop": true,
-      "animatedProps": [
-        "border-color",
-        "box-shadow"
-      ],
-      "animatedPaintProps": [
-        "border-color",
-        "box-shadow"
-      ],
+      "animatedPaintProps": [],
       "animatedLayoutProps": [],
       "requiresCharSplit": false,
       "requiresChildren": false,
-      "inputWrap": false,
+      "inputWrap": true,
       "requiresJs": false,
       "jsEngine": null,
-      "trigger": "load",
+      "trigger": "focus",
       "deprecated": false,
       "aliasOf": null,
       "sinceVersion": "4.0.3"
     },
     {
-      "name": "sds-input-elevate-wrap",
-      "displayName": "Elevate Focus",
+      "name": "sds-input-ui-busy-dots",
+      "displayName": "Busy Dots",
       "category": "inputs",
       "kind": "effect",
-      "description": "Label floats up on focus/fill",
+      "description": "Set aria-busy=\"true\" and three dots pulse in turn at the end.",
       "selectors": [
-        ".sds-input-elevate-wrap",
-        ".sds-input-elevate-wrap label",
-        ".sds-input-elevate-wrap input:focus ~ label, .sds-input-elevate-wrap input:not(:placeholder-shown) ~ label"
+        ".sds-input-ui-busy-dots::before",
+        ".sds-input-ui-busy-dots:focus-within::before",
+        ".sds-input-ui-busy-dots::after",
+        ".sds-input-ui-busy-dots[aria-busy=\"true\"]::after"
+      ],
+      "keyframes": [
+        "sds-inputUiBusyDots"
+      ],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": true,
+      "animatedProps": [
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-caret-bar",
+      "displayName": "Caret Bar",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "A blinking accent bar sits at the end of the field on focus.",
+      "selectors": [
+        ".sds-input-ui-caret-bar::before",
+        ".sds-input-ui-caret-bar:focus-within::before",
+        ".sds-input-ui-caret-bar::after",
+        ".sds-input-ui-caret-bar:focus-within::after"
+      ],
+      "keyframes": [
+        "sds-inputUiCaretBar"
+      ],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": true,
+      "animatedProps": [
+        "opacity"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-clear-x",
+      "displayName": "Clear X",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "A clear button appears at the end as soon as there is text.",
+      "selectors": [
+        ".sds-input-ui-clear-x::before",
+        ".sds-input-ui-clear-x:focus-within::before",
+        ".sds-input-ui-clear-x::after",
+        ".sds-input-ui-clear-x:has(> input:not(:placeholder-shown))::after",
+        ".sds-input-ui-clear-x > input"
       ],
       "keyframes": [],
       "tokensUsed": [
-        "--sds-easing"
+        "--sds-ease-spring",
+        "--sds-ease-standard"
       ],
       "customProperties": [
+        "--sds-input-accent",
+        "--sds-input-icon",
+        "--sds-input-icon-color",
+        "--sds-input-line",
+        "--sds-input-muted",
         "--sds-primary"
       ],
       "compositorSafe": true,
@@ -10157,57 +9445,137 @@
       "sinceVersion": "4.0.3"
     },
     {
-      "name": "sds-input-error-buzz",
-      "displayName": "Error Buzz",
+      "name": "sds-input-ui-command-bar",
+      "displayName": "Command Bar",
       "category": "inputs",
       "kind": "effect",
-      "description": "Three sharp 1px vibrations with a red-shifted flash, then an apologetic settle",
+      "description": "A slash key hint sits at the end and slips away when you focus or type.",
       "selectors": [
-        ".sds-input-error-buzz"
+        ".sds-input-ui-command-bar::before",
+        ".sds-input-ui-command-bar:focus-within::before",
+        ".sds-input-ui-command-bar::after",
+        ".sds-input-ui-command-bar:is(:focus-within, :has(> input:not(:placeholder-shown)))::after",
+        ".sds-input-ui-command-bar > input"
       ],
-      "keyframes": [
-        "sds-inputErrorBuzz"
-      ],
+      "keyframes": [],
       "tokensUsed": [
-        "--sds-duration-instant"
+        "--sds-ease-standard"
       ],
-      "customProperties": [],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
       "compositorSafe": true,
       "loop": false,
-      "animatedProps": [
-        "filter",
-        "transform"
-      ],
+      "animatedProps": [],
       "animatedPaintProps": [],
       "animatedLayoutProps": [],
       "requiresCharSplit": false,
       "requiresChildren": false,
-      "inputWrap": false,
+      "inputWrap": true,
       "requiresJs": false,
       "jsEngine": null,
-      "trigger": "load",
+      "trigger": "focus",
       "deprecated": false,
       "aliasOf": null,
       "sinceVersion": "4.0.3"
     },
     {
-      "name": "sds-input-error-quake",
-      "displayName": "Error Quake",
+      "name": "sds-input-ui-corner-brackets",
+      "displayName": "Corner Brackets",
       "category": "inputs",
       "kind": "effect",
-      "description": "Caret-safe shake — the frame quakes while the field counter-shifts so your text stays readable",
+      "description": "Corner brackets open out around the field on focus.",
       "selectors": [
-        ".sds-input-error-quake",
-        ".sds-input-error-quake input"
+        ".sds-input-ui-corner-brackets",
+        ".sds-input-ui-corner-brackets::before, .sds-input-ui-corner-brackets::after",
+        ".sds-input-ui-corner-brackets::before",
+        ".sds-input-ui-corner-brackets::after",
+        ".sds-input-ui-corner-brackets:focus-within::before, .sds-input-ui-corner-brackets:focus-within::after"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-corner-dots",
+      "displayName": "Corner Dots",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "Four dots pop in at the corners of the field on focus.",
+      "selectors": [
+        ".sds-input-ui-corner-dots",
+        ".sds-input-ui-corner-dots::before",
+        ".sds-input-ui-corner-dots:focus-within::before"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-spring",
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-input-height",
+        "--sds-input-width",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-disabled-stripe",
+      "displayName": "Disabled Stripe",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "A disabled field is striped and dimmed, and shakes a little if hovered.",
+      "selectors": [
+        ".sds-input-ui-disabled-stripe::before",
+        ".sds-input-ui-disabled-stripe:focus-within::before",
+        ".sds-input-ui-disabled-stripe:has(> input:disabled)",
+        ".sds-input-ui-disabled-stripe:has(> input:disabled)::after",
+        ".sds-input-ui-disabled-stripe:has(> input:disabled):hover"
       ],
       "keyframes": [
-        "sds-inputErrorQuake",
-        "sds-inputErrorQuakeInner"
+        "sds-inputUiDisabledNope"
       ],
       "tokensUsed": [
-        "--sds-duration-fast"
+        "--sds-ease-standard"
       ],
-      "customProperties": [],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
       "compositorSafe": true,
       "loop": false,
       "animatedProps": [
@@ -10220,102 +9588,1407 @@
       "inputWrap": true,
       "requiresJs": false,
       "jsEngine": null,
-      "trigger": "load",
+      "trigger": "focus",
       "deprecated": false,
       "aliasOf": null,
       "sinceVersion": "4.0.3"
     },
     {
-      "name": "sds-input-error-sink",
-      "displayName": "Error Sink",
+      "name": "sds-input-ui-dot-matrix",
+      "displayName": "Dot Matrix",
       "category": "inputs",
       "kind": "effect",
-      "description": "The field sinks 2px and desaturates, recovering slowly — the weight of the error",
+      "description": "A dot-matrix pattern slides in from the left on focus.",
       "selectors": [
-        ".sds-input-error-sink"
+        ".sds-input-ui-dot-matrix",
+        ".sds-input-ui-dot-matrix::before",
+        ".sds-input-ui-dot-matrix:focus-within::before"
       ],
-      "keyframes": [
-        "sds-inputErrorSink"
-      ],
+      "keyframes": [],
       "tokensUsed": [
-        "--sds-duration-slow",
         "--sds-ease-standard"
       ],
       "customProperties": [],
       "compositorSafe": true,
       "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-double-ring",
+      "displayName": "Double Ring",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "Two outlines echo outward around the field on focus.",
+      "selectors": [
+        ".sds-input-ui-double-ring",
+        ".sds-input-ui-double-ring::before, .sds-input-ui-double-ring::after",
+        ".sds-input-ui-double-ring::before",
+        ".sds-input-ui-double-ring::after",
+        ".sds-input-ui-double-ring:focus-within::before",
+        ".sds-input-ui-double-ring:focus-within::after"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-input-radius",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-edge-dots",
+      "displayName": "Edge Dots",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "A dotted accent line is drawn along the bottom on focus.",
+      "selectors": [
+        ".sds-input-ui-edge-dots",
+        ".sds-input-ui-edge-dots::after",
+        ".sds-input-ui-edge-dots:focus-within::after"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-input-line",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-fill-diagonal",
+      "displayName": "Fill Diagonal",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "A tint sweeps across the field on a diagonal on focus.",
+      "selectors": [
+        ".sds-input-ui-fill-diagonal",
+        ".sds-input-ui-fill-diagonal::before",
+        ".sds-input-ui-fill-diagonal:focus-within::before"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-tint"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-fill-iris",
+      "displayName": "Fill Iris",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "A tint opens from the centre like an iris on focus.",
+      "selectors": [
+        ".sds-input-ui-fill-iris",
+        ".sds-input-ui-fill-iris::before",
+        ".sds-input-ui-fill-iris:focus-within::before"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-tint"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-fill-rise",
+      "displayName": "Fill Rise",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "A tint rises from the bottom and fills the field on focus.",
+      "selectors": [
+        ".sds-input-ui-fill-rise",
+        ".sds-input-ui-fill-rise::before",
+        ".sds-input-ui-fill-rise:focus-within::before",
+        ".sds-input-ui-fill-rise::after",
+        ".sds-input-ui-fill-rise:focus-within::after"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-input-tint",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-fill-split",
+      "displayName": "Fill Split",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "A tint opens from the middle line out to both sides on focus.",
+      "selectors": [
+        ".sds-input-ui-fill-split",
+        ".sds-input-ui-fill-split::before",
+        ".sds-input-ui-fill-split:focus-within::before"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-tint"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-fill-wipe",
+      "displayName": "Fill Wipe",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "A tint wipes across the field from left to right on focus.",
+      "selectors": [
+        ".sds-input-ui-fill-wipe",
+        ".sds-input-ui-fill-wipe::before",
+        ".sds-input-ui-fill-wipe:focus-within::before"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-tint"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-float-above",
+      "displayName": "Float Above",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "The label leaves the field completely and settles above it.",
+      "selectors": [
+        ".sds-input-ui-float-above",
+        ".sds-input-ui-float-above > input",
+        ".sds-input-ui-float-above::before",
+        ".sds-input-ui-float-above:focus-within::before",
+        ".sds-input-ui-float-above > label",
+        ".sds-input-ui-float-above > input:focus + label, .sds-input-ui-float-above > input:not(:placeholder-shown) + label"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-float-arc",
+      "displayName": "Float Arc",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "The label rises along a curved path instead of a straight line.",
+      "selectors": [
+        ".sds-input-ui-float-arc::before",
+        ".sds-input-ui-float-arc:focus-within::before",
+        ".sds-input-ui-float-arc > input:focus + label, .sds-input-ui-float-arc > input:not(:placeholder-shown) + label"
+      ],
+      "keyframes": [
+        "sds-inputUiFloatArc"
+      ],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
       "animatedProps": [
-        "filter",
         "transform"
       ],
       "animatedPaintProps": [],
       "animatedLayoutProps": [],
       "requiresCharSplit": false,
       "requiresChildren": false,
-      "inputWrap": false,
+      "inputWrap": true,
       "requiresJs": false,
       "jsEngine": null,
-      "trigger": "load",
+      "trigger": "focus",
       "deprecated": false,
       "aliasOf": null,
       "sinceVersion": "4.0.3"
     },
     {
-      "name": "sds-input-expand",
-      "displayName": "Expand",
+      "name": "sds-input-ui-float-below",
+      "displayName": "Float Below",
       "category": "inputs",
       "kind": "effect",
-      "description": "Field animates its opacity, once on load (0.6s).",
+      "description": "The label drops below the field and becomes a caption.",
       "selectors": [
-        ".sds-input-expand"
+        ".sds-input-ui-float-below",
+        ".sds-input-ui-float-below > input",
+        ".sds-input-ui-float-below::before",
+        ".sds-input-ui-float-below:focus-within::before",
+        ".sds-input-ui-float-below > input:focus + label, .sds-input-ui-float-below > input:not(:placeholder-shown) + label"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-float-blur",
+      "displayName": "Float Blur",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "The label blurs while it travels up and sharpens when it lands.",
+      "selectors": [
+        ".sds-input-ui-float-blur::before",
+        ".sds-input-ui-float-blur:focus-within::before",
+        ".sds-input-ui-float-blur > input:focus + label, .sds-input-ui-float-blur > input:not(:placeholder-shown) + label"
       ],
       "keyframes": [
-        "sds-inputExpand"
+        "sds-inputUiFloatBlur"
       ],
       "tokensUsed": [
-        "--sds-easing"
+        "--sds-ease-standard"
       ],
-      "customProperties": [],
-      "compositorSafe": false,
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
       "loop": false,
       "animatedProps": [
-        "border-radius",
+        "filter",
         "opacity",
         "transform"
       ],
       "animatedPaintProps": [],
-      "animatedLayoutProps": [
-        "border-radius"
-      ],
+      "animatedLayoutProps": [],
       "requiresCharSplit": false,
       "requiresChildren": false,
-      "inputWrap": false,
+      "inputWrap": true,
       "requiresJs": false,
       "jsEngine": null,
-      "trigger": "load",
+      "trigger": "focus",
       "deprecated": false,
       "aliasOf": null,
       "sinceVersion": "4.0.3"
     },
     {
-      "name": "sds-input-fill-corner-shade",
-      "displayName": "Fill Corner Shade",
+      "name": "sds-input-ui-float-bounce",
+      "displayName": "Float Bounce",
       "category": "inputs",
       "kind": "effect",
-      "description": "A shade wedge sweeps in from the bottom-right corner on focus, adding active depth",
+      "description": "The label overshoots and bounces into its floating position.",
       "selectors": [
-        ".sds-input-fill-corner-shade",
-        ".sds-input-fill-corner-shade::before",
-        ".sds-input-fill-corner-shade:focus-within::before"
+        ".sds-input-ui-float-bounce::before",
+        ".sds-input-ui-float-bounce:focus-within::before",
+        ".sds-input-ui-float-bounce > label",
+        ".sds-input-ui-float-bounce > input:focus + label, .sds-input-ui-float-bounce > input:not(:placeholder-shown) + label"
       ],
-      "keyframes": [
-        "sds-inputFillCornerShade"
-      ],
+      "keyframes": [],
       "tokensUsed": [
-        "--sds-duration-fast",
+        "--sds-ease-bounce",
         "--sds-ease-standard"
       ],
       "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-float-center",
+      "displayName": "Float Center",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "A centred field: the label sits in the middle and floats straight up.",
+      "selectors": [
+        ".sds-input-ui-float-center::before",
+        ".sds-input-ui-float-center:focus-within::before",
+        ".sds-input-ui-float-center > input",
+        ".sds-input-ui-float-center > label",
+        ".sds-input-ui-float-center > input:focus + label, .sds-input-ui-float-center > input:not(:placeholder-shown) + label"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-float-edge",
+      "displayName": "Float Edge",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "The label floats onto the top edge while an accent line draws along it.",
+      "selectors": [
+        ".sds-input-ui-float-edge",
+        ".sds-input-ui-float-edge > input",
+        ".sds-input-ui-float-edge > label",
+        ".sds-input-ui-float-edge::before",
+        ".sds-input-ui-float-edge:focus-within::before",
+        ".sds-input-ui-float-edge > input:focus + label, .sds-input-ui-float-edge > input:not(:placeholder-shown) + label"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-input-bg",
+        "--sds-input-line",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-float-flip",
+      "displayName": "Float Flip",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "The label does a full flip around its horizontal axis as it floats up.",
+      "selectors": [
+        ".sds-input-ui-float-flip::before",
+        ".sds-input-ui-float-flip:focus-within::before",
+        ".sds-input-ui-float-flip > label",
+        ".sds-input-ui-float-flip > input:focus + label, .sds-input-ui-float-flip > input:not(:placeholder-shown) + label"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-float-glass",
+      "displayName": "Float Glass",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "The label floats into a frosted glass chip above the field.",
+      "selectors": [
+        ".sds-input-ui-float-glass",
+        ".sds-input-ui-float-glass > input",
+        ".sds-input-ui-float-glass > label",
+        ".sds-input-ui-float-glass > label::before",
+        ".sds-input-ui-float-glass > input:focus + label, .sds-input-ui-float-glass > input:not(:placeholder-shown) + label",
+        ".sds-input-ui-float-glass > input:focus + label::before, .sds-input-ui-float-glass > input:not(:placeholder-shown) + label::before",
+        ".sds-input-ui-float-glass::before",
+        ".sds-input-ui-float-glass:focus-within::before"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-float-label",
+      "displayName": "Float Label",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "The label floats up and shrinks above the text when the field is focused or filled.",
+      "selectors": [
+        ".sds-input-ui-float-label::before",
+        ".sds-input-ui-float-label:focus-within::before",
+        ".sds-input-ui-float-label > input:focus + label, .sds-input-ui-float-label > input:not(:placeholder-shown) + label"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-float-micro",
+      "displayName": "Float Micro",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "An underlined field with a small, tightly tracked label and an accent underline.",
+      "selectors": [
+        ".sds-input-ui-float-micro",
+        ".sds-input-ui-float-micro > label",
+        ".sds-input-ui-float-micro > input",
+        ".sds-input-ui-float-micro::after",
+        ".sds-input-ui-float-micro:focus-within::after",
+        ".sds-input-ui-float-micro > input:focus + label, .sds-input-ui-float-micro > input:not(:placeholder-shown) + label"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-input-line",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-float-notch",
+      "displayName": "Float Notch",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "An outlined field where the label floats onto the top border and cuts a notch in it.",
+      "selectors": [
+        ".sds-input-ui-float-notch",
+        ".sds-input-ui-float-notch > input",
+        ".sds-input-ui-float-notch > label",
+        ".sds-input-ui-float-notch::before",
+        ".sds-input-ui-float-notch:focus-within::before",
+        ".sds-input-ui-float-notch > input:focus + label, .sds-input-ui-float-notch > input:not(:placeholder-shown) + label"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-input-bg",
+        "--sds-input-line",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-float-pill",
+      "displayName": "Float Pill",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "The label turns into a small tinted pill above the field when it floats.",
+      "selectors": [
+        ".sds-input-ui-float-pill",
+        ".sds-input-ui-float-pill > input",
+        ".sds-input-ui-float-pill > label",
+        ".sds-input-ui-float-pill > label::before",
+        ".sds-input-ui-float-pill > input:focus + label, .sds-input-ui-float-pill > input:not(:placeholder-shown) + label",
+        ".sds-input-ui-float-pill > input:focus + label::before, .sds-input-ui-float-pill > input:not(:placeholder-shown) + label::before",
+        ".sds-input-ui-float-pill::before",
+        ".sds-input-ui-float-pill:focus-within::before"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-float-slide",
+      "displayName": "Float Slide",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "The label slides up and a little to the right as it shrinks.",
+      "selectors": [
+        ".sds-input-ui-float-slide::before",
+        ".sds-input-ui-float-slide:focus-within::before",
+        ".sds-input-ui-float-slide > label",
+        ".sds-input-ui-float-slide > input:focus + label, .sds-input-ui-float-slide > input:not(:placeholder-shown) + label"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-float-spring",
+      "displayName": "Float Spring",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "The label springs up with a small overshoot.",
+      "selectors": [
+        ".sds-input-ui-float-spring::before",
+        ".sds-input-ui-float-spring:focus-within::before",
+        ".sds-input-ui-float-spring > label",
+        ".sds-input-ui-float-spring > input:focus + label, .sds-input-ui-float-spring > input:not(:placeholder-shown) + label"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-spring",
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-float-squash",
+      "displayName": "Float Squash",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "The label squashes and stretches like a drop as it rises.",
+      "selectors": [
+        ".sds-input-ui-float-squash::before",
+        ".sds-input-ui-float-squash:focus-within::before",
+        ".sds-input-ui-float-squash > input:focus + label, .sds-input-ui-float-squash > input:not(:placeholder-shown) + label"
+      ],
+      "keyframes": [
+        "sds-inputUiFloatSquash"
+      ],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-float-tilt",
+      "displayName": "Float Tilt",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "The label tilts as it floats, then settles on a spring.",
+      "selectors": [
+        ".sds-input-ui-float-tilt::before",
+        ".sds-input-ui-float-tilt:focus-within::before",
+        ".sds-input-ui-float-tilt > label",
+        ".sds-input-ui-float-tilt > input:focus + label, .sds-input-ui-float-tilt > input:not(:placeholder-shown) + label"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-spring",
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-float-underline",
+      "displayName": "Float Underline",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "The label floats up and draws a short underline beneath itself.",
+      "selectors": [
+        ".sds-input-ui-float-underline::before",
+        ".sds-input-ui-float-underline:focus-within::before",
+        ".sds-input-ui-float-underline > label::after",
+        ".sds-input-ui-float-underline > input:focus + label, .sds-input-ui-float-underline > input:not(:placeholder-shown) + label",
+        ".sds-input-ui-float-underline > input:focus + label::after, .sds-input-ui-float-underline > input:not(:placeholder-shown) + label::after"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-float-zoom",
+      "displayName": "Float Zoom",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "The label starts large and zooms down to size as it floats.",
+      "selectors": [
+        ".sds-input-ui-float-zoom::before",
+        ".sds-input-ui-float-zoom:focus-within::before",
+        ".sds-input-ui-float-zoom > label",
+        ".sds-input-ui-float-zoom > input:focus + label, .sds-input-ui-float-zoom > input:not(:placeholder-shown) + label"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-focus-bloom",
+      "displayName": "Focus Bloom",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "A soft bloom of colour rises under the field on focus.",
+      "selectors": [
+        ".sds-input-ui-focus-bloom",
+        ".sds-input-ui-focus-bloom::before",
+        ".sds-input-ui-focus-bloom:focus-within::before",
+        ".sds-input-ui-focus-bloom::after",
+        ".sds-input-ui-focus-bloom:focus-within::after"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-focus-breathe",
+      "displayName": "Focus Breathe",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "The focus outline breathes in and out slowly.",
+      "selectors": [
+        ".sds-input-ui-focus-breathe::before",
+        ".sds-input-ui-focus-breathe:focus-within::before"
+      ],
+      "keyframes": [
+        "sds-inputUiBreathe"
+      ],
+      "tokensUsed": [],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": true,
+      "animatedProps": [
+        "opacity",
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-focus-float",
+      "displayName": "Focus Float",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "The field floats up while its shadow on the ground shrinks.",
+      "selectors": [
+        ".sds-input-ui-focus-float::before",
+        ".sds-input-ui-focus-float:focus-within::before",
+        ".sds-input-ui-focus-float",
+        ".sds-input-ui-focus-float::after",
+        ".sds-input-ui-focus-float:focus-within",
+        ".sds-input-ui-focus-float:focus-within::after"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-focus-jelly",
+      "displayName": "Focus Jelly",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "The field wobbles like jelly once when focused.",
+      "selectors": [
+        ".sds-input-ui-focus-jelly::before",
+        ".sds-input-ui-focus-jelly:focus-within::before",
+        ".sds-input-ui-focus-jelly:focus-within"
+      ],
+      "keyframes": [
+        "sds-inputUiJelly"
+      ],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-focus-nudge",
+      "displayName": "Focus Nudge",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "The field nudges to the right on a spring on focus.",
+      "selectors": [
+        ".sds-input-ui-focus-nudge::before",
+        ".sds-input-ui-focus-nudge:focus-within::before",
+        ".sds-input-ui-focus-nudge",
+        ".sds-input-ui-focus-nudge:focus-within"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-spring",
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-focus-pop",
+      "displayName": "Focus Pop",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "The field pops up on a spring when focused.",
+      "selectors": [
+        ".sds-input-ui-focus-pop::before",
+        ".sds-input-ui-focus-pop:focus-within::before",
+        ".sds-input-ui-focus-pop",
+        ".sds-input-ui-focus-pop:focus-within"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-spring",
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-focus-squash",
+      "displayName": "Focus Squash",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "The field squashes and rebounds once on focus.",
+      "selectors": [
+        ".sds-input-ui-focus-squash::before",
+        ".sds-input-ui-focus-squash:focus-within::before",
+        ".sds-input-ui-focus-squash:focus-within"
+      ],
+      "keyframes": [
+        "sds-inputUiSquash"
+      ],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-focus-stretch",
+      "displayName": "Focus Stretch",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "The field stretches out to the right on a spring on focus.",
+      "selectors": [
+        ".sds-input-ui-focus-stretch::before",
+        ".sds-input-ui-focus-stretch:focus-within::before",
+        ".sds-input-ui-focus-stretch",
+        ".sds-input-ui-focus-stretch:focus-within"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-spring",
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-focus-tilt",
+      "displayName": "Focus Tilt",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "The field tilts back in perspective on focus.",
+      "selectors": [
+        ".sds-input-ui-focus-tilt::before",
+        ".sds-input-ui-focus-tilt:focus-within::before",
+        ".sds-input-ui-focus-tilt",
+        ".sds-input-ui-focus-tilt:focus-within"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-focus-wobble",
+      "displayName": "Focus Wobble",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "The field gives a tiny rotating wobble on focus.",
+      "selectors": [
+        ".sds-input-ui-focus-wobble::before",
+        ".sds-input-ui-focus-wobble:focus-within::before",
+        ".sds-input-ui-focus-wobble:focus-within"
+      ],
+      "keyframes": [
+        "sds-inputUiWobble"
+      ],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-focus-zoom",
+      "displayName": "Focus Zoom",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "The field zooms up with a soft shadow on focus.",
+      "selectors": [
+        ".sds-input-ui-focus-zoom::before",
+        ".sds-input-ui-focus-zoom:focus-within::before",
+        ".sds-input-ui-focus-zoom::after",
+        ".sds-input-ui-focus-zoom",
+        ".sds-input-ui-focus-zoom:focus-within",
+        ".sds-input-ui-focus-zoom:focus-within::after"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-frame-draw",
+      "displayName": "Frame Draw",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "The outline is traced around the field, clockwise, on focus.",
+      "selectors": [
+        ".sds-input-ui-frame-draw::before",
+        ".sds-input-ui-frame-draw:focus-within::before"
+      ],
+      "keyframes": [
+        "sds-inputUiFrameDraw"
+      ],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
         "--sds-primary"
       ],
       "compositorSafe": true,
@@ -10336,28 +11009,158 @@
       "sinceVersion": "4.0.3"
     },
     {
-      "name": "sds-input-fill-flood",
-      "displayName": "Fill Flood",
+      "name": "sds-input-ui-glass-glow",
+      "displayName": "Glass Glow",
       "category": "inputs",
       "kind": "effect",
-      "description": "On focus the interior floods with tint, then drains down to a strong underline — two acts",
+      "description": "A frosted glass field whose top edge lights up on focus.",
       "selectors": [
-        ".sds-input-fill-flood",
-        ".sds-input-fill-flood::before",
-        ".sds-input-fill-flood:focus-within::before"
+        ".sds-input-ui-glass-glow",
+        ".sds-input-ui-glass-glow::before",
+        ".sds-input-ui-glass-glow::after",
+        ".sds-input-ui-glass-glow:focus-within::after"
       ],
-      "keyframes": [
-        "sds-inputFillFlood"
-      ],
+      "keyframes": [],
       "tokensUsed": [
-        "--sds-duration-base",
+        "--sds-ease-standard"
+      ],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-gradient-bloom",
+      "displayName": "Gradient Bloom",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "A gradient blooms up from the bottom edge on focus.",
+      "selectors": [
+        ".sds-input-ui-gradient-bloom",
+        ".sds-input-ui-gradient-bloom::before",
+        ".sds-input-ui-gradient-bloom:focus-within::before"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-gradient-halo",
+      "displayName": "Gradient Halo",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "A blurred blue-to-violet gradient glows beneath the field and brightens on focus.",
+      "selectors": [
+        ".sds-input-ui-gradient-halo",
+        ".sds-input-ui-gradient-halo::before",
+        ".sds-input-ui-gradient-halo::after",
+        ".sds-input-ui-gradient-halo:focus-within::before"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
         "--sds-ease-standard"
       ],
       "customProperties": [
-        "--sds-primary"
+        "--sds-input-bg"
       ],
       "compositorSafe": true,
       "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-grid-fade",
+      "displayName": "Grid Fade",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "A fine grid fades in behind the text on focus.",
+      "selectors": [
+        ".sds-input-ui-grid-fade",
+        ".sds-input-ui-grid-fade::before",
+        ".sds-input-ui-grid-fade:focus-within::before"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-halo-pulse",
+      "displayName": "Halo Pulse",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "A soft halo breathes around the field while it is focused.",
+      "selectors": [
+        ".sds-input-ui-halo-pulse",
+        ".sds-input-ui-halo-pulse::before",
+        ".sds-input-ui-halo-pulse:focus-within::before",
+        ".sds-input-ui-halo-pulse::after",
+        ".sds-input-ui-halo-pulse:focus-within::after"
+      ],
+      "keyframes": [
+        "sds-inputUiHaloPulse"
+      ],
+      "tokensUsed": [],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-input-bg",
+        "--sds-input-line",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": true,
       "animatedProps": [
         "opacity",
         "transform"
@@ -10375,109 +11178,65 @@
       "sinceVersion": "4.0.3"
     },
     {
-      "name": "sds-input-fill-meter",
-      "displayName": "Fill Meter",
+      "name": "sds-input-ui-holo-border",
+      "displayName": "Holo Border",
       "category": "inputs",
       "kind": "effect",
-      "description": "While focused, a meter advances in confident bursts with holds — progress you can feel",
+      "description": "An iridescent holographic border that moves faster on focus.",
       "selectors": [
-        ".sds-input-fill-meter",
-        ".sds-input-fill-meter::before",
-        ".sds-input-fill-meter:focus-within::before"
+        ".sds-input-ui-holo-border",
+        ".sds-input-ui-holo-border::before",
+        ".sds-input-ui-holo-border::after",
+        ".sds-input-ui-holo-border:focus-within::before"
       ],
       "keyframes": [
-        "sds-inputFillMeter"
+        "sds-inputUiHolo"
       ],
+      "tokensUsed": [],
+      "customProperties": [
+        "--sds-input-bg",
+        "--sds-input-radius"
+      ],
+      "compositorSafe": true,
+      "loop": true,
+      "animatedProps": [
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-hover-lift",
+      "displayName": "Hover Lift",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "The field lifts slightly when hovered.",
+      "selectors": [
+        ".sds-input-ui-hover-lift::before",
+        ".sds-input-ui-hover-lift:focus-within::before",
+        ".sds-input-ui-hover-lift",
+        ".sds-input-ui-hover-lift:hover"
+      ],
+      "keyframes": [],
       "tokensUsed": [
-        "--sds-duration-dramatic",
         "--sds-ease-standard"
       ],
       "customProperties": [
-        "--sds-primary"
-      ],
-      "compositorSafe": true,
-      "loop": true,
-      "animatedProps": [
-        "opacity",
-        "transform"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": true,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "focus",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-fill-pulse-floor",
-      "displayName": "Fill Pulse Floor",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "The field's floor pulses brighter on a slow loop while it holds focus",
-      "selectors": [
-        ".sds-input-fill-pulse-floor",
-        ".sds-input-fill-pulse-floor::before",
-        ".sds-input-fill-pulse-floor:focus-within::before"
-      ],
-      "keyframes": [
-        "sds-inputFillPulseFloor"
-      ],
-      "tokensUsed": [
-        "--sds-duration-slower"
-      ],
-      "customProperties": [
-        "--sds-primary"
-      ],
-      "compositorSafe": true,
-      "loop": true,
-      "animatedProps": [
-        "filter",
-        "opacity",
-        "transform"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": true,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "focus",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-fill-rise",
-      "displayName": "Fill Rise",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "On focus a tint rises from the floor and settles at a shallow waterline",
-      "selectors": [
-        ".sds-input-fill-rise",
-        ".sds-input-fill-rise::before",
-        ".sds-input-fill-rise:focus-within::before"
-      ],
-      "keyframes": [
-        "sds-inputFillRise"
-      ],
-      "tokensUsed": [
-        "--sds-duration-fast",
-        "--sds-ease-decelerate"
-      ],
-      "customProperties": [
+        "--sds-input-accent",
         "--sds-primary"
       ],
       "compositorSafe": true,
       "loop": false,
-      "animatedProps": [
-        "transform"
-      ],
+      "animatedProps": [],
       "animatedPaintProps": [],
       "animatedLayoutProps": [],
       "requiresCharSplit": false,
@@ -10491,30 +11250,133 @@
       "sinceVersion": "4.0.3"
     },
     {
-      "name": "sds-input-fill-scanline",
-      "displayName": "Fill Scanline",
+      "name": "sds-input-ui-hover-line",
+      "displayName": "Hover Line",
       "category": "inputs",
       "kind": "effect",
-      "description": "One soft scanline crosses the field on focus, then drifts back and parks at the caret edge",
+      "description": "An accent underline appears on hover and stays on focus.",
       "selectors": [
-        ".sds-input-fill-scanline",
-        ".sds-input-fill-scanline::before",
-        ".sds-input-fill-scanline:focus-within::before"
+        ".sds-input-ui-hover-line",
+        ".sds-input-ui-hover-line::after",
+        ".sds-input-ui-hover-line:hover::after, .sds-input-ui-hover-line:focus-within::after"
       ],
-      "keyframes": [
-        "sds-inputFillScanline"
-      ],
+      "keyframes": [],
       "tokensUsed": [
-        "--sds-duration-base",
         "--sds-ease-standard"
       ],
       "customProperties": [
+        "--sds-input-accent",
+        "--sds-input-line",
         "--sds-primary"
       ],
       "compositorSafe": true,
       "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-icon-arrive",
+      "displayName": "Icon Arrive",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "An arrow slides in at the end of the field on focus.",
+      "selectors": [
+        ".sds-input-ui-icon-arrive::before",
+        ".sds-input-ui-icon-arrive:focus-within::before",
+        ".sds-input-ui-icon-arrive::after",
+        ".sds-input-ui-icon-arrive:focus-within::after",
+        ".sds-input-ui-icon-arrive > input"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-input-icon",
+        "--sds-input-icon-color",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-ink-spread",
+      "displayName": "Ink Spread",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "A soft blot of ink spreads across the field from the bottom.",
+      "selectors": [
+        ".sds-input-ui-ink-spread",
+        ".sds-input-ui-ink-spread::before",
+        ".sds-input-ui-ink-spread:focus-within::before"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-invalid-shake",
+      "displayName": "Invalid Shake",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "The field shakes and shows a red outline when the typed value is invalid.",
+      "selectors": [
+        ".sds-input-ui-invalid-shake::before",
+        ".sds-input-ui-invalid-shake:focus-within::before",
+        ".sds-input-ui-invalid-shake:has(> input:not(:placeholder-shown):invalid)",
+        ".sds-input-ui-invalid-shake:has(> input:not(:placeholder-shown):invalid)::before"
+      ],
+      "keyframes": [
+        "sds-inputUiInvalidShake"
+      ],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-bad"
+      ],
+      "compositorSafe": true,
+      "loop": false,
       "animatedProps": [
-        "opacity",
         "transform"
       ],
       "animatedPaintProps": [],
@@ -10530,134 +11392,111 @@
       "sinceVersion": "4.0.3"
     },
     {
-      "name": "sds-input-fire",
-      "displayName": "Fire",
+      "name": "sds-input-ui-line-center",
+      "displayName": "Line Center",
       "category": "inputs",
       "kind": "effect",
-      "description": "Field animates its shadow and border colour, on a loop (2s).",
+      "description": "The accent underline grows from the centre outward on focus.",
       "selectors": [
-        ".sds-input-fire"
+        ".sds-input-ui-line-center",
+        ".sds-input-ui-line-center::after",
+        ".sds-input-ui-line-center:focus-within::after"
       ],
-      "keyframes": [
-        "sds-inputFire"
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
       ],
-      "tokensUsed": [],
-      "customProperties": [],
-      "compositorSafe": false,
-      "loop": true,
-      "animatedProps": [
-        "border-color",
-        "box-shadow"
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-input-line",
+        "--sds-primary"
       ],
-      "animatedPaintProps": [
-        "border-color",
-        "box-shadow"
-      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
       "animatedLayoutProps": [],
       "requiresCharSplit": false,
       "requiresChildren": false,
-      "inputWrap": false,
+      "inputWrap": true,
       "requiresJs": false,
       "jsEngine": null,
-      "trigger": "load",
+      "trigger": "focus",
       "deprecated": false,
       "aliasOf": null,
       "sinceVersion": "4.0.3"
     },
     {
-      "name": "sds-input-flicker",
-      "displayName": "Flicker",
+      "name": "sds-input-ui-line-dash",
+      "displayName": "Line Dash",
       "category": "inputs",
       "kind": "effect",
-      "description": "Field animates, on a loop (4s).",
+      "description": "A dashed accent underline marches along the bottom while focused.",
       "selectors": [
-        ".sds-input-flicker"
+        ".sds-input-ui-line-dash",
+        ".sds-input-ui-line-dash::after",
+        ".sds-input-ui-line-dash:focus-within::after"
       ],
       "keyframes": [
-        "sds-inputFlicker"
+        "sds-inputUiLineDash"
       ],
-      "tokensUsed": [],
-      "customProperties": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-input-line",
+        "--sds-primary"
+      ],
       "compositorSafe": true,
       "loop": true,
       "animatedProps": [
-        "opacity"
+        "transform"
       ],
       "animatedPaintProps": [],
       "animatedLayoutProps": [],
       "requiresCharSplit": false,
       "requiresChildren": false,
-      "inputWrap": false,
+      "inputWrap": true,
       "requiresJs": false,
       "jsEngine": null,
-      "trigger": "load",
+      "trigger": "focus",
       "deprecated": false,
       "aliasOf": null,
       "sinceVersion": "4.0.3"
     },
     {
-      "name": "sds-input-flow",
-      "displayName": "Flow",
+      "name": "sds-input-ui-line-flow",
+      "displayName": "Line Flow",
       "category": "inputs",
       "kind": "effect",
-      "description": "Field animates its gradient position, on a loop (3s).",
+      "description": "A gradient underline that flows continuously while the field is focused.",
       "selectors": [
-        ".sds-input-flow"
+        ".sds-input-ui-line-flow",
+        ".sds-input-ui-line-flow::after",
+        ".sds-input-ui-line-flow:focus-within::after"
       ],
       "keyframes": [
-        "sds-inputFlow"
+        "sds-inputUiLineFlow"
       ],
       "tokensUsed": [
-        "--sds-duration-dramatic"
+        "--sds-ease-standard"
       ],
-      "customProperties": [],
-      "compositorSafe": false,
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-input-line",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
       "loop": true,
       "animatedProps": [
-        "background-position"
+        "transform"
       ],
-      "animatedPaintProps": [
-        "background-position"
-      ],
+      "animatedPaintProps": [],
       "animatedLayoutProps": [],
       "requiresCharSplit": false,
       "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-focus",
-      "displayName": "Focus Field",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Glow ring appears on :focus",
-      "selectors": [
-        ".sds-input-focus:focus"
-      ],
-      "keyframes": [
-        "sds-focusField"
-      ],
-      "tokensUsed": [
-        "--sds-duration-instant"
-      ],
-      "customProperties": [],
-      "compositorSafe": false,
-      "loop": false,
-      "animatedProps": [
-        "box-shadow"
-      ],
-      "animatedPaintProps": [
-        "box-shadow"
-      ],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
+      "inputWrap": true,
       "requiresJs": false,
       "jsEngine": null,
       "trigger": "focus",
@@ -10666,68 +11505,137 @@
       "sinceVersion": "4.0.3"
     },
     {
-      "name": "sds-input-focus-glow",
-      "displayName": "Focus Glow",
+      "name": "sds-input-ui-line-glow",
+      "displayName": "Line Glow",
       "category": "inputs",
       "kind": "effect",
-      "description": "Field animates its shadow, when focused (0.5s).",
+      "description": "The underline grows from the centre and a soft glow rises under it.",
       "selectors": [
-        ".sds-input-focus-glow:focus"
+        ".sds-input-ui-line-glow",
+        ".sds-input-ui-line-glow::before",
+        ".sds-input-ui-line-glow::after",
+        ".sds-input-ui-line-glow:focus-within::before",
+        ".sds-input-ui-line-glow:focus-within::after"
       ],
-      "keyframes": [
-        "sds-focusField"
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
       ],
-      "tokensUsed": [],
-      "customProperties": [],
-      "compositorSafe": false,
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-input-line",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
       "loop": false,
-      "animatedProps": [
-        "box-shadow"
-      ],
-      "animatedPaintProps": [
-        "box-shadow"
-      ],
+      "animatedProps": [],
+      "animatedPaintProps": [],
       "animatedLayoutProps": [],
       "requiresCharSplit": false,
       "requiresChildren": false,
-      "inputWrap": false,
+      "inputWrap": true,
       "requiresJs": false,
       "jsEngine": null,
       "trigger": "focus",
       "deprecated": false,
-      "aliasOf": "sds-input-focus",
+      "aliasOf": null,
       "sinceVersion": "4.0.3"
     },
     {
-      "name": "sds-input-frame-bloom",
-      "displayName": "Frame Bloom",
+      "name": "sds-input-ui-line-left",
+      "displayName": "Line Left",
       "category": "inputs",
       "kind": "effect",
-      "description": "Four corner accents bloom outward then seat back onto the field, top pair leading",
+      "description": "The accent underline grows from the left on focus.",
       "selectors": [
-        ".sds-input-frame-bloom",
-        ".sds-input-frame-bloom::before, .sds-input-frame-bloom::after",
-        ".sds-input-frame-bloom::before",
-        ".sds-input-frame-bloom::after",
-        ".sds-input-frame-bloom:focus-within::before",
-        ".sds-input-frame-bloom:focus-within::after"
+        ".sds-input-ui-line-left",
+        ".sds-input-ui-line-left::after",
+        ".sds-input-ui-line-left:focus-within::after"
       ],
-      "keyframes": [
-        "sds-inputFrameBloom"
-      ],
+      "keyframes": [],
       "tokensUsed": [
-        "--sds-duration-fast",
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-input-line",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-line-split",
+      "displayName": "Line Split",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "Two accent lines grow from both ends and meet in the middle.",
+      "selectors": [
+        ".sds-input-ui-line-split",
+        ".sds-input-ui-line-split::before, .sds-input-ui-line-split::after",
+        ".sds-input-ui-line-split::before",
+        ".sds-input-ui-line-split::after",
+        ".sds-input-ui-line-split:focus-within::before, .sds-input-ui-line-split:focus-within::after"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-input-line",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-line-spring",
+      "displayName": "Line Spring",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "The accent underline springs in from the left with a small overshoot.",
+      "selectors": [
+        ".sds-input-ui-line-spring",
+        ".sds-input-ui-line-spring::after",
+        ".sds-input-ui-line-spring:focus-within::after"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
         "--sds-ease-spring"
       ],
       "customProperties": [
+        "--sds-input-accent",
+        "--sds-input-line",
         "--sds-primary"
       ],
       "compositorSafe": true,
       "loop": false,
-      "animatedProps": [
-        "opacity",
-        "transform"
-      ],
+      "animatedProps": [],
       "animatedPaintProps": [],
       "animatedLayoutProps": [],
       "requiresCharSplit": false,
@@ -10741,416 +11649,29 @@
       "sinceVersion": "4.0.3"
     },
     {
-      "name": "sds-input-frost",
-      "displayName": "Frost",
+      "name": "sds-input-ui-lock-pulse",
+      "displayName": "Lock Pulse",
       "category": "inputs",
       "kind": "effect",
-      "description": "Field animates its opacity, blur and glow, once on load (2s).",
+      "description": "A lock icon at the end pulses while the field is focused.",
       "selectors": [
-        ".sds-input-frost"
+        ".sds-input-ui-lock-pulse::before",
+        ".sds-input-ui-lock-pulse:focus-within::before",
+        ".sds-input-ui-lock-pulse::after",
+        ".sds-input-ui-lock-pulse:focus-within::after",
+        ".sds-input-ui-lock-pulse > input"
       ],
       "keyframes": [
-        "sds-inputFrost"
-      ],
-      "tokensUsed": [],
-      "customProperties": [],
-      "compositorSafe": true,
-      "loop": false,
-      "animatedProps": [
-        "filter",
-        "opacity",
-        "transform"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-gate-open",
-      "displayName": "Gate Open",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Two tinted panels part horizontally over the field when it takes focus",
-      "selectors": [
-        ".sds-input-gate-open",
-        ".sds-input-gate-open::before, .sds-input-gate-open::after",
-        ".sds-input-gate-open::before",
-        ".sds-input-gate-open::after",
-        ".sds-input-gate-open:focus-within::before",
-        ".sds-input-gate-open:focus-within::after"
-      ],
-      "keyframes": [
-        "sds-inputGateOpenL",
-        "sds-inputGateOpenR"
+        "sds-inputUiLockPulse"
       ],
       "tokensUsed": [
-        "--sds-duration-fast",
-        "--sds-ease-decelerate"
-      ],
-      "customProperties": [
-        "--sds-primary"
-      ],
-      "compositorSafe": true,
-      "loop": false,
-      "animatedProps": [
-        "opacity",
-        "transform"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": true,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "focus",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-ghost",
-      "displayName": "Ghost",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Field animates its gradient position, on a loop (3s).",
-      "selectors": [
-        ".sds-input-ghost"
-      ],
-      "keyframes": [
-        "sds-inputGhost"
-      ],
-      "tokensUsed": [
-        "--sds-duration-dramatic"
-      ],
-      "customProperties": [],
-      "compositorSafe": false,
-      "loop": true,
-      "animatedProps": [
-        "background-position",
-        "opacity"
-      ],
-      "animatedPaintProps": [
-        "background-position"
-      ],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-glitch-valid",
-      "displayName": "Glitch Valid",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Field animates its position and border colour, once on load (0.4s).",
-      "selectors": [
-        ".sds-input-glitch-valid"
-      ],
-      "keyframes": [
-        "sds-inputGlitchValid"
-      ],
-      "tokensUsed": [
-        "--sds-duration-fast"
-      ],
-      "customProperties": [],
-      "compositorSafe": false,
-      "loop": false,
-      "animatedProps": [
-        "border-color",
-        "transform"
-      ],
-      "animatedPaintProps": [
-        "border-color"
-      ],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-glow-border",
-      "displayName": "Glow Border",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Field animates its shadow, on a loop (2s).",
-      "selectors": [
-        ".sds-input-glow-border"
-      ],
-      "keyframes": [
-        "sds-inputGlowBorder"
-      ],
-      "tokensUsed": [],
-      "customProperties": [],
-      "compositorSafe": false,
-      "loop": true,
-      "animatedProps": [
-        "box-shadow"
-      ],
-      "animatedPaintProps": [
-        "box-shadow"
-      ],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-gradient-border",
-      "displayName": "Gradient Border",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Field animates its colour hue, on a loop (3s).",
-      "selectors": [
-        ".sds-input-gradient-border"
-      ],
-      "keyframes": [
-        "sds-inputGradBorder"
-      ],
-      "tokensUsed": [
-        "--sds-duration-dramatic"
-      ],
-      "customProperties": [
-        "--sds-accent",
-        "--sds-primary"
-      ],
-      "compositorSafe": true,
-      "loop": true,
-      "animatedProps": [
-        "filter"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-gravity",
-      "displayName": "Gravity",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Field animates its position and opacity, once on load (0.8s).",
-      "selectors": [
-        ".sds-input-gravity"
-      ],
-      "keyframes": [
-        "sds-inputGravity"
-      ],
-      "tokensUsed": [
-        "--sds-duration-base",
-        "--sds-ease-bounce"
-      ],
-      "customProperties": [],
-      "compositorSafe": true,
-      "loop": false,
-      "animatedProps": [
-        "opacity",
-        "transform"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-idle-depth",
-      "displayName": "Idle Depth",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "The field breathes in depth — its shadow approaches and recedes on a slow tide",
-      "selectors": [
-        ".sds-input-idle-depth"
-      ],
-      "keyframes": [
-        "sds-inputIdleDepth"
-      ],
-      "tokensUsed": [
-        "--sds-duration-dramatic"
-      ],
-      "customProperties": [],
-      "compositorSafe": true,
-      "loop": true,
-      "animatedProps": [
-        "filter",
-        "transform"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-idle-floatline",
-      "displayName": "Idle Floatline",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "The underline drifts gently side to side like a buoy line at rest",
-      "selectors": [
-        ".sds-input-idle-floatline",
-        ".sds-input-idle-floatline::before"
-      ],
-      "keyframes": [
-        "sds-inputIdleFloatline"
-      ],
-      "tokensUsed": [
-        "--sds-duration-dramatic"
-      ],
-      "customProperties": [
-        "--sds-primary"
-      ],
-      "compositorSafe": true,
-      "loop": true,
-      "animatedProps": [
-        "transform"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": true,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-idle-glimmer",
-      "displayName": "Idle Glimmer",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "A tiny star glimmers at the corner every few seconds, spins a quarter turn, and is gone",
-      "selectors": [
-        ".sds-input-idle-glimmer",
-        ".sds-input-idle-glimmer::before"
-      ],
-      "keyframes": [
-        "sds-inputIdleGlimmer"
-      ],
-      "tokensUsed": [
-        "--sds-duration-dramatic",
         "--sds-ease-standard"
       ],
       "customProperties": [
-        "--sds-primary"
-      ],
-      "compositorSafe": true,
-      "loop": true,
-      "animatedProps": [
-        "filter",
-        "opacity",
-        "transform"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": true,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-idle-lean",
-      "displayName": "Idle Lean",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "A barely-perceptible lean cycle, like paper that isn't quite flat",
-      "selectors": [
-        ".sds-input-idle-lean"
-      ],
-      "keyframes": [
-        "sds-inputIdleLean"
-      ],
-      "tokensUsed": [
-        "--sds-duration-dramatic"
-      ],
-      "customProperties": [],
-      "compositorSafe": true,
-      "loop": true,
-      "animatedProps": [
-        "transform"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-idle-noise",
-      "displayName": "Idle Noise",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Film-grain dots shimmer at 7% opacity in stepped jumps — analog quiet",
-      "selectors": [
-        ".sds-input-idle-noise",
-        ".sds-input-idle-noise::before"
-      ],
-      "keyframes": [
-        "sds-inputIdleNoise"
-      ],
-      "tokensUsed": [
-        "--sds-duration-slower"
-      ],
-      "customProperties": [
+        "--sds-input-accent",
+        "--sds-input-icon",
+        "--sds-input-icon-color",
+        "--sds-input-muted",
         "--sds-primary"
       ],
       "compositorSafe": true,
@@ -11163,114 +11684,6 @@
       "requiresCharSplit": false,
       "requiresChildren": false,
       "inputWrap": true,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-idle-perimeter-dot",
-      "displayName": "Idle Perimeter Dot",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "A single dot blinks at each corner in turn, patrolling the field's perimeter",
-      "selectors": [
-        ".sds-input-idle-perimeter-dot",
-        ".sds-input-idle-perimeter-dot::before"
-      ],
-      "keyframes": [
-        "sds-inputIdlePerimeterDot"
-      ],
-      "tokensUsed": [
-        "--sds-duration-dramatic"
-      ],
-      "customProperties": [
-        "--sds-primary"
-      ],
-      "compositorSafe": true,
-      "loop": true,
-      "animatedProps": [
-        "opacity",
-        "transform"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": true,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-idle-soft-zoom",
-      "displayName": "Idle Soft Zoom",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "A 0.6% scale tide — imperceptibly alive",
-      "selectors": [
-        ".sds-input-idle-soft-zoom"
-      ],
-      "keyframes": [
-        "sds-inputIdleSoftZoom"
-      ],
-      "tokensUsed": [
-        "--sds-duration-dramatic"
-      ],
-      "customProperties": [],
-      "compositorSafe": true,
-      "loop": true,
-      "animatedProps": [
-        "transform"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-ink",
-      "displayName": "Ink Stroke",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Outline expands with ink-stroke feel",
-      "selectors": [
-        ".sds-input-ink:focus"
-      ],
-      "keyframes": [
-        "sds-inkStroke"
-      ],
-      "tokensUsed": [
-        "--sds-duration-instant"
-      ],
-      "customProperties": [],
-      "compositorSafe": false,
-      "loop": false,
-      "animatedProps": [
-        "outline-color",
-        "outline-offset"
-      ],
-      "animatedPaintProps": [
-        "outline-color"
-      ],
-      "animatedLayoutProps": [
-        "outline-offset"
-      ],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
       "requiresJs": false,
       "jsEngine": null,
       "trigger": "focus",
@@ -11279,64 +11692,31 @@
       "sinceVersion": "4.0.3"
     },
     {
-      "name": "sds-input-kinetic",
-      "displayName": "Kinetic",
+      "name": "sds-input-ui-magic-underline",
+      "displayName": "Magic Underline",
       "category": "inputs",
       "kind": "effect",
-      "description": "Field animates, on a loop (3s).",
+      "description": "A flowing gradient underline with a sparkle at the end on focus.",
       "selectors": [
-        ".sds-input-kinetic"
+        ".sds-input-ui-magic-underline",
+        ".sds-input-ui-magic-underline::after",
+        ".sds-input-ui-magic-underline:focus-within::after",
+        ".sds-input-ui-magic-underline::before",
+        ".sds-input-ui-magic-underline:focus-within::before"
       ],
       "keyframes": [
-        "sds-inputKinetic"
+        "sds-inputUiMagicLine"
       ],
       "tokensUsed": [
-        "--sds-duration-dramatic"
-      ],
-      "customProperties": [],
-      "compositorSafe": true,
-      "loop": true,
-      "animatedProps": [
-        "transform"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-label-spring",
-      "displayName": "Label Spring",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "On focus the label lifts with an 8% overshoot and settles small while the field swells a hair",
-      "selectors": [
-        ".sds-input-label-spring",
-        ".sds-input-label-spring label",
-        ".sds-input-label-spring:focus-within label, .sds-input-label-spring input:not(:placeholder-shown) ~ label",
-        ".sds-input-label-spring:focus-within input"
-      ],
-      "keyframes": [
-        "sds-inputLabelSpring",
-        "sds-inputLabelSpringField"
-      ],
-      "tokensUsed": [
-        "--sds-duration-fast",
         "--sds-ease-spring",
         "--sds-ease-standard"
       ],
-      "customProperties": [],
+      "customProperties": [
+        "--sds-input-line"
+      ],
       "compositorSafe": true,
-      "loop": false,
+      "loop": true,
       "animatedProps": [
-        "opacity",
         "transform"
       ],
       "animatedPaintProps": [],
@@ -11352,947 +11732,70 @@
       "sinceVersion": "4.0.3"
     },
     {
-      "name": "sds-input-laser",
-      "displayName": "Laser",
+      "name": "sds-input-ui-neon-edge",
+      "displayName": "Neon Edge",
       "category": "inputs",
       "kind": "effect",
-      "description": "Field animates its gradient position, on a loop (1.5s).",
+      "description": "A glowing neon outline switches on and hums gently on focus.",
       "selectors": [
-        ".sds-input-laser"
+        ".sds-input-ui-neon-edge",
+        ".sds-input-ui-neon-edge::before",
+        ".sds-input-ui-neon-edge:focus-within::before"
       ],
       "keyframes": [
-        "sds-inputLaser"
-      ],
-      "tokensUsed": [],
-      "customProperties": [],
-      "compositorSafe": false,
-      "loop": true,
-      "animatedProps": [
-        "background-position"
-      ],
-      "animatedPaintProps": [
-        "background-position"
-      ],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-momentum",
-      "displayName": "Momentum",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Field animates its position, opacity and blur, once on load (0.7s).",
-      "selectors": [
-        ".sds-input-momentum"
-      ],
-      "keyframes": [
-        "sds-inputMomentum"
+        "sds-inputUiNeonEdge"
       ],
       "tokensUsed": [
-        "--sds-easing"
-      ],
-      "customProperties": [],
-      "compositorSafe": true,
-      "loop": false,
-      "animatedProps": [
-        "filter",
-        "opacity",
-        "transform"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-morph",
-      "displayName": "Border Morph",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Border-radius morphs between shapes",
-      "selectors": [
-        ".sds-input-morph"
-      ],
-      "keyframes": [
-        "sds-borderMorph"
-      ],
-      "tokensUsed": [],
-      "customProperties": [],
-      "compositorSafe": false,
-      "loop": true,
-      "animatedProps": [
-        "border-radius"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [
-        "border-radius"
-      ],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-morph-ph",
-      "displayName": "Morph Placeholder",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Placeholder letter-spacing breathes",
-      "selectors": [
-        ".sds-input-morph-ph::placeholder"
-      ],
-      "keyframes": [
-        "sds-morphPlaceholder"
-      ],
-      "tokensUsed": [],
-      "customProperties": [],
-      "compositorSafe": false,
-      "loop": true,
-      "animatedProps": [
-        "filter",
-        "letter-spacing",
-        "opacity"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [
-        "letter-spacing"
-      ],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-neon",
-      "displayName": "Neon Input",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Neon glow with flicker on the border",
-      "selectors": [
-        ".sds-input-neon"
-      ],
-      "keyframes": [
-        "sds-neonSign"
-      ],
-      "tokensUsed": [],
-      "customProperties": [],
-      "compositorSafe": false,
-      "loop": true,
-      "animatedProps": [
-        "box-shadow"
-      ],
-      "animatedPaintProps": [
-        "box-shadow"
-      ],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-neural",
-      "displayName": "Neural",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Field animates its shadow, on a loop (3s).",
-      "selectors": [
-        ".sds-input-neural"
-      ],
-      "keyframes": [
-        "sds-inputNeural"
-      ],
-      "tokensUsed": [
-        "--sds-duration-dramatic"
-      ],
-      "customProperties": [],
-      "compositorSafe": false,
-      "loop": true,
-      "animatedProps": [
-        "box-shadow"
-      ],
-      "animatedPaintProps": [
-        "box-shadow"
-      ],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-orbit",
-      "displayName": "Orbit",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Field animates, on a loop (2s).",
-      "selectors": [
-        ".sds-input-orbit"
-      ],
-      "keyframes": [
-        "sds-inputOrbit"
-      ],
-      "tokensUsed": [],
-      "customProperties": [],
-      "compositorSafe": false,
-      "loop": true,
-      "animatedProps": [
-        "outline-color",
-        "outline-offset"
-      ],
-      "animatedPaintProps": [
-        "outline-color"
-      ],
-      "animatedLayoutProps": [
-        "outline-offset"
-      ],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-ph-blink",
-      "displayName": "Placeholder Blink",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "A double-blink invitation every few seconds, then a straight face",
-      "selectors": [
-        ".sds-input-ph-blink::placeholder"
-      ],
-      "keyframes": [
-        "sds-inputPhBlink"
-      ],
-      "tokensUsed": [
-        "--sds-duration-dramatic"
-      ],
-      "customProperties": [],
-      "compositorSafe": true,
-      "loop": true,
-      "animatedProps": [
-        "opacity"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-ph-breathe",
-      "displayName": "Placeholder Breathe",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "The placeholder breathes slowly between half-light and dim — alive, not urgent",
-      "selectors": [
-        ".sds-input-ph-breathe::placeholder"
-      ],
-      "keyframes": [
-        "sds-inputPhBreathe"
-      ],
-      "tokensUsed": [
-        "--sds-duration-dramatic"
-      ],
-      "customProperties": [],
-      "compositorSafe": true,
-      "loop": true,
-      "animatedProps": [
-        "opacity"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-ph-fade-steps",
-      "displayName": "Placeholder Fade Steps",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "On focus the placeholder vanishes in three stepped after-images, like type lifting off",
-      "selectors": [
-        ".sds-input-ph-fade-steps:focus::placeholder"
-      ],
-      "keyframes": [
-        "sds-inputPhFadeSteps"
-      ],
-      "tokensUsed": [
-        "--sds-duration-fast"
-      ],
-      "customProperties": [],
-      "compositorSafe": true,
-      "loop": false,
-      "animatedProps": [
-        "opacity"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "focus",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-ph-flicker-in",
-      "displayName": "Placeholder Flicker In",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "The placeholder powers on through stepped flickers when the field loads",
-      "selectors": [
-        ".sds-input-ph-flicker-in::placeholder"
-      ],
-      "keyframes": [
-        "sds-inputPhFlickerIn"
-      ],
-      "tokensUsed": [
-        "--sds-duration-slow"
-      ],
-      "customProperties": [],
-      "compositorSafe": true,
-      "loop": false,
-      "animatedProps": [
-        "opacity"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-ph-ghost",
-      "displayName": "Placeholder Ghost",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "On focus the placeholder dips to a ghost, lingers a beat, then lets go",
-      "selectors": [
-        ".sds-input-ph-ghost:focus::placeholder"
-      ],
-      "keyframes": [
-        "sds-inputPhGhost"
-      ],
-      "tokensUsed": [
-        "--sds-duration-base",
         "--sds-ease-standard"
       ],
-      "customProperties": [],
-      "compositorSafe": true,
-      "loop": false,
-      "animatedProps": [
-        "opacity"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "focus",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-ph-wave",
-      "displayName": "Placeholder Wave",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Soft irregular pulses roll through the placeholder, like text under water",
-      "selectors": [
-        ".sds-input-ph-wave::placeholder"
-      ],
-      "keyframes": [
-        "sds-inputPhWave"
-      ],
-      "tokensUsed": [
-        "--sds-duration-slower"
-      ],
-      "customProperties": [],
-      "compositorSafe": true,
-      "loop": true,
-      "animatedProps": [
-        "opacity"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-plasma",
-      "displayName": "Plasma Field",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Plasma glow cycles around the field",
-      "selectors": [
-        ".sds-input-plasma"
-      ],
-      "keyframes": [
-        "sds-plasmaGlow"
-      ],
-      "tokensUsed": [
-        "--sds-duration-dramatic"
-      ],
-      "customProperties": [],
-      "compositorSafe": false,
-      "loop": true,
-      "animatedProps": [
-        "box-shadow"
-      ],
-      "animatedPaintProps": [
-        "box-shadow"
-      ],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-prism",
-      "displayName": "Prism",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Field animates its shadow and border colour, on a loop (4s).",
-      "selectors": [
-        ".sds-input-prism"
-      ],
-      "keyframes": [
-        "sds-inputPrism"
-      ],
-      "tokensUsed": [],
-      "customProperties": [],
-      "compositorSafe": false,
-      "loop": true,
-      "animatedProps": [
-        "border-color",
-        "box-shadow"
-      ],
-      "animatedPaintProps": [
-        "border-color",
-        "box-shadow"
-      ],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-pulse-dot",
-      "displayName": "Pulse Dot",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Field animates its shadow, on a loop (1.4s).",
-      "selectors": [
-        ".sds-input-pulse-dot"
-      ],
-      "keyframes": [
-        "sds-inputPulseDot"
-      ],
-      "tokensUsed": [
-        "--sds-duration-slow"
-      ],
       "customProperties": [
+        "--sds-input-accent",
+        "--sds-input-line",
         "--sds-primary"
       ],
-      "compositorSafe": false,
-      "loop": true,
-      "animatedProps": [
-        "border-left-color",
-        "box-shadow"
-      ],
-      "animatedPaintProps": [
-        "border-left-color",
-        "box-shadow"
-      ],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-quantum",
-      "displayName": "Quantum",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Field animates its border colour, on a loop (3s).",
-      "selectors": [
-        ".sds-input-quantum"
-      ],
-      "keyframes": [
-        "sds-inputQuantum"
-      ],
-      "tokensUsed": [
-        "--sds-duration-dramatic"
-      ],
-      "customProperties": [],
-      "compositorSafe": false,
-      "loop": true,
-      "animatedProps": [
-        "border-color"
-      ],
-      "animatedPaintProps": [
-        "border-color"
-      ],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-radar",
-      "displayName": "Radar",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Field animates its shadow, on a loop (2s).",
-      "selectors": [
-        ".sds-input-radar"
-      ],
-      "keyframes": [
-        "sds-inputRadar"
-      ],
-      "tokensUsed": [],
-      "customProperties": [],
-      "compositorSafe": false,
-      "loop": true,
-      "animatedProps": [
-        "box-shadow"
-      ],
-      "animatedPaintProps": [
-        "box-shadow"
-      ],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-ring",
-      "displayName": "Ring Pulse",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Magnetic ring pulse on the border",
-      "selectors": [
-        ".sds-input-ring"
-      ],
-      "keyframes": [
-        "sds-magnetPulse"
-      ],
-      "tokensUsed": [],
-      "customProperties": [],
-      "compositorSafe": false,
-      "loop": true,
-      "animatedProps": [
-        "box-shadow",
-        "transform"
-      ],
-      "animatedPaintProps": [
-        "box-shadow"
-      ],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-ripple",
-      "displayName": "Ripple",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Field animates its shadow, on a loop (2.4s).",
-      "selectors": [
-        ".sds-input-ripple"
-      ],
-      "keyframes": [
-        "sds-inputRipple"
-      ],
-      "tokensUsed": [],
-      "customProperties": [],
-      "compositorSafe": false,
-      "loop": true,
-      "animatedProps": [
-        "box-shadow"
-      ],
-      "animatedPaintProps": [
-        "box-shadow"
-      ],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-saved-flash",
-      "displayName": "Saved Flash",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "A quick brightness sweep with a 1% stamp-squash — saved, confirmed",
-      "selectors": [
-        ".sds-input-saved-flash"
-      ],
-      "keyframes": [
-        "sds-inputSavedFlash"
-      ],
-      "tokensUsed": [
-        "--sds-duration-fast",
-        "--sds-ease-emphasized"
-      ],
-      "customProperties": [],
       "compositorSafe": true,
-      "loop": false,
+      "loop": true,
       "animatedProps": [
-        "filter",
-        "transform"
+        "opacity"
       ],
       "animatedPaintProps": [],
       "animatedLayoutProps": [],
       "requiresCharSplit": false,
       "requiresChildren": false,
-      "inputWrap": false,
+      "inputWrap": true,
       "requiresJs": false,
       "jsEngine": null,
-      "trigger": "load",
+      "trigger": "focus",
       "deprecated": false,
       "aliasOf": null,
       "sinceVersion": "4.0.3"
     },
     {
-      "name": "sds-input-scan",
-      "displayName": "Scan",
+      "name": "sds-input-ui-neural-dots",
+      "displayName": "Neural Dots",
       "category": "inputs",
       "kind": "effect",
-      "description": "Field animates its gradient position, on a loop (2s).",
+      "description": "Three dots pulse at the end of the field on focus, like an AI thinking.",
       "selectors": [
-        ".sds-input-scan"
+        ".sds-input-ui-neural-dots::before",
+        ".sds-input-ui-neural-dots:focus-within::before",
+        ".sds-input-ui-neural-dots::after",
+        ".sds-input-ui-neural-dots:focus-within::after"
       ],
       "keyframes": [
-        "sds-inputScan"
-      ],
-      "tokensUsed": [],
-      "customProperties": [],
-      "compositorSafe": false,
-      "loop": true,
-      "animatedProps": [
-        "background-position"
-      ],
-      "animatedPaintProps": [
-        "background-position"
-      ],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-shake",
-      "displayName": "Seismic Shake",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Horizontal shake for invalid state",
-      "selectors": [
-        ".sds-input-shake"
-      ],
-      "keyframes": [
-        "sds-seismicShake"
-      ],
-      "tokensUsed": [],
-      "customProperties": [],
-      "compositorSafe": true,
-      "loop": false,
-      "animatedProps": [
-        "transform"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-shimmer",
-      "displayName": "Shimmer Scan",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Light shimmer scans across the field",
-      "selectors": [
-        ".sds-input-shimmer"
-      ],
-      "keyframes": [
-        "sds-shimmerScan"
-      ],
-      "tokensUsed": [],
-      "customProperties": [],
-      "compositorSafe": false,
-      "loop": true,
-      "animatedProps": [
-        "background-position"
-      ],
-      "animatedPaintProps": [
-        "background-position"
-      ],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-solar",
-      "displayName": "Solar",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Field animates its shadow, on a loop (2.8s).",
-      "selectors": [
-        ".sds-input-solar"
-      ],
-      "keyframes": [
-        "sds-inputSolar"
-      ],
-      "tokensUsed": [],
-      "customProperties": [],
-      "compositorSafe": false,
-      "loop": true,
-      "animatedProps": [
-        "box-shadow"
-      ],
-      "animatedPaintProps": [
-        "box-shadow"
-      ],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-success",
-      "displayName": "Success Glow",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Green glow for a validated field",
-      "selectors": [
-        ".sds-input-success"
-      ],
-      "keyframes": [
-        "sds-successGlow"
-      ],
-      "tokensUsed": [],
-      "customProperties": [],
-      "compositorSafe": false,
-      "loop": false,
-      "animatedProps": [
-        "border-color",
-        "box-shadow"
-      ],
-      "animatedPaintProps": [
-        "border-color",
-        "box-shadow"
-      ],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-success-ripple",
-      "displayName": "Success Ripple",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Two green glow rings ripple off the field as it does a contented little bob",
-      "selectors": [
-        ".sds-input-success-ripple"
-      ],
-      "keyframes": [
-        "sds-inputSuccessRipple"
+        "sds-inputUiNeural"
       ],
       "tokensUsed": [
-        "--sds-duration-base",
         "--sds-ease-standard"
       ],
-      "customProperties": [],
-      "compositorSafe": true,
-      "loop": false,
-      "animatedProps": [
-        "filter",
-        "transform"
-      ],
-      "animatedPaintProps": [],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-success-tick",
-      "displayName": "Success Tick",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "A checkmark draws itself in two strokes and snaps at the finish",
-      "selectors": [
-        ".sds-input-success-tick",
-        ".sds-input-success-tick::after"
-      ],
-      "keyframes": [
-        "sds-inputSuccessTick"
-      ],
-      "tokensUsed": [
-        "--sds-duration-fast",
-        "--sds-ease-emphasized"
-      ],
       "customProperties": [
-        "--sds-success"
+        "--sds-input-accent",
+        "--sds-primary"
       ],
       "compositorSafe": true,
-      "loop": false,
+      "loop": true,
       "animatedProps": [
-        "clip-path",
+        "opacity",
         "transform"
       ],
       "animatedPaintProps": [],
@@ -12302,39 +11805,40 @@
       "inputWrap": true,
       "requiresJs": false,
       "jsEngine": null,
-      "trigger": "load",
+      "trigger": "focus",
       "deprecated": false,
       "aliasOf": null,
       "sinceVersion": "4.0.3"
     },
     {
-      "name": "sds-input-tilt-in",
-      "displayName": "Tilt In",
+      "name": "sds-input-ui-progress-line",
+      "displayName": "Progress Line",
       "category": "inputs",
       "kind": "effect",
-      "description": "The field tips toward you on focus while its shadow approaches — a 3D nod",
+      "description": "A line along the bottom follows --sds-input-progress (0 to 1).",
       "selectors": [
-        ".sds-input-tilt-in:focus"
+        ".sds-input-ui-progress-line::before",
+        ".sds-input-ui-progress-line:focus-within::before",
+        ".sds-input-ui-progress-line",
+        ".sds-input-ui-progress-line::after"
       ],
-      "keyframes": [
-        "sds-inputTiltIn"
-      ],
+      "keyframes": [],
       "tokensUsed": [
-        "--sds-duration-fast",
         "--sds-ease-standard"
       ],
-      "customProperties": [],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-input-progress",
+        "--sds-primary"
+      ],
       "compositorSafe": true,
       "loop": false,
-      "animatedProps": [
-        "filter",
-        "transform"
-      ],
+      "animatedProps": [],
       "animatedPaintProps": [],
       "animatedLayoutProps": [],
       "requiresCharSplit": false,
       "requiresChildren": false,
-      "inputWrap": false,
+      "inputWrap": true,
       "requiresJs": false,
       "jsEngine": null,
       "trigger": "focus",
@@ -12343,24 +11847,328 @@
       "sinceVersion": "4.0.3"
     },
     {
-      "name": "sds-input-underline-draw",
-      "displayName": "Underline Draw",
+      "name": "sds-input-ui-prompt-glow",
+      "displayName": "Prompt Glow",
       "category": "inputs",
       "kind": "effect",
-      "description": "Underline draws from the center to both edges with a snap of overshoot",
+      "description": "A soft multicolour glow lights up behind the field on focus.",
       "selectors": [
-        ".sds-input-underline-draw",
-        ".sds-input-underline-draw::after",
-        ".sds-input-underline-draw:focus-within::after"
+        ".sds-input-ui-prompt-glow",
+        ".sds-input-ui-prompt-glow::before",
+        ".sds-input-ui-prompt-glow::after",
+        ".sds-input-ui-prompt-glow:focus-within::before"
       ],
-      "keyframes": [
-        "sds-inputUnderlineDraw"
-      ],
+      "keyframes": [],
       "tokensUsed": [
-        "--sds-duration-fast",
-        "--sds-ease-spring"
+        "--sds-ease-standard"
       ],
       "customProperties": [
+        "--sds-input-bg",
+        "--sds-input-radius"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-readonly-lock",
+      "displayName": "Readonly Lock",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "A lock icon appears on a readonly field.",
+      "selectors": [
+        ".sds-input-ui-readonly-lock::before",
+        ".sds-input-ui-readonly-lock:focus-within::before",
+        ".sds-input-ui-readonly-lock::after",
+        ".sds-input-ui-readonly-lock:has(> input[readonly])::after",
+        ".sds-input-ui-readonly-lock > input"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-spring",
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-input-icon",
+        "--sds-input-icon-color",
+        "--sds-input-muted",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-required-dot",
+      "displayName": "Required Dot",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "A small red dot pulses on a required field that is still empty.",
+      "selectors": [
+        ".sds-input-ui-required-dot::before",
+        ".sds-input-ui-required-dot:focus-within::before",
+        ".sds-input-ui-required-dot::after",
+        ".sds-input-ui-required-dot:has(> input:required:placeholder-shown)::after"
+      ],
+      "keyframes": [
+        "sds-inputUiRequiredDot"
+      ],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-input-bad",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": true,
+      "animatedProps": [
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-ring-expand",
+      "displayName": "Ring Expand",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "An outer ring expands out from the field on focus.",
+      "selectors": [
+        ".sds-input-ui-ring-expand",
+        ".sds-input-ui-ring-expand::before",
+        ".sds-input-ui-ring-expand:focus-within::before"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-input-radius",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-ring-radiate",
+      "displayName": "Ring Radiate",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "Rings radiate outward from the field one after another while focused.",
+      "selectors": [
+        ".sds-input-ui-ring-radiate",
+        ".sds-input-ui-ring-radiate::before, .sds-input-ui-ring-radiate::after",
+        ".sds-input-ui-ring-radiate:focus-within::before",
+        ".sds-input-ui-ring-radiate:focus-within::after"
+      ],
+      "keyframes": [
+        "sds-inputUiRadiate"
+      ],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": true,
+      "animatedProps": [
+        "opacity",
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-scan-beam",
+      "displayName": "Scan Beam",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "A thin scan beam sweeps across the field while it is focused.",
+      "selectors": [
+        ".sds-input-ui-scan-beam",
+        ".sds-input-ui-scan-beam::before",
+        ".sds-input-ui-scan-beam:focus-within::before"
+      ],
+      "keyframes": [
+        "sds-inputUiScanBeam"
+      ],
+      "tokensUsed": [],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": true,
+      "animatedProps": [
+        "opacity",
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-search-spin",
+      "displayName": "Search Spin",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "A search icon spins a full turn on focus.",
+      "selectors": [
+        ".sds-input-ui-search-spin::before",
+        ".sds-input-ui-search-spin:focus-within::before",
+        ".sds-input-ui-search-spin::after",
+        ".sds-input-ui-search-spin:focus-within::after",
+        ".sds-input-ui-search-spin > input"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-input-icon",
+        "--sds-input-icon-color",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-shadow-lift",
+      "displayName": "Shadow Lift",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "The field lifts off the page and a soft shadow appears underneath.",
+      "selectors": [
+        ".sds-input-ui-shadow-lift",
+        ".sds-input-ui-shadow-lift::after",
+        ".sds-input-ui-shadow-lift:focus-within",
+        ".sds-input-ui-shadow-lift:focus-within::after",
+        ".sds-input-ui-shadow-lift::before",
+        ".sds-input-ui-shadow-lift:focus-within::before"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-sheen-sweep",
+      "displayName": "Sheen Sweep",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "A bright sheen sweeps across the field once on focus.",
+      "selectors": [
+        ".sds-input-ui-sheen-sweep",
+        ".sds-input-ui-sheen-sweep::before",
+        ".sds-input-ui-sheen-sweep:focus-within::before",
+        ".sds-input-ui-sheen-sweep::after",
+        ".sds-input-ui-sheen-sweep:focus-within::after"
+      ],
+      "keyframes": [
+        "sds-inputUiSheen"
+      ],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
         "--sds-primary"
       ],
       "compositorSafe": true,
@@ -12382,29 +12190,138 @@
       "sinceVersion": "4.0.3"
     },
     {
-      "name": "sds-input-underline-trail",
-      "displayName": "Underline Trail",
+      "name": "sds-input-ui-shimmer-border",
+      "displayName": "Shimmer Border",
       "category": "inputs",
       "kind": "effect",
-      "description": "Underline draws left to right behind a bright comet head that burns out at the far edge",
+      "description": "A band of light runs around the border, faster on focus.",
       "selectors": [
-        ".sds-input-underline-trail",
-        ".sds-input-underline-trail::after",
-        ".sds-input-underline-trail::before",
-        ".sds-input-underline-trail:focus-within::after",
-        ".sds-input-underline-trail:focus-within::before"
+        ".sds-input-ui-shimmer-border",
+        ".sds-input-ui-shimmer-border::before",
+        ".sds-input-ui-shimmer-border::after",
+        ".sds-input-ui-shimmer-border:focus-within::before"
       ],
       "keyframes": [
-        "sds-inputUnderlineTrail",
-        "sds-inputUnderlineTrailHead"
+        "sds-inputUiShimmerBorder"
       ],
-      "tokensUsed": [
-        "--sds-duration-instant",
-        "--sds-ease-decelerate"
-      ],
+      "tokensUsed": [],
       "customProperties": [
+        "--sds-input-accent",
+        "--sds-input-bg",
+        "--sds-input-radius",
         "--sds-primary"
       ],
+      "compositorSafe": true,
+      "loop": true,
+      "animatedProps": [
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-side-bar",
+      "displayName": "Side Bar",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "An accent bar grows up the left edge on focus.",
+      "selectors": [
+        ".sds-input-ui-side-bar::before",
+        ".sds-input-ui-side-bar:focus-within::before"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-sparkle",
+      "displayName": "Sparkle",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "Two sparkles twinkle at the edge of the field on focus.",
+      "selectors": [
+        ".sds-input-ui-sparkle",
+        ".sds-input-ui-sparkle::before, .sds-input-ui-sparkle::after",
+        ".sds-input-ui-sparkle::before",
+        ".sds-input-ui-sparkle::after",
+        ".sds-input-ui-sparkle:focus-within::before",
+        ".sds-input-ui-sparkle:focus-within::after",
+        ".sds-input-ui-sparkle:focus-within"
+      ],
+      "keyframes": [
+        "sds-inputUiSparkle"
+      ],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": true,
+      "animatedProps": [
+        "opacity",
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-spotlight",
+      "displayName": "Spotlight",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "A soft spotlight drifts across the field and settles on focus.",
+      "selectors": [
+        ".sds-input-ui-spotlight",
+        ".sds-input-ui-spotlight::before",
+        ".sds-input-ui-spotlight:focus-within::before"
+      ],
+      "keyframes": [
+        "sds-inputUiSpotlight"
+      ],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [],
       "compositorSafe": true,
       "loop": false,
       "animatedProps": [
@@ -12424,243 +12341,450 @@
       "sinceVersion": "4.0.3"
     },
     {
-      "name": "sds-input-unlock",
-      "displayName": "Unlock",
+      "name": "sds-input-ui-spotlight-card",
+      "displayName": "Spotlight Card",
       "category": "inputs",
       "kind": "effect",
-      "description": "Field animates its rotation and opacity, once on load (0.8s).",
+      "description": "A soft violet spotlight rises inside the field on focus.",
       "selectors": [
-        ".sds-input-unlock"
+        ".sds-input-ui-spotlight-card",
+        ".sds-input-ui-spotlight-card::before",
+        ".sds-input-ui-spotlight-card:focus-within::before"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-spot-x"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-state-error",
+      "displayName": "State Error",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "Set data-state=\"error\": the field shakes and shows a red outline and a warning icon.",
+      "selectors": [
+        ".sds-input-ui-state-error::before",
+        ".sds-input-ui-state-error:focus-within::before",
+        ".sds-input-ui-state-error::after",
+        ".sds-input-ui-state-error[data-state=\"error\"]",
+        ".sds-input-ui-state-error[data-state=\"error\"]::before",
+        ".sds-input-ui-state-error[data-state=\"error\"]::after",
+        ".sds-input-ui-state-error > input"
       ],
       "keyframes": [
-        "sds-inputUnlock"
+        "sds-inputUiStateError"
       ],
       "tokensUsed": [
-        "--sds-duration-base",
-        "--sds-easing"
+        "--sds-ease-spring",
+        "--sds-ease-standard"
       ],
-      "customProperties": [],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-input-bad",
+        "--sds-input-icon",
+        "--sds-input-icon-color",
+        "--sds-primary"
+      ],
       "compositorSafe": true,
       "loop": false,
       "animatedProps": [
-        "opacity",
         "transform"
       ],
       "animatedPaintProps": [],
       "animatedLayoutProps": [],
       "requiresCharSplit": false,
       "requiresChildren": false,
-      "inputWrap": false,
+      "inputWrap": true,
       "requiresJs": false,
       "jsEngine": null,
-      "trigger": "load",
+      "trigger": "focus",
       "deprecated": false,
       "aliasOf": null,
       "sinceVersion": "4.0.3"
     },
     {
-      "name": "sds-input-void",
-      "displayName": "Void",
+      "name": "sds-input-ui-state-success",
+      "displayName": "State Success",
       "category": "inputs",
       "kind": "effect",
-      "description": "Field animates its shadow, on a loop (2.6s).",
+      "description": "Set data-state=\"success\": a green outline and a check mark spring in.",
       "selectors": [
-        ".sds-input-void"
+        ".sds-input-ui-state-success::before",
+        ".sds-input-ui-state-success:focus-within::before",
+        ".sds-input-ui-state-success::after",
+        ".sds-input-ui-state-success[data-state=\"success\"]::before",
+        ".sds-input-ui-state-success[data-state=\"success\"]::after",
+        ".sds-input-ui-state-success > input"
       ],
-      "keyframes": [
-        "sds-inputVoid"
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-spring",
+        "--sds-ease-standard"
       ],
-      "tokensUsed": [],
-      "customProperties": [],
-      "compositorSafe": false,
-      "loop": true,
-      "animatedProps": [
-        "box-shadow"
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-input-icon",
+        "--sds-input-icon-color",
+        "--sds-input-ok",
+        "--sds-primary"
       ],
-      "animatedPaintProps": [
-        "box-shadow"
-      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
       "animatedLayoutProps": [],
       "requiresCharSplit": false,
       "requiresChildren": false,
-      "inputWrap": false,
+      "inputWrap": true,
       "requiresJs": false,
       "jsEngine": null,
-      "trigger": "load",
+      "trigger": "focus",
       "deprecated": false,
       "aliasOf": null,
       "sinceVersion": "4.0.3"
     },
     {
-      "name": "sds-input-voltage",
-      "displayName": "Voltage Pulse",
+      "name": "sds-input-ui-state-warning",
+      "displayName": "State Warning",
       "category": "inputs",
       "kind": "effect",
-      "description": "Border brightens like voltage spikes",
+      "description": "Set data-state=\"warning\": an amber outline and a pulsing warning icon.",
       "selectors": [
-        ".sds-input-voltage"
+        ".sds-input-ui-state-warning::before",
+        ".sds-input-ui-state-warning:focus-within::before",
+        ".sds-input-ui-state-warning::after",
+        ".sds-input-ui-state-warning[data-state=\"warning\"]::before",
+        ".sds-input-ui-state-warning[data-state=\"warning\"]::after",
+        ".sds-input-ui-state-warning > input"
       ],
       "keyframes": [
-        "sds-voltagePulse"
-      ],
-      "tokensUsed": [],
-      "customProperties": [],
-      "compositorSafe": false,
-      "loop": true,
-      "animatedProps": [
-        "border-color",
-        "box-shadow"
-      ],
-      "animatedPaintProps": [
-        "border-color",
-        "box-shadow"
-      ],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-warn-tilt",
-      "displayName": "Warn Tilt",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Leans one degree with an amber cast, then rights itself — visible uncertainty",
-      "selectors": [
-        ".sds-input-warn-tilt"
-      ],
-      "keyframes": [
-        "sds-inputWarnTilt"
+        "sds-inputUiStateWarning"
       ],
       "tokensUsed": [
-        "--sds-duration-base",
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-input-icon",
+        "--sds-input-icon-color",
+        "--sds-input-warn",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": true,
+      "animatedProps": [
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-strength-meter",
+      "displayName": "Strength Meter",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "A red, amber and green bar follows --sds-input-level (0 to 4), like a password meter.",
+      "selectors": [
+        ".sds-input-ui-strength-meter::before",
+        ".sds-input-ui-strength-meter:focus-within::before",
+        ".sds-input-ui-strength-meter",
+        ".sds-input-ui-strength-meter::after"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-input-bad",
+        "--sds-input-level",
+        "--sds-input-ok",
+        "--sds-input-warn",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-stripe-march",
+      "displayName": "Stripe March",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "Faint diagonal stripes march across the field while focused.",
+      "selectors": [
+        ".sds-input-ui-stripe-march",
+        ".sds-input-ui-stripe-march::before",
+        ".sds-input-ui-stripe-march:focus-within::before"
+      ],
+      "keyframes": [
+        "sds-inputUiStripeMarch"
+      ],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": true,
+      "animatedProps": [
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-tint-fade",
+      "displayName": "Tint Fade",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "The field fades to a light tint on focus.",
+      "selectors": [
+        ".sds-input-ui-tint-fade::before",
+        ".sds-input-ui-tint-fade:focus-within::before",
+        ".sds-input-ui-tint-fade::after",
+        ".sds-input-ui-tint-fade:focus-within::after"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-top-bar",
+      "displayName": "Top Bar",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "An accent bar sweeps across the top edge on focus.",
+      "selectors": [
+        ".sds-input-ui-top-bar",
+        ".sds-input-ui-top-bar::before",
+        ".sds-input-ui-top-bar:focus-within::before"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-valid-check",
+      "displayName": "Valid Check",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "A check mark pops in when the typed value is valid (use type, required or pattern).",
+      "selectors": [
+        ".sds-input-ui-valid-check::before",
+        ".sds-input-ui-valid-check:focus-within::before",
+        ".sds-input-ui-valid-check::after",
+        ".sds-input-ui-valid-check:has(> input:not(:placeholder-shown):valid)::after",
+        ".sds-input-ui-valid-check > input"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-spring",
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-input-icon",
+        "--sds-input-icon-color",
+        "--sds-input-ok",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-valid-ring",
+      "displayName": "Valid Ring",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "A green outline appears around the field when its value is valid.",
+      "selectors": [
+        ".sds-input-ui-valid-ring::before",
+        ".sds-input-ui-valid-ring:focus-within::before",
+        ".sds-input-ui-valid-ring::after",
+        ".sds-input-ui-valid-ring:has(> input:not(:placeholder-shown):valid)::after"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-input-ok",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": true,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "focus",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-input-ui-vignette-glow",
+      "displayName": "Vignette Glow",
+      "category": "inputs",
+      "kind": "effect",
+      "description": "A soft glow gathers around the inside edge of the field on focus.",
+      "selectors": [
+        ".sds-input-ui-vignette-glow",
+        ".sds-input-ui-vignette-glow::before",
+        ".sds-input-ui-vignette-glow:focus-within::before"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
         "--sds-ease-standard"
       ],
       "customProperties": [],
       "compositorSafe": true,
       "loop": false,
-      "animatedProps": [
-        "filter",
-        "transform"
-      ],
+      "animatedProps": [],
       "animatedPaintProps": [],
       "animatedLayoutProps": [],
       "requiresCharSplit": false,
       "requiresChildren": false,
-      "inputWrap": false,
+      "inputWrap": true,
       "requiresJs": false,
       "jsEngine": null,
-      "trigger": "load",
+      "trigger": "focus",
       "deprecated": false,
       "aliasOf": null,
       "sinceVersion": "4.0.3"
     },
     {
-      "name": "sds-input-waveform",
-      "displayName": "Waveform",
+      "name": "sds-input-ui-voice-wave",
+      "displayName": "Voice Wave",
       "category": "inputs",
       "kind": "effect",
-      "description": "Field animates its border colour, on a loop (1.6s).",
+      "description": "Five bars bounce like a voice wave at the end of the field on focus.",
       "selectors": [
-        ".sds-input-waveform"
+        ".sds-input-ui-voice-wave:focus-within",
+        ".sds-input-ui-voice-wave::before",
+        ".sds-input-ui-voice-wave::after",
+        ".sds-input-ui-voice-wave:focus-within::before",
+        ".sds-input-ui-voice-wave:focus-within::after"
       ],
       "keyframes": [
-        "sds-inputWaveform"
+        "sds-inputUiVoiceWave"
       ],
       "tokensUsed": [],
-      "customProperties": [],
-      "compositorSafe": false,
-      "loop": true,
-      "animatedProps": [
-        "border-color",
-        "transform"
+      "customProperties": [
+        "--sds-input-accent",
+        "--sds-primary"
       ],
-      "animatedPaintProps": [
-        "border-color"
-      ],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-zap",
-      "displayName": "Zap",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Field animates its skew, shadow and border colour, on a loop (3s).",
-      "selectors": [
-        ".sds-input-zap"
-      ],
-      "keyframes": [
-        "sds-inputZap"
-      ],
-      "tokensUsed": [
-        "--sds-duration-dramatic"
-      ],
-      "customProperties": [],
-      "compositorSafe": false,
-      "loop": true,
-      "animatedProps": [
-        "border-color",
-        "box-shadow",
-        "transform"
-      ],
-      "animatedPaintProps": [
-        "border-color",
-        "box-shadow"
-      ],
-      "animatedLayoutProps": [],
-      "requiresCharSplit": false,
-      "requiresChildren": false,
-      "inputWrap": false,
-      "requiresJs": false,
-      "jsEngine": null,
-      "trigger": "load",
-      "deprecated": false,
-      "aliasOf": null,
-      "sinceVersion": "4.0.3"
-    },
-    {
-      "name": "sds-input-zoom-focus",
-      "displayName": "Zoom Focus",
-      "category": "inputs",
-      "kind": "effect",
-      "description": "Camera-focus on the field: a breath of blur clears as it sharpens and brightens",
-      "selectors": [
-        ".sds-input-zoom-focus:focus"
-      ],
-      "keyframes": [
-        "sds-inputZoomFocus"
-      ],
-      "tokensUsed": [
-        "--sds-duration-instant",
-        "--sds-ease-standard"
-      ],
-      "customProperties": [],
       "compositorSafe": true,
-      "loop": false,
+      "loop": true,
       "animatedProps": [
-        "filter",
         "transform"
       ],
       "animatedPaintProps": [],
       "animatedLayoutProps": [],
       "requiresCharSplit": false,
       "requiresChildren": false,
-      "inputWrap": false,
+      "inputWrap": true,
       "requiresJs": false,
       "jsEngine": null,
       "trigger": "focus",
