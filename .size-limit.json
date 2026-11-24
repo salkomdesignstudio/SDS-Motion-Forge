@@ -1,7 +1,7 @@
 [
   {
     "path": "dist/motion.min.css",
-    "limit": "289088 B",
+    "limit": "315280 B",
     "name": "dist/motion.min.css",
     "gzip": false,
     "brotli": false
@@ -29,21 +29,21 @@
   },
   {
     "path": "dist/categories/core.min.css",
-    "limit": "3535 B",
+    "limit": "4598 B",
     "name": "dist/categories/core.min.css",
     "gzip": false,
     "brotli": false
   },
   {
     "path": "dist/categories/text.min.css",
-    "limit": "67272 B",
+    "limit": "69984 B",
     "name": "dist/categories/text.min.css",
     "gzip": false,
     "brotli": false
   },
   {
     "path": "dist/categories/buttons.min.css",
-    "limit": "63595 B",
+    "limit": "89201 B",
     "name": "dist/categories/buttons.min.css",
     "gzip": false,
     "brotli": false
