@@ -1058,6 +1058,9 @@
             <button type="button" class="fw-tab" data-panel="fw-vue">Vue</button>
             <button type="button" class="fw-tab" data-panel="fw-angular">Angular</button>
             <button type="button" class="fw-tab" data-panel="fw-svelte">Svelte</button>
+            <button type="button" class="fw-tab" data-panel="fw-wordpress">WordPress</button>
+            <button type="button" class="fw-tab" data-panel="fw-gatsby">Gatsby</button>
+            <button type="button" class="fw-tab" data-panel="fw-php">PHP</button>
             <button type="button" class="fw-tab" data-panel="fw-tailwind">Tailwind</button>
             <button type="button" class="fw-tab" data-panel="fw-postcss">PostCSS</button>
           </div>
@@ -1102,6 +1105,62 @@
 
 <span class="ct">&lt;h1</span> <span class="ck">class</span>=<span class="cs">"sds-elastic-bounce"</span><span class="ct">&gt;</span>Hello Svelte<span class="ct">&lt;/h1&gt;</span></pre>
             </div>
+          </div>
+
+          <div class="fw-panel" id="fw-wordpress">
+            <div class="codeblock">
+              <div class="codeblock-head"><span class="codeblock-lang">PHP — wp-content/mu-plugins/sds-motion-forge.php</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+              <pre>&lt;?php
+add_action( 'wp_enqueue_scripts', function () {
+  wp_enqueue_style(
+    'sds-motion-forge',
+    'https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge@5.1.0/dist/motion.min.css',
+    array(),
+    null
+  );
+} );</pre>
+            </div>
+            <div class="codeblock">
+              <div class="codeblock-head"><span class="codeblock-lang">Block editor — Advanced → Additional CSS class(es)</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+              <pre>Heading block      sds-aurora-text
+Buttons block      sds-btn-amp
+Group block        sds-card-stack-pop
+
+&lt;!-- Custom HTML block: for effects that need letter spans --&gt;
+&lt;h2 class="sds-spring-drop"&gt;
+  &lt;span class="sds-char" style="--i:0"&gt;S&lt;/span&gt;&lt;span class="sds-char" style="--i:1"&gt;p&lt;/span&gt;…
+&lt;/h2&gt;</pre>
+            </div>
+            <p class="doc-sec-sub">Tested with WordPress (latest, Twenty Twenty-Five) on PHP 8.3 and Motion Forge 5.1.0. The class you type under Additional CSS class lands on the block’s outer element; on a Buttons block that is the wrapper around the link. Effects that split text into letters need the spans written by hand, in a Custom HTML block. The same snippet is in <code>examples/wordpress/</code>.</p>
+          </div>
+
+          <div class="fw-panel" id="fw-gatsby">
+            <div class="codeblock">
+              <div class="codeblock-head"><span class="codeblock-lang">JS — gatsby-browser.js</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+              <pre>import "@salkomdesignstudio/sds-motion-forge/dist/motion.min.css";</pre>
+            </div>
+            <div class="codeblock">
+              <div class="codeblock-head"><span class="codeblock-lang">JSX — src/pages/index.js</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+              <pre>export default function Home() {
+  return &lt;h1 className="sds-aurora-text"&gt;Hello Gatsby&lt;/h1&gt;;
+}</pre>
+            </div>
+            <p class="doc-sec-sub">Tested with Gatsby 5.14 (<code>gatsby build</code>) and Motion Forge 5.1.0: the stylesheet is bundled into the build and the classes animate. Install with <code>npm i @salkomdesignstudio/sds-motion-forge</code>. See <code>examples/gatsby/</code>.</p>
+          </div>
+
+          <div class="fw-panel" id="fw-php">
+            <div class="codeblock">
+              <div class="codeblock-head"><span class="codeblock-lang">PHP — any template</span><button type="button" class="cb-copy" onclick="copyCB(this)">Copy</button></div>
+              <pre>&lt;link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge@5.1.0/dist/motion.min.css"&gt;
+
+&lt;h1 class="sds-aurora-text"&gt;&lt;?php echo htmlspecialchars( $title ); ?&gt;&lt;/h1&gt;
+
+&lt;?php foreach ( $cards as $label ) : ?&gt;
+  &lt;div class="sds-card-stack-pop"&gt;&lt;?php echo htmlspecialchars( $label ); ?&gt;&lt;/div&gt;
+&lt;?php endforeach; ?&gt;</pre>
+            </div>
+            <p class="doc-sec-sub">Tested on PHP 8.3 with Motion Forge 5.1.0. Motion Forge is a stylesheet, so a PHP template only has to print the class names; works the same in Laravel Blade, Twig or Symfony templates. See <code>examples/php/</code>.</p>
           </div>
 
           <div class="fw-panel" id="fw-tailwind">

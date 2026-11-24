@@ -74,7 +74,7 @@ GSAP and Framer Motion are JavaScript animation engines rather than CSS class li
 
 ## Frameworks
 
-It is plain CSS, so it works anywhere a `class` attribute does — import the CSS once, then use `className` (React, Next.js), `class` (Angular, Vue, Svelte, Astro) or the class in a Tailwind project. Step-by-step snippets for every effect: [/animations/](https://sds-motion-forge.netlify.app/animations/).
+It is plain CSS, so it works anywhere a `class` attribute does — import the CSS once, then use `className` (React, Next.js), `class` (Angular, Vue, Svelte, Astro, WordPress, PHP templates) or the class in a Tailwind project. Gatsby, WordPress and PHP are tested: see the sections below. Step-by-step snippets for every effect: [/animations/](https://sds-motion-forge.netlify.app/animations/).
 
 Typed wrappers for React, Angular, Tailwind and Web Components live in [`packages/`](packages) in this repository. They are **not yet published to npm**; use the CSS directly until they are.
 
@@ -305,6 +305,34 @@ Add to `styles.scss` or list in `angular.json` under `architect.build.options.st
 </script>
 
 <h1 class="sds-elastic-bounce">Hello Svelte</h1>
+```
+
+#### WordPress
+
+Load the stylesheet from a small plugin or your theme's `functions.php`, then type the class into a block's **Advanced → Additional CSS class(es)**. Tested with WordPress (latest, Twenty Twenty-Five) on PHP 8.3. The class lands on the block's outer element; effects that split text into letters need the spans written by hand in a Custom HTML block. Ready-made file: [`examples/wordpress/sds-motion-forge.php`](examples/wordpress/sds-motion-forge.php).
+
+```php
+add_action( 'wp_enqueue_scripts', function () {
+  wp_enqueue_style( 'sds-motion-forge', 'https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge@5.1.0/dist/motion.min.css', array(), null );
+} );
+```
+
+#### Gatsby
+
+Tested with Gatsby 5.14 (`gatsby build`). Import the CSS once in `gatsby-browser.js`, then use `className` anywhere. Example: [`examples/gatsby/`](examples/gatsby).
+
+```js
+// gatsby-browser.js
+import "@salkomdesignstudio/sds-motion-forge/dist/motion.min.css";
+```
+
+#### PHP (plain, Laravel Blade, Twig)
+
+A PHP template only has to print the class names. Tested on PHP 8.3. Example: [`examples/php/index.php`](examples/php/index.php).
+
+```php
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge@5.1.0/dist/motion.min.css">
+<h1 class="sds-aurora-text"><?php echo htmlspecialchars( $title ); ?></h1>
 ```
 
 #### Tailwind CSS

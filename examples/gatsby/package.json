@@ -1,0 +1,13 @@
+{
+  "name": "sds-motion-forge-gatsby-example",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Motion Forge in a Gatsby 5 site. Tested with gatsby build.",
+  "scripts": { "develop": "gatsby develop", "build": "gatsby build", "serve": "gatsby serve" },
+  "dependencies": {
+    "@salkomdesignstudio/sds-motion-forge": "5.1.0",
+    "gatsby": "^5.14.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
