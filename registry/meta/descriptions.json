@@ -2106,124 +2106,244 @@
     "sinceVersion": "5.1.0",
     "source": "authored"
   },
-  "sds-gsap-text-scrub": {
+  "sds-x-text-scrub": {
     "description": "Words light up one by one as you scroll past the paragraph.",
     "displayName": "Text Scrub",
     "source": "authored"
   },
-  "sds-gsap-text-wave": {
+  "sds-x-text-wave": {
     "description": "Letters rise into place in a wave with a small overshoot when the text scrolls into view.",
     "displayName": "Text Wave",
     "source": "authored"
   },
-  "sds-gsap-text-mask": {
+  "sds-x-text-mask": {
     "description": "Words slide up out of an invisible mask, one after another.",
     "displayName": "Text Mask",
     "source": "authored"
   },
-  "sds-gsap-text-scramble": {
+  "sds-x-text-scramble": {
     "description": "The text decodes out of random characters, left to right.",
     "displayName": "Text Scramble",
     "source": "authored"
   },
-  "sds-gsap-text-count": {
+  "sds-x-text-count": {
     "description": "A number counts up to the value in data-sds-to when it scrolls into view.",
     "displayName": "Text Count",
     "source": "authored"
   },
-  "sds-gsap-text-marquee": {
-    "description": "A seamless looping marquee that speeds up while you scroll.",
+  "sds-x-text-marquee": {
+    "description": "A seamless, endless ticker of text.",
     "displayName": "Text Marquee",
     "source": "authored"
   },
-  "sds-gsap-card-tilt": {
+  "sds-x-text-typewriter": {
+    "description": "The text types itself out, letter by letter, with a blinking caret.",
+    "displayName": "Text Typewriter",
+    "source": "authored"
+  },
+  "sds-x-text-cycle": {
+    "description": "Cycles through a list of words, each sliding and blurring into the next.",
+    "displayName": "Text Cycle",
+    "source": "authored"
+  },
+  "sds-x-text-blur": {
+    "description": "Letters sharpen out of a heavy blur one after another.",
+    "displayName": "Text Blur",
+    "source": "authored"
+  },
+  "sds-x-text-drop": {
+    "description": "Letters fall from above and bounce into place, starting from the middle of the line.",
+    "displayName": "Text Drop",
+    "source": "authored"
+  },
+  "sds-x-text-sweep": {
+    "description": "A bright band of colour sweeps through the letters on a loop.",
+    "displayName": "Text Sweep",
+    "source": "authored"
+  },
+  "sds-x-text-flip": {
+    "description": "Letters flip up around their base in 3D, in a random order.",
+    "displayName": "Text Flip",
+    "source": "authored"
+  },
+  "sds-x-text-highlight": {
+    "description": "A marker highlight is drawn behind each word, one by one.",
+    "displayName": "Text Highlight",
+    "source": "authored"
+  },
+  "sds-x-text-glitch": {
+    "description": "A short red and cyan glitch jolts the text now and then.",
+    "displayName": "Text Glitch",
+    "source": "authored"
+  },
+  "sds-x-text-skew": {
+    "description": "The text leans one way or the other depending on how fast you scroll.",
+    "displayName": "Text Skew",
+    "source": "authored"
+  },
+  "sds-x-text-circle": {
+    "description": "Letters are set on a circle that turns slowly.",
+    "displayName": "Text Circle",
+    "source": "authored"
+  },
+  "sds-x-card-tilt": {
     "description": "The card tilts in 3D towards the pointer and springs back when it leaves.",
     "displayName": "Card Tilt",
     "source": "authored"
   },
-  "sds-gsap-card-magnetic": {
+  "sds-x-card-magnetic": {
     "description": "The card is pulled towards the pointer and snaps back with an elastic bounce.",
     "displayName": "Card Magnetic",
     "source": "authored"
   },
-  "sds-gsap-card-spotlight": {
+  "sds-x-card-spotlight": {
     "description": "A soft spotlight follows the pointer across the card surface.",
     "displayName": "Card Spotlight",
     "source": "authored"
   },
-  "sds-gsap-card-fan": {
-    "description": "A stack of cards fans out like a hand of playing cards when it scrolls into view.",
+  "sds-x-card-fan": {
+    "description": "A pile of cards fans out like a hand of playing cards when it scrolls into view.",
     "displayName": "Card Fan",
     "source": "authored"
   },
-  "sds-gsap-card-flip-in": {
-    "description": "Cards flip in one by one around the vertical axis when they scroll into view.",
-    "displayName": "Card Flip In",
-    "source": "authored"
-  },
-  "sds-gsap-card-depth": {
+  "sds-x-card-depth": {
     "description": "The layers inside the card shift by different amounts as the pointer moves, for a sense of depth.",
     "displayName": "Card Depth",
     "source": "authored"
   },
-  "sds-gsap-loader-orbit": {
+  "sds-x-card-deck": {
+    "description": "A deck of cards: click the top card and it flies off to the back of the pile.",
+    "displayName": "Card Deck",
+    "source": "authored"
+  },
+  "sds-x-card-carousel": {
+    "description": "Cards sit on a turning 3D ring that speeds up and slows down with the pointer.",
+    "displayName": "Card Carousel",
+    "source": "authored"
+  },
+  "sds-x-card-shuffle": {
+    "description": "Click the group and the cards glide to new random positions.",
+    "displayName": "Card Shuffle",
+    "source": "authored"
+  },
+  "sds-x-card-dim": {
+    "description": "The card under the pointer grows while its neighbours dim and blur.",
+    "displayName": "Card Dim",
+    "source": "authored"
+  },
+  "sds-x-loader-orbit": {
     "description": "Three dots orbit a centre point, each with its own eased rhythm.",
     "displayName": "Loader Orbit",
     "source": "authored"
   },
-  "sds-gsap-loader-chase": {
+  "sds-x-loader-chase": {
     "description": "Three dots bounce in a chase, one after another.",
     "displayName": "Loader Chase",
     "source": "authored"
   },
-  "sds-gsap-loader-equalizer": {
+  "sds-x-loader-equalizer": {
     "description": "Five bars bounce like an audio equalizer, each at its own random pace.",
     "displayName": "Loader Equalizer",
     "source": "authored"
   },
-  "sds-gsap-loader-ring": {
+  "sds-x-loader-elastic": {
     "description": "A ring spins with an elastic snap and breathes in and out.",
-    "displayName": "Loader Ring",
+    "displayName": "Loader Elastic",
     "source": "authored"
   },
-  "sds-gsap-loader-count": {
-    "description": "A percentage counts from 0 to 100 on a loop and exposes the value as a progress bar.",
-    "displayName": "Loader Count",
-    "source": "authored"
-  },
-  "sds-gsap-loader-blob": {
+  "sds-x-loader-blob": {
     "description": "A blob squashes and stretches as it wobbles.",
     "displayName": "Loader Blob",
     "source": "authored"
   },
-  "sds-gsap-scroll-pin": {
+  "sds-x-loader-pendulum": {
+    "description": "Five balls swing like a Newton's cradle.",
+    "displayName": "Loader Pendulum",
+    "source": "authored"
+  },
+  "sds-x-loader-dash": {
+    "description": "A circle draws and erases itself as it spins.",
+    "displayName": "Loader Dash",
+    "source": "authored"
+  },
+  "sds-x-loader-clock": {
+    "description": "Clock hands sweep around a dial at different speeds.",
+    "displayName": "Loader Clock",
+    "source": "authored"
+  },
+  "sds-x-loader-steps": {
+    "description": "A progress bar fills in believable steps, then starts over.",
+    "displayName": "Loader Steps",
+    "source": "authored"
+  },
+  "sds-x-loader-bounce": {
+    "description": "A ball bounces with a squash on landing, and its shadow shrinks as it rises.",
+    "displayName": "Loader Bounce",
+    "source": "authored"
+  },
+  "sds-x-loader-radar": {
+    "description": "A radar sweep turns round and blips appear as it passes.",
+    "displayName": "Loader Radar",
+    "source": "authored"
+  },
+  "sds-x-scroll-pin": {
     "description": "The section stays pinned on screen while you scroll through its length.",
     "displayName": "Scroll Pin",
     "source": "authored"
   },
-  "sds-gsap-scroll-parallax": {
+  "sds-x-scroll-parallax": {
     "description": "The element drifts slower or faster than the page as you scroll.",
     "displayName": "Scroll Parallax",
     "source": "authored"
   },
-  "sds-gsap-scroll-horizontal": {
+  "sds-x-scroll-horizontal": {
     "description": "The section pins and its row of panels slides sideways as you scroll down.",
     "displayName": "Scroll Horizontal",
     "source": "authored"
   },
-  "sds-gsap-scroll-stagger": {
+  "sds-x-scroll-stagger": {
     "description": "Child elements rise into place in a staggered batch as they enter the viewport.",
     "displayName": "Scroll Stagger",
     "source": "authored"
   },
-  "sds-gsap-scroll-zoom": {
-    "description": "The element grows from a rounded, smaller frame to full size as it scrolls up the screen.",
+  "sds-x-scroll-zoom": {
+    "description": "The element grows from a smaller size to full size as it scrolls up the screen.",
     "displayName": "Scroll Zoom",
     "source": "authored"
   },
-  "sds-gsap-scroll-progress": {
+  "sds-x-scroll-progress": {
     "description": "A bar at the top of the page fills as you read down the document.",
     "displayName": "Scroll Progress",
+    "source": "authored"
+  },
+  "sds-x-scroll-stack": {
+    "description": "Sections stick one on top of another as they reach the top, each shrinking a little as the next arrives.",
+    "displayName": "Scroll Stack",
+    "source": "authored"
+  },
+  "sds-x-scroll-curtain": {
+    "description": "A curtain opens from the middle outward, revealing the element as it scrolls up.",
+    "displayName": "Scroll Curtain",
+    "source": "authored"
+  },
+  "sds-x-scroll-rotate": {
+    "description": "The element turns as you scroll, by as many full turns as you set.",
+    "displayName": "Scroll Rotate",
+    "source": "authored"
+  },
+  "sds-x-scroll-color": {
+    "description": "The background and text colour blend from one pair to another as the section scrolls into place.",
+    "displayName": "Scroll Color",
+    "source": "authored"
+  },
+  "sds-x-scroll-snap": {
+    "description": "Scrolling snaps from one section to the next, with an eased glide.",
+    "displayName": "Scroll Snap",
+    "source": "authored"
+  },
+  "sds-x-scroll-slides": {
+    "description": "The block pins and its slides cross-fade one after another as you scroll.",
+    "displayName": "Scroll Slides",
     "source": "authored"
   }
 }

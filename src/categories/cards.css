@@ -1875,24 +1875,24 @@
 }
 
 /* ============================================================
-   GSAP engine classes (need the optional sds-gsap.min.js)
-   Base styles only: the motion is driven by GSAP, see src/sds-gsap.js
+   Extended effects (need the optional sds-x.min.js)
+   Base styles only: the motion is driven by the script, see src/sds-x.js
    ============================================================ */
 
-.sds-gsap-card-tilt {
+.sds-x-card-tilt {
   will-change: transform;
 }
 
-.sds-gsap-card-magnetic {
+.sds-x-card-magnetic {
   will-change: transform;
 }
 
-.sds-gsap-card-spotlight {
+.sds-x-card-spotlight {
   position: relative;
   overflow: hidden;
 }
 
-.sds-gsap-card-spotlight::before {
+.sds-x-card-spotlight::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -1901,19 +1901,36 @@
   opacity: var(--sds-o, 0);
 }
 
-.sds-gsap-card-fan {
+.sds-x-card-fan {
   display: flex;
   justify-content: center;
   gap: 0.75em;
 }
 
-.sds-gsap-card-flip-in {
-  display: flex;
-  justify-content: center;
-  gap: 0.75em;
-}
-
-.sds-gsap-card-depth {
+.sds-x-card-depth {
   position: relative;
   overflow: hidden;
+}
+
+.sds-x-card-deck {
+  position: relative;
+  display: block;
+  min-height: 5em;
+  cursor: pointer;
+}
+
+.sds-x-card-carousel {
+  display: block;
+}
+
+.sds-x-card-shuffle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  cursor: pointer;
+}
+
+.sds-x-card-dim {
+  display: flex;
+  gap: 0.75em;
 }

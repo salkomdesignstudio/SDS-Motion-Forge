@@ -44,17 +44,9 @@ const PAINT_ONLY = new Set([
   "outline-color", "color", "caret-color", "visibility",
 ]);
 
-/* GSAP engine effects (optional sds-gsap.min.js): class name -> trigger */
-const GSAP = {
-  "sds-gsap-text-scrub": "scroll", "sds-gsap-text-wave": "scroll", "sds-gsap-text-mask": "scroll",
-  "sds-gsap-text-scramble": "scroll", "sds-gsap-text-count": "scroll", "sds-gsap-text-marquee": "load",
-  "sds-gsap-card-tilt": "cursor", "sds-gsap-card-magnetic": "cursor", "sds-gsap-card-spotlight": "cursor",
-  "sds-gsap-card-fan": "scroll", "sds-gsap-card-flip-in": "scroll", "sds-gsap-card-depth": "cursor",
-  "sds-gsap-loader-orbit": "load", "sds-gsap-loader-chase": "load", "sds-gsap-loader-equalizer": "load",
-  "sds-gsap-loader-ring": "load", "sds-gsap-loader-count": "load", "sds-gsap-loader-blob": "load",
-  "sds-gsap-scroll-pin": "scroll", "sds-gsap-scroll-parallax": "scroll", "sds-gsap-scroll-horizontal": "scroll",
-  "sds-gsap-scroll-stagger": "scroll", "sds-gsap-scroll-zoom": "scroll", "sds-gsap-scroll-progress": "scroll",
-};
+/* Extended effects (optional sds-x.min.js): class name -> trigger. The list lives in scripts/docs/x-demos.js. */
+const XFX = {};
+for (const [name, d] of Object.entries(require("./docs/x-demos").D)) XFX[name] = d.trigger === "scrolls" ? "scroll" : d.trigger === "runs" ? "load" : "cursor";
 
 const INTERACTIVE = {
   "sds-word-morph": "load",
@@ -81,7 +73,7 @@ const INFRA = new Set(["sds-play", "sds-in", "sds-js", "sds-scroll-auto", "sds-c
 function categorize(cls, sourceFile) {
   if (MODIFIER_RE.test(cls)) return "modifiers";
   if (INFRA.has(cls)) return "infrastructure";
-  if (INTERACTIVE[cls] || GSAP[cls]) return "interactive";
+  if (INTERACTIVE[cls] || XFX[cls]) return "interactive";
   if (/^sds-card-/.test(cls)) return "cards";
   if (/^sds-loader-/.test(cls)) return "loaders";
   if (/^sds-scroll-/.test(cls)) return "scroll";
@@ -232,7 +224,7 @@ function collectVars(value, set) {
 
     let trigger;
     if (INTERACTIVE[name]) trigger = INTERACTIVE[name];
-    else if (GSAP[name]) trigger = GSAP[name];
+    else if (XFX[name]) trigger = XFX[name];
     else if (category === "scroll") trigger = "scroll";
     else if (e.triggers.has("focus")) trigger = "focus";
     else if (e.triggers.has("hover")) trigger = "hover";
@@ -268,8 +260,8 @@ function collectVars(value, set) {
          also animate the host (e.g. fill-wave) work without children */
       requiresChildren: e.targetsChildren && !e.requiresCharSplit && !e.hostAnimates,
       inputWrap: false,
-      requiresJs: !!(INTERACTIVE[name] || GSAP[name]),
-      jsEngine: GSAP[name] ? "sds-gsap" : INTERACTIVE[name] ? "motion-interactive" : (category === "scroll" ? "sds-scroll (optional)" : null),
+      requiresJs: !!(INTERACTIVE[name] || XFX[name]),
+      jsEngine: XFX[name] ? "sds-x" : INTERACTIVE[name] ? "motion-interactive" : (category === "scroll" ? "sds-scroll (optional)" : null),
       trigger,
       deprecated: false,
       aliasOf: ALIASES[name] || null,

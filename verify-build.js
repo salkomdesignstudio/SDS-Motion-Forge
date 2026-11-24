@@ -18,12 +18,12 @@ const REQUIRED_FILES = [
   path.join(DIST_DIR, "sds-scroll.min.js.map"),
   path.join(DIST_DIR, "motion-interactive.min.js"),
   path.join(DIST_DIR, "motion-interactive.min.js.map"),
-  path.join(DIST_DIR, "sds-gsap.min.js"),
-  path.join(DIST_DIR, "sds-gsap.min.js.map"),
+  path.join(DIST_DIR, "sds-x.min.js"),
+  path.join(DIST_DIR, "sds-x.min.js.map"),
   path.join(SRC_DIR, "motion.css"),
   path.join(SRC_DIR, "sds-scroll.js"),
   path.join(SRC_DIR, "motion-interactive.js"),
-  path.join(SRC_DIR, "sds-gsap.js"),
+  path.join(SRC_DIR, "sds-x.js"),
 ];
 
 const REQUIRED_CLASSES = [

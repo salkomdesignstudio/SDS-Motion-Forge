@@ -559,11 +559,11 @@ module.exports.fragments = function fragments({ S, esc }) {
           </article>
           <article class="j-card" data-reveal="up" data-delay="3">
             <header><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false" width="22" height="22" class="ic-s"><path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z"/></svg></span></header>
-            <div class="j-stat"><b>24</b><span>GSAP effects</span></div>
-            <h3>GSAP by class name</h3>
-            <p>Tilt, magnetic, pinned and horizontal scroll, scrubbed text and more. Add the class and the 5 KB <code>sds-gsap.min.js</code>; it loads GSAP from a CDN only on pages that use one.</p>
-            <ul class="j-list"><li><span class="j-tick" aria-hidden="true"></span><span>Nothing is added to the CSS bundles</span></li></ul>
-            <footer><span class="j-chip">sds-gsap.min.js <b>5 KB gzip</b></span></footer>
+            <div class="j-stat"><b>48</b><span>extended effects</span></div>
+            <h3>More motion, by class name</h3>
+            <p>Tilting and magnetic cards, pinned and horizontal scroll, typed and scrambled text, physics loaders and more. Add the class and the 8 KB <code>sds-x.min.js</code>.</p>
+            <ul class="j-list"><li><span class="j-tick" aria-hidden="true"></span><span>It loads its runtime only on pages that use one; nothing is added to the CSS bundles</span></li></ul>
+            <footer><span class="j-chip">sds-x.min.js <b>8 KB gzip</b></span></footer>
           </article>
         </div>
         <p class="needs-foot">Physics effects use CSS <code>linear()</code> (Chrome 113+, Safari 17.2+, Firefox 112+); older browsers get an approximation. <a href="docs.html#js-needs">Full table in the docs</a></p>

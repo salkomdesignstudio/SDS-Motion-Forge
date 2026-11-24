@@ -28,9 +28,9 @@
     "brotli": false
   },
   {
-    "path": "dist/sds-gsap.min.js",
-    "limit": "16558 B",
-    "name": "sds-gsap.min.js",
+    "path": "dist/sds-x.min.js",
+    "limit": "29907 B",
+    "name": "sds-x.min.js",
     "gzip": false,
     "brotli": false
   },
@@ -71,14 +71,14 @@
   },
   {
     "path": "packages/react/dist/index.js",
-    "limit": "68634 B",
+    "limit": "72050 B",
     "name": "packages/react/dist/index.js",
     "gzip": false,
     "brotli": false
   },
   {
     "path": "packages/elements/dist/index.global.js",
-    "limit": "55178 B",
+    "limit": "58019 B",
     "name": "packages/elements/dist/index.global.js",
     "gzip": false,
     "brotli": false

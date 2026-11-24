@@ -32,7 +32,7 @@ const docs = S.loadDocsData();
 const facts = S.canonicalFacts();
 const all = [...effects, ...interactive].sort((a, b) => a.name.localeCompare(b.name));
 const catById = Object.fromEntries(CATEGORIES.map((c) => [c.id, c]));
-catById.interactive = { id: "interactive", label: "Interactive", singular: "interactive", blurb: "Cursor-reactive text effects (motion-interactive) and GSAP effects for text, cards, loaders and scroll (sds-gsap). Each needs one small optional script." };
+catById.interactive = { id: "interactive", label: "Interactive", singular: "interactive", blurb: "Cursor-reactive text effects and extended script-driven effects for text, cards, loaders and scroll. Each needs one small optional script." };
 
 /* ── which dist CSS files define a class ─────────────────────── */
 const defined = {};
@@ -50,8 +50,8 @@ function cssFor(c) {
 /* ── lookups from docs-data ──────────────────────────────────── */
 const animMeta = {};
 for (const [cat, list] of Object.entries(docs.animations)) for (const a of list) animMeta[a.cls] = { ...a, cat };
-const GSAPD = require("./gsap-demos");
-const isG = (c) => c.jsEngine === "sds-gsap";
+const XD = require("./x-demos");
+const isX = (c) => c.jsEngine === "sds-x";
 const interactiveDesc = {
   "sds-jelly-hover": "Squashes and wobbles on hover like jelly",
   "sds-magnetic-pull": "Characters are pulled toward the cursor",
@@ -81,7 +81,7 @@ const indent = (s, n) => s.split("\n").map((l) => " ".repeat(n) + l).join("\n");
 
 function engineImport(c) {
   if (c.category === "scroll") return `import "${facts.package}/dist/sds-scroll.min.js"; // optional 1.3 KB scroll gate (client-side only)\n`;
-  if (isG(c)) return `import "${facts.package}/dist/sds-gsap.min.js"; // GSAP engine: loads GSAP from a CDN on first use (client-side only)\n`;
+  if (isX(c)) return `import "${facts.package}/dist/sds-x.min.js"; // extended effects script: loads its runtime from a CDN on first use (client-side only)\n`;
   if (c.kind === "interactive") return `import "${facts.package}/dist/motion-interactive.min.js"; // cursor engine (client-side only)\n`;
   return "";
 }
@@ -201,7 +201,7 @@ function clip(s, n) {
 const ICON_REPLAY = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M18.5374 19.5674C16.7844 21.0831 14.4993 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 14.1361 21.3302 16.1158 20.1892 17.7406L17 12H20C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C14.1502 20 16.1022 19.1517 17.5398 17.7716L18.5374 19.5674Z"/></svg>';
 const ICON_SEARCH = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z"/></svg>';
 function tagLabel(c) {
-  if (isG(c)) return "GSAP";
+  if (isX(c)) return "Extended";
   if (c.kind === "interactive") return "Cursor-reactive";
   if (c.trigger === "scroll") return "On scroll";
   if (c.trigger === "focus") return "On focus";
@@ -210,7 +210,7 @@ function tagLabel(c) {
 }
 function badgesFor(c) {
   const out = [];
-  if (isG(c)) out.push('<span class="fx-badge" title="Needs the optional sds-gsap.min.js (it loads GSAP for you)">GSAP</span>');
+  if (isX(c)) out.push('<span class="fx-badge" title="Needs the optional sds-x.min.js">Needs JS</span>');
   else if (c.kind === "interactive") out.push('<span class="fx-badge" title="Needs the optional 7 KB interactive script">Needs JS</span>');
   else if (c.requiresCharSplit) out.push('<span class="fx-badge soft" title="Each letter must be wrapped in a span with a --i index">Needs letter spans</span>');
   else if (c.requiresChildren) out.push('<span class="fx-badge soft" title="Animates the element\'s child elements">Needs child elements</span>');
@@ -303,7 +303,7 @@ function effectPage(c) {
   };
 
   const needsList = [];
-  if (isG(c)) needsList.push(["Needs the GSAP engine", "Add the small <code>sds-gsap.min.js</code> before <code>&lt;/body&gt;</code>. It loads GSAP and ScrollTrigger from a CDN, only on pages that use an <code>sds-gsap</code> class. Without it the element stays static."]);
+  if (isX(c)) needsList.push(["Needs the extended effects script", "Add the small <code>sds-x.min.js</code> before <code>&lt;/body&gt;</code>. It loads its animation runtime from a CDN, only on pages that use an <code>sds-x</code> class. Without it the element stays static."]);
   else if (c.kind === "interactive") needsList.push(["Needs the interactive engine", "Add the 7 KB <code>motion-interactive.min.js</code> before <code>&lt;/body&gt;</code>. Without it the element stays static."]);
   if (c.category === "scroll") needsList.push(["Scroll trigger", "CSS-only in Chrome 115+ with <code>sds-scroll-auto</code>. Other browsers use the 1.3 KB <code>sds-scroll.min.js</code> and <code>data-sds</code>; without either it plays on load."]);
   if (c.requiresCharSplit && c.kind !== "interactive") needsList.push(["Letter spans", "Wrap each letter in <code>&lt;span class=&quot;sds-char&quot; style=&quot;--i:N&quot;&gt;</code> (N = 0, 1, 2…)."]);
@@ -313,13 +313,13 @@ function effectPage(c) {
   const factItems = specs.map(([k, v]) => `<li><b>${k}</b><span>${v}</span></li>`).join("\n");
   const tabIds = snippets.map((x, i) => "tab-" + x.id);
   const html =
-    head({ title, description, path: p, jsonld, extraCss: css, wide: true, extraJs: isG(c) ? ["/dist/sds-gsap.min.js"] : c.kind === "interactive" ? ["/dist/motion-interactive.min.js"] : [] }) +
+    head({ title, description, path: p, jsonld, extraCss: css, wide: true, extraJs: isX(c) ? ["/dist/sds-x.min.js"] : c.kind === "interactive" ? ["/dist/motion-interactive.min.js"] : [] }) +
     `${breadcrumbNav(crumb)}
 <section class="fx-hero" data-fx>
 <div>
 <p class="chipline"><span class="pill">${esc(cat.label)} animation</span><span class="pill plain mono">.${c.name}</span></p>
 <h1>${esc(c.displayName)}</h1>
-<p class="lead">${esc(d)}. Add the class <code>.${c.name}</code> to any element — it ${isG(c) ? "is driven by GSAP and " + GSAPD.D[c.name].trigger : c.kind === "interactive" ? "reacts to the cursor" : esc(loop) + " " + esc(trig)}${isG(c) ? ". It needs the small <code>sds-gsap.min.js</code> engine, which loads GSAP from a CDN on first use; nothing runs under reduced motion" : c.kind === "interactive" ? ". It needs the 7 KB <code>motion-interactive.min.js</code> engine, which also splits the text into letters for you; without the engine the element stays static" : c.category === "scroll" ? ", using native scroll-driven animation with <code>sds-scroll-auto</code> (Chrome 115+) or the 1.3 KB scroll script in other browsers" : ", with no JavaScript"}.${c.requiresCharSplit && c.kind !== "interactive" ? " Wrap each letter in <code>&lt;span class=&quot;sds-char&quot; style=&quot;--i:N&quot;&gt;</code> (N = 0, 1, 2…)." : ""}${c.requiresChildren ? " It animates the element's child elements, so it needs children to be visible." : ""}${c.inputWrap ? " It needs the documented wrapper element around the input." : ""}</p>
+<p class="lead">${esc(d)}. Add the class <code>.${c.name}</code> to any element — it ${isX(c) ? "is script-driven and " + XD.D[c.name].trigger : c.kind === "interactive" ? "reacts to the cursor" : esc(loop) + " " + esc(trig)}${isX(c) ? ". It needs the small <code>sds-x.min.js</code> script, which loads its runtime from a CDN on first use; nothing runs under reduced motion" : c.kind === "interactive" ? ". It needs the 7 KB <code>motion-interactive.min.js</code> engine, which also splits the text into letters for you; without the engine the element stays static" : c.category === "scroll" ? ", using native scroll-driven animation with <code>sds-scroll-auto</code> (Chrome 115+) or the 1.3 KB scroll script in other browsers" : ", with no JavaScript"}.${c.requiresCharSplit && c.kind !== "interactive" ? " Wrap each letter in <code>&lt;span class=&quot;sds-char&quot; style=&quot;--i:N&quot;&gt;</code> (N = 0, 1, 2…)." : ""}${c.requiresChildren ? " It animates the element's child elements, so it needs children to be visible." : ""}${c.inputWrap ? " It needs the documented wrapper element around the input." : ""}</p>
 <div class="fx-badges"><span class="pill plain">${esc(tagLabel(c))}</span>${c.compositorSafe ? '<span class="pill plain">Compositor-only</span>' : ""}${S.isUnreleased(c) ? '<span class="pill">New, not published yet</span>' : ""}${badgesFor(c)}</div>
 <div class="fx-actions"><button type="button" class="btn2 primary" data-copy=".${c.name}">Copy class name</button><a class="btn2" href="#code">Copy-paste code</a><button type="button" class="btn2" data-replay>Replay</button></div>
 </div>
@@ -412,13 +412,13 @@ function categoryPage(cat) {
       },
     ],
   };
-  const importLine = cat.id === "interactive" ? `import "${facts.package}/dist/motion-interactive.min.js";\nimport "${facts.package}/dist/sds-gsap.min.js";` : `import "${facts.package}/categories/${cat.id}";`;
+  const importLine = cat.id === "interactive" ? `import "${facts.package}/dist/motion-interactive.min.js";\nimport "${facts.package}/dist/sds-x.min.js";` : `import "${facts.package}/categories/${cat.id}";`;
   const cdnLine = cat.id === "interactive" ? `${config.cdn}/motion-interactive.min.js` : `${config.cdn}/categories/${cat.id}.min.css`;
-  const cdnTag = cat.id === "interactive" ? `<script src="${cdnLine}" defer></script>\n<script src="${config.cdn}/sds-gsap.min.js" defer></script>` : `<link rel="stylesheet" href="${cdnLine}" />`;
+  const cdnTag = cat.id === "interactive" ? `<script src="${cdnLine}" defer></script>\n<script src="${config.cdn}/sds-x.min.js" defer></script>` : `<link rel="stylesheet" href="${cdnLine}" />`;
   const groups = [...CATEGORIES, catById.interactive];
   const nav = groups.map((g) => { const n = (g.id === "interactive" ? interactive : byCategory[g.id]).length; return `<li><a href="${S.categoryPath(g.id)}"${g.id === cat.id ? ' aria-current="page"' : ""}>${esc(g.label)} <em>${n}</em></a></li>`; }).join("");
   const html =
-    head({ title, description, path: p, jsonld, extraCss: cssLinksFor(list), wide: true, extraJs: cat.id === "interactive" ? ["/dist/motion-interactive.min.js", "/dist/sds-gsap.min.js"] : [] }) +
+    head({ title, description, path: p, jsonld, extraCss: cssLinksFor(list), wide: true, extraJs: cat.id === "interactive" ? ["/dist/motion-interactive.min.js", "/dist/sds-x.min.js"] : [] }) +
     `${breadcrumbNav(crumb)}
 <section class="cat-hero">
 <div class="cat-main">
@@ -450,7 +450,7 @@ ${list.map((c) => fxCard(c, 2)).join("\n")}
 function indexPage() {
   const p = "/animations/";
   const title = `All ${all.length} CSS Animations | SDS Motion Forge`;
-  const description = `Every ${facts.name} animation on one page: ${S.effects.length} CSS-only effects in four categories plus ${interactive.length} interactive and GSAP effects. One class name each.`;
+  const description = `Every ${facts.name} animation on one page: ${S.effects.length} CSS-only effects in four categories plus ${interactive.length} interactive and extended effects. One class name each.`;
   const crumb = [["Home", "/"], ["Animations", p]];
   const jsonld = { "@context": "https://schema.org", "@graph": [crumbs(crumb), { "@type": "CollectionPage", "@id": urlOf(p) + "#collection", name: title, description, url: urlOf(p), isPartOf: { "@id": urlOf("/#website") } }] };
   const groups = [...CATEGORIES, catById.interactive];
@@ -473,8 +473,8 @@ function indexPage() {
 <div>
 <p class="chipline"><span class="pill">Animations</span><span class="pill plain mono">v${facts.version}</span></p>
 <h1>All ${all.length} CSS animations</h1>
-<p class="lead">${S.effects.length} CSS-only effects in four categories, plus ${interactive.length} interactive and GSAP effects. Each one is a single class name. Open any category to see every effect playing live.</p>
-<ul class="stats"><li class="pill plain">${S.effects.length} CSS effects</li><li class="pill plain">${interactive.length} interactive + GSAP</li><li class="pill plain">MIT licensed</li></ul>
+<p class="lead">${S.effects.length} CSS-only effects in four categories, plus ${interactive.length} interactive and extended effects. Each one is a single class name. Open any category to see every effect playing live.</p>
+<ul class="stats"><li class="pill plain">${S.effects.length} CSS effects</li><li class="pill plain">${interactive.length} interactive + extended</li><li class="pill plain">MIT licensed</li></ul>
 </div>
 <div class="import-card"><h2>Search every animation</h2>
 <label class="search2"><span class="sr-only">Search all animations</span>${ICON_SEARCH}<input id="allSearch" type="search" placeholder="Try &quot;bounce&quot;, &quot;glow&quot; or &quot;loader&quot;" autocomplete="off" /><kbd aria-hidden="true">/</kbd></label>

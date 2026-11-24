@@ -1,6 +1,6 @@
 # SDS Motion Forge
 
-> 417 CSS animations in four categories (text, cards, loaders, scroll) plus 31 cursor-reactive effects. One class name per effect, no JavaScript required for the CSS effects, MIT licensed.
+> 417 CSS animations in four categories (text, cards, loaders, scroll) plus 55 cursor-reactive effects. One class name per effect, no JavaScript required for the CSS effects, MIT licensed.
 
 ## Canonical facts (quote these)
 
@@ -8,12 +8,12 @@
 - npm package: @salkomdesignstudio/sds-motion-forge
 - Version: 5.1.1
 - License: MIT
-- Effects: 417 CSS-only effects across 4 categories, 31 interactive effects (need the optional cursor engine), 18 modifier classes
+- Effects: 417 CSS-only effects across 4 categories, 55 interactive effects (need the optional cursor engine), 18 modifier classes
 - Maintainer: Salkom Design Studio (https://salkomdesignstudio.com)
 - Website: https://sds-motion-forge.netlify.app/
 - Repository: https://github.com/salkomdesignstudio/SDS-Motion-Forge
 - npm: https://www.npmjs.com/package/@salkomdesignstudio/sds-motion-forge
-- Size: Full bundle 30.8 KB gzip (176.4 KB minified); each category bundle 6.2–13.7 KB gzip (each already includes core).
+- Size: Full bundle 31.0 KB gzip (177.9 KB minified); each category bundle 6.2–13.9 KB gzip (each already includes core).
 
 ## Install
 
@@ -23,7 +23,7 @@
 
 ## Class naming contract
 
-- Text: 117 effects, class pattern sds-*, bundle @salkomdesignstudio/sds-motion-forge/categories/text (13.7 KB gzip)
+- Text: 117 effects, class pattern sds-*, bundle @salkomdesignstudio/sds-motion-forge/categories/text (13.9 KB gzip)
 - Cards: 100 effects, class pattern sds-card-*, bundle @salkomdesignstudio/sds-motion-forge/categories/cards (7.8 KB gzip)
 - Loaders: 100 effects, class pattern sds-loader-*, bundle @salkomdesignstudio/sds-motion-forge/categories/loaders (8.4 KB gzip)
 - Scroll: 100 effects, class pattern sds-scroll-*, bundle @salkomdesignstudio/sds-motion-forge/categories/scroll (6.2 KB gzip)
@@ -36,7 +36,7 @@
 - Scroll-triggered (optional 1.3 KB script): <div class="sds-scroll-fade-up" data-sds>…</div> with <script src="https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/sds-scroll.min.js" defer></script>
 - Scroll-triggered, zero JavaScript (CSS scroll-driven animation, Chrome 115+): <div class="sds-scroll-auto sds-scroll-rise">…</div>
 - Cursor-reactive effects need <script src="https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion-interactive.min.js" defer></script>
-- GSAP effects (sds-gsap-text-*, sds-gsap-card-*, sds-gsap-loader-*, sds-gsap-scroll-*) need <script src="https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/sds-gsap.min.js" defer></script> (about 5 KB gzip; it loads GSAP from a CDN only when a page uses one)
+- Extended effects (sds-x-text-*, sds-x-card-*, sds-x-loader-*, sds-x-scroll-*) need <script src="https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/sds-x.min.js" defer></script> (about 8 KB gzip; it loads its runtime from a CDN only when a page uses one)
 - Theme with CSS custom properties: --sds-primary, --sds-duration, --sds-easing and the --sds-duration-* / --sds-ease-* scales
 
 ## Frameworks
@@ -71,11 +71,11 @@ Combine sds-scroll-auto with any sds-scroll-* class, for example class="sds-scro
 
 ### Is there an Animate.css alternative?
 
-Yes. SDS Motion Forge is a CSS-only alternative that defines 422 @keyframes across 417 effects in four categories (text, cards, loaders, scroll), against 97 @keyframes in Animate.css 4.1.1. The trade-off is size: the full bundle is 30.8 KB gzip versus 5.2 KB, but you can import one 6.2–13.7 KB category instead.
+Yes. SDS Motion Forge is a CSS-only alternative that defines 422 @keyframes across 417 effects in four categories (text, cards, loaders, scroll), against 97 @keyframes in Animate.css 4.1.1. The trade-off is size: the full bundle is 31.0 KB gzip versus 5.2 KB, but you can import one 6.2–13.9 KB category instead.
 
 ### What is the best CSS-only text animation library?
 
-SDS Motion Forge includes 117 text animations that run from a single CSS class, for example <h1 class="sds-velvet-drop">. Five need the text split into per-character spans and a few others need child elements; each effect's page states what it needs. The text bundle can be loaded on its own at 13.7 KB gzip.
+SDS Motion Forge includes 117 text animations that run from a single CSS class, for example <h1 class="sds-velvet-drop">. Five need the text split into per-character spans and a few others need child elements; each effect's page states what it needs. The text bundle can be loaded on its own at 13.9 KB gzip.
 
 ### Does it respect prefers-reduced-motion?
 
@@ -83,7 +83,7 @@ Yes. Every animating selector is neutralized under prefers-reduced-motion: reduc
 
 ### How big is it, and can I import only part of it?
 
-The full bundle is 30.8 KB gzip. Each category is 6.2–13.7 KB gzip and can be imported alone, with core already included: import "@salkomdesignstudio/sds-motion-forge/categories/text";. For two or more categories, use the full bundle. The two optional scripts are 1.3 KB (scroll) and 7.0 KB (cursor effects).
+The full bundle is 31.0 KB gzip. Each category is 6.2–13.9 KB gzip and can be imported alone, with core already included: import "@salkomdesignstudio/sds-motion-forge/categories/text";. For two or more categories, use the full bundle. The two optional scripts are 1.3 KB (scroll) and 7.0 KB (cursor effects).
 
 ### Does it work with React, Vue, Next.js and Tailwind?
 
@@ -536,34 +536,10 @@ Viewport-triggered entrance effects, fired by the optional 1.3 KB scroll gate or
 - `.sds-scroll-zoom-in` — Zoom In: Element scales up from 50% while fading in. https://sds-motion-forge.netlify.app/animations/scroll-zoom-in/
 - `.sds-scroll-zoom-out` — Zoom Out: Element scales down from 135% while fading in. https://sds-motion-forge.netlify.app/animations/scroll-zoom-out/
 
-## Interactive (31)
+## Interactive (55)
 
-Cursor-reactive text effects (motion-interactive) and GSAP effects for text, cards, loaders and scroll (sds-gsap). Each needs one small optional script.
+Cursor-reactive text effects and extended script-driven effects for text, cards, loaders and scroll. Each needs one small optional script.
 
-- `.sds-gsap-card-depth` — Card Depth: The layers inside the card shift by different amounts as the pointer moves, for a sense of depth. https://sds-motion-forge.netlify.app/animations/gsap-card-depth/
-- `.sds-gsap-card-fan` — Card Fan: A stack of cards fans out like a hand of playing cards when it scrolls into view. https://sds-motion-forge.netlify.app/animations/gsap-card-fan/
-- `.sds-gsap-card-flip-in` — Card Flip In: Cards flip in one by one around the vertical axis when they scroll into view. https://sds-motion-forge.netlify.app/animations/gsap-card-flip-in/
-- `.sds-gsap-card-magnetic` — Card Magnetic: The card is pulled towards the pointer and snaps back with an elastic bounce. https://sds-motion-forge.netlify.app/animations/gsap-card-magnetic/
-- `.sds-gsap-card-spotlight` — Card Spotlight: A soft spotlight follows the pointer across the card surface. https://sds-motion-forge.netlify.app/animations/gsap-card-spotlight/
-- `.sds-gsap-card-tilt` — Card Tilt: The card tilts in 3D towards the pointer and springs back when it leaves. https://sds-motion-forge.netlify.app/animations/gsap-card-tilt/
-- `.sds-gsap-loader-blob` — Loader Blob: A blob squashes and stretches as it wobbles. https://sds-motion-forge.netlify.app/animations/gsap-loader-blob/
-- `.sds-gsap-loader-chase` — Loader Chase: Three dots bounce in a chase, one after another. https://sds-motion-forge.netlify.app/animations/gsap-loader-chase/
-- `.sds-gsap-loader-count` — Loader Count: A percentage counts from 0 to 100 on a loop and exposes the value as a progress bar. https://sds-motion-forge.netlify.app/animations/gsap-loader-count/
-- `.sds-gsap-loader-equalizer` — Loader Equalizer: Five bars bounce like an audio equalizer, each at its own random pace. https://sds-motion-forge.netlify.app/animations/gsap-loader-equalizer/
-- `.sds-gsap-loader-orbit` — Loader Orbit: Three dots orbit a centre point, each with its own eased rhythm. https://sds-motion-forge.netlify.app/animations/gsap-loader-orbit/
-- `.sds-gsap-loader-ring` — Loader Ring: A ring spins with an elastic snap and breathes in and out. https://sds-motion-forge.netlify.app/animations/gsap-loader-ring/
-- `.sds-gsap-scroll-horizontal` — Scroll Horizontal: The section pins and its row of panels slides sideways as you scroll down. https://sds-motion-forge.netlify.app/animations/gsap-scroll-horizontal/
-- `.sds-gsap-scroll-parallax` — Scroll Parallax: The element drifts slower or faster than the page as you scroll. https://sds-motion-forge.netlify.app/animations/gsap-scroll-parallax/
-- `.sds-gsap-scroll-pin` — Scroll Pin: The section stays pinned on screen while you scroll through its length. https://sds-motion-forge.netlify.app/animations/gsap-scroll-pin/
-- `.sds-gsap-scroll-progress` — Scroll Progress: A bar at the top of the page fills as you read down the document. https://sds-motion-forge.netlify.app/animations/gsap-scroll-progress/
-- `.sds-gsap-scroll-stagger` — Scroll Stagger: Child elements rise into place in a staggered batch as they enter the viewport. https://sds-motion-forge.netlify.app/animations/gsap-scroll-stagger/
-- `.sds-gsap-scroll-zoom` — Scroll Zoom: The element grows from a rounded, smaller frame to full size as it scrolls up the screen. https://sds-motion-forge.netlify.app/animations/gsap-scroll-zoom/
-- `.sds-gsap-text-count` — Text Count: A number counts up to the value in data-sds-to when it scrolls into view. https://sds-motion-forge.netlify.app/animations/gsap-text-count/
-- `.sds-gsap-text-marquee` — Text Marquee: A seamless looping marquee that speeds up while you scroll. https://sds-motion-forge.netlify.app/animations/gsap-text-marquee/
-- `.sds-gsap-text-mask` — Text Mask: Words slide up out of an invisible mask, one after another. https://sds-motion-forge.netlify.app/animations/gsap-text-mask/
-- `.sds-gsap-text-scramble` — Text Scramble: The text decodes out of random characters, left to right. https://sds-motion-forge.netlify.app/animations/gsap-text-scramble/
-- `.sds-gsap-text-scrub` — Text Scrub: Words light up one by one as you scroll past the paragraph. https://sds-motion-forge.netlify.app/animations/gsap-text-scrub/
-- `.sds-gsap-text-wave` — Text Wave: Letters rise into place in a wave with a small overshoot when the text scrolls into view. https://sds-motion-forge.netlify.app/animations/gsap-text-wave/
 - `.sds-jelly-hover` — Jelly Hover: Squash + stretch spring on hover. https://sds-motion-forge.netlify.app/animations/jelly-hover/
 - `.sds-magnetic-pull` — Magnetic Pull: Cursor attracts chars toward it. https://sds-motion-forge.netlify.app/animations/magnetic-pull/
 - `.sds-repulsion-field` — Repulsion Field: Cursor pushes chars away. https://sds-motion-forge.netlify.app/animations/repulsion-field/
@@ -571,3 +547,51 @@ Cursor-reactive text effects (motion-interactive) and GSAP effects for text, car
 - `.sds-shockwave` — Shockwave: Click fires a radial impulse. https://sds-motion-forge.netlify.app/animations/shockwave/
 - `.sds-spring-kerning` — Spring Kerning: Mouse X expands/compresses spacing. https://sds-motion-forge.netlify.app/animations/spring-kerning/
 - `.sds-word-morph` — Word Morph: Cycles through words (loop). https://sds-motion-forge.netlify.app/animations/word-morph/
+- `.sds-x-card-carousel` — Card Carousel: Cards sit on a turning 3D ring that speeds up and slows down with the pointer. https://sds-motion-forge.netlify.app/animations/x-card-carousel/
+- `.sds-x-card-deck` — Card Deck: A deck of cards: click the top card and it flies off to the back of the pile. https://sds-motion-forge.netlify.app/animations/x-card-deck/
+- `.sds-x-card-depth` — Card Depth: The layers inside the card shift by different amounts as the pointer moves, for a sense of depth. https://sds-motion-forge.netlify.app/animations/x-card-depth/
+- `.sds-x-card-dim` — Card Dim: The card under the pointer grows while its neighbours dim and blur. https://sds-motion-forge.netlify.app/animations/x-card-dim/
+- `.sds-x-card-fan` — Card Fan: A pile of cards fans out like a hand of playing cards when it scrolls into view. https://sds-motion-forge.netlify.app/animations/x-card-fan/
+- `.sds-x-card-magnetic` — Card Magnetic: The card is pulled towards the pointer and snaps back with an elastic bounce. https://sds-motion-forge.netlify.app/animations/x-card-magnetic/
+- `.sds-x-card-shuffle` — Card Shuffle: Click the group and the cards glide to new random positions. https://sds-motion-forge.netlify.app/animations/x-card-shuffle/
+- `.sds-x-card-spotlight` — Card Spotlight: A soft spotlight follows the pointer across the card surface. https://sds-motion-forge.netlify.app/animations/x-card-spotlight/
+- `.sds-x-card-tilt` — Card Tilt: The card tilts in 3D towards the pointer and springs back when it leaves. https://sds-motion-forge.netlify.app/animations/x-card-tilt/
+- `.sds-x-loader-blob` — Loader Blob: A blob squashes and stretches as it wobbles. https://sds-motion-forge.netlify.app/animations/x-loader-blob/
+- `.sds-x-loader-bounce` — Loader Bounce: A ball bounces with a squash on landing, and its shadow shrinks as it rises. https://sds-motion-forge.netlify.app/animations/x-loader-bounce/
+- `.sds-x-loader-chase` — Loader Chase: Three dots bounce in a chase, one after another. https://sds-motion-forge.netlify.app/animations/x-loader-chase/
+- `.sds-x-loader-clock` — Loader Clock: Clock hands sweep around a dial at different speeds. https://sds-motion-forge.netlify.app/animations/x-loader-clock/
+- `.sds-x-loader-dash` — Loader Dash: A circle draws and erases itself as it spins. https://sds-motion-forge.netlify.app/animations/x-loader-dash/
+- `.sds-x-loader-elastic` — Loader Elastic: A ring spins with an elastic snap and breathes in and out. https://sds-motion-forge.netlify.app/animations/x-loader-elastic/
+- `.sds-x-loader-equalizer` — Loader Equalizer: Five bars bounce like an audio equalizer, each at its own random pace. https://sds-motion-forge.netlify.app/animations/x-loader-equalizer/
+- `.sds-x-loader-orbit` — Loader Orbit: Three dots orbit a centre point, each with its own eased rhythm. https://sds-motion-forge.netlify.app/animations/x-loader-orbit/
+- `.sds-x-loader-pendulum` — Loader Pendulum: Five balls swing like a Newton's cradle. https://sds-motion-forge.netlify.app/animations/x-loader-pendulum/
+- `.sds-x-loader-radar` — Loader Radar: A radar sweep turns round and blips appear as it passes. https://sds-motion-forge.netlify.app/animations/x-loader-radar/
+- `.sds-x-loader-steps` — Loader Steps: A progress bar fills in believable steps, then starts over. https://sds-motion-forge.netlify.app/animations/x-loader-steps/
+- `.sds-x-scroll-color` — Scroll Color: The background and text colour blend from one pair to another as the section scrolls into place. https://sds-motion-forge.netlify.app/animations/x-scroll-color/
+- `.sds-x-scroll-curtain` — Scroll Curtain: A curtain opens from the middle outward, revealing the element as it scrolls up. https://sds-motion-forge.netlify.app/animations/x-scroll-curtain/
+- `.sds-x-scroll-horizontal` — Scroll Horizontal: The section pins and its row of panels slides sideways as you scroll down. https://sds-motion-forge.netlify.app/animations/x-scroll-horizontal/
+- `.sds-x-scroll-parallax` — Scroll Parallax: The element drifts slower or faster than the page as you scroll. https://sds-motion-forge.netlify.app/animations/x-scroll-parallax/
+- `.sds-x-scroll-pin` — Scroll Pin: The section stays pinned on screen while you scroll through its length. https://sds-motion-forge.netlify.app/animations/x-scroll-pin/
+- `.sds-x-scroll-progress` — Scroll Progress: A bar at the top of the page fills as you read down the document. https://sds-motion-forge.netlify.app/animations/x-scroll-progress/
+- `.sds-x-scroll-rotate` — Scroll Rotate: The element turns as you scroll, by as many full turns as you set. https://sds-motion-forge.netlify.app/animations/x-scroll-rotate/
+- `.sds-x-scroll-slides` — Scroll Slides: The block pins and its slides cross-fade one after another as you scroll. https://sds-motion-forge.netlify.app/animations/x-scroll-slides/
+- `.sds-x-scroll-snap` — Scroll Snap: Scrolling snaps from one section to the next, with an eased glide. https://sds-motion-forge.netlify.app/animations/x-scroll-snap/
+- `.sds-x-scroll-stack` — Scroll Stack: Sections stick one on top of another as they reach the top, each shrinking a little as the next arrives. https://sds-motion-forge.netlify.app/animations/x-scroll-stack/
+- `.sds-x-scroll-stagger` — Scroll Stagger: Child elements rise into place in a staggered batch as they enter the viewport. https://sds-motion-forge.netlify.app/animations/x-scroll-stagger/
+- `.sds-x-scroll-zoom` — Scroll Zoom: The element grows from a smaller size to full size as it scrolls up the screen. https://sds-motion-forge.netlify.app/animations/x-scroll-zoom/
+- `.sds-x-text-blur` — Text Blur: Letters sharpen out of a heavy blur one after another. https://sds-motion-forge.netlify.app/animations/x-text-blur/
+- `.sds-x-text-circle` — Text Circle: Letters are set on a circle that turns slowly. https://sds-motion-forge.netlify.app/animations/x-text-circle/
+- `.sds-x-text-count` — Text Count: A number counts up to the value in data-sds-to when it scrolls into view. https://sds-motion-forge.netlify.app/animations/x-text-count/
+- `.sds-x-text-cycle` — Text Cycle: Cycles through a list of words, each sliding and blurring into the next. https://sds-motion-forge.netlify.app/animations/x-text-cycle/
+- `.sds-x-text-drop` — Text Drop: Letters fall from above and bounce into place, starting from the middle of the line. https://sds-motion-forge.netlify.app/animations/x-text-drop/
+- `.sds-x-text-flip` — Text Flip: Letters flip up around their base in 3D, in a random order. https://sds-motion-forge.netlify.app/animations/x-text-flip/
+- `.sds-x-text-glitch` — Text Glitch: A short red and cyan glitch jolts the text now and then. https://sds-motion-forge.netlify.app/animations/x-text-glitch/
+- `.sds-x-text-highlight` — Text Highlight: A marker highlight is drawn behind each word, one by one. https://sds-motion-forge.netlify.app/animations/x-text-highlight/
+- `.sds-x-text-marquee` — Text Marquee: A seamless, endless ticker of text. https://sds-motion-forge.netlify.app/animations/x-text-marquee/
+- `.sds-x-text-mask` — Text Mask: Words slide up out of an invisible mask, one after another. https://sds-motion-forge.netlify.app/animations/x-text-mask/
+- `.sds-x-text-scramble` — Text Scramble: The text decodes out of random characters, left to right. https://sds-motion-forge.netlify.app/animations/x-text-scramble/
+- `.sds-x-text-scrub` — Text Scrub: Words light up one by one as you scroll past the paragraph. https://sds-motion-forge.netlify.app/animations/x-text-scrub/
+- `.sds-x-text-skew` — Text Skew: The text leans one way or the other depending on how fast you scroll. https://sds-motion-forge.netlify.app/animations/x-text-skew/
+- `.sds-x-text-sweep` — Text Sweep: A bright band of colour sweeps through the letters on a loop. https://sds-motion-forge.netlify.app/animations/x-text-sweep/
+- `.sds-x-text-typewriter` — Text Typewriter: The text types itself out, letter by letter, with a blinking caret. https://sds-motion-forge.netlify.app/animations/x-text-typewriter/
+- `.sds-x-text-wave` — Text Wave: Letters rise into place in a wave with a small overshoot when the text scrolls into view. https://sds-motion-forge.netlify.app/animations/x-text-wave/

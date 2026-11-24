@@ -3113,11 +3113,11 @@ html:not(.sds-js) [data-sds] {
 }
 
 /* ============================================================
-   GSAP engine classes (need the optional sds-gsap.min.js)
-   Base styles only: the motion is driven by GSAP, see src/sds-gsap.js
+   Extended effects (need the optional sds-x.min.js)
+   Base styles only: the motion is driven by the script, see src/sds-x.js
    ============================================================ */
 
-.sds-gsap-loader-orbit {
+.sds-x-loader-orbit {
   position: relative;
   display: inline-block;
   width: 2.5em;
@@ -3125,7 +3125,7 @@ html:not(.sds-js) [data-sds] {
   color: var(--sds-primary, #0015d1);
 }
 
-.sds-gsap-loader-chase {
+.sds-x-loader-chase {
   position: relative;
   display: inline-block;
   width: 2.5em;
@@ -3133,7 +3133,7 @@ html:not(.sds-js) [data-sds] {
   color: var(--sds-primary, #0015d1);
 }
 
-.sds-gsap-loader-equalizer {
+.sds-x-loader-equalizer {
   position: relative;
   display: inline-block;
   width: 2.5em;
@@ -3141,7 +3141,7 @@ html:not(.sds-js) [data-sds] {
   color: var(--sds-primary, #0015d1);
 }
 
-.sds-gsap-loader-ring {
+.sds-x-loader-elastic {
   position: relative;
   display: inline-block;
   width: 2.5em;
@@ -3149,7 +3149,7 @@ html:not(.sds-js) [data-sds] {
   color: var(--sds-primary, #0015d1);
 }
 
-.sds-gsap-loader-blob {
+.sds-x-loader-blob {
   position: relative;
   display: inline-block;
   width: 2.5em;
@@ -3157,12 +3157,52 @@ html:not(.sds-js) [data-sds] {
   color: var(--sds-primary, #0015d1);
 }
 
-.sds-gsap-loader-count {
+.sds-x-loader-pendulum {
+  position: relative;
   display: inline-block;
-  min-width: 3ch;
+  width: 2.5em;
+  height: 2.5em;
   color: var(--sds-primary, #0015d1);
-  font-variant-numeric: tabular-nums;
-  font-weight: 700;
+}
+
+.sds-x-loader-dash {
+  position: relative;
+  display: inline-block;
+  width: 2.5em;
+  height: 2.5em;
+  color: var(--sds-primary, #0015d1);
+}
+
+.sds-x-loader-clock {
+  position: relative;
+  display: inline-block;
+  width: 2.5em;
+  height: 2.5em;
+  color: var(--sds-primary, #0015d1);
+}
+
+.sds-x-loader-bounce {
+  position: relative;
+  display: inline-block;
+  width: 2.5em;
+  height: 2.5em;
+  color: var(--sds-primary, #0015d1);
+}
+
+.sds-x-loader-radar {
+  position: relative;
+  display: inline-block;
+  width: 2.5em;
+  height: 2.5em;
+  color: var(--sds-primary, #0015d1);
+}
+
+.sds-x-loader-steps {
+  position: relative;
+  display: inline-block;
+  width: 6em;
+  height: 1.4em;
+  color: var(--sds-primary, #0015d1);
 }
 
 /* ── Cross-category keyframe dependencies ── */

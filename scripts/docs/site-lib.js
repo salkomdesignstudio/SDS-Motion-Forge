@@ -168,7 +168,7 @@ ${catRows}
 - Scroll-triggered (optional 1.3 KB script): <div class="sds-scroll-fade-up" data-sds>…</div> with <script src="${config.cdn}/sds-scroll.min.js" defer></script>
 - Scroll-triggered, zero JavaScript (CSS scroll-driven animation, Chrome 115+): <div class="sds-scroll-auto sds-scroll-rise">…</div>
 - Cursor-reactive effects need <script src="${config.cdn}/motion-interactive.min.js" defer></script>
-- GSAP effects (sds-gsap-text-*, sds-gsap-card-*, sds-gsap-loader-*, sds-gsap-scroll-*) need <script src="${config.cdn}/sds-gsap.min.js" defer></script> (about 5 KB gzip; it loads GSAP from a CDN only when a page uses one)
+- Extended effects (sds-x-text-*, sds-x-card-*, sds-x-loader-*, sds-x-scroll-*) need <script src="${config.cdn}/sds-x.min.js" defer></script> (about 8 KB gzip; it loads its runtime from a CDN only when a page uses one)
 - Theme with CSS custom properties: --sds-primary, --sds-duration, --sds-easing and the --sds-duration-* / --sds-ease-* scales
 
 ## Frameworks

@@ -22,8 +22,8 @@ if (catalog.animations.length !== expected) fail(`catalog has ${catalog.animatio
 // Classes with no CSS animation of their own (helpers and JS-driven interactive effects).
 // Adding to this list is a deliberate decision, not a way to silence the check.
 const TIMING_EXEMPT_CATEGORIES = new Set(["infrastructure"]);
-// the sds-gsap-* effects are driven by GSAP in JavaScript: their timing is not in the CSS
-const isGsapEngine = (n) => n.startsWith("sds-gsap-");
+// the sds-x-* effects are script-driven: their timing is not in the CSS
+const isExtended = (n) => n.startsWith("sds-x-");
 const TIMING_EXEMPT_NAMES = new Set([
   "sds-input-elevate-wrap", "sds-jelly-hover", "sds-magnetic-pull", "sds-repulsion-field",
   "sds-scatter-return", "sds-shockwave", "sds-spring-kerning", "sds-word-morph",
@@ -40,7 +40,7 @@ for (const a of catalog.animations) {
   if (!a.description || a.description.length < 8) fail(`${id}: missing description`);
   if (!a.trigger) fail(`${id}: missing trigger`);
   if (!a.markup && a.category !== "infrastructure") fail(`${id}: missing demo markup`);
-  if (a.motion.durationMs == null && !TIMING_EXEMPT_CATEGORIES.has(a.category) && !TIMING_EXEMPT_NAMES.has(a.name) && !isGsapEngine(a.name)) {
+  if (a.motion.durationMs == null && !TIMING_EXEMPT_CATEGORIES.has(a.category) && !TIMING_EXEMPT_NAMES.has(a.name) && !isExtended(a.name)) {
     fail(`${id}: no duration could be derived from the CSS`);
   }
   if (a.motion.durationMs != null && !(a.motion.durationMs >= 0 && a.motion.durationMs < 60000)) fail(`${id}: implausible duration ${a.motion.durationMs}`);

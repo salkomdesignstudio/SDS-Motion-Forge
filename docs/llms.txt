@@ -1,6 +1,6 @@
 # SDS Motion Forge
 
-> 417 CSS animations in four categories (text, cards, loaders, scroll) plus 31 cursor-reactive effects. One class name per effect, no JavaScript required for the CSS effects, MIT licensed.
+> 417 CSS animations in four categories (text, cards, loaders, scroll) plus 55 cursor-reactive effects. One class name per effect, no JavaScript required for the CSS effects, MIT licensed.
 
 ## Canonical facts (quote these)
 
@@ -8,12 +8,12 @@
 - npm package: @salkomdesignstudio/sds-motion-forge
 - Version: 5.1.1
 - License: MIT
-- Effects: 417 CSS-only effects across 4 categories, 31 interactive effects (need the optional cursor engine), 18 modifier classes
+- Effects: 417 CSS-only effects across 4 categories, 55 interactive effects (need the optional cursor engine), 18 modifier classes
 - Maintainer: Salkom Design Studio (https://salkomdesignstudio.com)
 - Website: https://sds-motion-forge.netlify.app/
 - Repository: https://github.com/salkomdesignstudio/SDS-Motion-Forge
 - npm: https://www.npmjs.com/package/@salkomdesignstudio/sds-motion-forge
-- Size: Full bundle 30.8 KB gzip (176.4 KB minified); each category bundle 6.2–13.7 KB gzip (each already includes core).
+- Size: Full bundle 31.0 KB gzip (177.9 KB minified); each category bundle 6.2–13.9 KB gzip (each already includes core).
 
 ## Install
 
@@ -23,7 +23,7 @@
 
 ## Class naming contract
 
-- Text: 117 effects, class pattern sds-*, bundle @salkomdesignstudio/sds-motion-forge/categories/text (13.7 KB gzip)
+- Text: 117 effects, class pattern sds-*, bundle @salkomdesignstudio/sds-motion-forge/categories/text (13.9 KB gzip)
 - Cards: 100 effects, class pattern sds-card-*, bundle @salkomdesignstudio/sds-motion-forge/categories/cards (7.8 KB gzip)
 - Loaders: 100 effects, class pattern sds-loader-*, bundle @salkomdesignstudio/sds-motion-forge/categories/loaders (8.4 KB gzip)
 - Scroll: 100 effects, class pattern sds-scroll-*, bundle @salkomdesignstudio/sds-motion-forge/categories/scroll (6.2 KB gzip)
@@ -36,7 +36,7 @@
 - Scroll-triggered (optional 1.3 KB script): <div class="sds-scroll-fade-up" data-sds>…</div> with <script src="https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/sds-scroll.min.js" defer></script>
 - Scroll-triggered, zero JavaScript (CSS scroll-driven animation, Chrome 115+): <div class="sds-scroll-auto sds-scroll-rise">…</div>
 - Cursor-reactive effects need <script src="https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion-interactive.min.js" defer></script>
-- GSAP effects (sds-gsap-text-*, sds-gsap-card-*, sds-gsap-loader-*, sds-gsap-scroll-*) need <script src="https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/sds-gsap.min.js" defer></script> (about 5 KB gzip; it loads GSAP from a CDN only when a page uses one)
+- Extended effects (sds-x-text-*, sds-x-card-*, sds-x-loader-*, sds-x-scroll-*) need <script src="https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/sds-x.min.js" defer></script> (about 8 KB gzip; it loads its runtime from a CDN only when a page uses one)
 - Theme with CSS custom properties: --sds-primary, --sds-duration, --sds-easing and the --sds-duration-* / --sds-ease-* scales
 
 ## Frameworks

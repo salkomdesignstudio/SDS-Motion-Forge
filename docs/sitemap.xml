@@ -152,30 +152,6 @@
   <url><loc>https://sds-motion-forge.netlify.app/animations/gravity-bounce/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/gravity-collapse/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/gravity-drop/</loc><priority>0.6</priority></url>
-  <url><loc>https://sds-motion-forge.netlify.app/animations/gsap-card-depth/</loc><priority>0.6</priority></url>
-  <url><loc>https://sds-motion-forge.netlify.app/animations/gsap-card-fan/</loc><priority>0.6</priority></url>
-  <url><loc>https://sds-motion-forge.netlify.app/animations/gsap-card-flip-in/</loc><priority>0.6</priority></url>
-  <url><loc>https://sds-motion-forge.netlify.app/animations/gsap-card-magnetic/</loc><priority>0.6</priority></url>
-  <url><loc>https://sds-motion-forge.netlify.app/animations/gsap-card-spotlight/</loc><priority>0.6</priority></url>
-  <url><loc>https://sds-motion-forge.netlify.app/animations/gsap-card-tilt/</loc><priority>0.6</priority></url>
-  <url><loc>https://sds-motion-forge.netlify.app/animations/gsap-loader-blob/</loc><priority>0.6</priority></url>
-  <url><loc>https://sds-motion-forge.netlify.app/animations/gsap-loader-chase/</loc><priority>0.6</priority></url>
-  <url><loc>https://sds-motion-forge.netlify.app/animations/gsap-loader-count/</loc><priority>0.6</priority></url>
-  <url><loc>https://sds-motion-forge.netlify.app/animations/gsap-loader-equalizer/</loc><priority>0.6</priority></url>
-  <url><loc>https://sds-motion-forge.netlify.app/animations/gsap-loader-orbit/</loc><priority>0.6</priority></url>
-  <url><loc>https://sds-motion-forge.netlify.app/animations/gsap-loader-ring/</loc><priority>0.6</priority></url>
-  <url><loc>https://sds-motion-forge.netlify.app/animations/gsap-scroll-horizontal/</loc><priority>0.6</priority></url>
-  <url><loc>https://sds-motion-forge.netlify.app/animations/gsap-scroll-parallax/</loc><priority>0.6</priority></url>
-  <url><loc>https://sds-motion-forge.netlify.app/animations/gsap-scroll-pin/</loc><priority>0.6</priority></url>
-  <url><loc>https://sds-motion-forge.netlify.app/animations/gsap-scroll-progress/</loc><priority>0.6</priority></url>
-  <url><loc>https://sds-motion-forge.netlify.app/animations/gsap-scroll-stagger/</loc><priority>0.6</priority></url>
-  <url><loc>https://sds-motion-forge.netlify.app/animations/gsap-scroll-zoom/</loc><priority>0.6</priority></url>
-  <url><loc>https://sds-motion-forge.netlify.app/animations/gsap-text-count/</loc><priority>0.6</priority></url>
-  <url><loc>https://sds-motion-forge.netlify.app/animations/gsap-text-marquee/</loc><priority>0.6</priority></url>
-  <url><loc>https://sds-motion-forge.netlify.app/animations/gsap-text-mask/</loc><priority>0.6</priority></url>
-  <url><loc>https://sds-motion-forge.netlify.app/animations/gsap-text-scramble/</loc><priority>0.6</priority></url>
-  <url><loc>https://sds-motion-forge.netlify.app/animations/gsap-text-scrub/</loc><priority>0.6</priority></url>
-  <url><loc>https://sds-motion-forge.netlify.app/animations/gsap-text-wave/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/heartbeat-text/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/heat-shimmer/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/highlight-burn/</loc><priority>0.6</priority></url>
@@ -455,6 +431,54 @@
   <url><loc>https://sds-motion-forge.netlify.app/animations/wobble/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/word-blur-in/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/word-morph/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-card-carousel/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-card-deck/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-card-depth/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-card-dim/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-card-fan/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-card-magnetic/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-card-shuffle/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-card-spotlight/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-card-tilt/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-loader-blob/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-loader-bounce/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-loader-chase/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-loader-clock/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-loader-dash/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-loader-elastic/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-loader-equalizer/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-loader-orbit/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-loader-pendulum/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-loader-radar/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-loader-steps/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-scroll-color/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-scroll-curtain/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-scroll-horizontal/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-scroll-parallax/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-scroll-pin/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-scroll-progress/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-scroll-rotate/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-scroll-slides/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-scroll-snap/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-scroll-stack/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-scroll-stagger/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-scroll-zoom/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-text-blur/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-text-circle/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-text-count/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-text-cycle/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-text-drop/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-text-flip/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-text-glitch/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-text-highlight/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-text-marquee/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-text-mask/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-text-scramble/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-text-scrub/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-text-skew/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-text-sweep/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-text-typewriter/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/x-text-wave/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/zoom-out-in/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/zoom-punch/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/mcp/</loc><priority>0.6</priority></url>

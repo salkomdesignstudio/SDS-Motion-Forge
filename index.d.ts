@@ -388,33 +388,57 @@ export type SdsModifier =
 export type SdsScrollGate = 'sds-play' | 'sds-scroll-auto';
 
 /**
- * The 24 GSAP class names. They need the optional dist/sds-gsap.min.js, which loads GSAP from a CDN on first use.
+ * The 48 extended class names. They need the optional dist/sds-x.min.js, which loads its runtime from a CDN on first use.
  */
-export type SdsGsapAnimation =
-  | 'sds-gsap-card-depth'
-  | 'sds-gsap-card-fan'
-  | 'sds-gsap-card-flip-in'
-  | 'sds-gsap-card-magnetic'
-  | 'sds-gsap-card-spotlight'
-  | 'sds-gsap-card-tilt'
-  | 'sds-gsap-loader-blob'
-  | 'sds-gsap-loader-chase'
-  | 'sds-gsap-loader-count'
-  | 'sds-gsap-loader-equalizer'
-  | 'sds-gsap-loader-orbit'
-  | 'sds-gsap-loader-ring'
-  | 'sds-gsap-scroll-horizontal'
-  | 'sds-gsap-scroll-parallax'
-  | 'sds-gsap-scroll-pin'
-  | 'sds-gsap-scroll-progress'
-  | 'sds-gsap-scroll-stagger'
-  | 'sds-gsap-scroll-zoom'
-  | 'sds-gsap-text-count'
-  | 'sds-gsap-text-marquee'
-  | 'sds-gsap-text-mask'
-  | 'sds-gsap-text-scramble'
-  | 'sds-gsap-text-scrub'
-  | 'sds-gsap-text-wave';
+export type SdsExtendedAnimation =
+  | 'sds-x-card-carousel'
+  | 'sds-x-card-deck'
+  | 'sds-x-card-depth'
+  | 'sds-x-card-dim'
+  | 'sds-x-card-fan'
+  | 'sds-x-card-magnetic'
+  | 'sds-x-card-shuffle'
+  | 'sds-x-card-spotlight'
+  | 'sds-x-card-tilt'
+  | 'sds-x-loader-blob'
+  | 'sds-x-loader-bounce'
+  | 'sds-x-loader-chase'
+  | 'sds-x-loader-clock'
+  | 'sds-x-loader-dash'
+  | 'sds-x-loader-elastic'
+  | 'sds-x-loader-equalizer'
+  | 'sds-x-loader-orbit'
+  | 'sds-x-loader-pendulum'
+  | 'sds-x-loader-radar'
+  | 'sds-x-loader-steps'
+  | 'sds-x-scroll-color'
+  | 'sds-x-scroll-curtain'
+  | 'sds-x-scroll-horizontal'
+  | 'sds-x-scroll-parallax'
+  | 'sds-x-scroll-pin'
+  | 'sds-x-scroll-progress'
+  | 'sds-x-scroll-rotate'
+  | 'sds-x-scroll-slides'
+  | 'sds-x-scroll-snap'
+  | 'sds-x-scroll-stack'
+  | 'sds-x-scroll-stagger'
+  | 'sds-x-scroll-zoom'
+  | 'sds-x-text-blur'
+  | 'sds-x-text-circle'
+  | 'sds-x-text-count'
+  | 'sds-x-text-cycle'
+  | 'sds-x-text-drop'
+  | 'sds-x-text-flip'
+  | 'sds-x-text-glitch'
+  | 'sds-x-text-highlight'
+  | 'sds-x-text-marquee'
+  | 'sds-x-text-mask'
+  | 'sds-x-text-scramble'
+  | 'sds-x-text-scrub'
+  | 'sds-x-text-skew'
+  | 'sds-x-text-sweep'
+  | 'sds-x-text-typewriter'
+  | 'sds-x-text-wave';
 
 /** Union of every public SDS Motion Forge class name. */
 export type SdsAnimationClass =
@@ -423,7 +447,7 @@ export type SdsAnimationClass =
   | SdsLoaderAnimation
   | SdsScrollAnimation
   | SdsInteractiveAnimation
-  | SdsGsapAnimation
+  | SdsExtendedAnimation
   | SdsModifier
   | SdsScrollGate;
 
