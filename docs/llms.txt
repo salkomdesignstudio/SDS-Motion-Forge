@@ -1,6 +1,6 @@
 # SDS Motion Forge
 
-> 557 CSS animations in six categories (text, buttons, inputs, cards, loaders, scroll) plus 7 cursor-reactive effects. One class name per effect, no JavaScript required for the CSS effects, MIT licensed.
+> 617 CSS animations in six categories (text, buttons, inputs, cards, loaders, scroll) plus 7 cursor-reactive effects. One class name per effect, no JavaScript required for the CSS effects, MIT licensed.
 
 ## Canonical facts (quote these)
 
@@ -8,12 +8,12 @@
 - npm package: @salkomdesignstudio/sds-motion-forge
 - Version: 5.1.1
 - License: MIT
-- Effects: 557 CSS-only effects across 6 categories, 7 interactive effects (need the optional cursor engine), 18 modifier classes
+- Effects: 617 CSS-only effects across 6 categories, 7 interactive effects (need the optional cursor engine), 18 modifier classes
 - Maintainer: Salkom Design Studio (https://salkomdesignstudio.com)
 - Website: https://sds-motion-forge.netlify.app/
 - Repository: https://github.com/salkomdesignstudio/SDS-Motion-Forge
 - npm: https://www.npmjs.com/package/@salkomdesignstudio/sds-motion-forge
-- Size: Full bundle 42.4 KB gzip (250.3 KB minified); each category bundle 6.0–13.7 KB gzip (each already includes core).
+- Size: Full bundle 48.3 KB gzip (296.0 KB minified); each category bundle 6.0–13.7 KB gzip (each already includes core).
 
 ## Install
 
@@ -24,7 +24,7 @@
 ## Class naming contract
 
 - Text: 117 effects, class pattern sds-*, bundle @salkomdesignstudio/sds-motion-forge/categories/text (13.7 KB gzip)
-- Buttons: 40 effects, class pattern sds-btn-*, bundle @salkomdesignstudio/sds-motion-forge/categories/buttons (7.0 KB gzip)
+- Buttons: 100 effects, class pattern sds-btn-*, bundle @salkomdesignstudio/sds-motion-forge/categories/buttons (13.0 KB gzip)
 - Inputs: 100 effects, class pattern sds-input-*, bundle @salkomdesignstudio/sds-motion-forge/categories/inputs (8.4 KB gzip)
 - Cards: 100 effects, class pattern sds-card-*, bundle @salkomdesignstudio/sds-motion-forge/categories/cards (7.6 KB gzip)
 - Loaders: 100 effects, class pattern sds-loader-*, bundle @salkomdesignstudio/sds-motion-forge/categories/loaders (8.3 KB gzip)

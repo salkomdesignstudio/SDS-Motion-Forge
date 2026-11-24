@@ -52,6 +52,18 @@
      "description": "Aurora Mesh — buttons · Blurred colour blobs drift slowly behind the label like a northern light. https://sds-motion-forge.netlify.app/animations/btn-ui-aurora-mesh/"
     },
     {
+     "name": "sds-btn-ui-bar-loading",
+     "description": "Bar Loading — buttons · Set aria-busy=\"true\": a bright bar runs along the bottom edge. https://sds-motion-forge.netlify.app/animations/btn-ui-bar-loading/"
+    },
+    {
+     "name": "sds-btn-ui-bars-open",
+     "description": "Bars Open — buttons · A fill opens outward from the centre line to both sides on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-bars-open/"
+    },
+    {
+     "name": "sds-btn-ui-blob-shift",
+     "description": "Blob Shift — buttons · Two blurred blobs at the corners slide to the centre and merge on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-blob-shift/"
+    },
+    {
      "name": "sds-btn-ui-bloom-halo",
      "description": "Bloom Halo — buttons · A blurred halo blooms behind the button and the button lifts on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-bloom-halo/"
     },
@@ -64,24 +76,100 @@
      "description": "Brutal Offset — buttons · A flat button with a hard offset shadow that it presses into on hover and press. https://sds-motion-forge.netlify.app/animations/btn-ui-brutal-offset/"
     },
     {
+     "name": "sds-btn-ui-bubble-rise",
+     "description": "Bubble Rise — buttons · Small bubbles drift up through the button while it is hovered. https://sds-motion-forge.netlify.app/animations/btn-ui-bubble-rise/"
+    },
+    {
+     "name": "sds-btn-ui-burger-x",
+     "description": "Burger X — buttons · A menu icon whose two bars cross into an X when aria-expanded is true. https://sds-motion-forge.netlify.app/animations/btn-ui-burger-x/"
+    },
+    {
+     "name": "sds-btn-ui-caret-bounce",
+     "description": "Caret Bounce — buttons · A caret that bounces up and down while the button is hovered. https://sds-motion-forge.netlify.app/animations/btn-ui-caret-bounce/"
+    },
+    {
+     "name": "sds-btn-ui-check-draw",
+     "description": "Check Draw — buttons · A check mark draws itself in at the end of the button on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-check-draw/"
+    },
+    {
+     "name": "sds-btn-ui-chevron-turn",
+     "description": "Chevron Turn — buttons · A chevron that turns upside down when aria-expanded is true. https://sds-motion-forge.netlify.app/animations/btn-ui-chevron-turn/"
+    },
+    {
      "name": "sds-btn-ui-circle-expand",
      "description": "Circle Expand — buttons · A small circle at the end grows until it fills the button, nudging the arrow forward. https://sds-motion-forge.netlify.app/animations/btn-ui-circle-expand/"
+    },
+    {
+     "name": "sds-btn-ui-confetti-pop",
+     "description": "Confetti Pop — buttons · Confetti flies out in all directions when the button is pressed. https://sds-motion-forge.netlify.app/animations/btn-ui-confetti-pop/"
     },
     {
      "name": "sds-btn-ui-conic-border",
      "description": "Conic Border — buttons · A bright arc travels endlessly around a dark button's edge. https://sds-motion-forge.netlify.app/animations/btn-ui-conic-border/"
     },
     {
+     "name": "sds-btn-ui-corner-fold",
+     "description": "Corner Fold — buttons · Two triangles of accent colour fold in from opposite corners and cover the button. https://sds-motion-forge.netlify.app/animations/btn-ui-corner-fold/"
+    },
+    {
+     "name": "sds-btn-ui-corner-grow",
+     "description": "Corner Grow — buttons · A circle of accent colour grows from the top-left corner until it covers the button. https://sds-motion-forge.netlify.app/animations/btn-ui-corner-grow/"
+    },
+    {
+     "name": "sds-btn-ui-countdown-drain",
+     "description": "Countdown Drain — buttons · Set data-countdown and a fill drains away over --sds-btn-countdown (default 5s). https://sds-motion-forge.netlify.app/animations/btn-ui-countdown-drain/"
+    },
+    {
+     "name": "sds-btn-ui-crt-lines",
+     "description": "CRT Lines — buttons · Scanlines roll down the button like an old screen while hovered. https://sds-motion-forge.netlify.app/animations/btn-ui-crt-lines/"
+    },
+    {
+     "name": "sds-btn-ui-current-marker",
+     "description": "Current Marker — buttons · A text button that shows a small dot under it for aria-current or aria-selected. https://sds-motion-forge.netlify.app/animations/btn-ui-current-marker/"
+    },
+    {
      "name": "sds-btn-ui-curtain-split",
      "description": "Curtain Split — buttons · Two halves of accent colour slide in from the sides and meet in the middle. https://sds-motion-forge.netlify.app/animations/btn-ui-curtain-split/"
+    },
+    {
+     "name": "sds-btn-ui-diagonal-nudge",
+     "description": "Diagonal Nudge — buttons · An external-link arrow nudges up and to the right on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-diagonal-nudge/"
     },
     {
      "name": "sds-btn-ui-diagonal-wipe",
      "description": "Diagonal Wipe — buttons · A slanted wipe of accent colour sweeps across the button, edge first. https://sds-motion-forge.netlify.app/animations/btn-ui-diagonal-wipe/"
     },
     {
+     "name": "sds-btn-ui-disabled-nope",
+     "description": "Disabled Nope — buttons · Looks striped and dimmed when disabled, and gives a small shake if hovered. https://sds-motion-forge.netlify.app/animations/btn-ui-disabled-nope/"
+    },
+    {
+     "name": "sds-btn-ui-dots-loading",
+     "description": "Dots Loading — buttons · Set aria-busy=\"true\": the label gives way to three dots that pulse in turn. https://sds-motion-forge.netlify.app/animations/btn-ui-dots-loading/"
+    },
+    {
+     "name": "sds-btn-ui-download-loop",
+     "description": "Download Loop — buttons · A download arrow that drops out of the button and re-enters from above, on loop. https://sds-motion-forge.netlify.app/animations/btn-ui-download-loop/"
+    },
+    {
+     "name": "sds-btn-ui-drop-in",
+     "description": "Drop In — buttons · A dot drops into the button when it is pressed, like an item into a cart. https://sds-motion-forge.netlify.app/animations/btn-ui-drop-in/"
+    },
+    {
+     "name": "sds-btn-ui-duotone-slide",
+     "description": "Duotone Slide — buttons · Two slanted bands, one bright and one dark, slide across in sequence. https://sds-motion-forge.netlify.app/animations/btn-ui-duotone-slide/"
+    },
+    {
+     "name": "sds-btn-ui-edge-light",
+     "description": "Edge Light — buttons · A bright line and a soft glow light up the top edge on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-edge-light/"
+    },
+    {
      "name": "sds-btn-ui-flip-spin",
      "description": "Flip Spin — buttons · The whole button flips once around its horizontal axis on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-flip-spin/"
+    },
+    {
+     "name": "sds-btn-ui-float-shadow",
+     "description": "Float Shadow — buttons · The button floats up while its shadow on the ground shrinks and fades. https://sds-motion-forge.netlify.app/animations/btn-ui-float-shadow/"
     },
     {
      "name": "sds-btn-ui-frame-draw",
@@ -100,8 +188,24 @@
      "description": "Glitch Split — buttons · Red and cyan edges split apart and jitter for half a second, then snap back. https://sds-motion-forge.netlify.app/animations/btn-ui-glitch-split/"
     },
     {
+     "name": "sds-btn-ui-gloss-drop",
+     "description": "Gloss Drop — buttons · A glossy highlight drops over the top half of the button on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-gloss-drop/"
+    },
+    {
      "name": "sds-btn-ui-gradient-flow",
      "description": "Gradient Flow — buttons · A violet-to-magenta gradient flows endlessly through the button. https://sds-motion-forge.netlify.app/animations/btn-ui-gradient-flow/"
+    },
+    {
+     "name": "sds-btn-ui-halftone-fade",
+     "description": "Halftone Fade — buttons · A halftone dot pattern fades in diagonally across the button on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-halftone-fade/"
+    },
+    {
+     "name": "sds-btn-ui-heartbeat",
+     "description": "Heartbeat — buttons · The button beats twice, like a heart, in a steady loop while hovered. https://sds-motion-forge.netlify.app/animations/btn-ui-heartbeat/"
+    },
+    {
+     "name": "sds-btn-ui-hex-reveal",
+     "description": "Hex Reveal — buttons · A hexagon opens from the centre and fills the button on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-hex-reveal/"
     },
     {
      "name": "sds-btn-ui-hold-to-confirm",
@@ -116,6 +220,14 @@
      "description": "Hue Cycle — buttons · The button's colours cycle round the whole hue wheel while it is hovered. https://sds-motion-forge.netlify.app/animations/btn-ui-hue-cycle/"
     },
     {
+     "name": "sds-btn-ui-ink-bloom",
+     "description": "Ink Bloom — buttons · A soft blot of ink blooms up from the bottom edge and floods the button. https://sds-motion-forge.netlify.app/animations/btn-ui-ink-bloom/"
+    },
+    {
+     "name": "sds-btn-ui-inner-glow",
+     "description": "Inner Glow — buttons · A soft glow gathers along the inside edge of the button on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-inner-glow/"
+    },
+    {
      "name": "sds-btn-ui-invert-flip",
      "description": "Invert Flip — buttons · The colours flip to their opposites on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-invert-flip/"
     },
@@ -126,6 +238,18 @@
     {
      "name": "sds-btn-ui-jelly-wobble",
      "description": "Jelly Wobble — buttons · The button wobbles sideways like jelly and settles on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-jelly-wobble/"
+    },
+    {
+     "name": "sds-btn-ui-laser-sweep",
+     "description": "Laser Sweep — buttons · A thin laser line sweeps across the button repeatedly while hovered. https://sds-motion-forge.netlify.app/animations/btn-ui-laser-sweep/"
+    },
+    {
+     "name": "sds-btn-ui-lens-flare",
+     "description": "Lens Flare — buttons · A horizontal lens flare streaks across the button with a bright core on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-lens-flare/"
+    },
+    {
+     "name": "sds-btn-ui-levitate-bob",
+     "description": "Levitate Bob — buttons · The button lifts and bobs gently in the air while hovered. https://sds-motion-forge.netlify.app/animations/btn-ui-levitate-bob/"
     },
     {
      "name": "sds-btn-ui-liquid-fill",
@@ -140,12 +264,60 @@
      "description": "Neon Edge — buttons · A neon outline that pulses softly and swells a little on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-neon-edge/"
     },
     {
+     "name": "sds-btn-ui-neon-underline",
+     "description": "Neon Underline — buttons · A text button with a glowing neon underline that grows in on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-neon-underline/"
+    },
+    {
+     "name": "sds-btn-ui-neumorph-press",
+     "description": "Neumorph Press — buttons · A soft raised button that sinks into its surface when pressed. https://sds-motion-forge.netlify.app/animations/btn-ui-neumorph-press/"
+    },
+    {
+     "name": "sds-btn-ui-notify-dot",
+     "description": "Notify Dot — buttons · A badge dot springs in with a pulse when data-notify is set on the button. https://sds-motion-forge.netlify.app/animations/btn-ui-notify-dot/"
+    },
+    {
+     "name": "sds-btn-ui-outline-echo",
+     "description": "Outline Echo — buttons · Two outlines echo outward around the button on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-outline-echo/"
+    },
+    {
+     "name": "sds-btn-ui-pendulum",
+     "description": "Pendulum — buttons · The button swings like a pendulum from a point above it, then settles. https://sds-motion-forge.netlify.app/animations/btn-ui-pendulum/"
+    },
+    {
+     "name": "sds-btn-ui-pinch-squeeze",
+     "description": "Pinch Squeeze — buttons · The button squeezes narrow when pressed and springs back wide. https://sds-motion-forge.netlify.app/animations/btn-ui-pinch-squeeze/"
+    },
+    {
+     "name": "sds-btn-ui-plus-turn",
+     "description": "Plus Turn — buttons · A plus icon that turns on hover and tilts further when aria-expanded is true. https://sds-motion-forge.netlify.app/animations/btn-ui-plus-turn/"
+    },
+    {
      "name": "sds-btn-ui-press-3d",
      "description": "Press 3D — buttons · A chunky button with a solid edge that lifts on hover and presses flat on click. https://sds-motion-forge.netlify.app/animations/btn-ui-press-3d/"
     },
     {
+     "name": "sds-btn-ui-pressed-burst",
+     "description": "Pressed Burst — buttons · When aria-pressed turns true the button pops and a ring bursts outward. https://sds-motion-forge.netlify.app/animations/btn-ui-pressed-burst/"
+    },
+    {
+     "name": "sds-btn-ui-prism-shift",
+     "description": "Prism Shift — buttons · Red and cyan fringes split from the button on hover and widen when pressed. https://sds-motion-forge.netlify.app/animations/btn-ui-prism-shift/"
+    },
+    {
      "name": "sds-btn-ui-progress-fill",
      "description": "Progress Fill — buttons · A fill that follows --sds-btn-progress (0 to 1), so the button can show real progress. https://sds-motion-forge.netlify.app/animations/btn-ui-progress-fill/"
+    },
+    {
+     "name": "sds-btn-ui-pulse-core",
+     "description": "Pulse Core — buttons · A soft light pulses outward from the centre again and again while hovered. https://sds-motion-forge.netlify.app/animations/btn-ui-pulse-core/"
+    },
+    {
+     "name": "sds-btn-ui-rain-streak",
+     "description": "Rain Streak — buttons · Fine streaks of light fall through the button while it is hovered. https://sds-motion-forge.netlify.app/animations/btn-ui-rain-streak/"
+    },
+    {
+     "name": "sds-btn-ui-refresh-spin",
+     "description": "Refresh Spin — buttons · A refresh icon that spins a full turn on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-refresh-spin/"
     },
     {
      "name": "sds-btn-ui-ring-pulse",
@@ -156,6 +328,10 @@
      "description": "Ripple Press — buttons · A soft light ripples out from the centre when the button is pressed. https://sds-motion-forge.netlify.app/animations/btn-ui-ripple-press/"
     },
     {
+     "name": "sds-btn-ui-rubber-band-x",
+     "description": "Rubber Band X — buttons · The button stretches wide and snaps back like a rubber band. https://sds-motion-forge.netlify.app/animations/btn-ui-rubber-band-x/"
+    },
+    {
      "name": "sds-btn-ui-rubber-stretch",
      "description": "Rubber Stretch — buttons · The button stretches and squashes like rubber, settling after a few rebounds. https://sds-motion-forge.netlify.app/animations/btn-ui-rubber-stretch/"
     },
@@ -164,8 +340,28 @@
      "description": "Scan Line — buttons · A bright scan line sweeps down the button repeatedly while it is hovered. https://sds-motion-forge.netlify.app/animations/btn-ui-scan-line/"
     },
     {
+     "name": "sds-btn-ui-send-fly",
+     "description": "Send Fly — buttons · A paper plane flies off the corner and re-enters from the opposite side on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-send-fly/"
+    },
+    {
+     "name": "sds-btn-ui-shake-no",
+     "description": "Shake No — buttons · A quick horizontal shake, like a head shake, on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-shake-no/"
+    },
+    {
+     "name": "sds-btn-ui-sheet-fan",
+     "description": "Sheet Fan — buttons · A second sheet fans out from behind the button, like a stack of paper. https://sds-motion-forge.netlify.app/animations/btn-ui-sheet-fan/"
+    },
+    {
      "name": "sds-btn-ui-shine-sweep",
      "description": "Shine Sweep — buttons · A glossy button with a light streak that sweeps across it every few seconds. https://sds-motion-forge.netlify.app/animations/btn-ui-shine-sweep/"
+    },
+    {
+     "name": "sds-btn-ui-skeleton-shimmer",
+     "description": "Skeleton Shimmer — buttons · Set aria-busy=\"true\": the label hides and a shimmer sweeps across, like a skeleton. https://sds-motion-forge.netlify.app/animations/btn-ui-skeleton-shimmer/"
+    },
+    {
+     "name": "sds-btn-ui-skew-slide",
+     "description": "Skew Slide — buttons · The button leans into a slant and slides forward on a spring. https://sds-motion-forge.netlify.app/animations/btn-ui-skew-slide/"
     },
     {
      "name": "sds-btn-ui-soft-lift",
@@ -176,12 +372,32 @@
      "description": "Spark Burst — buttons · Two rings of sparks fly outward from the centre on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-spark-burst/"
     },
     {
+     "name": "sds-btn-ui-split-doors",
+     "description": "Split Doors — buttons · Two panels of accent colour slide in from the top and bottom and meet in the middle. https://sds-motion-forge.netlify.app/animations/btn-ui-split-doors/"
+    },
+    {
      "name": "sds-btn-ui-split-icon",
      "description": "Split Icon — buttons · A split button whose icon segment swaps the arrow out and back in on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-split-icon/"
     },
     {
      "name": "sds-btn-ui-spotlight-sweep",
      "description": "Spotlight Sweep — buttons · A soft round spotlight travels across the button on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-spotlight-sweep/"
+    },
+    {
+     "name": "sds-btn-ui-spring-pop",
+     "description": "Spring Pop — buttons · The button pops up on a spring and squeezes down when pressed. https://sds-motion-forge.netlify.app/animations/btn-ui-spring-pop/"
+    },
+    {
+     "name": "sds-btn-ui-squash-land",
+     "description": "Squash Land — buttons · The button hops, lands with a squash and settles on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-squash-land/"
+    },
+    {
+     "name": "sds-btn-ui-state-error",
+     "description": "State Error — buttons · Set data-state=\"error\" or aria-invalid: the button shakes and a red outline appears. https://sds-motion-forge.netlify.app/animations/btn-ui-state-error/"
+    },
+    {
+     "name": "sds-btn-ui-state-success",
+     "description": "State Success — buttons · Set data-state=\"success\": a circle fills the button and a check mark pops in. https://sds-motion-forge.netlify.app/animations/btn-ui-state-success/"
     },
     {
      "name": "sds-btn-ui-stepped-press",
@@ -192,6 +408,18 @@
      "description": "Stripe March — buttons · Diagonal stripes march steadily across the button while it is hovered. https://sds-motion-forge.netlify.app/animations/btn-ui-stripe-march/"
     },
     {
+     "name": "sds-btn-ui-sunburst",
+     "description": "Sunburst — buttons · Rays of light slowly rotate behind the label while the button is hovered. https://sds-motion-forge.netlify.app/animations/btn-ui-sunburst/"
+    },
+    {
+     "name": "sds-btn-ui-sunrise-glow",
+     "description": "Sunrise Glow — buttons · A glow rises from below the button like a sunrise on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-sunrise-glow/"
+    },
+    {
+     "name": "sds-btn-ui-switch-knob",
+     "description": "Switch Knob — buttons · A switch inside the button: the knob slides and the track lights up with aria-checked. https://sds-motion-forge.netlify.app/animations/btn-ui-switch-knob/"
+    },
+    {
      "name": "sds-btn-ui-tilt-3d",
      "description": "Tilt 3D — buttons · The button tilts in perspective with a soft highlight, and levels out when pressed. https://sds-motion-forge.netlify.app/animations/btn-ui-tilt-3d/"
     },
@@ -200,8 +428,20 @@
      "description": "Toggle Pill — buttons · Follows aria-pressed: a dot at the start grows to fill the button when it is pressed on. https://sds-motion-forge.netlify.app/animations/btn-ui-toggle-pill/"
     },
     {
+     "name": "sds-btn-ui-twinkle",
+     "description": "Twinkle — buttons · Two stars twinkle in and out on opposite corners while hovered. https://sds-motion-forge.netlify.app/animations/btn-ui-twinkle/"
+    },
+    {
      "name": "sds-btn-ui-underline-grow",
      "description": "Underline Grow — buttons · A link-style button whose underline exits right and re-enters from the left on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-underline-grow/"
+    },
+    {
+     "name": "sds-btn-ui-wiggle",
+     "description": "Wiggle — buttons · The button wiggles from side to side while it is hovered. https://sds-motion-forge.netlify.app/animations/btn-ui-wiggle/"
+    },
+    {
+     "name": "sds-btn-ui-wipe-up",
+     "description": "Wipe Up — buttons · A fill of accent colour wipes up from the bottom edge on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-wipe-up/"
     },
     {
      "name": "sds-bubble-rise",

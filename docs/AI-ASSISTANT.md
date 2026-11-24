@@ -6,7 +6,7 @@ Copy the block below into `CLAUDE.md`, `AGENTS.md`, `.cursorrules`, `.windsurfru
 ## SDS Motion Forge (CSS animation library)
 
 - Package: `@salkomdesignstudio/sds-motion-forge` v5.1.1, MIT. Install: `npm i @salkomdesignstudio/sds-motion-forge`. No-build CDN: `https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css`.
-- 557 CSS-only effects in six categories + 7 cursor-reactive effects. Each effect is ONE class on the element; no JavaScript is needed for the CSS effects.
+- 617 CSS-only effects in six categories + 7 cursor-reactive effects. Each effect is ONE class on the element; no JavaScript is needed for the CSS effects.
 - NEVER invent a class name. Valid names follow these patterns: text `sds-<name>`, buttons `sds-btn-<name>`, inputs `sds-input-<name>`, cards `sds-card-<name>`, loaders `sds-loader-<name>`, scroll `sds-scroll-<name>`.
 - Real examples: `sds-velvet-drop`, `sds-aurora-text`, `sds-btn-ui-aurora-mesh`, `sds-input-focus-glow`, `sds-card-cascade`, `sds-loader-orbital`, `sds-scroll-rise`.
 - Verify any class before using it: https://sds-motion-forge.netlify.app/registry.json, or open https://sds-motion-forge.netlify.app/animations/<class-without-"sds-">/ (for example https://sds-motion-forge.netlify.app/animations/aurora-text/).

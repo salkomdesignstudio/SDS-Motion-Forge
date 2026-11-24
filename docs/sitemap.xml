@@ -20,44 +20,104 @@
   <url><loc>https://sds-motion-forge.netlify.app/animations/bounce-loop/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-arrow-slide/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-aurora-mesh/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-bar-loading/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-bars-open/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-blob-shift/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-bloom-halo/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-bracket-open/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-brutal-offset/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-bubble-rise/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-burger-x/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-caret-bounce/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-check-draw/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-chevron-turn/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-circle-expand/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-confetti-pop/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-conic-border/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-corner-fold/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-corner-grow/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-countdown-drain/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-crt-lines/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-current-marker/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-curtain-split/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-diagonal-nudge/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-diagonal-wipe/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-disabled-nope/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-dots-loading/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-download-loop/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-drop-in/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-duotone-slide/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-edge-light/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-flip-spin/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-float-shadow/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-frame-draw/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-ghost-fill/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-glass-lift/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-glitch-split/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-gloss-drop/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-gradient-flow/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-halftone-fade/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-heartbeat/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-hex-reveal/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-hold-to-confirm/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-holo-sheen/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-hue-cycle/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-ink-bloom/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-inner-glow/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-invert-flip/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-iris-reveal/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-jelly-wobble/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-laser-sweep/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-lens-flare/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-levitate-bob/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-liquid-fill/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-loading-ring/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-neon-edge/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-neon-underline/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-neumorph-press/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-notify-dot/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-outline-echo/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-pendulum/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-pinch-squeeze/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-plus-turn/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-press-3d/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-pressed-burst/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-prism-shift/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-progress-fill/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-pulse-core/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-rain-streak/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-refresh-spin/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-ring-pulse/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-ripple-press/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-rubber-band-x/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-rubber-stretch/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-scan-line/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-send-fly/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-shake-no/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-sheet-fan/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-shine-sweep/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-skeleton-shimmer/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-skew-slide/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-soft-lift/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-spark-burst/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-split-doors/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-split-icon/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-spotlight-sweep/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-spring-pop/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-squash-land/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-state-error/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-state-success/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-stepped-press/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-stripe-march/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-sunburst/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-sunrise-glow/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-switch-knob/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-tilt-3d/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-toggle-pill/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-twinkle/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-underline-grow/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-wiggle/</loc><priority>0.6</priority></url>
+  <url><loc>https://sds-motion-forge.netlify.app/animations/btn-ui-wipe-up/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/bubble-rise/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/card-accordion-in/</loc><priority>0.6</priority></url>
   <url><loc>https://sds-motion-forge.netlify.app/animations/card-aurora/</loc><priority>0.6</priority></url>

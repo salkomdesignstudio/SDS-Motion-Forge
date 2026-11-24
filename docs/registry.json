@@ -346,8 +346,8 @@
       "kind": "effect",
       "description": "An arrow glides in from the left and settles with a small overshoot on hover.",
       "selectors": [
-        ".sds-btn-ui-arrow-slide, .sds-btn-ui-split-icon, .sds-btn-ui-liquid-fill, .sds-btn-ui-shine-sweep, .sds-btn-ui-conic-border, .sds-btn-ui-aurora-mesh, .sds-btn-ui-press-3d, .sds-btn-ui-glass-lift, .sds-btn-ui-neon-edge, .sds-btn-ui-ripple-press, .sds-btn-ui-gradient-flow, .sds-btn-ui-soft-lift, .sds-btn-ui-iris-reveal, .sds-btn-ui-diagonal-wipe, .sds-btn-ui-curtain-split, .sds-btn-ui-ghost-fill, .sds-btn-ui-underline-grow, .sds-btn-ui-bracket-open, .sds-btn-ui-frame-draw, .sds-btn-ui-circle-expand, .sds-btn-ui-brutal-offset, .sds-btn-ui-stepped-press, .sds-btn-ui-bloom-halo, .sds-btn-ui-tilt-3d, .sds-btn-ui-flip-spin, .sds-btn-ui-rubber-stretch, .sds-btn-ui-jelly-wobble, .sds-btn-ui-holo-sheen, .sds-btn-ui-spotlight-sweep, .sds-btn-ui-glitch-split, .sds-btn-ui-hue-cycle, .sds-btn-ui-invert-flip, .sds-btn-ui-stripe-march, .sds-btn-ui-spark-burst, .sds-btn-ui-ring-pulse, .sds-btn-ui-scan-line, .sds-btn-ui-hold-to-confirm, .sds-btn-ui-progress-fill, .sds-btn-ui-loading-ring, .sds-btn-ui-toggle-pill",
-        ".sds-btn-ui-arrow-slide:focus-visible, .sds-btn-ui-split-icon:focus-visible, .sds-btn-ui-liquid-fill:focus-visible, .sds-btn-ui-shine-sweep:focus-visible, .sds-btn-ui-conic-border:focus-visible, .sds-btn-ui-aurora-mesh:focus-visible, .sds-btn-ui-press-3d:focus-visible, .sds-btn-ui-glass-lift:focus-visible, .sds-btn-ui-neon-edge:focus-visible, .sds-btn-ui-ripple-press:focus-visible, .sds-btn-ui-gradient-flow:focus-visible, .sds-btn-ui-soft-lift:focus-visible, .sds-btn-ui-iris-reveal:focus-visible, .sds-btn-ui-diagonal-wipe:focus-visible, .sds-btn-ui-curtain-split:focus-visible, .sds-btn-ui-ghost-fill:focus-visible, .sds-btn-ui-underline-grow:focus-visible, .sds-btn-ui-bracket-open:focus-visible, .sds-btn-ui-frame-draw:focus-visible, .sds-btn-ui-circle-expand:focus-visible, .sds-btn-ui-brutal-offset:focus-visible, .sds-btn-ui-stepped-press:focus-visible, .sds-btn-ui-bloom-halo:focus-visible, .sds-btn-ui-tilt-3d:focus-visible, .sds-btn-ui-flip-spin:focus-visible, .sds-btn-ui-rubber-stretch:focus-visible, .sds-btn-ui-jelly-wobble:focus-visible, .sds-btn-ui-holo-sheen:focus-visible, .sds-btn-ui-spotlight-sweep:focus-visible, .sds-btn-ui-glitch-split:focus-visible, .sds-btn-ui-hue-cycle:focus-visible, .sds-btn-ui-invert-flip:focus-visible, .sds-btn-ui-stripe-march:focus-visible, .sds-btn-ui-spark-burst:focus-visible, .sds-btn-ui-ring-pulse:focus-visible, .sds-btn-ui-scan-line:focus-visible, .sds-btn-ui-hold-to-confirm:focus-visible, .sds-btn-ui-progress-fill:focus-visible, .sds-btn-ui-loading-ring:focus-visible, .sds-btn-ui-toggle-pill:focus-visible",
+        ".sds-btn-ui-arrow-slide, .sds-btn-ui-split-icon, .sds-btn-ui-liquid-fill, .sds-btn-ui-shine-sweep, .sds-btn-ui-conic-border, .sds-btn-ui-aurora-mesh, .sds-btn-ui-press-3d, .sds-btn-ui-glass-lift, .sds-btn-ui-neon-edge, .sds-btn-ui-ripple-press, .sds-btn-ui-gradient-flow, .sds-btn-ui-soft-lift, .sds-btn-ui-iris-reveal, .sds-btn-ui-diagonal-wipe, .sds-btn-ui-curtain-split, .sds-btn-ui-ghost-fill, .sds-btn-ui-underline-grow, .sds-btn-ui-bracket-open, .sds-btn-ui-frame-draw, .sds-btn-ui-circle-expand, .sds-btn-ui-brutal-offset, .sds-btn-ui-stepped-press, .sds-btn-ui-bloom-halo, .sds-btn-ui-tilt-3d, .sds-btn-ui-flip-spin, .sds-btn-ui-rubber-stretch, .sds-btn-ui-jelly-wobble, .sds-btn-ui-holo-sheen, .sds-btn-ui-spotlight-sweep, .sds-btn-ui-glitch-split, .sds-btn-ui-hue-cycle, .sds-btn-ui-invert-flip, .sds-btn-ui-stripe-march, .sds-btn-ui-spark-burst, .sds-btn-ui-ring-pulse, .sds-btn-ui-scan-line, .sds-btn-ui-hold-to-confirm, .sds-btn-ui-progress-fill, .sds-btn-ui-loading-ring, .sds-btn-ui-toggle-pill, .sds-btn-ui-wipe-up, .sds-btn-ui-bars-open, .sds-btn-ui-split-doors, .sds-btn-ui-corner-grow, .sds-btn-ui-hex-reveal, .sds-btn-ui-corner-fold, .sds-btn-ui-sunrise-glow, .sds-btn-ui-pulse-core, .sds-btn-ui-sunburst, .sds-btn-ui-duotone-slide, .sds-btn-ui-ink-bloom, .sds-btn-ui-bubble-rise, .sds-btn-ui-rain-streak, .sds-btn-ui-twinkle, .sds-btn-ui-lens-flare, .sds-btn-ui-spring-pop, .sds-btn-ui-squash-land, .sds-btn-ui-wiggle, .sds-btn-ui-shake-no, .sds-btn-ui-heartbeat, .sds-btn-ui-levitate-bob, .sds-btn-ui-pendulum, .sds-btn-ui-rubber-band-x, .sds-btn-ui-sheet-fan, .sds-btn-ui-neumorph-press, .sds-btn-ui-outline-echo, .sds-btn-ui-chevron-turn, .sds-btn-ui-burger-x, .sds-btn-ui-plus-turn, .sds-btn-ui-refresh-spin, .sds-btn-ui-download-loop, .sds-btn-ui-send-fly, .sds-btn-ui-diagonal-nudge, .sds-btn-ui-drop-in, .sds-btn-ui-notify-dot, .sds-btn-ui-state-success, .sds-btn-ui-state-error, .sds-btn-ui-switch-knob, .sds-btn-ui-current-marker, .sds-btn-ui-pressed-burst, .sds-btn-ui-disabled-nope, .sds-btn-ui-caret-bounce, .sds-btn-ui-check-draw, .sds-btn-ui-dots-loading, .sds-btn-ui-bar-loading, .sds-btn-ui-skeleton-shimmer, .sds-btn-ui-countdown-drain, .sds-btn-ui-edge-light, .sds-btn-ui-prism-shift, .sds-btn-ui-laser-sweep, .sds-btn-ui-inner-glow, .sds-btn-ui-neon-underline, .sds-btn-ui-skew-slide, .sds-btn-ui-blob-shift, .sds-btn-ui-pinch-squeeze, .sds-btn-ui-gloss-drop, .sds-btn-ui-confetti-pop, .sds-btn-ui-halftone-fade, .sds-btn-ui-crt-lines, .sds-btn-ui-float-shadow",
+        ".sds-btn-ui-arrow-slide:focus-visible, .sds-btn-ui-split-icon:focus-visible, .sds-btn-ui-liquid-fill:focus-visible, .sds-btn-ui-shine-sweep:focus-visible, .sds-btn-ui-conic-border:focus-visible, .sds-btn-ui-aurora-mesh:focus-visible, .sds-btn-ui-press-3d:focus-visible, .sds-btn-ui-glass-lift:focus-visible, .sds-btn-ui-neon-edge:focus-visible, .sds-btn-ui-ripple-press:focus-visible, .sds-btn-ui-gradient-flow:focus-visible, .sds-btn-ui-soft-lift:focus-visible, .sds-btn-ui-iris-reveal:focus-visible, .sds-btn-ui-diagonal-wipe:focus-visible, .sds-btn-ui-curtain-split:focus-visible, .sds-btn-ui-ghost-fill:focus-visible, .sds-btn-ui-underline-grow:focus-visible, .sds-btn-ui-bracket-open:focus-visible, .sds-btn-ui-frame-draw:focus-visible, .sds-btn-ui-circle-expand:focus-visible, .sds-btn-ui-brutal-offset:focus-visible, .sds-btn-ui-stepped-press:focus-visible, .sds-btn-ui-bloom-halo:focus-visible, .sds-btn-ui-tilt-3d:focus-visible, .sds-btn-ui-flip-spin:focus-visible, .sds-btn-ui-rubber-stretch:focus-visible, .sds-btn-ui-jelly-wobble:focus-visible, .sds-btn-ui-holo-sheen:focus-visible, .sds-btn-ui-spotlight-sweep:focus-visible, .sds-btn-ui-glitch-split:focus-visible, .sds-btn-ui-hue-cycle:focus-visible, .sds-btn-ui-invert-flip:focus-visible, .sds-btn-ui-stripe-march:focus-visible, .sds-btn-ui-spark-burst:focus-visible, .sds-btn-ui-ring-pulse:focus-visible, .sds-btn-ui-scan-line:focus-visible, .sds-btn-ui-hold-to-confirm:focus-visible, .sds-btn-ui-progress-fill:focus-visible, .sds-btn-ui-loading-ring:focus-visible, .sds-btn-ui-toggle-pill:focus-visible, .sds-btn-ui-wipe-up:focus-visible, .sds-btn-ui-bars-open:focus-visible, .sds-btn-ui-split-doors:focus-visible, .sds-btn-ui-corner-grow:focus-visible, .sds-btn-ui-hex-reveal:focus-visible, .sds-btn-ui-corner-fold:focus-visible, .sds-btn-ui-sunrise-glow:focus-visible, .sds-btn-ui-pulse-core:focus-visible, .sds-btn-ui-sunburst:focus-visible, .sds-btn-ui-duotone-slide:focus-visible, .sds-btn-ui-ink-bloom:focus-visible, .sds-btn-ui-bubble-rise:focus-visible, .sds-btn-ui-rain-streak:focus-visible, .sds-btn-ui-twinkle:focus-visible, .sds-btn-ui-lens-flare:focus-visible, .sds-btn-ui-spring-pop:focus-visible, .sds-btn-ui-squash-land:focus-visible, .sds-btn-ui-wiggle:focus-visible, .sds-btn-ui-shake-no:focus-visible, .sds-btn-ui-heartbeat:focus-visible, .sds-btn-ui-levitate-bob:focus-visible, .sds-btn-ui-pendulum:focus-visible, .sds-btn-ui-rubber-band-x:focus-visible, .sds-btn-ui-sheet-fan:focus-visible, .sds-btn-ui-neumorph-press:focus-visible, .sds-btn-ui-outline-echo:focus-visible, .sds-btn-ui-chevron-turn:focus-visible, .sds-btn-ui-burger-x:focus-visible, .sds-btn-ui-plus-turn:focus-visible, .sds-btn-ui-refresh-spin:focus-visible, .sds-btn-ui-download-loop:focus-visible, .sds-btn-ui-send-fly:focus-visible, .sds-btn-ui-diagonal-nudge:focus-visible, .sds-btn-ui-drop-in:focus-visible, .sds-btn-ui-notify-dot:focus-visible, .sds-btn-ui-state-success:focus-visible, .sds-btn-ui-state-error:focus-visible, .sds-btn-ui-switch-knob:focus-visible, .sds-btn-ui-current-marker:focus-visible, .sds-btn-ui-pressed-burst:focus-visible, .sds-btn-ui-disabled-nope:focus-visible, .sds-btn-ui-caret-bounce:focus-visible, .sds-btn-ui-check-draw:focus-visible, .sds-btn-ui-dots-loading:focus-visible, .sds-btn-ui-bar-loading:focus-visible, .sds-btn-ui-skeleton-shimmer:focus-visible, .sds-btn-ui-countdown-drain:focus-visible, .sds-btn-ui-edge-light:focus-visible, .sds-btn-ui-prism-shift:focus-visible, .sds-btn-ui-laser-sweep:focus-visible, .sds-btn-ui-inner-glow:focus-visible, .sds-btn-ui-neon-underline:focus-visible, .sds-btn-ui-skew-slide:focus-visible, .sds-btn-ui-blob-shift:focus-visible, .sds-btn-ui-pinch-squeeze:focus-visible, .sds-btn-ui-gloss-drop:focus-visible, .sds-btn-ui-confetti-pop:focus-visible, .sds-btn-ui-halftone-fade:focus-visible, .sds-btn-ui-crt-lines:focus-visible, .sds-btn-ui-float-shadow:focus-visible",
         ".sds-btn-ui-arrow-slide",
         ".sds-btn-ui-arrow-slide::after",
         ".sds-btn-ui-arrow-slide > .sds-btn-icon",
@@ -413,6 +413,108 @@
       "animatedProps": [
         "transform"
       ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-bar-loading",
+      "displayName": "Bar Loading",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "Set aria-busy=\"true\": a bright bar runs along the bottom edge.",
+      "selectors": [
+        ".sds-btn-ui-bar-loading::after",
+        ".sds-btn-ui-bar-loading[aria-busy=\"true\"]",
+        ".sds-btn-ui-bar-loading[aria-busy=\"true\"]::after",
+        ".sds-btn-ui-bar-loading:hover, .sds-btn-ui-bar-loading:focus-visible"
+      ],
+      "keyframes": [
+        "sds-btnUiBarLoading"
+      ],
+      "tokensUsed": [],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": true,
+      "animatedProps": [
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-bars-open",
+      "displayName": "Bars Open",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A fill opens outward from the centre line to both sides on hover.",
+      "selectors": [
+        ".sds-btn-ui-bars-open::before",
+        ".sds-btn-ui-bars-open:hover::before, .sds-btn-ui-bars-open:focus-visible::before",
+        ".sds-btn-ui-bars-open:active"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-btn-accent"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-blob-shift",
+      "displayName": "Blob Shift",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "Two blurred blobs at the corners slide to the centre and merge on hover.",
+      "selectors": [
+        ".sds-btn-ui-blob-shift::before, .sds-btn-ui-blob-shift::after",
+        ".sds-btn-ui-blob-shift::before",
+        ".sds-btn-ui-blob-shift::after",
+        ".sds-btn-ui-blob-shift:hover::before, .sds-btn-ui-blob-shift:focus-visible::before",
+        ".sds-btn-ui-blob-shift:hover::after, .sds-btn-ui-blob-shift:focus-visible::after"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-btn-accent"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
       "animatedPaintProps": [],
       "animatedLayoutProps": [],
       "requiresCharSplit": false,
@@ -545,6 +647,194 @@
       "sinceVersion": "4.0.3"
     },
     {
+      "name": "sds-btn-ui-bubble-rise",
+      "displayName": "Bubble Rise",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "Small bubbles drift up through the button while it is hovered.",
+      "selectors": [
+        ".sds-btn-ui-bubble-rise::before, .sds-btn-ui-bubble-rise::after",
+        ".sds-btn-ui-bubble-rise::before",
+        ".sds-btn-ui-bubble-rise::after",
+        ".sds-btn-ui-bubble-rise:hover::before, .sds-btn-ui-bubble-rise:focus-visible::before",
+        ".sds-btn-ui-bubble-rise:hover::after, .sds-btn-ui-bubble-rise:focus-visible::after"
+      ],
+      "keyframes": [
+        "sds-btnUiBubbleRise"
+      ],
+      "tokensUsed": [],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": true,
+      "animatedProps": [
+        "opacity",
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-burger-x",
+      "displayName": "Burger X",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A menu icon whose two bars cross into an X when aria-expanded is true.",
+      "selectors": [
+        ".sds-btn-ui-burger-x",
+        ".sds-btn-ui-burger-x::before, .sds-btn-ui-burger-x::after",
+        ".sds-btn-ui-burger-x::before",
+        ".sds-btn-ui-burger-x::after",
+        ".sds-btn-ui-burger-x:hover::before, .sds-btn-ui-burger-x:focus-visible::before",
+        ".sds-btn-ui-burger-x:hover::after, .sds-btn-ui-burger-x:focus-visible::after",
+        ".sds-btn-ui-burger-x[aria-expanded=\"true\"]::before",
+        ".sds-btn-ui-burger-x[aria-expanded=\"true\"]::after"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-caret-bounce",
+      "displayName": "Caret Bounce",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A caret that bounces up and down while the button is hovered.",
+      "selectors": [
+        ".sds-btn-ui-caret-bounce",
+        ".sds-btn-ui-caret-bounce::after",
+        ".sds-btn-ui-caret-bounce > .sds-btn-icon",
+        ".sds-btn-ui-caret-bounce:has(> .sds-btn-icon)::after",
+        ".sds-btn-ui-caret-bounce:hover::after, .sds-btn-ui-caret-bounce:focus-visible::after, .sds-btn-ui-caret-bounce:hover > .sds-btn-icon, .sds-btn-ui-caret-bounce:focus-visible > .sds-btn-icon"
+      ],
+      "keyframes": [
+        "sds-btnUiCaretBounce"
+      ],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-btn-icon",
+        "--sds-btn-icon-display",
+        "--sds-btn-icon-size"
+      ],
+      "compositorSafe": true,
+      "loop": true,
+      "animatedProps": [
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-check-draw",
+      "displayName": "Check Draw",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A check mark draws itself in at the end of the button on hover.",
+      "selectors": [
+        ".sds-btn-ui-check-draw",
+        ".sds-btn-ui-check-draw::after",
+        ".sds-btn-ui-check-draw > .sds-btn-icon",
+        ".sds-btn-ui-check-draw:has(> .sds-btn-icon)::after",
+        ".sds-btn-ui-check-draw:hover::after, .sds-btn-ui-check-draw:focus-visible::after, .sds-btn-ui-check-draw:hover > .sds-btn-icon, .sds-btn-ui-check-draw:focus-visible > .sds-btn-icon"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-btn-icon",
+        "--sds-btn-icon-display",
+        "--sds-btn-icon-size"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-chevron-turn",
+      "displayName": "Chevron Turn",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A chevron that turns upside down when aria-expanded is true.",
+      "selectors": [
+        ".sds-btn-ui-chevron-turn",
+        ".sds-btn-ui-chevron-turn::after",
+        ".sds-btn-ui-chevron-turn > .sds-btn-icon",
+        ".sds-btn-ui-chevron-turn:has(> .sds-btn-icon)::after",
+        ".sds-btn-ui-chevron-turn:hover, .sds-btn-ui-chevron-turn:focus-visible",
+        ".sds-btn-ui-chevron-turn[aria-expanded=\"true\"]::after, .sds-btn-ui-chevron-turn[aria-expanded=\"true\"] > .sds-btn-icon"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-btn-icon",
+        "--sds-btn-icon-display",
+        "--sds-btn-icon-size"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
       "name": "sds-btn-ui-circle-expand",
       "displayName": "Circle Expand",
       "category": "buttons",
@@ -573,6 +863,44 @@
       "compositorSafe": true,
       "loop": false,
       "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-confetti-pop",
+      "displayName": "Confetti Pop",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "Confetti flies out in all directions when the button is pressed.",
+      "selectors": [
+        ".sds-btn-ui-confetti-pop",
+        ".sds-btn-ui-confetti-pop::before",
+        ".sds-btn-ui-confetti-pop:active::before",
+        ".sds-btn-ui-confetti-pop:active",
+        ".sds-btn-ui-confetti-pop:hover, .sds-btn-ui-confetti-pop:focus-visible"
+      ],
+      "keyframes": [
+        "sds-btnUiConfettiPop"
+      ],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "opacity",
+        "transform"
+      ],
       "animatedPaintProps": [],
       "animatedLayoutProps": [],
       "requiresCharSplit": false,
@@ -624,6 +952,182 @@
       "sinceVersion": "4.0.3"
     },
     {
+      "name": "sds-btn-ui-corner-fold",
+      "displayName": "Corner Fold",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "Two triangles of accent colour fold in from opposite corners and cover the button.",
+      "selectors": [
+        ".sds-btn-ui-corner-fold::before, .sds-btn-ui-corner-fold::after",
+        ".sds-btn-ui-corner-fold::before",
+        ".sds-btn-ui-corner-fold::after",
+        ".sds-btn-ui-corner-fold:hover::before, .sds-btn-ui-corner-fold:focus-visible::before",
+        ".sds-btn-ui-corner-fold:hover::after, .sds-btn-ui-corner-fold:focus-visible::after",
+        ".sds-btn-ui-corner-fold:active"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-btn-accent"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-corner-grow",
+      "displayName": "Corner Grow",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A circle of accent colour grows from the top-left corner until it covers the button.",
+      "selectors": [
+        ".sds-btn-ui-corner-grow::before",
+        ".sds-btn-ui-corner-grow:hover::before, .sds-btn-ui-corner-grow:focus-visible::before",
+        ".sds-btn-ui-corner-grow:active"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-btn-accent"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-countdown-drain",
+      "displayName": "Countdown Drain",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "Set data-countdown and a fill drains away over --sds-btn-countdown (default 5s).",
+      "selectors": [
+        ".sds-btn-ui-countdown-drain::before",
+        ".sds-btn-ui-countdown-drain[data-countdown]::before",
+        ".sds-btn-ui-countdown-drain:hover, .sds-btn-ui-countdown-drain:focus-visible"
+      ],
+      "keyframes": [
+        "sds-btnUiCountdownDrain"
+      ],
+      "tokensUsed": [],
+      "customProperties": [
+        "--sds-btn-accent",
+        "--sds-btn-countdown"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-crt-lines",
+      "displayName": "CRT Lines",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "Scanlines roll down the button like an old screen while hovered.",
+      "selectors": [
+        ".sds-btn-ui-crt-lines",
+        ".sds-btn-ui-crt-lines::before",
+        ".sds-btn-ui-crt-lines:hover::before, .sds-btn-ui-crt-lines:focus-visible::before",
+        ".sds-btn-ui-crt-lines:hover, .sds-btn-ui-crt-lines:focus-visible"
+      ],
+      "keyframes": [
+        "sds-btnUiCrtLines"
+      ],
+      "tokensUsed": [],
+      "customProperties": [
+        "--sds-btn-radius"
+      ],
+      "compositorSafe": true,
+      "loop": true,
+      "animatedProps": [
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-current-marker",
+      "displayName": "Current Marker",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A text button that shows a small dot under it for aria-current or aria-selected.",
+      "selectors": [
+        ".sds-btn-ui-current-marker",
+        ".sds-btn-ui-current-marker::after",
+        ".sds-btn-ui-current-marker:hover::after, .sds-btn-ui-current-marker:focus-visible::after",
+        ".sds-btn-ui-current-marker[aria-current]::after, .sds-btn-ui-current-marker[aria-selected=\"true\"]::after"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-spring"
+      ],
+      "customProperties": [
+        "--sds-btn-bg",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
       "name": "sds-btn-ui-curtain-split",
       "displayName": "Curtain Split",
       "category": "buttons",
@@ -642,6 +1146,44 @@
       ],
       "customProperties": [
         "--sds-btn-accent"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-diagonal-nudge",
+      "displayName": "Diagonal Nudge",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "An external-link arrow nudges up and to the right on hover.",
+      "selectors": [
+        ".sds-btn-ui-diagonal-nudge",
+        ".sds-btn-ui-diagonal-nudge::after",
+        ".sds-btn-ui-diagonal-nudge > .sds-btn-icon",
+        ".sds-btn-ui-diagonal-nudge:has(> .sds-btn-icon)::after",
+        ".sds-btn-ui-diagonal-nudge:hover::after, .sds-btn-ui-diagonal-nudge:focus-visible::after, .sds-btn-ui-diagonal-nudge:hover > .sds-btn-icon, .sds-btn-ui-diagonal-nudge:focus-visible > .sds-btn-icon",
+        ".sds-btn-ui-diagonal-nudge:hover, .sds-btn-ui-diagonal-nudge:focus-visible"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-btn-icon",
+        "--sds-btn-icon-display",
+        "--sds-btn-icon-size"
       ],
       "compositorSafe": true,
       "loop": false,
@@ -692,6 +1234,229 @@
       "sinceVersion": "4.0.3"
     },
     {
+      "name": "sds-btn-ui-disabled-nope",
+      "displayName": "Disabled Nope",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "Looks striped and dimmed when disabled, and gives a small shake if hovered.",
+      "selectors": [
+        ".sds-btn-ui-disabled-nope:disabled, .sds-btn-ui-disabled-nope[aria-disabled=\"true\"]",
+        ".sds-btn-ui-disabled-nope:disabled::before, .sds-btn-ui-disabled-nope[aria-disabled=\"true\"]::before",
+        ".sds-btn-ui-disabled-nope:disabled:hover, .sds-btn-ui-disabled-nope[aria-disabled=\"true\"]:hover",
+        ".sds-btn-ui-disabled-nope:not(:disabled):not([aria-disabled=\"true\"]):hover, .sds-btn-ui-disabled-nope:not(:disabled):not([aria-disabled=\"true\"]):focus-visible"
+      ],
+      "keyframes": [
+        "sds-btnUiDisabledNope"
+      ],
+      "tokensUsed": [],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-dots-loading",
+      "displayName": "Dots Loading",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "Set aria-busy=\"true\": the label gives way to three dots that pulse in turn.",
+      "selectors": [
+        ".sds-btn-ui-dots-loading::before, .sds-btn-ui-dots-loading::after",
+        ".sds-btn-ui-dots-loading::before",
+        ".sds-btn-ui-dots-loading[aria-busy=\"true\"]",
+        ".sds-btn-ui-dots-loading[aria-busy=\"true\"]::before",
+        ".sds-btn-ui-dots-loading[aria-busy=\"true\"]::after",
+        ".sds-btn-ui-dots-loading:hover, .sds-btn-ui-dots-loading:focus-visible"
+      ],
+      "keyframes": [
+        "sds-btnUiDotsLoading"
+      ],
+      "tokensUsed": [],
+      "customProperties": [
+        "--sds-btn-fg"
+      ],
+      "compositorSafe": true,
+      "loop": true,
+      "animatedProps": [
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-download-loop",
+      "displayName": "Download Loop",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A download arrow that drops out of the button and re-enters from above, on loop.",
+      "selectors": [
+        ".sds-btn-ui-download-loop",
+        ".sds-btn-ui-download-loop::after",
+        ".sds-btn-ui-download-loop > .sds-btn-icon",
+        ".sds-btn-ui-download-loop:has(> .sds-btn-icon)::after",
+        ".sds-btn-ui-download-loop:hover::after, .sds-btn-ui-download-loop:focus-visible::after, .sds-btn-ui-download-loop:hover > .sds-btn-icon, .sds-btn-ui-download-loop:focus-visible > .sds-btn-icon"
+      ],
+      "keyframes": [
+        "sds-btnUiDownloadLoop"
+      ],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-btn-icon",
+        "--sds-btn-icon-display",
+        "--sds-btn-icon-size"
+      ],
+      "compositorSafe": true,
+      "loop": true,
+      "animatedProps": [
+        "opacity",
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-drop-in",
+      "displayName": "Drop In",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A dot drops into the button when it is pressed, like an item into a cart.",
+      "selectors": [
+        ".sds-btn-ui-drop-in",
+        ".sds-btn-ui-drop-in::before",
+        ".sds-btn-ui-drop-in:active::before",
+        ".sds-btn-ui-drop-in:active",
+        ".sds-btn-ui-drop-in:hover, .sds-btn-ui-drop-in:focus-visible"
+      ],
+      "keyframes": [
+        "sds-btnUiDropIn"
+      ],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-btn-accent"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "opacity",
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-duotone-slide",
+      "displayName": "Duotone Slide",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "Two slanted bands, one bright and one dark, slide across in sequence.",
+      "selectors": [
+        ".sds-btn-ui-duotone-slide::before, .sds-btn-ui-duotone-slide::after",
+        ".sds-btn-ui-duotone-slide::before",
+        ".sds-btn-ui-duotone-slide::after",
+        ".sds-btn-ui-duotone-slide:hover::before, .sds-btn-ui-duotone-slide:focus-visible::before",
+        ".sds-btn-ui-duotone-slide:hover::after, .sds-btn-ui-duotone-slide:focus-visible::after",
+        ".sds-btn-ui-duotone-slide:active"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-btn-accent"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-edge-light",
+      "displayName": "Edge Light",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A bright line and a soft glow light up the top edge on hover.",
+      "selectors": [
+        ".sds-btn-ui-edge-light::before",
+        ".sds-btn-ui-edge-light::after",
+        ".sds-btn-ui-edge-light:hover::before, .sds-btn-ui-edge-light:focus-visible::before",
+        ".sds-btn-ui-edge-light:hover::after, .sds-btn-ui-edge-light:focus-visible::after",
+        ".sds-btn-ui-edge-light:active"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
       "name": "sds-btn-ui-flip-spin",
       "displayName": "Flip Spin",
       "category": "buttons",
@@ -713,6 +1478,40 @@
       "animatedProps": [
         "transform"
       ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-float-shadow",
+      "displayName": "Float Shadow",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "The button floats up while its shadow on the ground shrinks and fades.",
+      "selectors": [
+        ".sds-btn-ui-float-shadow",
+        ".sds-btn-ui-float-shadow::before",
+        ".sds-btn-ui-float-shadow:hover, .sds-btn-ui-float-shadow:focus-visible",
+        ".sds-btn-ui-float-shadow:hover::before, .sds-btn-ui-float-shadow:focus-visible::before",
+        ".sds-btn-ui-float-shadow:active",
+        ".sds-btn-ui-float-shadow:active::before"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
       "animatedPaintProps": [],
       "animatedLayoutProps": [],
       "requiresCharSplit": false,
@@ -875,6 +1674,37 @@
       "sinceVersion": "4.0.3"
     },
     {
+      "name": "sds-btn-ui-gloss-drop",
+      "displayName": "Gloss Drop",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A glossy highlight drops over the top half of the button on hover.",
+      "selectors": [
+        ".sds-btn-ui-gloss-drop::before",
+        ".sds-btn-ui-gloss-drop:hover::before, .sds-btn-ui-gloss-drop:focus-visible::before",
+        ".sds-btn-ui-gloss-drop:active"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
       "name": "sds-btn-ui-gradient-flow",
       "displayName": "Gradient Flow",
       "category": "buttons",
@@ -895,6 +1725,101 @@
       "animatedProps": [
         "transform"
       ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-halftone-fade",
+      "displayName": "Halftone Fade",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A halftone dot pattern fades in diagonally across the button on hover.",
+      "selectors": [
+        ".sds-btn-ui-halftone-fade::before",
+        ".sds-btn-ui-halftone-fade:hover::before, .sds-btn-ui-halftone-fade:focus-visible::before",
+        ".sds-btn-ui-halftone-fade:active"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-heartbeat",
+      "displayName": "Heartbeat",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "The button beats twice, like a heart, in a steady loop while hovered.",
+      "selectors": [
+        ".sds-btn-ui-heartbeat:hover, .sds-btn-ui-heartbeat:focus-visible"
+      ],
+      "keyframes": [
+        "sds-btnUiHeartbeat"
+      ],
+      "tokensUsed": [],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": true,
+      "animatedProps": [
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-hex-reveal",
+      "displayName": "Hex Reveal",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A hexagon opens from the centre and fills the button on hover.",
+      "selectors": [
+        ".sds-btn-ui-hex-reveal::before",
+        ".sds-btn-ui-hex-reveal:hover::before, .sds-btn-ui-hex-reveal:focus-visible::before",
+        ".sds-btn-ui-hex-reveal:active"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-btn-accent"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
       "animatedPaintProps": [],
       "animatedLayoutProps": [],
       "requiresCharSplit": false,
@@ -1013,6 +1938,70 @@
       "sinceVersion": "4.0.3"
     },
     {
+      "name": "sds-btn-ui-ink-bloom",
+      "displayName": "Ink Bloom",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A soft blot of ink blooms up from the bottom edge and floods the button.",
+      "selectors": [
+        ".sds-btn-ui-ink-bloom::before",
+        ".sds-btn-ui-ink-bloom:hover::before, .sds-btn-ui-ink-bloom:focus-visible::before",
+        ".sds-btn-ui-ink-bloom:active"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-btn-accent"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-inner-glow",
+      "displayName": "Inner Glow",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A soft glow gathers along the inside edge of the button on hover.",
+      "selectors": [
+        ".sds-btn-ui-inner-glow::before",
+        ".sds-btn-ui-inner-glow:hover::before, .sds-btn-ui-inner-glow:focus-visible::before",
+        ".sds-btn-ui-inner-glow:active"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
       "name": "sds-btn-ui-invert-flip",
       "displayName": "Invert Flip",
       "category": "buttons",
@@ -1096,6 +2085,111 @@
       "customProperties": [],
       "compositorSafe": true,
       "loop": false,
+      "animatedProps": [
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-laser-sweep",
+      "displayName": "Laser Sweep",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A thin laser line sweeps across the button repeatedly while hovered.",
+      "selectors": [
+        ".sds-btn-ui-laser-sweep::before",
+        ".sds-btn-ui-laser-sweep:hover::before, .sds-btn-ui-laser-sweep:focus-visible::before"
+      ],
+      "keyframes": [
+        "sds-btnUiLaserSweep"
+      ],
+      "tokensUsed": [],
+      "customProperties": [
+        "--sds-btn-accent"
+      ],
+      "compositorSafe": true,
+      "loop": true,
+      "animatedProps": [
+        "opacity",
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-lens-flare",
+      "displayName": "Lens Flare",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A horizontal lens flare streaks across the button with a bright core on hover.",
+      "selectors": [
+        ".sds-btn-ui-lens-flare::before",
+        ".sds-btn-ui-lens-flare::after",
+        ".sds-btn-ui-lens-flare:hover::before, .sds-btn-ui-lens-flare:focus-visible::before",
+        ".sds-btn-ui-lens-flare:hover::after, .sds-btn-ui-lens-flare:focus-visible::after"
+      ],
+      "keyframes": [
+        "sds-btnUiLensFlare",
+        "sds-btnUiLensFlareCore"
+      ],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "opacity",
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-levitate-bob",
+      "displayName": "Levitate Bob",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "The button lifts and bobs gently in the air while hovered.",
+      "selectors": [
+        ".sds-btn-ui-levitate-bob:hover, .sds-btn-ui-levitate-bob:focus-visible",
+        ".sds-btn-ui-levitate-bob:active"
+      ],
+      "keyframes": [
+        "sds-btnUiLevitateBob"
+      ],
+      "tokensUsed": [],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": true,
       "animatedProps": [
         "transform"
       ],
@@ -1225,6 +2319,259 @@
       "sinceVersion": "4.0.3"
     },
     {
+      "name": "sds-btn-ui-neon-underline",
+      "displayName": "Neon Underline",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A text button with a glowing neon underline that grows in on hover.",
+      "selectors": [
+        ".sds-btn-ui-neon-underline",
+        ".sds-btn-ui-neon-underline::after",
+        ".sds-btn-ui-neon-underline:hover::after, .sds-btn-ui-neon-underline:focus-visible::after"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-btn-accent",
+        "--sds-btn-bg",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-neumorph-press",
+      "displayName": "Neumorph Press",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A soft raised button that sinks into its surface when pressed.",
+      "selectors": [
+        ".sds-btn-ui-neumorph-press",
+        ".sds-btn-ui-neumorph-press::before, .sds-btn-ui-neumorph-press::after",
+        ".sds-btn-ui-neumorph-press::after",
+        ".sds-btn-ui-neumorph-press::before",
+        ".sds-btn-ui-neumorph-press:active::after",
+        ".sds-btn-ui-neumorph-press:active::before",
+        ".sds-btn-ui-neumorph-press:active"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-btn-bg",
+        "--sds-btn-fg"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "load",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-notify-dot",
+      "displayName": "Notify Dot",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A badge dot springs in with a pulse when data-notify is set on the button.",
+      "selectors": [
+        ".sds-btn-ui-notify-dot",
+        ".sds-btn-ui-notify-dot::before, .sds-btn-ui-notify-dot::after",
+        ".sds-btn-ui-notify-dot::before",
+        ".sds-btn-ui-notify-dot::after",
+        ".sds-btn-ui-notify-dot[data-notify]::before",
+        ".sds-btn-ui-notify-dot[data-notify]::after",
+        ".sds-btn-ui-notify-dot:hover, .sds-btn-ui-notify-dot:focus-visible"
+      ],
+      "keyframes": [
+        "sds-btnUiNotifyDot"
+      ],
+      "tokensUsed": [
+        "--sds-ease-spring",
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-btn-accent"
+      ],
+      "compositorSafe": true,
+      "loop": true,
+      "animatedProps": [
+        "opacity",
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-outline-echo",
+      "displayName": "Outline Echo",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "Two outlines echo outward around the button on hover.",
+      "selectors": [
+        ".sds-btn-ui-outline-echo",
+        ".sds-btn-ui-outline-echo::before, .sds-btn-ui-outline-echo::after",
+        ".sds-btn-ui-outline-echo::before",
+        ".sds-btn-ui-outline-echo::after",
+        ".sds-btn-ui-outline-echo:hover::before, .sds-btn-ui-outline-echo:focus-visible::before",
+        ".sds-btn-ui-outline-echo:hover::after, .sds-btn-ui-outline-echo:focus-visible::after"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-btn-accent"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-pendulum",
+      "displayName": "Pendulum",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "The button swings like a pendulum from a point above it, then settles.",
+      "selectors": [
+        ".sds-btn-ui-pendulum",
+        ".sds-btn-ui-pendulum:hover, .sds-btn-ui-pendulum:focus-visible"
+      ],
+      "keyframes": [
+        "sds-btnUiPendulum"
+      ],
+      "tokensUsed": [],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-pinch-squeeze",
+      "displayName": "Pinch Squeeze",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "The button squeezes narrow when pressed and springs back wide.",
+      "selectors": [
+        ".sds-btn-ui-pinch-squeeze",
+        ".sds-btn-ui-pinch-squeeze:active",
+        ".sds-btn-ui-pinch-squeeze:hover, .sds-btn-ui-pinch-squeeze:focus-visible"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-spring"
+      ],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-plus-turn",
+      "displayName": "Plus Turn",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A plus icon that turns on hover and tilts further when aria-expanded is true.",
+      "selectors": [
+        ".sds-btn-ui-plus-turn",
+        ".sds-btn-ui-plus-turn::after",
+        ".sds-btn-ui-plus-turn > .sds-btn-icon",
+        ".sds-btn-ui-plus-turn:has(> .sds-btn-icon)::after",
+        ".sds-btn-ui-plus-turn:hover::after, .sds-btn-ui-plus-turn:focus-visible::after, .sds-btn-ui-plus-turn:hover > .sds-btn-icon, .sds-btn-ui-plus-turn:focus-visible > .sds-btn-icon",
+        ".sds-btn-ui-plus-turn[aria-expanded=\"true\"]::after, .sds-btn-ui-plus-turn[aria-expanded=\"true\"] > .sds-btn-icon"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-btn-icon",
+        "--sds-btn-icon-display",
+        "--sds-btn-icon-size"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
       "name": "sds-btn-ui-press-3d",
       "displayName": "Press 3D",
       "category": "buttons",
@@ -1263,6 +2610,79 @@
       "sinceVersion": "4.0.3"
     },
     {
+      "name": "sds-btn-ui-pressed-burst",
+      "displayName": "Pressed Burst",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "When aria-pressed turns true the button pops and a ring bursts outward.",
+      "selectors": [
+        ".sds-btn-ui-pressed-burst",
+        ".sds-btn-ui-pressed-burst::before",
+        ".sds-btn-ui-pressed-burst[aria-pressed=\"true\"]",
+        ".sds-btn-ui-pressed-burst[aria-pressed=\"true\"]::before",
+        ".sds-btn-ui-pressed-burst:hover, .sds-btn-ui-pressed-burst:focus-visible"
+      ],
+      "keyframes": [
+        "sds-btnUiPressedPop",
+        "sds-btnUiPressedBurst"
+      ],
+      "tokensUsed": [
+        "--sds-ease-spring",
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-btn-accent"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "opacity",
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-prism-shift",
+      "displayName": "Prism Shift",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "Red and cyan fringes split from the button on hover and widen when pressed.",
+      "selectors": [
+        ".sds-btn-ui-prism-shift",
+        ".sds-btn-ui-prism-shift:hover, .sds-btn-ui-prism-shift:focus-visible",
+        ".sds-btn-ui-prism-shift:active"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
       "name": "sds-btn-ui-progress-fill",
       "displayName": "Progress Fill",
       "category": "buttons",
@@ -1284,6 +2704,118 @@
       "compositorSafe": true,
       "loop": false,
       "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-pulse-core",
+      "displayName": "Pulse Core",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A soft light pulses outward from the centre again and again while hovered.",
+      "selectors": [
+        ".sds-btn-ui-pulse-core::before",
+        ".sds-btn-ui-pulse-core:hover::before, .sds-btn-ui-pulse-core:focus-visible::before",
+        ".sds-btn-ui-pulse-core:active"
+      ],
+      "keyframes": [
+        "sds-btnUiPulseCore"
+      ],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": true,
+      "animatedProps": [
+        "opacity",
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-rain-streak",
+      "displayName": "Rain Streak",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "Fine streaks of light fall through the button while it is hovered.",
+      "selectors": [
+        ".sds-btn-ui-rain-streak::before",
+        ".sds-btn-ui-rain-streak:hover::before, .sds-btn-ui-rain-streak:focus-visible::before",
+        ".sds-btn-ui-rain-streak:active"
+      ],
+      "keyframes": [
+        "sds-btnUiRainStreak"
+      ],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": true,
+      "animatedProps": [
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-refresh-spin",
+      "displayName": "Refresh Spin",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A refresh icon that spins a full turn on hover.",
+      "selectors": [
+        ".sds-btn-ui-refresh-spin",
+        ".sds-btn-ui-refresh-spin::after",
+        ".sds-btn-ui-refresh-spin > .sds-btn-icon",
+        ".sds-btn-ui-refresh-spin:has(> .sds-btn-icon)::after",
+        ".sds-btn-ui-refresh-spin:hover::after, .sds-btn-ui-refresh-spin:focus-visible::after, .sds-btn-ui-refresh-spin:hover > .sds-btn-icon, .sds-btn-ui-refresh-spin:focus-visible > .sds-btn-icon"
+      ],
+      "keyframes": [
+        "sds-btnUiRefreshSpin"
+      ],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-btn-icon",
+        "--sds-btn-icon-display",
+        "--sds-btn-icon-size"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "transform"
+      ],
       "animatedPaintProps": [],
       "animatedLayoutProps": [],
       "requiresCharSplit": false,
@@ -1372,6 +2904,40 @@
       "sinceVersion": "4.0.3"
     },
     {
+      "name": "sds-btn-ui-rubber-band-x",
+      "displayName": "Rubber Band X",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "The button stretches wide and snaps back like a rubber band.",
+      "selectors": [
+        ".sds-btn-ui-rubber-band-x:hover, .sds-btn-ui-rubber-band-x:focus-visible",
+        ".sds-btn-ui-rubber-band-x:active"
+      ],
+      "keyframes": [
+        "sds-btnUiRubberBandX"
+      ],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
       "name": "sds-btn-ui-rubber-stretch",
       "displayName": "Rubber Stretch",
       "category": "buttons",
@@ -1440,6 +3006,118 @@
       "sinceVersion": "4.0.3"
     },
     {
+      "name": "sds-btn-ui-send-fly",
+      "displayName": "Send Fly",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A paper plane flies off the corner and re-enters from the opposite side on hover.",
+      "selectors": [
+        ".sds-btn-ui-send-fly",
+        ".sds-btn-ui-send-fly::after",
+        ".sds-btn-ui-send-fly > .sds-btn-icon",
+        ".sds-btn-ui-send-fly:has(> .sds-btn-icon)::after",
+        ".sds-btn-ui-send-fly:hover::after, .sds-btn-ui-send-fly:focus-visible::after, .sds-btn-ui-send-fly:hover > .sds-btn-icon, .sds-btn-ui-send-fly:focus-visible > .sds-btn-icon"
+      ],
+      "keyframes": [
+        "sds-btnUiSendFly"
+      ],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-btn-icon",
+        "--sds-btn-icon-display",
+        "--sds-btn-icon-size"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "opacity",
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-shake-no",
+      "displayName": "Shake No",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A quick horizontal shake, like a head shake, on hover.",
+      "selectors": [
+        ".sds-btn-ui-shake-no:hover, .sds-btn-ui-shake-no:focus-visible"
+      ],
+      "keyframes": [
+        "sds-btnUiShakeNo"
+      ],
+      "tokensUsed": [],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-sheet-fan",
+      "displayName": "Sheet Fan",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A second sheet fans out from behind the button, like a stack of paper.",
+      "selectors": [
+        ".sds-btn-ui-sheet-fan",
+        ".sds-btn-ui-sheet-fan::before, .sds-btn-ui-sheet-fan::after",
+        ".sds-btn-ui-sheet-fan::before",
+        ".sds-btn-ui-sheet-fan::after",
+        ".sds-btn-ui-sheet-fan:hover::before, .sds-btn-ui-sheet-fan:focus-visible::before",
+        ".sds-btn-ui-sheet-fan:hover, .sds-btn-ui-sheet-fan:focus-visible",
+        ".sds-btn-ui-sheet-fan:active::before"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-spring"
+      ],
+      "customProperties": [
+        "--sds-btn-accent",
+        "--sds-btn-bg",
+        "--sds-primary"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
       "name": "sds-btn-ui-shine-sweep",
       "displayName": "Shine Sweep",
       "category": "buttons",
@@ -1467,6 +3145,71 @@
       "animatedProps": [
         "transform"
       ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-skeleton-shimmer",
+      "displayName": "Skeleton Shimmer",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "Set aria-busy=\"true\": the label hides and a shimmer sweeps across, like a skeleton.",
+      "selectors": [
+        ".sds-btn-ui-skeleton-shimmer::before",
+        ".sds-btn-ui-skeleton-shimmer[aria-busy=\"true\"]",
+        ".sds-btn-ui-skeleton-shimmer[aria-busy=\"true\"]::before",
+        ".sds-btn-ui-skeleton-shimmer:hover, .sds-btn-ui-skeleton-shimmer:focus-visible"
+      ],
+      "keyframes": [
+        "sds-btnUiSkeletonShimmer"
+      ],
+      "tokensUsed": [],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": true,
+      "animatedProps": [
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-skew-slide",
+      "displayName": "Skew Slide",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "The button leans into a slant and slides forward on a spring.",
+      "selectors": [
+        ".sds-btn-ui-skew-slide",
+        ".sds-btn-ui-skew-slide:hover, .sds-btn-ui-skew-slide:focus-visible",
+        ".sds-btn-ui-skew-slide:active"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-spring"
+      ],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
       "animatedPaintProps": [],
       "animatedLayoutProps": [],
       "requiresCharSplit": false,
@@ -1563,6 +3306,41 @@
       "sinceVersion": "4.0.3"
     },
     {
+      "name": "sds-btn-ui-split-doors",
+      "displayName": "Split Doors",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "Two panels of accent colour slide in from the top and bottom and meet in the middle.",
+      "selectors": [
+        ".sds-btn-ui-split-doors::before, .sds-btn-ui-split-doors::after",
+        ".sds-btn-ui-split-doors::before",
+        ".sds-btn-ui-split-doors::after",
+        ".sds-btn-ui-split-doors:hover::before, .sds-btn-ui-split-doors:focus-visible::before, .sds-btn-ui-split-doors:hover::after, .sds-btn-ui-split-doors:focus-visible::after",
+        ".sds-btn-ui-split-doors:active"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-btn-accent"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
       "name": "sds-btn-ui-split-icon",
       "displayName": "Split Icon",
       "category": "buttons",
@@ -1631,6 +3409,147 @@
         "opacity",
         "transform"
       ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-spring-pop",
+      "displayName": "Spring Pop",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "The button pops up on a spring and squeezes down when pressed.",
+      "selectors": [
+        ".sds-btn-ui-spring-pop",
+        ".sds-btn-ui-spring-pop:hover, .sds-btn-ui-spring-pop:focus-visible",
+        ".sds-btn-ui-spring-pop:active"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-spring"
+      ],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-squash-land",
+      "displayName": "Squash Land",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "The button hops, lands with a squash and settles on hover.",
+      "selectors": [
+        ".sds-btn-ui-squash-land:hover, .sds-btn-ui-squash-land:focus-visible",
+        ".sds-btn-ui-squash-land:active"
+      ],
+      "keyframes": [
+        "sds-btnUiSquashLand"
+      ],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-state-error",
+      "displayName": "State Error",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "Set data-state=\"error\" or aria-invalid: the button shakes and a red outline appears.",
+      "selectors": [
+        ".sds-btn-ui-state-error",
+        ".sds-btn-ui-state-error::before",
+        ".sds-btn-ui-state-error[data-state=\"error\"], .sds-btn-ui-state-error[aria-invalid=\"true\"]",
+        ".sds-btn-ui-state-error[data-state=\"error\"]::before, .sds-btn-ui-state-error[aria-invalid=\"true\"]::before",
+        ".sds-btn-ui-state-error:hover, .sds-btn-ui-state-error:focus-visible"
+      ],
+      "keyframes": [
+        "sds-btnUiStateError"
+      ],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-btn-danger"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-state-success",
+      "displayName": "State Success",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "Set data-state=\"success\": a circle fills the button and a check mark pops in.",
+      "selectors": [
+        ".sds-btn-ui-state-success::before",
+        ".sds-btn-ui-state-success::after",
+        ".sds-btn-ui-state-success[data-state=\"success\"]",
+        ".sds-btn-ui-state-success[data-state=\"success\"]::before",
+        ".sds-btn-ui-state-success[data-state=\"success\"]::after",
+        ".sds-btn-ui-state-success:hover, .sds-btn-ui-state-success:focus-visible"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-spring",
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-btn-success"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
       "animatedPaintProps": [],
       "animatedLayoutProps": [],
       "requiresCharSplit": false,
@@ -1718,6 +3637,112 @@
       "sinceVersion": "4.0.3"
     },
     {
+      "name": "sds-btn-ui-sunburst",
+      "displayName": "Sunburst",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "Rays of light slowly rotate behind the label while the button is hovered.",
+      "selectors": [
+        ".sds-btn-ui-sunburst::before",
+        ".sds-btn-ui-sunburst:hover::before, .sds-btn-ui-sunburst:focus-visible::before",
+        ".sds-btn-ui-sunburst:active"
+      ],
+      "keyframes": [
+        "sds-btnUiSunburst"
+      ],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": true,
+      "animatedProps": [
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-sunrise-glow",
+      "displayName": "Sunrise Glow",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A glow rises from below the button like a sunrise on hover.",
+      "selectors": [
+        ".sds-btn-ui-sunrise-glow::before",
+        ".sds-btn-ui-sunrise-glow:hover::before, .sds-btn-ui-sunrise-glow:focus-visible::before",
+        ".sds-btn-ui-sunrise-glow:hover, .sds-btn-ui-sunrise-glow:focus-visible"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-btn-accent"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-switch-knob",
+      "displayName": "Switch Knob",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A switch inside the button: the knob slides and the track lights up with aria-checked.",
+      "selectors": [
+        ".sds-btn-ui-switch-knob",
+        ".sds-btn-ui-switch-knob::before",
+        ".sds-btn-ui-switch-knob::after",
+        ".sds-btn-ui-switch-knob[aria-checked=\"true\"]::before",
+        ".sds-btn-ui-switch-knob[aria-checked=\"true\"]::after",
+        ".sds-btn-ui-switch-knob:hover::after, .sds-btn-ui-switch-knob:focus-visible::after",
+        ".sds-btn-ui-switch-knob[aria-checked=\"true\"]:hover::after, .sds-btn-ui-switch-knob[aria-checked=\"true\"]:focus-visible::after"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-spring",
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-btn-on"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
       "name": "sds-btn-ui-tilt-3d",
       "displayName": "Tilt 3D",
       "category": "buttons",
@@ -1790,6 +3815,44 @@
       "sinceVersion": "4.0.3"
     },
     {
+      "name": "sds-btn-ui-twinkle",
+      "displayName": "Twinkle",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "Two stars twinkle in and out on opposite corners while hovered.",
+      "selectors": [
+        ".sds-btn-ui-twinkle::before, .sds-btn-ui-twinkle::after",
+        ".sds-btn-ui-twinkle::before",
+        ".sds-btn-ui-twinkle::after",
+        ".sds-btn-ui-twinkle:hover::before, .sds-btn-ui-twinkle:focus-visible::before",
+        ".sds-btn-ui-twinkle:hover::after, .sds-btn-ui-twinkle:focus-visible::after"
+      ],
+      "keyframes": [
+        "sds-btnUiTwinkle"
+      ],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": true,
+      "animatedProps": [
+        "opacity",
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
       "name": "sds-btn-ui-underline-grow",
       "displayName": "Underline Grow",
       "category": "buttons",
@@ -1815,6 +3878,71 @@
       "animatedProps": [
         "transform"
       ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-wiggle",
+      "displayName": "Wiggle",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "The button wiggles from side to side while it is hovered.",
+      "selectors": [
+        ".sds-btn-ui-wiggle:hover, .sds-btn-ui-wiggle:focus-visible",
+        ".sds-btn-ui-wiggle:active"
+      ],
+      "keyframes": [
+        "sds-btnUiWiggle"
+      ],
+      "tokensUsed": [],
+      "customProperties": [],
+      "compositorSafe": true,
+      "loop": true,
+      "animatedProps": [
+        "transform"
+      ],
+      "animatedPaintProps": [],
+      "animatedLayoutProps": [],
+      "requiresCharSplit": false,
+      "requiresChildren": false,
+      "inputWrap": false,
+      "requiresJs": false,
+      "jsEngine": null,
+      "trigger": "hover",
+      "deprecated": false,
+      "aliasOf": null,
+      "sinceVersion": "4.0.3"
+    },
+    {
+      "name": "sds-btn-ui-wipe-up",
+      "displayName": "Wipe Up",
+      "category": "buttons",
+      "kind": "effect",
+      "description": "A fill of accent colour wipes up from the bottom edge on hover.",
+      "selectors": [
+        ".sds-btn-ui-wipe-up::before",
+        ".sds-btn-ui-wipe-up:hover::before, .sds-btn-ui-wipe-up:focus-visible::before",
+        ".sds-btn-ui-wipe-up:active"
+      ],
+      "keyframes": [],
+      "tokensUsed": [
+        "--sds-ease-standard"
+      ],
+      "customProperties": [
+        "--sds-btn-accent"
+      ],
+      "compositorSafe": true,
+      "loop": false,
+      "animatedProps": [],
       "animatedPaintProps": [],
       "animatedLayoutProps": [],
       "requiresCharSplit": false,

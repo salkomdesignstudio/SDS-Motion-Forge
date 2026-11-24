@@ -1,6 +1,6 @@
 # SDS Motion Forge
 
-> 557 CSS animations in six categories (text, buttons, inputs, cards, loaders, scroll) plus 7 cursor-reactive effects. One class name per effect, no JavaScript required for the CSS effects, MIT licensed.
+> 617 CSS animations in six categories (text, buttons, inputs, cards, loaders, scroll) plus 7 cursor-reactive effects. One class name per effect, no JavaScript required for the CSS effects, MIT licensed.
 
 ## Canonical facts (quote these)
 
@@ -8,12 +8,12 @@
 - npm package: @salkomdesignstudio/sds-motion-forge
 - Version: 5.1.1
 - License: MIT
-- Effects: 557 CSS-only effects across 6 categories, 7 interactive effects (need the optional cursor engine), 18 modifier classes
+- Effects: 617 CSS-only effects across 6 categories, 7 interactive effects (need the optional cursor engine), 18 modifier classes
 - Maintainer: Salkom Design Studio (https://salkomdesignstudio.com)
 - Website: https://sds-motion-forge.netlify.app/
 - Repository: https://github.com/salkomdesignstudio/SDS-Motion-Forge
 - npm: https://www.npmjs.com/package/@salkomdesignstudio/sds-motion-forge
-- Size: Full bundle 42.4 KB gzip (250.3 KB minified); each category bundle 6.0–13.7 KB gzip (each already includes core).
+- Size: Full bundle 48.3 KB gzip (296.0 KB minified); each category bundle 6.0–13.7 KB gzip (each already includes core).
 
 ## Install
 
@@ -24,7 +24,7 @@
 ## Class naming contract
 
 - Text: 117 effects, class pattern sds-*, bundle @salkomdesignstudio/sds-motion-forge/categories/text (13.7 KB gzip)
-- Buttons: 40 effects, class pattern sds-btn-*, bundle @salkomdesignstudio/sds-motion-forge/categories/buttons (7.0 KB gzip)
+- Buttons: 100 effects, class pattern sds-btn-*, bundle @salkomdesignstudio/sds-motion-forge/categories/buttons (13.0 KB gzip)
 - Inputs: 100 effects, class pattern sds-input-*, bundle @salkomdesignstudio/sds-motion-forge/categories/inputs (8.4 KB gzip)
 - Cards: 100 effects, class pattern sds-card-*, bundle @salkomdesignstudio/sds-motion-forge/categories/cards (7.6 KB gzip)
 - Loaders: 100 effects, class pattern sds-loader-*, bundle @salkomdesignstudio/sds-motion-forge/categories/loaders (8.3 KB gzip)
@@ -64,7 +64,7 @@ Guides for each tool: https://sds-motion-forge.netlify.app/mcp/clients/
 
 ### What is the best CSS animation library for Angular?
 
-There is no single best option, but a CSS-only library suits Angular because it needs no Angular-specific code. SDS Motion Forge provides 557 animations as plain CSS classes: add node_modules/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css to the styles array in angular.json, then put a class such as sds-velvet-drop on any template element. No module or directive is required.
+There is no single best option, but a CSS-only library suits Angular because it needs no Angular-specific code. SDS Motion Forge provides 617 animations as plain CSS classes: add node_modules/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css to the styles array in angular.json, then put a class such as sds-velvet-drop on any template element. No module or directive is required.
 
 ### How do I add scroll animations without JavaScript?
 
@@ -72,7 +72,7 @@ Combine sds-scroll-auto with any sds-scroll-* class, for example class="sds-scro
 
 ### Is there an Animate.css alternative?
 
-Yes. SDS Motion Forge is a CSS-only alternative that defines 557 @keyframes across 557 effects in six categories (text, buttons, inputs, cards, loaders, scroll), against 97 @keyframes in Animate.css 4.1.1. The trade-off is size: the full bundle is 42.4 KB gzip versus 5.2 KB, but you can import one 6.0–13.7 KB category instead.
+Yes. SDS Motion Forge is a CSS-only alternative that defines 588 @keyframes across 617 effects in six categories (text, buttons, inputs, cards, loaders, scroll), against 97 @keyframes in Animate.css 4.1.1. The trade-off is size: the full bundle is 48.3 KB gzip versus 5.2 KB, but you can import one 6.0–13.7 KB category instead.
 
 ### What is the best CSS-only text animation library?
 
@@ -84,7 +84,7 @@ Yes. Every animating selector is neutralized under prefers-reduced-motion: reduc
 
 ### How big is it, and can I import only part of it?
 
-The full bundle is 42.4 KB gzip. Each category is 6.0–13.7 KB gzip and can be imported alone, with core already included: import "@salkomdesignstudio/sds-motion-forge/categories/text";. For two or more categories, use the full bundle. The two optional scripts are 1.3 KB (scroll) and 7.0 KB (cursor effects).
+The full bundle is 48.3 KB gzip. Each category is 6.0–13.7 KB gzip and can be imported alone, with core already included: import "@salkomdesignstudio/sds-motion-forge/categories/text";. For two or more categories, use the full bundle. The two optional scripts are 1.3 KB (scroll) and 7.0 KB (cursor effects).
 
 ### Does it work with React, Vue, Next.js and Tailwind?
 
@@ -92,7 +92,7 @@ Yes. Import dist/motion.min.css once and use the class names with className or c
 
 ### Does Motion Forge have an MCP server for AI tools?
 
-Yes. @salkomdesignstudio/motion-forge-mcp lets Claude, Cursor, VS Code and other MCP clients search the 557 animations, fetch ready code and match a design's motion to the closest effect. It runs locally with npx -y @salkomdesignstudio/motion-forge-mcp, needs no account or API key, and makes no network calls.
+Yes. @salkomdesignstudio/motion-forge-mcp lets Claude, Cursor, VS Code and other MCP clients search the 617 animations, fetch ready code and match a design's motion to the closest effect. It runs locally with npx -y @salkomdesignstudio/motion-forge-mcp, needs no account or API key, and makes no network calls.
 
 ### Is it free to use commercially?
 
@@ -222,50 +222,110 @@ Headline, per-character and word-level text effects: entrances, loops, glows, re
 - `.sds-zoom-out-in` — Zoom Out In: Settles from oversized with blur. https://sds-motion-forge.netlify.app/animations/zoom-out-in/
 - `.sds-zoom-punch` — Zoom Punch: Punches in from tiny to full with overshoot. https://sds-motion-forge.netlify.app/animations/zoom-punch/
 
-## Buttons (40)
+## Buttons (100)
 
 Ambient, hover, entrance and kinetic effects for buttons and other interactive elements.
 
 - `.sds-btn-ui-arrow-slide` — Arrow Slide: An arrow glides in from the left and settles with a small overshoot on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-arrow-slide/
 - `.sds-btn-ui-aurora-mesh` — Aurora Mesh: Blurred colour blobs drift slowly behind the label like a northern light. https://sds-motion-forge.netlify.app/animations/btn-ui-aurora-mesh/
+- `.sds-btn-ui-bar-loading` — Bar Loading: Set aria-busy="true": a bright bar runs along the bottom edge. https://sds-motion-forge.netlify.app/animations/btn-ui-bar-loading/
+- `.sds-btn-ui-bars-open` — Bars Open: A fill opens outward from the centre line to both sides on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-bars-open/
+- `.sds-btn-ui-blob-shift` — Blob Shift: Two blurred blobs at the corners slide to the centre and merge on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-blob-shift/
 - `.sds-btn-ui-bloom-halo` — Bloom Halo: A blurred halo blooms behind the button and the button lifts on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-bloom-halo/
 - `.sds-btn-ui-bracket-open` — Bracket Open: Corner brackets open out into the full outline of the button on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-bracket-open/
 - `.sds-btn-ui-brutal-offset` — Brutal Offset: A flat button with a hard offset shadow that it presses into on hover and press. https://sds-motion-forge.netlify.app/animations/btn-ui-brutal-offset/
+- `.sds-btn-ui-bubble-rise` — Bubble Rise: Small bubbles drift up through the button while it is hovered. https://sds-motion-forge.netlify.app/animations/btn-ui-bubble-rise/
+- `.sds-btn-ui-burger-x` — Burger X: A menu icon whose two bars cross into an X when aria-expanded is true. https://sds-motion-forge.netlify.app/animations/btn-ui-burger-x/
+- `.sds-btn-ui-caret-bounce` — Caret Bounce: A caret that bounces up and down while the button is hovered. https://sds-motion-forge.netlify.app/animations/btn-ui-caret-bounce/
+- `.sds-btn-ui-check-draw` — Check Draw: A check mark draws itself in at the end of the button on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-check-draw/
+- `.sds-btn-ui-chevron-turn` — Chevron Turn: A chevron that turns upside down when aria-expanded is true. https://sds-motion-forge.netlify.app/animations/btn-ui-chevron-turn/
 - `.sds-btn-ui-circle-expand` — Circle Expand: A small circle at the end grows until it fills the button, nudging the arrow forward. https://sds-motion-forge.netlify.app/animations/btn-ui-circle-expand/
+- `.sds-btn-ui-confetti-pop` — Confetti Pop: Confetti flies out in all directions when the button is pressed. https://sds-motion-forge.netlify.app/animations/btn-ui-confetti-pop/
 - `.sds-btn-ui-conic-border` — Conic Border: A bright arc travels endlessly around a dark button's edge. https://sds-motion-forge.netlify.app/animations/btn-ui-conic-border/
+- `.sds-btn-ui-corner-fold` — Corner Fold: Two triangles of accent colour fold in from opposite corners and cover the button. https://sds-motion-forge.netlify.app/animations/btn-ui-corner-fold/
+- `.sds-btn-ui-corner-grow` — Corner Grow: A circle of accent colour grows from the top-left corner until it covers the button. https://sds-motion-forge.netlify.app/animations/btn-ui-corner-grow/
+- `.sds-btn-ui-countdown-drain` — Countdown Drain: Set data-countdown and a fill drains away over --sds-btn-countdown (default 5s). https://sds-motion-forge.netlify.app/animations/btn-ui-countdown-drain/
+- `.sds-btn-ui-crt-lines` — CRT Lines: Scanlines roll down the button like an old screen while hovered. https://sds-motion-forge.netlify.app/animations/btn-ui-crt-lines/
+- `.sds-btn-ui-current-marker` — Current Marker: A text button that shows a small dot under it for aria-current or aria-selected. https://sds-motion-forge.netlify.app/animations/btn-ui-current-marker/
 - `.sds-btn-ui-curtain-split` — Curtain Split: Two halves of accent colour slide in from the sides and meet in the middle. https://sds-motion-forge.netlify.app/animations/btn-ui-curtain-split/
+- `.sds-btn-ui-diagonal-nudge` — Diagonal Nudge: An external-link arrow nudges up and to the right on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-diagonal-nudge/
 - `.sds-btn-ui-diagonal-wipe` — Diagonal Wipe: A slanted wipe of accent colour sweeps across the button, edge first. https://sds-motion-forge.netlify.app/animations/btn-ui-diagonal-wipe/
+- `.sds-btn-ui-disabled-nope` — Disabled Nope: Looks striped and dimmed when disabled, and gives a small shake if hovered. https://sds-motion-forge.netlify.app/animations/btn-ui-disabled-nope/
+- `.sds-btn-ui-dots-loading` — Dots Loading: Set aria-busy="true": the label gives way to three dots that pulse in turn. https://sds-motion-forge.netlify.app/animations/btn-ui-dots-loading/
+- `.sds-btn-ui-download-loop` — Download Loop: A download arrow that drops out of the button and re-enters from above, on loop. https://sds-motion-forge.netlify.app/animations/btn-ui-download-loop/
+- `.sds-btn-ui-drop-in` — Drop In: A dot drops into the button when it is pressed, like an item into a cart. https://sds-motion-forge.netlify.app/animations/btn-ui-drop-in/
+- `.sds-btn-ui-duotone-slide` — Duotone Slide: Two slanted bands, one bright and one dark, slide across in sequence. https://sds-motion-forge.netlify.app/animations/btn-ui-duotone-slide/
+- `.sds-btn-ui-edge-light` — Edge Light: A bright line and a soft glow light up the top edge on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-edge-light/
 - `.sds-btn-ui-flip-spin` — Flip Spin: The whole button flips once around its horizontal axis on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-flip-spin/
+- `.sds-btn-ui-float-shadow` — Float Shadow: The button floats up while its shadow on the ground shrinks and fades. https://sds-motion-forge.netlify.app/animations/btn-ui-float-shadow/
 - `.sds-btn-ui-frame-draw` — Frame Draw: The outline is traced around the button, clockwise, on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-frame-draw/
 - `.sds-btn-ui-ghost-fill` — Ghost Fill: An outlined button whose tinted fill rises from the bottom on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-ghost-fill/
 - `.sds-btn-ui-glass-lift` — Glass Lift: A frosted-glass button that lifts and catches a passing highlight on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-glass-lift/
 - `.sds-btn-ui-glitch-split` — Glitch Split: Red and cyan edges split apart and jitter for half a second, then snap back. https://sds-motion-forge.netlify.app/animations/btn-ui-glitch-split/
+- `.sds-btn-ui-gloss-drop` — Gloss Drop: A glossy highlight drops over the top half of the button on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-gloss-drop/
 - `.sds-btn-ui-gradient-flow` — Gradient Flow: A violet-to-magenta gradient flows endlessly through the button. https://sds-motion-forge.netlify.app/animations/btn-ui-gradient-flow/
+- `.sds-btn-ui-halftone-fade` — Halftone Fade: A halftone dot pattern fades in diagonally across the button on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-halftone-fade/
+- `.sds-btn-ui-heartbeat` — Heartbeat: The button beats twice, like a heart, in a steady loop while hovered. https://sds-motion-forge.netlify.app/animations/btn-ui-heartbeat/
+- `.sds-btn-ui-hex-reveal` — Hex Reveal: A hexagon opens from the centre and fills the button on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-hex-reveal/
 - `.sds-btn-ui-hold-to-confirm` — Hold To Confirm: Press and hold: a fill runs across the button and fires an animationend event when it completes. https://sds-motion-forge.netlify.app/animations/btn-ui-hold-to-confirm/
 - `.sds-btn-ui-holo-sheen` — Holo Sheen: A pink, cyan and yellow holographic sheen drifts across the button while it is hovered. https://sds-motion-forge.netlify.app/animations/btn-ui-holo-sheen/
 - `.sds-btn-ui-hue-cycle` — Hue Cycle: The button's colours cycle round the whole hue wheel while it is hovered. https://sds-motion-forge.netlify.app/animations/btn-ui-hue-cycle/
+- `.sds-btn-ui-ink-bloom` — Ink Bloom: A soft blot of ink blooms up from the bottom edge and floods the button. https://sds-motion-forge.netlify.app/animations/btn-ui-ink-bloom/
+- `.sds-btn-ui-inner-glow` — Inner Glow: A soft glow gathers along the inside edge of the button on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-inner-glow/
 - `.sds-btn-ui-invert-flip` — Invert Flip: The colours flip to their opposites on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-invert-flip/
 - `.sds-btn-ui-iris-reveal` — Iris Reveal: A circle of accent colour opens from the centre and floods the button on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-iris-reveal/
 - `.sds-btn-ui-jelly-wobble` — Jelly Wobble: The button wobbles sideways like jelly and settles on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-jelly-wobble/
+- `.sds-btn-ui-laser-sweep` — Laser Sweep: A thin laser line sweeps across the button repeatedly while hovered. https://sds-motion-forge.netlify.app/animations/btn-ui-laser-sweep/
+- `.sds-btn-ui-lens-flare` — Lens Flare: A horizontal lens flare streaks across the button with a bright core on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-lens-flare/
+- `.sds-btn-ui-levitate-bob` — Levitate Bob: The button lifts and bobs gently in the air while hovered. https://sds-motion-forge.netlify.app/animations/btn-ui-levitate-bob/
 - `.sds-btn-ui-liquid-fill` — Liquid Fill: A coloured liquid with a wavy surface rises and fills the button on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-liquid-fill/
 - `.sds-btn-ui-loading-ring` — Loading Ring: Set aria-busy="true" and the label gives way to a spinning ring. https://sds-motion-forge.netlify.app/animations/btn-ui-loading-ring/
 - `.sds-btn-ui-neon-edge` — Neon Edge: A neon outline that pulses softly and swells a little on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-neon-edge/
+- `.sds-btn-ui-neon-underline` — Neon Underline: A text button with a glowing neon underline that grows in on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-neon-underline/
+- `.sds-btn-ui-neumorph-press` — Neumorph Press: A soft raised button that sinks into its surface when pressed. https://sds-motion-forge.netlify.app/animations/btn-ui-neumorph-press/
+- `.sds-btn-ui-notify-dot` — Notify Dot: A badge dot springs in with a pulse when data-notify is set on the button. https://sds-motion-forge.netlify.app/animations/btn-ui-notify-dot/
+- `.sds-btn-ui-outline-echo` — Outline Echo: Two outlines echo outward around the button on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-outline-echo/
+- `.sds-btn-ui-pendulum` — Pendulum: The button swings like a pendulum from a point above it, then settles. https://sds-motion-forge.netlify.app/animations/btn-ui-pendulum/
+- `.sds-btn-ui-pinch-squeeze` — Pinch Squeeze: The button squeezes narrow when pressed and springs back wide. https://sds-motion-forge.netlify.app/animations/btn-ui-pinch-squeeze/
+- `.sds-btn-ui-plus-turn` — Plus Turn: A plus icon that turns on hover and tilts further when aria-expanded is true. https://sds-motion-forge.netlify.app/animations/btn-ui-plus-turn/
 - `.sds-btn-ui-press-3d` — Press 3D: A chunky button with a solid edge that lifts on hover and presses flat on click. https://sds-motion-forge.netlify.app/animations/btn-ui-press-3d/
+- `.sds-btn-ui-pressed-burst` — Pressed Burst: When aria-pressed turns true the button pops and a ring bursts outward. https://sds-motion-forge.netlify.app/animations/btn-ui-pressed-burst/
+- `.sds-btn-ui-prism-shift` — Prism Shift: Red and cyan fringes split from the button on hover and widen when pressed. https://sds-motion-forge.netlify.app/animations/btn-ui-prism-shift/
 - `.sds-btn-ui-progress-fill` — Progress Fill: A fill that follows --sds-btn-progress (0 to 1), so the button can show real progress. https://sds-motion-forge.netlify.app/animations/btn-ui-progress-fill/
+- `.sds-btn-ui-pulse-core` — Pulse Core: A soft light pulses outward from the centre again and again while hovered. https://sds-motion-forge.netlify.app/animations/btn-ui-pulse-core/
+- `.sds-btn-ui-rain-streak` — Rain Streak: Fine streaks of light fall through the button while it is hovered. https://sds-motion-forge.netlify.app/animations/btn-ui-rain-streak/
+- `.sds-btn-ui-refresh-spin` — Refresh Spin: A refresh icon that spins a full turn on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-refresh-spin/
 - `.sds-btn-ui-ring-pulse` — Ring Pulse: Rings radiate outward from the button, one after another, while it is hovered. https://sds-motion-forge.netlify.app/animations/btn-ui-ring-pulse/
 - `.sds-btn-ui-ripple-press` — Ripple Press: A soft light ripples out from the centre when the button is pressed. https://sds-motion-forge.netlify.app/animations/btn-ui-ripple-press/
+- `.sds-btn-ui-rubber-band-x` — Rubber Band X: The button stretches wide and snaps back like a rubber band. https://sds-motion-forge.netlify.app/animations/btn-ui-rubber-band-x/
 - `.sds-btn-ui-rubber-stretch` — Rubber Stretch: The button stretches and squashes like rubber, settling after a few rebounds. https://sds-motion-forge.netlify.app/animations/btn-ui-rubber-stretch/
 - `.sds-btn-ui-scan-line` — Scan Line: A bright scan line sweeps down the button repeatedly while it is hovered. https://sds-motion-forge.netlify.app/animations/btn-ui-scan-line/
+- `.sds-btn-ui-send-fly` — Send Fly: A paper plane flies off the corner and re-enters from the opposite side on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-send-fly/
+- `.sds-btn-ui-shake-no` — Shake No: A quick horizontal shake, like a head shake, on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-shake-no/
+- `.sds-btn-ui-sheet-fan` — Sheet Fan: A second sheet fans out from behind the button, like a stack of paper. https://sds-motion-forge.netlify.app/animations/btn-ui-sheet-fan/
 - `.sds-btn-ui-shine-sweep` — Shine Sweep: A glossy button with a light streak that sweeps across it every few seconds. https://sds-motion-forge.netlify.app/animations/btn-ui-shine-sweep/
+- `.sds-btn-ui-skeleton-shimmer` — Skeleton Shimmer: Set aria-busy="true": the label hides and a shimmer sweeps across, like a skeleton. https://sds-motion-forge.netlify.app/animations/btn-ui-skeleton-shimmer/
+- `.sds-btn-ui-skew-slide` — Skew Slide: The button leans into a slant and slides forward on a spring. https://sds-motion-forge.netlify.app/animations/btn-ui-skew-slide/
 - `.sds-btn-ui-soft-lift` — Soft Lift: A light button that rises on hover and blooms a soft shadow beneath it. https://sds-motion-forge.netlify.app/animations/btn-ui-soft-lift/
 - `.sds-btn-ui-spark-burst` — Spark Burst: Two rings of sparks fly outward from the centre on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-spark-burst/
+- `.sds-btn-ui-split-doors` — Split Doors: Two panels of accent colour slide in from the top and bottom and meet in the middle. https://sds-motion-forge.netlify.app/animations/btn-ui-split-doors/
 - `.sds-btn-ui-split-icon` — Split Icon: A split button whose icon segment swaps the arrow out and back in on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-split-icon/
 - `.sds-btn-ui-spotlight-sweep` — Spotlight Sweep: A soft round spotlight travels across the button on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-spotlight-sweep/
+- `.sds-btn-ui-spring-pop` — Spring Pop: The button pops up on a spring and squeezes down when pressed. https://sds-motion-forge.netlify.app/animations/btn-ui-spring-pop/
+- `.sds-btn-ui-squash-land` — Squash Land: The button hops, lands with a squash and settles on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-squash-land/
+- `.sds-btn-ui-state-error` — State Error: Set data-state="error" or aria-invalid: the button shakes and a red outline appears. https://sds-motion-forge.netlify.app/animations/btn-ui-state-error/
+- `.sds-btn-ui-state-success` — State Success: Set data-state="success": a circle fills the button and a check mark pops in. https://sds-motion-forge.netlify.app/animations/btn-ui-state-success/
 - `.sds-btn-ui-stepped-press` — Stepped Press: A retro, frame-by-frame press with a dithered flash, moving in hard steps. https://sds-motion-forge.netlify.app/animations/btn-ui-stepped-press/
 - `.sds-btn-ui-stripe-march` — Stripe March: Diagonal stripes march steadily across the button while it is hovered. https://sds-motion-forge.netlify.app/animations/btn-ui-stripe-march/
+- `.sds-btn-ui-sunburst` — Sunburst: Rays of light slowly rotate behind the label while the button is hovered. https://sds-motion-forge.netlify.app/animations/btn-ui-sunburst/
+- `.sds-btn-ui-sunrise-glow` — Sunrise Glow: A glow rises from below the button like a sunrise on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-sunrise-glow/
+- `.sds-btn-ui-switch-knob` — Switch Knob: A switch inside the button: the knob slides and the track lights up with aria-checked. https://sds-motion-forge.netlify.app/animations/btn-ui-switch-knob/
 - `.sds-btn-ui-tilt-3d` — Tilt 3D: The button tilts in perspective with a soft highlight, and levels out when pressed. https://sds-motion-forge.netlify.app/animations/btn-ui-tilt-3d/
 - `.sds-btn-ui-toggle-pill` — Toggle Pill: Follows aria-pressed: a dot at the start grows to fill the button when it is pressed on. https://sds-motion-forge.netlify.app/animations/btn-ui-toggle-pill/
+- `.sds-btn-ui-twinkle` — Twinkle: Two stars twinkle in and out on opposite corners while hovered. https://sds-motion-forge.netlify.app/animations/btn-ui-twinkle/
 - `.sds-btn-ui-underline-grow` — Underline Grow: A link-style button whose underline exits right and re-enters from the left on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-underline-grow/
+- `.sds-btn-ui-wiggle` — Wiggle: The button wiggles from side to side while it is hovered. https://sds-motion-forge.netlify.app/animations/btn-ui-wiggle/
+- `.sds-btn-ui-wipe-up` — Wipe Up: A fill of accent colour wipes up from the bottom edge on hover. https://sds-motion-forge.netlify.app/animations/btn-ui-wipe-up/
 
 ## Inputs (100)
 

@@ -3230,5 +3230,305 @@
     "description": "Follows aria-pressed: a dot at the start grows to fill the button when it is pressed on.",
     "displayName": "Toggle Pill",
     "source": "authored"
+  },
+  "sds-btn-ui-wipe-up": {
+    "description": "A fill of accent colour wipes up from the bottom edge on hover.",
+    "displayName": "Wipe Up",
+    "source": "authored"
+  },
+  "sds-btn-ui-bars-open": {
+    "description": "A fill opens outward from the centre line to both sides on hover.",
+    "displayName": "Bars Open",
+    "source": "authored"
+  },
+  "sds-btn-ui-split-doors": {
+    "description": "Two panels of accent colour slide in from the top and bottom and meet in the middle.",
+    "displayName": "Split Doors",
+    "source": "authored"
+  },
+  "sds-btn-ui-corner-grow": {
+    "description": "A circle of accent colour grows from the top-left corner until it covers the button.",
+    "displayName": "Corner Grow",
+    "source": "authored"
+  },
+  "sds-btn-ui-hex-reveal": {
+    "description": "A hexagon opens from the centre and fills the button on hover.",
+    "displayName": "Hex Reveal",
+    "source": "authored"
+  },
+  "sds-btn-ui-corner-fold": {
+    "description": "Two triangles of accent colour fold in from opposite corners and cover the button.",
+    "displayName": "Corner Fold",
+    "source": "authored"
+  },
+  "sds-btn-ui-sunrise-glow": {
+    "description": "A glow rises from below the button like a sunrise on hover.",
+    "displayName": "Sunrise Glow",
+    "source": "authored"
+  },
+  "sds-btn-ui-pulse-core": {
+    "description": "A soft light pulses outward from the centre again and again while hovered.",
+    "displayName": "Pulse Core",
+    "source": "authored"
+  },
+  "sds-btn-ui-sunburst": {
+    "description": "Rays of light slowly rotate behind the label while the button is hovered.",
+    "displayName": "Sunburst",
+    "source": "authored"
+  },
+  "sds-btn-ui-duotone-slide": {
+    "description": "Two slanted bands, one bright and one dark, slide across in sequence.",
+    "displayName": "Duotone Slide",
+    "source": "authored"
+  },
+  "sds-btn-ui-ink-bloom": {
+    "description": "A soft blot of ink blooms up from the bottom edge and floods the button.",
+    "displayName": "Ink Bloom",
+    "source": "authored"
+  },
+  "sds-btn-ui-bubble-rise": {
+    "description": "Small bubbles drift up through the button while it is hovered.",
+    "displayName": "Bubble Rise",
+    "source": "authored"
+  },
+  "sds-btn-ui-rain-streak": {
+    "description": "Fine streaks of light fall through the button while it is hovered.",
+    "displayName": "Rain Streak",
+    "source": "authored"
+  },
+  "sds-btn-ui-twinkle": {
+    "description": "Two stars twinkle in and out on opposite corners while hovered.",
+    "displayName": "Twinkle",
+    "source": "authored"
+  },
+  "sds-btn-ui-lens-flare": {
+    "description": "A horizontal lens flare streaks across the button with a bright core on hover.",
+    "displayName": "Lens Flare",
+    "source": "authored"
+  },
+  "sds-btn-ui-spring-pop": {
+    "description": "The button pops up on a spring and squeezes down when pressed.",
+    "displayName": "Spring Pop",
+    "source": "authored"
+  },
+  "sds-btn-ui-squash-land": {
+    "description": "The button hops, lands with a squash and settles on hover.",
+    "displayName": "Squash Land",
+    "source": "authored"
+  },
+  "sds-btn-ui-wiggle": {
+    "description": "The button wiggles from side to side while it is hovered.",
+    "displayName": "Wiggle",
+    "source": "authored"
+  },
+  "sds-btn-ui-shake-no": {
+    "description": "A quick horizontal shake, like a head shake, on hover.",
+    "displayName": "Shake No",
+    "source": "authored"
+  },
+  "sds-btn-ui-heartbeat": {
+    "description": "The button beats twice, like a heart, in a steady loop while hovered.",
+    "displayName": "Heartbeat",
+    "source": "authored"
+  },
+  "sds-btn-ui-levitate-bob": {
+    "description": "The button lifts and bobs gently in the air while hovered.",
+    "displayName": "Levitate Bob",
+    "source": "authored"
+  },
+  "sds-btn-ui-pendulum": {
+    "description": "The button swings like a pendulum from a point above it, then settles.",
+    "displayName": "Pendulum",
+    "source": "authored"
+  },
+  "sds-btn-ui-rubber-band-x": {
+    "description": "The button stretches wide and snaps back like a rubber band.",
+    "displayName": "Rubber Band X",
+    "source": "authored"
+  },
+  "sds-btn-ui-sheet-fan": {
+    "description": "A second sheet fans out from behind the button, like a stack of paper.",
+    "displayName": "Sheet Fan",
+    "source": "authored"
+  },
+  "sds-btn-ui-neumorph-press": {
+    "description": "A soft raised button that sinks into its surface when pressed.",
+    "displayName": "Neumorph Press",
+    "source": "authored"
+  },
+  "sds-btn-ui-outline-echo": {
+    "description": "Two outlines echo outward around the button on hover.",
+    "displayName": "Outline Echo",
+    "source": "authored"
+  },
+  "sds-btn-ui-chevron-turn": {
+    "description": "A chevron that turns upside down when aria-expanded is true.",
+    "displayName": "Chevron Turn",
+    "source": "authored"
+  },
+  "sds-btn-ui-burger-x": {
+    "description": "A menu icon whose two bars cross into an X when aria-expanded is true.",
+    "displayName": "Burger X",
+    "source": "authored"
+  },
+  "sds-btn-ui-plus-turn": {
+    "description": "A plus icon that turns on hover and tilts further when aria-expanded is true.",
+    "displayName": "Plus Turn",
+    "source": "authored"
+  },
+  "sds-btn-ui-refresh-spin": {
+    "description": "A refresh icon that spins a full turn on hover.",
+    "displayName": "Refresh Spin",
+    "source": "authored"
+  },
+  "sds-btn-ui-download-loop": {
+    "description": "A download arrow that drops out of the button and re-enters from above, on loop.",
+    "displayName": "Download Loop",
+    "source": "authored"
+  },
+  "sds-btn-ui-send-fly": {
+    "description": "A paper plane flies off the corner and re-enters from the opposite side on hover.",
+    "displayName": "Send Fly",
+    "source": "authored"
+  },
+  "sds-btn-ui-diagonal-nudge": {
+    "description": "An external-link arrow nudges up and to the right on hover.",
+    "displayName": "Diagonal Nudge",
+    "source": "authored"
+  },
+  "sds-btn-ui-drop-in": {
+    "description": "A dot drops into the button when it is pressed, like an item into a cart.",
+    "displayName": "Drop In",
+    "source": "authored"
+  },
+  "sds-btn-ui-notify-dot": {
+    "description": "A badge dot springs in with a pulse when data-notify is set on the button.",
+    "displayName": "Notify Dot",
+    "source": "authored"
+  },
+  "sds-btn-ui-state-success": {
+    "description": "Set data-state=\"success\": a circle fills the button and a check mark pops in.",
+    "displayName": "State Success",
+    "source": "authored"
+  },
+  "sds-btn-ui-state-error": {
+    "description": "Set data-state=\"error\" or aria-invalid: the button shakes and a red outline appears.",
+    "displayName": "State Error",
+    "source": "authored"
+  },
+  "sds-btn-ui-switch-knob": {
+    "description": "A switch inside the button: the knob slides and the track lights up with aria-checked.",
+    "displayName": "Switch Knob",
+    "source": "authored"
+  },
+  "sds-btn-ui-current-marker": {
+    "description": "A text button that shows a small dot under it for aria-current or aria-selected.",
+    "displayName": "Current Marker",
+    "source": "authored"
+  },
+  "sds-btn-ui-pressed-burst": {
+    "description": "When aria-pressed turns true the button pops and a ring bursts outward.",
+    "displayName": "Pressed Burst",
+    "source": "authored"
+  },
+  "sds-btn-ui-disabled-nope": {
+    "description": "Looks striped and dimmed when disabled, and gives a small shake if hovered.",
+    "displayName": "Disabled Nope",
+    "source": "authored"
+  },
+  "sds-btn-ui-caret-bounce": {
+    "description": "A caret that bounces up and down while the button is hovered.",
+    "displayName": "Caret Bounce",
+    "source": "authored"
+  },
+  "sds-btn-ui-check-draw": {
+    "description": "A check mark draws itself in at the end of the button on hover.",
+    "displayName": "Check Draw",
+    "source": "authored"
+  },
+  "sds-btn-ui-dots-loading": {
+    "description": "Set aria-busy=\"true\": the label gives way to three dots that pulse in turn.",
+    "displayName": "Dots Loading",
+    "source": "authored"
+  },
+  "sds-btn-ui-bar-loading": {
+    "description": "Set aria-busy=\"true\": a bright bar runs along the bottom edge.",
+    "displayName": "Bar Loading",
+    "source": "authored"
+  },
+  "sds-btn-ui-skeleton-shimmer": {
+    "description": "Set aria-busy=\"true\": the label hides and a shimmer sweeps across, like a skeleton.",
+    "displayName": "Skeleton Shimmer",
+    "source": "authored"
+  },
+  "sds-btn-ui-countdown-drain": {
+    "description": "Set data-countdown and a fill drains away over --sds-btn-countdown (default 5s).",
+    "displayName": "Countdown Drain",
+    "source": "authored"
+  },
+  "sds-btn-ui-edge-light": {
+    "description": "A bright line and a soft glow light up the top edge on hover.",
+    "displayName": "Edge Light",
+    "source": "authored"
+  },
+  "sds-btn-ui-prism-shift": {
+    "description": "Red and cyan fringes split from the button on hover and widen when pressed.",
+    "displayName": "Prism Shift",
+    "source": "authored"
+  },
+  "sds-btn-ui-laser-sweep": {
+    "description": "A thin laser line sweeps across the button repeatedly while hovered.",
+    "displayName": "Laser Sweep",
+    "source": "authored"
+  },
+  "sds-btn-ui-inner-glow": {
+    "description": "A soft glow gathers along the inside edge of the button on hover.",
+    "displayName": "Inner Glow",
+    "source": "authored"
+  },
+  "sds-btn-ui-neon-underline": {
+    "description": "A text button with a glowing neon underline that grows in on hover.",
+    "displayName": "Neon Underline",
+    "source": "authored"
+  },
+  "sds-btn-ui-skew-slide": {
+    "description": "The button leans into a slant and slides forward on a spring.",
+    "displayName": "Skew Slide",
+    "source": "authored"
+  },
+  "sds-btn-ui-blob-shift": {
+    "description": "Two blurred blobs at the corners slide to the centre and merge on hover.",
+    "displayName": "Blob Shift",
+    "source": "authored"
+  },
+  "sds-btn-ui-pinch-squeeze": {
+    "description": "The button squeezes narrow when pressed and springs back wide.",
+    "displayName": "Pinch Squeeze",
+    "source": "authored"
+  },
+  "sds-btn-ui-gloss-drop": {
+    "description": "A glossy highlight drops over the top half of the button on hover.",
+    "displayName": "Gloss Drop",
+    "source": "authored"
+  },
+  "sds-btn-ui-confetti-pop": {
+    "description": "Confetti flies out in all directions when the button is pressed.",
+    "displayName": "Confetti Pop",
+    "source": "authored"
+  },
+  "sds-btn-ui-halftone-fade": {
+    "description": "A halftone dot pattern fades in diagonally across the button on hover.",
+    "displayName": "Halftone Fade",
+    "source": "authored"
+  },
+  "sds-btn-ui-crt-lines": {
+    "description": "Scanlines roll down the button like an old screen while hovered.",
+    "displayName": "CRT Lines",
+    "source": "authored"
+  },
+  "sds-btn-ui-float-shadow": {
+    "description": "The button floats up while its shadow on the ground shrinks and fades.",
+    "displayName": "Float Shadow",
+    "source": "authored"
   }
 }

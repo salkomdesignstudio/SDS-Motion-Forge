@@ -89,6 +89,36 @@
   "description": "Aurora Mesh — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
+ "SDS Bar Loading (sds-btn-ui-bar-loading)": {
+  "prefix": [
+   "sds-btn-ui-bar-loading"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-bar-loading\">Button</button>"
+  ],
+  "description": "Bar Loading — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Bars Open (sds-btn-ui-bars-open)": {
+  "prefix": [
+   "sds-btn-ui-bars-open"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-bars-open\">Button</button>"
+  ],
+  "description": "Bars Open — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Blob Shift (sds-btn-ui-blob-shift)": {
+  "prefix": [
+   "sds-btn-ui-blob-shift"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-blob-shift\">Button</button>"
+  ],
+  "description": "Blob Shift — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
  "SDS Bloom Halo (sds-btn-ui-bloom-halo)": {
   "prefix": [
    "sds-btn-ui-bloom-halo"
@@ -119,6 +149,56 @@
   "description": "Brutal Offset — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
+ "SDS Bubble Rise (sds-btn-ui-bubble-rise)": {
+  "prefix": [
+   "sds-btn-ui-bubble-rise"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-bubble-rise\">Button</button>"
+  ],
+  "description": "Bubble Rise — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Burger X (sds-btn-ui-burger-x)": {
+  "prefix": [
+   "sds-btn-ui-burger-x"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-burger-x\">Button</button>"
+  ],
+  "description": "Burger X — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Caret Bounce (sds-btn-ui-caret-bounce)": {
+  "prefix": [
+   "sds-btn-ui-caret-bounce"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-caret-bounce\">Button</button>"
+  ],
+  "description": "Caret Bounce — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Check Draw (sds-btn-ui-check-draw)": {
+  "prefix": [
+   "sds-btn-ui-check-draw"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-check-draw\">Button</button>"
+  ],
+  "description": "Check Draw — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Chevron Turn (sds-btn-ui-chevron-turn)": {
+  "prefix": [
+   "sds-btn-ui-chevron-turn"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-chevron-turn\">Button</button>"
+  ],
+  "description": "Chevron Turn — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
  "SDS Circle Expand (sds-btn-ui-circle-expand)": {
   "prefix": [
    "sds-btn-ui-circle-expand"
@@ -127,6 +207,16 @@
    "<button class=\"sds-btn-ui-circle-expand\">Button</button>"
   ],
   "description": "Circle Expand — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Confetti Pop (sds-btn-ui-confetti-pop)": {
+  "prefix": [
+   "sds-btn-ui-confetti-pop"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-confetti-pop\">Button</button>"
+  ],
+  "description": "Confetti Pop — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
  "SDS Conic Border (sds-btn-ui-conic-border)": {
@@ -139,6 +229,56 @@
   "description": "Conic Border — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
+ "SDS Corner Fold (sds-btn-ui-corner-fold)": {
+  "prefix": [
+   "sds-btn-ui-corner-fold"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-corner-fold\">Button</button>"
+  ],
+  "description": "Corner Fold — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Corner Grow (sds-btn-ui-corner-grow)": {
+  "prefix": [
+   "sds-btn-ui-corner-grow"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-corner-grow\">Button</button>"
+  ],
+  "description": "Corner Grow — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Countdown Drain (sds-btn-ui-countdown-drain)": {
+  "prefix": [
+   "sds-btn-ui-countdown-drain"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-countdown-drain\">Button</button>"
+  ],
+  "description": "Countdown Drain — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS CRT Lines (sds-btn-ui-crt-lines)": {
+  "prefix": [
+   "sds-btn-ui-crt-lines"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-crt-lines\">Button</button>"
+  ],
+  "description": "CRT Lines — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Current Marker (sds-btn-ui-current-marker)": {
+  "prefix": [
+   "sds-btn-ui-current-marker"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-current-marker\">Button</button>"
+  ],
+  "description": "Current Marker — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
  "SDS Curtain Split (sds-btn-ui-curtain-split)": {
   "prefix": [
    "sds-btn-ui-curtain-split"
@@ -147,6 +287,16 @@
    "<button class=\"sds-btn-ui-curtain-split\">Button</button>"
   ],
   "description": "Curtain Split — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Diagonal Nudge (sds-btn-ui-diagonal-nudge)": {
+  "prefix": [
+   "sds-btn-ui-diagonal-nudge"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-diagonal-nudge\">Button</button>"
+  ],
+  "description": "Diagonal Nudge — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
  "SDS Diagonal Wipe (sds-btn-ui-diagonal-wipe)": {
@@ -159,6 +309,66 @@
   "description": "Diagonal Wipe — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
+ "SDS Disabled Nope (sds-btn-ui-disabled-nope)": {
+  "prefix": [
+   "sds-btn-ui-disabled-nope"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-disabled-nope\">Button</button>"
+  ],
+  "description": "Disabled Nope — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Dots Loading (sds-btn-ui-dots-loading)": {
+  "prefix": [
+   "sds-btn-ui-dots-loading"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-dots-loading\">Button</button>"
+  ],
+  "description": "Dots Loading — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Download Loop (sds-btn-ui-download-loop)": {
+  "prefix": [
+   "sds-btn-ui-download-loop"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-download-loop\">Button</button>"
+  ],
+  "description": "Download Loop — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Drop In (sds-btn-ui-drop-in)": {
+  "prefix": [
+   "sds-btn-ui-drop-in"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-drop-in\">Button</button>"
+  ],
+  "description": "Drop In — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Duotone Slide (sds-btn-ui-duotone-slide)": {
+  "prefix": [
+   "sds-btn-ui-duotone-slide"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-duotone-slide\">Button</button>"
+  ],
+  "description": "Duotone Slide — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Edge Light (sds-btn-ui-edge-light)": {
+  "prefix": [
+   "sds-btn-ui-edge-light"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-edge-light\">Button</button>"
+  ],
+  "description": "Edge Light — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
  "SDS Flip Spin (sds-btn-ui-flip-spin)": {
   "prefix": [
    "sds-btn-ui-flip-spin"
@@ -167,6 +377,16 @@
    "<button class=\"sds-btn-ui-flip-spin\">Button</button>"
   ],
   "description": "Flip Spin — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Float Shadow (sds-btn-ui-float-shadow)": {
+  "prefix": [
+   "sds-btn-ui-float-shadow"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-float-shadow\">Button</button>"
+  ],
+  "description": "Float Shadow — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
  "SDS Frame Draw (sds-btn-ui-frame-draw)": {
@@ -209,6 +429,16 @@
   "description": "Glitch Split — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
+ "SDS Gloss Drop (sds-btn-ui-gloss-drop)": {
+  "prefix": [
+   "sds-btn-ui-gloss-drop"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-gloss-drop\">Button</button>"
+  ],
+  "description": "Gloss Drop — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
  "SDS Gradient Flow (sds-btn-ui-gradient-flow)": {
   "prefix": [
    "sds-btn-ui-gradient-flow"
@@ -217,6 +447,36 @@
    "<button class=\"sds-btn-ui-gradient-flow\">Button</button>"
   ],
   "description": "Gradient Flow — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Halftone Fade (sds-btn-ui-halftone-fade)": {
+  "prefix": [
+   "sds-btn-ui-halftone-fade"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-halftone-fade\">Button</button>"
+  ],
+  "description": "Halftone Fade — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Heartbeat (sds-btn-ui-heartbeat)": {
+  "prefix": [
+   "sds-btn-ui-heartbeat"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-heartbeat\">Button</button>"
+  ],
+  "description": "Heartbeat — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Hex Reveal (sds-btn-ui-hex-reveal)": {
+  "prefix": [
+   "sds-btn-ui-hex-reveal"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-hex-reveal\">Button</button>"
+  ],
+  "description": "Hex Reveal — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
  "SDS Hold To Confirm (sds-btn-ui-hold-to-confirm)": {
@@ -249,6 +509,26 @@
   "description": "Hue Cycle — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
+ "SDS Ink Bloom (sds-btn-ui-ink-bloom)": {
+  "prefix": [
+   "sds-btn-ui-ink-bloom"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-ink-bloom\">Button</button>"
+  ],
+  "description": "Ink Bloom — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Inner Glow (sds-btn-ui-inner-glow)": {
+  "prefix": [
+   "sds-btn-ui-inner-glow"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-inner-glow\">Button</button>"
+  ],
+  "description": "Inner Glow — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
  "SDS Invert Flip (sds-btn-ui-invert-flip)": {
   "prefix": [
    "sds-btn-ui-invert-flip"
@@ -277,6 +557,36 @@
    "<button class=\"sds-btn-ui-jelly-wobble\">Button</button>"
   ],
   "description": "Jelly Wobble — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Laser Sweep (sds-btn-ui-laser-sweep)": {
+  "prefix": [
+   "sds-btn-ui-laser-sweep"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-laser-sweep\">Button</button>"
+  ],
+  "description": "Laser Sweep — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Lens Flare (sds-btn-ui-lens-flare)": {
+  "prefix": [
+   "sds-btn-ui-lens-flare"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-lens-flare\">Button</button>"
+  ],
+  "description": "Lens Flare — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Levitate Bob (sds-btn-ui-levitate-bob)": {
+  "prefix": [
+   "sds-btn-ui-levitate-bob"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-levitate-bob\">Button</button>"
+  ],
+  "description": "Levitate Bob — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
  "SDS Liquid Fill (sds-btn-ui-liquid-fill)": {
@@ -309,6 +619,76 @@
   "description": "Neon Edge — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
+ "SDS Neon Underline (sds-btn-ui-neon-underline)": {
+  "prefix": [
+   "sds-btn-ui-neon-underline"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-neon-underline\">Button</button>"
+  ],
+  "description": "Neon Underline — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Neumorph Press (sds-btn-ui-neumorph-press)": {
+  "prefix": [
+   "sds-btn-ui-neumorph-press"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-neumorph-press\">Button</button>"
+  ],
+  "description": "Neumorph Press — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Notify Dot (sds-btn-ui-notify-dot)": {
+  "prefix": [
+   "sds-btn-ui-notify-dot"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-notify-dot\">Button</button>"
+  ],
+  "description": "Notify Dot — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Outline Echo (sds-btn-ui-outline-echo)": {
+  "prefix": [
+   "sds-btn-ui-outline-echo"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-outline-echo\">Button</button>"
+  ],
+  "description": "Outline Echo — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Pendulum (sds-btn-ui-pendulum)": {
+  "prefix": [
+   "sds-btn-ui-pendulum"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-pendulum\">Button</button>"
+  ],
+  "description": "Pendulum — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Pinch Squeeze (sds-btn-ui-pinch-squeeze)": {
+  "prefix": [
+   "sds-btn-ui-pinch-squeeze"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-pinch-squeeze\">Button</button>"
+  ],
+  "description": "Pinch Squeeze — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Plus Turn (sds-btn-ui-plus-turn)": {
+  "prefix": [
+   "sds-btn-ui-plus-turn"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-plus-turn\">Button</button>"
+  ],
+  "description": "Plus Turn — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
  "SDS Press 3D (sds-btn-ui-press-3d)": {
   "prefix": [
    "sds-btn-ui-press-3d"
@@ -319,6 +699,26 @@
   "description": "Press 3D — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
+ "SDS Pressed Burst (sds-btn-ui-pressed-burst)": {
+  "prefix": [
+   "sds-btn-ui-pressed-burst"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-pressed-burst\">Button</button>"
+  ],
+  "description": "Pressed Burst — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Prism Shift (sds-btn-ui-prism-shift)": {
+  "prefix": [
+   "sds-btn-ui-prism-shift"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-prism-shift\">Button</button>"
+  ],
+  "description": "Prism Shift — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
  "SDS Progress Fill (sds-btn-ui-progress-fill)": {
   "prefix": [
    "sds-btn-ui-progress-fill"
@@ -327,6 +727,36 @@
    "<button class=\"sds-btn-ui-progress-fill\">Button</button>"
   ],
   "description": "Progress Fill — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Pulse Core (sds-btn-ui-pulse-core)": {
+  "prefix": [
+   "sds-btn-ui-pulse-core"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-pulse-core\">Button</button>"
+  ],
+  "description": "Pulse Core — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Rain Streak (sds-btn-ui-rain-streak)": {
+  "prefix": [
+   "sds-btn-ui-rain-streak"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-rain-streak\">Button</button>"
+  ],
+  "description": "Rain Streak — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Refresh Spin (sds-btn-ui-refresh-spin)": {
+  "prefix": [
+   "sds-btn-ui-refresh-spin"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-refresh-spin\">Button</button>"
+  ],
+  "description": "Refresh Spin — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
  "SDS Ring Pulse (sds-btn-ui-ring-pulse)": {
@@ -349,6 +779,16 @@
   "description": "Ripple Press — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
+ "SDS Rubber Band X (sds-btn-ui-rubber-band-x)": {
+  "prefix": [
+   "sds-btn-ui-rubber-band-x"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-rubber-band-x\">Button</button>"
+  ],
+  "description": "Rubber Band X — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
  "SDS Rubber Stretch (sds-btn-ui-rubber-stretch)": {
   "prefix": [
    "sds-btn-ui-rubber-stretch"
@@ -369,6 +809,36 @@
   "description": "Scan Line — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
+ "SDS Send Fly (sds-btn-ui-send-fly)": {
+  "prefix": [
+   "sds-btn-ui-send-fly"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-send-fly\">Button</button>"
+  ],
+  "description": "Send Fly — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Shake No (sds-btn-ui-shake-no)": {
+  "prefix": [
+   "sds-btn-ui-shake-no"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-shake-no\">Button</button>"
+  ],
+  "description": "Shake No — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Sheet Fan (sds-btn-ui-sheet-fan)": {
+  "prefix": [
+   "sds-btn-ui-sheet-fan"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-sheet-fan\">Button</button>"
+  ],
+  "description": "Sheet Fan — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
  "SDS Shine Sweep (sds-btn-ui-shine-sweep)": {
   "prefix": [
    "sds-btn-ui-shine-sweep"
@@ -377,6 +847,26 @@
    "<button class=\"sds-btn-ui-shine-sweep\">Button</button>"
   ],
   "description": "Shine Sweep — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Skeleton Shimmer (sds-btn-ui-skeleton-shimmer)": {
+  "prefix": [
+   "sds-btn-ui-skeleton-shimmer"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-skeleton-shimmer\">Button</button>"
+  ],
+  "description": "Skeleton Shimmer — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Skew Slide (sds-btn-ui-skew-slide)": {
+  "prefix": [
+   "sds-btn-ui-skew-slide"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-skew-slide\">Button</button>"
+  ],
+  "description": "Skew Slide — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
  "SDS Soft Lift (sds-btn-ui-soft-lift)": {
@@ -399,6 +889,16 @@
   "description": "Spark Burst — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
+ "SDS Split Doors (sds-btn-ui-split-doors)": {
+  "prefix": [
+   "sds-btn-ui-split-doors"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-split-doors\">Button</button>"
+  ],
+  "description": "Split Doors — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
  "SDS Split Icon (sds-btn-ui-split-icon)": {
   "prefix": [
    "sds-btn-ui-split-icon"
@@ -417,6 +917,46 @@
    "<button class=\"sds-btn-ui-spotlight-sweep\">Button</button>"
   ],
   "description": "Spotlight Sweep — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Spring Pop (sds-btn-ui-spring-pop)": {
+  "prefix": [
+   "sds-btn-ui-spring-pop"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-spring-pop\">Button</button>"
+  ],
+  "description": "Spring Pop — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Squash Land (sds-btn-ui-squash-land)": {
+  "prefix": [
+   "sds-btn-ui-squash-land"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-squash-land\">Button</button>"
+  ],
+  "description": "Squash Land — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS State Error (sds-btn-ui-state-error)": {
+  "prefix": [
+   "sds-btn-ui-state-error"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-state-error\">Button</button>"
+  ],
+  "description": "State Error — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS State Success (sds-btn-ui-state-success)": {
+  "prefix": [
+   "sds-btn-ui-state-success"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-state-success\">Button</button>"
+  ],
+  "description": "State Success — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
  "SDS Stepped Press (sds-btn-ui-stepped-press)": {
@@ -439,6 +979,36 @@
   "description": "Stripe March — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
+ "SDS Sunburst (sds-btn-ui-sunburst)": {
+  "prefix": [
+   "sds-btn-ui-sunburst"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-sunburst\">Button</button>"
+  ],
+  "description": "Sunburst — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Sunrise Glow (sds-btn-ui-sunrise-glow)": {
+  "prefix": [
+   "sds-btn-ui-sunrise-glow"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-sunrise-glow\">Button</button>"
+  ],
+  "description": "Sunrise Glow — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Switch Knob (sds-btn-ui-switch-knob)": {
+  "prefix": [
+   "sds-btn-ui-switch-knob"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-switch-knob\">Button</button>"
+  ],
+  "description": "Switch Knob — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
  "SDS Tilt 3D (sds-btn-ui-tilt-3d)": {
   "prefix": [
    "sds-btn-ui-tilt-3d"
@@ -459,6 +1029,16 @@
   "description": "Toggle Pill — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
+ "SDS Twinkle (sds-btn-ui-twinkle)": {
+  "prefix": [
+   "sds-btn-ui-twinkle"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-twinkle\">Button</button>"
+  ],
+  "description": "Twinkle — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
  "SDS Underline Grow (sds-btn-ui-underline-grow)": {
   "prefix": [
    "sds-btn-ui-underline-grow"
@@ -467,6 +1047,26 @@
    "<button class=\"sds-btn-ui-underline-grow\">Button</button>"
   ],
   "description": "Underline Grow — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Wiggle (sds-btn-ui-wiggle)": {
+  "prefix": [
+   "sds-btn-ui-wiggle"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-wiggle\">Button</button>"
+  ],
+  "description": "Wiggle — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
+  "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
+ },
+ "SDS Wipe Up (sds-btn-ui-wipe-up)": {
+  "prefix": [
+   "sds-btn-ui-wipe-up"
+  ],
+  "body": [
+   "<button class=\"sds-btn-ui-wipe-up\">Button</button>"
+  ],
+  "description": "Wipe Up — buttons animation. Needs https://cdn.jsdelivr.net/npm/@salkomdesignstudio/sds-motion-forge/dist/motion.min.css (or the buttons bundle).",
   "scope": "html,javascriptreact,typescriptreact,vue,svelte,astro"
  },
  "SDS Bubble Rise (sds-bubble-rise)": {
