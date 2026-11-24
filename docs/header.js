@@ -61,6 +61,13 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
+  /* Animations menu: hover or focus a category and the preview on the right follows */
+  [].slice.call(sh.querySelectorAll(".sh-mega")).forEach(function (m) {
+    var rows = [].slice.call(m.querySelectorAll(".sh-cat")), pv = [].slice.call(m.querySelectorAll(".sh-pv"));
+    function show(id) { rows.forEach(function (r) { r.classList.toggle("is-on", r.getAttribute("data-p") === id); }); pv.forEach(function (p) { p.classList.toggle("is-on", p.getAttribute("data-p") === id); }); }
+    rows.forEach(function (r) { var id = r.getAttribute("data-p"); r.addEventListener("mouseenter", function () { show(id); }); r.addEventListener("focus", function () { show(id); }); });
+  });
+
   /* current page */
   var p = location.pathname.replace(/index\.html$/, "");
   function mark(sel, test) {
